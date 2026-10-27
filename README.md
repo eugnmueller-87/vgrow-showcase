@@ -1,14 +1,14 @@
 <p align="center"><img src="docs/images/cover.svg" alt="VGrow Cockpit: from readings to everyday care" width="100%"></p>
 
-# VGrow Cockpit
+# VGrow Cockpit: product demonstration
 
 **A working grow-box cockpit with explainable automation, two cameras, plant history and AI running on the owner's hardware.**
 
 Built by [Eugen Mueller](https://www.linkedin.com/in/eugen-mueller), a VGrow owner exploring how to make everyday care easier to understand and automate. Independent of VIVOSUN.
 
-[Product workflows](docs/workflows.md) · [Local AI](docs/ai-models.md) · [Screenshots](docs/gallery.md) · [Roadmap](docs/roadmap.md) · [Costs](docs/costs.md) · [LinkedIn](https://www.linkedin.com/in/eugen-mueller)
+[Screenshots](docs/gallery.md) · [Product workflows](docs/workflows.md) · [Local AI](docs/ai-models.md) · [Roadmap](docs/roadmap.md) · [LinkedIn](https://www.linkedin.com/in/eugen-mueller)
 
-This repository is a browsable product showcase. It contains documentation and reviewed screenshots. The application implementation stays in a separate private repository.
+**Explore the product directly in your browser.** This demonstration repository contains reviewed screenshots and product documentation. The application source, private prompts and calibration implementation remain in a separate private repository.
 
 ![The running cockpit with environmental readings and both camera views](docs/images/overview.png)
 
@@ -32,7 +32,7 @@ I started with a phone control page and built it into a workspace that connects 
 
 ![GrowCam and C920 side by side, with controls below the footage](docs/images/dual-cameras.png)
 
-## Local AI with a defined role
+## AI on my own hardware
 
 **Gemma 4 12B** provides language and image interpretation. **Granite Embedding 278M** provides semantic reference search. Both run through Ollama on an owner-operated Intel Mac with 16 GiB RAM.
 
@@ -44,11 +44,11 @@ Climate rules, schedules, water calculations and pump deadlines run in applicati
 
 ## Current evidence and next steps
 
-Checkpoint: **27 October 2026**, application revision **`4e49083`**. The gallery contains **12 real installation captures**, visually reviewed and acquired with browser writes blocked.
+Checkpoint: **27 October 2026**. The gallery contains **12 real installation captures**, visually reviewed and acquired with browser writes blocked. These are screenshots of the owner's running installation.
 
 Climate automation is active in the captured installation. The light and watering timers are built and deployed, but their schedules are not configured or enabled. Pot setup and physical pump calibration remain open. Refills, maintenance and some observations remain manual.
 
-The next milestone is a physically verified daily care baseline, followed by reviewed stage recommendations, reliable visual tracking, more hardware adapters and a tested setup experience for other users. The [roadmap](docs/roadmap.md) distinguishes delivered software, live setup and future validation.
+The [roadmap](docs/roadmap.md) distinguishes delivered software, remaining live setup and future validation. Next priorities are verifying daily care on the physical installation and testing the experience with other users.
 
 ![A plant record with a source-labelled approximate height and separate observation dates](docs/images/plant-record.png)
 
