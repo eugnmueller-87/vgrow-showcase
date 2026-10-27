@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="500" viewBox="0 0 1600 500" role="img" aria-labelledby="title desc">
+  <title id="title">VGrow Cockpit</title>
+  <desc id="desc">From readings to everyday care. Local AI, connected workflows and plant history on your own host.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#102820"/><stop offset="1" stop-color="#1b4939"/></linearGradient>
+    <linearGradient id="leaf" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#5bce91"/><stop offset="1" stop-color="#c6eb9b"/></linearGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M44 0H0V44" fill="none" stroke="#83ba9c" stroke-opacity=".07"/></pattern>
+  </defs>
+  <rect width="1600" height="500" rx="28" fill="url(#bg)"/>
+  <rect width="1600" height="500" rx="28" fill="url(#grid)"/>
+  <circle cx="1410" cy="-30" r="330" fill="none" stroke="#9acfa8" stroke-opacity=".12"/>
+  <circle cx="1410" cy="-30" r="250" fill="none" stroke="#9acfa8" stroke-opacity=".1"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <rect x="70" y="59" width="150" height="30" rx="15" fill="#315d48"/>
+    <text x="145" y="79" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="2" fill="#d7edcf">SELF-HOSTED</text>
+    <text x="70" y="192" font-size="83" font-weight="750" letter-spacing="-3" fill="#f2f6ed">VGrow Cockpit</text>
+    <text x="74" y="253" font-size="29" fill="#d2e6d4">From readings to everyday care.</text>
+    <text x="74" y="294" font-size="29" fill="#d2e6d4">Local AI. Connected workflows. One cockpit.</text>
+    <g font-size="13" font-weight="650" letter-spacing="1.4" fill="#bddcc3">
+      <text x="75" y="393">LIVE SENSORS</text><circle cx="222" cy="388" r="2" fill="#7cb68d"/>
+      <text x="247" y="393">DUAL CAMERAS</text><circle cx="409" cy="388" r="2" fill="#7cb68d"/>
+      <text x="434" y="393">LOCAL AI</text><circle cx="539" cy="388" r="2" fill="#7cb68d"/>
+      <text x="564" y="393">PLANT RECORDS</text>
+    </g>
+    <text x="75" y="450" font-size="14" fill="#8db69d">Independent project · Compatible with VIVOSUN VGrow · DE / EN</text>
+  </g>
+  <g transform="translate(1050 74)">
+    <rect x="0" y="0" width="425" height="337" rx="30" fill="#112d25" stroke="#7aab8b" stroke-opacity=".38"/>
+    <g stroke="#99be9d" stroke-width="1" opacity=".13"><path d="M35 95H390M35 158H390M35 221H390M35 284H390M98 50V289M161 50V289M224 50V289M287 50V289M350 50V289"/></g>
+    <path d="M35 244C74 244 70 210 106 216S146 260 184 224S217 167 250 188S289 171 324 150S354 161 390 125" fill="none" stroke="#68d39c" stroke-width="3" opacity=".7"/>
+    <path d="M35 274C80 265 90 281 130 267S172 289 213 275S260 239 301 254S350 240 390 245" fill="none" stroke="#e1c283" stroke-width="2" opacity=".65"/>
+    <g transform="translate(146 48)">
+      <path d="M62 178V80" fill="none" stroke="#b4e6ab" stroke-width="8" stroke-linecap="round"/>
+      <path d="M61 114C7 111-1 74 0 45C44 43 65 65 61 114Z" fill="url(#leaf)"/>
+      <path d="M63 84C61 30 101 11 143 12C146 54 119 87 63 84Z" fill="url(#leaf)"/>
+    </g>
+    <circle cx="30" cy="308" r="4" fill="#66d597"/>
+    <text x="45" y="313" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#b0d6bd">OBSERVE · UNDERSTAND · ACT · REMEMBER</text>
+  </g>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="920" viewBox="0 0 1400 920" role="img" aria-labelledby="title desc">
+  <title id="title">AI on our own host</title>
+  <desc id="desc">Local Granite retrieves text and local Gemma provides language and image interpretation. Application code handles hardware decisions. Device communication still uses the manufacturer cloud.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102820"/><stop offset="1" stop-color="#1b4939"/></linearGradient>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#a4d5b6" stroke-width="1.5"/></marker>
+    <style>text{font-family:Segoe UI,Helvetica,Arial,sans-serif}.h{fill:#f4f8f1;font-weight:700}.p{fill:#c7dfcf;font-size:20px}.small{fill:#abc9b6;font-size:17px}.line{fill:none;stroke:#a4d5b6;stroke-width:2;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1400" height="920" rx="28" fill="url(#bg)"/>
+  <text x="54" y="65" font-size="14" letter-spacing="2.4" fill="#92d8b0">VGROW COCKPIT &#183; LOCAL AI DEPLOYMENT</text>
+  <text x="54" y="123" class="h" font-size="44">AI on our own host.</text>
+  <text x="54" y="158" class="p">Pretrained models. Our application, evidence handling and workflows.</text>
+  <rect x="42" y="194" width="1316" height="600" rx="24" fill="#112d25" stroke="#689b7d" stroke-width="1.5"/>
+  <text x="70" y="234" class="h" font-size="22">Owner-operated Intel Mac &#183; 16 GiB RAM &#183; Ollama over loopback</text>
+  <rect x="70" y="268" width="300" height="280" rx="18" fill="#1e4435"/>
+  <text x="94" y="310" class="h" font-size="24">Available evidence</text>
+  <text x="94" y="355" class="p">Current readings</text>
+  <text x="94" y="391" class="p">Recorded events</text>
+  <text x="94" y="427" class="p">Reference passages</text>
+  <text x="94" y="463" class="p">Selected camera image</text>
+  <text x="94" y="515" class="small">Sources and ages preserved</text>
+  <rect x="418" y="268" width="410" height="122" rx="18" fill="#2b5342" stroke="#72b28c"/>
+  <text x="442" y="309" class="h" font-size="24">Granite Embedding 278M</text>
+  <text x="442" y="343" class="p">Local semantic text search</text>
+  <text x="442" y="371" class="small">F16 &#183; retrieval, not generation</text>
+  <rect x="418" y="424" width="410" height="164" rx="18" fill="#2b5342" stroke="#72b28c"/>
+  <text x="442" y="465" class="h" font-size="27">Gemma 4 12B</text>
+  <text x="442" y="502" class="p">Language + image interpretation</text>
+  <text x="442" y="534" class="small">Q4_K_M &#183; one shared model queue</text>
+  <text x="442" y="563" class="small">Weights run locally in Ollama</text>
+  <path d="M370 330H406" class="line"/>
+  <path d="M370 492H406" class="line"/>
+  <path d="M623 390V412" class="line"/>
+  <rect x="876" y="268" width="454" height="320" rx="18" fill="#f0f5ed"/>
+  <text x="902" y="311" fill="#153c2b" font-size="26" font-weight="700">Our application</text>
+  <text x="902" y="354" fill="#335844" font-size="21">Select facts and reference context</text>
+  <text x="902" y="393" fill="#335844" font-size="21">Check and present the answer</text>
+  <text x="902" y="432" fill="#335844" font-size="21">Keep camera source and uncertainty</text>
+  <text x="902" y="471" fill="#335844" font-size="21">Store the observation and history</text>
+  <text x="902" y="550" fill="#50735e" font-size="18">Factual reports can bypass generation.</text>
+  <path d="M828 506H864" class="line"/>
+  <rect x="70" y="626" width="1260" height="134" rx="18" fill="#234335" stroke="#b5bd89"/>
+  <text x="94" y="667" class="h" font-size="25">Hardware decisions run in application code</text>
+  <text x="94" y="703" class="p">Climate rules &#183; light timer &#183; watering checks &#183; pump deadline &#183; reported outcomes</text>
+  <text x="94" y="737" fill="#d8dcb9" font-size="19">The language model does not issue actuator commands.</text>
+  <text x="54" y="839" class="p">&#8364;0 external AI inference charges per request in this deployment.</text>
+  <text x="54" y="875" class="small">Hardware, energy and engineering still cost money. Device communication still uses the VIVOSUN cloud.</text>
+  <text x="1346" y="896" text-anchor="end" fill="#8db69d" font-size="14">Verified 27 October 2026</text>
+</svg>

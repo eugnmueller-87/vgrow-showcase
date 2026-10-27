@@ -1,0 +1,176 @@
+{
+  "application_revision": "4e49083",
+  "captures": [
+    {
+      "file": "overview.png",
+      "route": "overview",
+      "css_size": [
+        1600,
+        1274
+      ],
+      "captured_at": "2026-10-27T11:39:31.577921+01:00",
+      "source": "live installation",
+      "width_px": 2400,
+      "height_px": 1911,
+      "sha256": "0133944afdcb12c6df52d7b0add6335b40dedd864e0fc52ffa7b27539b44366c",
+      "visually_reviewed": true
+    },
+    {
+      "file": "dual-cameras.png",
+      "route": "devices/camera",
+      "css_size": [
+        1312,
+        619
+      ],
+      "captured_at": "2026-10-27T11:39:35.189998+01:00",
+      "source": "live installation",
+      "width_px": 1968,
+      "height_px": 928,
+      "sha256": "d8fa01a39d2ed0a34cba61a55d2bea326ade998e492bd4b72535f6d9b978f8f6",
+      "visually_reviewed": true
+    },
+    {
+      "file": "automation.png",
+      "route": "automation",
+      "css_size": [
+        1312,
+        1191
+      ],
+      "captured_at": "2026-10-27T11:39:38.735740+01:00",
+      "source": "live installation",
+      "width_px": 1968,
+      "height_px": 1787,
+      "sha256": "3e3f1fab0e32047770fe1a8b983cbf261f1d6f26f1ab2c3bb94014f0939a4726",
+      "visually_reviewed": true
+    },
+    {
+      "file": "light-schedule.png",
+      "route": "devices/light",
+      "css_size": [
+        1312,
+        849
+      ],
+      "captured_at": "2026-10-27T11:39:42.251568+01:00",
+      "source": "live installation",
+      "width_px": 1968,
+      "height_px": 1274,
+      "sha256": "af3cb9f9ffc43e04f0b0878e38a1f3b308d59fa239e9ae180d4327a7d96e23ba",
+      "visually_reviewed": true
+    },
+    {
+      "file": "knowledge-library.png",
+      "route": "wiki",
+      "css_size": [
+        1600,
+        1150
+      ],
+      "captured_at": "2026-10-27T11:39:45.481132+01:00",
+      "source": "live installation",
+      "width_px": 2400,
+      "height_px": 1725,
+      "sha256": "19d65e2cda68850ca112231de199ebc9ebddce63f86db84f8f8a29c6fb71b791",
+      "visually_reviewed": true
+    },
+    {
+      "file": "analytics.png",
+      "route": "analytics",
+      "css_size": [
+        1600,
+        1050
+      ],
+      "captured_at": "2026-10-27T11:39:48.748528+01:00",
+      "source": "live installation",
+      "width_px": 2400,
+      "height_px": 1575,
+      "sha256": "c333a698b5d2cf933a14abd288a54a8da521310941b912b7faeb10682b1325b7",
+      "visually_reviewed": true
+    },
+    {
+      "file": "plant-record.png",
+      "route": "grow/growth",
+      "css_size": [
+        1600,
+        912
+      ],
+      "captured_at": "2026-10-27T11:39:52.367070+01:00",
+      "source": "live installation",
+      "width_px": 2400,
+      "height_px": 1368,
+      "sha256": "d31e24a5681ab75af80896334cb784396d77cf1665d5ae59c17dac91bf932563",
+      "visually_reviewed": true
+    },
+    {
+      "file": "mobile-overview.png",
+      "route": "overview",
+      "css_size": [
+        420,
+        938
+      ],
+      "captured_at": "2026-10-27T11:39:55.990174+01:00",
+      "source": "live installation",
+      "width_px": 840,
+      "height_px": 1876,
+      "sha256": "acec2f7fc05fe3991c82c3275a2cc2aeac90312376232f79a69e48a0a4d4c7c5",
+      "visually_reviewed": true
+    },
+    {
+      "file": "community.png",
+      "route": "community",
+      "css_size": [
+        1600,
+        1250
+      ],
+      "captured_at": "2026-10-27T11:39:59.253663+01:00",
+      "source": "live installation",
+      "width_px": 2400,
+      "height_px": 1875,
+      "sha256": "3634a68c1a2639434ad0d5e5adfc21d261b2fb773b4c14e78a5991dd90ddcab0",
+      "visually_reviewed": true
+    },
+    {
+      "file": "water-demand-setup.png",
+      "route": "automation",
+      "css_size": [
+        1312,
+        700
+      ],
+      "captured_at": "2026-10-27T11:40:02.775082+01:00",
+      "source": "live installation",
+      "width_px": 1968,
+      "height_px": 1050,
+      "sha256": "7abb4ce1e4bed3db3f06790b8f25b8571e10d2ea8ad84e05e3bc5efb8425d7e2",
+      "visually_reviewed": true
+    },
+    {
+      "file": "watering-schedule.png",
+      "route": "automation",
+      "css_size": [
+        1312,
+        655
+      ],
+      "captured_at": "2026-10-27T11:40:06.268730+01:00",
+      "source": "live installation",
+      "width_px": 1968,
+      "height_px": 982,
+      "sha256": "e024c9034e93ed24b173a1b2ef4dc0e0d3996802cc5c7856f9b9f966f59afee4",
+      "visually_reviewed": true
+    },
+    {
+      "file": "hank-assistant.png",
+      "route": "analytics",
+      "css_size": [
+        1600,
+        1100
+      ],
+      "captured_at": "2026-10-27T11:40:11.644252+01:00",
+      "source": "live installation",
+      "width_px": 2400,
+      "height_px": 1650,
+      "sha256": "d7d17ef009f9273207d1f2a383d528ed82037a2bac0865a0156dfb923caf29f5",
+      "visually_reviewed": true
+    }
+  ],
+  "browser_writes": 0,
+  "javascript_exceptions": 0,
+  "horizontal_overflow": false
+}

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="890" viewBox="0 0 1400 890" role="img" aria-labelledby="title desc">
+  <title id="title">From observation to a recorded outcome</title>
+  <desc id="desc">Climate and timers run in application code. Hank uses local retrieval and optional generation. Camera interpretation uses local vision and review. All workflows preserve evidence and history.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#729b83" stroke-width="1.5"/></marker>
+    <style>text{font-family:Segoe UI,Helvetica,Arial,sans-serif}.h{fill:#153b2b;font-weight:700}.p{fill:#4e6b5a;font-size:19px}.box{fill:white;stroke:#cfddd1;stroke-width:1.5}.link{stroke:#729b83;stroke-width:2;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1400" height="890" rx="28" fill="#f2f6ef"/>
+  <text x="52" y="57" fill="#277650" font-size="14" letter-spacing="2.2">VGROW COCKPIT &#183; PRODUCT WORKFLOWS</text>
+  <text x="52" y="112" class="h" font-size="42">From observation to a recorded outcome.</text>
+  <text x="52" y="153" class="p">AI assists with meaning. Configured application controllers handle hardware execution.</text>
+  <g transform="translate(0 205)">
+    <rect x="38" width="1324" height="125" rx="18" fill="#e2ecdf"/>
+    <text x="60" y="42" class="h" font-size="24">Climate</text><text x="60" y="77" class="p">Application code</text>
+    <rect x="292" y="17" width="292" height="91" rx="13" class="box"/><text x="314" y="54" class="h" font-size="22">Readings + reports</text><text x="314" y="84" class="p">Separate ages and sources</text>
+    <rect x="666" y="17" width="292" height="91" rx="13" class="box"/><text x="688" y="54" class="h" font-size="22">Configured rules</text><text x="688" y="84" class="p">Eligible action + reason</text>
+    <rect x="1040" y="17" width="292" height="91" rx="13" class="box"/><text x="1062" y="54" class="h" font-size="22">Reported outcome</text><text x="1062" y="84" class="p">Confirmation + history</text>
+    <path d="M594 63H651" class="link"/><path d="M968 63H1025" class="link"/>
+  </g>
+  <g transform="translate(0 350)">
+    <rect x="38" width="1324" height="125" rx="18" fill="#e2ecdf"/>
+    <text x="60" y="42" class="h" font-size="24">Light + water</text><text x="60" y="77" class="p">Application code</text>
+    <rect x="292" y="17" width="292" height="91" rx="13" class="box"/><text x="314" y="54" class="h" font-size="22">Saved plan + setup</text><text x="314" y="84" class="p">Explicit activation</text>
+    <rect x="666" y="17" width="292" height="91" rx="13" class="box"/><text x="688" y="54" class="h" font-size="22">Check + execute</text><text x="688" y="84" class="p">Ownership and deadlines</text>
+    <rect x="1040" y="17" width="292" height="91" rx="13" class="box"/><text x="1062" y="54" class="h" font-size="22">Record or skip</text><text x="1062" y="84" class="p">Keep the reason visible</text>
+    <path d="M594 63H651" class="link"/><path d="M968 63H1025" class="link"/>
+  </g>
+  <g transform="translate(0 495)">
+    <rect x="38" width="1324" height="125" rx="18" fill="#dcece7"/>
+    <text x="60" y="42" class="h" font-size="24">Ask Hank</text><text x="60" y="77" class="p">Local AI where useful</text>
+    <rect x="292" y="17" width="292" height="91" rx="13" class="box"/><text x="314" y="54" class="h" font-size="22">Facts + retrieval</text><text x="314" y="84" class="p">Granite semantic search</text>
+    <rect x="666" y="17" width="292" height="91" rx="13" class="box"/><text x="688" y="54" class="h" font-size="22">Optional model draft</text><text x="688" y="84" class="p">Gemma language layer</text>
+    <rect x="1040" y="17" width="292" height="91" rx="13" class="box"/><text x="1062" y="54" class="h" font-size="22">Checked answer</text><text x="1062" y="84" class="p">Evidence stays nearby</text>
+    <path d="M594 63H651" class="link"/><path d="M968 63H1025" class="link"/>
+  </g>
+  <g transform="translate(0 640)">
+    <rect x="38" width="1324" height="125" rx="18" fill="#dcece7"/>
+    <text x="60" y="42" class="h" font-size="24">Review a photo</text><text x="60" y="77" class="p">Local vision + review</text>
+    <rect x="292" y="17" width="292" height="91" rx="13" class="box"/><text x="314" y="54" class="h" font-size="22">Selected camera</text><text x="314" y="84" class="p">GrowCam reference / C920</text>
+    <rect x="666" y="17" width="292" height="91" rx="13" class="box"/><text x="688" y="54" class="h" font-size="22">Visual interpretation</text><text x="688" y="84" class="p">Gemma vision layer</text>
+    <rect x="1040" y="17" width="292" height="91" rx="13" class="box"/><text x="1062" y="54" class="h" font-size="22">Sourced observation</text><text x="1062" y="84" class="p">Time, camera, uncertainty</text>
+    <path d="M594 63H651" class="link"/><path d="M968 63H1025" class="link"/>
+  </g>
+  <text x="54" y="815" class="p">Onboarding, refill records, wiki browsing, plant archives and exports work without model inference.</text>
+  <text x="54" y="851" fill="#668471" font-size="17">High-level product flows &#183; Setup and evidence requirements apply &#183; Checkpoint 27 October 2026</text>
+</svg>
