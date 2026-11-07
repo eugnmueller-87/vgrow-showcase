@@ -1,0 +1,299 @@
+{
+  "key": "microgreens",
+  "kind": "crop",
+  "status": "draft",
+  "label": "Microgreens (Radieschen, Erbsentriebe, Sonnenblume)",
+  "label_en": "Microgreens (radish, pea shoots, sunflower)",
+  "fit_for_vgrow": {
+    "height_ok": true,
+    "light_note": "Die 100-W-LED (dimmbar 25 bis 100 %) hat keine von VIVOSUN veröffentlichte PPFD, ein Sollwert in Prozent ist deshalb offen. Die Quellen nennen Intensitäten nur in µmol/m²/s: 150 oder 300 geprüft [Q8], 200 bis 300 im Poster [Q7], Zusatzlicht im Gewächshaus 17.0 bis 304 [Q10]. DLI unter 20 mol/m²/d ist eine Einstufung, kein Ziel [Q2]. Johnny's nennt keinen Abstand [Q3]; Abstand und Dimmung sind für die Box offen.",
+    "light_note_en": "The 100 W LED (dimmable 25 to 100%) has no PPFD published by VIVOSUN, so a setpoint in percent is open. The sources give intensities only in µmol/m²/s: 150 or 300 tested [Q8], 200 to 300 in the poster [Q7], supplemental light in the greenhouse 17.0 to 304 [Q10]. A DLI below 20 mol/m²/d is a classification, not a target [Q2]. Johnny's gives no distance [Q3]; distance and dimming are open for the box.",
+    "heat_note": "Wärme ist der offene Punkt. Luft 60 bis 70 °F [Q2] [Q6], 18 bis 24 °C [Q3]; über 75 °F (24 °C) kann die Keimung gehemmt und der Krankheitsdruck erhöht werden [Q3]. Abdeckhauben heizen unter hellem Licht schnell auf [Q5]. Die einzige belegte Abluft-Schwelle der Box ist 29 °C aus der Blühvoreinstellung; im Microgreens-Betrieb ist sie nicht belegt.",
+    "heat_note_en": "Heat is the open point. Air 60 to 70 °F [Q2] [Q6], 18 to 24 °C [Q3]; above 75 °F (24 °C) germination can be inhibited and disease pressure raised [Q3]. Humidity domes heat up quickly under bright light [Q5]. The only documented exhaust threshold of the box is 29 °C from the flowering preset; for microgreens it is not documented."
+  },
+  "stages": [
+    {
+      "key": "germination_covered",
+      "label": "Keimung unter Abdeckung (dunkel)",
+      "label_en": "Germination under cover (dark)",
+      "days_from": 0,
+      "days_to": 3,
+      "targets": [
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 74,
+          "max": 74,
+          "unit": "°F",
+          "sources": [
+            "Q1"
+          ]
+        }
+      ],
+      "notes": "Tag 0 ist die Aussaat (Lesart; nicht jede Quelle sagt es ausdrücklich). Vorquellen: Erbse 6 h, Sonnenblume 12 h, Radieschen nicht [Q1]. Substrat: 1 bis 2 inches reichen; große Samen (Erbse, Sonnenblume) mit 1/4 inch Substrat abdecken [Q5]. Saatmenge je 1020-Tray: Erbse 150 g, Radieschen 42 g, Sonnenblume 48 g [Q1], nicht auf die Boxfläche umgerechnet. PSU nennt in ihrem Beispiel mit Brassica-Samen 10 bis 15 g je Tray von 12 x 20 inches und, nach Johnny's, 6 bis 8 große oder 10 bis 12 kleine Samen je square inch [Q2] [Q3]. Die Schale bleibt dunkel, eine zweite Schale liegt direkt obenauf [Q1]. Abdeckzeit: Radieschen 1 bis 2 Tage, Erbse und Sonnenblume je 3 Tage [Q1]; allgemein sprießen Samen nach etwa 3 bis 4 Tagen, dann kommt die Abdeckung ab [Q11]. Die Abdeckzeit ist nicht das gemessene Auflaufen. Unter der Abdeckung alle 12 Stunden prüfen und besprühen [Q11]. Keimtemperatur 74 °F laut USU, Luft oder Substrat nicht angegeben [Q1]; PSU nennt für den Boden 60 bis 75 °F [Q2]. Abdeckhauben heizen unter hellem Licht schnell auf und können die Keimung senken oder Sämlinge töten [Q5]. Substrat-pH für Microgreens: offen (6.0 bis 7.0 gilt für Erbse im Feldboden [Q4]). Luftfeuchte und Lichtstunden unter der Abdeckung: offen.",
+      "notes_en": "Day 0 is sowing (a reading; not every source says so explicitly). Presoak: pea 6 h, sunflower 12 h, radish none [Q1]. Substrate: 1 to 2 inches are enough; cover large seeds (pea, sunflower) with 1/4 inch of substrate [Q5]. Seed amount per 1020 tray: pea 150 g, radish 42 g, sunflower 48 g [Q1], not converted to the box floor area. PSU gives, in its example with Brassica seeds, 10 to 15 g per 12 x 20 inch tray and, citing Johnny's, 6 to 8 large or 10 to 12 small seeds per square inch [Q2] [Q3]. The tray stays dark with a second tray directly on top [Q1]. Cover time: radish 1 to 2 days, pea and sunflower 3 days each [Q1]; in general seeds sprout after about 3 to 4 days, then the cover comes off [Q11]. Cover time is not the same as measured emergence. While covered, check and mist every 12 hours [Q11]. Germination temperature 74 °F per USU, air or substrate not stated [Q1]; PSU gives 60 to 75 °F for the soil [Q2]. Covers heat up quickly under bright light and can lower germination or kill seedlings [Q5]. Substrate pH for microgreens: open (6.0 to 7.0 applies to pea in field soil [Q4]). Humidity and light hours under the cover: open."
+    },
+    {
+      "key": "growth_light",
+      "label": "Wachstum unter Licht",
+      "label_en": "Growth under light",
+      "days_from": 3,
+      "days_to": 8,
+      "targets": [
+        {
+          "metric": "probe_temp",
+          "when": "day",
+          "min": 72,
+          "max": 72,
+          "unit": "°F",
+          "sources": [
+            "Q1"
+          ]
+        },
+        {
+          "metric": "probe_temp",
+          "when": "night",
+          "min": 68,
+          "max": 68,
+          "unit": "°F",
+          "sources": [
+            "Q1"
+          ]
+        },
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 60,
+          "max": 70,
+          "unit": "°F",
+          "sources": [
+            "Q2",
+            "Q6"
+          ]
+        },
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 18,
+          "max": 24,
+          "unit": "°C",
+          "sources": [
+            "Q3"
+          ]
+        },
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 20,
+          "max": 25,
+          "unit": "°C",
+          "sources": [
+            "Q7"
+          ]
+        },
+        {
+          "metric": "probe_humidity",
+          "when": null,
+          "min": 50,
+          "max": 60,
+          "unit": "%",
+          "sources": [
+            "Q7"
+          ]
+        },
+        {
+          "metric": "photoperiod_h",
+          "when": null,
+          "min": 18,
+          "max": 18,
+          "unit": "h",
+          "sources": [
+            "Q1"
+          ]
+        },
+        {
+          "metric": "photoperiod_h",
+          "when": null,
+          "min": 8,
+          "max": 12,
+          "unit": "h",
+          "sources": [
+            "Q9"
+          ]
+        },
+        {
+          "metric": "dli",
+          "when": null,
+          "min": null,
+          "max": 20,
+          "unit": "mol/m²/d",
+          "sources": [
+            "Q2"
+          ]
+        }
+      ],
+      "notes": "Nach dem Aufdecken kommt die Schale unter die Lampe [Q11]. Weißer Flaum an den Wurzeln besteht aus Wurzelhaaren und ist kein Schimmel; Schimmel ist spinnwebartig und sitzt auf Substrat oder Samen [Q14] (kommerzielles Kursmaterial). Von unten gießen, Substrat feucht, nicht gesättigt [Q5]. Mehrere Ziele mit derselben Messgröße sind Alternativen aus verschiedenen Quellen, keine Stufen. Temperatur: USU 72 °F bei Licht und 68 °F ohne [Q1], PSU und UF/IFAS Luft 60 bis 70 °F [Q2] [Q6], Johnny's 18 bis 24 °C [Q3] (Händler), Poster 20 bis 25 °C [Q7]. Erbse im Freiland: 55 bis 65 °F [Q4]; Sonnenblume gilt bei UT als Warm-Season, Erbse und Radieschen als Cool-Season [Q5]. Luftfeuchte: Poster 50 bis 60 % [Q7], UF/IFAS 55 % [Q6]. VPD: offen. Lichtdauer: USU 18 h [Q1], Illinois 8 bis 12 h [Q9]; im PSU-Versuch vertrugen alle drei Arten Dauerlicht (16 oder 24 h geprüft, nur Abstract) [Q8]. Intensität nur in µmol/m²/s belegt: 150 oder 300 [Q8], 200 bis 300 [Q7]; die Lampe der Box hat keine veröffentlichte PPFD. DLI unter 20 mol/m²/d ist eine Einstufung als Schwachlichtkultur, kein Ziel [Q2]. Dünger: wenig oder keiner nötig [Q2]; wenn doch, reichen im Allgemeinen 50 bis 100 ppm Stickstoff [Q2]; für Brassicas, zu denen Radieschen laut UT gehört [Q5], ist er laut UKY nicht nötig [Q15]. Warme, feuchte Bedingungen begünstigen die Umfallkrankheit [Q2].",
+      "notes_en": "After uncovering, the tray goes under the lamp [Q11]. White fuzz on the roots consists of root hairs and is not mold; mold is web-like and sits on the substrate or the seeds [Q14] (commercial course material). Water from below, keep the substrate moist, not saturated [Q5]. Several targets with the same metric are alternatives from different sources, not steps. Temperature: USU 72 °F with light and 68 °F without [Q1], PSU and UF/IFAS air 60 to 70 °F [Q2] [Q6], Johnny's 18 to 24 °C [Q3] (retailer), poster 20 to 25 °C [Q7]. Pea in the field: 55 to 65 °F [Q4]; UT lists sunflower as warm-season, pea and radish as cool-season [Q5]. Humidity: poster 50 to 60 % [Q7], UF/IFAS 55 % [Q6]. VPD: open. Light hours: USU 18 h [Q1], Illinois 8 to 12 h [Q9]; in the PSU trial all three species tolerated continuous light (16 or 24 h tested, abstract only) [Q8]. Intensity is documented only in µmol/m²/s: 150 or 300 [Q8], 200 to 300 [Q7]; the box lamp has no published PPFD. DLI below 20 mol/m²/d is a classification as a low-light crop, not a target [Q2]. Fertilizer: little or none needed [Q2]; if used, 50 to 100 ppm nitrogen is generally enough [Q2]; for brassicas, which UT counts radish among [Q5], UKY says it is not needed [Q15]. Warm, humid conditions favor damping-off [Q2]."
+    },
+    {
+      "key": "harvest",
+      "label": "Erntefenster",
+      "label_en": "Harvest window",
+      "days_from": 8,
+      "days_to": 12,
+      "targets": [
+        {
+          "metric": "probe_temp",
+          "when": "day",
+          "min": 72,
+          "max": 72,
+          "unit": "°F",
+          "sources": [
+            "Q1"
+          ]
+        },
+        {
+          "metric": "probe_temp",
+          "when": "night",
+          "min": 68,
+          "max": 68,
+          "unit": "°F",
+          "sources": [
+            "Q1"
+          ]
+        },
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 60,
+          "max": 70,
+          "unit": "°F",
+          "sources": [
+            "Q2",
+            "Q6"
+          ]
+        },
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 18,
+          "max": 24,
+          "unit": "°C",
+          "sources": [
+            "Q3"
+          ]
+        },
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 20,
+          "max": 25,
+          "unit": "°C",
+          "sources": [
+            "Q7"
+          ]
+        },
+        {
+          "metric": "probe_humidity",
+          "when": null,
+          "min": 50,
+          "max": 60,
+          "unit": "%",
+          "sources": [
+            "Q7"
+          ]
+        },
+        {
+          "metric": "photoperiod_h",
+          "when": null,
+          "min": 18,
+          "max": 18,
+          "unit": "h",
+          "sources": [
+            "Q1"
+          ]
+        },
+        {
+          "metric": "photoperiod_h",
+          "when": null,
+          "min": 8,
+          "max": 12,
+          "unit": "h",
+          "sources": [
+            "Q9"
+          ]
+        },
+        {
+          "metric": "dli",
+          "when": null,
+          "min": null,
+          "max": 20,
+          "unit": "mol/m²/d",
+          "sources": [
+            "Q2"
+          ]
+        }
+      ],
+      "notes": "Ernte, sobald die ersten echten Blätter erscheinen, oder früher [Q1]. Tage bis zur Ernte nach USU: Erbse 8 bis 10, Radieschen 8 bis 12, Sonnenblume 9 bis 10 [Q1]; das Fenster dieser Stufe ist die Spanne über alle drei. Cornell nennt andere Spannen: Radieschen 6 bis 10, Sonnenblume 8 bis 12, Erbse 10 bis 15 [Q12]; sie überlappen sich, kein Widerspruch, die Herkunft des Radieschenwerts ist unbelegt. PSU erntet Erbsentriebe an Tag 9 bei etwa 4 bis 5 inches [Q13]. Höhe allgemein 1.5 bis 3 inches [Q2], Radieschen 2 bis 4 inches [Q14]. Höchste genannte Schnitthöhe 7 inches (Erbse, Freiland) [Q4], die Box hat 92 cm nutzbare Höhe. Radieschen wächst nach dem Schnitt nicht nach [Q14]. Erbse im Freiland: bei 3 bis 7 inches auf 0.5 inch über dem Boden schneiden; sie wächst nach, solange ein Blattknoten bleibt [Q4]; Intervall im Tray: offen. Klima wie in der Wachstumsstufe.",
+      "notes_en": "Harvest as soon as the first true leaves appear, or sooner [Q1]. Days to harvest per USU: pea 8 to 10, radish 8 to 12, sunflower 9 to 10 [Q1]; this stage window is the span over all three. Cornell gives other spans: radish 6 to 10, sunflower 8 to 12, pea 10 to 15 [Q12]; they overlap, no contradiction, and the origin of the radish value is unproven. PSU harvests pea shoots on day 9 at about 4 to 5 inches [Q13]. Height in general 1.5 to 3 inches [Q2], radish 2 to 4 inches [Q14]. The highest cutting height named is 7 inches (pea, field) [Q4]; the box has 92 cm of usable height. Radish does not regrow after cutting [Q14]. Pea in the field: cut at 3 to 7 inches down to 0.5 inch above the ground; it regrows as long as one leaf node remains [Q4]; interval in a tray: open. Climate as in the growth stage."
+    }
+  ],
+  "warnings": [
+    "Entwurf, nicht freigegeben: vor dem Einsatz von Hand prüfen.",
+    "Temperaturziele stehen in der Einheit der Quelle (°F oder °C), nichts ist umgerechnet. Ein Ziel in °F nie gegen einen Messwert in °C laufen lassen.",
+    "Mehrere Ziele derselben Messgröße sind Angaben verschiedener Quellen, keine Stufen: vor der Freigabe ein Band festlegen.",
+    "USU nennt nicht, ob 74, 72 und 68 °F für die Luft oder das Substrat gelten [Q1].",
+    "DLI unter 20 mol/m²/d ist eine Einstufung als Schwachlichtkultur, kein Zielwert [Q2].",
+    "Für die Lampe gibt es keine veröffentlichte PPFD: Abstand und Dimmung sind offen. Zu nahes Licht trocknet aus oder verbrennt, zu schwaches oder zu fernes Licht streckt die Pflanzen [Q3].",
+    "Abdeckhauben heizen unter hellem Licht schnell auf und können Sämlinge töten [Q5]. Die einzige belegte Abluft-Schwelle der Box ist 29 °C aus der Blühvoreinstellung.",
+    "Gießen von oben per Tropfer beschreibt keine gelesene Quelle; nach der Keimung ist Gießen von unten besser [Q5].",
+    "Warme, feuchte Bedingungen begünstigen die Umfallkrankheit [Q2]: den Befeuchter nur mit Blick auf den Fühlerwert einsetzen (Folgerung).",
+    "Zu wenig Licht und zu dichte Saat machen gelbe Blätter und lange, dünne Stängel [Q5]. Anhaltend hohe Temperaturen führen zu eingerollten Blättern, Kümmerwuchs, Vergilben und absterbenden Sämlingen; die Quelle nennt keinen Grenzwert in Grad [Q5].",
+    "Die drei Arten haben verschiedene Zeiten und Temperaturwünsche: die Stufenfenster sind Spannen über alle drei, Einzelwerte stehen in den Notizen."
+  ],
+  "warnings_en": [
+    "Draft, not approved: check by hand before use.",
+    "Temperature targets are given in the unit of the source (°F or °C); nothing is converted. Never run a target in °F against a reading in °C.",
+    "Several targets with the same metric are statements from different sources, not steps: fix one band before approval.",
+    "USU does not say whether 74, 72 and 68 °F apply to the air or the substrate [Q1].",
+    "DLI below 20 mol/m²/d is a classification as a low-light crop, not a target value [Q2].",
+    "No PPFD is published for the lamp: distance and dimming are open. Light that is too close dries plants out or burns them; light that is too weak or too far makes them stretch [Q3].",
+    "Covers heat up quickly under bright light and can kill seedlings [Q5]. The only documented exhaust threshold of the box is 29 °C from the flower preset.",
+    "No source read describes drip watering from above; after germination, watering from below is better [Q5].",
+    "Warm, humid conditions favor damping-off [Q2]: use the humidifier only with an eye on the probe reading (inference).",
+    "Low light and overcrowding cause yellow leaves and long, thin stems [Q5]. Continuous high temperatures cause leaf curling, stunting, yellowing and seedling death; the source gives no limit in degrees [Q5].",
+    "The three species differ in timing and temperature preference: the stage windows are spans over all three, single values are in the notes."
+  ],
+  "image": {
+    "file": "microgreens-sunflower.webp",
+    "thumb": "microgreens-sunflower-t.webp",
+    "w": 1200,
+    "h": 1013,
+    "alt": "Sonnenblumen-Microgreens mit Samenschalen in einer Kunststoffschale",
+    "alt_en": "Sunflower microgreens with seed hulls in a plastic tray",
+    "credit": {
+      "work": "File:Sunflower microgreens 01.jpg",
+      "author": "Pannet",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Sunflower_microgreens_01.jpg"
+    }
+  },
+  "sources": {
+    "Q1": "Utah State University Extension, Grow Your Own Microgreens (Stephen Beck, 20.02.2025, aktualisiert Januar 2026): https://extension.usu.edu/yardandgarden/research/grow-your-own-microgreens",
+    "Q2": "Penn State Extension, Growing Microgreens (Elsa Sánchez und Robert Berghage, aktualisiert 16.12.2025): https://extension.psu.edu/growing-microgreens",
+    "Q3": "Johnny's Selected Seeds (Saatgutzüchter und -händler, kommerziell, zweitrangige Quelle), Microgreens Production, Infoblatt 8079, REV 1/16/26: https://www.johnnyseeds.com/on/demandware.static/-/Library-Sites-JSSSharedLibrary/default/dw708a334c/assets/information/8079-micro-greens-production.pdf",
+    "Q4": "Pacific Northwest Extension PNW567, Pea Shoots (Carol A. Miles, Justin O'Dea, Catherine H. Daniels, Jacky King, WSU, Januar 2018), Freiland und Folientunnel, keine Tray-Microgreens: https://rex.libraries.wsu.edu/esploro/outputs/report/Pea-shoots/99900501635501842",
+    "Q5": "University of Tennessee Extension, W346-J Small-scale Microgreen Production (Natalie Bumgarner und Rosalie Metallo, 2/17): https://uthort.tennessee.edu/wp-content/uploads/sites/228/2024/02/W346-J.pdf",
+    "Q6": "UF/IFAS Extension Broward County, Sustainable Gardening-How to Grow Microgreens at Home (Lorna Bravo, 06.04.2023, aktualisiert 10.05.2023), Küchenfenster, keine Art genannt: https://blogs.ifas.ufl.edu/browardco/2023/04/06/sustainable-gardening-how-to-grow-microgreens-at-home/",
+    "Q7": "Cal Poly Pomona Kellogg Honors College, Poster Optimizing Microgreen Cultivation for Urban Vertical Farming Systems (Ana Maria Munoz Vacca, RSCA 2025), Begutachtungsvermerk fehlt, hydroponische Container-Farm: https://www.cpp.edu/honorscollege/documents/research-posters/ag/plt_munoz.pdf",
+    "Q8": "ASHS 2025 Annual Conference, Abstract CE 6 Effects of Light Intensity and Continuous Lighting on Yield and Nutritional Profile of Pea, Radish, and Sunflower Microg[reens] (Titel auf der Seite abgeschnitten; Aline Seffrin und Francesco Di Gioia, Penn State, 31.07.2025), nur Abstract, kein begutachteter Volltext gefunden: https://ashs2025.sched.com/event/247Qw/ce-6-effects-of-light-intensity-and-continuous-lighting-on-yield-and-nutritional-profile-of-pea-radish-and-sunflower-microg",
+    "Q9": "University of Illinois Extension, Kane County Master Gardeners, Tipsheet Microgreens - year-round edible greens to grow at home (ohne Datum): https://extension.illinois.edu/sites/default/files/dkk-mg-microgreens-tipsheet.pdf",
+    "Q10": "HortScience 55(2) S. 156-163, 2020 (Jones-Baumgardt, Llewellyn, Zheng; DOI 10.21273/HORTSCI14478-19), Different Microgreen Genotypes Have Unique Growth and Yield Responses to Intensity of Supplemental PAR from Light-emitting Diodes during Winter Greenhouse Production in Southern Ontario, Canada, begutachtet, Abstract über FAO AGRIS: https://agris.fao.org/search/zh/records/675ac87a0ce2cede71d174c4",
+    "Q11": "Oregon State University Extension Service, Microplantas (Druckansicht, Feb 2021): https://extension.oregonstate.edu/es/node/236276/printable/print",
+    "Q12": "Cornell Cooperative Extension Orange County, Merkblatt Growing Microgreens (adaptiert nach Amy Dabbs, Clemson Extension, und Penn State Extension, ohne Datum): https://dlc.cce.cornell.edu/pluginfile.php/376604/mod_resource/content/1/Growing%20Microgreens%20-%20CCEOC.pdf",
+    "Q13": "Penn State Extension, A Step-By-Step Guide for Growing Microgreens at Home (Francesco Di Gioia, aktualisiert 20.09.2026): https://extension.psu.edu/a-step-by-step-guide-for-growing-microgreens-at-home",
+    "Q14": "The Mighty Microgreen, Growing Microgreens Instructions (kommerzielles Kursmaterial auf isu.edu, ohne Datum, nicht von einer Extension geprüft): https://www.isu.edu/media/libraries/rural-health/microgreens/Growing-Microgreens-Instructions.pdf",
+    "Q15": "University of Kentucky Center for Crop Diversification, Crop Profile CCD-CP-104 Microgreens (Cheryl Kaiser und Matt Ernst, Mai 2018): https://publications.ca.uky.edu/sites/publications.ca.uky.edu/files/microgreens.pdf"
+  }
+}

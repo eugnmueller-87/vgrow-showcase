@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Relative</title>
+    <link>/</link>
+    <item>
+      <title>Cannabis: Pressemitteilung mit relativem Link</title>
+      <link>/presse/2026/cannabis-1.html</link>
+    </item>
+    <item>
+      <title>Cannabis: eine Ebene hoeher</title>
+      <link>../archiv/cannabis-2.html</link>
+    </item>
+    <item>
+      <title>Cannabis: Link nur in der guid</title>
+      <guid>https://relative.example.org/guid-link.html</guid>
+    </item>
+    <item>
+      <title>Cannabis: Skript statt Link</title>
+      <link>javascript:alert(1)</link>
+    </item>
+    <item>
+      <title>Cannabis:   mit Leerraum   und
+        Zeilenumbruch   </title>
+      <link>
+        https://relative.example.org/leerraum.html
+      </link>
+    </item>
+  </channel>
+</rss>

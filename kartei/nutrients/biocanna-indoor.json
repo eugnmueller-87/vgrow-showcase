@@ -1,0 +1,126 @@
+{
+  "name": "BIOCANNA Indoor",
+  "name_en": "BIOCANNA Indoor",
+  "summary": "Organische Flüssigdünger von CANNA für Erde: Bio Vega im Wachstum, Bio Flores in der Blüte, dazu Bio Rhizotonic und Bio Boost. Das deutsche Indoor-Schema V26.02 druckt Spannen je 10 Liter; die Karte zeigt sie je Liter, und das Cockpit rechnet vom unteren Wert.",
+  "summary_en": "Organic liquid feeds by CANNA for soil: Bio Vega in the vegetative phase, Bio Flores in flowering, plus Bio Rhizotonic and Bio Boost. The German indoor schedule V26.02 prints ranges per 10 litres; the card shows them per litre, and the cockpit computes from the lower value.",
+  "product": "CANNA",
+  "version": "DE V26.02",
+  "status": "draft",
+  "status_note": "Abgetippt aus dem deutschen BIOCANNA-Indoor-Düngerschema V26.02 (BC1) am 23.10.2026. Die Tabelle steht je 10 Liter, die Karte je Liter (15 ml je 10 l sind 1,5 ml/l). Ein Entwurf, bis du die Karte auf der Seite mit dem Schema vergleichst und bestätigst; bis dahin rechnet das Cockpit keine Mengen.",
+  "status_note_en": "Transcribed from the German BIOCANNA indoor feeding schedule V26.02 (BC1) on Oct 23, 2026. The chart is per 10 litres, the card per litre (15 ml per 10 l is 1.5 ml/l). A draft until you compare the card with the schedule on the page and confirm it; until then the cockpit computes no amounts.",
+  "check": {"state": "checked", "on": "2026-10-23", "text": "Jede Zahl der Tabelle am 23.10.2026 gegen das deutsche Schema V26.02 (BC1) geprüft: das PDF als Bild gerendert und gegen seine Textebene gelesen.", "text_en": "Every number of the chart checked on Oct 23, 2026 against the German schedule V26.02 (BC1): the PDF rendered as an image and read against its text layer."},
+  "unit": "ml/l",
+  "printed_unit": "ml/10 l",
+  "aliases": {
+    "de": ["BIOCANNA", "Bio Canna", "Canna Bio", "Bio Vega", "Bio Flores", "Canna Bio Vega", "Canna Bio Flores", "Bio Boost"],
+    "en": ["BIOCANNA", "Bio Canna", "Canna Bio", "Bio Vega", "Bio Flores", "Canna Bio Vega", "Canna Bio Flores", "Bio Boost"]
+  },
+  "line": {
+    "maker": "CANNA",
+    "types": ["organic_liquid"],
+    "media": ["soil"],
+    "media_text": "Erde; die Produktseiten sprechen von fruchtbarer Erde.",
+    "media_text_en": "Soil; the product pages speak of fertile soil.",
+    "products": [
+      {"product": "BIOCANNA Bio Vega", "role": "Organischer Dünger für das Wachstum; britische Produktseite etwa 20 ml je 10 l (1:500), 1 bis 3 Mal pro Woche auf fruchtbarer Erde.", "role_en": "Organic feed for the vegetative phase; UK product page about 20 ml per 10 l (1:500), 1 to 3 times a week on fertile soil.", "sources": ["BC2"]},
+      {"product": "BIOCANNA Bio Flores", "role": "Organischer Dünger für die Blüte; britische Produktseite etwa 40 ml je 10 l (1:250), 1 bis 3 Mal pro Woche auf fruchtbarer Erde.", "role_en": "Organic feed for flowering; UK product page about 40 ml per 10 l (1:250), 1 to 3 times a week on fertile soil.", "sources": ["BC3"]},
+      {"product": "BIOCANNA Bio Rhizotonic", "role": "Wurzelzusatz in der Tabelle; die Produktseite wurde nicht gelesen.", "role_en": "Root additive on the chart; its product page was not read.", "sources": ["BC1"]},
+      {"product": "BIOCANNA Bio Boost", "role": "Blütezusatz in der Tabelle; in der Blüte bis höchstens 4 ml/l.", "role_en": "Flowering additive on the chart; in flowering up to 4 ml/l at most.", "sources": ["BC1"]}
+    ],
+    "application_short": "Ins Gießwasser, laut Tabelle je 10 Liter: Bio Vega im Wachstum, Bio Flores ab W3, 1 bis 3 Mal pro Woche auf fruchtbarer Erde, ohne Ansäuern.",
+    "application_short_en": "Into the watering water, per the chart per 10 litres: Bio Vega in the vegetative phase, Bio Flores from W3, 1 to 3 times a week on fertile soil, without acidifying.",
+    "application": "Mengen je 10 Liter. Bewurzelung Tag 1 bis 5 und Wachstum I Tag 6 bis 25 bei 18 Stunden Licht, W1 bis W9 bei 12 Stunden. Die Tabelle nennt weder EC noch pH. Laut britischen Produktseiten muss die verdünnte Lösung nicht angesäuert werden, die fertige Mischung innerhalb von 24 Stunden verbrauchen, 1 bis 3 Mal pro Woche auf fruchtbarer Erde düngen.",
+    "application_en": "Amounts per 10 litres. Rooting days 1 to 5 and vegetative I days 6 to 25 at 18 hours of light, W1 to W9 at 12 hours. The chart gives neither EC nor pH. Per the UK product pages the diluted solution needs no acidifying, use the mixed solution within 24 hours, feed 1 to 3 times a week on fertile soil.",
+    "application_sources": ["BC1", "BC2", "BC3"],
+    "cautions": [
+      {"text": "Die Produktseiten nennen Einzelwerte (Bio Vega 20 ml, Bio Flores 40 ml je 10 l), die Tabelle Spannen; der Wochenplan ist die Tabelle.", "text_en": "The product pages give single values (Bio Vega 20 ml, Bio Flores 40 ml per 10 l), the chart ranges; the weekly plan is the chart.", "sources": ["BC1", "BC2", "BC3"]},
+      {"text": "In W8 und W9 steht kein Grunddünger in der Tabelle, nur Bio Boost.", "text_en": "In W8 and W9 the chart has no base feed, only Bio Boost.", "sources": ["BC1"]}
+    ]
+  },
+  "selectable": {
+    "label": "BIOCANNA Indoor (organisch, flüssig)",
+    "label_en": "BIOCANNA Indoor (organic, liquid)",
+    "page": "low",
+    "page_note": "Seite untere Werte: das Schema druckt je Woche eine Spanne; das Cockpit rechnet vom unteren Wert, nie über die Tabelle.",
+    "page_note_en": "Lower values page: the schedule prints a range per week; the cockpit computes from the lower value, never above the chart.",
+    "components": ["bio_vega", "bio_flores"]
+  },
+  "weeks": {
+    "columns": [
+      {"key": "propagation", "label": "Tag 1 bis 5 (Bewurzelung)", "label_en": "Days 1 to 5 (rooting)", "printed": "D1-5"},
+      {"key": "veg", "label": "Tag 6 bis 25 (Wachstum I)", "label_en": "Days 6 to 25 (vegetative I)", "printed": "D6-25"},
+      {"key": "bloom_1", "bloom_week": 1, "label": "Blütewoche 1 (W1, Wachstum II)", "label_en": "Flowering week 1 (W1, vegetative II)", "printed": "W1"},
+      {"key": "bloom_2", "bloom_week": 2, "label": "Blütewoche 2 (W2, Wachstum II)", "label_en": "Flowering week 2 (W2, vegetative II)", "printed": "W2"},
+      {"key": "bloom_3", "bloom_week": 3, "label": "Blütewoche 3 (W3)", "label_en": "Flowering week 3 (W3)", "printed": "W3"},
+      {"key": "bloom_4", "bloom_week": 4, "label": "Blütewoche 4 (W4)", "label_en": "Flowering week 4 (W4)", "printed": "W4"},
+      {"key": "bloom_5", "bloom_week": 5, "label": "Blütewoche 5 (W5)", "label_en": "Flowering week 5 (W5)", "printed": "W5"},
+      {"key": "bloom_6", "bloom_week": 6, "label": "Blütewoche 6 (W6)", "label_en": "Flowering week 6 (W6)", "printed": "W6"},
+      {"key": "bloom_7", "bloom_week": 7, "label": "Blütewoche 7 (W7)", "label_en": "Flowering week 7 (W7)", "printed": "W7"},
+      {"key": "bloom_8", "bloom_week": 8, "label": "Blütewoche 8 (W8)", "label_en": "Flowering week 8 (W8)", "printed": "W8"},
+      {"key": "bloom_9", "bloom_week": 9, "label": "Blütewoche 9 (W9)", "label_en": "Flowering week 9 (W9)", "printed": "W9"}
+    ],
+    "end": {"key": "label_end", "bloom_week": 10, "label": "Ab Blütewoche 10: die Tabelle endet, keine Menge", "label_en": "From flowering week 10: the chart ends, no amount"},
+    "sources": ["BC1"]
+  },
+  "components": {
+    "bio_vega": {"label": "Bio Vega", "label_en": "Bio Vega"},
+    "bio_flores": {"label": "Bio Flores", "label_en": "Bio Flores"},
+    "bio_rhizotonic": {"label": "Bio Rhizotonic", "label_en": "Bio Rhizotonic", "optional": true},
+    "bio_boost": {"label": "Bio Boost", "label_en": "Bio Boost", "optional": true}
+  },
+  "pages": {
+    "low": {
+      "label": "Untere Werte der Spanne",
+      "label_en": "Lower values of the range",
+      "rows": {
+        "bio_vega": [1.5, 2, 2.5, 2.5, null, null, null, null, null, null, null],
+        "bio_flores": [null, null, null, null, 3, 3, 3, 3, 2, null, null],
+        "bio_rhizotonic": [4, 2, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, null, null],
+        "bio_boost": [null, null, null, 2, 2, 2, 2, 2, 2, 2, 2]
+      },
+      "sources": ["BC1"]
+    },
+    "high": {
+      "label": "Obere Werte der Spanne",
+      "label_en": "Upper values of the range",
+      "rows": {
+        "bio_vega": [2, 2.5, 3, 3, null, null, null, null, null, null, null],
+        "bio_flores": [null, null, null, null, 4, 4, 4, 4, 3, null, null],
+        "bio_rhizotonic": [4, 2, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, null, null],
+        "bio_boost": [null, null, null, 4, 4, 4, 4, 4, 4, 4, 4]
+      },
+      "sources": ["BC1"]
+    }
+  },
+  "frequency": {
+    "text": "Die Tabelle sagt nicht, wie oft gedüngt wird. Die Produktseiten: 1 bis 3 Mal pro Woche auf fruchtbarer Erde. Das Cockpit gibt keinen Takt vor.",
+    "text_en": "The chart does not say how often to feed. The product pages: 1 to 3 times a week on fertile soil. The cockpit sets no schedule.",
+    "sources": ["BC1", "BC2", "BC3"]
+  },
+  "notes": [
+    {
+      "text": "Spannen: das Schema druckt zum Beispiel Bio Vega 15 bis 20 ml je 10 l in Tag 1 bis 5. Die Karte führt die unteren und die oberen Werte als zwei Seiten und mittelt nie.",
+      "text_en": "Ranges: the schedule prints for example Bio Vega 15 to 20 ml per 10 l in days 1 to 5. The card keeps the lower and the upper values as two pages and never averages.",
+      "sources": ["BC1"]
+    },
+    {
+      "text": "W1 und W2 heißen im Schema noch Wachstum II bei 12 Stunden Licht. Die Karte führt sie als Blütewoche 1 und 2, so wie das Cockpit die Blütewochen ab dem Blütebeginn zählt.",
+      "text_en": "In the schedule W1 and W2 are still called vegetative II at 12 hours of light. The card lists them as flowering weeks 1 and 2, the way the cockpit counts flowering weeks from the start of flowering.",
+      "sources": ["BC1"]
+    },
+    {
+      "package": "cannabis",
+      "text": "Für Autoflower fand die Recherche bei CANNA keine Angabe. Der Faktor 0,5 aus plant.json gilt auch hier, mit denselben Quellen wie bei BioBizz (N5, N6), nie mehr als die Tabelle.",
+      "text_en": "For autoflowers the research found nothing at CANNA. The factor 0.5 from plant.json applies here too, with the same sources as for BioBizz (N5, N6), never more than the chart.",
+      "sources": ["BC1", "N5", "N6"]
+    }
+  ],
+  "sources": {
+    "BC1": {"title": "CANNA, BIOCANNA Indoor Düngerschema DE V26.02 (PDF)", "title_en": "CANNA, BIOCANNA indoor feeding schedule DE V26.02 (PDF)", "url": "https://www.canna-de.com/sites/germany/files/2026-04/downloads-grow-schedule-de-biocanna-indoor.pdf", "retrieved": "2026-10-23"},
+    "BC2": {"title": "CANNA UK, Produktseite BIOCANNA Bio Vega", "title_en": "CANNA UK, BIOCANNA Bio Vega product page", "url": "https://www.canna-uk.com/bio-vega", "retrieved": "2026-10-23"},
+    "BC3": {"title": "CANNA UK, Produktseite BIOCANNA Bio Flores", "title_en": "CANNA UK, BIOCANNA Bio Flores product page", "url": "https://www.canna-uk.com/bio-flores", "retrieved": "2026-10-23"},
+    "BC4": {"title": "CANNA Deutschland, Downloads", "title_en": "CANNA Germany, downloads page", "url": "https://www.canna-de.com/downloads", "retrieved": "2026-10-23"},
+    "N5": {"title": "VIVOSUN, was Autoflower-Samen sind", "title_en": "VIVOSUN, what autoflowering seeds are", "url": "https://vivosun.com/en-CA/growing_guide/what-are-autoflowering-seeds/", "retrieved": "2026-10-22"},
+    "N6": {"title": "420seedz, Cannabis anbauen für Anfänger (vom Hersteller der Erde 420Flow)", "title_en": "420seedz, growing cannabis for beginners (by the maker of the 420Flow soil)", "url": "https://420seedz.de/guide/cannabis-anbauen-anfaenger", "retrieved": "2026-10-22"}
+  }
+}

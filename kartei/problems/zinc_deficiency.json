@@ -1,0 +1,132 @@
+{
+  "key": "zinc_deficiency",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "naehrstoffe",
+  "label": "Zinkmangel (Zn)",
+  "label_en": "Zinc deficiency (Zn)",
+  "tile": "Junge Blätter schmal, blass und verformt",
+  "tile_en": "Young leaves narrow, pale and misshapen",
+  "aliases": {
+    "de": [
+      "Zn-Mangel",
+      "Kleinblättrigkeit",
+      "Rosetten"
+    ],
+    "en": [
+      "Zn deficiency",
+      "little leaf",
+      "rosetting"
+    ]
+  },
+  "symptoms": [
+    "Hanf (P1, Nährlösung): blasse bis weiße Bänder zwischen Blattrand und Mittelrippe im unteren Teil des Blattes, zuerst an den jüngsten Blättern; in schweren Fällen sind neue Blätter ganz weiß.",
+    "Hanf P1: junge Blätter dünn und schmal mit verformtem Rand; die ersten Zeichen sitzen oben an der Pflanze, weil Zink in der Pflanze kaum wandert.",
+    "Aus Obst- und Nussbäumen (P2, nicht Cannabis): Blätter gleichmäßig gelblich oder blass zwischen den Adern, teils tote Flecken; neue Blätter spitz, schmal, zu klein; kurze Stängelglieder und Blattbüschel (Rosetten).",
+    "Allgemein (P3, keine Pflanzenart genannt): gesprenkelte Aufhellung zwischen den Adern, gestauchter Wuchs mit Rosettenform."
+  ],
+  "symptoms_en": [
+    "Hemp (P1, nutrient solution): pale to white bands between leaf margin and midrib in the lower part of the leaf, first on the youngest leaves; in severe cases new leaves are completely white.",
+    "Hemp P1: young leaves thin and narrow with distorted margins; first signs are at the top of the plant because zinc hardly moves within the plant.",
+    "From fruit and nut trees (P2, not cannabis): leaves uniformly yellowish or pale between the veins, sometimes dead spots; new leaves pointed, narrow, undersized; short internodes and tufts of leaves (rosettes).",
+    "General (P3, no plant species named): speckled yellowing between the veins, stunted growth with rosette shape."
+  ],
+  "causes": [
+    "Hoher pH oder sandiger Boden (P2; P4). Zur organischen Masse widersprechen sich die Quellen: P2 nennt zu viel, P4 (Feldkulturen) zu wenig. Zink wird mit steigendem pH weniger verfügbar (P5, erdlose Substrate).",
+    "Viel Phosphor P2.",
+    "Kranke Wurzeln, Staunässe P2."
+  ],
+  "causes_en": [
+    "High pH or sandy soil (P2; P4). On organic matter the sources disagree: P2 names too much, P4 (field crops) too little. Zinc availability falls as pH rises (P5, soilless substrates).",
+    "High phosphorus P2.",
+    "Unhealthy roots, waterlogging P2."
+  ],
+  "check": [
+    {
+      "metric": "watering",
+      "text": "Staunässe? P2 pH: die Box hat laut Handbuch keinen pH-Sensor P6.",
+      "text_en": "Waterlogging? P2 pH: per the manual the box has no pH sensor P6."
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    }
+  ],
+  "do_now": [
+    "Nur falls ein Messgerät vorhanden ist: pH messen (Karte pH-Blockade).",
+    "Gießen und Wurzeln prüfen P2.",
+    "P2 (Haus und Garten): über Pflege und Bodenbedingungen beheben; Zinkchelat nur nach Packungsanweisung; Blattspray kann Blätter schädigen, der richtige Zeitpunkt ist wichtig. Etikett und Zulassung beachten.",
+    "Eine Laboranalyse des Bodens kann hohen pH, zu viel organische Masse oder Sand oder viel Phosphor zeigen P2."
+  ],
+  "do_now_en": [
+    "Only if a meter is at hand: measure pH (see pH lockout card).",
+    "Check watering and roots P2.",
+    "P2 (home and garden): fix through care and soil conditions; zinc chelate only per package instructions; foliar spray can injure leaves, correct timing is important. Follow label and approval (Etikett und Zulassung beachten).",
+    "A lab analysis of the soil can reveal high pH, excessive organic matter or sand, or high phosphorus P2."
+  ],
+  "prevention": [
+    "Phosphor nicht überdosieren P2.",
+    "Staunässe vermeiden P2."
+  ],
+  "prevention_en": [
+    "Do not overdose phosphorus P2.",
+    "Avoid waterlogging P2."
+  ],
+  "look_alikes": [
+    "Eisenmangel, Manganmangel oder Herbizidschaden ähneln Zinkmangel P2.",
+    "Phosphor-Überschuss: ähnelt Eisen- und Zinkmangel P7."
+  ],
+  "look_alikes_en": [
+    "Iron deficiency, manganese deficiency or herbicide injury resemble zinc deficiency P2.",
+    "Phosphorus excess: resembles iron and zinc deficiency P7."
+  ],
+  "image": {
+    "file": "zinc-macadamia.webp",
+    "thumb": "zinc-macadamia-t.webp",
+    "w": 1200,
+    "h": 656,
+    "alt": "Macadamia-Triebe: die jüngsten Blätter klein, schmal, hell und verformt",
+    "alt_en": "Macadamia shoots: the youngest leaves small, narrow, pale and misshapen",
+    "note": "Macadamia, kein Hanf. Auch hier zeigt sich Zinkmangel zuerst an den jüngsten Blättern.",
+    "note_en": "Macadamia, not cannabis. Here too, zinc deficiency shows first on the youngest leaves.",
+    "compare": true,
+    "credit": {
+      "work": "File:Zn deficiency macadamia 2003 0627a.jpg",
+      "author": "Alandmanson",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Zn_deficiency_macadamia_2003_0627a.jpg"
+    }
+  },
+  "sources": {
+    "P1": "Ontario Ministry of Agriculture, Food and Rural Affairs (OMAFRA), Nutrient Deficiency ID Guide for Hemp, 2023, Hanf in Nährlösung, vegetative Phase, abgerufen 2026-10-23: https://www.ontario.ca/files/2023-12/omafra-nutrient-deficiency-id-guide-for-hemp-en-2023-12-15_0.pdf",
+    "P2": "UC Statewide IPM Program, Zinc Deficiency, Haus und Garten, Obst- und Nussbäume, ohne Datum, abgerufen 2026-10-23: https://ipm.ucanr.edu/home-and-landscape/zinc-deficiency/",
+    "P3": "Penn State Roots Lab, HORT402, Zinc deficiency, ohne Pflanzenart und Datum, abgerufen 2026-10-23: https://plantscience.psu.edu/research/labs/roots/methods/methods-info/nutritional-disorders-displayed/zinc-deficiency",
+    "P4": "Colorado State Extension, Westfall und Bauder, Zinc and Iron Deficiencies, Dezember 1992, geprüft August 2025, Feldkulturen, abgerufen 2026-10-23: https://extension.colostate.edu/resource/zinc-and-iron-deficiencies",
+    "P5": "Purdue Extension HO-237-W, Camberato, Lopez, Mickelbart, pH und EC in erdlosen Substraten (PourThru), abgerufen 2026-10-23: https://ag.purdue.edu/department/hla/extension/extension-publications-library/ext-pubs/ho-237-w.html",
+    "P6": "VIVOSUN, VGrow Smart Grow Box Handbuch, Hersteller der Box, Seitenstand 2026-05-25, aus der Kartei übernommen (kartei/stages/autoflower.json, S1), abgerufen 2026-10-22: https://vivosun.com/support/guide/vgrow-smart-grow-box.md",
+    "P7": "Utah State University Extension, Hemp Nutrient Deficiencies, Ratgeber für Hanfanbau ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-nutrient-deficiencies"
+  },
+  "_left_out": [
+    "'Laboranalyse (Cornell 2022)': Studie ohne Zink, keine URL.",
+    "Konkrete pH-Schwelle für Zink: hängt am Medium, keine Zahl übernommen.",
+    "Rosetten und kurze Stängelglieder bei Hanf: nur aus Baum-Quellen belegt, deshalb so gekennzeichnet."
+  ]
+}

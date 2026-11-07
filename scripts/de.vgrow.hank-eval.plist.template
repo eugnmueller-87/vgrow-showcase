@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  TEMPLATE ONLY. Nothing installs this file (addendum D10: no nightly eval run on the Mac until it is measured
+  that it does not disturb the other night jobs; until then the run is by hand: bash scripts/hank_eval_mac.sh).
+
+  What a nightly run would be (spec 10.4 WP11, 11.1): label de.vgrow.hank-eval, at 03:00, the cases that need the
+  model, through scripts/hank_eval_mac.sh (nice 19, stops after an answer over 240 s). Measured 23.10.2026 through
+  an SSH tunnel: 15 cases, 11 reached the model, 45 to 73 s each, so about 15 minutes of CPU.
+
+  To install it once Eugen decides so (not before): replace __REPO__ with the repo path, __HOME__ with the home folder
+  and __OLLAMA_URL__ with the Ollama URL (usually http://127.0.0.1:11434), save it as ~/Library/LaunchAgents/de.vgrow.hank-eval.plist, then
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/de.vgrow.hank-eval.plist
+  The night jobs of the brain run at 04:15 (compound) and 04:30 (integrity); 03:00 ends well before them.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>de.vgrow.hank-eval</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>__REPO__/scripts/hank_eval_mac.sh</string>
+    <string>--url</string>
+    <string>__OLLAMA_URL__</string>
+  </array>
+  <key>WorkingDirectory</key><string>__REPO__</string>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>3</integer>
+    <key>Minute</key><integer>0</integer>
+  </dict>
+  <key>RunAtLoad</key><false/>
+  <key>LowPriorityIO</key><true/>
+  <key>Nice</key><integer>19</integer>
+  <key>StandardOutPath</key><string>__HOME__/.vgrow-control/hank-eval.log</string>
+  <key>StandardErrorPath</key><string>__HOME__/.vgrow-control/hank-eval.log</string>
+</dict>
+</plist>

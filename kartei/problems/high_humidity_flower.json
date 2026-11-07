@@ -1,0 +1,175 @@
+{
+  "key": "high_humidity_flower",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "stress",
+  "label": "Zu hohe Luftfeuchte in der Blüte",
+  "label_en": "Humidity too high in flower",
+  "tile": "Feuchte Luft in der Blüte: Schimmel an den Knospen",
+  "tile_en": "Humid air in flower: mold on the buds",
+  "aliases": {
+    "de": [
+      "Feuchte in der Blüte",
+      "Schimmelgefahr",
+      "Knospenfäule-Risiko"
+    ],
+    "en": [
+      "high humidity in flower",
+      "bud rot risk",
+      "low VPD"
+    ]
+  },
+  "symptoms": [
+    "Box: feuchte Luft, Kondenswasser, Schimmel (P1, Erfahrungsquelle).",
+    "Früh an der Knospe: Blätter und Hochblätter (kleine Blättchen am Blütenstand) werden braun und faulen P2; wassergetränkte braune Flecken an Blüten, Blättern und Stängeln P3.",
+    "Spät: grauer Pilzrasen in und um die Blütenstände P4, der ganze Blütenstand wird zerstört P2. Bei Hanf befallen: Triebspitzen, Blütenknospen, Blattstiele, Stängel P5.",
+    "Ältere Blätter: Die Spitzen werden von grün zu gelb und sterben dann ab. Das beschreibt die Arbeit für Guttation (Austritt von Wassertröpfchen am Blattrand) bei hoher Feuchte, gestützt auf Studien an anderen Pflanzen P6.",
+    "Wachstum: In einem Versuch (Sorte Cherry Berry, 10 Pflanzen je Stufe) gab es bei 78 bis 98 % Feuchte 71,0 % weniger Blütenmasse, und die Blüte begann drei Wochen später P6. Die Arbeit nennt die Sorte weder Autoflower noch Photoperiode-Sorte."
+  ],
+  "symptoms_en": [
+    "Box: damp air, condensation, mold (P1, experience source).",
+    "Early in the bud: leaves and bracts (small leaves on the flower cluster) brown and decay P2; water-soaked brown lesions on flowers, leaves and stems P3.",
+    "Late: gray mycelium in and around flower clusters P4, the whole inflorescence is destroyed P2. In hemp affected: growing tips, flower buds, petioles, stems P5.",
+    "Older leaves: tips turn from green to yellow, then die. The paper describes this for guttation (water droplets at the leaf edge) under high humidity, citing studies on other plants P6.",
+    "Growth: in one trial (cultivar Cherry Berry, 10 plants per level) 78 to 98% RH gave 71.0% less flower mass and flowering began three weeks later P6. The paper calls the cultivar neither an autoflower nor a photoperiod cultivar."
+  ],
+  "causes": [
+    "Feuchte über dem Ziel. VIVOSUN: frühe Blüte 45 bis 60 %, späte Blüte 40 bis 50 % (P1, Erfahrungsquelle). Für Hanf im Gewächshaus nennen NC State und USU unter 50 % (P3, P4), Kentucky für Gewächshäuser allgemein unter 80 % P5. In der späten Blüte decken sich VIVOSUN und die Hanf-Quellen; in der frühen Blüte liegt VIVOSUN (bis 60 %) über den Hanf-Quellen, welche Grenze gilt, belegt keine Quelle.",
+    "Der Pilz Botrytis (Grauschimmel) infiziert am besten bei 90 % Feuchte, verletztes Gewebe schon bei 80 %. Für den Pilz sind 60 bis 75 °F (umgerechnet 15,6 bis 23,9 °C) am günstigsten, über 85 °F (29,4 °C) gibt es keine Infektionen mehr P5. Das ist kein Zielwert für die Box. NC State: 18 bis 24 °C zusammen mit Feuchte P3.",
+    "Warme Tage und kühle Nächte bringen Kondenswasser; dichter, schattiger Bestand mit schlechter Luftbewegung P5.",
+    "Lange anhaltende Feuchte im Gewächshaus, eine Woche oder länger P4.",
+    "Einfallstore für den Pilz: Wunden und absterbendes Gewebe P5."
+  ],
+  "causes_en": [
+    "Humidity above target. VIVOSUN: early flower 45 to 60%, late flower 40 to 50% (P1, experience source). For hemp in greenhouses NC State and USU give below 50% (P3, P4), Kentucky for greenhouses in general below 80% P5. In late flower VIVOSUN and the hemp sources agree; in early flower VIVOSUN (up to 60%) lies above the hemp sources, and no source shows which limit holds.",
+    "The fungus Botrytis (gray mold) infects best at 90% RH, wounded tissue already at 80%. 60 to 75 °F (15.6 to 23.9 °C) is best for the fungus, above 85 °F (29.4 °C) there are no infections P5. This is not a target value for the box. NC State: 18 to 24 °C together with humidity P3.",
+    "Warm days and cool nights cause condensation; crowded, shaded canopy with poor air movement P5.",
+    "Prolonged greenhouse humidity, one week or longer P4.",
+    "Entry points for the fungus: wounds and dying tissue P5."
+  ],
+  "check": [
+    {
+      "metric": "probe_humidity",
+      "text": "Ziel frühe Blüte 45 bis 60 %, späte Blüte 40 bis 50 % (P1, Erfahrungsquelle); Abluft-Automatik der Blüh-Voreinstellung bis max. 60 % P7.",
+      "text_en": "Target early flower 45 to 60%, late flower 40 to 50% (P1, experience source); exhaust automation in the flower preset up to max 60% P7."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "VPD (Dampfdruckdefizit): Ziel frühe Blüte 1,0 bis 1,4, späte Blüte 1,2 bis 1,6 kPa (P1, Erfahrungsquelle); 0,25 bis 0,62 kPa in der Blüte gingen im Versuch mit Ertragsverlust einher P6.",
+      "text_en": "VPD (vapor pressure deficit): target early flower 1.0 to 1.4, late flower 1.2 to 1.6 kPa (P1, experience source); 0.25 to 0.62 kPa in flower went with yield loss in the trial P6."
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Nachts: Nach Licht aus sinkt die Temperatur und die Feuchte steigt, weil kühlere Luft weniger Wasser hält (P1, Erfahrungsquelle). Wechselnde Temperaturen mit Kondenswasser sind für Botrytis ideal P5. Ziel bei Licht aus: frühe Blüte 18 bis 22 °C, späte Blüte 16 bis 20 °C (P1, Erfahrungsquelle).",
+      "text_en": "At night: after lights off the temperature drops and humidity rises because cooler air holds less moisture (P1, experience source). Fluctuating temperatures with condensation are ideal for Botrytis P5. Lights-off target: early flower 18 to 22 °C, late flower 16 to 20 °C (P1, experience source)."
+    },
+    {
+      "metric": "watering",
+      "text": "Nicht spät abends gießen, damit die Blätter trocken sind P5.",
+      "text_en": "Do not water late in the evening so leaves are dry P5."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    }
+  ],
+  "do_now": [
+    "Befeuchter aus, Abluft höher. Box-Voreinstellung Blüte: Abluft-Automatik bis max. 60 % P7.",
+    "Stehendes Wasser entfernen, nicht überwässern, dichtes Laub auslichten, Umluft verstärken (P1, Erfahrungsquelle).",
+    "Knospen und Stängel die ganze Anbauzeit über ansehen P4. Befallenes sofort entfernen, bei Bedarf die ganze Pflanze (P4, P5), und nicht kompostieren P5.",
+    "Aus der Praxis (Pott Planter): gegen Mehltau mehr Luftbewegung um die Pflanze und befallene Blätter entfernen P12. Für diese Karte tragen das ihre eigenen Quellen: dichtes Laub auslichten, Umluft verstärken (P1, Erfahrungsquelle), Befallenes sofort entfernen (P4, P5). Er spricht von Mehltau, die Quellen dieser Karte von Grauschimmel.",
+    "Totes, beschädigtes und absterbendes Gewebe entfernen, auch verblühte Blüten P5.",
+    "Werkzeug und leere Flächen desinfizieren. USU nennt dafür eine Lösung aus 10 bis 15 % Haushaltsbleiche für Werkzeug und Gewächshausräume (P4, Quelle für Hanfbetriebe, nicht für Pflanzen; Etikett des Mittels beachten).",
+    "Keine Spritzmittel-Empfehlung: für Hanf laut NC State keine wirksamen zugelassenen Mittel P3, laut USU keine Fungizide gegen Knospenfäule P4. Etikett und Zulassung beachten."
+  ],
+  "do_now_en": [
+    "Humidifier off, exhaust up. Box flower preset: exhaust automation up to max 60% P7.",
+    "Remove standing water, do not overwater, thin dense foliage, increase circulation (P1, experience source).",
+    "Look at buds and stems throughout the growing season P4. Remove infected material at once, the whole plant if needed (P4, P5), and do not compost it P5.",
+    "From practice (Pott Planter): against mildew, more air movement around the plant and remove the affected leaves P12. For this card its own sources carry this: thin dense foliage, increase circulation (P1, experience source), remove infected material at once (P4, P5). He speaks of mildew, this card's sources of gray mold.",
+    "Remove dead, damaged and senescing tissue, including spent flowers P5.",
+    "Disinfect tools and empty surfaces. USU names a solution of 10 to 15% household bleach for tools and greenhouse spaces (P4, source written for hemp operations, not for plants; follow the product label).",
+    "No spray advice: NC State lists no effective legal products for hemp P3, USU no fungicides against bud rot P4. Follow label and registration (Etikett und Zulassung beachten)."
+  ],
+  "prevention": [
+    "Nicht spät abends gießen, damit Blätter trocken sind P5.",
+    "Kein Stickstoffüberschuss, er fördert anfälliges weiches Gewebe P5.",
+    "Knospen nicht verletzen P4.",
+    "Nachtwerte beobachten: kühle Nächte nach warmen Tagen bringen Kondenswasser P5."
+  ],
+  "prevention_en": [
+    "Do not water late in the evening so leaves are dry P5.",
+    "Avoid excess nitrogen, it promotes susceptible soft tissue P5.",
+    "Do not injure buds P4.",
+    "Watch night readings: cool nights after warm days cause condensation P5."
+  ],
+  "look_alikes": [
+    "Lichtbleiche: oberste Knospen bleichen weißlich (P8, Erfahrungsquelle); Grauschimmel bildet dagegen grauen Sporenrasen P3.",
+    "Fusarium-Knospenfäule (Fusarium ist eine Pilzgattung): Die ersten Symptome zeigen sich oft in den inneren Geweben nahe am Stängel und in kompakten Knospen P9.",
+    "Echter Mehltau: weißer bis grauer, pudriger Belag auf Blättern, Stängeln und Knospen P2. Er braucht keine nasse Luft und kann laut Kentucky schon bei 40 % Feuchte befallen P10.",
+    "Stickstoffmangel: Vergilben von unten P11."
+  ],
+  "look_alikes_en": [
+    "Light bleaching: top buds turn off-white (P8, experience source); gray mold forms gray spores instead P3.",
+    "Fusarium bud blight (Fusarium is a fungal genus): the interior tissues closest to the stem and those within compact buds are often the first to show symptoms P9.",
+    "Powdery mildew: white to gray powdery growth on leaves, stems and buds P2. It does not need wet air and can infect at 40% humidity according to Kentucky P10.",
+    "Nitrogen deficiency: yellowing from the bottom P11."
+  ],
+  "image": {
+    "file": "fusarium-flower.webp",
+    "thumb": "fusarium-flower-t.webp",
+    "w": 441,
+    "h": 480,
+    "alt": "Blütenstand einer Hanfpflanze am Netz, innen von hellem Pilzgeflecht durchzogen",
+    "alt_en": "Flower cluster of a cannabis plant on the net, with pale fungal threads spreading inside",
+    "note": "Ausschnitt (Feld D) aus einer Abbildung von Gwinn und anderen, 2023: ein Fusarium-Pilz bei hoher Luftfeuchte, kein Grauschimmel.",
+    "note_en": "Detail (panel D) of a figure by Gwinn and others, 2023: a Fusarium fungus under high humidity, not gray mold.",
+    "compare": false,
+    "credit": {
+      "work": "File:Fungal Pathogens, Epiphytes, and Endophytes Affecting Cannabis Inflorescences.png",
+      "author": "Kimberly D Gwinn, Maxwell C K Leung, Ariell B Stephens, Zamir K Punja",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Fungal_Pathogens,_Epiphytes,_and_Endophytes_Affecting_Cannabis_Inflorescences.png"
+    }
+  },
+  "sources": {
+    "P1": "VIVOSUN, Ideal Grow Tent Temperature and Humidity Guide, allgemeiner Hersteller-Leitfaden, nennt Cannabis nicht, Seitenstand dynamisch, Erfahrungsquelle, aus der Kartei übernommen (kartei/stages/autoflower.json, S5), abgerufen 2026-10-22: https://vivosun.com/growing_guide/temperature-and-humidity.md",
+    "P2": "Punja, Collyer, Scott, Lung, Holmes, Sutton (Simon Fraser University) 2019, Pathogens and Molds Affecting Production and Quality of Cannabis sativa L., Frontiers in Plant Science, doi:10.3389/fpls.2019.01120, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC6811654/",
+    "P3": "NC State Extension, Ferrell und Thiessen, Gray Mold of Industrial Hemp, 2019-09-09, überarbeitet 2024-06-18, abgerufen 2026-10-23: https://content.ces.ncsu.edu/gray-mold-of-industrial-hemp",
+    "P4": "Utah State University Extension, Hemp Bud Rot, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-bud-rot.php",
+    "P5": "University of Kentucky Extension, Boice, Gauthier, Kaiser, Leonberger, Botrytis Blight (PPFS-GEN-19), November 2021, viele Kulturen inklusive Hanf, abgerufen 2026-10-23: https://plantpathology.mgcafe.uky.edu/files/ppfs-gen-19.pdf",
+    "P6": "Corredor-Perilla, Kwon, Park (Colorado State University-Pueblo) 2025, Elevated relative humidity [...] while delaying flowering development in Cannabis sativa L., Frontiers in Plant Science, doi:10.3389/fpls.2025.1678142, Sorte Cherry Berry, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC12666426/",
+    "P7": "VIVOSUN, VGrow Smart Grow Box Handbuch, Hersteller der Box, Seitenstand 2026-05-25, aus der Kartei übernommen (kartei/stages/autoflower.json, S1), abgerufen 2026-10-22: https://vivosun.com/support/guide/vgrow-smart-grow-box.md",
+    "P8": "Fluence Bioengineering (LED-Hersteller), Understanding Photobleaching in Cannabis, 2023-01-06, Erfahrungsquelle, abgerufen 2026-10-23: https://fluence-led.com/understanding-photobleaching-in-cannabis/",
+    "P9": "University of Kentucky Extension, Fusarium Head Blight of Hemp (PPFS-AG-H-02), Juni 2024, abgerufen 2026-10-23: https://plantpathology.ca.uky.edu/sites/plantpathology.ca.uky.edu/files/PPFS-AG-H-02.pdf",
+    "P10": "University of Kentucky Extension, Pfeufer, Gauthier, Bradley, Powdery Mildew (PPFS-GEN-02), Januar 2017, allgemein, abgerufen 2026-10-23: https://publications.ca.uky.edu/sites/publications.ca.uky.edu/files/PPFS-GEN-02.pdf",
+    "P11": "Cockson, Landis, Smith, Hicks, Whipker (NC State University) 2019, Characterization of Nutrient Disorders of Cannabis sativa, Applied Sciences 9(20):4432, Sandkultur, abgerufen 2026-10-23: https://www.mdpi.com/2076-3417/9/20/4432",
+    "P12": {
+      "title": "Pott Planter, YouTube: Schluss mit mickrigen Pflanzen, 5 Fehler beim Eigenanbau",
+      "title_en": "Pott Planter, YouTube: 5 beginner mistakes in home growing",
+      "url": "https://www.youtube.com/watch?v=G2g8oC86m44",
+      "retrieved": "2026-10-23",
+      "note": "Erfahrungsquelle; Transkript von Hand kopiert",
+      "note_en": "experience source; transcript copied by hand"
+    }
+  },
+  "_hinweis_wortwahl": "Wortwahl angepasst, ohne den Inhalt zu ändern: der Wiki-Filter gegen Konsumaussagen (vgrow/wiki.py, CONSUMPTION_RE) blendet Sätze mit Wirkung, effect oder CBD auf der Seite aus, und der Zwillingstest zählt Einheiten je Paar: symptoms[4] de: 'Sorte Cherry Berry, CBD-betont, ' -> 'Sorte Cherry Berry, '; symptoms[4] en: 'cultivar Cherry Berry, CBD-dominant, ' -> 'cultivar Cherry Berry, '",
+  "_left_out": [
+    "'Echter Mehltau nach längerer hoher Feuchte': widerlegt, Kentucky PPFS-GEN-02 sagt, Mehltau befällt schon bei 40 % Feuchte.",
+    "'Mehltau auf Blattoberseiten (Kentucky)': steht nicht in PPFS-GEN-19.",
+    "'Knospen täglich ansehen': keine Quelle nennt eine Häufigkeit.",
+    "'Die Quellen widersprechen sich; Hanf-Quellen liegen näher am Fall': Einschätzung ohne Quelle, ersetzt.",
+    "'keine Autoflower' über Cherry Berry: steht nicht in der Arbeit.",
+    "Vermeintlicher Zahlenwiderspruch in Corredor-Perilla (2,71-fach): unklare Bezeichnung im Abstract, kein Widerspruch.",
+    "Fluence-Aussagen zu Potenz und Geschmack: nicht übernommen.",
+    "Phasenwerte aus einer Hochschulquelle: nicht gesucht, alle Phasenwerte stammen von VIVOSUN.",
+    "Pott Planter (Video): 'Mehltau kommt vor allem von zu feuchter Luft oben an der Pflanze': nicht übernommen. Echter Mehltau kann laut Kentucky schon bei 40 % Luftfeuchte infizieren.",
+    "Pott Planter (Video): Neemöl gegen alle Schädlinge, als Mehltaukiller und als Schutzschild für Wochen: nicht übernommen. Die Milben-Karten sagen, Öle wirken nur bei direktem Kontakt und ohne Dauerwirkung; ob Neem gegen Echten Mehltau hilft, prüft keine Karte. Spritzmittel nur nach Etikett und Zulassung.",
+    "Kentucky PPFS-GEN-02 zu Abstand, Auslichten und Entfernen bei Echtem Mehltau: in der Praxis-Prüfung zitiert, für diese Karte nicht nachgelesen, darum nicht als neue Aussage übernommen.",
+    "Pott Planter (Video): gezeigte Erden, Dünger, das Neemöl-Set und die Produktlinks, Sketch, Witze, Aufrufe zum Abonnieren und Verweise auf eigene Videos: nicht übernommen.",
+    "Pott Planter (Video): keine Zeitmarken aus dem Video übernommen, auf Wunsch des Owners vom 23.10.2026 ('Hank wird nur durch die Minuten verwirrt')."
+  ]
+}

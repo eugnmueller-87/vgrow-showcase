@@ -1,0 +1,20 @@
+/* Hank's garden (web/garden.js): one canvas of big square pixels over the whole page, and two buttons that close nothing by accident. */
+.garden { position: fixed; inset: 0; z-index: 100000; overflow: hidden; background: #0c1138; touch-action: none; user-select: none; -webkit-user-select: none; }
+.garden[hidden] { display: none; }
+.garden canvas { display: block; image-rendering: pixelated; }
+.garden-sr { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); }
+.garden-bar { position: absolute; top: max(6px, env(safe-area-inset-top)); right: max(6px, env(safe-area-inset-right)); display: flex; gap: 8px; }
+.garden-bar button { display: block; min-height: 0; margin: 0; padding: 7px 10px; line-height: 0; background: #fff1cf; color: #2b1b18; border: 3px solid #7c4d2d; border-radius: 0; outline: 2px solid #2b1b18; cursor: pointer; }
+.garden-bar button:hover { background: #fffbea; }
+.garden-bar button:focus-visible { outline-color: #37a86c; }
+.garden-bar button[aria-pressed="true"] { background: #b8e8b0; }
+.garden-open { background: transparent; cursor: pointer; }
+.garden-top { display: inline-flex; align-items: center; gap: 6px; min-height: 38px; padding: 4px 12px 4px 8px; border: 1px solid var(--line-strong); border-radius: var(--radius-pill); background: var(--card); color: var(--ink); font-size: 13px; font-weight: 600; white-space: nowrap; cursor: pointer; }
+.garden-top[hidden] { display: none; }
+.garden-top:hover { background: var(--side-active); }
+.garden-top svg { width: 24px; height: 24px; flex: none; }
+/* where the top bar is tight, the hat alone: on a small screen, and beside Hank's open panel */
+@media (max-width: 1040px) { .garden-top { justify-content: center; min-width: 44px; min-height: 44px; padding: 4px; border-radius: var(--radius-md); } .garden-top span { display: none; } }
+body.hank-open .garden-top { justify-content: center; min-width: 44px; min-height: 44px; padding: 4px; border-radius: var(--radius-md); }
+body.hank-open .garden-top span { display: none; }
+@media (max-width: 479px) { .app-topbar .page-title-wrap { flex-basis: calc(100% - 170px); } }

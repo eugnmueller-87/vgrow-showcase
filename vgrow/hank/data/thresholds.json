@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "about": "Search fusion and route thresholds (spec 2.2 to 2.4, addendum N2). Calibrated by scripts/hank_calibrate.py (WP11); the block calibration says when, with which model and on what. Two threshold sets: dense (embedding channel used) and lexical (BM25 and 3-grams only). konf = sum of weight times channel value, plus the boosts; the confidence of a search is its best konf, at most 1. T_GATE is not calibrated: the gates read the lexical set's T_GATE only (addendum N2: they never wait for the embedding), so the dense T_GATE has no effect. dense M_OFF is 0.09, set by hand on 23.10.2026 after WP11 (the calibration chose 0.11, the low edge of the gap): WP11 measured the margin 'nearest off-topic example minus nearest card passage' at 0.126 to 0.470 for the 120 sentences of offtopic.json (each without itself in the bank) and at most 0.057 for every growing and live case with its variants (no_data at most 0.029), so 0.09 is the middle of that gap and leaves room on both sides for unseen wordings. Checked against the cached vectors of all 711 calibration items and the 64 eval cases: no route changes from 0.11 to 0.09, and the real router agrees with the replay. A run of scripts/hank_calibrate.py --write sets M_OFF again from its own search; keep 0.09 unless a new measurement moves the gap.",
+  "fusion": "sum",
+  "rrf_k": 60,
+  "weights": {
+    "dense": {
+      "bm25": 0.45,
+      "ngram": 0.35,
+      "dense": 0.2
+    },
+    "lexical": {
+      "bm25": 0.55,
+      "ngram": 0.45
+    }
+  },
+  "expansion_weight": 0.7,
+  "dense_basis": {
+    "about": "Basis of the calibrated cosine (spec 2.2), per embedding model. default applies to every model without its own value. Measured 23.10.2026 for granite-embedding:278m: the median cosine of 11160 unrelated pairs (off-topic sentences against card passages) is 0.502 (10th to 90th percentile 0.442 to 0.575). The calibration compared 0.25 and 0.502 with four weight variants each; 0.25 won the objective of spec 2.4 (route accuracy 0.983 against 0.979 at 0.502), so it stays. Row 3b of the router (M_OFF) uses raw cosines and does not depend on it.",
+    "default": 0.25,
+    "granite-embedding:278m": 0.25
+  },
+  "boosts": {
+    "about": "Spec 2.4. stage_named: a passage of the stage the question names. stage_live: a passage of the current stage on a live question that names no stage (the spec gives 0.10 to 0.15 for both; the lower end is used for the live case). metric: a single-target passage of a metric the question names, or a stage overview when the question names two or more of its metrics. card_name: the question names the card itself (strain, product or plant of the card name). nutrient_week, nutrient_page, nutrient_component: one each for a nutrient table row whose week, page or component matches (spec: +0.25 for week, page, component).",
+    "stage_named": 0.15,
+    "stage_live": 0.1,
+    "metric": 0.15,
+    "card_name": 0.15,
+    "nutrient_week": 0.25,
+    "nutrient_page": 0.25,
+    "nutrient_component": 0.25
+  },
+  "dense": {
+    "T_HIT": 0.38,
+    "T_DOMAIN": 0.2,
+    "T_OFF": 0.65,
+    "T_GATE": 0.6,
+    "M_OFF": 0.09
+  },
+  "lexical": {
+    "T_HIT": 0.32,
+    "T_DOMAIN": 0.3,
+    "T_OFF": 0.4,
+    "T_GATE": 0.6,
+    "T_OFF_HARD": 0.75
+  },
+  "calibration": {
+    "date": "2026-10-23",
+    "embed_model": "granite-embedding:278m",
+    "objective": "spec 2.4: safety misroutes, no_data routed grow, route accuracy, recall@3, clarify rate",
+    "sets": {
+      "lexical": {
+        "items": 711,
+        "recall_at_3": 0.8929,
+        "accuracy": 0.9508,
+        "before": {
+          "T_HIT": 0.32,
+          "T_OFF": 0.55,
+          "T_DOMAIN": 0.2,
+          "T_GATE": 0.6
+        }
+      },
+      "dense": {
+        "items": 711,
+        "recall_at_3": 0.8929,
+        "accuracy": 0.9831,
+        "before": {
+          "T_HIT": 0.45,
+          "T_OFF": 0.55,
+          "T_DOMAIN": 0.2,
+          "T_GATE": 0.6
+        }
+      }
+    },
+    "rows": "M_OFF (dense, row 3b) and T_OFF_HARD (lexical, row 4b) are router rows added by WP11 on 23.10.2026 against off-topic sentences that reach T_HIT through one common card word. T_OFF_HARD was searched from 0.50 up (the highest similarity of a growing eval case to an off-topic example is 0.32). Ties go to the value nearest the start value. Plateaus (range that keeps the best score, others fixed): dense T_HIT 0.38 to 0.38, T_OFF 0.65 to 0.75, T_DOMAIN 0.20 to 0.40; lexical T_HIT 0.30 to 0.32, T_OFF 0.325 to 0.40, T_DOMAIN 0.30 to 0.30. See docs/hank-v1-messung.md."
+  }
+}

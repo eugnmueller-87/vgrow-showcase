@@ -1,0 +1,72 @@
+/* Hank's scenes (web/hank-scenes.js): the small stage in the drawer head and in the traffic-light line.
+   Taken over from the checked prototype hank-szenen.html. The drawing's own tokens come from .hk-scope (hank.css);
+   props keep fixed colours in both themes, the parts that sit on the stage background follow the theme. */
+.hk-sc {
+  --hi: #ffffff;
+  --pot: #c46a43; --pot-dark: #9c4f2f; --soil: #4a3426; --leaf-old: #b3ad4a;
+  --bench: #a87650; --bench-top: #c4915f; --lamp: #3a414c; --glow: #fff1a6;
+  --night: #0b1630; --moon: #f6e7a8; --zzz: #f4f6fa;
+  /* one blue for can, umbrella and scarf; the plant food is green, never amber */
+  --water: #4fb0e8; --can: #3d74c9; --can-dark: #2c5aa0;
+  --metal: #b3bdc7; --metal-dark: #6b7682; --grip: #ef8a34; --wood: #9a6a42;
+  --bottle: #2f9e62; --bottle-dark: #1f6e45; --glass: #d8eaf6; --fert: #7cc242; --jug: #f6f8fa;
+  --mug: #e0673f; --coffee: #6b4226; --umb: #3d74c9; --umb-dark: #2c5aa0;
+  --fan: #7cbbe3; --fan-dark: #3f7fae; --scarf: #3d74c9; --scarf-dark: #2c5aa0;
+  --sweat: #62b9ea; --bug: #2a211b;
+  --stage: #e5eee8; --stage-line: #d3ded6; --steam: #8794a2; --glow-o: .42;
+  --wing: #ffffff; --bug-edge: #2a211b; --snow: #3f7fae; --alert-ink: #ffffff;
+  /* after the harvest (moments for web/workspace.js): buds, drying line, jar, label, archive box */
+  --sc-bud: #9cc86a; --sc-bud-dark: #4f7d32; --sc-pistil: #e2873a; --sc-string: #b39a6e; --sc-peg: #d9a441;
+  --sc-lid: #d2a646; --sc-lid-dark: #9b7a2b; --sc-glass-edge: #8fb4cc; --sc-check: #2f9e62; --sc-card: #fffdf5;
+  --sc-box: #c99561; --sc-box-dark: #9c6c3b; --sc-box-in: #6f4a26; --sc-spark: #f2c14a;
+  --sc-spray: #5fb3d9; --sc-spray-dark: #2f7fa8; --sc-cloth: #f2d16b; --sc-cloth-dark: #c9a43c;
+  display: block; flex: none; aspect-ratio: 204 / 134; line-height: 0; overflow: hidden; border-radius: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .hk-sc {
+    --stage: #1a231e; --stage-line: #24302a; --steam: #c3ccd6; --glow-o: .16;
+    --wing: #8d97a5; --bug-edge: #c9d1dc; --snow: #a8d4ef; --alert-ink: #0e1116;
+  }
+}
+:root[data-theme="dark"] .hk-sc {
+  --stage: #1a231e; --stage-line: #24302a; --steam: #c3ccd6; --glow-o: .16;
+  --wing: #8d97a5; --bug-edge: #c9d1dc; --snow: #a8d4ef; --alert-ink: #0e1116;
+}
+/* sizes: the head of the drawer, and the 48 px mini of the traffic-light line */
+.hk-head .hk-avatar.hk-sc { width: auto; height: 44px; }
+.hk-light-art.hk-sc { width: auto; height: 48px; }
+/* on the phone the mini keeps the old face's height, so the sentence keeps its width and the line stays short */
+@media (max-width: 479px) {
+  .hk-light-art.hk-sc { height: 36px; }
+  .hk-light.hk-has-sc .hk-light-t { flex-basis: calc(100% - 92px); }
+  .hk-light.hk-has-sc .hk-light-go { margin-left: 0; }
+}
+.hk-sc svg { width: 100%; height: 100%; }
+/* at 48 px a 1.8 unit line is half a pixel: steam, rain, Zzz and snow get thicker here */
+.hk-sc .steam path, .hk-sc [class*="fx-r"] path, .hk-sc [class*="fx-z"] path, .hk-sc [class*="fx-snow"] path { stroke-width: 3; }
+
+/* the rig: joints rotate around their own origin, props and effects hide at rest */
+.hk-sc .rig g { transform-box: view-box; transform-origin: 0 0; }
+.hk-sc .rig .f, .hk-sc .rig .x, .hk-sc .rig .p, .hk-sc .rig .fx, .hk-sc .rig .leaf-yel, .hk-sc .rig .set { opacity: 0; }
+.hk-sc .rig[data-face="hello"] .f-hello, .hk-sc .rig[data-face="hello"] .x-hello,
+.hk-sc .rig[data-face="think"] .f-think, .hk-sc .rig[data-face="think"] .x-think,
+.hk-sc .rig[data-face="alert"] .f-alert, .hk-sc .rig[data-face="alert"] .x-alert,
+.hk-sc .rig[data-face="joy"] .f-joy, .hk-sc .rig[data-face="joy"] .x-joy,
+.hk-sc .rig[data-face="sleep"] .f-sleep, .hk-sc .rig[data-face="sleep"] .x-sleep,
+.hk-sc .rig[data-face="worry"] .f-worry, .hk-sc .rig[data-face="worry"] .x-worry { opacity: 1; }
+.hk-sc .rig .glow { opacity: var(--glow-o); }
+.hk-sc .rig .night, .hk-sc .rig .moon { opacity: 0; }
+.hk-sc .rig .glow, .hk-sc .rig .lamp-on, .hk-sc .rig .night, .hk-sc .rig .moon { transition: opacity .8s ease; }
+.hk-sc .rig[data-state="sleep"] .glow, .hk-sc .rig[data-state="sleep"] .lamp-on { opacity: 0; }
+.hk-sc .rig[data-state="sleep"] .night { opacity: .5; }
+.hk-sc .rig[data-state="sleep"] .moon { opacity: 1; }
+.hk-sc .rig.rest .j-head { animation: hk-sc-bob 4.5s ease-in-out infinite; }
+.hk-sc.hk-sc-paused .rig.rest .j-head { animation-play-state: paused; }
+/* the mini sits in the always visible traffic-light line: it rests still, the bob is for the open drawer only */
+.hk-sc-mini .rig.rest .j-head { animation: none; }
+/* starts and ends at 0deg, where every scene leaves the head, so rest begins without a jump */
+@keyframes hk-sc-bob { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-1.5deg); } 75% { transform: rotate(1.5deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .hk-sc .rig.rest .j-head { animation: none; }
+  .hk-sc .rig .glow, .hk-sc .rig .lamp-on, .hk-sc .rig .night, .hk-sc .rig .moon { transition: none; }
+}

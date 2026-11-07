@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "about": "What Hank never says, never cites as a link and never turns into a fact (spec D3, 5.6, 2.1; addendum N5). Read by the index (strain_fields, blocked_topics.tags), the router (blocked_topics.terms) and the validator (never_say, blocked_source_hosts, vendor_names). Plain lists match case-insensitively on folded text (text.fold); never_say entries are regular expressions, matched case-insensitively on the raw sentence.",
+  "strain_fields": {
+    "about": "Keys of a strain card's facts that never become a passage or a fact. A key is blocked when its folded form equals or starts with one of these.",
+    "blocked": ["thc", "cbd", "wirkung", "effekt", "effect", "geschmack", "taste", "flavor", "flavour", "aroma", "terpen"]
+  },
+  "blocked_topics": {
+    "about": "A question about one of these gets the fixed reply health and no gap entry. A passage whose topic or tags contain one of these tags is never indexed.",
+    "terms": {
+      "de": ["THC", "CBD", "Terpen", "Terpene", "Geschmack", "Wirkung", "Rausch", "berauschend"],
+      "en": ["THC", "CBD", "terpene", "terpenes", "taste", "flavor", "flavour", "effect", "effects", "intoxication", "intoxicating"]
+    },
+    "tags": ["thc", "cbd", "terpenes", "taste", "effect", "intoxication", "consumption"]
+  },
+  "never_say": {
+    "about": "Validator rule 6: a model sentence matching one of these is dropped and logged as compliance_drop. Consumption, effect, taste, selling, passing on, dosing for consumption.",
+    "de": [
+      "\\b(ge)?rauch(en|t|st|e)?\\b",
+      "\\bjoints?\\b",
+      "\\bbongs?\\b",
+      "\\bvap(en|e|t|st)\\b",
+      "\\b(vaporizer|verdampfer)\\b",
+      "\\bkonsum(?!cannabisgesetz)\\w*",
+      "\\bkonsumier\\w*",
+      "\\beinnehm\\w*|\\beingenommen\\b",
+      "\\bwirkung(en)?\\b",
+      "\\bberausch\\w*",
+      "\\brausch(es|zustand)?\\b",
+      "\\bstoned\\b",
+      "\\bhigh (werden|sein)\\b",
+      "\\bedibles?\\b",
+      "\\bspace ?cakes?\\b",
+      "\\bgeschm(a|ae|ä)ck\\w*",
+      "\\bschmeck\\w*",
+      "\\baroma\\w*",
+      "\\bterpen\\w*",
+      "\\bthc\\b",
+      "\\bverkauf\\w*",
+      "\\bweiterge(ben|geben)\\b|\\bweitergabe\\b|\\bweiterzugeben\\b",
+      "\\bverschenk\\w*",
+      "\\bdeal(en|er)\\b",
+      "\\beuro (das|pro|je) gramm\\b",
+      "\\bgrammpreis\\b"
+    ],
+    "en": [
+      "\\bsmok(e|es|ed|ing)\\b",
+      "\\bvap(e|es|ed|ing)\\b",
+      "\\bvapori[sz]er\\b",
+      "\\bjoints?\\b",
+      "\\bbongs?\\b",
+      "\\bedibles?\\b",
+      "\\bconsum(e|es|ed|ing)\\b",
+      "(?<!power )(?<!energy )(?<!water )(?<!electricity )\\bconsumption\\b(?!\\s+of\\s+(power|energy|electricity|water|nutrients|fertili[sz]er))",
+      "\\b(get|gets|getting|feel|feeling) high\\b",
+      "\\bstoned\\b",
+      "\\bintoxicat\\w*",
+      "\\bpsychoactive\\b",
+      "\\beffects? (of|from) (cannabis|weed|thc|cbd|the buds?|the flowers?|your harvest|the harvest)\\b",
+      "\\btast(e|es|ed|ing|y)\\b",
+      "\\bflavou?rs?\\b",
+      "\\baromas?\\b",
+      "\\bterpenes?\\b",
+      "\\bthc\\b",
+      "\\bsell(s|ing)?\\b",
+      "\\bsold\\b",
+      "\\bfor sale\\b",
+      "\\bgive (it |them |some |a bit )?away\\b",
+      "\\bpass(es|ing)? (it |them |some )?on to\\b",
+      "\\bdealers?\\b",
+      "\\b(euros?|dollars?|bucks) (a|per) gram\\b"
+    ]
+  },
+  "model_never_say": {
+    "about": "Acceptance 23.10.2026 (review 3, H4): what only a model sentence may never say, on top of never_say. The validator drops such a sentence (reason compliance). Not applied to the vetted card texts, because a card or code fact may state these things (the automation is off, a source name, the dose factor). Links, effects, medicine, law, passing on, switching the humidifier automation off, the full chart dose. Regular expressions, matched case-insensitively on the raw sentence.",
+    "de": [
+      "https?://|\\bwww\\.|\\b[\\w-]+\\.(de|com|net|org|eu|nl|shop)\\b",
+      "\\bmacht\\b[^.!?]{0,30}\\b(entspannt\\w*|m(ü|ue)de|gl(ü|ue)cklich|high|wach|kreativ|hungrig|schl(ä|ae)frig|euphorisch)\\b|\\b(entspannt|m(ü|ue)de|high|euphorisch)\\s+(machen|macht|werden)\\b",
+      "\\b(arzt|(ä|ae)rzt\\w*|doktor|medikament\\w*|schmerz\\w*|therapie\\w*|schlafst(ö|oe)rung\\w*|schlafproblem\\w*|heilt|heilen|hilft gegen|hilft bei)\\b",
+      "\\b(legal|illegal|strafbar|kcang|gesetz\\w*|rechtlich\\w*|rechtslage)\\b|\\b(das ist|ist das|ist es|es ist) (erlaubt|verboten)\\b|\\bdu darfst\\b[^.!?]{0,40}\\b(anbauen|besitzen|haben|pflanzen|abgeben|weitergeben|mitnehmen|verkaufen)\\b",
+      "\\b(ernte|bl(ü|ue)ten|buds?|gras|cannabis|stecklinge?|samen)\\b[^.!?]{0,40}\\b(abgeben|abgibst|mitgeben|mitbringen|teilen|schenken|verteilen)\\b|\\b(an|mit) (freunde|freunden|kumpel|kumpels|bekannten|nachbarn)\\b|\\ban andere\\b",
+      "\\b(befeuchter-?automatik|automatik|automation)\\b[^.!?]{0,40}\\b(aus|ab|abschalten|ausschalten|deaktivier\\w*)\\b|\\b(schalte|schalt|stell|mach)\\w*\\b[^.!?]{0,30}\\b(automatik)\\b[^.!?]{0,20}\\b(aus|ab)\\b",
+      "\\bvolle\\w* (tabellen)?dosis\\b|\\bdie ganze dosis\\b|\\bfaktor\\b[^.!?]{0,30}\\b(gilt|zählt|zaehlt|brauchst)\\b[^.!?]{0,20}\\bnicht\\b|\\bohne (den )?faktor\\b|\\bmehr als (die|in der) tabelle\\b|\\b(ü|ue)ber (der|die) tabelle\\b"
+    ],
+    "en": [
+      "https?://|\\bwww\\.|\\b[\\w-]+\\.(de|com|net|org|eu|nl|shop)\\b",
+      "\\b(make|makes|will make|gets? you)\\b[^.!?]{0,30}\\b(relaxed|sleepy|happy|high|creative|hungry|euphoric|calm|energetic)\\b",
+      "\\b(doctor|physician|medication|medicine|painkillers?|pain relief|therapy|insomnia|anxiety|heals?|healing|helps? (with|against) (pain|sleep|stress))\\b",
+      "\\b(legal|illegal|lawful|unlawful|the law|kcang)\\b|\\ballowed to (grow|own|possess|keep|give|share|sell)\\b",
+      "\\b(share|give|hand|bring)\\b[^.!?]{0,30}\\b(with|to) (your |my |some )?(friends?|mates?|others|neighbou?rs?|people|party)\\b",
+      "\\b(humidifier automation|automation)\\b[^.!?]{0,40}\\b(off|disable\\w*|deactivat\\w*)\\b|\\b(switch|turn) off the (humidifier )?automation\\b",
+      "\\bfull (chart )?dose\\b|\\bwhole dose\\b|\\bfactor (does not|doesn't|won't) apply\\b|\\bignore the factor\\b|\\bwithout the factor\\b|\\bmore than the chart\\b|\\babove the chart\\b"
+    ]
+  },
+  "blocked_source_hosts": {
+    "about": "Seed shops and retailers: a source on one of these hosts is shown as text without a link (decision D3, addendum N5: 'Händler und Samenbanken erscheinen als Text ohne Link'). Since the acceptance of 23.10.2026 also the retailers the cards themselves mark as such (Trimleaf 'Händler', Johnny's Selected Seeds 'seed retailer', Hydrobuilder, Amazon) and 420seedz.de, as a precaution: the card calls it the soil's maker, its name suggests a seed shop, not checked online. Eugen decides (D3).",
+    "hosts": ["zamnesia.com", "hanfgartenshop.de", "420seedz.de", "hydrobuilder.com", "trimleaf.com", "johnnyseeds.com", "amazon.de", "amazon.com", "hanfgarten.at", "barneysfarm.de", "barneysfarm.com"]
+  },
+  "vendor_names": {
+    "about": "Seed shop names in running text are replaced (decision D3, wording to be approved under D5). The rules first, in order (regular expressions, case-insensitive, per answer language; they keep the grammar: 'laut Hanfgarten' becomes 'laut einem Samenhändler', not 'laut ein Samenhändler'), then the plain names as the fallback.",
+    "rules": [
+      {"lang": "de", "pattern": "\\blaut (Hanfgarten|Zamnesia)( Seeds)?\\b", "replace": "laut einem Samenhändler"},
+      {"lang": "de", "pattern": "\\b(der|die|das) gleichnamigen (Hanfgarten|Zamnesia)-Sorte\\b", "replace": "\\1 gleichnamigen Sorte eines anderen Samenhändlers"},
+      {"lang": "de", "pattern": "\\b(Hanfgarten|Zamnesia)-(\\w+)", "replace": "\\2 eines Samenhändlers"},
+      {"lang": "de", "pattern": "\\b(Hanfgarten|Zamnesia)( Seeds)? (\\d)", "replace": "ein anderer Samenhändler nennt \\3"},
+      {"lang": "de", "pattern": "\\b(Hanfgartens|Zamnesias)\\b", "replace": "eines Samenhändlers"},
+      {"lang": "en", "pattern": "\\baccording to (Hanfgarten|Zamnesia)( Seeds)?\\b", "replace": "according to a seed shop"},
+      {"lang": "en", "pattern": "\\bthe (Hanfgarten|Zamnesia)( Seeds)? strain of the same name\\b", "replace": "the strain of the same name from another seed shop"},
+      {"lang": "en", "pattern": "\\bthe (Hanfgarten|Zamnesia)( Seeds)? (\\w+ \\w+|\\w+)\\b(?= \\()", "replace": "the \\3 of a seed shop"},
+      {"lang": "en", "pattern": "\\b(Hanfgarten|Zamnesia)( Seeds)? (\\d)", "replace": "another seed shop gives \\3"},
+      {"lang": "en", "pattern": "\\b(Hanfgarten's|Zamnesia's)\\b", "replace": "a seed shop's"},
+      {"lang": "de", "pattern": "\\b(Hanfgarten|Zamnesia) Seeds\\b", "replace": "ein Samenhändler"},
+      {"lang": "en", "pattern": "\\b(Hanfgarten|Zamnesia) Seeds\\b", "replace": "a seed shop"}
+    ],
+    "names": {
+      "Zamnesia": {"de": "ein Samenhändler", "en": "a seed shop"},
+      "Hanfgarten": {"de": "ein Samenhändler", "en": "a seed shop"}
+    }
+  }
+}

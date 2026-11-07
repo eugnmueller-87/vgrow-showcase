@@ -1,0 +1,158 @@
+{
+  "key": "nutrient_burn",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "naehrstoffe",
+  "label": "Nährstoffbrand (Überdüngung)",
+  "label_en": "Nutrient burn (overfertilization)",
+  "tile": "Zu viel Dünger: Blattspitzen werden braun",
+  "tile_en": "Too much fertilizer: leaf tips turn brown",
+  "aliases": {
+    "de": [
+      "Düngerbrand",
+      "Salzschaden",
+      "verbrannte Blattspitzen"
+    ],
+    "en": [
+      "fertilizer burn",
+      "salt injury",
+      "burnt leaf tips"
+    ]
+  },
+  "symptoms": [
+    "Spitzen junger und alter Blätter werden braun P1.",
+    "Salze sammeln sich im Blattgewebe, Blattspitzen und Blattränder sterben ab P1. Am Anfang können die Pflanzen welken und langsamer wachsen, weil sie weniger Wasser aufnehmen P1.",
+    "Weiße oder hellbraune Kruste auf der Erde P2 oder am inneren Topfrand P1.",
+    "Meist gleichmäßig über die Pflanze verteilt P1.",
+    "Versuch mit Cannabis in der Blüte (Klasmann-Substrat mit 15 % Perlit, organischer Dünger): Bei der höchsten Stufe, 240 mg Stickstoff je Liter Nährlösung, hatten die Pflanzen verbrannte Blattspitzen. Die Autoren sehen Ammonium-Vergiftung als Ursache P3. Das ist ein Versuchswert, kein Grenzwert: P4 sah bei 240 mg N/l in Perlite optimales Wachstum, aber eingeschränkte Wurzelentwicklung.",
+    "Zu viel Stickstoff: Pflanze und Pflanzenteile bleiben kleiner und sind dunkelgrün (P4, beobachtet bei 320 mg N/l). Die Blätter werden von den untersten an dunkler P5."
+  ],
+  "symptoms_en": [
+    "Tips of young and old leaves turn brown P1.",
+    "Salts accumulate in leaf tissue, leaf tips and margins die back P1. It may begin with wilting and slowed growth because less water is available P1.",
+    "White or tan crust on the soil P2 or on the inside of the pot rim P1.",
+    "Typically evenly distributed over the plant P1.",
+    "Trial with cannabis in flower (Klasmann mix with 15% perlite, organic fertilizer): at the top rate, 240 mg nitrogen per liter of solution, plants had burned leaf tips; the authors attribute it to ammonium toxicity P3. A trial value, not a limit: P4 saw optimal growth at 240 mg N/L in perlite, with restricted root development.",
+    "Excess nitrogen: smaller plant and organs, dark green (P4, seen at 320 mg N/L); leaves darken starting on the lowest leaves P5."
+  ],
+  "causes": [
+    "Zu viel Dünger; viel Salz in der Erde schädigt die Wurzeln und senkt die Wasseraufnahme P1.",
+    "Salze kommen aus der Erde, dem Dünger oder salzreichem Gießwasser P2; Wasser im Untersetzer wird wieder aufgesogen, sodass Salze nicht abfließen P2.",
+    "Schnell lösliche Dünger, die nicht gut eingewässert oder bei heißem Wetter ausgebracht werden, sind eine häufige Ursache P1.",
+    "Zu viel Stickstoff kann einen unspezifischen, konzentrationsbedingten osmotischen Stress auslösen, also eine Art Salzwirkung (P4, als Möglichkeit formuliert).",
+    "Aus der Praxis (Pott Planter): zu viel Dünger verbrennt die Pflanze und richtet schwere Schäden an P11. Das deckt sich mit dieser Karte P1."
+  ],
+  "causes_en": [
+    "Too much fertilizer; high salt levels in the soil damage roots and reduce water uptake P1.",
+    "Salts come from the mix, the fertilizer or salty irrigation water P2; saucer water is re-absorbed so salts cannot drain P2.",
+    "Quick-release products that are not watered in properly or are applied in hot weather are a common cause P1.",
+    "Excess nitrogen may involve a non-specific, concentration-driven osmotic stress, i.e. a kind of salinity impact (P4, stated as a possibility).",
+    "From practice (Pott Planter): too much fertilizer burns the plant and does serious damage P11. This matches this card P1."
+  ],
+  "check": [
+    {
+      "metric": "watering",
+      "text": "Kruste auf der Erde? Steht der Topf im Wasser? P2 Nicht düngen, wenn die Pflanze Trockenstress hat P1. Düngeprotokoll gegen Schema und Autoflower-Regel prüfen.",
+      "text_en": "Crust on the soil? Pot standing in water? P2 Do not feed when the plant is drought-stressed P1. Check the feeding log against the schedule and the autoflower rule."
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Bei Hitze nicht düngen (P1 nennt keine Gradzahl).",
+      "text_en": "Do not feed in heat (P1 gives no degree value)."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Keine gelesene Quelle verbindet den VPD mit dem Düngen.",
+      "text_en": "No source read links VPD to feeding."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    }
+  ],
+  "do_now": [
+    "Erst einmal nicht weiter düngen [abgeleitet: die WSU-Seite sagt das nicht]. Nie bei Hitze oder Trockenstress düngen P1.",
+    "Spülen: Bei Topfpflanzen lassen sich Salze teilweise auswaschen, wenn man kräftig gießt und das Wasser ablaufen lässt; laut P1 wirkt das nur bei schnell löslichen oder flüssigen Düngern. Vorgehen P6: Kruste und etwas Erde von der Oberfläche abnehmen (je nach Wurzelballen sind 1/2 bis 1 Zoll, umgerechnet 1,27 bis 2,54 cm, ohne Schaden möglich), Untersetzer entfernen, den Topf mit lauwarmem Leitungswasser ein paar Mal bis zum Rand füllen und dazwischen gut ablaufen lassen, die abgenommene Erde durch neue ersetzen und leicht gießen. Das Ablaufwasser wegschütten.",
+    "Nur wenn ein EC-Messgerät vorhanden ist (EC = elektrische Leitfähigkeit, Maß für gelöste Salze): Beim PourThru-Test gelten 6,6 bis 7,8 mS/cm als sehr hoch, über 7,8 ist sofortiges Spülen nötig (P7, gilt für erdlose Substrate; für Erde nennt keine gelesene Quelle eine Spanne).",
+    "Danach vorsichtiger düngen. BioBizz schreibt im Düngeschema, lieber maßvoll als mehr, eine Pflanze sterbe nicht an zu wenig, überlebe aber keine Überdosis (P8, Herstellerton, überspitzt). Was nach einer Überdosis zu tun ist, steht dort nicht."
+  ],
+  "do_now_en": [
+    "Hold off on further feeding [derived: the WSU page does not say this]. Never feed plants stressed by heat or drought P1.",
+    "Leach: in container plants some salts can be washed out by watering heavily and letting the water drain; per P1 this only works for quick-release or liquid fertilizers. Method P6: remove the crust and some surface mix (depending on the root ball, 1/2 to 1 inch, converted 1.27 to 2.54 cm, can come off without harm), remove the saucer, fill the pot to the top with tepid tap water a couple of times and let it drain well in between, replace the removed mix and water lightly. Discard the drained water.",
+    "Only if an EC meter is at hand (EC = electrical conductivity, a measure of dissolved salts): in the PourThru test 6.6 to 7.8 mS/cm counts as very high, above 7.8 leaching is needed immediately (P7, for soilless substrates; no source read gives a range for soil).",
+    "Then feed more carefully. BioBizz writes in its schedule that modest is better than more, a plant will not die from too little but will not survive an overdose (P8, maker's wording, exaggerated). What to do after an overdose is not stated there."
+  ],
+  "prevention": [
+    "Maßvoll düngen und nur auf feuchte Erde P1.",
+    "Autoflower brauchen weniger Nährstoffe. VIVOSUN nennt etwa 1/2 bis 1/4 der Menge einer normal großen Pflanze (P9, Erfahrungsquelle, Händlerratgeber). BioBizz hat keinen eigenen Plan für Autoflower: Der normale Plan ist nutzbar, einzelne Wochen werden übersprungen (P10, Hersteller). Die beiden Aussagen sind verschieden (Bedarf der Pflanze gegen Plan). Die leichtere Hand gilt laut BioBizz nur für die Erde All·Mix, nicht für Light·Mix P8.",
+    "Aus der Praxis (Pott Planter): der Keimling braucht noch keine Nährstoffe, in den ersten ein bis zwei Wochen kein Dünger P11. In der Karte Düngeschema 2026 stehen beide Seiten: der Hersteller der Erde nennt für leicht vorgedüngte Erde 2 bis 3 Wochen ohne zusätzlichen Dünger, der Düngeplan sieht schon in der Anzucht Wachstumsdünger vor. Keine Quelle dieser Karte entscheidet das."
+  ],
+  "prevention_en": [
+    "Feed moderately and only onto moist soil P1.",
+    "Autoflowers need less. VIVOSUN gives about 1/2 to 1/4 of the amount of a normal-sized plant (P9, experience source, retailer guide). BioBizz has no separate schedule for autoflowers: the regular schedule is usable with some weeks skipped (P10, maker). The two statements differ (plant demand versus schedule). The lighter hand applies per BioBizz only to its All·Mix soil, not to Light·Mix P8.",
+    "From practice (Pott Planter): the seedling needs no nutrients yet, no fertilizer in the first one to two weeks P11. The card nutrient schedule 2026 holds both sides: the soil's maker gives 2 to 3 weeks without extra fertilizer for lightly pre-fertilized soil, the feeding plan already lists grow fertilizer during propagation. No source of this card settles it."
+  ],
+  "look_alikes": [
+    "Kaliummangel: rostbraune, vertrocknete, nach oben gerollte Ränder und Spitzen, laut Quelle an jungen Blättern P5.",
+    "Bor-Überschuss: ältere Blätter zuerst, gelbe Blattränder, danach abgestorbenes Gewebe; ähnelt der Verbrennung durch salzreichen Boden P5.",
+    "Krankheiten und Schädlinge verteilen sich meist ungleichmäßig, Düngerbrand meist gleichmäßig P1."
+  ],
+  "look_alikes_en": [
+    "Potassium deficiency: rusty-brown, dried, upcurled margins and tips, per the source on young leaves P5.",
+    "Boron excess: older leaves first, yellow margins followed by necrosis, similar to scorching from saline soils P5.",
+    "Diseases and pests usually spread unevenly, fertilizer burn typically evenly P1."
+  ],
+  "image": {
+    "file": "nutrient-burn-leaf.webp",
+    "thumb": "nutrient-burn-leaf-t.webp",
+    "w": 811,
+    "h": 1200,
+    "alt": "Hanfblatt mit braunen, abgestorbenen Rändern (Düngerbrand)",
+    "alt_en": "Hemp leaf with brown, dead edges (fertilizer burn)",
+    "credit": {
+      "work": "File:Fertilizer-Burn.jpg",
+      "author": "Fenrisulfir",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Fertilizer-Burn.jpg"
+    }
+  },
+  "sources": {
+    "P1": "Washington State University, HortSense, Common cultural: Fertilizer burn, geprüft 2026-03-26, Gartenpflanzen, abgerufen 2026-10-23: https://hortsense.cahnrs.wsu.edu/fact-sheet/common-cultural-fertilizer-burn/",
+    "P2": "Colorado State Extension, PlantTalk 1338, Whitish crust on potting mixes, Zimmerpflanzen, ohne Autor und Datum, abgerufen 2026-10-23: https://planttalk.colostate.edu/topics/houseplants/1338-whitish-crust-potting-mixes/",
+    "P3": "Massuela, Munz, Hartung, Nkebiwe, Graeff-Hönninger (Universität Hohenheim) 2023-09-19, Frontiers in Plant Science, organische Düngung von Cannabis, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC10547009/",
+    "P4": "Saloner und Bernstein (Volcani Center) 2020, Frontiers in Plant Science, Stickstoffversorgung von Cannabis in Perlite, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC7704455/",
+    "P5": "Utah State University Extension, Hemp Nutrient Deficiencies, Ratgeber für Hanfanbau ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-nutrient-deficiencies",
+    "P6": "Colorado State Extension, PlantTalk 1339, Leaching salts from potting mixes, Zimmerpflanzen, abgerufen 2026-10-23: https://planttalk.colostate.edu/topics/houseplants/1339-leaching-salts-potting-mixes/",
+    "P7": "Purdue Extension HO-237-W, Camberato, Lopez, Mickelbart, pH und EC in erdlosen Substraten (PourThru), abgerufen 2026-10-23: https://ag.purdue.edu/department/hla/extension/extension-publications-library/ext-pubs/ho-237-w.html",
+    "P8": "BioBizz, Nutrient schedule, Hersteller, abgerufen 2026-10-23: https://biobizz.com/knowledge-base/nutrient-schedule",
+    "P9": "VIVOSUN, What are Autoflowering Seeds, Händlerratgeber 2022-04-08, Erfahrungsquelle, aus der Kartei übernommen (kartei/nutrients/biobizz-2026.json, N5), abgerufen 2026-10-22: https://vivosun.com/en-CA/growing_guide/what-are-autoflowering-seeds/",
+    "P10": "BioBizz, Cultivation tips (FAQ), Hersteller, abgerufen 2026-10-23: https://biobizz.com/cultivation-tips/",
+    "P11": {
+      "title": "Pott Planter, YouTube: Schluss mit mickrigen Pflanzen, 5 Fehler beim Eigenanbau",
+      "title_en": "Pott Planter, YouTube: 5 beginner mistakes in home growing",
+      "url": "https://www.youtube.com/watch?v=G2g8oC86m44",
+      "retrieved": "2026-10-23",
+      "note": "Erfahrungsquelle; Transkript von Hand kopiert",
+      "note_en": "experience source; transcript copied by hand"
+    }
+  },
+  "_hinweis_wortwahl": "Wortwahl angepasst, ohne den Inhalt zu ändern: der Wiki-Filter gegen Konsumaussagen (vgrow/wiki.py, CONSUMPTION_RE) blendet Sätze mit Wirkung, effect oder CBD auf der Seite aus, und der Zwillingstest zählt Einheiten je Paar: causes[3] en: 'i.e. a salinity effect' -> 'i.e. a kind of salinity impact'",
+  "_left_out": [
+    "'Danach mit weniger neu anfangen (BioBizz)': die Seite kennt keine Nachbehandlung.",
+    "'Düngen stoppen (WSU)' als Quellenaussage: steht nicht auf der Seite, jetzt als abgeleitet gekennzeichnet.",
+    "'laut Handbuch kommen Nährstoffe in den Tank': ohne Seitenangabe nicht prüfbar.",
+    "Guelph 2023 und Cornell 2022 als Doppelgänger-Belege: ohne URL, ersetzt durch Utah State.",
+    "EC-Zielwert für organisch gedüngte Erde: keine Quelle.",
+    "Pott Planter (Video): 'Überdüngen mit organischen Flüssigdüngern fast ausgeschlossen': nicht übernommen, widerspricht dem Hersteller-Satz (P8) und dem Hohenheimer Versuch (P3) dieser Karte.",
+    "Pott Planter (Video): gezeigte Erden, Dünger, das Neemöl-Set und die Produktlinks, Sketch, Witze, Aufrufe zum Abonnieren und Verweise auf eigene Videos: nicht übernommen.",
+    "Pott Planter (Video): keine Zeitmarken aus dem Video übernommen, auf Wunsch des Owners vom 23.10.2026 ('Hank wird nur durch die Minuten verwirrt')."
+  ]
+}

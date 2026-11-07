@@ -1,0 +1,36 @@
+/* The water dashboard (#water) and the E6's card. Shared cards, tiles and pills come from style.css and cockpit.css. */
+.water-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 16px 0; align-items: start; }
+.water-lead { margin: 4px 0 12px; font-size: 16px; line-height: 22px; font-weight: 600; }
+.water-subhead { margin: 20px 0 4px; font-size: 13px; line-height: 18px; font-weight: 600; }
+.water-sources { margin: 8px 0; padding-left: 18px; font-size: 13px; line-height: 20px; }
+.water-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.water-list { margin: 0; font-size: 13px; line-height: 18px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+.water-list dt, .water-list dd { margin: 0; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.water-list dt { color: var(--muted); }
+.water-list dd { text-align: right; font-variant-numeric: tabular-nums; }
+.water-events { list-style: none; margin: 4px 0 0; padding: 0; font-size: 13px; line-height: 18px; }
+.water-events li { display: flex; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.water-event-at { flex: none; min-width: 92px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.water-check-scroll { max-height: none; }
+.water-check { border-collapse: collapse; width: 100%; font-size: 13px; line-height: 18px; }
+.water-check th { text-align: left; font-weight: 600; color: var(--muted); padding: 8px 12px 8px 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.water-check td { vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); }
+.water-check td:nth-child(2) { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.water-check-at { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; line-height: 16px; }
+.water-check-btns { display: flex; gap: 6px; margin-top: 6px; }
+.water-auto { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-top: 14px; font-size: 13px; }
+.water-auto label { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
+#wd-given, #wd-tank { white-space: nowrap; }
+#wd-tank { font-size: 24px; }
+@media (max-width: 959px) {
+  .water-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 699px) {
+  .water-check, .water-check tbody, .water-check tr, .water-check td { display: block; }
+  .water-check thead { display: none; }
+  .water-check tr { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .water-check td { border: 0; padding: 3px 0; }
+  .water-check td:first-child { font-weight: 600; }
+  .water-check td[data-label]::before { content: attr(data-label) ": "; color: var(--muted); font-size: 12px; }
+  .water-check td[data-label] .water-check-at { display: inline; margin-left: 6px; }
+}

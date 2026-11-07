@@ -1,0 +1,158 @@
+{
+  "key": "spider_mite",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "schaedlinge",
+  "label": "Spinnmilben (Gemeine Spinnmilbe, Tetranychus urticae)",
+  "label_en": "Spider mites (twospotted spider mite, Tetranychus urticae)",
+  "tile": "Feine helle Pünktchen, später Gespinst",
+  "tile_en": "Fine pale stippling, later webbing",
+  "aliases": {
+    "de": [
+      "Spinnmilbe",
+      "Spinnmilben",
+      "Gemeine Spinnmilbe",
+      "Tetranychus urticae"
+    ],
+    "en": [
+      "spider mite",
+      "spider mites",
+      "twospotted spider mite",
+      "two-spotted spider mite",
+      "TSSM",
+      "Tetranychus urticae"
+    ]
+  },
+  "symptoms": [
+    "Früh: feine helle Pünktchen auf den Blättern, manchmal bronzefarben P1.",
+    "Wo: Kolonien vor allem auf den Blattunterseiten P1, oft an älteren Blättern entlang der Adern P2.",
+    "Spät: gelbe Blätter, braune oder gelbe Sprenkel, Gespinste auf Blättern und Blüten P3.",
+    "Die Milbe: Weibchen etwa 0,4 mm (P4; P3), unter 1/50 Zoll, umgerechnet etwa 0,5 mm P2; P1 nennt als Obergrenze 'weniger als 1/20 Zoll' (unter 1,27 mm). Mit bloßem Auge sieht man nur winzige, bewegte Punkte P1, laut P3 'kaum sichtbar'. Mit einer 10-fach-Lupe sieht man sie leicht P1, mit 10- bis 20-fach auch Eier und alle Stadien P2."
+  ],
+  "symptoms_en": [
+    "Early: fine light dots on the leaves, sometimes a bronze color P1.",
+    "Where: colonies mostly on leaf undersides P1, often on older leaves along the veins P2.",
+    "Late: yellow leaves, brown or yellow stippling, webbing on foliage and flowers P3.",
+    "The mite: females about 0.4 mm (P4; P3), under 1/50 inch, converted about 0.5 mm P2; P1 gives 'less than 1/20 inch' (under 1.27 mm) as an upper limit. To the naked eye they look like tiny moving dots P1, 'barely visible' per P3. A 10x hand lens shows them easily P1; 10x to 20x also shows eggs and all stages P2."
+  ],
+  "causes": [
+    "Warm und trocken: UConn nennt 68 bis 86 °F (umgerechnet 20 bis 30 °C) bei 30 bis 50 % relativer Luftfeuchte als Bereich schneller Vermehrung (P2, Gewächshaus, Hanf nicht erwähnt).",
+    "Wasserstress: Pflanzen mit zu viel oder zu wenig Wasser werden stärker befallen P4.",
+    "Kurze Generationen: vom Ei bis zur ausgewachsenen Milbe 7 bis 21 Tage, je nach Temperatur P2.",
+    "Breitband-Insektizide (Mittel gegen viele Insektenarten) gegen andere Schädlinge lösen oft Spinnmilben-Ausbrüche aus P1."
+  ],
+  "causes_en": [
+    "Warm and dry: UConn gives 68 to 86 °F (20 to 30 °C) at 30 to 50% relative humidity as the range of fast increase (P2, greenhouse, hemp not mentioned).",
+    "Water stress: plants with too much or too little water get more infested P4.",
+    "Short generations: egg to adult in 7 to 21 days, depending on temperature P2.",
+    "Broad-spectrum insecticides (products against many insect species) used on other pests often trigger spider mite outbreaks P1."
+  ],
+  "check": [
+    {
+      "metric": "probe_temp",
+      "text": "Bei 20 bis 30 °C und 30 bis 50 % Feuchte vermehren sie sich schnell (P2, Gewächshaus). Die Ziele der späten Blüte in der Phasenkarte (20 bis 24 °C, 40 bis 50 %) liegen in diesem Bereich, in der Blüte also die Blattunterseiten genau ansehen.",
+      "text_en": "They increase fast at 20 to 30 °C and 30 to 50% RH (P2, greenhouse). The late-flower targets of the stage card (20 to 24 °C, 40 to 50%) fall inside that range, so check leaf undersides closely in flower."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Höhere Feuchte als Gegenmittel nennt keine gelesene Quelle; gegen Knospenfäule rät USU im Gewächshaus zu unter 50 % P5 [abgeleitet: beides zusammen spricht dagegen, die Feuchte in der Blüte anzuheben].",
+      "text_en": "No source read names higher humidity as a remedy; against bud rot USU advises below 50% in the greenhouse P5 [derived: together this argues against raising humidity in flower]."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Hoher VPD heißt Luft zu trocken oder zu warm (Phasenkarte); einen VPD-Grenzwert für Spinnmilben nennt keine gelesene Quelle.",
+      "text_en": "High VPD means air too dry or too warm (stage card); no source read gives a VPD threshold for spider mites."
+    },
+    {
+      "metric": "watering",
+      "text": "Wasserstress in beide Richtungen fördert Befall P4; Pumpenlauf und Tank prüfen, den Topf weder austrocknen lassen noch nass halten.",
+      "text_en": "Water stress either way favors infestation P4; check pump runs and tank, keep the pot neither dry nor soggy."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    }
+  ],
+  "do_now": [
+    "Prüfen: Blattunterseiten mit einer Lupe 10- bis 20-fach ansehen P2 oder einige Milben von der Blattfläche auf ein weißes Blatt Papier abschütteln P1.",
+    "Abspritzen: In Gärten und an kleinen Obstbäumen senkt regelmäßiges, kräftiges Abspritzen mit Wasser die Zahl der Milben oft ausreichend P1. In der Blüte besser nicht in die Blüten spritzen (Folgerung, nicht aus einer Quelle: Knospenfäule braucht Feuchte und Nässe, auch aus Bewässerung P5).",
+    "Raubmilbe Phytoseiulus persimilis: NC State: Raubmilben können sehr wirksam sein, müssen aber ausgebracht werden, solange wenige Milben da sind P4. Purdue: Die Forschung zur Wirksamkeit von Raubmilben an Hanf ist bisher begrenzt P3. Ob und wo es sie in Deutschland zu kaufen gibt, sagt keine gelesene Quelle.",
+    "Seifen oder Öle wirken nur bei direktem Kontakt und nur begrenzt gegen Eier, deshalb müssen sie oft wiederholt werden P4. Nicht bei Wasserstress oder über 90 °F (umgerechnet, gerundet: 32,2 °C) anwenden und einige Tage vor der ganzen Behandlung an einem Teil der Blätter testen P1. Etikett und Zulassung beachten: Im Haus- und Kleingarten dürfen nur Mittel angewandt werden, die für nichtberufliche Anwender zugelassen sind; sie tragen den Aufdruck 'Anwendung durch nichtberufliche Anwender zulässig' P7. Ob ein Mittel für Hanf zugelassen ist und ob eine Growbox in der Wohnung als Haus- und Kleingarten gilt, sagt diese Seite nicht. NC State weist darauf hin, dass sich die Vorschriften zu Hanf ständig ändern (US-Quelle) P4.",
+    "Breitband-Insektizide gegen andere Schädlinge möglichst vermeiden, denn sie lösen oft Spinnmilben-Ausbrüche aus P1."
+  ],
+  "do_now_en": [
+    "Check: inspect leaf undersides with a 10x to 20x hand lens P2 or shake a few mites off the leaf surface onto a white sheet of paper P1.",
+    "Spray off: in gardens and on small fruit trees, regular, forceful spraying with water often reduces mite numbers adequately P1. In flower, better not spray into the buds (inference, not from a source: bud rot needs humidity and moisture, including from irrigation P5).",
+    "Predatory mite Phytoseiulus persimilis: NC State: predatory mites can be highly effective but must be released when populations are small P4. Purdue: research on their efficacy on hemp is limited so far P3. No source read says whether or where they are sold in Germany.",
+    "Soaps or oils only work on direct contact and have limited activity against eggs, so they must be reapplied often P4. Not on water-stressed plants or above 90 °F (converted, rounded: 32.2 °C); test on part of the foliage several days before a full treatment P1. Follow label and approval (Etikett und Zulassung beachten): in German home and allotment gardens only products approved for non-professional users may be used; they carry the mark 'Anwendung durch nichtberufliche Anwender zulässig' P7. Whether a product is approved for hemp and whether a grow box in a flat counts as a home garden, this page does not say. NC State notes that hemp regulations change constantly (US source) P4.",
+    "Avoid broad-spectrum insecticides against other pests when possible, as they often trigger spider mite outbreaks P1."
+  ],
+  "prevention": [
+    "Gleichmäßig gießen, weder Trockenstress noch Nässe P4.",
+    "Breitband-Insektizide möglichst vermeiden P1.",
+    "In der Blüte die Blattunterseiten regelmäßig ansehen, weil die Zielwerte im günstigen Bereich der Milben liegen (P2, Phasenkarte)."
+  ],
+  "prevention_en": [
+    "Water evenly, neither drought stress nor soggy soil P4.",
+    "Avoid broad-spectrum insecticides when possible P1.",
+    "In flower, check leaf undersides regularly, because the targets sit in the mites' favorable range (P2, stage card)."
+  ],
+  "look_alikes": [
+    "Thripse: weiße Flecken oder silbrige Narben mit dunklen Kotpunkten P8.",
+    "Hanfrostmilbe: Bronzefärbung, kleinere, spröde Blätter, nach oben gerollte Blattränder P9; die Milben sieht man nur stark vergrößert (Karte Hanfrostmilbe)."
+  ],
+  "look_alikes_en": [
+    "Thrips: white flecks or silvery scars with dark fecal spots P8.",
+    "Hemp russet mite: bronzing, smaller brittle leaves, leaf edges curling upward P9; the mites are visible only under strong magnification (hemp russet mite card)."
+  ],
+  "image": {
+    "file": "spider-mite-leaf.webp",
+    "thumb": "spider-mite-leaf-t.webp",
+    "w": 1200,
+    "h": 900,
+    "alt": "Hanfblatt von oben mit feinen hellen Saugpunkten, einem vertrockneten Blattrand und feinem Gespinst",
+    "alt_en": "Cannabis leaf from above with fine pale feeding spots, a dried leaf edge and fine webbing",
+    "note": "Die Milbenart nennt die Bildseite nicht.",
+    "note_en": "The image page does not name the mite species.",
+    "compare": false,
+    "credit": {
+      "work": "File:Spint op Cannabis Sativa.jpg",
+      "author": "Rikva (nl.wikipedia)",
+      "license": "Public Domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-user-nl",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Spint_op_Cannabis_Sativa.jpg"
+    }
+  },
+  "sources": {
+    "P1": "UC Statewide IPM Program, Pest Notes Spider Mites (L.D. Godfrey, Stand 12/2011), Garten-Merkblatt, nicht Hanf, abgerufen 2026-10-23: https://ipm.ucanr.edu/home-and-landscape/spider-mites/",
+    "P2": "UConn Extension, Pundt, Managing Two-Spotted Mites in the Greenhouse, Stand Juli 2024, Gewächshaus, Hanf nicht erwähnt, abgerufen 2026-10-23: https://ipm.cahnr.uconn.edu/?p=13904",
+    "P3": "Purdue Extension E-275, Serber und Long, Management Strategies for Common Arthropod Pests of Greenhouse Hemp in Indiana, Dezember 2021, abgerufen 2026-10-23: https://www.extension.entm.purdue.edu/publications/E-275/E-275.html",
+    "P4": "NC State Extension, Pulkoski und Burrack, Twospotted Spider Mite in Industrial Hemp, 2020-08-05, abgerufen 2026-10-23: https://content.ces.ncsu.edu/twospotted-spider-mite-in-industrial-hemp",
+    "P5": "Utah State University Extension, Hemp Bud Rot, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-bud-rot.php",
+    "P7": "Pflanzenschutzamt Berlin, Anwendung von Pflanzenschutzmitteln in Haus-, Klein- und Siedlergärten, ohne Datum, abgerufen 2026-10-23: https://www.berlin.de/pflanzenschutzamt/ueberwachung/pflanzenschutzmittel-im-haus-und-kleingarten/",
+    "P8": "Utah State University Extension, Hemp Thrips, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-thrips.php",
+    "P9": "Utah State University Extension, Hemp Russet Mite, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-hemp-russet-mite-.php"
+  },
+  "_left_out": [
+    "CSU-Angabe 'etwa 1,3 mm (1/20 Zoll)': Seite am 2026-10-23 nicht abrufbar; zudem dieselbe Zahl wie die UC-IPM-Obergrenze, kein Widerspruch.",
+    "'Die 0,4 mm liegen näher an der Wahrheit': ersetzt durch die belegten Angaben von NC State, Purdue und UConn.",
+    "'In der Blüte nicht in die Blüten spritzen' als Quellenaussage: jetzt als Folgerung gekennzeichnet.",
+    "Aliasse 'Rote Spinne', 'Bohnenspinnmilbe': ohne gelesenen Beleg.",
+    "UC IPM 'heiße, staubige Bedingungen, Wasserstress': nur sinngemäß gelesen.",
+    "Neoseiulus californicus (Purdue): nur als Zusammenfassung gelesen.",
+    {
+      "section": "do_now",
+      "text": "Laut CSU in den USA im Handel und wirksam gegen Spinnmilben an Hanf (P6, Seite nicht abrufbar, Wortlaut ungeprüft).",
+      "text_en": "Per CSU commercially available in the U.S. and effective against spider mites in hemp (P6, page not retrievable, wording unchecked).",
+      "sources": [
+        "P6"
+      ],
+      "reason": "Quelle am 2026-10-23 nicht abrufbar, Wortlaut ungeprüft; eine nicht gelesene Seite trägt keine Aussage (Review 23.10.2026). NC State und Purdue tragen den Rest.",
+      "url": "https://agsci.colostate.edu/agbio/ipm-pests/twospotted-spider-mite/",
+      "source_entry": "Colorado State University, Agricultural Biology, Twospotted spider mite, ohne Autor und Datum, am 2026-10-23 nicht abrufbar, Wortlaut ungeprüft, abgerufen 2026-10-23: https://agsci.colostate.edu/agbio/ipm-pests/twospotted-spider-mite/",
+      "action": "entfernt"
+    }
+  ]
+}

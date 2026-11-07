@@ -1,0 +1,182 @@
+{
+  "key": "nitrogen_deficiency",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "naehrstoffe",
+  "label": "Stickstoffmangel (N)",
+  "label_en": "Nitrogen deficiency (N)",
+  "tile": "Ältere Blätter vergilben, an der Spitze zuerst",
+  "tile_en": "Older leaves turn yellow, tips first",
+  "aliases": {
+    "de": [
+      "N-Mangel",
+      "untere Blätter werden gelb",
+      "gelbe Blätter",
+      "Vergilbung"
+    ],
+    "en": [
+      "N deficiency",
+      "lower leaves yellowing",
+      "yellow leaves",
+      "yellowing"
+    ]
+  },
+  "symptoms": [
+    "Hinweis: Alle Wochenangaben stammen aus einem Hydrokultur-Versuch (P1, Sorte Gelato 29). Das Element fehlte von Anfang an komplett, gezählt wird ab dem Tag der Umstellung auf 12 Stunden Licht und 12 Stunden Dunkel. Für eine Autoflower in Erde gilt diese Zählung nicht.",
+    "Erstes Zeichen im Versuch: etwas gestauchtes Wachstum in den ersten Wochen, noch vor dem Gelb P1.",
+    "Erstes Gelb: ganz leichtes Gelb an den Spitzen der Blattfinger unterer Fächerblätter (die großen, fingerförmigen Blätter), im Versuch in Woche 3 P1.",
+    "Das Gelb beginnt an älteren Blättern an der Spitze und wandert zur Blattmitte P2.",
+    "Woche 4: Gelb an den meisten Fächerblättern im unteren Zweidrittel der Pflanze. Woche 5: fast alle Fächerblätter gelb, einige schon braun und abgestorben, die Blattstiele der am stärksten betroffenen Blätter rotbraun P1.",
+    "Spät: stark vergilbte alte Blätter fallen ab, die Pflanze blüht verfrüht P2.",
+    "Bei allgemein zu wenig Dünger (im Versuch Stickstoff, Phosphor und Kalium zusammen verdünnt): Grün wird gelb, dann blassgelb bis weißlich, zuletzt rot bis violett P3.",
+    "Aus der Praxis (Pott Planter): ist die Erde leer, werden die Blätter gelb und die Pflanze wächst kümmerlich P14. Gelb allein beweist keinen Hunger: dieselben Zeichen kommen auch von Überwässern (Karte Überwässern); beim Stickstoff beginnt das Gelb an älteren Blättern P2."
+  ],
+  "symptoms_en": [
+    "Note: all week counts come from a hydroponic trial (P1, cultivar Gelato 29). The element was missing completely from the start; weeks count from the day the light was switched to 12 hours on, 12 hours off. This count does not apply to an autoflower in soil.",
+    "First sign in the trial: somewhat stunted growth in the first weeks, before any yellowing P1.",
+    "First yellowing: very slight yellowing of the leaflet tips of lower fan leaves (the large, finger-shaped leaves), week 3 in the trial P1.",
+    "Yellowing starts on older leaves at the tips and moves toward the center P2.",
+    "Week 4: yellow on most fan leaves in the bottom two thirds of the plant. Week 5: almost all fan leaves yellow, some already brown and dead, petioles of the worst-hit leaves red-brown P1.",
+    "Late: very yellow old leaves drop, the plant flowers prematurely P2.",
+    "With too little fertilizer overall (in the trial nitrogen, phosphorus and potassium diluted together): green turns yellow, then pale yellow to whitish, finally red to purple P3.",
+    "From practice (Pott Planter): once the soil is empty, the leaves turn yellow and the plant grows stunted P14. Yellow alone does not prove hunger: the same signs also come from overwatering (overwatering card); with nitrogen the yellowing starts on older leaves P2."
+  ],
+  "causes": [
+    "Zu wenig Stickstoff: Bei 30 mg/l N zeigten die Pflanzen deutliche Mangelzeichen, bei 80 mg/l Gelb vor allem an den unteren alten Blättern, 160 mg/l war in der vegetativen Phase optimal (P4: Sorte Annapurna, Perlite in Töpfen, 18 Stunden Licht, 32 Tage; nicht auf Erde mit BioBizz übertragbar).",
+    "Organischer Dünger wirkt erst, wenn Bakterien, Pilze und andere Mikroorganismen ihn umsetzen P3.",
+    "Mikroben binden beim Abbau organischer Substrate Stickstoff, am stärksten mit Holz im Substrat. Die Quelle nennt den Effekt kleiner als früher befürchtet und meint Gewächshaus-Substrate, nicht Cannabis P5.",
+    "Stickstoff ist gut löslich und wird leicht aus der Erde gespült, deshalb muss er regelmäßig ersetzt werden P2.",
+    "Aus der Praxis (Pott Planter): auch vorgedüngte Erde ist irgendwann leer, je nach Topfgröße. Leicht vorgedüngte Erde passt für Keimung und Jungpflanze; für die Blüte muss nachgedüngt werden P14. Das deckt sich mit dieser Karte: Stickstoff wird leicht ausgespült und muss regelmäßig ersetzt werden P2."
+  ],
+  "causes_en": [
+    "Too little nitrogen: at 30 mg/L N plants showed clear deficiency, at 80 mg/L yellowing mainly on lower old leaves, 160 mg/L was optimal in the vegetative phase (P4: cultivar Annapurna, potted perlite, 18 h light, 32 days; not transferable to soil with BioBizz).",
+    "Organic fertilizer only works once bacteria, fungi and other microorganisms convert it P3.",
+    "Microbes tie up nitrogen while breaking down organic substrates, most with wood in the substrate. The source calls the impact smaller than once feared and covers greenhouse substrates, not cannabis P5.",
+    "Nitrogen is highly soluble and easily washed out of soil, so it must be replaced regularly P2.",
+    "From practice (Pott Planter): even pre-fertilized soil runs empty at some point, depending on pot size. Lightly pre-fertilized soil suits germination and young plants; for flowering you have to feed extra P14. This matches this card: nitrogen leaches easily and must be replaced regularly P2."
+  ],
+  "check": [
+    {
+      "metric": "watering",
+      "text": "Ist die Erde dauernd nass? Hanf ist empfindlich gegen zu viel Wasser P6. Viel Durchlauf spült Stickstoff aus P2. Düngeprotokoll mit der BioBizz-Karte (nutrients/biobizz-2026.json) vergleichen.",
+      "text_en": "Is the soil always wet? Hemp is sensitive to excess water P6. Lots of runoff washes nitrogen out P2. Compare the feeding log with the BioBizz card (nutrients/biobizz-2026.json)."
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    }
+  ],
+  "do_now": [
+    "Prüfe, wo es anfängt. Bewegliche Nährstoffe (laut P7 Stickstoff, Phosphor, Kalium, Magnesium) zeigen Mangel unten an alten Blättern, unbewegliche (Calcium, Schwefel, Eisen) oben an neuen (P7, Gewächshauspflanzen). Beginnt es oben, die Karten Schwefel und Eisen ansehen. Calcium begann in den gelesenen Cannabis-Quellen trotzdem unten, siehe Karte Calcium.",
+    "Blütewoche notieren. Mitte bis Ende der Blüte wirft die Pflanze laut Rosenthal oft die untersten Blätter ab und nutzt deren Vorräte (P8, Erfahrungsquelle). Er rät, langsam auf Blütedünger umzustellen, damit der Mangel nicht extrem wird. Utah State: Leichte Mängel sind häufig, solange die Wurzeln nicht genug aufnehmen, und klingen ab, wenn das Wachstum nachlässt P2.",
+    "Düngeprotokoll mit der BioBizz-Karte vergleichen. Utah State (Feldhanf) rät bei Mangel zu einer etwas stärkeren Nährlösung P2. Dosis nach Etikett und Düngeplan.",
+    "Aus der Praxis (Pott Planter): organischen Flüssigdünger nach Angabe auf der Flasche ins Gießwasser geben, umrühren, gießen; Mikroorganismen in der Erde setzen ihn um P14. Das deckt sich mit dieser Karte P3. Die Menge kommt aus dem Düngeplan, nicht aus dem Video. Ob Dünger in den Tank der Box darf, sagt keine gelesene Quelle.",
+    "In kleinen Schritten nachdüngen: Laut Hersteller stirbt eine Pflanze nicht an zu wenig, überlebt aber keine Überdosis (P9, Herstellerton).",
+    "Unklar? Blattprobe ins Labor, aber früh: am Beginn der Symptome, nicht Wochen später. Die Werte können in die Irre führen: Im Versuch passten die Blattwerte der Pflanzen ohne Stickstoff eher zu Calcium- oder Magnesiummangel P1."
+  ],
+  "do_now_en": [
+    "Check where it starts. Mobile nutrients (per P7 nitrogen, phosphorus, potassium, magnesium) show deficiency on lower old leaves, immobile ones (calcium, sulfur, iron) on upper new leaves (P7, greenhouse crops). If it starts at the top, see the sulfur and iron cards. Calcium still began low in the cannabis sources read, see the calcium card.",
+    "Note the flowering week. In mid to late flower the plant often drops its lowest leaves and uses their stores (P8, experience source). He advises switching to bloom feed gradually so the deficiency does not get extreme. Utah State: mild deficiencies are common while roots struggle to absorb enough and ease when growth slows P2.",
+    "Compare the feeding log with the BioBizz card. Utah State (field hemp) advises a slightly more concentrated nutrient solution P2. Dose per label and feeding plan.",
+    "From practice (Pott Planter): add organic liquid fertilizer to the watering water as the bottle says, stir, water; microorganisms in the soil convert it P14. This matches this card P3. The amount comes from the feeding plan, not from the video. Whether fertilizer may go into the box's tank, no source read says.",
+    "Feed more in small steps: per the maker a plant will not die from too little but will not survive an overdose (P9, maker's wording).",
+    "Unsure? Send a leaf sample to a lab, but early: at the start of symptoms, not weeks later. Lab values can mislead: in the trial the leaf values of the plants without nitrogen looked more like calcium or magnesium deficiency P1."
+  ],
+  "prevention": [
+    "Autoflower brauchen weniger: VIVOSUN nennt etwa 1/2 bis 1/4 der Nährstoffmenge einer normal großen Pflanze (P10, Erfahrungsquelle, Bedarf der Pflanze).",
+    "BioBizz hat keinen eigenen Plan für Autoflower: Der normale Plan ist nutzbar, einige Wochen werden übersprungen (P11, Hersteller)."
+  ],
+  "prevention_en": [
+    "Autoflowers need less: VIVOSUN gives about 1/2 to 1/4 of the nutrients of a normal-sized plant (P10, experience source, plant demand).",
+    "BioBizz has no separate autoflower schedule: the regular schedule is usable with some weeks skipped (P11, maker)."
+  ],
+  "look_alikes": [
+    "Abwerfen der untersten Blätter in der späten Blüte: Rosenthal beschreibt es als Stickstoffmangel durch Abzug der Vorräte (P8, Erfahrungsquelle). Eine Quelle, die es als normal einstuft, wurde nicht gelesen.",
+    "Schwefelmangel: das Gelb beginnt oben an jungen Zuckerblättern (kleine Blätter zwischen den Blüten) P1.",
+    "Magnesiummangel: Gelb zwischen den Adern an älteren Blättern P2.",
+    "Wurzelfäule (Pythium): Stauchung, Welke, gelbe Blätter, Blattfall P6.",
+    "Septoria-Blattflecken: beginnen an unteren Blättern und innen im Bestand, braune Flecken mit gelbem Hof P12.",
+    "Spinnmilben: Sprenkel, bei starkem Befall gelbe, vertrocknende Blätter; Milben unter mindestens 10-facher Vergrößerung sichtbar P13."
+  ],
+  "look_alikes_en": [
+    "Dropping of the lowest leaves in late flower: Rosenthal describes it as N deficiency from drawing on stores (P8, experience source). No source read calls it normal.",
+    "Sulfur deficiency: yellowing starts at the top on young sugar leaves (small leaves between the flowers) P1.",
+    "Magnesium deficiency: yellow between the veins on older leaves P2.",
+    "Root rot (Pythium): stunting, wilting, yellow leaves, leaf drop P6.",
+    "Septoria leaf spot: starts on lower leaves and inside the canopy, brown spots with a yellow halo P12.",
+    "Spider mites: stippling, with heavy infestation yellow drying leaves; mites visible under at least 10x magnification P13."
+  ],
+  "image": {
+    "file": "nitrogen-bean.webp",
+    "thumb": "nitrogen-bean-t.webp",
+    "w": 675,
+    "h": 900,
+    "alt": "Bohnenpflanze im Beet, ganz blass gelbgrün",
+    "alt_en": "Bean plant in a bed, pale yellow-green all over",
+    "note": "Eine Bohne, kein Hanf. Sie zeigt die allgemeine Aufhellung, nicht das Muster der Karte, bei dem ältere Blätter zuerst gelb werden.",
+    "note_en": "A bean, not cannabis. It shows the overall paleness, not the card's pattern where older leaves turn yellow first.",
+    "compare": true,
+    "credit": {
+      "work": "File:Phaseolus vulgaris nitrogen deficiency.jpg",
+      "author": "Rasbak",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Phaseolus_vulgaris_nitrogen_deficiency.jpg"
+    }
+  },
+  "sources": {
+    "P1": "Llewellyn, Golem, Jones, Zheng (University of Guelph) 2023, Plants 12:422, Nährstoffmangel bei Cannabis, Hydrokultur (DWC), Sorte Gelato 29, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC9920212/",
+    "P2": "Utah State University Extension, Hemp Nutrient Deficiencies, Ratgeber für Hanfanbau ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-nutrient-deficiencies",
+    "P3": "Massuela, Munz, Hartung, Nkebiwe, Graeff-Hönninger (Universität Hohenheim) 2023-09-19, Frontiers in Plant Science, organische Düngung von Cannabis, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC10547009/",
+    "P4": "Saloner und Bernstein (Volcani Center) 2020, Frontiers in Plant Science, Stickstoffversorgung von Cannabis in Perlite, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC7704455/",
+    "P5": "Jackson (NC State), 10 things to know about growing in wood substrates, Greenhouse Canada 2020-12-18, Gewächshaus-Substrate, nicht Cannabis, abgerufen 2026-10-23: https://www.greenhousecanada.com/10-things-to-know-about-growing-in-wood-substrates/",
+    "P6": "NC State Extension, Troth und Thiessen, Pythium Root and Crown Rot of Industrial Hemp, 2019-08-08, abgerufen 2026-10-23: https://content.ces.ncsu.edu/pythium-root-and-crown-rot-of-industrial-hemp",
+    "P7": "Purdue University, Nemali, My plants are yellowing! What is wrong with them?, Ratgeber 2017-03-18, Gewächshauspflanzen, abgerufen 2026-10-23: https://www.purdue.edu/hla/sites/cea/article/my-plants-are-yellowing-what-is-wrong-with-them/",
+    "P8": "Ed Rosenthal, Nitrogen deficiency, Blog 2018-10-09, Erfahrungsquelle, abgerufen 2026-10-23: https://www.edrosenthal.com/ask-ed-blog/nitrogen-deficiency",
+    "P9": "BioBizz, Nutrient schedule, Hersteller, abgerufen 2026-10-23: https://biobizz.com/knowledge-base/nutrient-schedule",
+    "P10": "VIVOSUN, What are Autoflowering Seeds, Händlerratgeber 2022-04-08, Erfahrungsquelle, aus der Kartei übernommen (kartei/nutrients/biobizz-2026.json, N5), abgerufen 2026-10-22: https://vivosun.com/en-CA/growing_guide/what-are-autoflowering-seeds/",
+    "P11": "BioBizz, Cultivation tips (FAQ), Hersteller, abgerufen 2026-10-23: https://biobizz.com/cultivation-tips/",
+    "P12": "University of Kentucky Extension, Gauthier, Leonberger, Rahnama, Septoria Leaf Spot of Field Hemp (PPFS-AG-H-01), 2021-09-16, Feldhanf, vom Herausgeber als archiviert markiert, abgerufen 2026-10-23: https://plantpathology.mgcafe.uky.edu/files/ppfs-ag-h-01.pdf",
+    "P13": "NC State Extension, Pulkoski und Burrack, Twospotted Spider Mite in Industrial Hemp, 2020-08-05, abgerufen 2026-10-23: https://content.ces.ncsu.edu/twospotted-spider-mite-in-industrial-hemp",
+    "P14": {
+      "title": "Pott Planter, YouTube: Schluss mit mickrigen Pflanzen, 5 Fehler beim Eigenanbau",
+      "title_en": "Pott Planter, YouTube: 5 beginner mistakes in home growing",
+      "url": "https://www.youtube.com/watch?v=G2g8oC86m44",
+      "retrieved": "2026-10-23",
+      "note": "Erfahrungsquelle; Transkript von Hand kopiert",
+      "note_en": "experience source; transcript copied by hand"
+    }
+  },
+  "_hinweis_wortwahl": "Wortwahl angepasst, ohne den Inhalt zu ändern: der Wiki-Filter gegen Konsumaussagen (vgrow/wiki.py, CONSUMPTION_RE) blendet Sätze mit Wirkung, effect oder CBD auf der Seite aus, und der Zwillingstest zählt Einheiten je Paar: causes[2] en: 'calls the effect smaller' -> 'calls the impact smaller'",
+  "_left_out": [
+    "Cornell, Hajarian 2022 (Diagnostic Guide, Hydrokultur): 'gleichmäßig helles Blatt, gestaucht, ab Woche 2', 'Blattprobe auch wenn es eindeutig wirkt', 'Symptome mit Foto und Datum verfolgen'. PDF nicht lesbar, nicht geprüft.",
+    "BioBizz All-Mix ist vorgedüngt und braucht eine leichtere Hand: belegt, gilt aber nicht für die verwendete Erde (420Flow Lightmix).",
+    "'Natürliches Vergilben, kann normal sein': steht so nicht bei Rosenthal.",
+    "'weniger Blüten' bei Stickstoffmangel (Utah State): in der Prüfung nicht bestätigt.",
+    "NC State 2019 als Quelle für Stickstoffbindung durch Mikroben: Jahr nicht bestätigt, ersetzt durch Jackson 2020.",
+    "Rat 'Symptome mit Foto und Datum festhalten': keine Quelle.",
+    "Pott Planter (Video): 'kleine, schwache Blüten' als Zeichen leerer Erde: nicht übernommen, 'weniger Blüten' bei Stickstoffmangel ist in der Prüfung nicht bestätigt (siehe oben).",
+    "Pott Planter (Video): feste Regel 'im Wachstum stickstoffbetont, in der Blüte weniger Stickstoff, mehr Phosphor und Kalium': nicht übernommen. Der Düngeplan der Kartei steigert den Wachstumsdünger in den ersten Blütewochen; wie viel Stickstoff darin steckt, nennt keine gelesene Quelle.",
+    "Pott Planter (Video): 'organische Flüssigdünger sind am einfachsten' als Rangfolge: Meinung, nicht übernommen.",
+    "Pott Planter (Video): zur gezeigten Erde sagt er 'nicht ganz so scharf' und 'perfekt geeignet' für Keimung und Jungpflanze. Übernommen als 'leicht vorgedüngt' (eine Lesart) und 'passt', ohne 'perfekt' und ohne 'reicht': ob die Erde die Jungpflanze allein versorgt, entscheidet keine Quelle (siehe Karte Nährstoffbrand, Vorbeugung).",
+    "Pott Planter (Video): gezeigte Erden, Dünger, das Neemöl-Set und die Produktlinks, Sketch, Witze, Aufrufe zum Abonnieren und Verweise auf eigene Videos: nicht übernommen.",
+    "Pott Planter (Video): keine Zeitmarken aus dem Video übernommen, auf Wunsch des Owners vom 23.10.2026 ('Hank wird nur durch die Minuten verwirrt')."
+  ]
+}

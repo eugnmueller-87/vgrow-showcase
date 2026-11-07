@@ -1,0 +1,140 @@
+{
+  "key": "fungus_gnat",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "schaedlinge",
+  "label": "Trauermücken",
+  "label_en": "Fungus gnats",
+  "tile": "Kleine dunkle Mücken, Larven in feuchter Erde",
+  "tile_en": "Small dark gnats, larvae in damp soil",
+  "aliases": {
+    "de": [
+      "Trauermücke",
+      "Trauermücken",
+      "Trauerfliege",
+      "Trauerfliegen",
+      "Sciariden"
+    ],
+    "en": [
+      "fungus gnat",
+      "fungus gnats",
+      "sciarid fly",
+      "sciarid flies"
+    ]
+  },
+  "symptoms": [
+    "Früh: kleine, dunkle, zierliche, mückenähnliche Fliegen, meist etwa 1/16 bis 1/8 Zoll lang (umgerechnet etwa 1,6 bis 3,2 mm), mit langen Beinen und Fühlern und einer Y-förmigen Ader im Flügel (P1; P2).",
+    "Wo: Larven in der feuchten Erde, vor allem im obersten halben Zoll (1,27 cm) P3. Sie sind glasig bis weißlich, beinlos, mit glänzend schwarzem Kopf P1.",
+    "Schaden: Die Fliegen selbst schaden den Pflanzen nicht, sie sind vor allem lästig. Die Larven können in großer Zahl die Wurzeln schädigen und das Wachstum bremsen, vor allem bei Sämlingen und jungen Pflanzen. Deutliche Wurzelschäden und sogar Pflanzentod wurden bei Zimmerpflanzen beobachtet, wenn viele Larven in feuchter, organisch reicher Erde lebten P1."
+  ],
+  "symptoms_en": [
+    "Early: small, dark, delicate, mosquito-like flies, commonly about 1/16 to 1/8 inch long (converted about 1.6 to 3.2 mm), with long legs and antennae and a Y-shaped vein in the wing (P1; P2).",
+    "Where: larvae in moist soil, mostly in the top half inch (1.27 cm) P3. They are translucent to whitish, legless, with a shiny black head P1.",
+    "Damage: the adult flies do not harm the plants; they are mostly a nuisance. Larvae in large numbers can damage roots and stunt growth, especially in seedlings and young plants. Significant root damage and even plant death have been observed in houseplants when high populations lived in moist, organically rich soil P1."
+  ],
+  "causes": [
+    "Nässe im Topf: Trauermücken gedeihen bei Feuchte, besonders mit viel verrottendem Pflanzenmaterial und Pilzen P1.",
+    "Feuchte, organisch reiche Erde fördert hohe Larvenzahlen P1.",
+    "Nicht fertig verrotteter Kompost im Substrat ist oft schon mit Trauermücken befallen, außer er wurde vorher pasteurisiert P1.",
+    "Feuchte Erde: Oregon State rät, kein Wasser im Untersetzer stehen zu lassen P3 [abgeleitet: Nässe fördert die Larven].",
+    "Schneller Entwicklungszyklus: Bei 75 °F (umgerechnet, gerundet: 23,9 °C) schlüpfen die Eier nach etwa 3 Tagen, die Larven brauchen etwa 10 Tage bis zur Puppe, nach etwa 4 weiteren Tagen schlüpfen die Fliegen. Eine Generation dauert so etwa 17 Tage, je nach Temperatur P1. UConn nennt 21 bis 28 Tage vom Ei bis zur ausgewachsenen Mücke 'je nach Temperatur', ohne Gradzahl für diese Spanne; die Larven brauchen dort etwa zwei Wochen bei 72 °F (umgerechnet, gerundet: 22,2 °C) P2. Die Zahlen sind verschieden, aber nicht widersprüchlich."
+  ],
+  "causes_en": [
+    "Wet pot: fungus gnats thrive in moist conditions, especially with lots of decaying plant matter and fungi P1.",
+    "Moist, organically rich soil favors high larval numbers P1.",
+    "Incompletely composted organic matter in the mix is often already infested, unless it was pasteurized first P1.",
+    "Moist soil: Oregon State advises not leaving water standing in saucers P3 [derived: wetness favors the larvae].",
+    "Fast cycle: at 75 °F (converted, rounded: 23.9 °C) eggs hatch in about 3 days, larvae need about 10 days to pupate, and adults emerge about 4 days later: one generation in about 17 days, depending on temperature P1. UConn gives 21 to 28 days from egg to adult 'depending on temperature' without a temperature for that span; larvae develop for about two weeks at 72 °F (converted, rounded: 22.2 °C) P2. The figures differ but do not contradict."
+  ],
+  "check": [
+    {
+      "metric": "watering",
+      "text": "Die wichtigste Stellgröße. Vor dem nächsten Gießen prüfen, ob der oberste Zoll (2,54 cm) trocken ist P3; den Pumpenlauf der Phase danach richten [abgeleitet].",
+      "text_en": "The main lever. Before the next watering, check that the top inch (2.54 cm) is dry P3; set the stage's pump runs accordingly [derived]."
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Misst Luft, nicht Erde. Nematoden (Steinernema feltiae) wirken laut P1 bei 60 bis 90 °F (umgerechnet, gerundet: 15,6 bis 32,2 °C) und feuchten Bedingungen.",
+      "text_en": "Measures air, not soil. Per P1, nematodes (Steinernema feltiae) work at 60 to 90 °F (converted, rounded: 15.6 to 32.2 °C) under moist conditions."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Keine gelesene Quelle verknüpft die Luftwerte mit Trauermücken; es zählt die Nässe im Topf.",
+      "text_en": "No source read links air readings to fungus gnats; what counts is wetness in the pot."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    }
+  ],
+  "do_now": [
+    "Weniger gießen: Erde antrocknen lassen, vor dem Gießen den obersten Zoll prüfen P3; kein Wasser im Untersetzer stehen lassen P3.",
+    "Gelbtafeln in kleine Stücke schneiden, an Holzspieße stecken und in den Topf stellen P1.",
+    "Larven-Test: rohe Kartoffelstücke mit der Schnittfläche nach unten (nicht die Schale) in die Erde legen; Larven sammeln sich darin P1.",
+    "Bti (Bacillus thuringiensis israelensis, ein biologisches Mittel) wird als Gießlösung ausgebracht (in Wasser anrühren, 30 Minuten stehen lassen, dann auf die Erde gießen) und tötet die Larven in der Erde, nicht die Fliegen P3. Bti vermehrt sich drinnen nicht und hält sich nicht; bei Befall in Blumenerde kann deshalb wiederholtes Ausbringen im Abstand von etwa fünf Tagen nötig sein P1. Gebrauchs- und Lagerhinweise auf dem Etikett genau befolgen P3. Etikett und Zulassung beachten: Im Haus- und Kleingarten dürfen nur Mittel angewandt werden, die für nichtberufliche Anwender zugelassen sind; sie tragen den Aufdruck 'Anwendung durch nichtberufliche Anwender zulässig' P4. Ob ein Mittel für Hanf zugelassen ist und ob eine Growbox in der Wohnung als Haus- und Kleingarten gilt, sagt diese Seite nicht.",
+    "Nützlinge: Nematoden Steinernema feltiae P1; die Bodenraubmilbe Stratiolaelaps scimitus frisst Trauermückenlarven und auch Thrips-Puppen P2."
+  ],
+  "do_now_en": [
+    "Water less: let the soil dry, check the top inch before watering P3; do not leave water standing in the saucer P3.",
+    "Cut yellow sticky traps into small squares, attach them to wooden skewers and place them in the pot P1.",
+    "Larva test: place chunks of raw potato cut side down (not the peel) on the soil; larvae gather in them P1.",
+    "Bti (Bacillus thuringiensis israelensis, a biological product) is applied as a soil drench (mix with water, let stand 30 minutes, then pour onto the soil) and kills the larvae in the soil, not the flying adults P3. Bti does not reproduce or persist indoors, so infestations in potting mix can require repeated applications at about five-day intervals P1. Follow the label's use and storage directions carefully P3. Follow label and approval (Etikett und Zulassung beachten): in German home and allotment gardens only products approved for non-professional users may be used; they carry the mark 'Anwendung durch nichtberufliche Anwender zulässig' P4. Whether a product is approved for hemp and whether a grow box in a flat counts as a home garden, this page does not say.",
+    "Beneficials: nematodes Steinernema feltiae P1; the soil predatory mite Stratiolaelaps scimitus eats fungus gnat larvae and also thrips pupae P2."
+  ],
+  "prevention": [
+    "Nicht überwässern, die Erde zwischen den Gaben antrocknen lassen P3.",
+    "Nicht fertig verrotteten Kompost im Substrat vermeiden, außer er wurde pasteurisiert P1.",
+    "Gelbtafeln fangen die Fliegen P1. Als Frühwarnung waagerecht auf die Erdoberfläche legen und wöchentlich prüfen und wechseln P2."
+  ],
+  "prevention_en": [
+    "Do not overwater; let the medium dry between waterings P3.",
+    "Avoid incompletely composted organic matter in the mix unless it was pasteurized P1.",
+    "Yellow sticky traps catch the adults P1. For early warning lay them flat on the soil surface and check and change them weekly P2."
+  ],
+  "look_alikes": [
+    "Uferfliegen: kräftiger, mit kurzen, borstenartigen Fühlern, an Algen und verrottendem Material P1.",
+    "Welke durch zu viel oder zu wenig Wasser, Wurzelfäule oder schlechte Erde ist viel häufiger als Welke durch Trauermücken P1."
+  ],
+  "look_alikes_en": [
+    "Shore flies: more robust, with short bristle-like antennae, associated with algae and decaying matter P1.",
+    "Wilting from too much or too little water, root rot or poor soil is much more common than wilting from fungus gnats P1."
+  ],
+  "image": {
+    "file": "fungus-gnat-trap.webp",
+    "thumb": "fungus-gnat-trap-t.webp",
+    "w": 994,
+    "h": 1200,
+    "alt": "Gelbtafel in einem Blumentopf, übersät mit gefangenen Trauermücken",
+    "alt_en": "Yellow sticky card in a flower pot, covered in trapped fungus gnats",
+    "note": "Eine Zimmerpflanze, kein Hanf. So sieht eine Gelbtafel voller Trauermücken aus.",
+    "note_en": "A houseplant, not cannabis. This is what a yellow sticky card full of fungus gnats looks like.",
+    "compare": true,
+    "credit": {
+      "work": "File:Gelbsticker mit Trauermücken.jpg",
+      "author": "User:Ich (Wikimedia Commons)",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Ich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Gelbsticker_mit_Trauerm%C3%BCcken.jpg"
+    }
+  },
+  "sources": {
+    "P1": "UC Statewide IPM Program, Pest Notes Fungus Gnats 7448 (Bethke, Dreistadt, Stand 08/2013), Garten und Zimmerpflanzen, abgerufen 2026-10-23: https://ipm.ucanr.edu/PMG/PESTNOTES/pn7448.html",
+    "P2": "UConn Extension, Pundt, Managing Fungus Gnats in the Greenhouse, Stand Juni 2024, Gewächshaus, nicht Hanf, abgerufen 2026-10-23: https://ipm.cahnr.uconn.edu/managing-fungus-gnats-in-the-greenhouse/",
+    "P3": "Oregon State University Extension, Edmunds, I have fungus gnats everywhere, überarbeitet April 2025, abgerufen 2026-10-23: https://extension.oregonstate.edu/ask-extension/featured/i-have-fungus-gnats-everywhere-can-you-help",
+    "P4": "Pflanzenschutzamt Berlin, Anwendung von Pflanzenschutzmitteln in Haus-, Klein- und Siedlergärten, ohne Datum, abgerufen 2026-10-23: https://www.berlin.de/pflanzenschutzamt/ueberwachung/pflanzenschutzmittel-im-haus-und-kleingarten/"
+  },
+  "_left_out": [
+    "CSU: '3 mm mit Y-Muster auf den Vorderflügeln' und Kartoffelscheiben '1/4 Zoll, Larven nach 24 bis 48 Stunden': Seite nicht abrufbar, Zahlen ungeprüft.",
+    "'Widerspruch: beide Zeiten hängen an einer Temperatur, die keine Quelle nennt': widerlegt, UC IPM nennt 75 °F.",
+    "'Larven fressen Wurzeln' ohne Einschränkung 'in großer Zahl': korrigiert.",
+    "'etwa alle fünf Tage wiederholen' als Anweisung: Quelle sagt 'kann nötig sein'."
+  ]
+}

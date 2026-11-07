@@ -1,0 +1,312 @@
+{
+  "name": "Terra Aquatica TriPart",
+  "name_en": "Terra Aquatica TriPart",
+  "summary": "Mineralischer Dreikomponentendünger (Grow, Micro, Bloom) als Baukasten: das Verhältnis wandert vom Wachstum zur Blüte. Der Hersteller druckt eigene Tabellen für Erde und für Hydro und Kokos, aber nach Stadien statt nach Wochen; deshalb im Cockpit nicht wählbar.",
+  "summary_en": "Mineral three-part fertilizer (Grow, Micro, Bloom) as building blocks: the ratio moves from growth to flowering. The maker prints its own charts for soil and for hydro and coco, but by stages instead of weeks; so not selectable in the cockpit.",
+  "product": "Terra Aquatica",
+  "version": "Anwendungstabellen 2025",
+  "status": "draft",
+  "status_note": "Abgetippt aus den Anwendungstabellen 2025 (TA1) am 23.10.2026 und mit dem Original verglichen (Seiten als Bild gerendert und gegen die Textebene gelesen). Die Tabelle nennt Stadien, keine Wochen, und der Hersteller ordnet sie keiner Woche zu; das Cockpit würde die Woche raten müssen. Deshalb im Wiki zum Lesen, im Cockpit nicht wählbar.",
+  "status_note_en": "Transcribed from the application tables 2025 (TA1) on Oct 23, 2026 and compared with the original (pages rendered as images and read against the text layer). The chart names stages, not weeks, and the maker maps them to no week; the cockpit would have to guess the week. So for reading in the wiki, not selectable in the cockpit.",
+  "check": {
+    "state": "checked",
+    "on": "2026-10-23",
+    "text": "Grundzeilen beider Tabellen (Erde; Hydro und Kokos) gegen die Anwendungstabellen 2025 (TA1) geprüft, am 23.10.2026.",
+    "text_en": "Base rows of both charts (soil; hydro and coco) checked against the application tables 2025 (TA1), on Oct 23, 2026."
+  },
+  "unit": "ml/l",
+  "aliases": {
+    "de": [
+      "TriPart",
+      "Tri Part",
+      "Terra Aquatica",
+      "Terra Aquatica TriPart",
+      "T.A. TriPart",
+      "TriPart Grow",
+      "TriPart Micro",
+      "TriPart Bloom"
+    ],
+    "en": [
+      "TriPart",
+      "Tri Part",
+      "Terra Aquatica",
+      "Terra Aquatica TriPart",
+      "T.A. TriPart",
+      "TriPart Grow",
+      "TriPart Micro",
+      "TriPart Bloom"
+    ]
+  },
+  "line": {
+    "maker": "Terra Aquatica",
+    "types": [
+      "multi_part",
+      "mineral_liquid"
+    ],
+    "media": [
+      "soil",
+      "coco",
+      "hydro"
+    ],
+    "media_text": "Laut Produktseite für alle Pflanzen und Substrate, Hydro, Erde und Freiland; eigene Tabellen für Erde und für Hydro und Kokos.",
+    "media_text_en": "Per the product page for all plants and substrates, hydro, soil and outdoors; separate charts for soil and for hydro and coco.",
+    "products": [
+      {
+        "product": "TriPart Micro (weiches oder hartes Wasser)",
+        "product_en": "TriPart Micro (soft or hard water)",
+        "role": "Grundbaustein mit Spurenelementen, durch Wachstum und Blüte. Über 70 mg/l Calcium im Wasser die Fassung für hartes Wasser, sonst und bei Osmosewasser die für weiches.",
+        "role_en": "Foundation part with micronutrients, through growth and flowering. Above 70 mg/l calcium in the water the hard-water version, otherwise and with RO water the soft-water one.",
+        "sources": [
+          "TA2"
+        ]
+      },
+      {
+        "product": "TriPart Grow",
+        "role": "Liefert den Großteil von Stickstoff und Kalium; mehr im Wachstum, weniger in der Blüte.",
+        "role_en": "Provides most of the nitrogen and potassium; more in growth, less in flowering.",
+        "sources": [
+          "TA2"
+        ]
+      },
+      {
+        "product": "TriPart Bloom",
+        "role": "Phosphor und Kalium; weniger im Wachstum, mehr in der Blüte.",
+        "role_en": "Phosphorus and potassium; less in growth, more in flowering.",
+        "sources": [
+          "TA2"
+        ]
+      },
+      {
+        "product": "FinalPart oder Hyper Bloom",
+        "product_en": "FinalPart or Hyper Bloom",
+        "role": "Reifeprodukt statt der drei Grundteile in der Reife: FinalPart 4 ml/l auf Erde, 5 ml/l bei Hydro und Kokos; oder Hyper Bloom 1,5 g/l auf Erde, 2 g/l bei Hydro und Kokos.",
+        "role_en": "Ripening product instead of the three base parts at ripening: FinalPart 4 ml/l on soil, 5 ml/l in hydro and coco; or Hyper Bloom 1.5 g/l on soil, 2 g/l in hydro and coco.",
+        "sources": [
+          "TA1"
+        ]
+      },
+      {
+        "product": "FlashClean",
+        "role": "Reiniger gegen Salzablagerungen, 2 ml/l.",
+        "role_en": "Cleaner against salt build-up, 2 ml/l.",
+        "sources": [
+          "TA1"
+        ]
+      }
+    ],
+    "application_short": "Die drei Teile einzeln ins Wasser, je nach Stadium im eigenen Verhältnis, Messbecher dazwischen spülen; Erde hat eine eigene Tabelle.",
+    "application_short_en": "The three parts one by one into the water, each stage with its own ratio, rinse the measure in between; soil has its own chart.",
+    "application": "Flaschen vor jedem Gebrauch schütteln, die Teile einzeln ins Wasser geben, gut mischen und den Messbecher zwischen den Teilen spülen. Die EC nach dem pH-Einstellen und nach allen Produkten messen. pH laut englischem Text 5,5 bis 6,5, in Vorblüte und Blüte 6,4 bis 6,8. Licht: Wachstum 18 Stunden, Vorblüte und Blüte 12 Stunden. Mengen und EC sind laut Hersteller Richtwerte, die vom Wasser und der Pflanze abhängen. Erde (einfache Stufe): Grow, Micro und Bloom je 0,2 ml/l bei den ersten Wurzeln, je 0,6 ml/l bei den ersten echten Blättern, im Wachstum 1,5, 1 und 0,5 ml/l, in der Vorblüte 1,5, 1,5 und 1 ml/l, in der Blüte 0,7, 1,4 und 2,1 ml/l.",
+    "application_en": "Shake the bottles before each use, add the parts one by one to the water, mix well and rinse the measure between the parts. Measure the EC after the pH adjustment and after all products. pH per the English text 5.5 to 6.5, in preflowering and flowering 6.4 to 6.8. Light: growth 18 hours, preflowering and flowering 12 hours. Amounts and EC are guidance per the maker and depend on the water and the plant. Soil (easy level): Grow, Micro and Bloom 0.2 ml/l each at the first roots, 0.6 ml/l each at the first true leaves, in growth 1.5, 1 and 0.5 ml/l, in preflowering 1.5, 1.5 and 1 ml/l, in flowering 0.7, 1.4 and 2.1 ml/l.",
+    "application_sources": [
+      "TA1",
+      "TA2"
+    ],
+    "cautions": [
+      {
+        "text": "Die Tabelle nennt Stadien, keine Wochen: wann die Vorblüte beginnt und wie lange die Blüte dauert, sagt sie nicht. Deshalb rechnet das Cockpit damit nicht, auch nicht auf Erde.",
+        "text_en": "The chart names stages, not weeks: when preflowering starts and how long flowering lasts it does not say. So the cockpit computes nothing with it, not even on soil.",
+        "sources": [
+          "TA1"
+        ]
+      },
+      {
+        "text": "Widerspruch im selben Dokument: der englische Text nennt für Vorblüte und Blüte pH 6,4 bis 6,8, der französische und der deutsche Text nur 5,5 bis 6,5.",
+        "text_en": "Contradiction in the same document: the English text gives pH 6.4 to 6.8 for preflowering and flowering, the French and the German text only 5.5 to 6.5.",
+        "sources": [
+          "TA1"
+        ]
+      },
+      {
+        "text": "Über Vorblüte und Blüte steht in beiden Tabellen ein Balken mit der Aufschrift Flush; was er bedeutet, erklärt der Text nicht.",
+        "text_en": "Over preflowering and flowering both charts draw a bar labelled Flush; the text does not explain what it means.",
+        "sources": [
+          "TA1"
+        ]
+      }
+    ]
+  },
+  "weeks": {
+    "columns": [
+      {
+        "key": "first_roots",
+        "label": "Erste Wurzeln (18 Stunden Licht)",
+        "label_en": "First roots (18 hours of light)",
+        "printed": "1st roots"
+      },
+      {
+        "key": "true_leaves",
+        "label": "Erste echte Blätter",
+        "label_en": "First true leaves",
+        "printed": "1st true leaves"
+      },
+      {
+        "key": "growing",
+        "label": "Wachstum",
+        "label_en": "Growing",
+        "printed": "Growing"
+      },
+      {
+        "key": "preflowering",
+        "label": "Vorblüte (12 Stunden Licht)",
+        "label_en": "Preflowering (12 hours of light)",
+        "printed": "Preflowering"
+      },
+      {
+        "key": "flowering",
+        "label": "Blüte",
+        "label_en": "Flowering",
+        "printed": "Flowering"
+      },
+      {
+        "key": "ripening",
+        "label": "Reife",
+        "label_en": "Ripening",
+        "printed": "Ripening"
+      }
+    ],
+    "sources": [
+      "TA1"
+    ]
+  },
+  "components": {
+    "tripart_grow": {
+      "label": "TriPart Grow",
+      "label_en": "TriPart Grow"
+    },
+    "tripart_micro": {
+      "label": "TriPart Micro",
+      "label_en": "TriPart Micro"
+    },
+    "tripart_bloom": {
+      "label": "TriPart Bloom",
+      "label_en": "TriPart Bloom"
+    },
+    "final_part": {
+      "label": "FinalPart",
+      "label_en": "FinalPart",
+      "optional": true
+    }
+  },
+  "pages": {
+    "soil": {
+      "label": "Erde, einfache Stufe",
+      "label_en": "Soil, easy level",
+      "rows": {
+        "tripart_grow": [
+          0.2,
+          0.6,
+          1.5,
+          1.5,
+          0.7,
+          null
+        ],
+        "tripart_micro": [
+          0.2,
+          0.6,
+          1,
+          1.5,
+          1.4,
+          null
+        ],
+        "tripart_bloom": [
+          0.2,
+          0.6,
+          0.5,
+          1,
+          2.1,
+          null
+        ],
+        "final_part": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          4
+        ]
+      },
+      "sources": [
+        "TA1"
+      ]
+    },
+    "hydro_coco": {
+      "label": "Hydro und Kokos, einfache Stufe",
+      "label_en": "Hydro and coco, easy level",
+      "rows": {
+        "tripart_grow": [
+          0.5,
+          1,
+          1.8,
+          2,
+          0.8,
+          null
+        ],
+        "tripart_micro": [
+          0.5,
+          1,
+          1.2,
+          2,
+          1.6,
+          null
+        ],
+        "tripart_bloom": [
+          0.5,
+          1,
+          0.6,
+          1.5,
+          2.4,
+          null
+        ],
+        "final_part": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          5
+        ]
+      },
+      "sources": [
+        "TA1"
+      ]
+    }
+  },
+  "frequency": {
+    "text": "Die Tabelle sagt nicht, wie oft gedüngt wird. Das Cockpit gibt keinen Takt vor.",
+    "text_en": "The chart does not say how often to feed. The cockpit sets no schedule.",
+    "sources": [
+      "TA1"
+    ]
+  },
+  "notes": [
+    {
+      "text": "EC laut Tabelle, Erde: erste Wurzeln 0,2 bis 0,5; erste echte Blätter 0,6 bis 1,0; Wachstum 1,1 bis 1,6; Vorblüte 1,4 bis 1,8; Blüte 1,3 bis 1,7; Reife 1,3 bis 2,0 mS. Hydro und Kokos: 0,3 bis 0,6; 0,8 bis 1,2; 1,3 bis 1,8; 1,8 bis 2,0; 1,4 bis 2,2; 1,4 bis 2,6 mS.",
+      "text_en": "EC per the chart, soil: first roots 0.2 to 0.5; first true leaves 0.6 to 1.0; growing 1.1 to 1.6; preflowering 1.4 to 1.8; flowering 1.3 to 1.7; ripening 1.3 to 2.0 mS. Hydro and coco: 0.3 to 0.6; 0.8 to 1.2; 1.3 to 1.8; 1.8 to 2.0; 1.4 to 2.2; 1.4 to 2.6 mS.",
+      "sources": [
+        "TA1"
+      ]
+    },
+    {
+      "text": "Die Stufe Experte der Tabelle führt dazu Zusätze des Herstellers (Wurzel-, Algen-, Huminzusätze, Blütezusätze, Silikat). Die Karte zeigt nur die einfache Stufe.",
+      "text_en": "The chart's expert level adds the maker's supplements (root, seaweed, humic and bloom supplements, silicate). The card shows only the easy level.",
+      "sources": [
+        "TA1"
+      ]
+    }
+  ],
+  "sources": {
+    "TA1": {
+      "title": "Terra Aquatica, Anwendungstabellen 2025 (PDF)",
+      "title_en": "Terra Aquatica, application tables 2025 (PDF)",
+      "url": "https://www.terraaquatica.com/wp-content/uploads/2025/03/tableauAppli2025-1.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "TA2": {
+      "title": "Terra Aquatica, Produktseite TriPart",
+      "title_en": "Terra Aquatica, TriPart product page",
+      "url": "https://www.terraaquatica.com/mineral-fertiliser-solutions/tripart",
+      "retrieved": "2026-10-23"
+    }
+  }
+}

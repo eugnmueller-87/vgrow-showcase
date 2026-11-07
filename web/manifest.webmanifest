@@ -1,0 +1,11 @@
+{
+  "name": "VGrow Cockpit (inoffiziell)",
+  "short_name": "VGrow Cockpit (inoffiziell)",
+  "description": "Inoffizielles Cockpit für die VIVOSUN VGrow. Nicht von VIVOSUN.",
+  "lang": "de",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#14181f",
+  "theme_color": "#14181f",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

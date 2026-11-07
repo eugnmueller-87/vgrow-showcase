@@ -1,0 +1,93 @@
+{
+  "key": "tomato_suckering",
+  "kind": "method",
+  "status": "draft",
+  "label": "Ausgeizen bei Tomaten",
+  "label_en": "Removing tomato suckers",
+  "aliases": {
+    "de": [
+      "Ausgeizen",
+      "Geiztriebe entfernen",
+      "Ausbrechen",
+      "Geiztriebe ausbrechen"
+    ],
+    "en": [
+      "suckering",
+      "removing suckers",
+      "sucker pruning"
+    ]
+  },
+  "what": "Geiztriebe sind kleine Triebe, die in der Blattachsel zwischen Haupttrieb und Blatt wachsen (M1, M2). Beim Ausgeizen brichst du sie aus, damit die Pflanze nur einen oder zwei Haupttriebe behält (M1). Das betrifft vor allem Stabtomaten mit unbegrenztem Wachstum (englisch indeterminate). Buschtomaten (englisch determinate) schließen jeden Trieb mit einer Blüte ab (M3).",
+  "what_en": "Suckers are small stems that grow in the leaf axil between the main stem and a leaf (M1, M2). Suckering means breaking them out so the plant keeps only one or two main stems (M1). It mainly concerns staking tomatoes with unlimited growth (indeterminate). Bush tomatoes (determinate) end every shoot with a flower (M3).",
+  "steps": [
+    "Wuchstyp klären: Stabtomate (unbegrenzt, englisch indeterminate) oder Buschtomate (begrenzt, englisch determinate) (M3, M1).",
+    "Geiztriebe entfernen, solange sie noch klein sind: M1 nennt unter 2 Zoll (5,08 cm, umgerechnet), M2 wenige Zoll Länge. Mit den Fingern ausbrechen oder mit einer scharfen Gartenschere sauber abschneiden, ohne eine ausgefranste Wunde zu hinterlassen (M2).",
+    "Stabtomate: Eintriebig ist laut UNH die am häufigsten empfohlene Form; dann alle Geiztriebe entfernen. Zweitriebig: den Geiztrieb direkt unter der ersten Blütentraube stehen lassen, alle anderen entfernen (M1).",
+    "Bei Stabtomaten die ganze Saison weiter ausgeizen, sobald neue Geiztriebe erscheinen (M2). Iowa State schränkt ein: Es ist nicht nötig, jeden Geiztrieb zu entfernen, vor allem nicht, wenn das Blätterdach dadurch sehr offen wird (M2).",
+    "Buschtomaten: Die Quellen sind sich nicht einig. LWG: nicht ausgeizen (M3). Iowa State: Geiztriebe bis zur ersten Blütentraube entfernen, darüber nicht (M2). UNH, im Abschnitt Basket-Weave-System (Schnur im Achter-Muster zwischen Pfählen), das vor allem für Buschtomaten gedacht ist, aber auch für gekappte Stabtomaten gilt: den Geiztrieb direkt unter der ersten Blütentraube stehen lassen, die anderen darunter entfernen, alle darüber wachsen lassen (M1). Siehe Risiken.",
+    "Erreicht die Pflanze die obere Stütze, kannst du die Spitze abschneiden, damit sie nicht weiterwächst, oder die Ranke an der Schnur herunterlassen (M1). Iowa State rät vom frühen Kappen ab: Zu früh gekappt, wächst die Pflanze weniger und bringt weniger Ertrag; bei Buschtomaten senkt Kappen den Ertrag in jeder Phase deutlich (M2). Einen Zeitpunkt für eine Box ohne Frost nennt keine Quelle.",
+    "Für mehr Luft die unteren Blätter entfernen. Das Blatt direkt unter der untersten Fruchttraube und alle Blätter darüber bleiben (M1, dort für Stabtomaten). Iowa State: die untersten 6 bis 12 Zoll (15,24 bis 30,48 cm, umgerechnet), nie mehr als ein Drittel des Laubs auf einmal (M2)."
+  ],
+  "steps_en": [
+    "Identify the growth type: staking tomato (unlimited, indeterminate) or bush tomato (limited, determinate) (M3, M1).",
+    "Remove suckers while they are still small: M1 says under 2 inches (5.08 cm, converted), M2 says a few inches long. Snap them off with your fingers or cut them with sharp pruners, cleanly, without leaving a jagged wound (M2).",
+    "Staking tomato: one leader is the form UNH most commonly recommends; then remove all suckers. Two leaders: keep the sucker just below the first flower cluster and remove all others (M1).",
+    "On indeterminate tomatoes keep removing suckers all season as they form (M2). Iowa State adds a limit: it is not necessary to remove every sucker, especially if that leaves the canopy very open (M2).",
+    "Bush tomatoes: the sources disagree. LWG: do not sucker (M3). Iowa State: remove suckers up to the first flower cluster, not above it (M2). UNH, in its basket weave section (twine in a figure-eight between stakes), which is meant mainly for bush tomatoes but also covers topped staking tomatoes: keep the sucker just below the first flower cluster, remove the others below it, let all above it grow (M1). See risks.",
+    "When the plant reaches the overhead support, you can cut off the top to stop further growth, or lower the vine along the twine (M1). Iowa State advises against early topping: topped too early, the plant grows less and yields less; on bush tomatoes topping reduces yield significantly at any stage (M2). No source gives a timing for a box without frost.",
+    "For more airflow remove the lower leaves. Keep the leaf just below the lowest fruit cluster and all leaves above it (M1, there for staking tomatoes). Iowa State: the bottom 6 to 12 inches (15.24 to 30.48 cm, converted), never more than one third of the foliage at a time (M2)."
+  ],
+  "when": "Stütze anbringen, sobald die ersten Blütentrauben angesetzt sind oder die Pflanze mindestens 12 Zoll (30,48 cm, umgerechnet) hoch ist (M1; die 12 Zoll nennt UNH nur bei den Stabtomaten, im Basket-Weave-System nur die ersten Blütentrauben). Geiztriebe entfernen, sobald sie entstehen und solange sie klein sind (M1, M2), bei Stabtomaten die ganze Saison (M2).",
+  "when_en": "Add support once the first flower clusters have set or the plant is at least 12 inches (30.48 cm, converted) tall (M1; UNH gives the 12 inches only for staking tomatoes, for the basket weave system only the first flower clusters). Remove suckers as they form and while they are small (M1, M2), on indeterminate tomatoes all season (M2).",
+  "box_fit": "Ausgeizen braucht man vor allem bei Stabtomaten, und die passen kaum in die 92 cm / 36 Zoll Wuchshöhe für eine Pflanze (M8; wo gemessen wird, steht im Handbuch nicht). Das ist unsere Einschätzung. Belegt ist: Stabtomaten wachsen bis zum Frost weiter (M1), und für die Aufhängung der Schnüre im Folientunnel verlangt UNH mindestens 8 Fuß (243,84 cm, umgerechnet) über der Reihe (M1); das betrifft die Höhe der Aufhängung, nicht die Höhe der Pflanze. Auch Buschtomaten hören laut UNH meist erst bei etwa 4 Fuß (121,92 cm, umgerechnet) auf zu wachsen (M1). In der Sortentabelle des LWG hat von 13 Balkontomaten nur 'Siderno' eine Größenangabe: ca. 1 m, ungefähr die 92 cm der Box; ob mehr oder weniger, sagt die Quelle nicht. Die Tabelle schreibt nicht Höhe dazu, gemeint ist sehr wahrscheinlich die Wuchshöhe; laut LWG ist die Sortenliste aus Saatgutkatalogen und eigener Erfahrung zusammengestellt (Erfahrungsangabe, kein Versuchswert) (M3). Von der Höhe her passt die Zwergtomate 'Micro-Tom' mit etwa 15 cm (M7). Sie ist determiniert, also ein Buschtyp (Mutation self-pruning, M7). Buschtomaten werden laut LWG nicht ausgegeizt (M3); 'Micro-Tom' nennt LWG nicht, und M7 sagt weder etwas zum Ausgeizen noch zu den Bedingungen hinter den 15 cm. UNH beschreibt das Kappen nur für den Fall, dass die Pflanze die Überkopf-Stütze im Folientunnel oder die Pfahlspitze erreicht (M1); ob sich eine Stabtomate in der Box an der Decke kappen lässt, sagt keine Quelle. LWG nennt für Fruchtgemüse auf dem Balkon mindestens ein 10-Liter-Gefäß mit etwa 30 cm Durchmesser und als Alternative zum Stab eine an der Balkondecke befestigte Schnur (M4); gemeint ist ein Balkon, keine Box. Das Handbuch nennt 46 x 46 x 122 cm unter Dimensions, ohne zu sagen, ob außen oder innen; ein Innenmaß, eine nutzbare Stellfläche oder ein Topfvolumen steht nicht darin, nur der Wassertank mit 6 L (M8). Ob sich in der VGrow eine Schnur befestigen lässt, ist offen: Das Handbuch listet als Zubehör ein Trellis-Netz (1 Stück), Magnethaken (6 Stück) und eine Twist-Tie-Rolle (50 m), nennt aber weder Verwendung noch Tragkraft noch Befestigungspunkte (M8).",
+  "box_fit_en": "Suckering is mainly needed for staking tomatoes, and those hardly fit the 92 cm / 36 in growing height for one plant (M8; the manual does not say where it is measured). That is our judgement. What the sources show: staking tomatoes keep growing until frost (M1), and for the overhead twine support in high tunnels UNH asks for at least 8 feet (243.84 cm, converted) above the row (M1); that is the height of the support, not of the plant. Even bush tomatoes per UNH usually stop growing only at around 4 feet (121.92 cm, converted) (M1). In the LWG variety table only 'Siderno' of 13 balcony tomatoes has a size: ca. 1 m, roughly the 92 cm of the box; the source does not say whether more or less. The table does not add the word height; it most likely means plant height; LWG says the variety list is compiled from seed catalogues and its own experience (experience-based, not a trial value) (M3). By height the dwarf tomato 'Micro-Tom' at about 15 cm fits (M7). It is determinate, so a bush type (self-pruning mutation, M7). Per LWG bush tomatoes are not suckered (M3); LWG does not mention 'Micro-Tom', and M7 says nothing about suckering or the conditions behind the 15 cm. UNH describes topping only for when the plant reaches the overhead support in a high tunnel or the top of the stakes (M1); no source says whether a staking tomato can be topped at the box ceiling. For fruiting vegetables on a balcony LWG names at least a 10-litre container about 30 cm across, and a string fixed to the balcony ceiling as an alternative to a stake (M4); it means a balcony, not a box. The manual lists 46 x 46 x 122 cm under Dimensions without saying outside or inside; it gives no interior size, usable floor area or pot volume, only the 6 L water tank (M8). Whether a string can be fixed inside the VGrow is open: the manual lists a trellis net (1 pc), magnetic hooks (6 pcs) and a twist tie roll (50 m) as accessories, but gives no use, load limit or attachment points (M8).",
+  "risks": "Fehlt zu viel Laub, können die Früchte Sonnenbrand bekommen (M2). Ertrag: Laut UNH senkt Ausgeizen den möglichen Ertrag, verbessert aber die Luftbewegung (M1, Abschnitt Basket-Weave-System). Laut Iowa State tragen Geiztriebe kaum Früchte und kosten Energie (M2). Die beiden Versuche zeigen kein einheitliches Bild. Im Hydroponik-Versuch mit unbegrenzt wachsenden Kirschtomaten stieg der Ertrag der Pflanzen mit der Zahl der Triebe, eintriebige Pflanzen hatten größere Früchte (M5); das passt zu UNH; für den Markt waren dort die kleineren Früchte erwünscht. Im Versuch mit drei Sorten brachte zweitriebig den höchsten Ertrag und ungeschnitten den niedrigsten (M6): Das passt nur zum Teil zu UNH und nur zum Teil zu Iowa State. Ort, Anbauform und Wuchstyp der Sorten nennt das Abstract nicht (die Autoren arbeiten an der Bangladesh Agricultural University, Mymensingh). Buschtomaten: LWG sagt nicht ausgeizen (M3). Iowa State sagt, Geiztriebe bis zur ersten Blütentraube zu entfernen und darüber nicht (M2). UNH sagt im Abschnitt Basket-Weave-System: den Geiztrieb direkt unter der ersten Blütentraube stehen lassen, die anderen darunter entfernen, alle darüber wachsen lassen (M1). Die drei Aussagen stimmen nicht überein. Die Beratungsquellen (M1, M2, M3) nennen keine Versuchsdaten.",
+  "risks_en": "If too much foliage is missing, fruit can get sunburn or sunscald (M2). Yield: per UNH, suckering reduces potential yield but increases airflow (M1, basket weave section). Per Iowa State, suckers bear little if any fruit and cost energy (M2). The two trials do not point the same way. In the hydroponic trial with indeterminate cherry tomatoes the yield of the plants rose with the number of stems and single-stem plants had larger fruit (M5), which fits UNH; there, the smaller fruit suited the market better. In the three-cultivar trial two stems gave the highest yield and unpruned plants the lowest (M6), which fits UNH and Iowa State only in part. The abstract does not give the location, growing system or growth habit of the cultivars (the authors work at Bangladesh Agricultural University, Mymensingh). Bush tomatoes: LWG says do not sucker (M3). Iowa State says remove suckers up to the first flower cluster and not above it (M2). UNH says, in its basket weave section: keep the sucker just below the first flower cluster, remove the others below it, let all above it grow (M1). The three statements do not agree. The advisory sources (M1, M2, M3) give no trial data.",
+  "image": {
+    "file": "tomato-suckering.webp",
+    "thumb": "tomato-suckering-t.webp",
+    "w": 917,
+    "h": 1200,
+    "alt": "Vorher und nachher: Geiztrieb in der Blattachsel einer Tomate und dieselbe Stelle nach dem Ausgeizen",
+    "alt_en": "Before and after: a sucker in the leaf axil of a tomato and the same spot after removal",
+    "credit": {
+      "work": "File:Tomatenpflanzen Ausgeizen IMG 20170708 221615964.jpg",
+      "author": "Hans Haase",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Tomatenpflanzen_Ausgeizen_IMG_20170708_221615964.jpg"
+    },
+    "drawing": "tom",
+    "steps": [
+      {
+        "step": 2,
+        "fig": "tom-2"
+      },
+      {
+        "step": 3,
+        "fig": "tom-3"
+      }
+    ]
+  },
+  "sources": {
+    "M1": "Sideman B., UNH Cooperative Extension, Pruning Tomato Plants, Merkblatt ohne Datum (inhaltsgleiche Kopie bei Montana State University Extension: https://www.montana.edu/extension/powderriver/documents/vegetablegarden/PruningTomatoes.pdf), abgerufen 2026-10-23: https://extension.unh.edu/resource/pruning-tomato-plants-fact-sheet",
+    "M2": "Steil A., Iowa State University Extension and Outreach, Yard and Garden, Pruning Tomatoes in the Home Garden, zuletzt geprüft Juni 2026, abgerufen 2026-10-23: https://yardandgarden.extension.iastate.edu/how-to/pruning-tomatoes-home-garden",
+    "M3": "Bayerische Landesanstalt für Weinbau und Gartenbau (LWG), Bayerische Gartenakademie, Merkblatt 2103, Gemüsesorten für den Freizeitgärtner, April 2016 (Sortentabelle: Katalog- und Erfahrungsangaben), abgerufen 2026-10-23: https://www.lwg.bayern.de/mam/cms06/gartenakademie/dateien/2103.pdf",
+    "M4": "Bayerische Landesanstalt für Weinbau und Gartenbau (LWG), Bayerische Gartenakademie, Merkblatt 2105, Balkongemüse, Februar 2016, abgerufen 2026-10-23: https://www.lwg.bayern.de/mam/cms06/gartenakademie/dateien/2105-2016.pdf",
+    "M5": "Maboko M.M., du Plooy C.P. 2008, Effect of pruning on yield and quality of hydroponically grown cherry tomato (Lycopersicon esculentum), South African Journal of Plant and Soil 25(3):178-181, doi:10.1080/02571862.2008.10639914, Fachartikel (nur Abstract gelesen), abgerufen 2026-10-23: https://nisc.com/products/abstracts/2390/effect-of-pruning-on-yield-and-quality-of-hydroponically-grown-cherry-tomato-lycopersicon-esculentum",
+    "M6": "Das, Rahman, Ehsan, Rahman 2025, Growth and Yield of Tomato as Influenced by Stem Pruning, Journal of Environmental Science and Natural Resources 14(1-2), doi:10.3329/jesnr.v14i1.81103, Fachartikel (nur Abstract gelesen), abgerufen 2026-10-23: https://www.banglajol.info/index.php/JESNR/article/view/81103",
+    "M7": "Campos M.L., Carvalho R.F., Benedito V.A., Peres L.E.P. 2010, Small and remarkable: The Micro-Tom model system as a tool to discover novel hormonal functions and interactions, Plant Signaling & Behavior 5(3):267-270, doi:10.4161/psb.5.3.10622, Fachartikel, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC2881274/",
+    "M8": "VIVOSUN, VGrow Smart Grow Box Manual, Herstellerhandbuch (englische Fassung Stand laut Seitenmetadaten 2026-05-25; deutsche Fassung auch unter https://legacy.vivosun.com/support/guide/vgrow-smart-grow-box), abgerufen 2026-10-23: https://vivosun.com/support/guide/vgrow-smart-grow-box"
+  },
+  "_left_out": [
+    "'Eine Stabtomate ließe sich laut UNH an der Decke kappen': steht nicht bei UNH, korrigiert.",
+    "'Die Versuche stützen eher UNH': trägt nur für M5, korrigiert.",
+    "'An der Decke befestigte Schnur' (M4): die Quelle sagt Balkondecke, korrigiert.",
+    "'Iowa State und UNH sagen bis zur ersten Blütentraube': zwei verschiedene Regeln, getrennt.",
+    "'Zwergsorten sind determiniert': M7 belegt das nur für 'Micro-Tom'.",
+    "'Siderno also höher als 92 cm': abgeleitet; 'ca. 1 m' ist nicht sicher höher.",
+    "'46 x 46 cm Grundfläche': das Handbuch sagt nicht außen oder innen.",
+    "Ob 'Roma VF' aus M6 dieselbe determinierte Sorte 'Roma' wie in M1 ist: keine Quelle sagt es.",
+    "Aus M8 die Zeilen 'Yield' sowie die Stufen 'Flowering' und 'Drying': nicht übernommen."
+  ]
+}

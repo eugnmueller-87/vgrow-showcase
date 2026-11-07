@@ -1,0 +1,172 @@
+{
+  "name": "Green House Feeding, Bio-Linie",
+  "name_en": "Green House Feeding, bio line",
+  "summary": "Organische Trockendünger, die in das Substrat gemischt werden und über etwa 8 Wochen freisetzen: BioGrow im Wachstum, BioBloom in der Blüte, dazu Bio Enhancer alle zwei Wochen ins Gießwasser. Die Menge gilt je Liter Substrat, nicht je Liter Wasser; deshalb kein Plan je Liter im Cockpit.",
+  "summary_en": "Organic dry fertilizers mixed into the substrate that release over about 8 weeks: BioGrow in growth, BioBloom in flowering, plus Bio Enhancer into the watering water every two weeks. The amount is per litre of substrate, not per litre of water; so no per-litre plan in the cockpit.",
+  "product": "Green House Feeding",
+  "version": "Anwendungsseite Bio",
+  "status": "draft",
+  "status_note": "Aus der Anwendungsseite der Bio-Linie (GB1) und den Produktseiten (GB2, GB3) am 23.10.2026; jede Zahl mit der Seite verglichen. Die Mengen gelten je Liter Substrat und werden ein- oder zweimal gegeben: das passt nicht zum Rechner des Cockpits, der je Liter Gießwasser rechnet. Deshalb nur zum Lesen.",
+  "status_note_en": "From the bio line's how-to page (GB1) and the product pages (GB2, GB3) on Oct 23, 2026; every number compared with the page. The amounts are per litre of substrate and given once or twice: that does not fit the cockpit's planner, which computes per litre of watering water. So for reading only.",
+  "check": {
+    "state": "checked",
+    "on": "2026-10-23",
+    "text": "Mengen gegen die Anwendungsseite (GB1) geprüft, am 23.10.2026.",
+    "text_en": "Amounts checked against the how-to page (GB1), on Oct 23, 2026."
+  },
+  "aliases": {
+    "de": [
+      "Green House Bio",
+      "GHF Bio",
+      "GHF BioGrow",
+      "GHF BioBloom",
+      "Green House BioGrow",
+      "Green House BioBloom",
+      "Bio Enhancer",
+      "GHF Bio Enhancer"
+    ],
+    "en": [
+      "Green House Bio",
+      "GHF Bio",
+      "GHF BioGrow",
+      "GHF BioBloom",
+      "Green House BioGrow",
+      "Green House BioBloom",
+      "Bio Enhancer",
+      "GHF Bio Enhancer"
+    ]
+  },
+  "line": {
+    "maker": "Green House Feeding",
+    "types": [
+      "powder",
+      "slow_release"
+    ],
+    "media": [
+      "soil",
+      "coco"
+    ],
+    "media_text": "Laut Anwendungsseite in Erde, Kokos oder ähnliche Substrate gemischt.",
+    "media_text_en": "Per the how-to page mixed into soil, coco or similar substrates.",
+    "products": [
+      {
+        "product": "BioGrow",
+        "npk": "7-2-4",
+        "role": "Organischer Trockendünger für das Wachstum, ins Substrat gemischt oder als Kopfdüngung; setzt über etwa 8 Wochen frei.",
+        "role_en": "Organic dry fertilizer for growth, mixed into the substrate or as a top dressing; releases over about 8 weeks.",
+        "sources": [
+          "GB1",
+          "GB2"
+        ]
+      },
+      {
+        "product": "BioBloom",
+        "npk": "4-9-9",
+        "role": "Organischer Trockendünger für die Blüte, ins Substrat gemischt oder als Kopfdüngung; setzt über etwa 8 Wochen frei.",
+        "role_en": "Organic dry fertilizer for flowering, mixed into the substrate or as a top dressing; releases over about 8 weeks.",
+        "sources": [
+          "GB1",
+          "GB3"
+        ]
+      },
+      {
+        "product": "Bio Enhancer",
+        "role": "Zusatz ins Gießwasser alle zwei Wochen, im ganzen Zyklus; auch als Blattspray und zur Samenbehandlung.",
+        "role_en": "Additive into the watering water every two weeks, through the whole cycle; also as a foliar spray and for seed treatment.",
+        "sources": [
+          "GB1"
+        ]
+      }
+    ],
+    "application_short": "BioGrow und BioBloom je Liter Substrat untermischen oder obenauf einarbeiten, dann gießen; Bio Enhancer alle zwei Wochen ins Gießwasser.",
+    "application_short_en": "Mix BioGrow and BioBloom per litre of substrate in or work them into the top layer, then water; Bio Enhancer into the watering water every two weeks.",
+    "application": "BioGrow: 3 bis 5 g je Liter Substrat für das Wachstum, beim Umtopfen untermischen oder in die oberste Schicht einarbeiten; halbe Menge für Sämlinge und junge Pflanzen (2 bis 3 Wochen alt); weniger, wenn das Wachstum kürzer als 8 Wochen ist oder die Erde vorgedüngt ist. BioBloom: bei 8 Wochen Blüte einmal in Blütewoche 1 3 bis 5 g je Liter Substrat; bei 10 Wochen 2 bis 3 g in Woche 1 und 1 g in Woche 3; bei 12 Wochen 3 g in Woche 1 und 1 g in Woche 5; weniger für schwach zehrende Pflanzen und vorgedüngte Erde. Bio Enhancer: 0,5 bis 1 g je Liter Gießwasser alle zwei Wochen, innerhalb von 24 Stunden verbrauchen; bei Kokos das Wasser vorher auf pH 5,0 einstellen.",
+    "application_en": "BioGrow: 3 to 5 g per litre of substrate for growth, mixed in when potting up or worked into the top layer; half the amount for seedlings and young plants (2 to 3 weeks old); less if growth is shorter than 8 weeks or the soil is pre-fertilized. BioBloom: with 8 weeks of flowering once in flowering week 1 3 to 5 g per litre of substrate; with 10 weeks 2 to 3 g in week 1 and 1 g in week 3; with 12 weeks 3 g in week 1 and 1 g in week 5; less for light feeders and pre-fertilized soil. Bio Enhancer: 0.5 to 1 g per litre of watering water every two weeks, use within 24 hours; with coco set the water to pH 5.0 first.",
+    "application_sources": [
+      "GB1"
+    ],
+    "cautions": [
+      {
+        "text": "Die Menge gilt je Liter Substrat: der Topfinhalt muss bekannt sein, und was einmal untergemischt ist, lässt sich nicht zurücknehmen.",
+        "text_en": "The amount is per litre of substrate: the pot volume must be known, and what is mixed in cannot be taken back.",
+        "sources": [
+          "GB1"
+        ]
+      },
+      {
+        "text": "Weißes Pilzgeflecht auf dem Substrat ist laut Hersteller nützlich und verschwindet nach einigen Tagen; nicht entfernen.",
+        "text_en": "White fungal mycelium on the substrate is useful per the maker and disappears after a few days; do not remove it.",
+        "sources": [
+          "GB1"
+        ]
+      }
+    ],
+    "plan": [
+      {
+        "when": "Beim Umtopfen ins Endgefäß (Wachstum)",
+        "when_en": "When potting into the final container (growth)",
+        "text": "BioGrow 3 bis 5 g je Liter Substrat; bei vorgedüngter Erde weniger.",
+        "text_en": "BioGrow 3 to 5 g per litre of substrate; less with pre-fertilized soil.",
+        "sources": [
+          "GB1"
+        ]
+      },
+      {
+        "when": "Blütewoche 1 (8 Wochen Blüte)",
+        "when_en": "Flowering week 1 (8 weeks of flowering)",
+        "text": "BioBloom 3 bis 5 g je Liter Substrat, eine Gabe reicht.",
+        "text_en": "BioBloom 3 to 5 g per litre of substrate, one application is enough.",
+        "sources": [
+          "GB1"
+        ]
+      },
+      {
+        "when": "Alle zwei Wochen, ganzer Zyklus",
+        "when_en": "Every two weeks, whole cycle",
+        "text": "Bio Enhancer 0,5 bis 1 g je Liter Gießwasser.",
+        "text_en": "Bio Enhancer 0.5 to 1 g per litre of watering water.",
+        "sources": [
+          "GB1"
+        ]
+      }
+    ]
+  },
+  "components": {},
+  "notes": [
+    {
+      "text": "Warum nicht wählbar: die Mengen gelten je Liter Substrat und werden ein- oder zweimal gegeben. Ein Rechner je Liter Gießwasser würde daraus eine Menge für jedes Gießen machen.",
+      "text_en": "Why it cannot be chosen: the amounts are per litre of substrate and given once or twice. A planner per litre of watering water would turn them into an amount for every watering.",
+      "sources": [
+        "GB1"
+      ]
+    },
+    {
+      "package": "cannabis",
+      "text": "Für Autoflower fand die Recherche zur Bio-Linie keine Angabe; der Autoflower-Rat im FAQ gilt dem Mineralpulver Short Flowering.",
+      "text_en": "For autoflowers the research found nothing on the bio line; the autoflower advice in the FAQ is about the mineral powder Short Flowering.",
+      "sources": [
+        "GB1"
+      ]
+    }
+  ],
+  "sources": {
+    "GB1": {
+      "title": "Green House Feeding, Anwendung der Bio-Linie",
+      "title_en": "Green House Feeding, how to use bio feeding",
+      "url": "https://www.greenhousefeeding.com/en/content/8-how-to-use-bio-feeding",
+      "retrieved": "2026-10-23"
+    },
+    "GB2": {
+      "title": "Green House Feeding, Produktseite BioGrow",
+      "title_en": "Green House Feeding, BioGrow product page",
+      "url": "https://www.greenhousefeeding.com/en/bio-fertilizers/4-10-ghf-biogrow",
+      "retrieved": "2026-10-23"
+    },
+    "GB3": {
+      "title": "Green House Feeding, Produktseite BioBloom",
+      "title_en": "Green House Feeding, BioBloom product page",
+      "url": "https://www.greenhousefeeding.com/en/bio-fertilizers/5-16-ghf-biobloom",
+      "retrieved": "2026-10-23"
+    }
+  }
+}

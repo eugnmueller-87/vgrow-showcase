@@ -1,0 +1,140 @@
+{
+  "key": "iron_deficiency",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "naehrstoffe",
+  "label": "Eisenmangel (Fe)",
+  "label_en": "Iron deficiency (Fe)",
+  "tile": "Junger Austrieb wird gelb, die Adern bleiben grün",
+  "tile_en": "New growth turns yellow, the veins stay green",
+  "aliases": {
+    "de": [
+      "Fe-Mangel",
+      "junge Blätter hell"
+    ],
+    "en": [
+      "Fe deficiency",
+      "pale new growth"
+    ]
+  },
+  "symptoms": [
+    "Gelb zwischen den Adern, beginnend am jungen Austrieb P1; die Adern bleiben dunkelgrün (P2, Feldkulturen). Die ersten Zeichen zeigen sich an jüngeren Blättern P3.",
+    "Im Cannabis-Versuch (Hydrokultur, Eisen komplett weggelassen) nur mild: In der frühen Blüte waren Zuckerblätter und Blüten heller grün; in Blütewoche 5 zeigten einige kleine junge Blätter an den Spitzenblüten eine Marmorierung, die später wieder verschwand P4.",
+    "Spät: In Blütewoche 6 waren viele Ränder der unteren Fächerblätter hellbraun P4. Bei langem Mangel tote Stellen und Blattfall, in schweren Fällen gehemmtes Wachstum P1. Die Blätter bleiben lange am Leben und sterben erst nach langem Mangel P3.",
+    "Im Versuch hatte der Eisenmangel keinen nachteiligen Einfluss auf die Biomasse P4."
+  ],
+  "symptoms_en": [
+    "Yellow between the veins, beginning on young growth P1; veins stay dark green (P2, field crops). First signs appear on the younger leaves P3.",
+    "In the cannabis trial (hydroponic, iron fully withheld) only mild: in early flowering sugar leaves and flowers were paler green; in flowering week 5 some small young leaves near the top flowers showed mottling that later disappeared P4.",
+    "Late: in flowering week 6 many margins of lower fan leaves were light brown P4. With long deficiency dead spots and leaf drop, in severe cases inhibited growth P1. Leaves stay alive for a long time and die only after prolonged deprivation P3.",
+    "In the trial iron deficiency had no deleterious impact on plant biomass P4."
+  ],
+  "causes": [
+    "Hoher pH legt das Eisen im Boden fest P1; bei Zierpflanzen meist durch hohen pH ausgelöst P5.",
+    "Eisen, Mangan, Bor und Zink werden mit steigendem pH weniger verfügbar (P6, erdlose Substrate).",
+    "Verschärft durch zu viel Phosphor, Mangan, Zink oder Kupfer P1.",
+    "Zu viel Wasser, schlechte Drainage, hoher Salzgehalt und kalter Boden verhindern die Aufnahme P1."
+  ],
+  "causes_en": [
+    "High pH locks up iron in the soil P1; in ornamentals typically pH-induced P5.",
+    "Iron, manganese, boron and zinc availability falls as pH rises (P6, soilless substrates).",
+    "Made worse by excess phosphorus, manganese, zinc or copper P1.",
+    "Excess water, poor drainage, high salt content and cold soil prevent uptake P1."
+  ],
+  "check": [
+    {
+      "metric": "watering",
+      "text": "Zu viel gegossen, schlechter Abfluss? P1 pH: die Box hat laut Handbuch keinen pH-Sensor P7.",
+      "text_en": "Overwatered, poor drainage? P1 pH: per the manual the box has no pH sensor P7."
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Der Fühler misst die Luft; Utah State meint kalten Boden P1, und die Box hat keinen Bodenfühler P7.",
+      "text_en": "The probe reads air; Utah State means cold soil P1, and the box has no soil probe P7."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    }
+  ],
+  "do_now": [
+    "Nur falls ein Messgerät vorhanden ist: pH von Gießwasser und Ablaufwasser messen (Methode Ablaufwasser: P6, Gewächshaus). Leitungswasser mit zu hohem pH: Bio·Down (P8, Herstellerangabe).",
+    "Nicht zu viel gießen, besonders bei Kälte P1.",
+    "Im Hydrokultur-Versuch blieb der Eisenmangel mild, und die Biomasse litt nicht P4. Das ist eine Beobachtung, keine Entwarnung: ab Blütewoche 6 wurden dort Ränder unterer Fächerblätter braun.",
+    "Utah State (schreibt für Hanf-Erzeuger im Feld, nicht für den Heimanbau) nennt ein Blattspray mit Eisenchelat oder Eisensulfat und einem Netz- und Haftmittel P1. Etikett und Zulassung beachten."
+  ],
+  "do_now_en": [
+    "Only if a meter is at hand: measure pH of irrigation water and runoff (runoff method: P6, greenhouse). Tap water with too high a pH: Bio·Down (P8, maker statement).",
+    "Do not overwater, especially when cold P1.",
+    "In the hydroponic trial iron deficiency stayed mild and biomass did not suffer P4. That is an observation, not an all-clear: from flowering week 6 margins of lower fan leaves turned brown there.",
+    "Utah State (written for hemp producers in the field, not for home growing) names a foliar spray of chelated iron or ferrous sulfate with a spreader-sticker P1. Follow label and approval (Etikett und Zulassung beachten)."
+  ],
+  "prevention": [
+    "pH im Blick; laut BioBizz-FAQ senken BioBizz-Produkte den pH der Gießmischung meist auf 6,2 bis 6,3 (P8, Herstellerangabe).",
+    "Phosphor, Zink und Kupfer nicht überdosieren P1."
+  ],
+  "prevention_en": [
+    "Watch pH; per the BioBizz FAQ, BioBizz products tend to bring the pH of the watering mix to 6.2 to 6.3 (P8, maker statement).",
+    "Do not overdose phosphorus, zinc or copper P1."
+  ],
+  "look_alikes": [
+    "Schwefelmangel: allgemeines Gelb oben an jungen Zuckerblättern P4.",
+    "Manganmangel: Gelb zwischen den Adern, Blattrand dunkelgrün, jüngere Blätter P1. Zinkmangel: blasse bis weiße Bänder an den jüngsten Blättern P3.",
+    "Phosphor-Überschuss: ähnelt Eisen- und Zinkmangel P1.",
+    "Magnesiummangel: gleiches Muster, nach Lehrbuch aber an älteren Blättern (P1, P3). Im Cannabis-Versuch in der Blüte traf er vor allem jüngere Fächerblätter P4: Die Regel 'unten gleich Magnesium' trägt dort nicht."
+  ],
+  "look_alikes_en": [
+    "Sulfur deficiency: general yellowing at the top on young sugar leaves P4.",
+    "Manganese deficiency: yellow between the veins, dark green margins, younger leaves P1. Zinc deficiency: pale to white bands on the youngest leaves P3.",
+    "Phosphorus excess: resembles iron and zinc deficiency P1.",
+    "Magnesium deficiency: same pattern, but by the textbook on older leaves (P1, P3). In the cannabis trial during flowering it hit mainly younger fan leaves P4: the rule 'low leaves means magnesium' does not hold there."
+  ],
+  "image": {
+    "file": "iron-chlorosis-rose.webp",
+    "thumb": "iron-chlorosis-rose-t.webp",
+    "w": 750,
+    "h": 1000,
+    "alt": "Junge Rose: die neuen oberen Blätter sind gelb, die unteren bleiben grün",
+    "alt_en": "Young rose: the new top leaves are yellow, the lower ones stay green",
+    "note": "Eine Rose, kein Hanf. Auch hier zeigt sich Eisenmangel zuerst am jungen Austrieb.",
+    "note_en": "A rose, not cannabis. Here too, iron deficiency shows first on new growth.",
+    "compare": true,
+    "credit": {
+      "work": "File:Iron chlorosis on young rose leaves in a garden, by baby-bear.org.jpg",
+      "author": "Natalka Ukraine",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Iron_chlorosis_on_young_rose_leaves_in_a_garden,_by_baby-bear.org.jpg"
+    }
+  },
+  "sources": {
+    "P1": "Utah State University Extension, Hemp Nutrient Deficiencies, Ratgeber für Hanfanbau ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-nutrient-deficiencies",
+    "P2": "Colorado State Extension, Westfall und Bauder, Zinc and Iron Deficiencies, Dezember 1992, geprüft August 2025, Feldkulturen, abgerufen 2026-10-23: https://extension.colostate.edu/resource/zinc-and-iron-deficiencies",
+    "P3": "Ontario Ministry of Agriculture, Food and Rural Affairs (OMAFRA), Nutrient Deficiency ID Guide for Hemp, 2023, Hanf in Nährlösung, vegetative Phase, abgerufen 2026-10-23: https://www.ontario.ca/files/2023-12/omafra-nutrient-deficiency-id-guide-for-hemp-en-2023-12-15_0.pdf",
+    "P4": "Llewellyn, Golem, Jones, Zheng (University of Guelph) 2023, Plants 12:422, Nährstoffmangel bei Cannabis, Hydrokultur (DWC), Sorte Gelato 29, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC9920212/",
+    "P5": "NC State, Whipker und Gibson, Magnesium Check-up, Flower Growers' Bulletin Februar 2003, Zierpflanzen im Gewächshaus, abgerufen 2026-10-23: https://hortscans.ces.ncsu.edu/uploads/m/a/magensiu_5405f3f9a49d5.pdf",
+    "P6": "Purdue Extension HO-237-W, Camberato, Lopez, Mickelbart, pH und EC in erdlosen Substraten (PourThru), abgerufen 2026-10-23: https://ag.purdue.edu/department/hla/extension/extension-publications-library/ext-pubs/ho-237-w.html",
+    "P7": "VIVOSUN, VGrow Smart Grow Box Handbuch, Hersteller der Box, Seitenstand 2026-05-25, aus der Kartei übernommen (kartei/stages/autoflower.json, S1), abgerufen 2026-10-22: https://vivosun.com/support/guide/vgrow-smart-grow-box.md",
+    "P8": "BioBizz, FAQ, Hersteller, abgerufen 2026-10-23: https://biobizz.com/faq/"
+  },
+  "_hinweis_wortwahl": "Wortwahl angepasst, ohne den Inhalt zu ändern: der Wiki-Filter gegen Konsumaussagen (vgrow/wiki.py, CONSUMPTION_RE) blendet Sätze mit Wirkung, effect oder CBD auf der Seite aus, und der Zwillingstest zählt Einheiten je Paar: symptoms[3] de: 'keine nachteilige Wirkung' -> 'keinen nachteiligen Einfluss'; symptoms[3] en: 'no deleterious effect' -> 'no deleterious impact'",
+  "_left_out": [
+    "'Nicht überreagieren: verschwand von selbst': nur die Marmorierung verschwand; ersetzt durch Beobachtung mit Warnung.",
+    "'hartes Wasser: Bio-Down': die Quelle spricht von zu hohem pH des Leitungswassers, nicht von Härte.",
+    "Guelph-Satz zur Wirkung auf Cannabinoide: nicht übernommen (nur der Teil zur Biomasse).",
+    "UC IPM als Quelle für Zink- und Manganmangel-Verwechslung: beschreibt Obstbäume, ersetzt durch Utah State und OMAFRA.",
+    "Konkrete pH-Schwelle für Eisen: Quellen unterscheiden sich nach Medium, keine Zahl übernommen."
+  ]
+}

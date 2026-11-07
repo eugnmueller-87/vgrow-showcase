@@ -1,0 +1,46 @@
+{
+  "name": "Ice Cream Cake Automatic",
+  "summary": "Autoflower, 75 % Indica (Gelato 33 x Wedding Cake). Blüte 8 bis 9 Wochen, indoor bis 120 cm laut Hanfgarten: höher als die 92 cm Wuchshöhe der VGrow. Braucht gute Lüftung gegen Schimmel.",
+  "facts": {
+    "Genetik": "Gelato 33 x Wedding Cake, 75 % Indica (S37)",
+    "Blütezeit": "8 bis 9 Wochen (S37)",
+    "Gesamtdauer ab Samen": "9 bis 10 Wochen bei der gleichnamigen Zamnesia-Sorte (S40); Hanfgarten nennt keine",
+    "Höhe indoor": "bis 120 cm (S37); Zamnesia 90 cm (S40). VGrow-Wuchshöhe 92 cm (S1)",
+    "Hinweis": "Gemäßigtes Klima, Sonne und gute Lüftung gegen Schimmel (S37)"
+  },
+  "summary_en": "Autoflower, 75% indica (Gelato 33 x Wedding Cake). Flowering 8 to 9 weeks, indoors up to 120 cm according to Hanfgarten: taller than the VGrow's 92 cm growing height. Needs good ventilation against mold.",
+  "facts_en": {
+    "Genetik": "Gelato 33 x Wedding Cake, 75% indica (S37)",
+    "Blütezeit": "8 to 9 weeks (S37)",
+    "Gesamtdauer ab Samen": "9 to 10 weeks for the Zamnesia strain of the same name (S40); Hanfgarten gives none",
+    "Höhe indoor": "up to 120 cm (S37); Zamnesia 90 cm (S40). VGrow growing height 92 cm (S1)",
+    "Hinweis": "Temperate climate, sun and good ventilation against mold (S37)"
+  },
+  "fact_labels": {"Genetik": "Genetik", "Blütezeit": "Blütezeit", "Gesamtdauer ab Samen": "Gesamtdauer ab Samen", "Höhe indoor": "Höhe indoor", "Hinweis": "Hinweis"},
+  "fact_labels_en": {"Genetik": "Genetics", "Blütezeit": "Flowering time", "Gesamtdauer ab Samen": "Total time from seed", "Höhe indoor": "Height indoors", "Hinweis": "Note"},
+  "warnings": [
+    "Kann höher werden als die Box: Netz nutzen, Triebe flach halten, Abstand zur Lampe im Blick behalten."
+  ],
+  "warnings_en": [
+    "Can outgrow the box: use the net, keep the shoots low, watch the distance to the lamp."
+  ],
+  "source_notes": [
+    "Dass Hanfgartens Saatgut von Zamnesia stammt, ist nicht belegt; die Genetik stimmt überein. Nur für die Recherche, die Seite zeigt es nicht."
+  ],
+  "_hinweis_grow": "grow: die Zahlen dieser Karte für das Sortenlexikon (kartei/strains/lexikon.json zeigt mit same_as hierher) und Hanks Sortenberatung, aus ihrer eigenen Quelle S37, ohne neue Angabe: Autoflower, Blüte 8 bis 9 Wochen, indoor bis 120 cm, 75 % Indica.",
+  "grow": {
+    "flowering": "auto",
+    "flowering_weeks": [8, 9],
+    "height_indoor_cm": [null, 120],
+    "genotype": {"indica": 75},
+    "sources": ["S37"]
+  },
+  "image": {
+    "drawing": "strain-auto"
+  },
+  "sources": {
+    "S1": "VIVOSUN, VGrow Smart Grow Box Handbuch: https://vivosun.com/support/guide/vgrow-smart-grow-box.md",
+    "S37": "Hanfgarten, Ice Cream Cake Samen Autoflowering: https://www.hanfgartenshop.de/ice-cream-cake-samen-autoflowering.html",
+    "S40": "Zamnesia Seeds, Ice Cream Cake Automatic: https://www.zamnesia.com/11069-zamnesia-seeds-ice-cream-cake-automatic.html"
+  }
+}

@@ -1,0 +1,407 @@
+{
+  "status": "draft",
+  "key": "drying",
+  "kind": "process",
+  "label": "Trocknen (Blüten und Kräuter)",
+  "label_en": "Drying (flowers and herbs)",
+  "if_off": {
+    "cannabis": {
+      "label": "Trocknen (Kräuter)",
+      "label_en": "Drying (herbs)"
+    }
+  },
+  "fit_for_vgrow": {
+    "height_ok": "offen",
+    "light_note": "Trocknen läuft im dunklen Raum (Q1). Die VGrow-Voreinstellung Trocknung schaltet die Lampe aus (Q14). Ob der Schrank innen wirklich dunkel bleibt, nennt keine geprüfte Aussage (offen).",
+    "light_note_en": "Drying happens in a dark room (Q1). The VGrow drying preset switches the lamp off (Q14). No verified claim says whether the cabinet really stays dark inside (open).",
+    "heat_note": "Die Fachquellen nennen 18 bis 21 °C (Q1, Q2). Die VGrow-Voreinstellung Trocknung setzt keinen Temperaturbereich (Q14). Heizung und Entfeuchter sind in der Ausstattung der Box nicht aufgeführt; die Oregon State University nennt Ventilatoren, Entfeuchter oder Heizer als Hilfsmittel (Q1). Welche Temperatur und Feuchte der Schrank im Raum erreicht, ist offen.",
+    "heat_note_en": "The specialist sources give 18 to 21 °C (Q1, Q2). The VGrow drying preset sets no temperature range (Q14). A heater and a dehumidifier are not listed in the box's equipment; Oregon State University names fans, dehumidifiers or heaters as aids (Q1). Which temperature and humidity the cabinet reaches in the room is open."
+  },
+  "steps": [
+    {
+      "key": "start_after_harvest",
+      "label": "Nach der Ernte zügig beginnen",
+      "label_en": "Start soon after harvest",
+      "conditions": [],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": [
+          "Q10"
+        ]
+      },
+      "notes": "Die Leitlinie für Heilpflanzen verlangt, die Primärverarbeitung samt Trocknen so früh wie möglich nach der Ernte zu beginnen (Q10). Verzögerungen und späte Ernten begünstigen Schimmel in nassen Blüten (Q2). Temperatur, Dauer und Verfahren je Charge festhalten (Q10). Wie viele Stunden 'so früh wie möglich' sind, nennt keine geprüfte Aussage (offen). Geputzte Blüten trocknen schneller als Zweige (Q2); VIVOSUN rät für sein Gerät VCure, vor dem Trocknen zu putzen (Q17, Hersteller).",
+      "notes_en": "The guideline for medicinal plants requires primary processing, including drying, to start as soon as possible after harvest (Q10). Delays and late harvests encourage mildew in wet buds (Q2). Record temperature, duration and method for each batch (Q10). How many hours 'as soon as possible' means is not stated in any verified claim (open). Trimmed flowers dry faster than branches (Q2); VIVOSUN advises trimming before drying for its VCure device (Q17, manufacturer)."
+    },
+    {
+      "key": "flowers_slow_dry_trimmed",
+      "package": "cannabis",
+      "label": "Blüten langsam trocknen: geputzte Blüten",
+      "label_en": "Flowers, slow drying: trimmed flowers",
+      "conditions": [
+        {
+          "metric": "probe_temp",
+          "min": 18,
+          "max": 21,
+          "unit": "°C",
+          "sources": [
+            "Q1",
+            "Q2"
+          ]
+        },
+        {
+          "metric": "probe_humidity",
+          "min": 50,
+          "max": 55,
+          "unit": "%",
+          "sources": [
+            "Q1",
+            "Q2"
+          ]
+        }
+      ],
+      "duration": {
+        "min": 4,
+        "max": 5,
+        "unit": "days",
+        "sources": [
+          "Q2"
+        ]
+      },
+      "notes": "Dunkler, gut belüfteter Raum, Luftbewegung durch einen kleinen Ventilator (Q1, Q2). Die Quellen gelten für Hanfblüten (Q1) und medizinisches Cannabis (Q2). Die Dauer gilt bis zum gewünschten Feuchtegehalt, den die Quelle für diese Form nicht beziffert (Q2). VGrow-Voreinstellung Trocknung laut Handbuch (Q14, Hersteller): Licht aus; Umluft im Ein/Aus-Zyklus 25 min / 5 min bei Stufe 3; Abluft Automatik, höchste Stufe 10, Bereitschaftsstufe 1, Feuchtebereich unten aus und oben 55 %; kein Temperaturbereich; keine Pumpe. Abweichend nennt der VIVOSUN-Ratgeber (Hersteller, Q19) einen dunklen Raum mit etwa 60 % Feuchte und etwa 60 °F; dort sollen Knospen nach etwa 7 bis 10 Tagen anfangen, vom Hauptstängel abzubrechen.",
+      "notes_en": "Dark, well-ventilated room, air movement from a small fan (Q1, Q2). The sources cover hemp flowers (Q1) and medicinal cannabis (Q2). The duration runs to the desired moisture level, which the source does not quantify for this form (Q2). VGrow Drying preset per the manual (Q14, manufacturer): light off; circulation fan on/off cycle 25 min / 5 min at speed 3; duct fan auto, max speed 10, standby speed 1, humidity range min off and max 55%; no temperature range; no pump. The VIVOSUN growing guide (manufacturer, Q19) differs: a dark room at about 60% humidity and about 60 °F, where buds should begin to snap away from the main stems after about 7 to 10 days."
+    },
+    {
+      "key": "flowers_slow_dry_branches",
+      "package": "cannabis",
+      "label": "Blüten langsam trocknen: Zweige mit Blüten",
+      "label_en": "Flowers, slow drying: branches with flowers",
+      "conditions": [
+        {
+          "metric": "probe_temp",
+          "min": 18,
+          "max": 21,
+          "unit": "°C",
+          "sources": [
+            "Q1",
+            "Q2"
+          ]
+        },
+        {
+          "metric": "probe_humidity",
+          "min": 50,
+          "max": 55,
+          "unit": "%",
+          "sources": [
+            "Q1",
+            "Q2"
+          ]
+        }
+      ],
+      "duration": {
+        "min": 5,
+        "max": 6,
+        "unit": "days",
+        "sources": [
+          "Q2"
+        ]
+      },
+      "notes": "Gleiche Bedingungen wie bei geputzten Blüten, nur die Dauer unterscheidet sich (Q2). VGrow-Voreinstellung siehe Schritt flowers_slow_dry_trimmed.",
+      "notes_en": "Same conditions as for trimmed flowers, only the duration differs (Q2). For the VGrow preset see step flowers_slow_dry_trimmed."
+    },
+    {
+      "key": "flowers_slow_dry_whole_plant",
+      "package": "cannabis",
+      "label": "Blüten langsam trocknen: ganze Pflanze",
+      "label_en": "Flowers, slow drying: whole plant",
+      "conditions": [
+        {
+          "metric": "probe_temp",
+          "min": 18,
+          "max": 21,
+          "unit": "°C",
+          "sources": [
+            "Q1",
+            "Q2"
+          ]
+        },
+        {
+          "metric": "probe_humidity",
+          "min": 50,
+          "max": 55,
+          "unit": "%",
+          "sources": [
+            "Q1",
+            "Q2"
+          ]
+        }
+      ],
+      "duration": {
+        "min": 14,
+        "max": 14,
+        "unit": "days",
+        "sources": [
+          "Q2"
+        ]
+      },
+      "notes": "Gleiche Bedingungen wie bei geputzten Blüten (Q2). Im selben Satz nennt die Quelle 11 % w/w als Ziel nur bei der ganzen Pflanze (Q2). Ob eine ganze Pflanze in die nutzbare Höhe von 92 cm passt, ist offen.",
+      "notes_en": "Same conditions as for trimmed flowers (Q2). In the same sentence the source names 11% w/w as the target only for the whole plant (Q2). Whether a whole plant fits the usable height of 92 cm is open."
+    },
+    {
+      "key": "flowers_check_dryness",
+      "package": "cannabis",
+      "label": "Blüten: Trockenheit prüfen",
+      "label_en": "Flowers: check dryness",
+      "conditions": [
+        {
+          "metric": "moisture_w_w",
+          "min": 11,
+          "max": 11,
+          "unit": "% w/w",
+          "sources": [
+            "Q2"
+          ]
+        },
+        {
+          "metric": "water_activity",
+          "min": 0.55,
+          "max": 0.65,
+          "unit": "aw",
+          "sources": [
+            "Q5"
+          ]
+        }
+      ],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": []
+      },
+      "notes": "Die meisten Anbauer und Verarbeiter beurteilen die Trockenheit nach Textur und Knackigkeit, bei etwa 11 % w/w Feuchte (Q2). Wasseraktivität laut ASTM D8197-22: unter 0,65 gegen Schimmel, über 0,55 gegen Bruch; über 0,68 weiter trocknen (Q5, nur der öffentliche Abstract gelesen). Frisch geernteter Hanf hat rund 80 % Feuchte, getrocknet sollen es rund 10 % sein (Q6, Energieeffizienz-Beitrag, Zahlen ohne eigene Quelle). Die Zielwerte der Quellen weichen leicht voneinander ab. Wie sich Feuchte oder Wasseraktivität zu Hause prüfen lässt, nennt keine geprüfte Aussage (offen). Dauer: offen.",
+      "notes_en": "Most growers and processors judge dryness by texture and crispness, at about 11% w/w moisture (Q2). Water activity per ASTM D8197-22: below 0.65 against mould, above 0.55 against breakage; above 0.68 keep drying (Q5, only the public abstract was read). Freshly harvested hemp holds about 80% moisture and dried hemp should be about 10% (Q6, an energy-efficiency article, figures without their own source). The target values of the sources differ slightly. How to check moisture or water activity at home is not stated in any verified claim (open). Duration: open."
+    },
+    {
+      "key": "flowers_handoff_curing",
+      "package": "cannabis",
+      "label": "Blüten: Übergabe an das Curing",
+      "label_en": "Flowers: hand-over to curing",
+      "conditions": [
+        {
+          "metric": "probe_temp",
+          "min": 18,
+          "max": 18,
+          "unit": "°C",
+          "sources": [
+            "Q3"
+          ]
+        },
+        {
+          "metric": "probe_humidity",
+          "min": 60,
+          "max": 60,
+          "unit": "%",
+          "sources": [
+            "Q3"
+          ]
+        }
+      ],
+      "duration": {
+        "min": 2,
+        "max": 2,
+        "unit": "weeks",
+        "sources": [
+          "Q3"
+        ]
+      },
+      "notes": "Curing (Nachreifen im Behälter) ist ein eigener Vorgang, hier nur die Übergabe. Ein Review (Q3) nennt nach Jin et al. 18 °C und 60 % Feuchte über 2 Wochen, mit Öffnen des Deckels nach 6 h, als beste Bedingung; Jin et al. ist selbst ein Review, die Primärbasis ist ungeprüft. VIVOSUNs Gerät VCure C80 (Hersteller, Q15) regelt 10 bis 22 °C und 55 bis 65 % Feuchte. Seine Standardrezepte (Q16): Quick Cycle: Trocknen 20 °C, 55 %, 4 Tage, dann Curing 19 °C, 58 %, 4 Tage, dann Lagern 17 °C, 59 % dauernd. Craft Cycle: Trocknen 20 °C, 58 %, 5 Tage, dann Curing 19 °C, 60 %, 9 Tage. Nur Curing: 20 °C, 64 %, 14 Tage. Die Keimbox VSeed hat keine Trocknungs- oder Curing-Funktion (Q18).",
+      "notes_en": "Curing (conditioning in a container) is a separate process, this is only the hand-over. A review (Q3) reports, after Jin et al., 18 °C and 60% humidity for 2 weeks, opening the lid after 6 h, as the best curing condition; Jin et al. is itself a review, so the primary basis is unchecked. VIVOSUN's VCure C80 device (manufacturer, Q15) controls 10 to 22 °C and 55 to 65% humidity. Its default recipes (Q16): Quick Cycle: dry 20 °C, 55%, 4 days, then cure 19 °C, 58%, 4 days, then store 17 °C, 59% continuously. Craft Cycle: dry 20 °C, 58%, 5 days, then cure 19 °C, 60%, 9 days. Cure only: 20 °C, 64%, 14 days. The VSeed seedling box has no drying or curing function (Q18)."
+    },
+    {
+      "key": "herbs_hang_dry",
+      "label": "Küchenkräuter hängend trocknen",
+      "label_en": "Hang-drying culinary herbs",
+      "conditions": [],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": []
+      },
+      "notes": "Nur kleine Bündel in Papiertüten mit Löchern aufhängen; große Mengen schimmeln (Q8). Zarte Kräuter mit hohem Wassergehalt (Basilikum, Oregano, Estragon, Zitronenmelisse, Minzen) schimmeln, wenn sie nicht schnell trocknen (Q8). Im Freien laut Leitlinie für Heilpflanzen: dünne Schicht auf Rahmen mit Abstand zum Boden, gleichmäßig trocknen, direkte Sonne meiden (Q10). Temperatur, Feuchte und Dauer fürs Hängen nennt keine geprüfte Aussage (offen).",
+      "notes_en": "Hang only small bunches in paper bags with holes; large amounts mould (Q8). Tender herbs with high moisture (basil, oregano, tarragon, lemon balm, mints) mould if not dried quickly (Q8). Outdoors, per the guideline for medicinal plants: spread in a thin layer on frames raised off the ground, dry evenly, avoid direct sun (Q10). Temperature, humidity and duration for hang-drying are not stated in any verified claim (open)."
+    },
+    {
+      "key": "herbs_dehydrator",
+      "label": "Küchenkräuter im Dörrgerät trocknen",
+      "label_en": "Drying culinary herbs in a dehydrator",
+      "conditions": [
+        {
+          "metric": "dehydrator_temp",
+          "min": 95,
+          "max": 115,
+          "unit": "°F",
+          "sources": [
+            "Q8"
+          ]
+        },
+        {
+          "metric": "dehydrator_temp",
+          "min": 35,
+          "max": 43,
+          "unit": "°C",
+          "sources": [
+            "Q9"
+          ]
+        }
+      ],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": []
+      },
+      "notes": "Dörrgerät vorheizen. Q8: 95 bis 115 °F, in Gegenden mit höherer Luftfeuchte können bis zu 125 °F nötig sein. Q9 ist enger: 95 bis 110 °F (35 bis 43 °C). Die beiden unterscheiden sich nur in der Obergrenze. Das Dörrgerät gehört nicht zur VGrow. Dauer: offen.",
+      "notes_en": "Preheat the dehydrator. Q8: 95 to 115 °F, up to 125 °F may be needed in areas with higher humidity. Q9 is narrower: 95 to 110 °F (35 to 43 °C). The two differ only in the upper limit. The dehydrator is not part of the VGrow. Duration: open."
+    },
+    {
+      "key": "herbs_check_dryness",
+      "label": "Küchenkräuter: Trockenheit prüfen",
+      "label_en": "Culinary herbs: check dryness",
+      "conditions": [],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": []
+      },
+      "notes": "Trocken, wenn die Blätter bröseln und die Stängel beim Biegen brechen (Q8). Dauer: offen.",
+      "notes_en": "Dry when the leaves crumble and the stems break when bent (Q8). Duration: open."
+    },
+    {
+      "key": "herbs_insect_heat",
+      "label": "Lufttrockene Kräuter und Samen gegen Insekten: Hitze",
+      "label_en": "Air-dried herbs and seeds against insects: heat",
+      "conditions": [
+        {
+          "metric": "treatment_temp",
+          "min": 71,
+          "max": 71,
+          "unit": "°C",
+          "sources": [
+            "Q9"
+          ]
+        }
+      ],
+      "duration": {
+        "min": 30,
+        "max": 30,
+        "unit": "minutes",
+        "sources": [
+          "Q9"
+        ]
+      },
+      "notes": "Lufttrockene Kräuter und Samen gegen Insekten und deren Eier behandeln: 160 °F (71 °C) für 30 Minuten (Q9). Alternative: Einfrieren, nächster Schritt.",
+      "notes_en": "Treat air-dried herbs and seeds against insects and their eggs: 160 °F (71 °C) for 30 minutes (Q9). Alternative: freezing, next step."
+    },
+    {
+      "key": "herbs_insect_freeze",
+      "label": "Lufttrockene Kräuter und Samen gegen Insekten: Einfrieren",
+      "label_en": "Air-dried herbs and seeds against insects: freezing",
+      "conditions": [
+        {
+          "metric": "freezer_temp",
+          "min": null,
+          "max": -17,
+          "unit": "°C",
+          "sources": [
+            "Q9"
+          ]
+        }
+      ],
+      "duration": {
+        "min": 48,
+        "max": null,
+        "unit": "hours",
+        "sources": [
+          "Q9"
+        ]
+      },
+      "notes": "Alternative zur Hitzebehandlung: 0 °F (-17 °C) oder kälter, mindestens 48 Stunden (Q9).",
+      "notes_en": "Alternative to the heat treatment: 0 °F (-17 °C) or colder, for at least 48 hours (Q9)."
+    }
+  ],
+  "warnings": [
+    "Schimmel: Verzögerungen beim Trocknen und späte Ernten begünstigen Schimmel in nassen Blüten mit mehr als 14 % w/w Feuchte (Q2).",
+    "Befallene Blüten im geschlossenen Glas: Ammoniakgeruch ersetzt den Kräuterduft, das Material wird braun und bröckelig (Q2). Ammoniak allein beweist keinen Schimmel: dieselbe Studie führt ihn bei feuchten Knospen im geschlossenen Behälter auch auf Bakterien zurück (Q2).",
+    "Pilze auf Knospen: In den Trockenräumen zweier Betriebe fanden sich Penicillium, Aspergillus und Cladosporium auf Knospen (Q7). Dass der Trockenraum die Quelle war, belegt die Studie nicht. Sie verlangt sorgfältiges Handhaben, Trocknen und Lagern unter Bedingungen, die die weitere Vermehrung bremsen (Q7).",
+    "Wechselnde Bedingungen kosten Qualität: Jede Änderung der Trocknungsbedingungen kann saure Cannabinoide umwandeln (Decarboxylierung), Terpene (Duft- und Aromastoffe) kosten und die Qualität senken (Q2). Bei Industriehanf stieg die CBDA-Umwandlung von 0,2 % auf 14,1 %, und der Terpen-Erhalt fiel von 82,1 % auf 29,9 %, als die Heißlufttemperatur von Umgebung auf 90 °C stieg (Q3, Primärstudie Chen et al. 2021).",
+    "Heißluft ist uneinheitlich belegt: Eine Studie von 2025 (Industriehanf) fand bei Heißluft mit 75 °C die niedrigste Keimlast, hat aber keine Terpene gemessen und hält Heißluft selbst nicht für ausreichend zur mikrobiellen Sicherheit (Q4). Das steht in Spannung zu den Terpenverlusten in Q3, ist aber kein belegter Widerspruch.",
+    "Zu schnelles Trocknen hinterlässt laut VIVOSUN-Ratgeber (Hersteller) einen rauen, pflanzlichen Beigeschmack (Q19).",
+    "Direkte Sonne beim Trocknen vermeiden, außer sie ist ausdrücklich nötig oder schadet der Qualität nicht (Q10).",
+    "Küchenkräuter: Zarte Kräuter schimmeln, wenn sie nicht schnell trocknen, und große Bündel schimmeln (Q8). Lufttrockene Kräuter und Samen auf Insekten und deren Eier behandeln (Q9).",
+    "Kein Einheitsrezept: Höchsttemperatur, Dauer und Luftzug richten sich nach Pflanzenteil (Wurzel, Blatt, Blüte) und Inhaltsstoffen wie ätherischen Ölen (Q10). Q10 ist eine Leitlinie für pflanzliche Ausgangsstoffe, kein Gesetz.",
+    "Recht in Deutschland (keine Rechtsberatung): Am Wohnsitz dürfen Erwachsene bis zu 50 g Cannabis besitzen, bei Blüten und blütennahen Blättern zählt das Gewicht nach dem Trocknen, dazu bis zu drei lebende Pflanzen; der Gesamtbesitz ist auf 50 g Trockengewicht begrenzt (Q11, § 3 Abs. 2 KCanG). Eigenanbau ist auf drei Pflanzen gleichzeitig begrenzt, Cannabis aus dem Eigenanbau darf nicht an Dritte weitergegeben werden (Q12, § 9). Cannabis und Vermehrungsmaterial sind vor dem Zugriff Dritter, besonders von Kindern und Jugendlichen, zu schützen (Q13, § 10)."
+  ],
+  "warnings_en": [
+    "Mildew: delays in drying and late harvests encourage mildew in wet buds holding more than 14% w/w moisture (Q2).",
+    "Infected buds in a closed jar: an ammonia smell replaces the herbal fragrance and the material turns brown and crumbly (Q2). Ammonia alone does not prove mould: the same paper also attributes it to bacteria in wet buds in a closed container (Q2).",
+    "Moulds on buds: Penicillium, Aspergillus and Cladosporium were found on buds sampled in the drying rooms of two facilities (Q7). The study does not show that the drying room was the source. It calls for careful handling, drying and storage under conditions that discourage further growth (Q7).",
+    "Changing conditions costs quality: any change in drying conditions can convert acidic cannabinoids (decarboxylation), cost terpenes (aroma compounds) and lower quality (Q2). In industrial hemp, CBDA decarboxylation rose from 0.2% to 14.1% and terpene retention fell from 82.1% to 29.9% when the hot-air temperature rose from ambient to 90 °C (Q3, primary study Chen et al. 2021).",
+    "Hot air is inconsistently supported: a 2025 study (industrial hemp) found the lowest microbial load with hot air at 75 °C, but measured no terpenes and itself does not consider hot air adequate for microbial safety (Q4). This is in tension with the terpene losses in Q3, but not a proven contradiction.",
+    "Drying too fast leaves a harsh, plant-like taste according to the VIVOSUN guide (manufacturer, Q19).",
+    "Avoid direct sunlight while drying unless it is specifically required or does not harm quality (Q10).",
+    "Culinary herbs: tender herbs mould if not dried quickly, and large bunches mould (Q8). Treat air-dried herbs and seeds against insects and their eggs (Q9).",
+    "No single recipe: maximum temperature, duration and air circulation depend on the plant part (root, leaf, flower) and its active constituents such as essential oils (Q10). Q10 is a guideline for herbal starting materials, not a law.",
+    "Law in Germany (not legal advice): at their residence adults may possess up to 50 g of cannabis, with flowers and flower-adjacent leaves counted by weight after drying, plus up to three living plants; total possession is capped at 50 g dry weight (Q11, section 3(2) KCanG). Home cultivation is limited to three plants at the same time, and cannabis from home cultivation must not be passed on to third parties (Q12, section 9). Cannabis and propagation material must be protected from access by third parties, especially children and adolescents (Q13, section 10)."
+  ],
+  "warnings_packages": [
+    "cannabis",
+    "cannabis",
+    "cannabis",
+    "cannabis",
+    "cannabis",
+    "cannabis",
+    null,
+    null,
+    null,
+    "cannabis"
+  ],
+  "image": {
+    "file": "herbs-drying.webp",
+    "thumb": "herbs-drying-t.webp",
+    "w": 1200,
+    "h": 900,
+    "alt": "Gebündelte Kräuter hängen kopfüber zum Trocknen",
+    "alt_en": "Bundled herbs hanging upside down to dry",
+    "credit": {
+      "work": "File:Gyogynovenyek1.jpg",
+      "author": "Szalkijanos",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Gyogynovenyek1.jpg"
+    }
+  },
+  "sources": {
+    "Q1": "Oregon State University Extension Service, C. Bridges, Post-harvest processing of hemp flowers, Oktober 2022 (Beratungsdienst, gilt für Hanfblüten): https://extension.oregonstate.edu/catalog/post-harvest-processing-hemp-flowers",
+    "Q2": "AL Ubeed HMS, Wills RBH, Chandrapala J., Post-Harvest Operations to Generate High-Quality Medicinal Cannabis Products: A Systemic Review, Molecules 2022;27(5):1719 (Review): https://pmc.ncbi.nlm.nih.gov/articles/PMC8911901/",
+    "Q3": "Das PC, Vista AR, Tabil LG, Baik OD., Postharvest Operations of Cannabis and Their Effect on Cannabinoid Content: A Review, Bioengineering 2022;9(8):364 (Review): https://pmc.ncbi.nlm.nih.gov/articles/PMC9404914/",
+    "Q4": "Baek Y, Grab H, Chen C., Postharvest Drying and Curing Affect Cannabinoid Contents and Microbial Levels in Industrial Hemp (Cannabis sativa L.), Plants 2025;14(3):414 (Studie, Industriehanf): https://pmc.ncbi.nlm.nih.gov/articles/PMC11821007/",
+    "Q5": "ASTM International, D8197-22 Standard Specification for Maintaining Acceptable Water Activity (aw) Range (0.55 to 0.65) for Dry Cannabis Flower Intended for Human/Animal Use (Normungsorganisation, Shopseite, nur öffentlicher Abstract gelesen): https://store.astm.org/d8197-22.html",
+    "Q6": "Vermont Agency of Agriculture, Food & Markets, How Efficiency Vermont can Help Vermont Hemp Farmers, 3 Nov 2021 (Behördenseite, Beitrag eines Energieberaters, Zahlen ohne eigene Quelle): https://agriculture.vermont.gov/node/2279",
+    "Q7": "Punja ZK et al., Pathogens and Molds Affecting Production and Quality of Cannabis sativa L., Frontiers in Plant Science 2019;10:1120 (Studie): https://pmc.ncbi.nlm.nih.gov/articles/PMC6811654",
+    "Q8": "National Center for Home Food Preservation (University of Georgia), Herbs (Beratungsdienst, Küchenkräuter): https://nchfp.uga.edu/how/dry/recipes/herbs",
+    "Q9": "Penn State Extension, M. Zepp, A. Hirneisen, L. LaBorde, Let's Preserve: Drying Herbs, aktualisiert 31 Jul 2023 (Beratungsdienst, Küchenkräuter): https://extension.psu.edu/lets-preserve-drying-herbs",
+    "Q10": "European Medicines Agency (HMPC), Guideline on Good Agricultural and Collection Practice (GACP) for starting materials of herbal origin, EMA/HMPC/246816/2005 Rev. 1, angenommen 09 Jul 2025 (Behördenleitlinie, kein Gesetz): https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-good-agricultural-collection-practice-gacp-starting-materials-herbal-origin-revision-1_en.pdf",
+    "Q11": "Konsumcannabisgesetz (KCanG) § 3, gesetze-im-internet.de (Gesetz): https://www.gesetze-im-internet.de/kcang/__3.html",
+    "Q12": "Konsumcannabisgesetz (KCanG) § 9, gesetze-im-internet.de (Gesetz): https://www.gesetze-im-internet.de/kcang/__9.html",
+    "Q13": "Konsumcannabisgesetz (KCanG) § 10, gesetze-im-internet.de (Gesetz): https://www.gesetze-im-internet.de/kcang/__10.html",
+    "Q14": "VIVOSUN, VGrow Smart Grow Box Handbuch, Stage-Tabelle, Spalte Drying (Hersteller, kommerziell): https://vivosun.com/support/guide/vgrow-smart-grow-box.md",
+    "Q15": "VIVOSUN Webshop Deutschland, VCure C80 Smart Post-Harvest Box, Modell VSH-VC80 (Hersteller, Webshop, kommerziell): https://vivosun.com/de-DE/vivosun-vcure-smarte-post-harvest-box-p159714253602553979-v159714253602553978",
+    "Q16": "VIVOSUN, VCure Smart Curing Box Guide, Default Recipes, englische Fassung (Hersteller, kommerziell): https://vivosun.com/support/guide/vcure-smart-curing-box.md",
+    "Q17": "VIVOSUN, VCure Smart Curing Box Guide, deutsche Fassung (Hersteller, kommerziell): https://vivosun.com/support/guide/vcure-smart-curing-box",
+    "Q18": "VIVOSUN, VSeed Smart Seedling Box Handbuch (Hersteller, kommerziell): https://vivosun.com/support/guide/vseed.md",
+    "Q19": "VIVOSUN Growing Guide, Proper Environmental Conditions When Drying Cannabis, Autor CalMag, 6 Sep 2022 (Hersteller-Ratgeber, kommerziell, keine Forschung): https://vivosun.com/growing_guide/environmental-conditions-when-drying-cannabis"
+  }
+}

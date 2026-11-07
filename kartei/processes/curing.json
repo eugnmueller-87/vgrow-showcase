@@ -1,0 +1,246 @@
+{
+  "key": "curing",
+  "kind": "process",
+  "status": "draft",
+  "package": "cannabis",
+  "label": "Curing im Glas nach dem Trocknen",
+  "label_en": "Curing in jars after drying",
+  "aliases": {"de": ["Fermentieren", "Aushärten"], "en": ["fermenting", "cure"]},
+  "fit_for_vgrow": {
+    "height_ok": true,
+    "light_note": "Höhe spielt keine Rolle: Curing läuft nach der Ernte in Gläsern, nicht an der Pflanze (Q8, Q9). Gläser dunkel halten (Q8, Q9, Q21), also nicht in das Licht der VGrow-LED stellen. Licht kann Cannabinoidgehalte senken (Q3). Ob der Schrank bei ausgeschalteter Lampe dunkel genug ist: offen.",
+    "light_note_en": "Height does not matter: curing happens after the harvest in jars, not on the plant (Q8, Q9). Keep the jars dark (Q8, Q9, Q21), so do not put them in the light of the VGrow LED. Light can lower cannabinoid levels (Q3). Whether the cabinet is dark enough with the lamp off: open.",
+    "heat_note": "Die Quellen nennen für Curing und Lagerung 15 bis 21 °C (Q8) bzw. 18 °C (Q3). Die Temperatur im VGrow-Schrank bei ausgeschalteter Lampe ist nicht belegt: offen. Der Fühler der VGrow misst die Boxluft auf Blatthöhe, nicht das Glas; für die Feuchte im Glas braucht es ein eigenes Hygrometer (Q24).",
+    "heat_note_en": "The sources give 15 to 21 °C (Q8) or 18 °C (Q3) for curing and storage. The temperature in the VGrow cabinet with the lamp off is not documented: open. The VGrow probe measures the box air at leaf height, not the jar; the humidity in the jar needs its own hygrometer (Q24)."
+  },
+  "steps": [
+    {
+      "key": "pre_check",
+      "label": "Vorprüfung vor dem Einglasen",
+      "label_en": "Check before jarring",
+      "conditions": [],
+      "duration": {
+        "min": "offen",
+        "max": "offen",
+        "unit": "offen",
+        "sources": []
+      },
+      "notes": "Nur gut getrocknete Blüten ohne Schimmel einglasen. Schimmelige Blüten aussortieren, den Rest auf dem Gitter nachtrocknen (Q24). Woran man erkennt, dass die Trocknung fertig genug fürs Glas ist: offen. Bei THC-reichem Cannabis war selbst nach 6 Tagen Trocknung auf 12 bis 14 % Gutsfeuchte (aw ca. 0.62 bis 0.7) noch mikrobielle Aktivität nachweisbar (Q10).",
+      "notes_en": "Jar only well-dried buds without mold. Sort out moldy buds and re-dry the rest on a rack (Q24). How to tell that drying is finished enough for the jar: open. In THC-rich cannabis, microbial activity was still detectable even after 6 days of drying to 12 to 14% moisture content (aw ca. 0.62 to 0.7) (Q10)."
+    },
+    {
+      "key": "jar_fill",
+      "label": "Glas füllen und verschließen",
+      "label_en": "Fill and seal the jar",
+      "conditions": [],
+      "duration": {
+        "min": "offen",
+        "max": "offen",
+        "unit": "offen",
+        "sources": []
+      },
+      "notes": "Glas etwa zu drei Vierteln locker füllen, nicht packen (Q24). Verschließen und dunkel lagern (Q8, Q9, Q21), an einem kühlen Ort (Q21).",
+      "notes_en": "Fill the jar about three quarters full, loose rather than packed (Q24). Seal it and keep it in the dark (Q8, Q9, Q21), in a cool place (Q21)."
+    },
+    {
+      "key": "first_reading",
+      "label": "Erste Messung im verschlossenen Glas",
+      "label_en": "First reading in the sealed jar",
+      "conditions": [
+        {
+          "metric": "jar_humidity",
+          "min": 55,
+          "max": 65,
+          "unit": "%",
+          "sources": [
+            "Q1",
+            "Q3",
+            "Q4",
+            "Q17"
+          ]
+        },
+        {
+          "metric": "water_activity",
+          "min": 0.55,
+          "max": 0.65,
+          "unit": "aw",
+          "sources": [
+            "Q1",
+            "Q4"
+          ]
+        }
+      ],
+      "duration": {
+        "min": 12,
+        "max": 24,
+        "unit": "h",
+        "sources": [
+          "Q24"
+        ]
+      },
+      "notes": "Hygrometer im Glas erst nach 12 bis 24 h verschlossen ablesen (Q24). aw ist die Gleichgewichts-Luftfeuchte geteilt durch 100 (Q4); die Anwendung auf Gläser ist Auslegung. ASTM: unter 0.65 gegen Schimmel, über 0.55 gegen Bruch (Q1). 55 bis 65 % rF nennt auch das VCure-Gerät (Q17); OSU nennt 55 bis 65 % ohne zu sagen, was gemessen wird (Q3). Prüfpunkt fürs Hygrometer: gesättigte Kochsalzlösung zeigt 75.47 ± 0.14 % rF bei 20 °C bzw. 75.29 ± 0.12 % rF bei 25 °C (Q5).",
+      "notes_en": "Read the hygrometer in the jar only after 12 to 24 h sealed (Q24). aw is the equilibrium relative humidity divided by 100 (Q4); applying it to jars is interpretation. ASTM: below 0.65 against mold, above 0.55 against breakage (Q1). The VCure device also gives 55 to 65% RH (Q17); OSU gives 55 to 65% without saying what is measured (Q3). Hygrometer check point: saturated table salt solution reads 75.47 ± 0.14% RH at 20 °C and 75.29 ± 0.12% RH at 25 °C (Q5)."
+    },
+    {
+      "key": "burping",
+      "label": "Lüften (Burping) nach dem Messwert",
+      "label_en": "Burping by reading",
+      "conditions": [
+        {
+          "metric": "jar_humidity",
+          "min": 55,
+          "max": 65,
+          "unit": "%",
+          "sources": [
+            "Q24"
+          ]
+        }
+      ],
+      "duration": {
+        "min": 5,
+        "max": 30,
+        "unit": "min",
+        "sources": [
+          "Q24"
+        ]
+      },
+      "notes": "Händlertakt, keine Studie dahinter (Q24). Anzeige 65 bis 70 %: zweimal täglich 20 bis 30 min lüften. 62 bis 65 %: einmal täglich 5 bis 10 min. 55 bis 62 %: alle 3 bis 5 Tage. Über 70 %: Blüten herausnehmen, einige Stunden auf dem Gitter nachtrocknen, wieder einglasen, täglich prüfen bis unter 65 %. Unter 55 %: Feuchtebeutel zugeben, Feuchte langsam anheben, wöchentlich prüfen. Die Dauer dieses Schritts gilt je Lüften. Andere Angaben: Deckel jeden Tag etwa 6 h offen (Q8); Deckel nach 6 h öffnen (Q7); mit Vivi Cure kein Lüften nötig (Q20, Herstellerangabe); Vorbereitung in einer Studie: alle 48 h lüften (Q12).",
+      "notes_en": "Retailer schedule, no study behind it (Q24). Reading 65 to 70%: burp twice a day for 20 to 30 min. 62 to 65%: once a day for 5 to 10 min. 55 to 62%: every 3 to 5 days. Above 70%: take the buds out, dry them on a rack for a few hours, re-jar, and check daily until below 65%. Below 55%: add a humidity pack, raise the humidity slowly, and check weekly. The duration of this step applies to each burping. Other claims: lid open about 6 h every day (Q8); open the lid after 6 h (Q7); no burping needed with Vivi Cure (Q20, manufacturer claim); preparation in one study: burp every 48 h (Q12)."
+    },
+    {
+      "key": "cure_period",
+      "label": "Nachreifen und Dauer",
+      "label_en": "Curing period",
+      "conditions": [
+        {
+          "metric": "ambient_temp",
+          "min": 15,
+          "max": 21,
+          "unit": "°C",
+          "sources": [
+            "Q8"
+          ]
+        }
+      ],
+      "duration": {
+        "min": 2,
+        "max": 8,
+        "unit": "Wochen",
+        "sources": [
+          "Q24"
+        ]
+      },
+      "notes": "Händler: mindestens 2 Wochen, meist 4 bis 8 Wochen (Q24). Andere Angaben: 10 Tage verschlossen (Vivi Cure, Q21), 14 Tage (Versuchsschritt Q3, Q6; VCure Q19), 3 Wochen (Versuch Q9), bis zu 4 Wochen (Q8). 18 °C, 60 % rF und 14 Tage sind ein Versuchsschritt, keine geprüfte Bestlösung (Q3, Q6). Temperatur: 15 bis 21 °C steht im Review ohne Quellenangabe (Q8); 18 °C (Q3); im Versuch lagen die Behälter bei 24 bis 25 °C (Q9); VCure arbeitet mit 17 bis 20 °C (Q19). Erfolgszeichen: weniger scharfer Geruch, weniger Brennen im Hals, längere Haltbarkeit (Q8); messbare Kriterien: offen. Heu- oder Grasgeruch nach einer Woche im Glas heißt meist, es wurde zu schnell getrocknet oder das Curing braucht noch Zeit (Q24).",
+      "notes_en": "Retailer: at least 2 weeks, mostly 4 to 8 weeks (Q24). Other claims: 10 days sealed (Vivi Cure, Q21), 14 days (trial step Q3, Q6; VCure Q19), 3 weeks (trial Q9), up to 4 weeks (Q8). 18 °C, 60% RH and 14 days are a trial step, not a tested optimum (Q3, Q6). Temperature: 15 to 21 °C appears in the review without a citation (Q8); 18 °C (Q3); in the trial the containers sat at 24 to 25 °C (Q9); VCure works at 17 to 20 °C (Q19). Signs of success: less harsh smell, less throat burning, longer shelf life (Q8); measurable criteria: open. A hay or fresh-cut-grass smell after a week in the jar usually means drying finished too fast or the cure needs more time (Q24)."
+    },
+    {
+      "key": "storage",
+      "label": "Lagern nach dem Curing",
+      "label_en": "Storage after curing",
+      "conditions": [
+        {
+          "metric": "water_activity",
+          "min": 0.55,
+          "max": 0.65,
+          "unit": "aw",
+          "sources": [
+            "Q1"
+          ]
+        },
+        {
+          "metric": "jar_humidity",
+          "min": 55,
+          "max": 65,
+          "unit": "%",
+          "sources": [
+            "Q1",
+            "Q4",
+            "Q17"
+          ]
+        },
+        {
+          "metric": "ambient_temp",
+          "min": 18,
+          "max": 18,
+          "unit": "°C",
+          "sources": [
+            "Q3"
+          ]
+        }
+      ],
+      "duration": {
+        "min": "offen",
+        "max": "offen",
+        "unit": "offen",
+        "sources": []
+      },
+      "notes": "Kühl, trocken und dunkel (Q3). OSU nennt für lange Lagerung 18 °C und 45 bis 55 % rF (Q3); nach aw = rF / 100 (Q4) liegt das bei oder unter der ASTM-Untergrenze (Q1) und steht deshalb nicht in den Bedingungen. VCure lagert dauerhaft bei 17 °C und 59 % (Q19). Vivi Fresh hält 58 % (½ oz, 1 oz) bzw. 62 % (1 lb, 5 lb), ± 2 %, wirkt 2 bis 6 Monate, Wechsel laut Hersteller nach 90 Tagen (Q22). Milay: ganze Blüten im Dunkeln bei 4 °C waren die beste getestete Bedingung, Terpenoide sanken aber unter allen Bedingungen rasch (Q12). Licht, Luftkontakt und hohe Temperatur können einige Cannabinoidgehalte senken (Q3).",
+      "notes_en": "Cool, dry and dark (Q3). For long storage OSU gives 18 °C and 45 to 55% RH (Q3); by aw = RH / 100 (Q4) that is at or below the ASTM lower limit (Q1), so it is not listed under the conditions. VCure stores continuously at 17 °C and 59% (Q19). Vivi Fresh holds 58% (½ oz, 1 oz) or 62% (1 lb, 5 lb), ± 2%, lasts 2 to 6 months, and the manufacturer advises changing it after 90 days (Q22). Milay: whole flowers in the dark at 4 °C were the best tested condition, but terpenoids fell quickly under all conditions (Q12). Light, exposure to air and high temperature can lower some cannabinoid levels (Q3)."
+    }
+  ],
+  "warnings": [
+    "Über 70 % im Glas ist es zu feucht und es droht Schimmel: Blüten herausnehmen, einige Stunden auf dem Gitter nachtrocknen, wieder einglasen, täglich prüfen bis unter 65 % (Q24, Händlerangabe).",
+    "Weißer Flaum, graue Flecken oder ein süßlich-muffiger Geruch gelten als Schimmelzeichen: betroffene Blüten wegwerfen, den Rest vor dem Einglasen auf dem Gitter nachtrocknen (Q24, nur in dieser Händlerquelle belegt). Keine schimmeligen Knospen in das VCure-Gerät legen (Q19).",
+    "Unter 55 % ist es zu trocken: Feuchtebeutel zugeben und die Feuchte langsam anheben, wöchentlich prüfen (Q24). Zu trockene Blüten brechen leichter, Blätter und Trichome splittern besonders bei häufigem Anfassen (Q11); ASTM nennt aw über 0.55 als Schutz gegen Bruch (Q1).",
+    "Curing ist keine Entkeimung: Im Versuch mit Industriehanf sank die Zahl der Hefen und Schimmelpilze (TYM) beim Curing, aber die Abnahme war nicht statistisch signifikant (Q9). Bei ungenügend getrockneten Blüten mit feuchten Stellen können sich Restkeime beim Curing, Lagern und Versand vermehren (Q10).",
+    "Die Beweislage ist dünn: Curing ist in der Forschung nicht umfassend untersucht (Q3, Q8). Burping-Takt und Feuchtebeutel-Werte stammen in dieser Sammlung überwiegend aus Reviews mit Sekundärzitaten, von Herstellern und von Händlern.",
+    "18 °C, 60 % rF und 14 Tage sind ein Versuchsschritt vor dem Wiegen der Blüten, keine geprüfte Bestlösung (Q3, Q6). Andere Reviews machen daraus die beste Curing-Bedingung (Q7, Q8).",
+    "Deutschland, keine Rechtsberatung: Am Wohnsitz sind insgesamt höchstens 50 g Cannabis erlaubt, bei Blüten bezogen auf das Gewicht nach dem Trocknen (Q13). Nach Auslegung gilt das auch für Blüten im Glas. Über 50 bis 60 g ist eine Ordnungswidrigkeit mit Geldbuße bis zu 30.000 Euro (Q14), über 60 g eine Straftat (Q15).",
+    "Cannabis ist am Wohnsitz vor dem Zugriff Dritter, besonders von Kindern und Jugendlichen, zu schützen; welche Maßnahmen genügen, sagt das Gesetz nicht (Q16).",
+    "Licht, Luftkontakt und hohe Temperatur können einige Cannabinoidgehalte senken (Q3).",
+    "Q3, Q9 und Q11 betreffen Hanf, nicht THC-reiche Sorten; ob die Werte übertragbar sind, steht in keiner geprüften Aussage (offen)."
+  ],
+  "warnings_en": [
+    "Above 70% in the jar it is too wet and mold is a risk: take the buds out, dry them on a rack for a few hours, re-jar, and check daily until below 65% (Q24, retailer claim).",
+    "White fuzz, grey patches or a sweet musty smell count as signs of mold: throw away the affected buds and re-dry the rest on a rack before jarring (Q24, found only in this retailer source). Do not put moldy buds into the VCure device (Q19).",
+    "Below 55% it is too dry: add a humidity pack, raise the humidity slowly, and check weekly (Q24). Over-dried buds break more easily, and leaves and trichomes shatter more readily when handled often (Q11); ASTM gives aw above 0.55 as protection against breakage (Q1).",
+    "Curing is not a sterilization step: in the industrial hemp trial the total yeast and mold (TYM) count fell during curing, but the reduction was not statistically significant (Q9). Poorly dried buds with damp pockets can let residual microbes multiply during curing, storage and shipping (Q10).",
+    "The evidence is thin: curing is not yet extensively explored in research (Q3, Q8). In this collection the burping schedule and the humidity pack values come mostly from reviews with secondary citations, from manufacturers and from retailers.",
+    "18 °C, 60% RH and 14 days are a trial step before weighing the buds, not a tested optimum (Q3, Q6). Other reviews turn it into the best curing condition (Q7, Q8).",
+    "Germany, not legal advice: at the home address a total of at most 50 g of cannabis is allowed, for flowers measured by weight after drying (Q13). By interpretation this also covers flowers in the jar. More than 50 up to 60 g is an administrative offence with a fine of up to 30,000 euros (Q14), more than 60 g a criminal offence (Q15).",
+    "Cannabis at the home address must be protected against access by third parties, especially children and young people; the law does not say which measures are enough (Q16).",
+    "Light, exposure to air and high temperature can lower some cannabinoid levels (Q3).",
+    "Q3, Q9 and Q11 concern hemp, not THC-rich varieties; whether the values transfer is not stated in any verified claim (open)."
+  ],
+  "image": {
+    "file": "preserving-jars.webp",
+    "thumb": "preserving-jars-t.webp",
+    "w": 1200,
+    "h": 900,
+    "alt": "Drei leere Einmachgläser mit Gummiring und Klammern",
+    "alt_en": "Three empty preserving jars with rubber rings and clips",
+    "credit": {
+      "work": "File:Weckgläser in drei verschiedenen Größen-5717.jpg",
+      "author": "Raimond Spekking",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Weckgl%C3%A4ser_in_drei_verschiedenen_Gr%C3%B6%C3%9Fen-5717.jpg"
+    }
+  },
+  "sources": {
+    "Q1": "ASTM International, D8197-22 Standard Specification for Maintaining Acceptable Water Activity (aw) Range (0.55 to 0.65) for Dry Cannabis Flower, Abstract-Seite: https://store.astm.org/d8197-22.html",
+    "Q2": "California Code of Regulations, Title 4, § 15717 Moisture Content and Water Activity Testing, Wiedergabe durch Cornell LII: https://www.law.cornell.edu/regulations/california/4-CCR-15717",
+    "Q3": "Oregon State University Extension, Bridges, Post-harvest processing of hemp flowers, Oktober 2022: https://extension.oregonstate.edu/crop-production/hemp/post-harvest-processing-hemp-flowers",
+    "Q4": "U.S. FDA, Inspection Technical Guide Number 39, Water Activity (aw) in Foods: https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/inspection-technical-guides/water-activity-aw-foods",
+    "Q5": "Greenspan, Humidity Fixed Points of Binary Saturated Aqueous Solutions, J. Res. NBS 81A(1), 1977: https://nvlpubs.nist.gov/nistpubs/jres/81A/jresv81An1p89_A1b.pdf",
+    "Q6": "Jin, Jin, Chen, Cannabis Indoor Growing Conditions, Management Practices, and Post-Harvest Treatment: A Review, Am. J. Plant Sci. 10(6), 2019: https://www.scirp.org/html/5-2604131_93052.htm",
+    "Q7": "Das, Vista, Tabil, Baik, Postharvest Operations of Cannabis and Their Effect on Cannabinoid Content: A Review, Bioengineering 9(8):364, 2022: https://pmc.ncbi.nlm.nih.gov/articles/PMC9404914/",
+    "Q8": "Lazarjani, Young, Kebede, Seyfoddin, Processing and extraction methods of medicinal cannabis: a narrative review, J. Cannabis Res. 3:32, 2021: https://pmc.ncbi.nlm.nih.gov/articles/PMC8290527/",
+    "Q9": "Baek, Grab, Chen, Postharvest Drying and Curing Affect Cannabinoid Contents and Microbial Levels in Industrial Hemp, Plants 14(3):414, 2025: https://pmc.ncbi.nlm.nih.gov/articles/PMC11821007/",
+    "Q10": "Punja, Ni, Lung, Buirs, Total yeast and mold levels in high THC-containing cannabis inflorescences, Front. Microbiol. 14:1192035, 2023: https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2023.1192035/full",
+    "Q11": "University of Vermont Extension, Darby, Bruce, Sullivan, 2021 Hemp Cannabidiol Drying Trial, April 2022: https://www.uvm.edu/d10-files/documents/2024-08/2021_Hemp_Cannabidiol_Drying_Trial.pdf",
+    "Q12": "Milay, Berman, Shapira, Guberman, Meiri, Metabolic Profiling of Cannabis Secondary Metabolites for Evaluation of Optimal Postharvest Storage Conditions, Front. Plant Sci., 2020: https://pmc.ncbi.nlm.nih.gov/articles/PMC7593247/",
+    "Q13": "Konsumcannabisgesetz (KCanG) § 3, gesetze-im-internet.de: https://www.gesetze-im-internet.de/kcang/__3.html",
+    "Q14": "Konsumcannabisgesetz (KCanG) § 36, gesetze-im-internet.de: https://www.gesetze-im-internet.de/kcang/__36.html",
+    "Q15": "Konsumcannabisgesetz (KCanG) § 34, gesetze-im-internet.de: https://www.gesetze-im-internet.de/kcang/__34.html",
+    "Q16": "Konsumcannabisgesetz (KCanG) § 10, gesetze-im-internet.de: https://www.gesetze-im-internet.de/kcang/__10.html",
+    "Q17": "VIVOSUN Deutschland (Hersteller, kommerziell), Produktseite VCure C80 Smart Post-Harvest Box: https://www.vivosun.com/vivosun-vcure-smart-post-harvest-box-p159714253602553979-v159714253602553978",
+    "Q18": "VIVOSUN (Hersteller, kommerziell), Support-Seite VCure: https://vivosun.com/support/product/VCure",
+    "Q19": "VIVOSUN (Hersteller, kommerziell), Content & Support Center, VCure Smart Curing Box: https://legacy.vivosun.com/support/guide/vcure-smart-curing-box",
+    "Q20": "Vivi (Hersteller, kommerziell), Produktseite Vivi Cure, US-Shop: https://store.vivipacks.com/products/vivi-cure-pack",
+    "Q21": "Vivi (Hersteller, kommerziell), Anleitungsseite how-to-cure-with-vivi: https://vivipacks.com/how-to-cure-with-vivi",
+    "Q22": "Vivi (Hersteller, kommerziell), Produktseite Vivi Fresh, US-Shop: https://store.vivipacks.com/products/vivi-fresh",
+    "Q23": "Boveda Inc. (Hersteller, kommerziell), Startseite mit Hinweis zur Umbenennung von Boveda for Herbal in Vivi Fresh: https://bovedainc.com/",
+    "Q24": "Trimleaf (Händler, kommerziell), Randal, Drying and Curing Cannabis: The Harvest-to-Jar Workflow, Updated Oct 21, 2026: https://trimleaf.com/blogs/Guides/complete-guide-drying-curing-cannabis"
+  }
+}

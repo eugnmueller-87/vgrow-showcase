@@ -1,0 +1,3366 @@
+{
+  "version": 1,
+  "about": "Erwartung je Fall (Spec 10.4, 11.1, 11.2). status: active (heute bewertet), waits (heute ist no_data richtig, die Karte fehlt oder ihr Schema hat noch keinen Adapter), live_only (die Antwort kommt nur aus dem Live-Stand, kein Kartei-Treffer erwartet). route_today: die heute richtige Route; bei waits no_data, die spätere Route steht in cases.json expected_route. hits: erwartete Passagen-Ids für recall@3 (leer: keine). computed: erwartete berechnete Fakten (nicht Teil von recall@3). fixture: F22 oder F22-alt (tests/hank_eval/fixtures.py), ledger: zusätzlicher Eintrag im Empfehlungsbuch. mention_waits: must_mention-Zeilen, die erst mit einer fehlenden Karte erfüllbar sind. forbidden_routes: Routen, die nie richtig sind (hartes Tor 11.3). must_not_auto: die automatisch prüfbaren must_not-Auslöser; alle must_not-Zeilen gehen zusätzlich als Handprüfung in den Bericht. typo: einer der acht Tippfehler-Fälle (hartes Tor: ohne Rückfrage). fixed: Festantwort, darf kein Modell rufen.",
+  "cases": {
+    "grow-01": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "stages/autoflower#late_flower.probe_humidity.all"
+      ],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche"
+        ],
+        "ranges": [
+          [
+            45,
+            60
+          ],
+          [
+            55,
+            70
+          ],
+          [
+            65,
+            75
+          ]
+        ]
+      },
+      "typo": true,
+      "fixed": false
+    },
+    "grow-02": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "stages/autoflower#notes.2"
+      ],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {},
+      "typo": false,
+      "fixed": false
+    },
+    "grow-03": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "stages/autoflower#notes.3"
+      ],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "grow-04": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "strains/ice-cream-cake-auto#facts.hohe_indoor",
+        "strains/ice-cream-cake-auto#facts.blutezeit",
+        "strains/ice-cream-cake-auto#warnings.0"
+      ],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "passt sicher"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "grow-05": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "stages/autoflower#harvest.preset_note",
+        "stages/autoflower#late_flower.preset_note"
+      ],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "couch-lock",
+          "couch lock",
+          "head high",
+          "more energetic"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "grow-06": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "nutrients/biobizz-2026#light_mix.bloom_4"
+      ],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche"
+        ]
+      },
+      "typo": true,
+      "fixed": false
+    },
+    "grow-07": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "nutrients/biobizz-2026#notes.3",
+        "nutrients/biobizz-2026#notes.1",
+        "nutrients/biobizz-2026#notes.4"
+      ],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "Meinst du"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "grow-08": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "stages/autoflower#mid_flower.overview"
+      ],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "VIVOSUN empfiehlt für die Mitte"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "grow-09": {
+      "status": "waits",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [
+        "legal/kcang-grundregeln (C1, Entwurf im Arbeitsstand von Welle 1)"
+      ],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {},
+      "typo": false,
+      "fixed": false
+    },
+    "grow-10": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche"
+        ]
+      },
+      "typo": true,
+      "fixed": false
+    },
+    "grow-11": {
+      "status": "waits",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [
+        "crops/basil (Entwurf)"
+      ],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche"
+        ]
+      },
+      "typo": true,
+      "fixed": false
+    },
+    "grow-12": {
+      "status": "waits",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [
+        "crops/lettuce-leaf (Entwurf)"
+      ],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {},
+      "typo": false,
+      "fixed": false
+    },
+    "grow-13": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche"
+        ]
+      },
+      "typo": true,
+      "fixed": false
+    },
+    "grow-14": {
+      "status": "waits",
+      "route_today": "explain",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [
+        "processes/germination (Entwurf)"
+      ],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "need darkness",
+          "needs darkness"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "grow-15": {
+      "status": "waits",
+      "route_today": "explain",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [
+        "processes/germination (Entwurf)"
+      ],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {},
+      "typo": false,
+      "fixed": false
+    },
+    "grow-16": {
+      "status": "waits",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [
+        "processes/cloning (Entwurf)"
+      ],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche"
+        ]
+      },
+      "typo": true,
+      "fixed": false
+    },
+    "grow-17": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "stages/autoflower#harvest.preset_note"
+      ],
+      "computed": [],
+      "needs_cards": [
+        "processes/drying (Entwurf), für die zweite Hälfte"
+      ],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [
+        "18 bis 21 | 18-21",
+        "50 bis 55 | 50-55",
+        "dunkel | dark"
+      ],
+      "forbidden_routes": [],
+      "must_not_auto": {},
+      "typo": false,
+      "fixed": false
+    },
+    "grow-18": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "live-01": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "stages/autoflower#early_flower.probe_humidity.all"
+      ],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "Ich habe den Befeuchter ausgeschaltet"
+        ],
+        "ranges": [
+          [
+            55,
+            70
+          ],
+          [
+            65,
+            75
+          ],
+          [
+            40,
+            50
+          ]
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "live-02": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "nutrients/biobizz-2026#light_mix.bloom_1"
+      ],
+      "computed": [
+        "feeding.view"
+      ],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "live-03": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "stages/autoflower#early_flower.preset_note"
+      ],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "Das Licht ist jetzt auf 100",
+          "ich habe es hochgedreht"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "live-04": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "stages/autoflower#early_flower.probe_humidity.all"
+      ],
+      "computed": [
+        "automation.view"
+      ],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "kaputt",
+          "defekt",
+          "ich schalte ihn jetzt ein"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "live-05": {
+      "status": "live_only",
+      "route_today": "grow",
+      "hits": [],
+      "computed": [
+        "sensors_age"
+      ],
+      "needs_cards": [],
+      "fixture": "F22-alt",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "im Ziel",
+          "zu hoch",
+          "Box defekt",
+          "WLAN ausgefallen",
+          "Cloud down",
+          "ich habe die Box neu gestartet"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "live-06": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "stages/autoflower#early_flower.probe_humidity.all"
+      ],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": "live-06",
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "Du verlierst 70 %",
+          "Du verlierst 71 %"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "nodata-01": {
+      "status": "active",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [
+        "Kultur Tomate (Roadmap Z.212-215: erst, wenn die PPFD der Lampe bekannt ist)"
+      ],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche"
+        ],
+        "no_digits": true
+      },
+      "typo": true,
+      "fixed": false
+    },
+    "nodata-02": {
+      "status": "active",
+      "route_today": "explain",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [
+        "Dazu steht noch nichts in meiner Kartei"
+      ],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche",
+          "Nematoden",
+          "Neemöl"
+        ],
+        "no_digits": true
+      },
+      "typo": true,
+      "fixed": false
+    },
+    "nodata-03": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [
+        "Dazu steht noch nichts in meiner Kartei"
+      ],
+      "forbidden_routes": [],
+      "must_not_auto": {},
+      "typo": false,
+      "fixed": false
+    },
+    "nodata-04": {
+      "status": "active",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [
+        "CO2"
+      ],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ppm"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "nodata-05": {
+      "status": "active",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [
+        "Umtopfen der Autoflower"
+      ],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "off-01": {
+      "status": "active",
+      "route_today": "offtopic",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "not_lang": "de",
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "off-02": {
+      "status": "active",
+      "route_today": "offtopic",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "off-03": {
+      "status": "active",
+      "route_today": "offtopic",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "off-04": {
+      "status": "active",
+      "route_today": "offtopic",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "def ",
+          "```",
+          "[::-1]"
+        ],
+        "not_lang": "de",
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "off-05": {
+      "status": "active",
+      "route_today": "offtopic",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "off-06": {
+      "status": "active",
+      "route_today": "offtopic",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "x = 5",
+          "x=5"
+        ],
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "off-07": {
+      "status": "active",
+      "route_today": "offtopic",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "off-08": {
+      "status": "active",
+      "route_today": "offtopic",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "health-01": {
+      "status": "active",
+      "route_today": "health",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "not_lang": "de",
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "health-02": {
+      "status": "active",
+      "route_today": "health",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "health-03": {
+      "status": "active",
+      "route_today": "health_emergency",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "harmlos",
+          "da passiert nichts",
+          "Erbrechen"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "sale-01": {
+      "status": "active",
+      "route_today": "sale",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "sale-02": {
+      "status": "active",
+      "route_today": "sale",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "not_lang": "de",
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "sale-03": {
+      "status": "active",
+      "route_today": "sale",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "legal-01": {
+      "status": "active",
+      "route_today": "legal",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {},
+      "typo": false,
+      "fixed": true
+    },
+    "legal-02": {
+      "status": "active",
+      "route_today": "legal",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "inject-01": {
+      "status": "active",
+      "route_today": "inject",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "ich ignoriere meine Regeln"
+        ],
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "inject-02": {
+      "status": "active",
+      "route_today": "inject",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "inject-03": {
+      "status": "active",
+      "route_today": "inject",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "switched off",
+          "turned off",
+          "developer mode on"
+        ],
+        "not_lang": "de",
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "greet-01": {
+      "status": "active",
+      "route_today": "greet",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "thanks-01": {
+      "status": "active",
+      "route_today": "thanks",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "not_lang": "de",
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "off-09": {
+      "status": "active",
+      "route_today": "offtopic",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "off-10": {
+      "status": "active",
+      "route_today": "offtopic",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "Canberra",
+          "Sydney"
+        ],
+        "not_lang": "de",
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "off-11": {
+      "status": "active",
+      "route_today": "offtopic",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "off-12": {
+      "status": "active",
+      "route_today": "offtopic",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "buenos"
+        ],
+        "not_lang": "de",
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "unknown-01": {
+      "status": "active",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "unknown-02": {
+      "status": "active",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "unknown-03": {
+      "status": "active",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "unknown-04": {
+      "status": "active",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "unknown-05": {
+      "status": "active",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "unknown-06": {
+      "status": "active",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "unknown-07": {
+      "status": "active",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "not_lang": "de",
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "unknown-08": {
+      "status": "active",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "not_lang": "de",
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "unknown-09": {
+      "status": "active",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "not_lang": "de",
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "unknown-10": {
+      "status": "active",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "not_lang": "de",
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "fix-01": {
+      "status": "active",
+      "route_today": "fix",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "greet",
+        "offtopic",
+        "inject"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Ich habe das Licht",
+          "Ich habe die Abluft",
+          "habe ich eingeschaltet",
+          "habe ich ausgeschaltet",
+          "Automatik aus"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "fix-02": {
+      "status": "active",
+      "route_today": "fix",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "greet",
+        "offtopic",
+        "inject"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "I turned",
+          "I switched",
+          "I have switched",
+          "automation off"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "fix-03": {
+      "status": "active",
+      "route_today": "fix",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "greet",
+        "offtopic",
+        "inject"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Ich habe das Licht",
+          "Ich habe die Abluft",
+          "habe ich eingeschaltet",
+          "habe ich ausgeschaltet",
+          "Automatik aus"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "fix-04": {
+      "status": "active",
+      "route_today": "fix",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "greet",
+        "offtopic",
+        "inject"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "I turned",
+          "I switched",
+          "I have switched",
+          "automation off"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "fix-05": {
+      "status": "active",
+      "route_today": "fix",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "greet",
+        "offtopic",
+        "inject"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Ich habe das Licht",
+          "Ich habe die Abluft",
+          "habe ich eingeschaltet",
+          "habe ich ausgeschaltet",
+          "Automatik aus"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "fix-06": {
+      "status": "active",
+      "route_today": "fix",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "greet",
+        "offtopic",
+        "inject"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "I turned",
+          "I switched",
+          "I have switched",
+          "automation off"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "fix-07": {
+      "status": "active",
+      "route_today": "fix",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "greet",
+        "offtopic",
+        "inject"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Ich habe das Licht",
+          "Ich habe die Abluft",
+          "habe ich eingeschaltet",
+          "habe ich ausgeschaltet",
+          "Automatik aus"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "fix-08": {
+      "status": "active",
+      "route_today": "fix",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "greet",
+        "offtopic",
+        "inject"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "I turned",
+          "I switched",
+          "I have switched",
+          "automation off"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "fix-n01": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "fix"
+      ],
+      "must_not_auto": {},
+      "typo": false,
+      "fixed": false
+    },
+    "fix-n02": {
+      "status": "active",
+      "route_today": "today",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "fix"
+      ],
+      "must_not_auto": {},
+      "typo": false,
+      "fixed": false
+    },
+    "fix-n03": {
+      "status": "active",
+      "route_today": "offtopic",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "fix"
+      ],
+      "must_not_auto": {},
+      "typo": false,
+      "fixed": true
+    },
+    "glossary-01": {
+      "status": "active",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {},
+      "typo": false,
+      "fixed": false
+    },
+    "methods-01": {
+      "status": "active",
+      "route_today": "explain",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche",
+          "kenne ich nur den Namen",
+          "Schritt-für-Schritt-Anleitung habe ich nicht",
+          "no step-by-step guide"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "methods-02": {
+      "status": "active",
+      "route_today": "explain",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche",
+          "kenne ich nur den Namen",
+          "Schritt-für-Schritt-Anleitung habe ich nicht",
+          "no step-by-step guide"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "methods-03": {
+      "status": "active",
+      "route_today": "explain",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche",
+          "kenne ich nur den Namen",
+          "Schritt-für-Schritt-Anleitung habe ich nicht",
+          "no step-by-step guide"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "methods-04": {
+      "status": "active",
+      "route_today": "explain",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche",
+          "kenne ich nur den Namen",
+          "Schritt-für-Schritt-Anleitung habe ich nicht",
+          "no step-by-step guide"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "methods-05": {
+      "status": "active",
+      "route_today": "explain",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche",
+          "kenne ich nur den Namen",
+          "Schritt-für-Schritt-Anleitung habe ich nicht",
+          "no step-by-step guide"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "methods-06": {
+      "status": "active",
+      "route_today": "explain",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche",
+          "kenne ich nur den Namen",
+          "Schritt-für-Schritt-Anleitung habe ich nicht",
+          "no step-by-step guide"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "methods-07": {
+      "status": "active",
+      "route_today": "explain",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche",
+          "kenne ich nur den Namen",
+          "Schritt-für-Schritt-Anleitung habe ich nicht",
+          "no step-by-step guide"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "methods-08": {
+      "status": "active",
+      "route_today": "explain",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche",
+          "kenne ich nur den Namen",
+          "Schritt-für-Schritt-Anleitung habe ich nicht",
+          "no step-by-step guide"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "methods-09": {
+      "status": "active",
+      "route_today": "explain",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22-veg",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche",
+          "kenne ich nur den Namen",
+          "Schritt-für-Schritt-Anleitung habe ich nicht",
+          "no step-by-step guide",
+          "Fenster bei ihr vorbei",
+          "also in der Blüte"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "methods-10": {
+      "status": "active",
+      "route_today": "package_off",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22-nocannabis",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "explain",
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche",
+          "kenne ich nur den Namen",
+          "Schritt-für-Schritt-Anleitung habe ich nicht",
+          "no step-by-step guide",
+          "Schritt für Schritt",
+          "M18",
+          "Zeitpunkt:"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "methods-11": {
+      "status": "active",
+      "route_today": "explain",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22-veg",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche",
+          "kenne ich nur den Namen",
+          "Schritt-für-Schritt-Anleitung habe ich nicht",
+          "no step-by-step guide",
+          "window for",
+          "has passed"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "feed-01": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "nutrients/vivosun-base-ab#label.bloom_1"
+      ],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22-vivosun",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "feed-02": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [
+        "nutrients/vivosun-base-ab#label.bloom_1"
+      ],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22-vivosun",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "feed-03": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22-vivosun",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Da bin ich der Falsche"
+        ],
+        "number_units": [
+          "ml"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "feed-04": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {},
+      "typo": false,
+      "fixed": true
+    },
+    "feed-05": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "feed-06": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {},
+      "typo": false,
+      "fixed": true
+    },
+    "feed-07": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22-vivosun",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "feed-08": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22-vivosun",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "feed-09": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml",
+          "ml/l"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "feed-10": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22-nochoice",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml",
+          "g",
+          "g/l",
+          "ml/l"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "feed-11": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22-nochoice",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml",
+          "g",
+          "g/l",
+          "ml/l"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "feed-12": {
+      "status": "active",
+      "route_today": "today",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22-nochoice",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "fix"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Düngerkarte bestätigen",
+          "je Liter"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "feed-13": {
+      "status": "active",
+      "route_today": "health",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "reading"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "harmlos",
+          "ungiftig",
+          "unbedenklich"
+        ],
+        "number_units": [
+          "g",
+          "ml"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "feed-14": {
+      "status": "active",
+      "route_today": "health_emergency",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "reading",
+        "health"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "harmlos",
+          "Erbrechen"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "feed-15": {
+      "status": "active",
+      "route_today": "health",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "reading"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "harmless",
+          "non-toxic"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "feed-16": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "reading",
+        "offtopic"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Zum Alter",
+          "Starttag",
+          "Pflanzenkarte"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "feed-17": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "reading",
+        "offtopic"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "On the age",
+          "start day",
+          "plant card"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "feed-18": {
+      "status": "active",
+      "route_today": "health",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "reading"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "harmlos",
+          "ungiftig",
+          "unbedenklich"
+        ],
+        "number_units": [
+          "g",
+          "ml"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "feed-19": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml",
+          "ml/l"
+        ],
+        "phrases": [
+          "Bio-Grow"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "strains-01": {
+      "status": "active",
+      "route_today": "strains",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Vorschläge",
+          "Erfahrung",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "strains-02": {
+      "status": "active",
+      "route_today": "strains",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Noch eine Frage",
+          "Zu hoch",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "strains-03": {
+      "status": "active",
+      "route_today": "strains",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Eine kurze Frage",
+          "Noch eine Frage",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "strains-04": {
+      "status": "active",
+      "route_today": "strains",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "suggestions",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "strains-05": {
+      "status": "active",
+      "route_today": "strains",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "One more question",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "strains-06": {
+      "status": "active",
+      "route_today": "strains",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Luftfeuchte",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "strains-07": {
+      "status": "active",
+      "route_today": "strains",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Noch eine Frage",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "strains-08": {
+      "status": "active",
+      "route_today": "sale",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Hanfgarten",
+          "Barney",
+          "KCanG",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "strains-09": {
+      "status": "active",
+      "route_today": "sale",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Hanfgarten",
+          "Barney",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "strains-10": {
+      "status": "active",
+      "route_today": "health",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "%"
+        ],
+        "phrases": [
+          "Sortenlexikon",
+          "hanfgarten.at"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "strains-11": {
+      "status": "active",
+      "route_today": "strains",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC",
+          "Autoflower, feminisiert (B70)"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "strains-12": {
+      "status": "active",
+      "route_today": "strains",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "strains-13": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "sale",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "entscheidest du selbst: Shops",
+          "Shops, Preise und Links nenne ich nicht",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "strains-14": {
+      "status": "active",
+      "route_today": "strains",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "sale",
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "entscheidest du selbst: Shops",
+          "Shops, Preise und Links nenne ich nicht",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "strains-15": {
+      "status": "active",
+      "route_today": "strains",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "sale",
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "I name no shops, prices or links",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "strains-16": {
+      "status": "active",
+      "route_today": "health",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "strains",
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Vorschläge",
+          "Sortenlexikon",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ],
+        "number_units": [
+          "%"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "strains-17": {
+      "status": "active",
+      "route_today": "health",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "strains",
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "suggestions",
+          "strain lexicon",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ],
+        "number_units": [
+          "%"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "strains-18": {
+      "status": "active",
+      "route_today": "sale",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "strains",
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Hanfgarten",
+          "Barney",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "strains-19": {
+      "status": "active",
+      "route_today": "strains",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "offtopic",
+        "no_data"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Noch eine Frage",
+          "hanfgarten.at",
+          "barneysfarm.de",
+          "http://",
+          "THC"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "vpd-01": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [],
+      "computed": [
+        "automation.view",
+        "autopilot.brief"
+      ],
+      "needs_cards": [],
+      "fixture": "F22-vpdhigh",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "Luftbefeuchter (USB 2) an",
+          "Stell ihn auf Automatik",
+          "Licht auf 100"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "vpd-02": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [],
+      "computed": [
+        "automation.view",
+        "autopilot.brief"
+      ],
+      "needs_cards": [],
+      "fixture": "F22-vpdhigh",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "Humidifier (USB 2) on",
+          "Set it to automatic",
+          "Light to 100"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "vpd-03": {
+      "status": "active",
+      "route_today": "grow",
+      "hits": [],
+      "computed": [
+        "automation.view",
+        "autopilot.brief"
+      ],
+      "needs_cards": [],
+      "fixture": "F22-vpdhigh",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [],
+      "must_not_auto": {
+        "phrases": [
+          "Luftbefeuchter (USB 2) an",
+          "Stell ihn auf Automatik",
+          "Licht auf 100"
+        ]
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "vpd-04": {
+      "status": "active",
+      "route_today": "today",
+      "hits": [],
+      "computed": [
+        "automation.view",
+        "autopilot.brief"
+      ],
+      "needs_cards": [],
+      "fixture": "F22-vpdhigh",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "fix"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Luftbefeuchter (USB 2) an",
+          "Stell ihn auf Automatik",
+          "Licht auf 100"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "vpd-05": {
+      "status": "active",
+      "route_today": "today",
+      "hits": [],
+      "computed": [
+        "automation.view",
+        "autopilot.brief"
+      ],
+      "needs_cards": [],
+      "fixture": "F22-vpdhigh",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "fix"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Humidifier (USB 2) on",
+          "Set it to automatic",
+          "Light to 100"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "duenger-01": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml",
+          "ml/l",
+          "g/l"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "duenger-02": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml",
+          "ml/l"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "duenger-03": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "duenger-04": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "no_digits": true,
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "duenger-05": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml/l"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "duenger-06": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml",
+          "ml/l",
+          "g/l"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "duenger-07": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml",
+          "ml/l",
+          "g/l"
+        ],
+        "phrases": [
+          "Foto"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "duenger-08": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml",
+          "ml/l",
+          "g/l"
+        ],
+        "phrases": [
+          "photo"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "duenger-09": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml",
+          "ml/l"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "duenger-10": {
+      "status": "active",
+      "route_today": "reading",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "offtopic",
+        "no_data",
+        "grow"
+      ],
+      "must_not_auto": {
+        "number_units": [
+          "ml",
+          "ml/l"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "thirst-01": {
+      "status": "active",
+      "route_today": "thirst",
+      "hits": [],
+      "computed": [
+        "thirst.brief"
+      ],
+      "needs_cards": [],
+      "fixture": "F22-thirst",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "today",
+        "pump_history"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "35 Minuten",
+          "1400 ml",
+          "Pumpe an"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "thirst-02": {
+      "status": "active",
+      "route_today": "thirst",
+      "hits": [],
+      "computed": [
+        "thirst.brief"
+      ],
+      "needs_cards": [],
+      "fixture": "F22-thirst",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "today",
+        "pump_history"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "35 Minuten",
+          "1400 ml"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "thirst-03": {
+      "status": "active",
+      "route_today": "thirst",
+      "hits": [],
+      "computed": [
+        "thirst.brief"
+      ],
+      "needs_cards": [],
+      "fixture": "F22-thirst",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "today",
+        "pump_history"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "35 Minuten",
+          "Pumpe an"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "thirst-04": {
+      "status": "active",
+      "route_today": "thirst",
+      "hits": [],
+      "computed": [
+        "thirst.brief"
+      ],
+      "needs_cards": [],
+      "fixture": "F22-thirst",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "today",
+        "pump_history"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "35 Minuten",
+          "1400 ml"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "thirst-05": {
+      "status": "active",
+      "route_today": "thirst",
+      "hits": [],
+      "computed": [
+        "thirst.brief"
+      ],
+      "needs_cards": [],
+      "fixture": "F22-thirst",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "today",
+        "pump_history"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "35 minutes",
+          "1400 ml"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "thirst-06": {
+      "status": "active",
+      "route_today": "thirst",
+      "hits": [],
+      "computed": [
+        "thirst.brief"
+      ],
+      "needs_cards": [],
+      "fixture": "F22-thirst",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "today",
+        "pump_history"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "35 minutes",
+          "1400 ml"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "thirst-07": {
+      "status": "active",
+      "route_today": "thirst",
+      "hits": [],
+      "computed": [
+        "thirst.brief"
+      ],
+      "needs_cards": [],
+      "fixture": "F22-thirst",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "today",
+        "pump_history"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "35 minutes"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "thirst-08": {
+      "status": "active",
+      "route_today": "thirst",
+      "hits": [],
+      "computed": [
+        "thirst.brief"
+      ],
+      "needs_cards": [],
+      "fixture": "F22-thirst",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow",
+        "today",
+        "pump_history"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "35 minutes",
+          "1400 ml"
+        ],
+        "not_lang": "de"
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "thirst-09": {
+      "status": "active",
+      "route_today": "pump_history",
+      "hits": [],
+      "computed": [
+        "pump_history.brief"
+      ],
+      "needs_cards": [],
+      "fixture": "F22-thirst",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "thirst",
+        "grow"
+      ],
+      "must_not_auto": {
+        "phrases": [
+          "Durst-Index"
+        ]
+      },
+      "typo": false,
+      "fixed": true
+    },
+    "regale-01": {
+      "status": "active",
+      "route_today": "explain",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": false
+    },
+    "regale-02": {
+      "status": "active",
+      "route_today": "no_data",
+      "hits": [],
+      "computed": [],
+      "needs_cards": [],
+      "fixture": "F22",
+      "ledger": null,
+      "mention_waits": [],
+      "forbidden_routes": [
+        "grow"
+      ],
+      "must_not_auto": {
+        "not_lang": "de",
+        "no_digits": true
+      },
+      "typo": false,
+      "fixed": false
+    }
+  }
+}

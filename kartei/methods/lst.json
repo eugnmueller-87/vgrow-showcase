@@ -1,0 +1,87 @@
+{
+  "key": "lst",
+  "kind": "method",
+  "status": "draft",
+  "package": "cannabis",
+  "label": "LST (Low Stress Training): Herunterbinden",
+  "label_en": "LST (low stress training): tying down",
+  "aliases": {
+    "de": [
+      "Herunterbinden",
+      "LST",
+      "Low Stress Training"
+    ],
+    "en": [
+      "LST",
+      "low stress training",
+      "tie-down method"
+    ]
+  },
+  "what": "Beim Herunterbinden biegst du den Haupttrieb und später die Seitentriebe sanft zur Seite und fixierst sie, ohne etwas abzuschneiden (M3, M4). So bekommen mehr Blütenansätze Licht, und die Pflanze wächst mehr in die Breite (M1). M1 zählt LST zu den schonenden Methoden, bei denen die Pflanze kaum verletzt wird, und schreibt, die Erholungszeit sei meist kurz und das Risiko für gebremstes Wachstum gering. Topping (die Spitze des Haupttriebs entfernen) und Supercropping (den Stängel absichtlich verletzen, damit die Äste dicker nachwachsen) zählen dort zum High-Stress-Training (HST) (M1). Ein Berater und Forscher schreibt in der Fachpresse, Biegen könne die Form der Pflanze deutlich verändern, ohne die Entwicklung zu bremsen oder die Pflanze zu stressen; wegen des Aufwands werde Biegen meist an kleinen Pflanzen angewandt (M2, Fachpresse ohne Versuchsdaten, Erfahrungsquelle). Eine kontrollierte Studie zu LST (Biegen, Herunterbinden) bei Cannabis wurde bei der Suche am 2026-10-23 nicht gefunden. Kontrollierte Versuche gibt es zu anderen Formen der Pflanzenformung, etwa Entlauben und Astentfernung (M9).",
+  "what_en": "With tying down you gently bend the main stem, and later the side branches, to the side and fix them in place without cutting anything (M3, M4). More bud sites get light, and the plant grows more sideways (M1). M1 counts LST among the gentle methods that barely injure the plant and writes that recovery time is usually brief and the risk of stunted growth low. Topping (removing the top of the main stem) and supercropping (deliberately injuring the stem so the branches grow thicker) count there as high-stress training (HST) (M1). A consultant and researcher writes in the trade press that bending can change plant form significantly without slowing development or stressing the plant; because of the labor involved, bending is usually applied to small plants (M2, trade press without trial data, experience source). No controlled study on LST (bending, tying down) in cannabis was found in the search on 2026-10-23. Controlled trials exist for other ways of shaping the plant, such as defoliation and branch removal (M9).",
+  "steps": [
+    "Warten, bis die Pflanze etwa drei bis vier Knoten hat und der Haupttrieb kräftiger wird (M3, Erfahrungsquelle). Ein Knoten ist ein Blattpaar am Stängel (M3: three to four sets of true leaves, nodes). M3 nennt als Alternative den Beginn in der zweiten Woche kräftigen Wachstums.",
+    "Den Stängel unten mit einer Hand stützen und die Spitze langsam bogenförmig zur Seite führen, bis sie eher waagerecht als senkrecht liegt (M3, Erfahrungsquelle).",
+    "Mit einem weichen Pflanzenbinder am Topfrand oder an einem kleinen Stab im Boden fixieren (M3, Erfahrungsquelle). Ob sich die senkrechten Strukturstangen der VGrow als Haltepunkt eignen, sagt das Handbuch nicht (M6). Als Bindematerial nennt M3 weichen Pflanzendraht, gummierten Gartendraht oder Stoffbinder. Alternative laut VIVOSUN: Foldback-Klemmen (englisch binder clips) gleichmäßig am Topfrand verteilen und die Pflanze langsam und locker mit Baumwollschnur oder Garn daran festbinden (M4, Erfahrungsquelle). Zum Zubehör der VGrow gehören laut Handbuch ein Kabelbinder (englisch Wire Tie), eine Twist-Tie-Rolle 50 m und ein Trellis-Netz; wofür diese Teile gedacht sind, sagt das Handbuch nicht (M6).",
+    "Nachwachsende Seitentriebe mit weiteren Bindern sanft nach außen ziehen und rund um den Topf verteilen (M3, Erfahrungsquelle).",
+    "Möglichst täglich nachsehen, weil Autoflower sehr schnell wachsen: Binder lockern oder versetzen, wenn sie einschneiden, und die Spitzen auf ähnlicher Höhe halten (M3, Erfahrungsquelle).",
+    "Größere Korrekturen am besten an einer gut gewässerten Pflanze und immer schrittweise. Laut M3 knicken Stängel eher, wenn die Pflanze Durst hat oder kurz nachdem das Licht angegangen ist (Erfahrungsquelle).",
+    "Wenn die Blüte läuft und das Streckungswachstum (die Pflanze schiebt sich in die Höhe) nachlässt, musst du keine neuen Binder mehr setzen und hältst nur noch die Form (M3, Erfahrungsquelle)."
+  ],
+  "steps_en": [
+    "Wait until the plant has about three to four nodes and the main stem is getting thicker (M3, experience source). A node is a pair of leaves on the stem (M3: three to four sets of true leaves, nodes). M3 names starting in the second week of vigorous growth as an alternative.",
+    "Support the stem base with one hand and slowly arc the top over until it lies closer to horizontal than vertical (M3, experience source).",
+    "Fix it with a soft plant tie to the pot rim or a small stake in the soil (M3, experience source). The manual does not say whether the VGrow vertical structure poles are suitable as an anchor (M6). M3 names soft plant wire, rubber-coated garden wire or fabric ties as tying material. Alternative per VIVOSUN: binder clips spaced evenly on the pot rim, with the plant tied to them slowly and loosely using cotton string or yarn (M4, experience source). The VGrow accessories include, per the manual, a cable tie (listed as Wire Tie), a 50 m twist-tie roll and a trellis net; the manual does not say what they are for (M6).",
+    "As side branches grow, gently pull them outward with more ties and space them around the pot (M3, experience source).",
+    "Check daily if possible, because autoflowers grow very fast: loosen or move ties that dig in, and keep the tops at a similar height (M3, experience source).",
+    "Make bigger adjustments preferably on a well-watered plant and always bend gradually. Per M3, stems snap more easily when the plant is thirsty or right after the lights have come on (experience source).",
+    "Once flowering is well underway and stretching (the plant shooting upward) slows, you no longer need to add ties and just keep the shape (M3, experience source)."
+  ],
+  "when": "Ab etwa drei bis vier Knoten oder ab der zweiten Woche kräftigen Wachstums (M3), bevor die Blüte richtig einsetzt. Starke Eingriffe gehören laut M3 ins frühe Wachstum, später nur noch kleine Korrekturen oder Binder lockern. Wenn die Blüte läuft und das Streckungswachstum nachlässt, musst du keine neuen Binder mehr setzen. Starkes Umformen in der mittleren bis späten Blüte kann Autoflower stark belasten (M3). Ob ein erster Start erst in der Blüte noch sinnvoll ist, sagt M3 nicht. Alle Zeitangaben stammen aus einer Erfahrungsquelle, keine aus einer Studie.",
+  "when_en": "From about three to four nodes or from the second week of vigorous growth (M3), before flowering really kicks in. Per M3, heavy adjustments belong to early growth; later only very small tweaks or loosening ties. Once flowering is well underway and stretching slows, you no longer need to add ties. Major reshaping in mid to late flowering can shock autoflowers (M3). M3 does not say whether a first start during flowering still makes sense. All timing comes from an experience source (experience source), none from a study.",
+  "autoflower": "Autoflower sind Sorten, die unabhängig vom Lichtrhythmus von selbst in die Blüte wechseln (M1). M3 (Ratgeber von Zamnesia, einem Samenhändler, Erfahrungsquelle) behandelt LST ausdrücklich für Autoflower: Sie wachsen nach einer festen inneren Uhr, deshalb bleibt nur ein kurzes Zeitfenster zum Formen, bevor sie ganz in die Blüte gehen. Weil LST die Pflanze nicht verletzt, bleibe die Erholungszeit kurz, und das sei wichtig, wenn nur wenige Wochen Wachstum vor der Blüte bleiben. Autoflower wachsen sehr schnell, deshalb täglich nachsehen. Starke Eingriffe gehören ins frühe Wachstum, später nur noch kleine Korrekturen oder Binder lockern; in der mittleren bis späten Blüte nicht mehr stark umformen (M3). M5 (Herstellerblog VIVOSUN, Erfahrungsquelle) schreibt, LST belaste die Pflanze am wenigsten, sie erhole sich schneller, und das könne für bestimmte Genetiken und Autoflower gut sein. M1 nennt Autoflower beim Mainlining (einer Hochstress-Methode) im Allgemeinen ungeeignet, weil die Wachstumsphase vor der Blüte kurz ist und sie wenig auf High-Stress-Training ansprechen; M1 fügt an, mit sorgfältigem Timing und Umgebungssteuerung ließen sich auch weniger übliche Sorten mäßig trainieren. Zu LST an Autoflowern sagt M1 nichts. M1 räumt ein, dass vieles zu Mainlining aus Blogs und persönlicher Anbauerfahrung stammt und einheitliche Verfahren für feminisierte, autoflowernde und photoperiodische Sorten fehlen. M2, M4 und M6 sagen nichts zu Autoflowern. Eine Studie zu LST an Autoflowern wurde bei der Suche am 2026-10-23 nicht gefunden.",
+  "autoflower_en": "Autoflowers are varieties that switch to flowering on their own, regardless of the light schedule (M1). M3 (guide by Zamnesia, a seed retailer, experience source) covers LST explicitly for autoflowers: they grow on a fixed internal clock, so there is only a short window to shape them before they commit fully to flowering. Because LST does not wound the plant, recovery time stays minimal, which matters when only a few weeks of vegetative growth are available. Autoflowers grow very fast, so check daily. Heavy adjustments belong to early growth; later only very small tweaks or loosening ties; no major reshaping in mid to late flowering (M3). M5 (VIVOSUN manufacturer blog, experience source) says LST puts the least stress on plants so they bounce back faster, which can be good for certain genetics and autoflowers. M1 calls autoflowers generally unsuitable for mainlining (a high-stress method), because the vegetative phase is short and they respond little to high-stress training; M1 adds that with careful timing and environmental control even less conventional strains can be moderately trained. M1 says nothing about LST on autoflowers. M1 concedes that much of the information on mainlining comes from blogs and personal growing experience and that standardized protocols for feminized, autoflowering and photoperiod strains are missing. M2, M4 and M6 say nothing about autoflowers. No study on LST in autoflowers was found in the search on 2026-10-23.",
+  "box_fit": "LST hilft in einer kleinen Box, die Pflanze niedrig zu halten: M3 nennt es eine starke Wahl für kleine Zelte, Schränke und jeden Aufbau, in dem Autoflower ohne harten Schnitt niedrig und handlich bleiben sollen (Erfahrungsquelle, Ratgeber eines Samenhändlers). Ob die Sorte ohne Training in die Box passt, ist offen. Die VGrow misst laut Handbuch 46 x 46 x 122 cm (Abmessungen) und erlaubt 92 cm / 36 Zoll Wachstumshöhe für eine Pflanze; eine nutzbare Innenfläche nennt das Handbuch nicht, und ob die 92 cm ab Boden oder ab Topfrand gelten, auch nicht (M6). Das Statuslicht pulsiert laut Handbuch unter anderem, wenn LST ansteht (M6). Die Sorte von Hanfgarten (Ice Cream Cake Autoflowering, laut Händler entwickelt von Seed Junky Genetics, Saatgut dieses Durchgangs laut Betreiber) wird laut Händler indoor bis 120 cm hoch (M8, Händlerangabe), also mehr als die 92 cm der Box. Die Sorte gleichen Namens von Zamnesia Seeds ist ein anderes Produkt (90 cm indoor laut M7) und gilt nicht für diese Pflanze.",
+  "box_fit_en": "LST helps keep a plant low in a small box: M3 calls it a strong fit for small tents, cupboards and any setup where autoflowers need to stay low and manageable without harsh pruning (experience source, guide by a seed retailer). Whether the variety fits the box without training is open. Per the manual the VGrow measures 46 x 46 x 122 cm (dimensions) and allows 92 cm / 36 in growing height for one plant; the manual gives no usable interior floor area and does not say whether the 92 cm are measured from the floor or the pot rim (M6). Per the manual the status light pulses, among other things, when LST is due (M6). The Hanfgarten variety (Ice Cream Cake Autoflowering, developed by Seed Junky Genetics according to the retailer, seed of this run according to the operator) grows up to 120 cm indoors according to the retailer (M8, retailer statement), more than the 92 cm of the box. The variety of the same name from Zamnesia Seeds is a different product (90 cm indoors per M7) and does not apply to this plant.",
+  "risks": "Blanker Draht oder zu straffe Schnur schneidet beim Dickenwachstum ein und schnürt den Stängel ab, deshalb Binder locker halten (M3). M3 empfiehlt dagegen weichen Pflanzendraht, gummierten Gartendraht oder Stoffbinder mit etwas Spiel, damit der Stängel dicker werden kann. Stängel können abknicken, laut M3 eher bei Durst oder kurz nachdem das Licht angegangen ist. Starkes Umformen in der mittleren bis späten Blüte kann Autoflower stark belasten (M3). Alle Punkte stammen aus einer Erfahrungsquelle. Wie stark LST den Ertrag in der VGrow verändert, ist offen: eine Studie wurde bei der Suche am 2026-10-23 nicht gefunden.",
+  "risks_en": "Bare wire or string that is too tight cuts in as the stem thickens and girdles it, so keep ties loose (M3). M3 recommends soft plant wire, rubber-coated garden wire or fabric ties with a little slack so the stem can thicken. Stems can snap, per M3 more likely when the plant is thirsty or right after the lights have come on. Major reshaping in mid to late flowering can shock autoflowers (M3). All points come from an experience source (experience source). How much LST changes yield in the VGrow is open: no study was found in the search on 2026-10-23.",
+  "image": {
+    "drawing": "lst",
+    "steps": [
+      {
+        "step": 1,
+        "fig": "lst-1"
+      },
+      {
+        "step": 3,
+        "fig": "lst-2"
+      },
+      {
+        "step": 4,
+        "fig": "lst-3"
+      }
+    ]
+  },
+  "sources": {
+    "M1": "Ijoma G.N., Mannie T., Nurmahomed W., Adriaanse P., Tekere M. 2025, The curious origins of a high-stress training technique mainlining: its molecular, biochemical, and agronomic perspectives for the cultivation of Cannabis sativa, Journal of Cannabis Research 8:3, doi:10.1186/s42238-025-00339-y, Übersichtsarbeit, veröffentlicht 2025-11-29, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC12771868/",
+    "M2": "Stewart Maxwell (Xylem Horticulture, British Columbia), How Cannabis Training and Pruning Can Affect Quality, Greenhouse Grower, 2021-01-14, Fachpresse ohne Versuchsdaten (Erfahrungsquelle), abgerufen 2026-10-23: https://www.greenhousegrower.com/?p=152463",
+    "M3": "Zamnesia (Samenhändler mit Eigenmarke Zamnesia Seeds), Luke Sumpter, Low stress training autoflowers: The ultimate guide, Stand 2026-01-12, Anbau-Ratgeber (Erfahrungsquelle), abgerufen 2026-10-23: https://www.zamnesia.com/grow-weed/579-low-stress-training-autoflowers",
+    "M4": "VIVOSUN Growing Guide, CalMag, Training during veg, 2022-08-01, Ratgeber des Boxherstellers (Blog, Erfahrungsquelle), abgerufen 2026-10-23: https://vivosun.com/growing_guide/training-during-veg",
+    "M5": "VIVOSUN Growing Guide, CalMag, Maximizing Yield: Unleashing the Power of LST vs HST in Cannabis Plant Training, 2022-05-14, Ratgeber des Boxherstellers (Blog, Erfahrungsquelle), abgerufen 2026-10-23: https://vivosun.com/growing_guide/lst-vs-hst",
+    "M6": "VIVOSUN, VGrow Smart Grow Box Manual, Herstellerhandbuch (englische Fassung Stand laut Seitenmetadaten 2026-05-25, deutsche Fassung ohne Datum), abgerufen 2026-10-23: https://vivosun.com/support/guide/vgrow-smart-grow-box",
+    "M7": "Zamnesia Seeds, Ice Cream Cake Autoflower, Produktseite der Zamnesia-Eigenmarke (Herstellerangabe, andere Sorte gleichen Namens), abgerufen 2026-10-23: https://www.zamnesia.com/11069-zamnesia-seeds-ice-cream-cake-automatic.html",
+    "M8": "Hanfgarten Shop, Ice Cream Cake | Autoflowering, Händlerseite (Händlerangabe; Seitentext nennt Seed Junky Genetics als Entwickler), abgerufen 2026-10-23: https://www.hanfgartenshop.de/ice-cream-cake-samen-autoflowering.html",
+    "M9": "Danziger N., Bernstein N. 2021, Shape Matters: Plant Architecture Affects Chemical Uniformity in Large-Size Medical Cannabis Plants, Plants 10(9):1834, doi:10.3390/plants10091834, Fachartikel (acht Behandlungen, keine davon Biegen), abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC8468686/"
+  },
+  "_left_out": [
+    "'Passt zur Box' als pauschales Urteil: trägt gegen die eigenen Zahlen nicht (bis 120 cm gegen 92 cm), ersetzt durch eine engere Aussage.",
+    "'Die VGrow liefert einen Bindedraht mit': das Zubehör heißt in der deutschen Handbuchfassung Kabelbinder, Zweck nicht genannt.",
+    "'An einer Zeltstange' fixieren: für die VGrow nicht belegt.",
+    "'46 x 46 cm Grundfläche': das Handbuch nennt Gerätemaße, keine Innenfläche.",
+    "'Bis in die frühe Blüte': steht so in keinem Quellensatz, ersetzt durch den Wortlaut von M3.",
+    "Q1-Satz zu Autoflowern als Aussage über High-Stress-Training allgemein: steht im Abschnitt über Mainlining, eingeschränkt.",
+    "'Zamnesia, Züchter der Ice Cream Cake Automatic': für das Saatgut dieses Durchgangs widerlegt (Hanfgarten, Seed Junky Genetics).",
+    "Wort 'Niederbinden': in keiner Quelle und nicht im Wiki-Glossar, ersetzt durch 'Herunterbinden'.",
+    "THC- und Wirkungsangaben der Sortenseiten M7 und M8: weggelassen."
+  ]
+}

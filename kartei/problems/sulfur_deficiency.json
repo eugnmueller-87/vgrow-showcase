@@ -1,0 +1,120 @@
+{
+  "key": "sulfur_deficiency",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "naehrstoffe",
+  "label": "Schwefelmangel (S)",
+  "label_en": "Sulfur deficiency (S)",
+  "tile": "Allgemeines Gelb an jungen, oberen Blättern",
+  "tile_en": "General yellowing on young, upper leaves",
+  "aliases": {
+    "de": [
+      "S-Mangel",
+      "oben gelb",
+      "gelbe Blätter",
+      "Vergilbung"
+    ],
+    "en": [
+      "S deficiency",
+      "yellow top",
+      "yellow leaves",
+      "yellowing"
+    ]
+  },
+  "symptoms": [
+    "Früh: im Versuch in Woche 4 nach Umstellung auf 12/12 allgemeines Gelb an frisch gebildeten oberen Zuckerblättern (kleine Blätter zwischen den Blüten) P1.",
+    "Woche 5: an unteren Fächerblättern Aufhellung zwischen den Adern von der Mittelrippe bis zum Rand P1.",
+    "Im Versuch richteten sich die oberen Fächerblätter ab Woche 5 deutlich nach oben auf; das Gelb der oberen Zuckerblätter wurde nicht schlimmer, die späteren Symptome liefen vor allem an den Fächerblättern ab P1.",
+    "Spät: ganze Blätter gelb, dann absterbend P1.",
+    "Gewächshauskulturen allgemein: Aufhellung und tote Stellen an den jüngsten Blättern (P2, nicht Cannabis). Bei Hanf können die jüngeren Blätter stärker aufhellen als die älteren, weil Schwefel in der Pflanze unbeweglich ist P3.",
+    "Hinweis zur Übertragbarkeit: Die Wochen zählen im Versuch ab der Umstellung auf 12 Stunden Licht. Der Versuch lief in Hydrokultur mit der Sorte Gelato 29, Schwefel war komplett weggelassen P1. Ob das für Erde mit BioBizz und eine Autoflower gilt, sagt die Quelle nicht."
+  ],
+  "symptoms_en": [
+    "Early: in the trial in week 4 after the switch to 12/12 general yellowing on newly formed upper sugar leaves (small leaves between the flowers) P1.",
+    "Week 5: interveinal chlorosis on lower fan leaves from midrib to margin P1.",
+    "In the trial the upper fan leaves stood at a pronounced upward angle from week 5; the yellowing of the upper sugar leaves did not progress, and most later symptoms developed in the fan leaves P1.",
+    "Late: total yellowing, then senescence P1.",
+    "Greenhouse crops generally: chlorosis and necrosis of the youngest leaves (P2, not cannabis). In hemp the younger leaves may be more chlorotic than the older ones because sulfur is immobile in the plant P3.",
+    "Transferability note: weeks are counted from the switch to 12 hours of light. The trial ran in hydroponics with cultivar Gelato 29, sulfur fully withheld P1. Whether this holds for soil with BioBizz and an autoflower, the source does not say."
+  ],
+  "causes": [
+    "Viel Holz oder Rinde im Substrat: Kiefernholz und Rinde enthalten wenig Schwefel, und Mikroben binden etwas Schwefel, weniger als Stickstoff P2.",
+    "Torf und andere organische Substrate enthalten meist genug Schwefel P2.",
+    "Stickstoff muss ebenfalls ausreichen P2."
+  ],
+  "causes_en": [
+    "High wood or bark share in the substrate: pine wood and bark contain little sulfur, and microbes tie up some sulfur, less than nitrogen P2.",
+    "Peat and other organic substrates usually hold enough sulfur P2.",
+    "Nitrogen must also be sufficient P2."
+  ],
+  "check": [
+    {
+      "metric": "watering",
+      "text": "Wo zeigt sich das Gelb zuerst, oben oder unten? Ist die Erde torfbasiert oder enthält sie viel Holzfaser? P2",
+      "text_en": "Where does the yellowing show first, top or bottom? Is the soil peat-based or high in wood fiber? P2"
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    }
+  ],
+  "do_now": [
+    "Ort prüfen: Beginnt das Gelb oben an jungen Blättern, spricht das für Schwefel; beginnt es unten, spricht das für Stickstoff (P1: Schwefel zuerst oben in Woche 4, Stickstoff zuerst unten in Woche 3; P3: bei Schwefel können die jüngeren Blätter stärker aufhellen). Später zeigt auch Schwefelmangel Gelb zwischen den Adern an unteren Fächerblättern (ab Woche 5), dann reicht der Ort allein nicht.",
+    "Schwefelgaben während der Kultur können einen bestehenden Mangel beheben (P2: Gewächshaus, Substrate mit viel Holz oder Rinde, Versuche an Zierpflanzen, nicht an Cannabis). Welches Produkt und welche Menge für den Hobbytopf passt, sagt die Quelle nicht. Etikett und Zulassung beachten.",
+    "Unklar: Blattprobe zur Nährstoffanalyse. Utah State beschreibt das für Hanf-Erzeuger und nennt als Zeitpunkt die vegetative Phase P4."
+  ],
+  "do_now_en": [
+    "Check the location: yellowing that starts at the top on young leaves points to sulfur, yellowing that starts low points to nitrogen (P1: sulfur first at the top in week 4, nitrogen first low in week 3; P3: with sulfur the younger leaves may be more chlorotic). Later sulfur deficiency also shows interveinal yellowing on lower fan leaves (from week 5); then location alone is not enough.",
+    "Sulfur applied during the crop can correct an existing deficiency (P2: greenhouse, substrates with much wood or bark, trials on ornamentals, not cannabis). Which product and amount suit a hobby pot, the source does not say. Follow label and approval (Etikett und Zulassung beachten).",
+    "Unclear: leaf sample for nutrient analysis. Utah State describes this for hemp producers and names the vegetative phase as the time P4."
+  ],
+  "prevention": [
+    "Torfbasierte Erde liefert meist genug Schwefel P2.",
+    "Gips (Calciumsulfat) im Substrat beugt vor und ändert den pH nicht P2. Das gilt für Gewächshaus-Mischungen mit viel Holz oder Rinde."
+  ],
+  "prevention_en": [
+    "Peat-based soil usually supplies enough sulfur P2.",
+    "Gypsum (calcium sulfate) in the mix prevents it and does not change pH P2. This holds for greenhouse mixes with much wood or bark."
+  ],
+  "look_alikes": [
+    "Stickstoffmangel: beginnt unten P1; kann Schwefelmangel ähneln, auch mit rötlicher bis violetter Tönung P3.",
+    "Eisenmangel: Gelb zwischen den Adern am jungen Austrieb P4.",
+    "Normale Alterung: Auch gut versorgte Kontrollpflanzen zeigten ab Blütewoche 6 mäßiges Vergilben der ältesten, größten Fächerblätter; die Autoren nennen das normal bei reifenden Cannabis-Pflanzen P1."
+  ],
+  "look_alikes_en": [
+    "Nitrogen deficiency: starts low P1; can resemble sulfur deficiency, also with red to purple tinting P3.",
+    "Iron deficiency: interveinal yellowing on young growth P4.",
+    "Normal ageing: well-fed control plants also showed moderate yellowing of the oldest, largest fan leaves from flowering week 6; the authors call this normal in maturing cannabis P1."
+  ],
+  "image": {
+    "drawing": "sulfur-deficiency"
+  },
+  "sources": {
+    "P1": "Llewellyn, Golem, Jones, Zheng (University of Guelph) 2023, Plants 12:422, Nährstoffmangel bei Cannabis, Hydrokultur (DWC), Sorte Gelato 29, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC9920212/",
+    "P2": "Jackson (NC State) und Wright, Changing the Game, Greenhouse Management Dezember 2019, Holzsubstrate und Zierpflanzen, nicht Cannabis, abgerufen 2026-10-23: https://woodsubstrates.cals.ncsu.edu/wp-content/uploads/sites/147/2020/12/Changing-the-Game.pdf",
+    "P3": "Ontario Ministry of Agriculture, Food and Rural Affairs (OMAFRA), Nutrient Deficiency ID Guide for Hemp, 2023, Hanf in Nährlösung, vegetative Phase, abgerufen 2026-10-23: https://www.ontario.ca/files/2023-12/omafra-nutrient-deficiency-id-guide-for-hemp-en-2023-12-15_0.pdf",
+    "P4": "Utah State University Extension, Hemp Nutrient Deficiencies, Ratgeber für Hanfanbau ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-nutrient-deficiencies"
+  },
+  "_left_out": [
+    "Bittersalz (Magnesiumsulfat) als Schwefelhilfe im Topf: keine Quelle gibt diese Empfehlung; zusätzliches Magnesium stört das K-Ca-Mg-Gleichgewicht.",
+    "'Purdue 2017' als Beleg für die Ortsregel: für Schwefel nicht wiedergefunden, ersetzt durch Guelph und OMAFRA.",
+    "'Blattprobe ins Labor (Cornell 2022)': Studie ohne Schwefel, PDF nicht lesbar."
+  ]
+}

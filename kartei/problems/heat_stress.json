@@ -1,0 +1,216 @@
+{
+  "key": "heat_stress",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "stress",
+  "label": "Hitzestress",
+  "label_en": "Heat stress",
+  "tile": "Blätter rollen sich und hängen, der Wuchs stockt",
+  "tile_en": "Leaves curl and droop, growth stalls",
+  "aliases": {
+    "de": [
+      "Hitzeschaden",
+      "Taco-Blätter",
+      "Blattrollen durch Hitze"
+    ],
+    "en": [
+      "heat damage",
+      "taco leaves",
+      "leaf curl from heat"
+    ]
+  },
+  "symptoms": [
+    "Allgemein: Blätter rollen sich, hängen, der Wuchs stockt (P1, Erfahrungsquelle).",
+    "Bei Hanf gelten Blattrollen und Verbrennungen am Blatt als typische Hitzezeichen (P3, Feldhanf).",
+    "Muster: Umweltschäden kommen schnell und betreffen Gewebe gleichen Alters; der Neuaustrieb sieht nach Behebung normal aus P3."
+  ],
+  "symptoms_en": [
+    "General: leaves curl, droop, growth stalls (P1, experience source).",
+    "In hemp, leaf curling and scorching are common signs of high heat (P3, field hemp).",
+    "Pattern: abiotic issues arise quickly and affect tissue of one age; new growth looks normal once the cause is fixed P3."
+  ],
+  "causes": [
+    "Lufttemperatur an der Krone über dem Phasenziel. VIVOSUN-Tagesziele: Wachstum 22 bis 28 °C, frühe Blüte 20 bis 26 °C, späte Blüte 20 bis 24 °C (P1, Erfahrungsquelle, allgemeiner Leitfaden). Schwelle: 30 °C (86 °F) liegen über dem Idealbereich der meisten Phasen; kurz in der Wachstumsphase mit starkem Luftstrom tolerierbar, anhaltende Hitze in der Blüte kann die Pflanzen stressen (P1, Erfahrungsquelle).",
+    "In Blattmessungen lag das Photosynthese-Optimum bei 25 bis 30 °C, über 30 °C sank die Spaltöffnungsleitfähigkeit P4. Bei 40 °C lag die Photosynthese je nach Sorte 16 bis 38 % unter dem jeweiligen Optimum P5. Hinweis: Das Photosynthese-Optimum liegt über dem VIVOSUN-Fenster der späten Blüte (20 bis 24 °C); beide Werte sind nicht dasselbe.",
+    "Zu wenig Abluft, warme Zuluft (P1, Erfahrungsquelle).",
+    "Trockenheit verstärkt Hitze: Vergilben bei hohen Temperaturen besonders zusammen mit Trockenheit (P6, Zimmerpflanzen)."
+  ],
+  "causes_en": [
+    "Canopy air above the stage target. VIVOSUN day targets: veg 22 to 28 °C, early flower 20 to 26 °C, late flower 20 to 24 °C (P1, experience source, general guide). Threshold: 30 °C (86 °F) is above the ideal range for most stages; tolerable briefly in veg with strong airflow, sustained heat in flower can stress plants (P1, experience source).",
+    "Leaf measurements: photosynthesis optimum 25 to 30 °C, stomatal conductance fell above 30 °C P4. At 40 °C photosynthesis was 16 to 38% below each variety's optimum P5. Note: the photosynthesis optimum lies above the VIVOSUN late-flower window (20 to 24 °C); the two values are not the same thing.",
+    "Too little exhaust, warm intake air (P1, experience source).",
+    "Dryness makes heat worse: yellowing with high temperatures especially when dry (P6, houseplants)."
+  ],
+  "check": [
+    {
+      "metric": "probe_temp",
+      "text": "Tagwert gegen Phasenziel (Wachstum 22 bis 28, frühe Blüte 20 bis 26, späte Blüte 20 bis 24 °C; P1, Erfahrungsquelle). Fühlerhöhe laut Handbuch 2 bis 4 Zoll (rund 5 bis 10 cm) über der Krone P7.",
+      "text_en": "Day reading vs stage target (veg 22 to 28, early flower 20 to 26, late flower 20 to 24 °C; P1, experience source). Probe height per manual 2 to 4 inches (about 5 to 10 cm) above the canopy P7."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Bei Hitze nicht erhöhen, eher dimmen oder Lampe höher (P1, Erfahrungsquelle).",
+      "text_en": "Do not raise light in heat; dim or raise the lamp instead (P1, experience source)."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Zum Einfluss trockener Luft auf Hitzestress keine andere Quelle gefunden.",
+      "text_en": "No other source found on how dry air affects heat stress."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Mitprüfen, Ziel frühe Blüte 1,0 bis 1,4 kPa (P1, Erfahrungsquelle).",
+      "text_en": "Check alongside, early flower target 1.0 to 1.4 kPa (P1, experience source)."
+    },
+    {
+      "metric": "watering",
+      "text": "Die Transpiration stieg im Versuch mit der Temperatur bis 40 °C P4, die Erde trocknet schneller: öfter prüfen.",
+      "text_en": "Transpiration rose with temperature up to 40 °C in the trial P4, the soil dries faster: check more often."
+    }
+  ],
+  "do_now": [
+    "Abluft höher, prüfen ob die Zuluft warm ist, Licht dimmen oder höher hängen (P1, Erfahrungsquelle).",
+    "Fühlerhöhe prüfen: laut Handbuch 2 bis 4 Zoll (rund 5 bis 10 cm) über der Blattkrone P7; der VIVOSUN-Leitfaden rät außerdem, den Fühler weg von Licht, Abluftöffnung und Befeuchternebel zu setzen (P1, Erfahrungsquelle).",
+    "Erfolg am Neuaustrieb ablesen P3."
+  ],
+  "do_now_en": [
+    "Raise the exhaust, check for warm intake air, dim or raise the light (P1, experience source).",
+    "Check the probe height: per the manual 2 to 4 inches (about 5 to 10 cm) above the canopy P7; the VIVOSUN guide also advises placing the sensor away from the light, the exhaust outlet and the humidifier mist (P1, experience source).",
+    "Judge success by new growth P3."
+  ],
+  "prevention": [
+    "Tagwert am Fühler im Phasenziel halten (P1, Erfahrungsquelle). Die Abluft-Automatik der Box steht in den Voreinstellungen Keimling, Wachstum und Blüte auf max. 29 °C, Trocknen hat keinen Wert P7.",
+    "Warme Zuluft vermeiden, Licht nur schrittweise erhöhen und vorher den Abstand prüfen (siehe Karte Lichtbrand; P1, P11, Erfahrungsquellen)."
+  ],
+  "prevention_en": [
+    "Keep the probe day value inside the stage target (P1, experience source). The box exhaust automation is set to max 29 °C in the seedling, veg and flower presets; drying has no value P7.",
+    "Avoid warm intake air; raise light only step by step and check the distance first (see light burn card; P1, P11, experience sources)."
+  ],
+  "look_alikes": [
+    "Lichtbrand: Schaden an den Blättern nahe der Lampe (siehe Karte Lichtbrand, P11, Erfahrungsquelle).",
+    "Wasserstress: Welke und Blattrollen (P3, Feldhanf).",
+    "Zu trockene Luft: rollende Blätter, Erde trocknet schnell (P1, Erfahrungsquelle).",
+    "Calciummangel: im NC-State-Versuch zuerst an Triebspitzen und jungen Blättern P8.",
+    "Viren: Blattrollen, Flecken, Kümmerwuchs P3.",
+    "Hanfrostmilbe: Bronzefärbung, kleinere, spröde Blätter, nach oben gerollte Ränder P9; laut Kentucky bronze- oder rostfarbene, gerollte Blätter P10."
+  ],
+  "look_alikes_en": [
+    "Light burn: damage on the leaves near the lamp (see light burn card, P11, experience source).",
+    "Water stress: wilting and leaf curl (P3, field hemp).",
+    "Dry air: curling leaves, medium dries fast (P1, experience source).",
+    "Calcium deficiency: in the NC State trial it starts at growing tips and young leaves P8.",
+    "Viruses: leaf curl, spotting, stunting P3.",
+    "Hemp russet mite: bronzing, smaller brittle leaves, upward-curled margins P9; per Kentucky bronze or rusty, curling leaves P10."
+  ],
+  "image": {
+    "drawing": "heat-stress"
+  },
+  "sources": {
+    "P1": "VIVOSUN, Ideal Grow Tent Temperature and Humidity Guide, allgemeiner Hersteller-Leitfaden, nennt Cannabis nicht, Seitenstand dynamisch, Erfahrungsquelle, aus der Kartei übernommen (kartei/stages/autoflower.json, S5), abgerufen 2026-10-22: https://vivosun.com/growing_guide/temperature-and-humidity.md",
+    "P3": "Cornell University, Cornell Hemp, Schwartz und Smart, Abiotic vs. Biotic Issues in Hemp Fields, Januar 2024, Feldhanf, abgerufen 2026-10-23: https://hemp.cals.cornell.edu/resources/reports-factsheets/2024-factsheets/abiotic-vs-biotic-issues-in-hemp-fields/",
+    "P4": "Chandra, Lata, Khan, ElSohly 2008, Photosynthetic response of Cannabis sativa L. to variations in photosynthetic photon flux densities, temperature and CO2 conditions, Physiology and Molecular Biology of Plants 14(4), Blattmessungen, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC3550641",
+    "P5": "Chandra, Lata, Khan, ElSohly 2011, Temperature response of photosynthesis in different drug and fiber varieties of Cannabis sativa L., Physiology and Molecular Biology of Plants 17(3), abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC3550580",
+    "P6": "UC Statewide IPM Program, Pittenger und Hodel, Houseplant Problems (74172), Stand 08/2020, Zimmerpflanzen, abgerufen 2026-10-23: https://ipm.ucanr.edu/PMG/PESTNOTES/pn74172.html",
+    "P7": "VIVOSUN, VGrow Smart Grow Box Handbuch, Hersteller der Box, Seitenstand 2026-05-25, aus der Kartei übernommen (kartei/stages/autoflower.json, S1), abgerufen 2026-10-22: https://vivosun.com/support/guide/vgrow-smart-grow-box.md",
+    "P8": "Cockson, Landis, Smith, Hicks, Whipker (NC State University) 2019, Characterization of Nutrient Disorders of Cannabis sativa, Applied Sciences 9(20):4432, Sandkultur, abgerufen 2026-10-23: https://www.mdpi.com/2076-3417/9/20/4432",
+    "P9": "Utah State University Extension, Hemp Russet Mite, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-hemp-russet-mite-.php",
+    "P10": "University of Kentucky Cooperative Extension, Smith, Gauthier, Villanueva u. a., An IPM Scouting Guide for Common Pests and Diseases of Kentucky Hemp (PPFS-AG-H-03), Juni 2026, Feldhanf, abgerufen 2026-10-23: https://plantpathology.mgcafe.uky.edu/sites/plantpathology.ca.uky.edu/files/PPFS-AG-H-03.pdf",
+    "P11": "VIVOSUN, How Far Should Grow Lights Be From Plants?, Lampenabstand, allgemeiner Hersteller-Leitfaden, Erfahrungsquelle, aus der Kartei übernommen (kartei/stages/autoflower.json, S7), abgerufen 2026-10-22: https://vivosun.com/growing_guide/how-far-away-should-lights-be.md"
+  },
+  "_left_out": [
+    "K-State Fingerprobe: keine URL für diese Karte gefunden.",
+    "'Lichtbrand ... ebenfalls Taco-Rollen (VIVOSUN)': steht auf keiner der zitierten VIVOSUN-Seiten.",
+    "'Früh:' als Zeitangabe: keine Quelle datiert die Symptome.",
+    "Chandra 2011, Optima je Sorte 25 bis 35 °C: Abstract nicht nachgelesen, nicht übernommen.",
+    "Box-Voreinstellungen 'alle drei': das Handbuch hat vier, korrigiert.",
+    {
+      "section": "symptoms",
+      "text": "Wachstumsphase: Blätter trocken, Ränder rollen und welken, gelbbraune Flecken, verbrannte Spitzen (P2, Erfahrungsquelle).",
+      "text_en": "Vegetative: leaves dry, edges curl and wilt, yellow-brown spots, burnt tips (P2, experience source).",
+      "sources": [
+        "P2"
+      ],
+      "reason": "VIVOSUN-Seite automatisch abgerufen, erst nach Lesen von Hand verwenden",
+      "url": "https://vivosun.com/growing_guide/how-to-fix-cannabis-heat-stress",
+      "action": "entfernt"
+    },
+    {
+      "section": "symptoms",
+      "text": "Blüte: Blätter gebleicht oder vergilbt und gerollt, auffällig viele weiße Härchen, Foxtails (lange, lockere, fuchsschwanzartige Blütenspitzen) (P2, Erfahrungsquelle).",
+      "text_en": "Flower: leaves bleached or yellowed and curled, many white pistils, foxtails (long, airy, foxtail-like bud tips) (P2, experience source).",
+      "sources": [
+        "P2"
+      ],
+      "reason": "VIVOSUN-Seite automatisch abgerufen, erst nach Lesen von Hand verwenden",
+      "url": "https://vivosun.com/growing_guide/how-to-fix-cannabis-heat-stress",
+      "action": "entfernt"
+    },
+    {
+      "section": "causes",
+      "text": "Zu wenig Abluft, warme Zuluft, Lampe zu stark oder zu nah (P1, P2, Erfahrungsquellen).",
+      "text_en": "Too little exhaust, warm intake air, lamp too strong or too close (P1, P2, experience sources).",
+      "sources": [
+        "P1",
+        "P2"
+      ],
+      "reason": "VIVOSUN-Seite automatisch abgerufen, erst nach Lesen von Hand verwenden",
+      "url": "https://vivosun.com/growing_guide/how-to-fix-cannabis-heat-stress",
+      "held": "Mitbeleg P2 entfernt; 'Zu wenig Abluft, warme Zuluft' steht jetzt nur auf P1 (Temperatur-Leitfaden). Der Teil 'Lampe zu stark oder zu nah' bleibt ebenfalls draußen, Hitze-Bezug in S7 nicht nachgelesen. Laut Prüfnotiz der Recherche vom 23.10.2026 steht 'Too Much Light' als Ursache auf dieser Seite (P2); zum Lampenabstandsratgeber (Kartei S7) hält sie für LEDs fest: 'LEDs don't throw heat like HPS or CMH bulbs'. Kommt zurück, wenn eine der beiden Seiten den Hitze-Bezug beim Lesen von Hand trägt.",
+      "action": "gekürzt",
+      "now": "Zu wenig Abluft, warme Zuluft (P1, Erfahrungsquelle)."
+    },
+    {
+      "section": "causes",
+      "text": "Zu niedrige Luftfeuchte: Die Pflanze kann schlechter transpirieren, Hitzestress lässt sich dann schwer abbauen (P2, Erfahrungsquelle).",
+      "text_en": "Humidity too low: the plant transpires with difficulty and heat stress is hard to relieve (P2, experience source).",
+      "sources": [
+        "P2"
+      ],
+      "reason": "VIVOSUN-Seite automatisch abgerufen, erst nach Lesen von Hand verwenden",
+      "url": "https://vivosun.com/growing_guide/how-to-fix-cannabis-heat-stress",
+      "action": "entfernt"
+    },
+    {
+      "section": "do_now",
+      "text": "Nicht in der heißesten Phase gießen, wenn Wasser zu schnell verdunstet; besser kurz nach Licht an oder aus (P2, Erfahrungsquelle).",
+      "text_en": "Do not water at the hottest time when water evaporates too fast; better just after lights on or off (P2, experience source).",
+      "sources": [
+        "P2"
+      ],
+      "reason": "VIVOSUN-Seite automatisch abgerufen, erst nach Lesen von Hand verwenden",
+      "url": "https://vivosun.com/growing_guide/how-to-fix-cannabis-heat-stress",
+      "action": "entfernt"
+    },
+    {
+      "section": "look_alikes",
+      "text": "Calciummangel: laut VIVOSUN sehr ähnlich (P2, Erfahrungsquelle); im NC-State-Versuch zuerst an Triebspitzen und jungen Blättern P8.",
+      "text_en": "Calcium deficiency: very similar per VIVOSUN (P2, experience source); in the NC State trial it starts at growing tips and young leaves P8.",
+      "sources": [
+        "P2",
+        "P8"
+      ],
+      "reason": "VIVOSUN-Seite automatisch abgerufen, erst nach Lesen von Hand verwenden",
+      "url": "https://vivosun.com/growing_guide/how-to-fix-cannabis-heat-stress",
+      "held": "Teil 'laut VIVOSUN sehr ähnlich (P2)'; dass Calciummangel wie Hitzestress aussieht, sagte nur P2. Der Teil zu NC State (P8) bleibt.",
+      "action": "gekürzt",
+      "now": "Calciummangel: im NC-State-Versuch zuerst an Triebspitzen und jungen Blättern P8."
+    },
+    {
+      "section": "check",
+      "metric": "probe_humidity",
+      "text": "Zu trockene Luft erschwert den Abbau von Hitzestress (P2, Erfahrungsquelle).",
+      "text_en": "Dry air makes heat stress harder to relieve (P2, experience source).",
+      "sources": [
+        "P2"
+      ],
+      "reason": "VIVOSUN-Seite automatisch abgerufen, erst nach Lesen von Hand verwenden",
+      "url": "https://vivosun.com/growing_guide/how-to-fix-cannabis-heat-stress",
+      "action": "Hinweis ersetzt",
+      "now": "Zum Einfluss trockener Luft auf Hitzestress keine andere Quelle gefunden."
+    },
+    "Laut Auftrag vom 23.10.2026: Der VIVOSUN-Lampenabstandsratgeber steht seit 22.10.2026 als S7 in kartei/stages/autoflower.json und gilt deshalb als Quelle (hier P11, abgerufen 2026-10-22). Zurück an der alten Stelle: Vorbeugen 'Licht nur schrittweise erhöhen und vorher den Abstand prüfen' (P11; 'Warme Zuluft vermeiden' trägt P1), Verwechslung 'Lichtbrand: Schaden an den Blättern nahe der Lampe' (P11). Nicht zurück: die Ursache 'Lampe zu stark oder zu nah', Hitze-Bezug in S7 nicht nachgelesen (siehe den Eintrag 'Zu wenig Abluft' oben). Weiter zurückgehalten bleibt die Seite how-to-fix-cannabis-heat-stress (P2)."
+  ],
+  "status_note": "Unvollständig: Zwei Herstellerseiten warten noch darauf, von Hand gelesen zu werden; diese Karte betrifft die Seite zum Beheben von Hitzestress. Bis dahin fehlen hier zwei Anzeichen (Wachstumsphase, Blüte), zwei Ursachen (zu niedrige Luftfeuchte, zu viel Licht), ein Schritt für sofort (wann gießen), ein Teil einer Verwechslung (Calciummangel) und der Prüf-Hinweis zur Luftfeuchte.",
+  "status_note_en": "Incomplete: two maker pages are still waiting to be read by hand; this card is affected by the page on fixing heat stress. Until then two signs (vegetative, flower), two causes (humidity too low, too much light), one step for now (when to water), part of a look-alike (calcium deficiency) and the humidity check note are missing here."
+}

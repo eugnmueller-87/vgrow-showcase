@@ -1,0 +1,544 @@
+{
+  "key": "germination",
+  "kind": "process",
+  "status": "draft",
+  "label": "Keimen",
+  "label_en": "Germination",
+  "fit_for_vgrow": {
+    "height_ok": "offen",
+    "light_note": "Lampe: eingebaute 100-W-Vollspektrum-LED, dimmbar 25 bis 100 %. VIVOSUN veröffentlicht keine PPFD, die Lichtstärke für Keimlinge ist offen. Lichtbedarf je Kultur: Salat braucht Licht (Q1, Q4), Basilikum Dunkelheit (Q4), Cannabis dunkel bis zum Auflaufen (Q20), Microgreens erst eine Dunkelphase, dann 18 Stunden Licht (Q11), Schnittlauch offen.",
+    "light_note_en": "Lamp: built-in 100 W full-spectrum LED, dimmable 25 to 100%. VIVOSUN publishes no PPFD, so the light intensity for seedlings is open. Light needs per crop: lettuce needs light (Q1, Q4), basil darkness (Q4), cannabis dark until emergence (Q20), microgreens a dark phase first, then 18 hours of light (Q11), chives open.",
+    "heat_note": "Die Sonde misst Luft auf Blatthöhe. Die meisten Quellen nennen Boden oder Substrat (Q2, Q7, Q15, Q21), als Keimtemperatur ausdrücklich Luft nur Q4. Eine Heizung steht nicht in der Gerätebeschreibung, Bodenwärme von 70-75 °F nennt Q15. Ob die Box die Werte der Quellen erreicht: offen.",
+    "heat_note_en": "The probe measures the air at leaf height. Most sources name soil or substrate (Q2, Q7, Q15, Q21); only Q4 explicitly names air as the germination temperature. A heater is not in the device description; Q15 names bottom heat of 70-75 °F. Whether the box reaches the values of the sources: open.",
+    "if_off": {
+      "cannabis": {
+        "light_note": "Lampe: eingebaute 100-W-Vollspektrum-LED, dimmbar 25 bis 100 %. VIVOSUN veröffentlicht keine PPFD, die Lichtstärke für Keimlinge ist offen. Lichtbedarf je Kultur: Salat braucht Licht (Q1, Q4), Basilikum Dunkelheit (Q4), Microgreens erst eine Dunkelphase, dann 18 Stunden Licht (Q11), Schnittlauch offen.",
+        "light_note_en": "Lamp: built-in 100 W full-spectrum LED, dimmable 25 to 100%. VIVOSUN publishes no PPFD, so the light intensity for seedlings is open. Light needs per crop: lettuce needs light (Q1, Q4), basil darkness (Q4), microgreens a dark phase first, then 18 hours of light (Q11), chives open."
+      }
+    }
+  },
+  "steps": [
+    {
+      "key": "prepare",
+      "label": "Vorbereiten",
+      "label_en": "Prepare",
+      "conditions": [],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": "offen",
+        "sources": []
+      },
+      "notes": "Steriles Substrat nehmen, Schalen, Töpfe und Werkzeug vor dem Gebrauch desinfizieren (Q15, Q16). Microgreens: Kokossubstrat vorher anfeuchten wie einen ausgewrungenen Schwamm (Q11). Schalenmaß gegen die Innenfläche von etwa 46 x 46 cm: offen.",
+      "notes_en": "Use sterile growing medium and disinfect trays, pots and tools before use (Q15, Q16). Microgreens: pre-moisten the coconut coir to the feel of a wrung-out sponge (Q11). Tray size against the inner footprint of about 46 x 46 cm: open."
+    },
+    {
+      "key": "cover_moisture",
+      "label": "Feucht halten und abdecken",
+      "label_en": "Keep moist and covered",
+      "conditions": [
+        {
+          "metric": "cover_clearance_above_substrate",
+          "min": 1,
+          "max": null,
+          "unit": "inch",
+          "sources": [
+            "Q1"
+          ]
+        }
+      ],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": "offen",
+        "sources": []
+      },
+      "notes": "Substrat durchgehend feucht halten. Hat die Keimung begonnen, kann eine Trockenphase den Keimling (Embryo) töten (Q1). Schale oder Topf in eine klare Plastiktüte, die Folie mindestens 1 inch über dem Substrat (Q1). Tüte oder Glasabdeckung entfernen, sobald die ersten Sämlinge auflaufen (Q1). Nicht in direkte Sonne stellen, sonst steigt die Temperatur und kann die Samen schädigen (Q1). Eine Prozentangabe zur Luftfeuchte nennen Q1 und Q16 nicht: offen.",
+      "notes_en": "Keep the substrate continuously moist. Once germination has begun, a dry period can kill the embryo (Q1). Put the tray or pot into a clear plastic bag with the plastic at least 1 inch above the substrate (Q1). Remove the bag or glass cover when the first seedlings emerge (Q1). Keep out of direct sun, otherwise the temperature rises and can damage the seeds (Q1). Q1 and Q16 give no humidity percentage: open."
+    },
+    {
+      "key": "warmth",
+      "label": "Warm halten",
+      "label_en": "Keep warm",
+      "conditions": [
+        {
+          "metric": "bottom_heat_for_rapid_emergence",
+          "min": 70,
+          "max": 75,
+          "unit": "°F",
+          "sources": [
+            "Q15"
+          ]
+        },
+        {
+          "metric": "media_temp_floor_before_germination",
+          "min": 68,
+          "max": null,
+          "unit": "°F",
+          "sources": [
+            "Q15"
+          ]
+        }
+      ],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": "offen",
+        "sources": []
+      },
+      "notes": "Schnelles Auflaufen beugt der Umfallkrankheit vor, etwa mit Bodenwärme von 70-75 °F (Q15). Eine Substrattemperatur unter 68 °F vor der Keimung fördert sie (Q15). Die Sonde der VGrow misst Luft auf Blatthöhe, nicht das Substrat; eine Heizung steht nicht in der Gerätebeschreibung: offen.",
+      "notes_en": "Rapid emergence helps against damping-off, for example with bottom heat of 70-75 °F (Q15). A substrate temperature below 68 °F before germination promotes it (Q15). The VGrow probe measures air at leaf height, not the substrate; a heater is not in the device description: open."
+    },
+    {
+      "key": "lettuce_germination",
+      "label": "Keimen: Pflücksalat",
+      "label_en": "Germination: loose-leaf lettuce",
+      "conditions": [
+        {
+          "metric": "soil_temp_viable_range",
+          "min": 35,
+          "max": 95,
+          "unit": "°F",
+          "sources": [
+            "Q2"
+          ]
+        },
+        {
+          "metric": "soil_temp_good_range",
+          "min": 40,
+          "max": 80,
+          "unit": "°F",
+          "sources": [
+            "Q2"
+          ]
+        },
+        {
+          "metric": "soil_temp_optimum",
+          "min": 75,
+          "max": 75,
+          "unit": "°F",
+          "sources": [
+            "Q2"
+          ]
+        },
+        {
+          "metric": "temp_optimal_base_not_stated",
+          "min": 70,
+          "max": 75,
+          "unit": "°F",
+          "sources": [
+            "Q3"
+          ]
+        },
+        {
+          "metric": "air_temp_ideal_direct_sowing",
+          "min": 60,
+          "max": 70,
+          "unit": "°F",
+          "sources": [
+            "Q4"
+          ]
+        }
+      ],
+      "duration": {
+        "min": 2,
+        "max": 14,
+        "unit": "days",
+        "sources": [
+          "Q2",
+          "Q4"
+        ]
+      },
+      "notes": "Lichtkeimer: auf die Substratoberfläche säen (Q1), leicht andrücken, nicht abdecken (Q4). Die Quellen sagen 'lettuce'; dass die Werte für Pflücksalat gelten, ist eine Annahme. Tage bis Auflaufen nach Bodentemperatur, Saattiefe ½ inch (Q2): 32 °F 49 Tage, 41 °F 15, 50 °F 7, 59 °F 4, 68 °F 3, 77 °F 2, 86 °F 2, 95 °F und 104 °F kaum oder keine Keimung. Q4 nennt 7-14 Tage bei 60-70 °F Luft, Direktsaat im Garten: andere Messbasis, deshalb die weite Spanne bei duration. Keimt ab 35 °F (Q3). Hohe Bodentemperatur kann die Keimung senken (Thermoinhibition), eine Schwelle nennt Q3 nicht. Gegenstimme zur Tiefe: Q5 nennt 1 cm (½ inch) für die Freilandsaat, für Töpfe und Schalen keine Tiefe.",
+      "notes_en": "Light germinator: sow on the substrate surface (Q1), press lightly, do not cover (Q4). The sources say 'lettuce'; that the values hold for loose-leaf lettuce is an assumption. Days to emergence by soil temperature, sowing depth ½ inch (Q2): 32 °F 49 days, 41 °F 15, 50 °F 7, 59 °F 4, 68 °F 3, 77 °F 2, 86 °F 2, 95 °F and 104 °F little or no germination. Q4 gives 7-14 days at 60-70 °F air, direct sowing in the garden: a different basis of measurement, hence the wide span in duration. Germinates from 35 °F (Q3). High soil temperature can reduce germination (thermoinhibition); Q3 gives no threshold. Dissent on depth: Q5 gives 1 cm (½ inch) for outdoor sowing and no depth for pots and trays."
+    },
+    {
+      "key": "basil_germination",
+      "label": "Keimen: Basilikum",
+      "label_en": "Germination: basil",
+      "conditions": [
+        {
+          "metric": "air_temp_ideal_direct_sowing",
+          "min": 65,
+          "max": 70,
+          "unit": "°F",
+          "sources": [
+            "Q4"
+          ]
+        },
+        {
+          "metric": "temp_at_stated_duration",
+          "min": 70,
+          "max": 70,
+          "unit": "°F",
+          "sources": [
+            "Q6"
+          ]
+        },
+        {
+          "metric": "media_temp_floor",
+          "min": 70,
+          "max": null,
+          "unit": "degrees",
+          "sources": [
+            "Q7"
+          ]
+        },
+        {
+          "metric": "sowing_depth",
+          "min": 0.25,
+          "max": 0.25,
+          "unit": "inch",
+          "sources": [
+            "Q6"
+          ]
+        }
+      ],
+      "duration": {
+        "min": 5,
+        "max": 14,
+        "unit": "days",
+        "sources": [
+          "Q4",
+          "Q6",
+          "Q7"
+        ]
+      },
+      "notes": "Dunkelkeimer: Samen mit Substrat abdecken (Q4). Q4 nennt die Tiefe meist ¼ bis ½ inch, die genaue Tiefe steht auf der Samentüte; Q6 nennt ¼ inch. Dauer je Quelle: 10-14 Tage (Q4), 5-10 Tage bei 70 °F (Q6), etwa 5-7 Tage (Q7), deshalb die weite Spanne bei duration. Q7 schreibt nur 'degrees', die Einheit ist nicht ausgeschrieben. Kalter Boden und kalte Luft können das Wachstum bremsen, bei 50 degrees Schäden und schwarze Blätter (Q7). Von der Aussaat bis zum Auspflanzen 5-6 Wochen (Q4).",
+      "notes_en": "Dark germinator: cover the seeds with the germination medium (Q4). Q4 says the depth is usually ¼ to ½ inch, the precise depth is on the seed packet; Q6 says ¼ inch. Duration by source: 10-14 days (Q4), 5-10 days at 70 °F (Q6), about 5-7 days (Q7), hence the wide span in duration. Q7 writes only 'degrees'; the unit is not spelled out. Cold soil and air can stunt growth and cause damage and blackened leaves at 50 degrees (Q7). From sowing to planting out 5-6 weeks (Q4)."
+    },
+    {
+      "key": "chives_germination",
+      "label": "Keimen: Schnittlauch",
+      "label_en": "Germination: chives",
+      "conditions": [
+        {
+          "metric": "sowing_depth",
+          "min": 0.25,
+          "max": 0.5,
+          "unit": "inch",
+          "sources": [
+            "Q8",
+            "Q9"
+          ]
+        },
+        {
+          "metric": "temp_germination_retailer",
+          "min": 65,
+          "max": 70,
+          "unit": "°F",
+          "sources": [
+            "Q10"
+          ]
+        }
+      ],
+      "duration": {
+        "min": 7,
+        "max": 14,
+        "unit": "days",
+        "sources": [
+          "Q9",
+          "Q10"
+        ]
+      },
+      "notes": "Tiefe: Q8 nennt ¼ inch, Q9 nennt 1.3 cm (0.5 in); die Spanne deckt beide. Keimt langsam, läuft nach etwa 7 Tagen auf (Q9). 7-14 Tage bei 65-70 °F (18-21 °C) nennt nur ein Saatguthändler (Q10, kommerziell); Q8 nennt weder Keimtemperatur noch Keimdauer, Q9 keine Temperatur. Verpflanzen: 6-8 Wochen Wachstum vor dem Auspflanzen (Q8), oder etwa 4 Wochen alt und abgehärtet (Q9). Licht oder Dunkelheit beim Keimen: offen.",
+      "notes_en": "Depth: Q8 says ¼ inch, Q9 says 1.3 cm (0.5 in); the span covers both. Slow to germinate, emerges after about 7 days (Q9). 7-14 days at 65-70 °F (18-21 °C) comes only from a seed retailer (Q10, commercial); Q8 gives neither germination temperature nor duration, Q9 gives no temperature. Transplanting: 6-8 weeks of growth before planting out (Q8), or about 4 weeks old and hardened (Q9). Light or darkness during germination: open."
+    },
+    {
+      "key": "microgreens_dark_phase",
+      "label": "Keimen: Microgreens, Dunkelphase",
+      "label_en": "Germination: microgreens, dark phase",
+      "conditions": [
+        {
+          "metric": "temp_during_germination",
+          "min": 74,
+          "max": 74,
+          "unit": "°F",
+          "sources": [
+            "Q11"
+          ]
+        },
+        {
+          "metric": "cover_tray_weight",
+          "min": 2,
+          "max": 5,
+          "unit": "pounds",
+          "sources": [
+            "Q11"
+          ]
+        },
+        {
+          "metric": "seed_density_small_seeds",
+          "min": 10,
+          "max": 12,
+          "unit": "seeds per square inch",
+          "sources": [
+            "Q12"
+          ]
+        },
+        {
+          "metric": "seed_density_large_seeds",
+          "min": 6,
+          "max": 8,
+          "unit": "seeds per square inch",
+          "sources": [
+            "Q12"
+          ]
+        },
+        {
+          "metric": "misting_per_day_dark_phase",
+          "min": 2,
+          "max": 2,
+          "unit": "times per day",
+          "sources": [
+            "Q12"
+          ]
+        }
+      ],
+      "duration": {
+        "min": 4,
+        "max": 7,
+        "unit": "days",
+        "sources": [
+          "Q11",
+          "Q12"
+        ]
+      },
+      "notes": "Dunkelphase: Schale im Dunkeln, zweite Schale direkt obenauf, beschwert mit 2-5 pounds (Q11). Dauer abgedeckt: Basilikum 4-7 Tage (Q11), allgemein 4-5 Tage oder bis die Samen keimen (Q12). Q12 sprüht in dieser Zeit zweimal täglich, dafür wird die Abdeckung abgenommen; Q15 nennt übermäßiges Besprühen von oben als Risiko für die Umfallkrankheit, eine Zahl für 'übermäßig' steht im Claim nicht: Spannung, offen. Salat und Schnittlauch fehlen in der Tabelle von Q11. Ob die 74 °F Luft oder Substrat meinen, steht im Claim nicht.",
+      "notes_en": "Dark phase: tray in the dark with a second tray directly on top, weighted with 2-5 pounds (Q11). Covered time: basil 4-7 days (Q11), in general 4-5 days or until the seeds germinate (Q12). Q12 mists twice a day during this time and removes the cover for it; Q15 names excessive overhead misting as a risk for damping-off, the claim gives no number for 'excessive': tension, open. Lettuce and chives are missing from the Q11 table. Whether the 74 °F means air or substrate is not stated in the claim."
+    },
+    {
+      "key": "cannabis_germination",
+      "package": "cannabis",
+      "label": "Keimen: Cannabis-Samen",
+      "label_en": "Germination: cannabis seeds",
+      "conditions": [
+        {
+          "metric": "environment_temp_practical",
+          "min": 70,
+          "max": 80,
+          "unit": "°F",
+          "sources": [
+            "Q20"
+          ]
+        },
+        {
+          "metric": "optimal_germination_temp_study",
+          "min": 19,
+          "max": 30,
+          "unit": "°C",
+          "sources": [
+            "Q18"
+          ]
+        },
+        {
+          "metric": "sowing_depth_field",
+          "min": 0.25,
+          "max": 0.5,
+          "unit": "inch",
+          "sources": [
+            "Q21"
+          ]
+        },
+        {
+          "metric": "soil_temp_floor_field",
+          "min": 55,
+          "max": null,
+          "unit": "°F",
+          "sources": [
+            "Q21"
+          ]
+        }
+      ],
+      "duration": {
+        "min": 2,
+        "max": 3,
+        "unit": "days",
+        "sources": [
+          "Q20"
+        ]
+      },
+      "notes": "Medium angenehm feucht, nie nass; dunkel bis zum Auflaufen, die Quelle formuliert weich ('darkness encourages growth') (Q20, Verlag, kommerziell). Samen in nassem Medium oder luftdicht ohne Lüftung ziehen schnell Pilz an (Q20). Meist 2-3 Tage, manche Samen brauchen bis zu einer Woche (Q20). Zu Licht und Feuchte beim Hanfkeimen fand sich keine Extension- oder Studienquelle. Die zwei Studien (Q18, Q19) behandeln die Temperatur: Q18 Optimum 29.6 °C, Basis 3.4 °C, Obergrenze 42.6 °C (bis 50 % Keimung berechnet, Öl-Industriehanf, Sorten Georgina und Victoria); Q19 Basis 2.6 °C, Optimum 26.8 °C, Obergrenze 42.8 °C (nur 5 bis 35 °C getestet, die Obergrenze liegt außerhalb davon). Feldanbau (Q21): ¼-½ inch tief, Boden über 55 °F, kühler Boden verlangsamt Keimung und Auflaufen.",
+      "notes_en": "Medium comfortably damp, never soaked; dark until emergence, the source words it softly ('darkness encourages growth') (Q20, publisher, commercial). Seeds in soggy medium or sealed away without ventilation quickly attract fungus (Q20). Usually 2-3 days, some seeds take up to a week (Q20). No extension or study source was found for light and moisture when germinating hemp. The two studies (Q18, Q19) deal with temperature: Q18 optimum 29.6 °C, base 3.4 °C, ceiling 42.6 °C (calculated up to 50 % germination, oil-type industrial hemp, cultivars Georgina and Victoria); Q19 base 2.6 °C, optimum 26.8 °C, ceiling 42.8 °C (only 5 to 35 °C tested, the ceiling lies outside that range). Field cultivation (Q21): ¼-½ inch deep, soil above 55 °F, cooler soil slows germination and emergence."
+    },
+    {
+      "key": "emergence",
+      "label": "Auflaufen und Umstellen",
+      "label_en": "Emergence and switching over",
+      "conditions": [
+        {
+          "metric": "cannabis_taproot_length",
+          "min": 0.25,
+          "max": 0.5,
+          "unit": "inch",
+          "sources": [
+            "Q20"
+          ]
+        }
+      ],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": "offen",
+        "sources": []
+      },
+      "notes": "Auflaufen ist der Umstellpunkt. Tüte oder Glasabdeckung entfernen, sobald die ersten Sämlinge auflaufen (Q1). Microgreens: obere Schale weg, sobald sichtbar Wurzeln ins Substrat drücken; danach wird sie umgedreht ohne Kontakt zu den Samen aufgelegt, die zweite Hälfte der Dunkelphase läuft weiter (Q11). Cannabis: pflanzbereit, wenn eine weiße Pfahlwurzel von ¼-½ inch zu sehen ist (Q20; die Quelle schreibt dazu 0.5-1.5 cm, das ist eine grobe Umrechnung, belastbar ist die inch-Angabe).",
+      "notes_en": "Emergence is the switch-over point. Remove the bag or glass cover when the first seedlings emerge (Q1). Microgreens: remove the top tray as soon as the roots visibly push into the medium; afterwards it is turned over as a cover without contact to the seeds, and the second half of the dark period continues (Q11). Cannabis: ready to plant when a white taproot of ¼-½ inch is visible (Q20; the source adds 0.5-1.5 cm, a rough conversion, the inch value is the reliable one).",
+      "if_off": {
+        "cannabis": {
+          "conditions": [],
+          "notes": "Auflaufen ist der Umstellpunkt. Tüte oder Glasabdeckung entfernen, sobald die ersten Sämlinge auflaufen (Q1). Microgreens: obere Schale weg, sobald sichtbar Wurzeln ins Substrat drücken; danach wird sie umgedreht ohne Kontakt zu den Samen aufgelegt, die zweite Hälfte der Dunkelphase läuft weiter (Q11).",
+          "notes_en": "Emergence is the switch-over point. Remove the bag or glass cover when the first seedlings emerge (Q1). Microgreens: remove the top tray as soon as the roots visibly push into the medium; afterwards it is turned over as a cover without contact to the seeds, and the second half of the dark period continues (Q11)."
+        }
+      }
+    },
+    {
+      "key": "after_emergence",
+      "label": "Nach dem Auflaufen: Licht und Luft",
+      "label_en": "After emergence: light and air",
+      "conditions": [
+        {
+          "metric": "light_hours_indoor_seedlings",
+          "min": 16,
+          "max": 18,
+          "unit": "hours per day",
+          "sources": [
+            "Q17"
+          ]
+        },
+        {
+          "metric": "true_leaves_before_fan",
+          "min": 2,
+          "max": null,
+          "unit": "true leaves",
+          "sources": [
+            "Q17"
+          ]
+        },
+        {
+          "metric": "microgreens_light_hours",
+          "min": 18,
+          "max": 18,
+          "unit": "hours per day",
+          "sources": [
+            "Q11"
+          ]
+        },
+        {
+          "metric": "microgreens_dark_hours",
+          "min": 6,
+          "max": 6,
+          "unit": "hours per day",
+          "sources": [
+            "Q11"
+          ]
+        },
+        {
+          "metric": "microgreens_temp_lights_on",
+          "min": 72,
+          "max": 72,
+          "unit": "°F",
+          "sources": [
+            "Q11"
+          ]
+        },
+        {
+          "metric": "microgreens_temp_lights_off",
+          "min": 68,
+          "max": 68,
+          "unit": "°F",
+          "sources": [
+            "Q11"
+          ]
+        }
+      ],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": "offen",
+        "sources": []
+      },
+      "notes": "Jungpflanzen, die drinnen wachsen: 16-18 Stunden helles Licht (Q17). Ab wann das Licht angehen soll, nennt die Quelle nicht; 'nach dem Auflaufen' ist eine Folgerung. Ab zwei echten Blättern einen Ventilator so aufstellen, dass die Sämlinge leicht schwanken (Q17); er trocknet die Sämlinge aus, die Feuchte im Blick behalten (Q17). Microgreens: 18 Stunden Licht, 6 Stunden dunkel; 72 °F bei Licht an, 68 °F bei Licht aus; ständige Luftbewegung mit sanft blasendem Ventilator (Q11); Ernte ab den ersten echten Blättern oder früher (Q11). Lichtstärke der VGrow-Lampe: offen (VIVOSUN veröffentlicht keine PPFD).",
+      "notes_en": "Indoor-grown transplants: 16-18 hours of bright light (Q17). The source does not say from when the light should be on; 'after emergence' is an inference. From two true leaves place a fan so that the seedlings sway gently (Q17); the fan dries the seedlings out, so watch the moisture (Q17). Microgreens: 18 hours of light, 6 hours of dark; 72 °F with lights on, 68 °F with lights off; constant airflow with a gentle-blowing fan (Q11); harvest from the first true leaves or sooner (Q11). Light intensity of the VGrow lamp: open (VIVOSUN publishes no PPFD)."
+    }
+  ],
+  "warnings": [
+    "Hat die Keimung begonnen, nie austrocknen lassen: eine Trockenphase kann den Keimling (Embryo) töten (Q1).",
+    "Umfallkrankheit (damping-off): Vor dem Auflaufen erscheinen die Sämlinge gar nicht, danach welken sie, oft mit einer wässrigen oder dunklen, eingesunkenen Stelle am Stängel auf Höhe des Substrats. Erreger sind vor allem Pythium und Rhizoctonia (Q15).",
+    "Die Umfallkrankheit begünstigen: Überwässern und zu lange nasses Substrat, übermäßiges Besprühen von oben, Kondenswasser, das aufs Substrat tropft, und eine Substrattemperatur unter 68 °F vor der Keimung (Q15). Am schwersten trifft sie bei übermäßiger Bodenfeuchte und hoher Luftfeuchte, eine Prozentangabe nennt Q16 nicht. Folgerung, kein Quellensatz: In der VGrow betrifft das den USB-Befeuchter und jede Abdeckhaube.",
+    "Basilikum: Kalter Boden und kalte Luft können das Wachstum bremsen und bei 50 degrees Schäden und schwarze Blätter verursachen. Die Quelle schreibt die Einheit nicht aus (Q7).",
+    "Salat: Hohe Bodentemperatur kann die Keimung senken (Thermoinhibition, Hitzehemmung), eine Schwelle nennt Q3 nicht. Bei 95 °F und 104 °F Bodentemperatur gibt es kaum oder keine Keimung (Q2, Q3).",
+    "Direkte Sonne auf einer abgedeckten Schale lässt die Temperatur steigen und kann die Samen schädigen (Q1). Ob die LED der VGrow unter einer Haube dasselbe bewirkt: offen.",
+    "Cannabis: Samen in nassem Medium oder luftdicht ohne Lüftung ziehen schnell Pilz an (Q20, Verlag, kommerziell). Den Anbaubereich lüften, damit überschüssige Feuchte abzieht (Q22, kanadische Behörde, kein deutsches Recht).",
+    "Cannabis, Recht (keine Rechtsberatung): Ab dem vollendeten 18. Lebensjahr privat nicht mehr als drei Pflanzen gleichzeitig (Q23). Umgang mit Samen ist erlaubt, wenn sie nicht zum unerlaubten Anbau bestimmt sind; die Einfuhr für den privaten Eigenanbau nur aus EU-Mitgliedstaaten (Q24). Cannabis und Vermehrungsmaterial, dazu zählen Samen (Q26), sind vor dem Zugriff Dritter zu schützen, besonders vor Kindern und Jugendlichen (Q25). Ab wann ein gekeimter Samen als Pflanze zählt, sagt der Gesetzestext nicht.",
+    "Microgreens: Erreger wie Salmonella oder E. coli stammten in Kanada meist vom Saatgut (Q13). Für gewerbliche Erzeuger gilt: Wasser frei von E. coli, erst Schmutz entfernen, dann ein lebensmitteltaugliches Desinfektionsmittel (Peressigsäure oder auf Chlorbasis), nach der Ernte nicht waschen, außer es ist unbedingt nötig (Q14). Was davon für den privaten Anbau gilt: offen.",
+    "Tropfpumpe: Die Gießmenge für Keimlinge ist offen. Überwässern fördert die Umfallkrankheit (Q15)."
+  ],
+  "warnings_en": [
+    "Never let the substrate dry out once germination has begun: a dry period can kill the embryo (Q1).",
+    "Damping-off: before emergence the seedlings fail to appear; afterwards they wilt, often with a water-soaked or dark, sunken lesion on the stem at the substrate line. The cause is mainly Pythium and Rhizoctonia (Q15).",
+    "Favoring damping-off: overwatering and substrate that stays wet too long, excessive overhead misting, condensation dripping onto the substrate, and a substrate temperature below 68 °F before germination (Q15). It is most severe with excessive soil moisture and high humidity; Q16 gives no percentage. Inference, not a source statement: in the VGrow this concerns the USB humidifier and any cover.",
+    "Basil: cold soil and air can stunt growth and cause damage and blackened leaves at 50 degrees. The source does not spell out the unit (Q7).",
+    "Lettuce: high soil temperature can reduce germination (thermoinhibition); Q3 gives no threshold. At 95 °F and 104 °F soil temperature there is little or no germination (Q2, Q3).",
+    "Direct sun on a covered tray raises the temperature and can damage the seeds (Q1). Whether the VGrow LED does the same under a cover: open.",
+    "Cannabis: seeds in soggy medium or sealed away without ventilation quickly attract fungus (Q20, publisher, commercial). Ventilate the grow area so excess moisture is removed (Q22, Canadian authority, not German law).",
+    "Cannabis, law (not legal advice): from the completed age of 18, privately no more than three plants at the same time (Q23). Handling seeds is allowed if they are not intended for unlawful cultivation; import for private home cultivation only from EU member states (Q24). Cannabis and propagation material, which includes seeds (Q26), must be protected from access by third parties, especially children and young people (Q25). The statute does not say from when a germinated seed counts as a plant.",
+    "Microgreens: pathogens such as Salmonella or E. coli most often came from the seeds in Canada (Q13). For commercial growers: water free of E. coli, remove dirt first, then use a food-safe sanitizer (peroxyacetic acid or chlorine-based), do not wash after harvest unless absolutely necessary (Q14). What applies to home growing: open.",
+    "Drip pump: the watering amount for seedlings is open. Overwatering promotes damping-off (Q15)."
+  ],
+  "warnings_packages": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    "cannabis",
+    "cannabis",
+    null,
+    null
+  ],
+  "image": {
+    "file": "pea-germination.webp",
+    "thumb": "pea-germination-t.webp",
+    "w": 1000,
+    "h": 750,
+    "alt": "Erbse kurz nach der Keimung, die Wurzeln freigelegt",
+    "alt_en": "Pea shortly after germination, the roots exposed",
+    "credit": {
+      "work": "File:Erbsen (Pisum sativum) kurz nach der Keimung, Wurzeln freigelegt, Josef Schlaghecken.jpg",
+      "author": "Josef Schlaghecken",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Erbsen_(Pisum_sativum)_kurz_nach_der_Keimung,_Wurzeln_freigelegt,_Josef_Schlaghecken.jpg"
+    }
+  },
+  "sources": {
+    "Q1": "NC State Extension, North Carolina Extension Gardener Handbook, 2nd ed., chapter 13 Propagation (LeBude and Blazich, 2022): https://content.ces.ncsu.edu/extension-gardener-handbook/13-propagation",
+    "Q2": "Oregon State University Extension Service, Soil temperature conditions for vegetable seed germination (Harrington, April 2013, reviewed 2024): https://extension.oregonstate.edu/gardening/techniques/soil-temperature-conditions-vegetable-seed-germination",
+    "Q3": "NC State Extension, Lettuce Production in North Carolina (Torres Quezada and Sanders, revised 28.12.2025): https://content.ces.ncsu.edu/lettuce",
+    "Q4": "Iowa State University Extension and Outreach, Germination Requirements for Annuals and Vegetables (Jauron and Steil, last reviewed December 2023): https://yardandgarden.extension.iastate.edu/how-to/germination-requirements-annuals-and-vegetables",
+    "Q5": "Royal Horticultural Society (UK, horticultural society, second source), How to Grow Lettuce: https://www.rhs.org.uk/vegetables/lettuce/grow-your-own",
+    "Q6": "Clemson Cooperative Extension, Home and Garden Information Center, Basil (Williamson, updated 01.05.2019): https://hgic.clemson.edu/factsheet/basil/",
+    "Q7": "University of Illinois Extension, Basil (Herbs): https://extension.illinois.edu/herbs/basil",
+    "Q8": "Utah State University Extension, How to Grow Chives in Your Garden (Drost, March 2020): https://extension.usu.edu/yardandgarden/research/chives-in-the-garden",
+    "Q9": "Penn State University, PlantVillage (university project, not an extension factsheet, second source), Chives: https://plantvillage.psu.edu/topics/chives/infos",
+    "Q10": "Johnny's Selected Seeds (commercial, seed retailer, second source), Chives - Key Growing Information: https://johnnyseeds.com/growers-library/herbs/chives/chives-key-growing-information.html",
+    "Q11": "Utah State University Extension, Grow Your Own Microgreens (Beck, 20.02.2025): https://extension.usu.edu/yardandgarden/research/grow-your-own-microgreens",
+    "Q12": "UF/IFAS Extension, Gardening Solutions, Microgreens: https://gardeningsolutions.ifas.ufl.edu/plants/edibles/vegetables/microgreens/",
+    "Q13": "Government of Ontario, Overview of food safety for sprouts and microgreens (updated 09.04.2026, for commercial growers): https://www.ontario.ca/page/overview-food-safety-sprouts-and-microgreens",
+    "Q14": "Penn State Extension, Ensuring Food Safety in Microgreens Production (Stoltzfus and Fronk, updated 29.07.2025): https://extension.psu.edu/ensuring-food-safety-in-microgreens-production",
+    "Q15": "UConn Extension IPM, Damping-off of Ornamental and Vegetable Seedlings (Mercure, revised by Pundt, July 2024): https://ipm.cahnr.uconn.edu/damping-off-of-ornamental-and-vegetable-seedlings/",
+    "Q16": "Penn State Extension, Safeguard Your Seedlings from Damping-Off (Diehl Mazzone, updated 21.01.2026): https://extension.psu.edu/safeguard-your-seedlings-from-damping-off",
+    "Q17": "Clemson Cooperative Extension, HGIC 1259 Starting Seeds Indoors (Polomski and Shaughnessy, revised by Snipes, 17.04.2020): https://hgic.clemson.edu/factsheet/starting-seeds-indoors/",
+    "Q18": "Geneve, Janes, Kester, Hildebrand, Davis (2022), Temperature Limits for Seed Germination in Industrial Hemp (Cannabis sativa L.), Crops 2(4), 415-427, DOI 10.3390/crops2040029, study, abstract at University of Kentucky: https://scholars.uky.edu/en/publications/temperature-limits-for-seed-germination-in-industrial-hemp-cannab/",
+    "Q19": "Taher Abadi, Goldani, Fazeli Kakhki (2015), Determination of Cardinal Temperatures in the Seeds of Henbane, Aconite and Hemp, Journal of Iranian Plant Protection Research 29(1), 16-22, DOI 10.22067/jpp.v29i1.22196, study: https://jpp.um.ac.ir/article_35472.html?lang=en",
+    "Q20": "The Old Farmer's Almanac (commercial, publisher, second source), How to Germinate Cannabis Seeds, Step-by-Step Guide (Curtis, 17.08.2026): https://www.almanac.com/how-to-germinate-cannabis-seeds",
+    "Q21": "Purdue University Extension, Pest&Crop Newsletter, Crusty Soil And Hemp Establishment (Bolt, 27.06.2025, field cultivation): https://extension.entm.purdue.edu/newsletters/pestandcrop/article/crusty-soil-and-hemp-establishment",
+    "Q22": "Government of Canada, Health Canada, Growing cannabis at home safely (modified 08.07.2026, Canadian authority, not German law): https://www.canada.ca/en/health-canada/services/drugs-medication/cannabis/personal-use/growing-cannabis-home-safely.html",
+    "Q23": "Bundesministerium der Justiz, gesetze-im-internet.de, Konsumcannabisgesetz (KCanG) § 9 Abs. 1: https://www.gesetze-im-internet.de/kcang/__9.html",
+    "Q24": "Bundesministerium der Justiz, gesetze-im-internet.de, Konsumcannabisgesetz (KCanG) § 4 Abs. 1 und 2: https://www.gesetze-im-internet.de/kcang/__4.html",
+    "Q25": "Bundesministerium der Justiz, gesetze-im-internet.de, Konsumcannabisgesetz (KCanG) § 10: https://www.gesetze-im-internet.de/kcang/__10.html",
+    "Q26": "Bundesministerium der Justiz, gesetze-im-internet.de, Konsumcannabisgesetz (KCanG) § 1 Nr. 7: https://www.gesetze-im-internet.de/kcang/__1.html"
+  }
+}

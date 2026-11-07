@@ -1,0 +1,365 @@
+{
+  "name": "Gießmodell: Durst-Index",
+  "name_en": "Watering model: thirst index",
+  "summary": "Die Zahlen hinter dem Durst-Index (wie viel Wasser dem Topf fehlt), dem Gießplan nach Phase und der Bedarfsprüfung vor jedem geplanten Gießtermin. Das Cockpit rechnet, fragt und schlägt vor; die Bedarfsprüfung kann einen Termin nur auslassen oder kürzen, nie starten oder verlängern. Jede Konstante nennt ihre Quelle (ein Schlüssel aus sources) oder trägt assumption: dann steht dort, womit sie kalibriert wird. Gelesen von vgrow/thirst.py.",
+  "summary_en": "The numbers behind the thirst index (how much water the pot is missing), the watering plan by stage and the need check before every scheduled watering slot. The cockpit computes, asks and suggests; the need check can only skip or shorten a slot, never start or lengthen one. Every constant names its source (a key of sources) or carries assumption: then it says what calibrates it. Read by vgrow/thirst.py.",
+  "status": "draft",
+  "version": "durst-2026-10-26",
+  "_hinweis": "Nichts hier lernt sich selbst. source: Schlüssel aus sources; code: eine Konstante im Code, die gleich bleiben muss (ein Test vergleicht); assumption: eigene Zahl, und womit sie kalibriert wird. Einheiten in unit; s heißt Sekunden, Abstände immer in Epochensekunden, nie in Uhrzeit. Quellen ohne Personennamen: Titel, Herausgeber, Jahr und Adresse.",
+  "substrate_class": "soil",
+  "substrate_note": "Erde (420Flow Lightmix mit Perlite). Kokos, Steinwolle und Hydro brauchen eigene Werte für den Auslöser, das nutzbare Wasser und die Gaben, bevor jemand anderes dieses Modell nutzt.",
+  "substrate_note_en": "Soil (420Flow Lightmix with perlite). Coco, rockwool and hydro need their own values for the trigger, the available water and the portions before anyone else uses this model.",
+  "constants": {
+    "f_trig": {
+      "value": 0.5, "unit": "fraction of the available water", "source": ["U1"],
+      "note": "Gießen, wenn die Hälfte des verfügbaren Wassers im Topf verbraucht ist: das ist Durst-Index 100.",
+      "note_en": "Water when half of the available water in the pot is used: that is thirst index 100."
+    },
+    "stage_f_trig": {
+      "value": {"seedling": 0.4, "veg": 0.5, "early_flower": 0.5, "mid_flower": 0.5, "late_flower": 0.5, "harvest": 0.5},
+      "unit": "fraction of the available water", "source": ["U1"],
+      "assumption": "the seedling's 0.4 is own and calibrated by the first weighings of a seedling; the harvest window keeps the late flower value",
+      "note": "Der Auslöser je Phase: die Hälfte des verfügbaren Wassers (U1), beim Keimling früher.",
+      "note_en": "The trigger per stage: half of the available water (U1), earlier for a seedling."
+    },
+    "f_trig_late_dryback": {
+      "value": 0.6, "unit": "fraction of the available water",
+      "assumption": "the owner's choice for a dry-back in late flower (the pot's dry-back switch); no read source gives a number; off unless the owner sets it; calibrated by the owner's weighed dry-downs in late flower"
+    },
+    "a_w": {
+      "value": 0.3, "unit": "available water per litre of substrate", "context_sources": ["B05"],
+      "assumption": "calibrated by the first weighed dry-down",
+      "note": "Die Mitte von 25 bis 35 Volumenprozent verfügbarem Wasser, dem Normalbereich für Topfsubstrate (B05).",
+      "note_en": "The middle of 25 to 35 percent available water by volume, the normal range for potting substrates (B05)."
+    },
+    "soil_container_capacity": {
+      "value": 0.55, "unit": "water by volume, drained", "source": ["B05"],
+      "assumption": "the middle of the 45 to 65 percent in B05; that the soil sensor is linear between dry and drained is own and calibrated by the first dry-down compared with a finger check",
+      "note": "Topfsubstrat hält abgetropft 45 bis 65 Volumenprozent Wasser (B05). Mit dem nutzbaren Wasser (a_w) und dem Auslöser (f_trig) ergibt das den Zielwert des Bodensensors: fällig bei 73 Prozent des Werts im abgetropften Topf.",
+      "note_en": "Potting substrate holds 45 to 65 percent water by volume when drained (B05). With the available water (a_w) and the trigger (f_trig) this gives the soil sensor's target: due at 73 percent of the reading in the drained pot."
+    },
+    "soil_too_wet_percent": {
+      "value": 105, "unit": "percent of the drained reading",
+      "assumption": "own: a reading above the drained pot's means water that has not drained yet; calibrated by the first cycles"
+    },
+    "pot_check_tolerance": {
+      "value": 0.2, "unit": "fraction",
+      "assumption": "calibrated by the pot entry: typed litres more than 20 % away from diameter and height ask once more"
+    },
+    "caps_volume_factor_before_weighing": {
+      "value": 0.75, "unit": "fraction of the pot volume",
+      "assumption": "calibrated by weighing 1: until a reference weight exists the caps count only three quarters of the pot"
+    },
+    "pot_steps_l": {
+      "value": [3, 5, 7, 11, 15, 19, 25], "unit": "l",
+      "assumption": "calibrated by the first weighing: a saucer that fills on the first watering lowers the pot one step"
+    },
+    "pot_step_margin": {
+      "value": 0.1, "unit": "fraction of the entered litres",
+      "assumption": "calibrated by the first weighing: a step within 10 % of the entered litres is the same pot (3 US gallons are 11.4 l, the step 11 l), so one step down is the next smaller size"
+    },
+    "k0_ml_h": {
+      "value": 20, "unit": "ml/h",
+      "assumption": "calibrated by the first 24 h weighed loss",
+      "note": "Startwert, kein Beleg: 0,49 Liter am Tag bei 24 h Licht, 75 %, VPD 1,73 kPa und S 1. Er liegt im Rahmen der gelesenen Studien von 0,05 bis 0,71 Liter je Pflanze und Tag.",
+      "note_en": "A start value, not support: 0.49 litres a day at 24 h light, 75 %, VPD 1.73 kPa and S 1. It sits inside the frame of the read studies, 0.05 to 0.71 litres per plant and day."
+    },
+    "et_frame_low_l_day": {
+      "value": 0.05, "unit": "l/day", "source": ["M23"],
+      "note": "50 ml je Pflanze und Tag: der kleinste Sollwert der Tropfgabe in M23, keine gemessene Verdunstung.",
+      "note_en": "50 ml per plant and day: the smallest drip setpoint in M23, not a measured evapotranspiration."
+    },
+    "et_frame_high_l_day": {
+      "value": 0.71, "unit": "l/day", "source": ["C24"],
+      "note": "Gerechnet: 70,6 Liter je m² in 21 Tagen (C24) sind 3,4 Liter je m² und Tag, auf 0,21 m² Boxboden (46 mal 46 cm) 0,71 Liter.",
+      "note_en": "Arithmetic: 70.6 litres per m² in 21 days (C24) are 3.4 litres per m² and day, on 0.21 m² of box floor (46 by 46 cm) 0.71 litres."
+    },
+    "light_weight_w": {
+      "value": 0.6, "unit": "", "source": ["BL"],
+      "assumption": "calibrated by weighings at two VPD levels; BL gives only the additive form of light and VPD terms"
+    },
+    "vpd_norm_kpa": {
+      "value": 1.2, "unit": "kPa",
+      "assumption": "only normalises the VPD term; calibrated by weighings at two VPD levels, together with light_weight_w"
+    },
+    "vpd_min_kpa": {
+      "value": 0.4, "unit": "kPa", "source": ["MAN"],
+      "note": "Das kleinste Minimum eines VPD-Bands der Phasenkarte (Keimling 0,4 bis 0,8 kPa).",
+      "note_en": "The lowest minimum of a VPD band on the stage card (seedling 0.4 to 0.8 kPa)."
+    },
+    "vpd_max_kpa": {
+      "value": 2.5, "unit": "kPa",
+      "assumption": "upper clamp against a broken probe value; calibrated by the replay of the first week"
+    },
+    "night_factor": {
+      "value": 0.1, "unit": "fraction of the day rate", "source": ["CA07"],
+      "assumption": "fixed: about 10 ml in a 6 h night is too small to weigh against a pot of several kilograms",
+      "note": "Nachts verdunsten Pflanzen meist 5 bis 15 % der Tagesrate, manchmal bis 30 % (CA07, Übersicht über viele Arten).",
+      "note_en": "At night plants usually transpire 5 to 15 % of the day rate, sometimes up to 30 % (CA07, a review across many species)."
+    },
+    "height_ref_cm": {
+      "value": 61, "unit": "cm", "local": "the plant log height of 22.10.2026",
+      "assumption": "calibrated by weighings: S = latest height / 61 cm"
+    },
+    "height_factor_clip": {
+      "value": [0.5, 1.5], "unit": "",
+      "assumption": "calibrated by weighings; a canopy width term comes later"
+    },
+    "mist_gap_points": {
+      "value": 20, "unit": "points", "code": "vgrow/autopilot.py:MIST_GAP",
+      "note": "Fühler mehr als 20 Punkte über dem Boxsensor heißt Nebel vom Befeuchter: dann gilt das letzte VPD ohne Nebel, sonst das VPD aus Boxtemperatur und Boxfeuchte (FAO).",
+      "note_en": "The probe more than 20 points above the box sensor means mist from the humidifier: then the last VPD without mist holds, else the VPD from box temperature and box humidity (FAO)."
+    },
+    "hold_input_s": {
+      "value": 600, "unit": "s",
+      "assumption": "calibrated by the replay: light and climate values are held up to 10 min, longer gaps widen the band"
+    },
+    "band_base_ti": {
+      "value": 5, "unit": "index points",
+      "assumption": "calibrated by weighings: the error band right after a weighing"
+    },
+    "band_finger_ti": {
+      "value": 25, "unit": "index points",
+      "assumption": "calibrated by the first two weighings: a finger or lift answer only says above 70 or below 85, so its anchor starts wide: never high confidence, medium for half a day (25 plus 10 a day reaches the medium limit of 30 after 12 h), then low"
+    },
+    "band_per_day_ti": {
+      "value": 10, "unit": "index points per day",
+      "assumption": "calibrated by weighings: the band grows with every day since the anchor, and with every day of missing data"
+    },
+    "band_unknown_amount_ti": {
+      "value": 30, "unit": "index points",
+      "assumption": "calibrated by the next weighing: an anchor of unknown amount (a pump run with an unmeasured flow, water on a pot without anchor) starts wide"
+    },
+    "confidence_high_band": {
+      "value": 15, "unit": "index points", "assumption": "calibrated by weighings"
+    },
+    "confidence_medium_band": {
+      "value": 30, "unit": "index points", "assumption": "calibrated by weighings"
+    },
+    "drain_settle_s": {
+      "value": 7200, "unit": "s", "source": ["B05"],
+      "note": "Zwei Stunden abtropfen lassen vor dem Wiegen, wie B05 die Töpfe gewogen hat; auch die Pause nach jedem Gießen.",
+      "note_en": "Two hours of drainage before weighing, as B05 weighed its containers; also the pause after every watering."
+    },
+    "finger_dry_from_ti": {
+      "value": 70, "unit": "index", "assumption": "calibrated by the first two weighings: trocken at 70 or more sets the index to 100"
+    },
+    "finger_dry_sets_ti": {
+      "value": 100, "unit": "index", "source": ["U1", "KS"],
+      "assumption": "calibrated by the first two weighings: dry at the KS finger depth is taken as half of the available water used (U1), the point the index calls 100"
+    },
+    "finger_moist_cap_ti": {
+      "value": 85, "unit": "index", "assumption": "calibrated by the first two weighings: feucht caps the index at 85 for 24 h"
+    },
+    "moist_cap_s": {
+      "value": 86400, "unit": "s", "assumption": "calibrated by the first two weighings"
+    },
+    "wet_block_s": {
+      "value": 86400, "unit": "s", "assumption": "calibrated by the first cycles: nass or schwer blocks 24 h"
+    },
+    "finger_depth_cm": {
+      "value": {"small": 2.5, "large": 5, "unknown": 5}, "unit": "cm", "source": ["KS"],
+      "note": "Zimmerpflanzen: gießen, wenn die Erde im 6-Zoll-Topf 1 Zoll und im 10-Zoll-Topf 2 Zoll tief trocken ist (KS).",
+      "note_en": "Houseplants: water when the soil is dry 1 inch deep in a 6-inch pot and 2 inches deep in a 10-inch pot (KS)."
+    },
+    "finger_depth_small_max_diameter_cm": {
+      "value": 20, "unit": "cm",
+      "assumption": "between the 6-inch and 10-inch pots of KS; calibrated by the pot entry"
+    },
+    "first_dose_trig_factor": {
+      "value": 0.5, "unit": "fraction of D_trig",
+      "assumption": "calibrated by the first weighing: without a reference weight the first dose is at most half the trigger amount"
+    },
+    "measured_valid_s": {
+      "value": 86400, "unit": "s",
+      "assumption": "calibrated by the first cycles: a weighing or a finger answer counts as measured for 24 h; only a measured index opens a scheduled slot"
+    },
+    "ask_from_ti": {
+      "value": 85, "unit": "index", "assumption": "calibrated by the replay of the first week"
+    },
+    "due_ti": {
+      "value": 100, "unit": "index", "source": ["U1"]
+    },
+    "alert_ti": {
+      "value": 120, "unit": "index", "assumption": "calibrated by the replay of the first week"
+    },
+    "hard_drydown_ti": {
+      "value": 130, "unit": "index", "source": ["PU"],
+      "assumption": "the threshold 130 is own; PU gives the reason to halve the dose",
+      "note": "In Torf fiel die Leitfähigkeit für Wasser auf ein Hundertstel, als der Wassergehalt von 60 auf 20 % sank (PU): nach starkem Austrocknen nur die halbe Menge.",
+      "note_en": "In peat the hydraulic conductivity fell to one hundredth as the water content dropped from 60 to 20 % (PU): after a hard dry-down only half the dose."
+    },
+    "dose_deficit_factor": {
+      "value": 0.9, "unit": "fraction of D", "context_sources": ["M23"],
+      "assumption": "calibrated by weighed watering cycles; leaves air space; M23 provides context, not this factor"
+    },
+    "cap_aw_factor": {
+      "value": 0.6, "unit": "fraction of the available water", "assumption": "calibrated by weighings"
+    },
+    "stage_caps_ml": {
+      "value": {"seedling": 200, "veg": 1000, "early_flower": 1400, "mid_flower": 1400, "late_flower": 1400, "harvest": 1400},
+      "unit": "ml per event and per rolling 24 h", "source": ["MAN"],
+      "assumption": "the harvest window has no preset on the stage card and keeps the late flower cap; the presets are read as per day, the conservative reading",
+      "note": "Die Pumpenvoreinstellungen der Phasenkarte: Keimling 200 ml, Wachstum 1000 ml, Blüte 1400 ml.",
+      "note_en": "The pump presets of the stage card: seedling 200 ml, vegetative 1000 ml, flower 1400 ml."
+    },
+    "saucer_next_dose_factor": {
+      "value": 0.75, "unit": "fraction",
+      "assumption": "calibrated by the next weighing: water in the saucer lowers the next dose by 25 %"
+    },
+    "hand_portion_ml": {
+      "value": 200, "unit": "ml", "source": ["MAN", "CH"],
+      "note": "Eine Gabe so groß wie ein 5-Minuten-Schub der Voreinstellung (200 ml in 5 min). Eine Gießmenge in kleinere Gaben teilen, um weniger auszuspülen (CH).",
+      "note_en": "One portion as large as a 5 minute pulse of the preset (200 ml in 5 min). Split a watering into smaller portions to leach less (CH)."
+    },
+    "soak_min": {
+      "value": 10, "unit": "min", "assumption": "calibrated by the replay: the pause between two portions"
+    },
+    "round_hour_local": {
+      "value": 9, "unit": "h", "assumption": "the box-local hour of the daily round without a light plan, when the owner is awake; calibrated by the times the owner answers the check requests"
+    },
+    "round_after_lights_on_s": {
+      "value": 3600, "unit": "s", "source": ["MAN"],
+      "note": "Die Voreinstellung gießt 1 Stunde nach Licht an.",
+      "note_en": "The preset waters 1 hour after lights on."
+    },
+    "round_window_s": {
+      "value": 43200, "unit": "s",
+      "assumption": "the owner is awake: a measured due pot is suggested during 12 h from the round, otherwise at the next round; calibrated by the times the owner answers in the first week"
+    },
+    "min_interval_s": {
+      "value": 72000, "unit": "s", "context_sources": ["SOZV"],
+      "assumption": "20 h, so a daily round still fits on the 23 h spring day (SOZV); calibrated by the first cycles"
+    },
+    "settle_after_event_s": {
+      "value": 7200, "unit": "s", "source": ["B05"]
+    },
+    "weekly_cap_factor": {
+      "value": 1.5, "unit": "times the modelled ET of 7 days", "assumption": "calibrated by the first cycles"
+    },
+    "weekly_cap_min_l": {
+      "value": 5.0, "unit": "l", "context_sources": ["C24"],
+      "assumption": "calibrated by weighed watering cycles; rounded from 0.71 litres times 7 (4.97), not a published limit",
+      "note": "Auf 5 Liter gerundete Modellannahme; die Quelle nennt keine Wochengrenze.",
+      "note_en": "Model assumption rounded to 5 litres; the source gives no weekly limit."
+    },
+    "probe_stale_s": {
+      "value": 600, "unit": "s", "code": "vgrow/autopilot.py:STALE_SECONDS"
+    },
+    "tank_stale_s": {
+      "value": 300, "unit": "s", "code": "vgrow/box.py:WATER_STALE_SECONDS"
+    },
+    "coverage_min": {
+      "value": 0.8, "unit": "fraction of the last 24 h", "assumption": "calibrated by the replay: below this share of observed time the index is not trusted for watering"
+    },
+    "tank_wet_settle_s": {
+      "value": 1800, "unit": "s",
+      "assumption": "calibrated by the replay: a dry tank blocks at once, the block lifts after 30 min of wet readings"
+    },
+    "manual_confirm_above_l": {
+      "value": 2.0, "unit": "l", "assumption": "a typo guard: above 2 litres the page asks a second time; calibrated by the owner's hand waterings"
+    },
+    "poll_edge_s": {
+      "value": 90, "unit": "s", "code": "vgrow/box.py:POLL_SECONDS",
+      "note": "Ein Pumpenlauf, der nur in Abfragen gesehen wurde, ist auf eine Abfrage genau: plus oder minus 90 s je Ende.",
+      "note_en": "A pump run seen only in polls is good to one poll: plus or minus 90 s per end."
+    },
+    "ask_push_after_s": {
+      "value": 10800, "unit": "s",
+      "assumption": "calibrated by the replay: index 100 and no answer after 3 h push with priority 3"
+    },
+    "block_alert_after_s": {
+      "value": 43200, "unit": "s", "assumption": "a block at an index above 100 that holds 12 h is an alert; calibrated by the replay of the first week"
+    },
+    "wet_owner_after_s": {
+      "value": 259200, "unit": "s", "source": ["VK26"],
+      "assumption": "a pot that still tests nass 72 h after the overshoot goes to the owner; a wet pot is not a flooded pot",
+      "note": "72 h ist die kürzeste Flutungsdauer im Vorabdruck VK26 (Faserhanf, Töpfe 2,5 cm unter Wasser).",
+      "note_en": "72 h is the shortest flooding duration in the preprint VK26 (fibre hemp, pots 2.5 cm under water)."
+    },
+    "hold_dry_answers": {
+      "value": 2, "unit": "answers", "assumption": "calibrated by the first weighings"
+    },
+    "hold_dry_apart_s": {
+      "value": 43200, "unit": "s", "assumption": "calibrated by the first weighings: two trocken answers at least 12 h apart"
+    },
+    "hold_dry_from_ti": {
+      "value": 85, "unit": "index", "assumption": "calibrated by the first weighed dry-down after an overshoot: in a wet-hold a trocken answer counts toward lifting it only from this model index (counted from the overshoot) on, the index at which the card asks for the check"
+    },
+    "hold_depth_cm": {
+      "value": 5, "unit": "cm", "source": ["KS"], "assumption": "the deeper KS depth, during a wet-hold always"
+    },
+    "flow_reference_ml_min": {
+      "value": 45, "unit": "ml/min",
+      "assumption": "input plausibility reference only, calibrated by the owner's measuring-jug runs; not a claimed output of any pump"
+    },
+    "flow_plausibility_factor": {
+      "value": 3, "unit": "factor above or below the reference",
+      "assumption": "typing-error heuristic, calibrated by confirmed measuring-jug entries; unusual pumps remain usable after explicit confirmation"
+    },
+    "flow_runs": {
+      "value": 2, "unit": "jug measurements",
+      "assumption": "the owner's two runs into a measuring jug (a run timed on a wrong flow was the failure of 23.10.2026); calibrated by the weighed gain of the first pump waterings"
+    },
+    "flow_tolerance": {
+      "value": 0.1, "unit": "fraction",
+      "assumption": "calibrated by the weighed gain of the first pump waterings: two jug runs must agree within 10 %"
+    },
+    "flow_margin": {
+      "value": 0.1, "unit": "fraction",
+      "assumption": "calibrated by the weighed gain of the first pump waterings: a run counts and is planned with flow x 1.1, the side that never adds water"
+    },
+    "flow_valid_s": {
+      "value": 2592000, "unit": "s",
+      "assumption": "30 days, or a new hose or pump: then measure again; calibrated by repeated jug runs"
+    },
+    "stop_margin_s": {
+      "value": 20, "unit": "s",
+      "assumption": "the stop reaches the box late by at most the publish timeout (vgrow/watering.py PUBLISH_SECONDS, 5 s) plus the box's confirmation window (vgrow/box.py PENDING_SECONDS, 15 s); calibrated by the confirmed stop times of the first runs"
+    },
+    "forecast_horizon_s": {
+      "value": 1814400, "unit": "s",
+      "assumption": "21 days; beyond that the forecast only says later, because the band grows 10 points a day; calibrated by the forecast's hits in the first cycles"
+    },
+    "forecast_round_note_s": {
+      "value": 1800, "unit": "s",
+      "assumption": "calibrated by the owner's reading of the forecast: a pot due more than 30 min before the next daily round is named twice, when it is due and when it is watered at the round"
+    },
+    "plan_weeks_max": {
+      "value": 12, "unit": "weeks", "source": ["MAN"],
+      "assumption": "the stage card runs to day 63 and the harvest window; 12 weeks cover a grow from early flower on"
+    },
+    "plan_vpd_from_stage_card": {
+      "value": true, "unit": "", "source": ["MAN"],
+      "assumption": "later weeks run at the middle of their stage's VPD band, which the humidifier rule aims for; calibrated by the measured VPD of those weeks"
+    }
+  },
+  "conflicts": [
+    {
+      "text": "Die Auslöser der Quellen haben verschiedene Einheiten: U1 gießt bei der Hälfte des verfügbaren Wassers, C24 bei 80 % der Topfkapazität (Feuchtesensoren, Wachstum im Gewächshaus), M23 hielt 40 bis 80 % der Wasserhaltekapazität. Ohne die Wasserspannungskurve dieser Erde lässt sich das nicht umrechnen, und für 420Flow Lightmix nennt keine Quelle eine.",
+      "text_en": "The sources trigger in different units: U1 waters at half of the available water, C24 at 80 % of container capacity (moisture sensors, vegetative growth in a greenhouse), M23 kept 40 to 80 % of the water-holding capacity. Without this soil's retention curve they cannot be converted, and no source gives one for 420Flow Lightmix.",
+      "sources": ["U1", "C24", "M23"]
+    },
+    {
+      "text": "Gegen die Empfehlung der Beratungsstellen: KS gießt, bis etwas unten herausläuft, VT nennt 15 bis 30 % Sickerwasser. Hier wird das Defizit ohne geplanten Abfluss gegeben, weil abgelaufenes Wasser im Untersetzer oder auf dem Boxboden steht. Der Preis: trockene Ecken und Salze werden nicht ausgespült. Dagegen: Gaben, die Frage nach dem Untersetzer und der Zähler Gaben ohne Abfluss.",
+      "text_en": "Against the extension advice: KS waters until some runs out below, VT names a leaching fraction of 15 to 30 %. Here the deficit is dosed without planned drainage, because drained water stands in the saucer or on the box floor. The cost: dry pockets and salts are not flushed. Against it: portions, the saucer question and the counter of waterings without drainage.",
+      "sources": ["KS", "VT"]
+    }
+  ],
+  "sources": {
+    "U1": {"title": "UC ANR (University of California), Nursery and Flower Grower blog, Soil mixes part 7: how much to irrigate", "url": "https://ucanr.edu/blog/nursery-and-flower-grower/article/soil-mixes-part-7-how-much-irrigate", "level": "E", "read": "source check 23.10.2026"},
+    "B05": {"title": "Healthy substrates need physicals too!, HortTechnology 15(4): 747-751, 2005 (peer-reviewed; PDF at the USDA Agricultural Research Service)", "url": "https://www.ars.usda.gov/ARSUserFiles/11847/bilderback_etal_2005_Hort%20Tech%2015(4)%20pp%20747-751.pdf", "level": "P", "read": "final design 23.10.2026"},
+    "PU": {"title": "Purdue University, Controlled Environment Agriculture, Looking through the pores of a soilless substrate", "url": "https://www.purdue.edu/hla/sites/cea/article/looking-through-the-pores-of-a-soilless-substrate/", "level": "E", "read": "source check 23.10.2026"},
+    "C24": {"title": "Supplemental greenhouse lighting increased the water use efficiency, crop growth, and cutting production in Cannabis sativa, Frontiers in Plant Science 15, 2024 (peer-reviewed)", "url": "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2024.1371702/full", "level": "P", "read": "source check and final design 23.10.2026"},
+    "M23": {"title": "Frontiers in Plant Science, 2023, flowering-stage nutrient study on cannabis in pots (University of Hohenheim; peer-reviewed)", "url": "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1233232/full", "level": "P", "read": "source check and final design 23.10.2026"},
+    "CA07": {"title": "Plant Physiology, 2007, review of night-time stomatal conductance and transpiration (peer-reviewed)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1761996", "level": "P", "read": "source check 23.10.2026"},
+    "BL": {"title": "KoreaScience, transpiration model for lettuce in a plant factory (journal article; only the form of the model)", "url": "https://db.koreascholar.com/Article/Detail/252745", "level": "P", "read": "source check 23.10.2026"},
+    "KS": {"title": "K-State Research and Extension MF-2805, 2008, Watering raised beds, berms, containers, and houseplants", "url": "https://bookstore.ksre.ksu.edu/pubs/watering-raised-beds-berms-containers-and-houseplants_MF2805.pdf", "level": "E", "read": "final design 23.10.2026"},
+    "CH": {"title": "Irrigation Association technical paper, 2012, Sensor network deployment and implementation in commercial nurseries and greenhouses", "url": "https://www.irrigation.org/IA/FileUploads/IA/Resources/TechnicalPapers/2012/SensorNetworkDeploymentAndImplementationInCommercialNurseriesAndGreenhouses.pdf", "level": "E", "read": "final design 23.10.2026"},
+    "VT": {"title": "Virginia Cooperative Extension SPES-128, leaching fraction in container nurseries", "url": "https://pubs.ext.vt.edu/SPES/SPES-128/SPES-128.html", "level": "E", "read": "source check 23.10.2026"},
+    "VK26": {"title": "Research Square preprint rs-9546420/v1, Industrial hemp response to waterlogging stress: influence of duration and growth stage on physiological performance and yield (not peer-reviewed)", "url": "https://www.researchsquare.com/article/rs-9546420/v1", "level": "PP", "read": "final design 23.10.2026"},
+    "SOZV": {"title": "Sommerzeitverordnung, section 2: summer time ends on the last Sunday of October at 03:00", "url": "https://www.gesetze-im-internet.de/sozv/__2.html", "level": "S", "read": "final design 23.10.2026"},
+    "FAO": {"title": "FAO Irrigation and Drainage Paper 56, chapter 3: saturation vapour pressure es(T) = 0.6108 exp(17.27 T / (T + 237.3)) kPa", "url": "https://www.fao.org/4/x0490e/x0490e07.htm", "level": "S", "read": "source check 23.10.2026"},
+    "MAN": {"title": "Stage card of this repository: climate bands, day windows, pump presets and their sources", "kartei": "kartei/stages/autoflower.json", "level": "M", "read": "kartei"}
+  }
+}

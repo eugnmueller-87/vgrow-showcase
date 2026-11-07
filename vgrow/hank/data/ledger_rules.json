@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "about": "Rules of Hank's recommendation ledger and of the suggestion cards it offers for check rows (spec 5.5, 6.2, 6.3; addendum N4, N5). Read by vgrow/hank/ledger.py and vgrow/hank/proposals.py. No number here is a sourced fact: each is a start value (spec 0, unmeasured, the eval run WP11 replaces it) or a rule of the cockpit itself, as its note says.",
+  "grace_minutes": 30,
+  "grace_minutes_note": "Spec 6.2 start value: an open entry whose reading is still off after this long, with no watched device moved, is not_applied.",
+  "open_hours": 48,
+  "open_hours_note": "Addendum N4: open entries expire after 48 h and on a stage change.",
+  "cooldown_hours": 6,
+  "cooldown_hours_note": "Spec 6.3: the same lock as remind_hours in alerts.json. After a consequence was told, or a card declined, Hank speaks up again only when it got worse and at most this often.",
+  "worse_delta": {
+    "probe_humidity": 5,
+    "humidity": 5,
+    "probe_temp": 2,
+    "temp": 2,
+    "probe_vpd": 0.3,
+    "vpd": 0.3,
+    "light_percent": 15
+  },
+  "worse_delta_note": "Spec 6.3, own rule without a sourced number (start values): it got worse when the distance from the target band grew by more than this since the last note (humidity in points, temperature in degrees Celsius, VPD in kPa, light in points). An alarm rule of alerts.json that newly turns active for the same metric and direction counts as worse too.",
+  "improved_delta": {},
+  "improved_delta_note": "Spec 6.2 names the field but gives no start value. Empty: an improvement without a device change counts only when the reading is back on target (resolved). A value per metric (same units as worse_delta) would count a reading that came this much closer to the band as applied.",
+  "actions": {
+    "probe_humidity": {
+      "high": [{"action": "port", "port": "humidifier", "on": false}, {"action": "dfan", "dir": "up"}],
+      "low": [{"action": "dfan", "dir": "down"}]
+    },
+    "probe_temp": {
+      "high": [{"action": "dfan", "dir": "up"}],
+      "low": [{"action": "dfan", "dir": "down"}]
+    },
+    "probe_vpd": {
+      "high": [],
+      "low": [{"action": "dfan", "dir": "up"}]
+    },
+    "light_percent": {
+      "high": [{"action": "light", "dir": "down"}],
+      "low": [{"action": "light", "dir": "up"}]
+    }
+  },
+  "actions_note": "Per metric and status of a plant.evaluate() row: the cards Hank may offer, in this order, and the same moves count as carrying out the advice (spec 6.2 watch). Taken from the advice texts of kartei/stages/autoflower.json: too humid means humidifier off and exhaust up, too dry or too cool means exhaust one step down, too warm means exhaust up, VPD too low means exhaust up, VPD too high names no single device, light below the preset means step it up. Steps are the cockpit's (addendum N5): a fan moves one step per card, the light goes up by proposals.LIGHT_STEP (from 0 to proposals.LIGHT_FIRST, as server.py plant_apply does) and down straight to the target maximum. The port humidifier is the humidifier automation's port (vgrow/automation.py PORT); a card that would change nothing (port already off, fan at its limit) is left out."
+}

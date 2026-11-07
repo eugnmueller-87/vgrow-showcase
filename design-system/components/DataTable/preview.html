@@ -1,0 +1,27 @@
+<!-- @dsCard group="Content" height=420 subtitle="a feed chart with the current week marked, and the dose table" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>DataTable</title></head>
+<body style="margin:0">
+<div class="vg" style="padding:16px;display:grid;gap:16px;max-width:760px">
+  <div class="table-scroll">
+    <table class="data-table">
+      <thead><tr><th>Product</th><th>W 1<small>Seedling</small></th><th>W 3<small>Veg</small></th><th>W 5<small>Stretch</small></th><th class="now">W 7<small>Early flower</small></th><th>W 9<small>Late flower</small></th><th>W 11<small>Flush</small></th></tr></thead>
+      <tbody>
+        <tr><th>Grow A</th><td>1 ml</td><td>2 ml</td><td>2 ml</td><td class="now">1 ml</td><td>–</td><td>–</td></tr>
+        <tr><th>Bloom B</th><td>–</td><td>–</td><td>1 ml</td><td class="now">2 ml</td><td>3 ml</td><td>–</td></tr>
+        <tr class="muted-row"><th>Cal-Mag</th><td>0.5 ml</td><td>1 ml</td><td>1 ml</td><td class="now">1 ml</td><td>1 ml</td><td>–</td></tr>
+        <tr><th>Water only</th><td>–</td><td>–</td><td>–</td><td class="now">–</td><td>–</td><td>5 l</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <table class="data-table" style="max-width:560px">
+    <thead><tr><th>Product</th><th>per litre</th><th>for 5 l</th></tr></thead>
+    <tbody>
+      <tr><th>Grow A</th><td class="ref">1 ml</td><td><b>5 ml</b></td></tr>
+      <tr><th>Bloom B</th><td class="ref">2 ml</td><td><b>10 ml</b></td></tr>
+      <tr><th>Cal-Mag</th><td class="ref">1 ml</td><td><b>5 ml</b></td></tr>
+      <tr class="total"><th>EC target</th><td class="ref">1.4</td><td><b>1.4 mS/cm</b></td></tr>
+    </tbody>
+  </table>
+</div>
+</body></html>

@@ -1,0 +1,27 @@
+<!-- @dsCard group="Controls" height=260 subtitle="the autopilot mode · a per-device policy (block) · a quiet switch" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>SegmentedControl</title></head>
+<body style="margin:0">
+<div class="vg" style="padding:16px;display:grid;gap:20px">
+  <div>
+    <div class="seg" role="group" aria-label="Autopilot mode" style="width:420px;max-width:100%">
+      <button class="arm" aria-pressed="false">Off</button>
+      <button aria-pressed="false">Observe</button>
+      <button aria-pressed="true">Automatic</button>
+    </div>
+    <p class="seg-note"><b style="color:var(--ink);font-weight:600">Automatic:</b> Hank switches devices inside the limits below and tells you why. Off ends the plan: the lamp keeps its last state.</p>
+  </div>
+  <div style="max-width:560px">
+    <div class="seg block" role="group" aria-label="Light policy">
+      <button aria-pressed="true">Automatic</button>
+      <button aria-pressed="false">Suggest</button>
+      <button aria-pressed="false">Manual</button>
+    </div>
+  </div>
+  <div class="btn-row">
+    <div class="seg quiet" role="group" aria-label="Theme"><button aria-pressed="false">Light</button><button aria-pressed="true">System</button><button aria-pressed="false">Dark</button></div>
+    <div class="seg is-locked" role="group" aria-label="Pump policy (locked)"><button aria-pressed="true">Automatic</button><button aria-pressed="false">Manual</button></div>
+    <span class="muted" style="font-size:13px">Locked until the box is back online</span>
+  </div>
+</div>
+</body></html>

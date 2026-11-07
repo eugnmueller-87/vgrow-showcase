@@ -1,0 +1,143 @@
+{
+  "key": "cold_stress",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "stress",
+  "label": "Kältestress",
+  "label_en": "Cold stress",
+  "tile": "Langsameres Wachstum, manchmal violette Blätter",
+  "tile_en": "Slower growth, sometimes purple leaves",
+  "aliases": {
+    "de": [
+      "Kälteschaden",
+      "zu kalt",
+      "Nachtkälte"
+    ],
+    "en": [
+      "cold damage",
+      "chilling",
+      "too cold"
+    ]
+  },
+  "symptoms": [
+    "Lücke: Für Cannabis im Zelt nennt keine geprüfte Hochschulquelle eine Temperatur, ab der Kälte schadet. VIVOSUN nennt die Werte als Ausgangspunkt (P1, Erfahrungsquelle), nicht als Schadensgrenze. Unter dem Nachtziel zu liegen heißt noch nicht, dass ein Schaden belegt ist.",
+    "Das Wachstum verlangsamt sich (P1, Erfahrungsquelle).",
+    "Gelbe, abfallende Blätter können auch von niedrigen Temperaturen kommen. UC IPM nennt Blattflecken durch Kälte bei Zimmerpflanzen unter 50 °F (10 °C) P2; das liegt weit unter dem Zielbereich der Box und ist keine Schwelle für Cannabis.",
+    "Violettfärbung: bei einer auf Violett angelegten Sorte am stärksten bei dauerhaft 8 und 15 °C (P3, Klimakammer, 30 Tage). Im Feld färbte sich eine Hanfsorte nach Frost tiefviolett und blieb sonst unbeschädigt P4.",
+    "Spät: Kälte zusammen mit hoher Feuchte begünstigt Schimmel (P1, Erfahrungsquelle)."
+  ],
+  "symptoms_en": [
+    "Gap: no checked university source gives a temperature at which cold damages cannabis in a tent. VIVOSUN gives the values as a starting point (P1, experience source), not as a damage limit. Being below the night target does not mean damage is proven.",
+    "Growth slows (P1, experience source).",
+    "Yellowing and dropping leaves can also come from low temperatures. UC IPM lists chilling injury leaf spots below 50 °F (10 °C) for houseplants P2; that is far below the box target range and not a cannabis threshold.",
+    "Purple colour: strongest at constant 8 and 15 °C in a line bred for purple pigment (P3, growth chamber, 30 days). In the field one hemp cultivar turned deep purple after frost and was otherwise unscathed P4.",
+    "Late: cold combined with high humidity favors mold (P1, experience source)."
+  ],
+  "causes": [
+    "Nachttemperatur unter dem Phasenziel. VIVOSUN ohne Licht: Wachstum 18 bis 24 °C, frühe Blüte 18 bis 22 °C, späte Blüte 16 bis 20 °C (P1, Erfahrungsquelle, am Blätterdach gemessen).",
+    "Kalter Raum, zu viel Abluft in der Nacht, kalte Flächen (P1, Erfahrungsquelle)."
+  ],
+  "causes_en": [
+    "Night temperature below the stage target. VIVOSUN lights off: veg 18 to 24 °C, early flower 18 to 22 °C, late flower 16 to 20 °C (P1, experience source, measured at canopy level).",
+    "Cold room, too much night exhaust, cold surfaces (P1, experience source)."
+  ],
+  "check": [
+    {
+      "metric": "probe_temp",
+      "text": "Nachtwert mit dem Zielbereich der aktuellen Phase ohne Licht vergleichen (P1, Erfahrungsquelle).",
+      "text_en": "Compare the lights-off reading with the current stage target (P1, experience source)."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Nachts: Kälte plus Feuchte heißt Schimmelrisiko (P1, Erfahrungsquelle).",
+      "text_en": "At night: cold plus humidity means mold risk (P1, experience source)."
+    },
+    {
+      "metric": "watering",
+      "text": "Zimmerwarmes Wasser verwenden P5.",
+      "text_en": "Use room-temperature water P5."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    }
+  ],
+  "do_now": [
+    "Nächtliche Abluft drosseln, Raum wärmer, Heizung mit Thermostat oder Heizmatte, kalte Flächen prüfen; auch prüfen, ob der Raum selbst warm genug ist (P1, Erfahrungsquelle).",
+    "Nachts probe_humidity beobachten: Kälte plus Feuchte begünstigt Schimmel (P1, Erfahrungsquelle).",
+    "Violett allein sagt nichts über Kälte: Purdue sah nach Frost nur eine Farbänderung bei sonst unbeschädigten Pflanzen (P4, Feldhanf), und Kim 2025 nutzte eine auf Violett angelegte Sorte P3. Violett zusammen mit Flecken, Welke oder Wachstumsstopp: die Karten zu Nährstoffmangel und Überwässern prüfen."
+  ],
+  "do_now_en": [
+    "Throttle night exhaust, warm the room, use a thermostat-controlled heater or heat mat, check cold surfaces; also confirm the room itself is warm enough (P1, experience source).",
+    "Watch probe_humidity at night: cold plus humidity favors mold (P1, experience source).",
+    "Purple alone says nothing about cold: Purdue saw only a colour change after frost in otherwise unscathed plants (P4, field hemp), and Kim 2025 used a line bred for purple P3. Purple together with spots, wilting or stalled growth: check the nutrient deficiency and overwatering cards."
+  ],
+  "prevention": [
+    "Nachtwerte mit dem Zielbereich der aktuellen Phase vergleichen (P1, Erfahrungsquelle).",
+    "Tag-Nacht-Unterschied mäßig halten, große oder schnelle Sprünge vermeiden und Einstellungen schrittweise ändern (P1, Erfahrungsquelle).",
+    "Aus der Praxis (Pott Planter): starke Unterschiede zwischen Tag- und Nachttemperatur zählt er zu den ungünstigen Bedingungen seiner kleinen Beispielpflanze draußen P9. Ob sie den kleinen Wuchs verursacht haben, prüft keine andere gelesene Quelle; die Karte rät ebenso, den Unterschied mäßig zu halten (P1, Erfahrungsquelle).",
+    "Zimmerwarmes Gießwasser (K-State rät dazu, allgemein für Zimmerpflanzen) P5.",
+    "Kühle, nasse Erde vermeiden: sie begünstigt Pythium P6 und die Umfallkrankheit der Keimlinge P7."
+  ],
+  "prevention_en": [
+    "Compare night readings with the current stage target (P1, experience source).",
+    "Keep the day-night difference moderate, avoid large or rapid swings, change settings gradually (P1, experience source).",
+    "From practice (Pott Planter): he counts large differences between day and night temperature among the unfavorable conditions of his small example plant outdoors P9. Whether they caused the small growth, no other source read checks; this card likewise advises keeping the difference moderate (P1, experience source).",
+    "Room-temperature irrigation water (K-State advises this, for houseplants in general) P5.",
+    "Avoid cool wet soil: it favors Pythium P6 and damping-off of seedlings P7."
+  ],
+  "look_alikes": [
+    "Violettfärbung durch die Sorte P3 oder nach Frost (P4, Feldhanf).",
+    "Phosphormangel: im NC-State-Versuch olivgrüne, später eingesunkene Flecken an unteren, älteren Blättern; Violett wird dort nicht beschrieben P8.",
+    "Überwässern: Vergilben und Blattfall P2.",
+    "Stickstoffmangel: Vergilben von unten P8.",
+    "Magnesiummangel: Aufhellung zwischen den Adern an unteren Blättern P8."
+  ],
+  "look_alikes_en": [
+    "Purple colour from the cultivar P3 or after frost (P4, field hemp).",
+    "Phosphorus deficiency: in the NC State trial olive-green, later sunken spots on lower older leaves; purple is not described there P8.",
+    "Overwatering: yellowing and leaf drop P2.",
+    "Nitrogen deficiency: yellowing from the bottom P8.",
+    "Magnesium deficiency: interveinal yellowing on lower leaves P8."
+  ],
+  "image": {
+    "drawing": "cold-stress"
+  },
+  "sources": {
+    "P1": "VIVOSUN, Ideal Grow Tent Temperature and Humidity Guide, allgemeiner Hersteller-Leitfaden, nennt Cannabis nicht, Seitenstand dynamisch, Erfahrungsquelle, aus der Kartei übernommen (kartei/stages/autoflower.json, S5), abgerufen 2026-10-22: https://vivosun.com/growing_guide/temperature-and-humidity.md",
+    "P2": "UC Statewide IPM Program, Pittenger und Hodel, Houseplant Problems (74172), Stand 08/2020, Zimmerpflanzen, abgerufen 2026-10-23: https://ipm.ucanr.edu/PMG/PESTNOTES/pn74172.html",
+    "P3": "Kim, Basnet, Kovaleski, Ellison (University of Wisconsin-Madison) 2025, Anthocyanin accumulation, inflorescence dry weight and [...] have different temperature optima in Cannabis sativa, Journal of Cannabis Research, doi:10.1186/s42238-025-00311-w, Klimakammer, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC12309197/",
+    "P4": "Purdue University, Pest&Crop Newsletter, Marguerite Bolt, Frost And Hemp, Should Growers Worry?, 2020-10-09, Feldhanf, abgerufen 2026-10-23: https://extension.entm.purdue.edu/newsletters/pestandcrop/article/frost-and-hemp-should-growers-worry/",
+    "P5": "K-State Research and Extension, Upham, Nolting, Sell, Watering Raised Beds, Berms, Containers, and Houseplants (MF-2805), Januar 2008, Topf- und Zimmerpflanzen, abgerufen 2026-10-23: https://bookstore.ksre.ksu.edu/download/watering-raised-beds-berms-containers-and-houseplants_MF2805",
+    "P6": "UF/IFAS Extension, Korus, Elwakil, Dufault, Eldred, Field Guide to Hemp (Cannabis sativa) Diseases (PP379), 2024, Feldhanf, abgerufen 2026-10-23: https://ask.ifas.ufl.edu/publication/PP379",
+    "P7": "University of Kentucky Cooperative Extension, Smith, Gauthier, Villanueva u. a., An IPM Scouting Guide for Common Pests and Diseases of Kentucky Hemp (PPFS-AG-H-03), Juni 2026, Feldhanf, abgerufen 2026-10-23: https://plantpathology.mgcafe.uky.edu/sites/plantpathology.ca.uky.edu/files/PPFS-AG-H-03.pdf",
+    "P8": "Cockson, Landis, Smith, Hicks, Whipker (NC State University) 2019, Characterization of Nutrient Disorders of Cannabis sativa, Applied Sciences 9(20):4432, Sandkultur, abgerufen 2026-10-23: https://www.mdpi.com/2076-3417/9/20/4432",
+    "P9": {
+      "title": "Pott Planter, YouTube: Schluss mit mickrigen Pflanzen, 5 Fehler beim Eigenanbau",
+      "title_en": "Pott Planter, YouTube: 5 beginner mistakes in home growing",
+      "url": "https://www.youtube.com/watch?v=G2g8oC86m44",
+      "retrieved": "2026-10-23",
+      "note": "Erfahrungsquelle; Transkript von Hand kopiert",
+      "note_en": "experience source; transcript copied by hand"
+    }
+  },
+  "_left_out": [
+    "'Kaltes Gießwasser' als Ursache: K-State rät nur zu zimmerwarmem Wasser; jetzt unter Vorbeugung.",
+    "'Zugluft (UC IPM)' als Kälteursache: UC IPM nennt Zugluft für braune Blattspitzen.",
+    "'Violett allein ist kein Notfall': Schlussfolgerung, ersetzt.",
+    "Kim 2025, Blütentrockenmasse: Ertrag, kein Kältesymptom; Studie diskutiert CBD-Gehalt, nicht übernommen.",
+    "room_temp als Messwert: für die Y18 nicht belegt.",
+    "Abluft-Automatik ohne Temperatur-Untergrenze (Handbuch): Wortlaut uneinheitlich wiedergegeben, nicht übernommen.",
+    "Galic et al. 2022 (Kältetoleranz bei Autoflower): nur Abstract lesbar, ohne Symptome.",
+    "Pott Planter (Video): zu wenig Sonne, Nordseite, möglichst viele Sonnenstunden, warme Hauswand und weiße Wand: gilt draußen, nicht für die Box.",
+    "Pott Planter (Video): gezeigte Erden, Dünger, das Neemöl-Set und die Produktlinks, Sketch, Witze, Aufrufe zum Abonnieren und Verweise auf eigene Videos: nicht übernommen.",
+    "Pott Planter (Video): keine Zeitmarken aus dem Video übernommen, auf Wunsch des Owners vom 23.10.2026 ('Hank wird nur durch die Minuten verwirrt')."
+  ]
+}

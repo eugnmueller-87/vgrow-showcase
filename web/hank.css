@@ -1,0 +1,269 @@
+/* Hank, the grow assistant. Everything here is prefixed hk- and built by web/hank.js; the cockpit's own styles stay as
+   they are. Colours come from the cockpit's tokens; the drawing keeps its own colours in both themes. */
+.hk-scope {
+  /* the drawing's colours are the garden's (web/garden-art.js): one man, in pixels there and in lines here */
+  --straw: #e9bd60; --straw-hi: #f8de8e; --straw-mid: #c99a44; --straw-dark: #b5842f; --band: #37a86c; --band-dark: #1f6e45; --hat-leaf: #7ad06f;
+  --leaf: #3d8b4f; --leaf-dark: #2c6a3b;
+  --skin: #f9cfaa; --skin-shade: #e2a27a; --stubble: #d4986f; --blush: #e8826b;
+  --hair: #b0663c; --hair-dark: #6d3c23; --beard: #6b3f24; --eye: #1d1418; --eye-white: #fff8ea; --iris: #3f8a66; --mouth: #7a2c2c;
+  --shirt: #d4503f; --shirt-line: #9a332b; --hk-line: #2b1b18;
+  --hk-green: var(--accent);
+  --hk-yellow: var(--amber);
+  --hk-red: var(--bad);
+}
+.hk-scope svg { display: block; width: 100%; height: 100%; }
+body.has-hank main { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+
+/* ---- the avatar button: neutral, with a counter of new messages ---- */
+.hk-fab {
+  position: fixed; z-index: 8; right: calc(16px + env(safe-area-inset-right)); bottom: calc(16px + env(safe-area-inset-bottom));
+  width: 56px; height: 56px; padding: 4px; border-radius: 50%;
+  border: 1px solid var(--line-strong); background: var(--card); box-shadow: 0 4px 16px #0000002e;
+}
+.hk-fab:focus-visible, .hk-wake:focus-visible, .hk-close:focus-visible, .hk-thumb:focus-visible, .hk-chip:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+.hk-badge {
+  position: absolute; top: -4px; right: -4px; min-width: 22px; height: 22px; padding: 0 6px; border-radius: var(--radius-pill);
+  display: grid; place-items: center; background: var(--num-bg); color: var(--num-ink); border: 2px solid var(--card);
+  font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1;
+}
+.hk-root.is-open .hk-fab { display: none; }
+/* Mode "off": only this small button stays, to switch Hank on again. */
+.hk-wake {
+  position: fixed; z-index: 8; right: calc(16px + env(safe-area-inset-right)); bottom: calc(16px + env(safe-area-inset-bottom));
+  min-height: 36px; padding: 6px 14px; border-radius: var(--radius-pill); font-size: 13px; font-weight: 600;
+  border: 1px solid var(--line-strong); background: var(--card); color: var(--ink); box-shadow: 0 2px 8px #00000024;
+}
+
+/* ---- the drawer: a sheet from below on a phone, a side panel from 960 px ---- */
+.hk-backdrop { position: fixed; z-index: 28; inset: 0; background: #07160e66; }
+.hk-drawer {
+  position: fixed; z-index: 30; left: 0; right: 0; bottom: 0; height: 75vh; height: 75dvh;
+  display: flex; flex-direction: column; background: var(--card); color: var(--ink);
+  border: 1px solid var(--line); border-bottom: 0; border-radius: 16px 16px 0 0; box-shadow: 0 -8px 28px #00000038;
+  padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right);
+}
+@media (min-width: 960px) {
+  .hk-drawer {
+    top: 0; left: auto; height: auto; width: var(--hank-panel-w, 400px); border-radius: 0; border: 0; border-left: 1px solid var(--line);
+    box-shadow: -8px 0 28px #00000024;
+  }
+}
+.hk-head { display: flex; flex: none; align-items: center; gap: 8px; padding: 8px 8px 8px 12px; background: var(--card); border-bottom: 1px solid var(--line); }
+.hk-head .hk-avatar { width: 38px; height: 38px; flex: none; }
+.hk-title { flex: 1; min-width: 0; margin: 0; font-size: 18px; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hk-title:focus { outline: none; }
+.hk-close {
+  flex: none; display: grid; place-items: center; width: 44px; height: 44px; padding: 10px;
+  border: 0; border-radius: var(--radius-md); background: transparent; color: var(--muted);
+}
+.hk-close:hover { background: var(--bg); color: var(--ink); }
+.hk-top { display: flex; flex-direction: column; flex: 0 1 auto; min-height: 0; max-height: 36%; overflow-y: auto; overscroll-behavior: contain; border-bottom: 1px solid var(--line); }
+.hk-top > .hk-seg { margin: 8px 12px; }
+.hk-top > .hk-seg button { flex: 1; }
+.hk-seg { flex: none; }
+.hk-seg button { padding-inline: 9px; }
+.hk-mode-hint { margin: -2px 0 0; padding: 0 14px 8px; font-size: 12px; line-height: 1.4; color: var(--muted); }
+.hk-mode-hint b { font-weight: 600; color: var(--ink); }
+.hk-seg button.armed { outline: 2px solid var(--warn); outline-offset: -2px; }
+.hk-hello-chips { margin-top: 8px; }
+.hk-q:disabled { opacity: 0.6; cursor: not-allowed; }
+.hk-err { margin: 8px 14px 0; font-size: 13px; padding: 8px 10px; border-radius: var(--radius-md); background: var(--warn-soft); color: var(--warn); }
+
+/* ---- messages ---- */
+.hk-log {
+  position: relative; flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+  display: flex; flex-direction: column; gap: 10px; padding: 14px;
+}
+.hk-msg { display: flex; gap: 8px; align-items: flex-start; max-width: 100%; }  /* the face beside the first line of a long answer */
+.hk-msg .hk-avatar { width: 34px; height: 34px; flex: none; }
+.hk-bubble {
+  min-width: 0; max-width: calc(100% - 42px); padding: 9px 12px; border-radius: 14px; font-size: 14px; line-height: 1.45;
+  background: var(--bg); border: 1px solid var(--line); overflow-wrap: anywhere;
+}
+.hk-bot .hk-bubble { border-bottom-left-radius: 4px; }
+.hk-me { justify-content: flex-end; }
+.hk-me .hk-bubble {
+  max-width: 82%; background: var(--accent-strong); border-color: var(--accent-strong); color: var(--on-accent);
+  border-bottom-right-radius: 4px; white-space: pre-wrap;
+}
+.hk-text p { margin: 0 0 6px; }
+.hk-text p:last-child { margin-bottom: 0; }
+p.hk-text { margin: 0; }  /* the greeting and the error line are a p of their own: no browser margins */
+.hk-ref { font-size: 12px; font-weight: 600; line-height: 0; color: var(--accent-strong); margin-left: 1px; }
+.hk-bad { color: var(--bad); }
+.hk-note, .hk-meta { margin: 6px 0 0; font-size: 12px; color: var(--muted); }
+.hk-revised { font-style: italic; }
+.hk-src { margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--line); font-size: 12.5px; }
+.hk-src-h { display: block; font-size: 12px; color: var(--muted); }
+.hk-src ol { margin: 2px 0 0; padding-left: 20px; display: grid; gap: 2px; }
+.hk-src a { color: inherit; text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 2px; }
+.hk-src a:hover { text-decoration-color: currentColor; }
+/* "Mehr aus der Kartei": folded, one tap away; the bubble itself stays short (owner rule "nicht ueberladen") */
+.hk-more { margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+.hk-more-h { cursor: pointer; font-size: 12.5px; font-weight: 600; color: var(--accent-strong); min-height: 24px; }
+.hk-more[open] .hk-more-h { margin-bottom: 4px; }
+.hk-more .hk-text { color: inherit; }
+.hk-more .hk-src { border-top: 0; padding-top: 0; }
+
+.hk-typing { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 0; font-size: 13px; color: var(--muted); }
+.hk-body + .hk-typing { margin-top: 8px; }
+.hk-dots { display: inline-flex; gap: 4px; padding: 2px 0; }
+.hk-dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: hk-blink 1.2s infinite ease-in-out; }
+.hk-dots i:nth-child(2) { animation-delay: 0.2s; }
+.hk-dots i:nth-child(3) { animation-delay: 0.4s; }
+.hk-secs { font-variant-numeric: tabular-nums; }
+@keyframes hk-blink { 50% { opacity: 0.25; } }
+
+.hk-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.hk-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.hk-chip {
+  min-height: 36px; padding: 6px 12px; border-radius: var(--radius-pill); text-align: left;
+  border: 1px solid var(--accent-strong); background: var(--card); color: var(--accent-strong); font-size: 13px; font-weight: 600;
+}
+.hk-thumbs { display: flex; align-items: center; gap: 2px; margin-top: 6px; }
+.hk-thumb {
+  display: grid; place-items: center; width: 36px; height: 36px; padding: 8px;
+  border: 1px solid transparent; border-radius: var(--radius-md); background: transparent; color: var(--muted);
+}
+.hk-thumb:hover { border-color: var(--line); color: var(--ink); }
+
+/* ---- a suggestion card ---- */
+.hk-prop { margin-top: 8px; padding: 10px 12px; border: 1px solid var(--line-strong); border-radius: var(--radius-lg); background: var(--card); }
+.hk-prop-h { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.hk-prop-l { margin: 2px 0 0; font-weight: 600; }
+.hk-prop .hk-actions { margin-top: 10px; }
+.hk-prop-fb { margin: 6px 0 0; font-size: 13px; color: var(--muted); }
+.hk-prop-fb:empty { display: none; }
+.hk-prop-fb.ok { color: var(--accent-strong); }
+.hk-prop-fb.bad { color: var(--bad); }
+
+/* ---- input ---- */
+.hk-foot { display: flex; flex: none; align-items: flex-end; gap: 8px; padding: 10px 14px 6px; border-top: 1px solid var(--line); }
+.hk-q {
+  flex: 1; min-width: 0; min-height: 44px; max-height: 132px; resize: none; padding: 10px 12px;
+  font: inherit; font-size: 16px; line-height: 1.4; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line-strong); border-radius: var(--radius-md);
+}
+.hk-q:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: transparent; }
+.hk-send { flex: none; min-width: 44px; width: 44px; height: 44px; padding: 10px; display: grid; place-items: center; }
+.hk-hint { flex: none; margin: 0; padding: 0 14px calc(10px + env(safe-area-inset-bottom)); font-size: 12px; line-height: 1.4; color: var(--muted); }
+
+/* ---- the traffic light: one line above the plant status ---- */
+.hk-light { --lvl: var(--hk-green); }
+.hk-light.hk-yellow { --lvl: var(--hk-yellow); }
+.hk-light.hk-red { --lvl: var(--hk-red); background: var(--bad-soft); border-color: var(--bad); }
+/* The line is a button (owner, 23.10.2026): a tap shows what helps. It keeps the look of the status line; the chevron
+   and the hover border say it can be tapped, the outline shows the keyboard focus. */
+.hk-light-btn {
+  flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: 10px; margin: 0; padding: 4px 2px;
+  border: 0; border-radius: var(--radius-md); background: transparent; color: inherit; font: inherit; text-align: left;
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.hk-light-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.hk-light:has(.hk-light-btn:hover) { border-color: var(--line-strong); }
+.hk-light-more { flex: none; width: 18px; height: 18px; color: var(--muted); }
+.hk-light-btn:hover .hk-light-more { color: var(--ink); }
+.hk-sr {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.hk-fix-row { margin-top: 8px; }
+.hk-light-art { flex: none; width: 36px; height: 36px; }
+.hk-dot { flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--lvl); }
+.hk-light-t { flex: 1; min-width: 0; display: flex; flex-direction: column; font-size: 14px; line-height: 1.35; }
+.hk-light-l { font-weight: 700; }
+.hk-light-s { font-weight: 400; color: var(--ink); }
+.hk-light .hk-prop-fb { margin: 0; }
+.hk-light-go { flex: none; }
+@media (max-width: 479px) {
+  .hk-light { flex-wrap: wrap; }
+  .hk-light-btn { flex-basis: 100%; }
+  .hk-light-t { flex-basis: calc(100% - 72px); }
+  .hk-light-go { margin-left: 56px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hk-dots i { animation: none; }
+}
+
+/* a link under an answer to a part of the page (the Autopilot card) */
+.hk-link { display: inline-block; margin-top: 8px; text-decoration: none; }
+
+/* ---- "Hank regelt": the autopilot's mode under the chat switch, what holds Hank back, what he regulates ---- */
+.hk-pilot { display: grid; gap: 5px; padding: 0 12px 8px; }
+.hk-pilot-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.hk-pilot-l { font-size: 13px; font-weight: 700; }
+.hk-pilot-need { margin: 0; font-size: 12px; line-height: 1.4; color: var(--muted); }
+.hk-pilot-body { display: grid; gap: 6px; }
+@media (max-width: 959px) {
+  .hk-pilot-body { max-height: 24dvh; overflow-y: auto; overscroll-behavior: contain; }
+  /* the chat keeps room on a short phone (review S3): the switch area gives way and scrolls, never the input */
+  .hk-top { display: flex; flex-direction: column; flex: 0 1 auto; min-height: 0; }
+  .hk-pilot { flex: 0 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+  .hk-log { min-height: 120px; }
+}
+/* 390x640 and phones held sideways: the sheet takes the whole height, 75 % left the chat 28 to 42 px */
+@media (max-width: 959px) and (max-height: 700px) {
+  .hk-drawer { height: 100vh; height: 100dvh; border-radius: 0; }
+  .hk-head { padding-top: calc(8px + env(safe-area-inset-top)); }
+}
+/* sideways: one scroll for the whole switch area, not a second one squeezed to a line inside it */
+@media (max-width: 959px) and (max-height: 480px) {
+  .hk-pilot-body { max-height: none; overflow: visible; }
+}
+@media (min-width: 1280px) { .hk-backdrop { display: none; } }
+@media (max-height: 600px) {
+  .hk-top { max-height: 28%; }
+  .hk-log { min-height: 72px; }
+  .hk-q { max-height: min(132px, 25dvh); }
+  .hk-hint { max-height: 3.5em; overflow-y: auto; padding-bottom: 4px; }
+}
+.hk-pilot-h { margin: 0; font-size: 12px; font-weight: 600; }
+.hk-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.hk-step-go {
+  width: 100%; min-height: 44px; display: flex; align-items: center; gap: 8px; padding: 4px 8px 4px 10px;
+  text-align: left; font: inherit; color: var(--ink); cursor: pointer;
+  border: 1px solid var(--line-strong); border-left: 3px solid var(--warn); border-radius: var(--radius-md); background: var(--card);
+}
+.hk-step-go:hover { background: var(--warn-soft); }
+.hk-step-go:focus-visible, .hk-step:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.hk-step-t { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.25; }
+.hk-step-t b { font-size: 13px; }
+.hk-step-why { font-size: 12px; color: var(--muted); }
+.hk-step-go svg { flex: none; width: 18px; height: 18px; color: var(--muted); }
+.hk-step-plain { font-size: 12px; color: var(--muted); padding: 2px 2px 2px 13px; border-left: 3px solid var(--line-strong); }
+.hk-pilot-now { margin: 0; font-size: 12.5px; line-height: 1.4; }
+.hk-pilot-last { color: var(--muted); }
+.hk-pilot-fb { margin: 0; font-size: 12px; color: var(--bad); }
+/* under a note: what Hank does about it now */
+.hk-pilot-note { margin-top: 8px; padding: 6px 8px; border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; background: var(--accent-soft); }
+.hk-pilot-says { margin: 0; font-size: 13px; line-height: 1.4; }
+.hk-pilot-says + .hk-pilot-says { margin-top: 4px; }
+.hk-step { margin-top: 4px; }
+.hk-light-p { font-weight: 400; font-size: 12.5px; color: var(--muted); }
+
+/* ---- the feeding plan under an answer (feedplan.plan_graphic): weeks across, products down, today marked ---- */
+.hk-plan { margin: 10px 0 0; padding: 10px 0 0; border-top: 1px solid var(--line); }
+.hk-plan-cap { display: flex; flex-direction: column; gap: 2px; margin-bottom: 8px; font-size: 13px; color: var(--muted); }
+.hk-plan-cap b { color: var(--ink); font-size: 14px; }
+.hk-plan-note { font-size: 12px; }
+.hk-plan-scroll { overflow-x: auto; overscroll-behavior-x: contain; max-width: 100%; border: 1px solid var(--line); border-radius: var(--radius-md); }
+.hk-plan-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.hk-plan-t { border-collapse: separate; border-spacing: 0; font-size: 13px; font-variant-numeric: tabular-nums; min-width: 100%; }
+.hk-plan-t th, .hk-plan-t td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: center; white-space: nowrap; }
+.hk-plan-t tbody tr:last-child th, .hk-plan-t tbody tr:last-child td { border-bottom: 0; }
+.hk-plan-t th.hk-plan-p { position: sticky; left: 0; z-index: 1; background: var(--card); text-align: left; font-weight: 600;
+  border-right: 1px solid var(--line); min-width: 6.5em; max-width: 9em; white-space: normal; overflow-wrap: anywhere; }
+.hk-plan-t thead th { vertical-align: bottom; font-weight: 600; }
+.hk-plan-h small, .hk-plan-t td small { display: block; font-size: 12px; font-weight: 400; color: var(--muted); }
+.hk-plan-w { display: block; }
+.hk-plan-today { display: inline-block; margin: 2px 0; padding: 0 6px; border-radius: var(--radius-pill); background: var(--accent-strong);
+  color: var(--on-accent); font-size: 12px; font-weight: 700; }
+.hk-plan-mark { display: block; margin-top: 2px; font-size: 12px; font-weight: 600; color: var(--info); }
+.hk-plan-t .now { background: var(--accent-soft); }
+.hk-plan-t td.now span { font-weight: 700; }
+.hk-plan-t .k-water, .hk-plan-t .k-flush { background: var(--info-soft); }
+.hk-plan-t .k-harvest, .hk-plan-t .k-end, .hk-plan-t .k-nothing { color: var(--muted); }
+.hk-plan-t .k-harvest .hk-plan-mark, .hk-plan-t .k-end .hk-plan-mark, .hk-plan-t .k-nothing .hk-plan-mark { color: var(--muted); }

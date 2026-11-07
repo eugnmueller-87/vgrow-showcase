@@ -1,0 +1,144 @@
+{
+  "key": "whitefly",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "schaedlinge",
+  "label": "Weiße Fliege (vor allem Gewächshausmottenschildlaus, Trialeurodes vaporariorum)",
+  "label_en": "Whiteflies (mainly greenhouse whitefly, Trialeurodes vaporariorum)",
+  "tile": "Weiße Tiere fliegen beim Gießen oder Anfassen auf",
+  "tile_en": "White insects fly up when you water or touch the plant",
+  "aliases": {
+    "de": [
+      "Weiße Fliege",
+      "Weiße Fliegen",
+      "Mottenschildlaus",
+      "Mottenschildläuse",
+      "Gewächshausmottenschildlaus",
+      "Trialeurodes vaporariorum",
+      "Bemisia tabaci"
+    ],
+    "en": [
+      "whitefly",
+      "whiteflies",
+      "greenhouse whitefly",
+      "sweetpotato whitefly",
+      "Trialeurodes vaporariorum",
+      "Bemisia tabaci"
+    ]
+  },
+  "symptoms": [
+    "Früh: oft kaum Anzeichen; Hanfpflanzen zeigen erst bei starkem Befall viele Symptome P1. Das auffälligste Zeichen sind Schwärme ausgewachsener Tiere, die beim Gießen oder Anfassen auffliegen; ein leichtes Antippen oder Schütteln zeigt es ebenfalls P1. UC IPM: Die Tiere fliegen um die Pflanze, wenn man sie stört P2.",
+    "Die Gewächshausmottenschildlaus ist 1,5 bis 2,5 mm groß, mottenartig, mit puderweißen Flügeln P1.",
+    "Wo: Kolonien auf den Blattunterseiten P2; die Larven sind oval, beinlos und unbeweglich P2.",
+    "Spät: klebriger Honigtau oder schwarzer Rußtau P2; gelbe, hängende und welke Blätter wie bei Blattläusen P1."
+  ],
+  "symptoms_en": [
+    "Early: often hardly any signs; hemp plants show many symptoms only at heavy infestation P1. The most obvious sign is bursts of adult whiteflies flying up during watering or handling; gently tapping or shaking the plant shows it too P1. UC IPM: they fly around the plant when disturbed P2.",
+    "The greenhouse whitefly is 1.5 to 2.5 mm, moth-like, with powdery-white wings P1.",
+    "Where: colonies on leaf undersides P2; the nymphs are oval, legless and do not move P2.",
+    "Late: sticky honeydew or black sooty mold P2; yellowing, drooping and wilting leaves as with aphids P1."
+  ],
+  "causes": [
+    "Eingeschleppt mit befallenen Pflanzen oder Stecklingen, auch über Personen, die befallene Pflanzen angefasst haben P1. UC IPM rät, neue Pflanzen vor dem Hineinstellen auf Tiere und Larven zu prüfen P2.",
+    "Entwicklung vom Ei bis zum ausgewachsenen Tier in 14 bis 28 Tagen, bei Wärme schneller, bei Kälte langsamer; ausgewachsene Tiere leben 4 bis 6 Wochen P1. UConn: Gewächshausmottenschildlaus bei 70 °F (umgerechnet, gerundet: 21,1 °C) 32 Tage vom Ei bis zum ausgewachsenen Tier, Bemisia tabaci 39 Tage; auf der Seite steht keine zweite Temperatur P3. UConn nennt für ausgewachsene Tiere ein bis zwei Monate, Purdue 4 bis 6 Wochen: Widerspruch, nicht aufgelöst.",
+    "Das PNW-Handbuch nennt Weiße Fliegen außerhalb von Gewächshäusern meist keinen Schädling P4."
+  ],
+  "causes_en": [
+    "Brought in with infested plants or cuttings, also by people who handled infested plants P1. UC IPM advises inspecting new plants for adults and nymphs before bringing them in P2.",
+    "Development from egg to adult in 14 to 28 days, faster when warm and slower when cool; adults live 4 to 6 weeks P1. UConn: greenhouse whitefly 32 days egg to adult at 70 °F (converted, rounded: 21.1 °C), Bemisia tabaci 39 days; the page gives no second temperature P3. UConn gives one to two months for adults, Purdue 4 to 6 weeks: contradiction, not resolved.",
+    "The PNW handbook says whiteflies are generally not considered a pest outside the greenhouse P4."
+  ],
+  "check": [
+    {
+      "metric": "probe_temp",
+      "text": "Wärme beschleunigt die Entwicklung, Kälte verlangsamt sie P1; eine Temperaturangabe für Hanf gibt es nicht, UConn nennt nur den Wert bei 70 °F P3. Gelbtafel statt Messfühler: Gelbtafeln sind das verlässlichste Überwachungsmittel P1.",
+      "text_en": "Warmth speeds development, cold slows it P1; there is no temperature figure for hemp, UConn only gives the value at 70 °F P3. Sticky card instead of a probe: yellow sticky cards are the most reliable monitoring tool P1."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "watering",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    }
+  ],
+  "do_now": [
+    "Pflanze leicht antippen oder schütteln und schauen, ob Tiere auffliegen P1; Blattunterseiten ansehen P2; gelbe Klebetafeln aufhängen und wöchentlich kontrollieren P1.",
+    "Einzelne befallene Blätter entfernen, sobald man sie entdeckt P2.",
+    "Tiere mit kräftigem Wasserstrahl abspülen P2. In der Blüte besser nicht in die Blüten spritzen (Folgerung, nicht aus einer Quelle: Knospenfäule braucht Feuchte und Nässe, auch aus Bewässerung P5).",
+    "Die Schlupfwespe Encarsia formosa ist im Handel und laut PNW-Handbuch im Gewächshaus ein ausgezeichnetes Mittel gegen Weiße Fliegen, an Hanf aber nicht getestet P4. Purdue führt sie unter den Weiße-Fliegen-Parasitoiden im Hanf-Gewächshaus; Schlupfwespen sind Vorbeugung und keine Rettung bei starkem Befall P1.",
+    "Seifen oder Öle: alle befallenen Blattunterseiten benetzen, meist die untersten Blätter P2. Breitbandmittel wie Pyrethroide, Organophosphate oder Neonikotinoide vermeiden P2. Etikett und Zulassung beachten: Im Haus- und Kleingarten dürfen nur Mittel angewandt werden, die für nichtberufliche Anwender zugelassen sind; sie tragen den Aufdruck 'Anwendung durch nichtberufliche Anwender zulässig' P6. Ob ein Mittel für Hanf zugelassen ist und ob eine Growbox in der Wohnung als Haus- und Kleingarten gilt, sagt diese Seite nicht.",
+    "Früh handeln: starker Befall ist schwer zu bekämpfen P2."
+  ],
+  "do_now_en": [
+    "Tap or gently shake the plant and watch whether insects fly up P1; check leaf undersides P2; hang yellow sticky cards and check them weekly P1.",
+    "Remove isolated infested leaves as soon as you find them P2.",
+    "Hose adults off with a strong stream of water P2. In flower, better not spray into the buds (inference, not from a source: bud rot needs humidity and moisture, including from irrigation P5).",
+    "The parasitoid Encarsia formosa is commercially available and per the PNW handbook an excellent biological control agent in greenhouses, but not tested on whiteflies in hemp P4. Purdue lists it among whitefly parasitoids in greenhouse hemp; parasitoids are prevention and not a rescue for heavy infestation P1.",
+    "Soaps or oils: cover the undersides of all infested leaves, usually the lowest ones P2. Avoid broad-spectrum products such as pyrethroids, organophosphates or neonicotinoids P2. Follow label and approval (Etikett und Zulassung beachten): in German home and allotment gardens only products approved for non-professional users may be used; they carry the mark 'Anwendung durch nichtberufliche Anwender zulässig' P6. Whether a product is approved for hemp and whether a grow box in a flat counts as a home garden, this page does not say.",
+    "Act early: heavy infestations are difficult to manage P2."
+  ],
+  "prevention": [
+    "Neue Pflanzen vor dem Hineinstellen auf Tiere und Larven prüfen P2.",
+    "Neue Pflanzen und Stecklinge getrennt halten, bis sie als schädlingsfrei gelten P1.",
+    "Gelbtafeln aufhängen und wöchentlich kontrollieren, damit ein plötzlicher Anstieg nicht unbemerkt bleibt P1."
+  ],
+  "prevention_en": [
+    "Inspect new plants for adults and nymphs before bringing them in P2.",
+    "Isolate new plants and cuttings until they are determined to be pest free P1.",
+    "Hang yellow sticky cards and check them weekly so a sudden increase does not go unnoticed P1."
+  ],
+  "look_alikes": [
+    "Blattläuse: ähnliche Schäden mit Honigtau und Rußtau P1. Weiße Häutungsreste sind kein sicheres Zeichen für Blattläuse P7, denn auch Weiße Fliegen hinterlassen leere Puppenhüllen P2. Unterscheiden: Bei Weißen Fliegen fliegen beim Antippen Tiere auf P1."
+  ],
+  "look_alikes_en": [
+    "Aphids: similar damage with honeydew and sooty mold P1. White shed skins are not a reliable sign of aphids P7, because whiteflies also leave empty pupal cases P2. To tell them apart: whiteflies fly up when the plant is tapped P1."
+  ],
+  "image": {
+    "file": "whitefly-squash.webp",
+    "thumb": "whitefly-squash-t.webp",
+    "w": 1200,
+    "h": 797,
+    "alt": "Zwei erwachsene Weiße Fliegen auf einem Kürbisblatt",
+    "alt_en": "Two adult whiteflies on a squash leaf",
+    "note": "Gleiche Art wie auf der Karte, aber auf einem Kürbisblatt, nicht auf Hanf.",
+    "note_en": "Same species as on the card, but on a squash leaf, not cannabis.",
+    "compare": true,
+    "credit": {
+      "work": "File:Pro Huerta - Cucurbita maxima var. zapallito - Trialeurodes vaporariorum 01 adults.jpg",
+      "author": "Pablo Oliveri (Pro Huerta)",
+      "license": "CC BY-SA 2.5",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.5/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Pro_Huerta_-_Cucurbita_maxima_var._zapallito_-_Trialeurodes_vaporariorum_01_adults.jpg"
+    }
+  },
+  "sources": {
+    "P1": "Purdue Extension E-275, Serber und Long, Management Strategies for Common Arthropod Pests of Greenhouse Hemp in Indiana, Dezember 2021, abgerufen 2026-10-23: https://www.extension.entm.purdue.edu/publications/E-275/E-275.html",
+    "P2": "UC Statewide IPM Program, Pest Notes Whiteflies 7401 (M.L. Flint, Stand 09/2015), Garten-Merkblatt, nicht Hanf, abgerufen 2026-10-23: https://ipm.ucanr.edu/home-and-landscape/whiteflies/",
+    "P3": "UConn Extension, Pundt, Managing Whiteflies in the Greenhouse, Stand Juni 2024, Gewächshaus-Zierpflanzen, nicht Hanf, abgerufen 2026-10-23: https://ipm.cahnr.uconn.edu/managing-whiteflies-in-the-greenhouse/",
+    "P4": "PNW Insect Management Handbook, Hemp-Whitefly (Hanf-Kapitel Stand März 2026 laut Kapitelseite), abgerufen 2026-10-23: https://pnwhandbooks.org/insect/agronomic/hemp/hemp-whitefly",
+    "P5": "Utah State University Extension, Hemp Bud Rot, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-bud-rot.php",
+    "P6": "Pflanzenschutzamt Berlin, Anwendung von Pflanzenschutzmitteln in Haus-, Klein- und Siedlergärten, ohne Datum, abgerufen 2026-10-23: https://www.berlin.de/pflanzenschutzamt/ueberwachung/pflanzenschutzmittel-im-haus-und-kleingarten/",
+    "P7": "Utah State University Extension, Cannabis Aphids, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-cannabis-aphid.php"
+  },
+  "_left_out": [
+    "'Früh: beim Antippen fliegen Tiere auf (UC IPM)': widerlegt, Purdue nennt Auffliegen erst bei starkem Befall; 'Antippen' steht bei Purdue.",
+    "'Purdue nennt keine Temperatur' und 'keine Quelle verknüpft probe_temp': widerlegt, Purdue sagt warm schneller, kühl langsamer.",
+    "'Gelbtafeln dauerhaft aufhängen': Purdue sagt wöchentlich prüfen.",
+    "'Encarsia nicht getestet' allein: einseitig, ergänzt."
+  ]
+}

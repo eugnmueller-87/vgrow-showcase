@@ -1,0 +1,79 @@
+{
+  "name": "BioTabs Organic System",
+  "name_en": "BioTabs organic system",
+  "summary": "Organischer Langzeitdünger: Tabletten, die einmal in die Erde gedrückt werden, dazu Bodenhilfsstoffe beim Einpflanzen und wenige Einzelgaben in der Blüte; sonst gießt man vor allem Wasser. Kein Wochenplan je Liter, deshalb im Cockpit nicht als Dünger wählbar.",
+  "summary_en": "Organic slow-release fertilizer: tablets pressed into the soil once, soil helpers at planting and a few single feeds in flowering; otherwise mostly plain water. No weekly per-litre plan, so it cannot be chosen as the fertilizer in the cockpit.",
+  "product": "BioTabs",
+  "version": "V.2026.01",
+  "status": "draft",
+  "status_note": "Aus dem BioTabs-Anbauleitfaden V.2026.01 (BT1) und den Produktblättern abgetippt, am 23.10.2026. Die Einzelgaben gelten für eine Gießung je Pflanze, nicht für jedes Gießen: das passt nicht zum Rechner des Cockpits, der je Liter und Gießung rechnet. Deshalb nur zum Lesen.",
+  "status_note_en": "Transcribed from the BioTabs grow guide V.2026.01 (BT1) and the product sheets on Oct 23, 2026. The single feeds are one watering per plant, not every watering: that does not fit the cockpit's planner, which computes per litre and watering. So for reading only.",
+  "aliases": {
+    "de": ["BioTabs", "Bio Tabs", "Biotabletten", "Startrex", "Mycotrex", "Bactrex", "Orgatrex", "Bio PK 5-8"],
+    "en": ["BioTabs", "Bio Tabs", "Startrex", "Mycotrex", "Bactrex", "Orgatrex", "Bio PK 5-8"]
+  },
+  "line": {
+    "maker": "BioTabs (BIOHORTI SLU)",
+    "types": ["slow_release"],
+    "media": ["soil"],
+    "media_text": "Organische Bio-Lightmix-Erde oder leicht vorgedüngte organische Blumenerde; laut Hersteller ausdrücklich kein Allmix.",
+    "media_text_en": "Organic bio light-mix soil or lightly pre-fertilized organic potting soil; per the maker explicitly not Allmix.",
+    "products": [
+      {"product": "BioTabs (Tabletten)", "product_en": "BioTabs (tablets)", "npk": "15-7-8", "role": "Organische Langzeit-Tabletten (21 g; Knochen-, Blut-, Feder- und Fischmehl, Huminsäure, Bodenbakterien), einmal in die Erde gedrückt.", "role_en": "Organic slow-release tablets (21 g; bone, blood, feather and fish meal, humic acid, soil bacteria), pressed into the soil once.", "sources": ["BT4"]},
+      {"product": "Startrex", "role": "Organischer Bodenhilfsstoff (Traubenhumus) mit Bodenbakterien, in die Erde gemischt.", "role_en": "Organic soil conditioner (grape-based humus) with soil bacteria, mixed into the soil.", "sources": ["BT6"]},
+      {"product": "Mycotrex", "role": "Mykorrhiza (9 Sporenarten) für das Pflanzloch.", "role_en": "Mycorrhiza inoculum (9 spore types) for the planting hole.", "sources": ["BT8"]},
+      {"product": "Bactrex", "role": "Bodenbakterien und Trichoderma als Pulver, eingegossen; lebendes Produkt, Lösung innerhalb von 6 Stunden verbrauchen.", "role_en": "Soil bacteria plus Trichoderma powder, watered in; a living product, use the solution within 6 hours.", "sources": ["BT7"]},
+      {"product": "Orgatrex", "npk": "5-1-5", "role": "Organischer Flüssigdünger und Futter fürs Bodenleben (Luzerne, Melasse, Vinasse); die Lösung hält zwei Tage.", "role_en": "Organic liquid feed and soil-life support (alfalfa, molasses, vinasse); the solution keeps two days.", "sources": ["BT5"]},
+      {"product": "Bio PK 5-8", "npk": "2-5-8", "role": "Organischer flüssiger Blütezusatz mit Algen und Huminstoffen.", "role_en": "Organic liquid flowering booster with seaweed and humic substances.", "sources": ["BT9"]},
+      {"product": "Boom Boom Spray", "role": "Blattspray, 5 ml/l, innerhalb von 6 Stunden verbrauchen.", "role_en": "Foliar spray, 5 ml/l, use within 6 hours.", "sources": ["BT1"]}
+    ],
+    "application_short": "Einmal beim Einpflanzen: Tabletten nach Topfgröße 10 cm tief, dazu Startrex und Mycotrex; danach vor allem Wasser und in der Blüte wenige Einzelgaben.",
+    "application_short_en": "Once at planting: tablets by pot size 10 cm deep, plus Startrex and Mycotrex; afterwards mostly plain water and a few single feeds in flowering.",
+    "application": "Einmal beim Einpflanzen in den Endtopf: 50 g Startrex je 10 l Erde untermischen, 5 g Mycotrex ins Pflanzloch, Tabletten 10 cm tief eindrücken (1 Tablette im 5-l-Topf, 2 bei 10 bis 15 l, 3 bei 20 bis 25 l, 4 bei 30 bis 35 l, 5 bei 50 l). Erstes Gießen nur mit 1 l Lösung aus 1 g Bactrex und 10 ml Orgatrex je Liter. Danach vor allem Wasser (entchlort); in der Blüte drei Gaben Bio PK und eine Gabe Bactrex mit Orgatrex. Dauert das Wachstum länger als 2 Wochen, in Wachstumswoche 3 eine weitere Tablette 10 cm tief eindrücken. pH und EC müssen laut Hersteller nicht gemessen werden; Leitungswasser unter EC 0,5 ist laut FAQ in Ordnung.",
+    "application_en": "Once at planting into the final pot: mix 50 g Startrex per 10 l of soil, 5 g Mycotrex into the planting hole, press the tablets 10 cm deep (1 tablet in a 5 l pot, 2 at 10 to 15 l, 3 at 20 to 25 l, 4 at 30 to 35 l, 5 at 50 l). First watering only with 1 l of solution of 1 g Bactrex and 10 ml Orgatrex per litre. Afterwards mostly plain (dechlorinated) water; in flowering three feeds of Bio PK and one of Bactrex with Orgatrex. If the vegetative phase lasts longer than 2 weeks, press one more tablet 10 cm deep in vegetative week 3. pH and EC need no measuring per the maker; tap water below EC 0.5 is fine per the FAQ.",
+    "application_sources": ["BT1", "BT10"],
+    "plan": [
+      {"when": "Vortopf (wahlweise), erstes Gießen", "when_en": "Pregrow pot (optional), first watering", "text": "0,5 g Bactrex und 5 ml Orgatrex je Liter; 5 g Startrex je 1 l Erde, 1 g Mycotrex ins Pflanzloch; Boom Boom Spray 5 ml/l. Danach Wasser nach Bedarf.", "text_en": "0.5 g Bactrex and 5 ml Orgatrex per litre; 5 g Startrex per 1 l of soil, 1 g Mycotrex into the planting hole; Boom Boom Spray 5 ml/l. Afterwards water as needed.", "sources": ["BT1"]},
+      {"when": "Endtopf, erstes Gießen", "when_en": "Final pot, first watering", "text": "1 l Lösung aus 1 g Bactrex und 10 ml Orgatrex je Liter; 50 g Startrex je 10 l Erde, 5 g Mycotrex ins Pflanzloch, Tabletten nach Topfgröße; Boom Boom Spray 5 ml/l.", "text_en": "1 l of solution of 1 g Bactrex and 10 ml Orgatrex per litre; 50 g Startrex per 10 l of soil, 5 g Mycotrex into the planting hole, tablets by pot size; Boom Boom Spray 5 ml/l.", "sources": ["BT1"]},
+      {"when": "Wachstumswoche 1", "when_en": "Vegetative week 1", "text": "Boom Boom Spray 5 ml/l, sonst Wasser.", "text_en": "Boom Boom Spray 5 ml/l, otherwise plain water.", "sources": ["BT1"]},
+      {"when": "Wachstumswoche 2", "when_en": "Vegetative week 2", "text": "Wasser. Längeres Wachstum: eine weitere Tablette in Woche 3.", "text_en": "Plain water. Longer vegetative phase: one more tablet in week 3.", "sources": ["BT1"]},
+      {"when": "Blütewoche 1", "when_en": "Flowering week 1", "text": "Wasser.", "text_en": "Plain water.", "sources": ["BT1"]},
+      {"when": "Blütewoche 2", "when_en": "Flowering week 2", "text": "Einmal 1 l je Pflanze mit 10 ml Bio PK 5-8 je Liter, an den anderen Tagen Wasser.", "text_en": "Once 1 l per plant with 10 ml Bio PK 5-8 per litre, plain water on the other days.", "sources": ["BT1"]},
+      {"when": "Blütewoche 3", "when_en": "Flowering week 3", "text": "Einmal 1 l je Pflanze mit 1 g Bactrex und 20 ml Orgatrex je Liter.", "text_en": "Once 1 l per plant with 1 g Bactrex and 20 ml Orgatrex per litre.", "sources": ["BT1"]},
+      {"when": "Blütewoche 4", "when_en": "Flowering week 4", "text": "Einmal 1 l je Pflanze mit 10 ml Bio PK 5-8 je Liter.", "text_en": "Once 1 l per plant with 10 ml Bio PK 5-8 per litre.", "sources": ["BT1"]},
+      {"when": "Blütewoche 5", "when_en": "Flowering week 5", "text": "Wasser.", "text_en": "Plain water.", "sources": ["BT1"]},
+      {"when": "Blütewoche 6", "when_en": "Flowering week 6", "text": "Einmal 1 l je Pflanze mit 10 ml Bio PK 5-8 je Liter.", "text_en": "Once 1 l per plant with 10 ml Bio PK 5-8 per litre.", "sources": ["BT1"]},
+      {"when": "Blütewoche 7 bis 9", "when_en": "Flowering weeks 7 to 9", "text": "Wasser.", "text_en": "Plain water.", "sources": ["BT1"]}
+    ],
+    "cautions": [
+      {"text": "Die Unterlagen des Herstellers widersprechen sich: das Produktblatt nennt 1 Tablette je 5 l und 5 bis 10 cm Tiefe, Mycotrex aufgeteilt (3 g in die Erde, 2 g ins Loch), Bio PK auch als 1 bis 3 ml/l bei jedem Gießen, Orgatrex 2 ml/l bei jedem Gießen und Bactrex alle zwei Wochen. Hier steht der datierte Leitfaden V.2026.01.", "text_en": "The maker's own documents contradict each other: the product sheet gives 1 tablet per 5 l and a depth of 5 to 10 cm, Mycotrex split (3 g into the soil, 2 g into the hole), Bio PK also as 1 to 3 ml/l with every watering, Orgatrex 2 ml/l with every watering and Bactrex every two weeks. This card follows the dated guide V.2026.01.", "sources": ["BT1", "BT4", "BT5", "BT7", "BT8", "BT9"]},
+      {"text": "Bio PK und flüssige organische Dünger sind laut Hersteller nicht für Tropfbewässerung empfohlen (Verstopfung).", "text_en": "Per the maker Bio PK and liquid organics are not recommended with drip irrigation (blockages).", "sources": ["BT9"]}
+    ]
+  },
+  "components": {},
+  "notes": [
+    {
+      "text": "Warum nicht wählbar: der Plan besteht aus einmaligen Gaben je Pflanze (1 l je Pflanze, einmal in der Woche) und Tabletten. Ein Rechner, der je Liter und Gießung rechnet, würde daraus eine Menge für jedes Gießen machen. Das wäre mehr, als der Hersteller vorsieht.",
+      "text_en": "Why it cannot be chosen: the plan consists of single feeds per plant (1 l per plant, once that week) and tablets. A planner that computes per litre and watering would turn them into an amount for every watering. That would be more than the maker intends.",
+      "sources": ["BT1"]
+    },
+    {
+      "package": "cannabis",
+      "text": "Für Autoflower fand die Recherche im Leitfaden, in den Produktblättern und im FAQ keine Angabe.",
+      "text_en": "For autoflowers the research found nothing in the guide, the product sheets or the FAQ.",
+      "sources": ["BT1", "BT10"]
+    }
+  ],
+  "sources": {
+    "BT1": {"title": "BioTabs, Organic Grow Guide V.2026.01 (PDF)", "title_en": "BioTabs, Organic Grow Guide V.2026.01 (PDF)", "url": "https://biotabs.nl/wp-content/uploads/ENG-GRANDE-nueva-TABLA-DE-CULTIVO.pdf", "retrieved": "2026-10-23"},
+    "BT2": {"title": "BioTabs, Anleitungen", "title_en": "BioTabs, manuals page", "url": "https://biotabs.nl/en/training-center/biotabs-manuals/", "retrieved": "2026-10-23"},
+    "BT3": {"title": "BioTabs, technische Angaben", "title_en": "BioTabs, technical specifications page", "url": "https://biotabs.nl/en/training-center/technical-specifications/", "retrieved": "2026-10-23"},
+    "BT4": {"title": "BioTabs, Produktblatt BioTabs (PDF)", "title_en": "BioTabs, BioTabs product sheet (PDF)", "url": "https://biotabs.nl/download/technical-sheet-biotabs-english.pdf", "retrieved": "2026-10-23"},
+    "BT5": {"title": "BioTabs, Produktblatt Orgatrex (PDF)", "title_en": "BioTabs, Orgatrex product sheet (PDF)", "url": "https://biotabs.nl/download/technical-sheet-orgatrex-english.pdf", "retrieved": "2026-10-23"},
+    "BT6": {"title": "BioTabs, Produktblatt Startrex (PDF)", "title_en": "BioTabs, Startrex product sheet (PDF)", "url": "https://biotabs.nl/download/technical-sheet-startrex-english.pdf", "retrieved": "2026-10-23"},
+    "BT7": {"title": "BioTabs, Produktblatt Bactrex (PDF)", "title_en": "BioTabs, Bactrex product sheet (PDF)", "url": "https://biotabs.nl/download/technical-sheet-bactrex-english.pdf", "retrieved": "2026-10-23"},
+    "BT8": {"title": "BioTabs, Produktblatt Mycotrex (PDF)", "title_en": "BioTabs, Mycotrex product sheet (PDF)", "url": "https://biotabs.nl/download/technical-sheet-mycotrex-english.pdf", "retrieved": "2026-10-23"},
+    "BT9": {"title": "BioTabs, Produktblatt Bio PK 5-8 (PDF)", "title_en": "BioTabs, Bio PK 5-8 product sheet (PDF)", "url": "https://biotabs.nl/download/technical-sheet-bio-pk-english.pdf", "retrieved": "2026-10-23"},
+    "BT10": {"title": "BioTabs, FAQ", "title_en": "BioTabs, FAQ", "url": "https://biotabs.nl/en/training-center/faq/", "retrieved": "2026-10-23"}
+  }
+}

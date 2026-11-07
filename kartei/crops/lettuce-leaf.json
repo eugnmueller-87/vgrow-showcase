@@ -1,0 +1,169 @@
+{
+  "key": "lettuce-leaf",
+  "kind": "crop",
+  "status": "draft",
+  "label": "Pflücksalat",
+  "label_en": "Leaf lettuce",
+  "fit_for_vgrow": {
+    "height_ok": true,
+    "light_note": "Offen: VIVOSUN veröffentlicht keine PPFD für die 100-W-LED (dimmbar 25 bis 100 %), die Lichtmenge am Salat ist unbekannt. Studie mit rotem Eichblatt: 300 µmol/m2/s bei 17 h Licht sind für höchste Frischmasse bei geringeren Energiekosten empfohlen, erhöhten aber den Spitzenbrand von 0 auf 25 % gegenüber 150 µmol/m2/s (Q2).",
+    "light_note_en": "Open: VIVOSUN publishes no PPFD for the 100 W LED (dimmable 25 to 100 %), so the light at the lettuce is unknown. Study on red oakleaf: 300 µmol/m2/s at 17 h of light is recommended for the highest fresh mass at lower energy cost, but raised tipburn from 0 to 25 % compared with 150 µmol/m2/s (Q2).",
+    "heat_note": "Die Abluft-Voreinstellung der Box ist Max 29 °C (Q16, in der App änderbar). Die Salatwerte liegen darunter (Cornell 24 °C am Tag, Q1; mittlere Tagestemperatur 23 bis 26 °C, Q2). Wärme der Lampe in der Kammer: offen.",
+    "heat_note_en": "The box exhaust default is Max 29 °C (Q16, changeable in the app). The lettuce values are below it (Cornell 24 °C by day, Q1; mean daily temperature 23 to 26 °C, Q2). Lamp heat in the chamber: open."
+  },
+  "stages": [
+    {
+      "key": "germination",
+      "label": "Keimung",
+      "label_en": "Germination",
+      "days_from": 0,
+      "days_to": 8,
+      "targets": [
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 15,
+          "max": 22,
+          "unit": "°C",
+          "sources": [
+            "Q7"
+          ]
+        }
+      ],
+      "notes": "6 bis 8 Tage bis zur Keimung, gemessen in Erdgefäßen im Freien (Q9). Keimoptimum der meisten Salatsorten 15 bis 22 °C; der Satz nennt keinen Messort, ob Luft oder Saatbett gemeint ist, ist offen (Q7). Keimung über 25 °C (77 °F) kann Thermodormanz auslösen, das ist Keimruhe durch Hitze; danach keimt das Saatgut auch bei besseren Temperaturen nicht mehr (Q8). Clemson nennt 60 bis 80 °F als Bodentemperatur-Optimum und keine Keimung von unbehandeltem Saatgut über 95 °F (Q3): die Obergrenze liegt über der 25-°C-Schwelle aus Q8, die Quellen widersprechen sich. Licht, Feuchte und VPD in dieser Phase: offen.",
+      "notes_en": "6 to 8 days to germination, measured in soil containers outdoors (Q9). Germination optimum of most lettuce varieties 15 to 22 °C; the sentence names no measuring point, so whether air or seed bed is meant is open (Q7). Germination above 25 °C (77 °F) can induce thermodormancy, a heat-induced seed dormancy; afterwards the seed does not germinate even at better temperatures (Q8). Clemson gives 60 to 80 °F as the soil temperature optimum and no germination of raw seed above 95 °F (Q3): its upper limit is above the 25 °C threshold in Q8, so the sources disagree. Light, humidity and VPD in this stage: open."
+    },
+    {
+      "key": "growth",
+      "label": "Wachstum",
+      "label_en": "Growth",
+      "days_from": 8,
+      "days_to": 45,
+      "targets": [
+        {
+          "metric": "probe_temp",
+          "when": "day",
+          "min": 24,
+          "max": 24,
+          "unit": "°C",
+          "sources": [
+            "Q1"
+          ]
+        },
+        {
+          "metric": "probe_temp",
+          "when": "night",
+          "min": 19,
+          "max": 19,
+          "unit": "°C",
+          "sources": [
+            "Q1"
+          ]
+        },
+        {
+          "metric": "probe_humidity",
+          "when": null,
+          "min": 50,
+          "max": 70,
+          "unit": "%",
+          "sources": [
+            "Q1"
+          ]
+        },
+        {
+          "metric": "probe_vpd",
+          "when": null,
+          "min": 0.5,
+          "max": 0.8,
+          "unit": "kPa",
+          "sources": [
+            "Q4"
+          ]
+        },
+        {
+          "metric": "photoperiod_h",
+          "when": null,
+          "min": 17,
+          "max": 17,
+          "unit": "h",
+          "sources": [
+            "Q2"
+          ]
+        },
+        {
+          "metric": "dli",
+          "when": null,
+          "min": 17,
+          "max": 17,
+          "unit": "mol/m2/d",
+          "sources": [
+            "Q1"
+          ]
+        }
+      ],
+      "notes": "Cornell-Werte (24 °C am Tag, 19 °C in der Nacht, DLI 17 mol/m2/d) gelten für Kopfsalat (Bibb) in Hydroponik im Gewächshaus, Teichphase, nicht speziell für Pflücksalat, und sind Einzelwerte, kein Band (Q1). Die DLI 17 gilt nur mit ausreichendem Luftstrom von oben; ohne ihn kam Cornell bei der Sorte Ostinata nicht über 12 mol/m2/d (Q1). Ob die Umluft der Y18 von oben bläst, ist nicht belegt. Studie mit rotem Eichblatt 'Rouxaï RZ' (Q2): empfohlen mittlere Tagestemperatur (MDT) 23 bis 26 °C und 300 µmol/m2/s bei 17 h Licht; Versuchsstufen Tag/Nacht 22/15, 25/18 und 28/21 °C. Die MDT ist ein Tagesmittel und deshalb kein Ziel gegen einzelne Fühlerwerte. Die 17 h sind eine Versuchsbedingung, keine Empfehlung (Q2). Feuchte 50 bis 70 %: hohe Feuchte begünstigt Botrytis und Mehltau (Q1). VPD 0.5 bis 0.8 kPa ist ein allgemeiner Wert für die meisten Pflanzen aus einem Sekundärzitat, nicht salatspezifisch (Q4). PPFD und DLI der Box: offen.",
+      "notes_en": "Cornell values (24 °C by day, 19 °C at night, DLI 17 mol/m2/d) apply to head lettuce (Bibb) in hydroponics in a greenhouse, pond stage, not specifically to leaf lettuce, and are single set-points, not a band (Q1). DLI 17 holds only with sufficient downward airflow; without it Cornell did not get above 12 mol/m2/d with the cultivar Ostinata (Q1). Whether the circulation fan of the Y18 blows from above is not documented. Study on red oakleaf 'Rouxaï RZ' (Q2): recommended mean daily temperature (MDT) 23 to 26 °C and 300 µmol/m2/s at 17 h of light; trial day/night temperatures 22/15, 25/18 and 28/21 °C. The MDT is a daily mean and therefore not a target against single probe readings. The 17 h are a trial condition, not a recommendation (Q2). Humidity 50 to 70 %: high humidity favors botrytis and mildew (Q1). VPD 0.5 to 0.8 kPa is a general value for most plants from a secondary citation, not lettuce-specific (Q4). PPFD and DLI of the box: open."
+    },
+    {
+      "key": "first_harvest",
+      "label": "Erste Ernte",
+      "label_en": "First harvest",
+      "days_from": 45,
+      "days_to": 60,
+      "targets": [],
+      "notes": "Erste Ernte 45 bis 60 Tage nach der Aussaat (Q9); 50 bis 60 Tage nach der Aussaat bzw. 30 bis 45 Tage nach dem Pflanzen (Q10). Schnitt im Jugendstadium: Kulturdauer 4 bis 6 Wochen, Blätter 10 bis 15 cm lang, Beginn der Zählung unklar (Q11). Clemson nennt etwa 75 Tage nach dem Pflanzen (Q3, Ausreißer). Reif bei 8 bis 12 Zoll, 2 Zoll über dem Boden schneiden und wiederholt nachschneiden (Q13). Schnitternte (Salatmischung): bei 6 bis 10 Zoll knapp über dem Boden schneiden, zweiter Schnitt 2 bis 3 Wochen später (Q6). Pflücken: äußere Blätter zuerst, vor dem Schossen (Q12). Zielwerte für diese Phase: offen.",
+      "notes_en": "First harvest 45 to 60 days after seeding (Q9); 50 to 60 days after seeding or 30 to 45 days after transplanting (Q10). Cut in the juvenile stage: cultivation time 4 to 6 weeks, leaves 10 to 15 cm long, start of the count unclear (Q11). Clemson gives about 75 days after planting (Q3, outlier). Mature at 8 to 12 inches; cut 2 inches above the soil and recut repeatedly (Q13). Cut-and-come-again (salad mix): cut right above the ground at 6 to 10 inches, second cut 2 to 3 weeks later (Q6). Picking: outer leaves first, before bolting (Q12). Targets for this stage: open."
+    }
+  ],
+  "warnings": [
+    "Entwurf: Die Zielwerte stammen großteils aus Kopfsalat- und Gewächshausquellen, nicht aus Pflücksalat in der Y18. Einzelwerte (Cornell 24 und 19 °C, DLI 17, 17 h) sind als min gleich max eingetragen; ein Toleranzband legt der Betreiber fest.",
+    "Spitzenbrand: Beim Sprung von 150 auf 300 µmol/m2/s stieg der Anteil von 0 auf 25 % ('Rouxaï RZ') und von 47 auf 100 % ('Rex') (Q2). Niedrige Luftfeuchte nachts kann das Risiko erhöhen (Q5).",
+    "Schossen: 70 bis 80 °F und trockener Boden können es auslösen, die Blätter werden bitter (Q10); zunehmende Tageslänge ebenfalls, ohne Stundenschwelle (Q6). Schossende Pflanzen wurden vier bis fünf Fuß hoch, etwa 122 bis 152 cm umgerechnet, mehr als die 92 cm der Box (Q14, Butterkopf zur Samengewinnung). Vor dem Schossen ernten (Q12).",
+    "Falscher Mehltau braucht freie Feuchtigkeit auf dem Blatt; Laub möglichst trocken halten und Luft umwälzen (Q15). Ob Befeuchter oder Tropfbewässerung der Box die Blätter benetzen, ist offen.",
+    "Starke VPD-Schwankungen kosteten im Klimakammerversuch 15 % Spross-Trockenmasse und 29 % Blattfläche (Q4). Ob die Box ähnliche Sprünge erzeugt, ist nicht belegt (Vermutung).",
+    "Die Abluft-Voreinstellung der Box ist Max 29 °C (Q16), die Salatwerte liegen darunter (Q1, Q2): in der App prüfen.",
+    "Gießen in der Box (6 L Tank, Tropfpumpe): offen. Staunässe tötet Pflanzen durch Sauerstoffmangel (Q9, Erdgefäße im Freien)."
+  ],
+  "warnings_en": [
+    "Draft: The targets come mostly from head lettuce and greenhouse sources, not from leaf lettuce in the Y18. Single values (Cornell 24 and 19 °C, DLI 17, 17 h) are entered as min equal to max; the owner sets a tolerance band.",
+    "Tipburn: going from 150 to 300 µmol/m2/s raised the share from 0 to 25 % ('Rouxaï RZ') and from 47 to 100 % ('Rex') (Q2). Low humidity at night can raise the risk (Q5).",
+    "Bolting: 70 to 80 °F and dry soil can trigger it and the leaves turn bitter (Q10); increasing day length as well, without an hour threshold (Q6). Bolting plants reached four to five feet, about 122 to 152 cm converted, more than the 92 cm of the box (Q14, butterhead grown for seed). Harvest before bolting (Q12).",
+    "Downy mildew needs free moisture on the leaf; keep leaves as dry as possible and circulate the air (Q15). Whether the humidifier or the drip irrigation of the box wets the leaves is open.",
+    "Strong VPD fluctuations cost 15 % shoot dry mass and 29 % leaf area in a climate chamber trial (Q4). Whether the box produces similar swings is not documented (assumption).",
+    "The box exhaust default is Max 29 °C (Q16), the lettuce values are below it (Q1, Q2): check it in the app.",
+    "Watering in the box (6 L tank, drip pump): open. Waterlogging kills plants through lack of oxygen (Q9, soil containers outdoors)."
+  ],
+  "image": {
+    "file": "lettuce-lollo.webp",
+    "thumb": "lettuce-lollo-t.webp",
+    "w": 1200,
+    "h": 1200,
+    "alt": "Ein Kopf krauser Pflücksalat, Sorte Lollo Bionda, im Beet",
+    "alt_en": "A head of frilly loose-leaf lettuce, variety Lollo Bionda, in a garden bed",
+    "credit": {
+      "work": "File:Lactuca sativa 'Lollo Bionda'.jpg",
+      "author": "DeFacto",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Lactuca_sativa_%27Lollo_Bionda%27.jpg"
+    }
+  },
+  "sources": {
+    "Q1": "Brechner, Both, CEA Staff, Cornell Controlled Environment Agriculture Hydroponic Lettuce Handbook (2013): https://cea.cals.cornell.edu/files/2019/06/Cornell-CEA-Lettuce-Handbook-.pdf",
+    "Q2": "Tarr, Valle de Souza, Lopez (2023), Influence of Day and Night Temperature and Radiation Intensity on Growth, Quality, and Economics of Indoor Green Butterhead and Red Oakleaf Lettuce Production, Sustainability 15(1):829 (Abstract über IDEAS/RePEc): https://ideas.repec.org/a/gam/jsusta/v15y2023i1p829-d1023205.html",
+    "Q3": "Clemson Cooperative Extension, Home & Garden Information Center, Lettuce (aktualisiert 24.01.2023): https://hgic.clemson.edu/factsheet/lettuce/",
+    "Q4": "Inoue et al. (2021), Minimizing VPD Fluctuations Maintains Higher Stomatal Conductance and Photosynthesis, Resulting in Improvement of Plant Growth in Lettuce, Frontiers in Plant Science 12:646144: https://pmc.ncbi.nlm.nih.gov/articles/PMC8049605/",
+    "Q5": "Rutgers Cooperative Extension, Plant & Pest Advisory (VanVranken, 27.09.2023), Timely Reminder Conditions A Perfect Storm For Lettuce Tip Burn: https://plant-pest-advisory.rutgers.edu/timely-reminder-conditions-a-perfect-storm-for-lettuce-tip-burn/",
+    "Q6": "University of Maryland Extension, Growing Lettuce in a Home Garden (aktualisiert 25.03.2026): https://extension.umd.edu/resource/growing-lettuce-home-garden",
+    "Q7": "Wei et al. (2024), Advance in the Thermoinhibition of Lettuce (Lactuca sativa L.) Seed Germination, Plants 13(15):2051: https://pmc.ncbi.nlm.nih.gov/articles/PMC11314492/",
+    "Q8": "Plant Propagation (University of Florida, University of Kentucky, Texas A&M), Seed Dormancy, Thermodormancy: https://propg.ifas.ufl.edu/04-seeds/04-dormancy/13-seedsdormancy-thermodormancy.html",
+    "Q9": "Texas AgriLife Extension Service (Masabni), Vegetable Gardening in Containers, E-545: https://aggie-horticulture.tamu.edu/vegetable/files/2010/10/E-545_vegetable_gardening_containers.pdf",
+    "Q10": "NC State Extension, Extension Gardener Plant Toolbox, Lactuca sativa: https://plants.ces.ncsu.edu/plants/lactuca-sativa/",
+    "Q11": "Gartenakademie Rheinland-Pfalz (DLR Rheinpfalz), Morgenstern, Salat (fast) rund ums Jahr aus dem eigenen Garten: https://www.gartenakademie.rlp.de/Internet/global/themen.nsf/(Web_P_GA_XP_Kat_UKat)/E3490165B41E59A7C12573010051E7DD/$FILE/Salat.pdf",
+    "Q12": "Utah State University Extension (Drost, April 2020), How to Grow Lettuce in Your Garden: https://extension.usu.edu/yardandgarden/research/lettuce-in-the-garden.php",
+    "Q13": "University of Delaware Cooperative Extension (Judd, Hermenaus, Oktober 2024), Leaf Lettuce: https://udel.edu/content/dam/udelImages/canr/pdfs/extension/factsheets/Leaf-Lettuce.pdf",
+    "Q14": "Cornell Cooperative Extension Eastern NY (Field), Growing of a Lettuce Seed Crop: https://projects.sare.org/media/pdf/G/r/o/Growing-of-a-Lettuce-Seed-Crop-Factsheet.pdf",
+    "Q15": "UC Statewide IPM Program, Downy Mildew on Lettuce: https://ipm.ucanr.edu/home-and-landscape/downy-mildew-on-lettuce/",
+    "Q16": "VIVOSUN, VGrow Smart Grow Box Handbuch (Hersteller, kommerziell): https://vivosun.com/support/guide/vgrow-smart-grow-box.md"
+  }
+}

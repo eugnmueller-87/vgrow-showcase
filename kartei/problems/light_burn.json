@@ -1,0 +1,216 @@
+{
+  "key": "light_burn",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "stress",
+  "label": "Lichtbrand / Lichtbleiche",
+  "label_en": "Light burn / light bleaching",
+  "tile": "Gebleichte Blattspitzen nahe der Lampe",
+  "tile_en": "Bleached leaf tips close to the lamp",
+  "aliases": {
+    "de": [
+      "Lichtstress",
+      "Ausbleichen",
+      "Photobleaching"
+    ],
+    "en": [
+      "light stress",
+      "bleaching",
+      "photobleaching"
+    ]
+  },
+  "symptoms": [
+    "Früh: gebleichte oder weiße Blattspitzen an den Blättern, die der Lampe am nächsten sind; gelbe oder braune Flecken; Blätter rollen nach oben (P1, Erfahrungsquelle).",
+    "Blüte: die obersten Knospen an der Krone bleichen weißlich aus (P3, Erfahrungsquelle)."
+  ],
+  "symptoms_en": [
+    "Early: bleached or white tips on the leaves nearest the lamp; yellow or brown spots; leaves curl upward (P1, experience source).",
+    "Flower: top buds at the canopy bleach off-white (P3, experience source)."
+  ],
+  "causes": [
+    "Lampe zu stark oder zu nah. VIVOSUN nennt Richtwerte (P1, Erfahrungsquelle): nach Leistung 12 bis 24 Zoll für LEDs mit 100 bis 300 W (die Seite rechnet das als 35 bis 60 cm um, 12 Zoll wären 30,5 cm), nach Phase 12 bis 18 Zoll (30 bis 45 cm) in der frühen Blüte. Laut VIVOSUN ist die Leistung nur ein grober Ausgangspunkt, nicht die Hauptmethode. Die VGrow-Lampe hat laut Handbuch 100 W; das Handbuch nennt weder eine PPFD (Lichtstärke auf Pflanzenhöhe) noch einen Lampenabstand P4.",
+    "Zu viel vom falschen Licht in der Blüte (P3, Erfahrungsquelle).",
+    "Plötzlich mehr Licht: Sonnenbrand nach Standortwechsel (P5, Zimmerpflanzen)."
+  ],
+  "causes_en": [
+    "Lamp too strong or too close. VIVOSUN gives rough starting points (P1, experience source): by power 12 to 24 in for LEDs of 100 to 300 W (the page converts this to 35 to 60 cm; 12 in is 30.5 cm), by stage 12 to 18 in (30 to 45 cm) in early flower. VIVOSUN says wattage is only a rough starting point, not the main method. The VGrow lamp is 100 W per the manual; the manual gives neither a PPFD (light intensity at plant height) nor a lamp distance P4.",
+    "Too much of the wrong light in flower (P3, experience source).",
+    "Sudden extra light: sunburn after moving a plant (P5, houseplants)."
+  ],
+  "check": [
+    {
+      "metric": "light_percent",
+      "text": "Gegen Voreinstellung (Keimling 60, Wachstum 80, Blüte 100 % P4). Der VIVOSUN-Abstandsratgeber nennt für Keimlinge 25 bis 50 % zum Start (P1, Erfahrungsquelle); die beiden VIVOSUN-Angaben widersprechen sich, das Handbuch ist boxspezifisch.",
+      "text_en": "Against preset (seedling 60, veg 80, flower 100% P4). The VIVOSUN distance guide says start seedlings at 25 to 50% (P1, experience source); the two VIVOSUN figures conflict, the manual is box-specific."
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Zum Einfluss von Wärme auf Lichtbrand keine andere Quelle gefunden.",
+      "text_en": "No other source found on how heat affects light burn."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "watering",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    }
+  ],
+  "do_now": [
+    "light_percent senken. Abstand vergrößern nur, wenn die Lampe verstellbar ist: Das Handbuch beschreibt keine Höhenverstellung P4.",
+    "Neuer Zuwachs sollte wieder normal aussehen, sobald die Ursache behoben ist (P6, Feldhanf, allgemein für nicht lebende Ursachen)."
+  ],
+  "do_now_en": [
+    "Lower light_percent. Increase distance only if the lamp can be moved: the manual describes no height adjustment P4.",
+    "New growth should look normal again once the cause is fixed (P6, field hemp, for non-living causes in general)."
+  ],
+  "prevention": [
+    "Beim Einstellen oben anfangen und nach unten arbeiten: VIVOSUN rät zum größten empfohlenen Abstand; von zu wenig Licht erholt sich eine Pflanze leichter als von Lichtbrand (P1, Erfahrungsquelle).",
+    "Box-Voreinstellungen: Keimling 60 %, Wachstum 80 %, Blüte 100 % P4.",
+    "Pflanzenhöhe regelmäßig eintragen, damit der Abstand zur Lampe bekannt ist.",
+    "Ein ausgewogenes Spektrum beugt laut Fluence der Bleiche vor (P3, Erfahrungsquelle). Fluence nennt bis 2.500 µmol/m²/s ohne Bleiche bei ausgewogenem Spektrum; das ist ein Herstellerwert für professionelle Anlagen, kein Sicherheitsbereich für eine 100-W-Box.",
+    "Hinweis aus der Forschung: Die Einleitung einer Guelph-Studie nennt Cannabislaub sehr lichtverträglich (nach Chandra et al. 2015). Im Versuch (Sorte Stillwater, 120 bis 1.800 µmol/m²/s, 25,3 °C, 60,5 % Luftfeuchte) äußert sich der Artikel nicht zu Blattschäden P7. Das ersetzt keine Prüfung der eigenen Lampe."
+  ],
+  "prevention_en": [
+    "When setting up, start high and work down: VIVOSUN advises the largest recommended distance; a plant recovers more easily from too little light than from light burn (P1, experience source).",
+    "Box presets: seedling 60%, veg 80%, flower 100% P4.",
+    "Log plant height regularly so the lamp distance is known.",
+    "A balanced spectrum helps avoid bleaching per Fluence (P3, experience source). Fluence gives up to 2,500 µmol/m²/s without bleaching under a balanced spectrum; that is a maker value for professional setups, not a safe range for a 100 W box.",
+    "Research note: the introduction of a Guelph study calls cannabis foliage very light-tolerant (after Chandra et al. 2015). In the trial (cultivar Stillwater, 120 to 1,800 µmol/m²/s, 25.3 °C, 60.5% RH) the article says nothing about leaf damage P7. This does not replace checking your own lamp."
+  ],
+  "look_alikes": [
+    "Hitzestress: Blätter rollen sich ein und hängen, das Wachstum bleibt zurück (P8, Erfahrungsquelle). Cornell nennt Blattrollen und Verbrennungen als häufige Hitzezeichen (P6, Feldhanf).",
+    "Unterwässern: Welke, braune Blätter, trockene Erde (siehe Karte). UC IPM: Welke kommt meist von zu wenig Wasser oder zu viel Licht P5.",
+    "Eisenmangel: Aufhellung zwischen den Adern an neuen oberen Blättern, untere und mittlere Blätter dunkelgrün P9.",
+    "Manganmangel: leuchtend gelbe, netzartige Aufhellung zwischen den Adern oben und in der Mitte P9.",
+    "Stickstoffmangel: beginnt mit leichtem Vergilben der untersten Blätter, also umgekehrt P9.",
+    "Echter Mehltau: weißer, pudriger Belag auf der Blattoberseite P10.",
+    "Zweifarbige Blätter kommen wahrscheinlich von einer genetischen Chimäre (Mischung aus zwei Zellsorten) P6."
+  ],
+  "look_alikes_en": [
+    "Heat stress: leaves curl and droop, growth stalls (P8, experience source). Cornell lists leaf curling and scorching as common heat symptoms (P6, field hemp).",
+    "Underwatering: wilting, brown leaves, dry soil (see card). UC IPM: wilting usually comes from too little water or too much light P5.",
+    "Iron deficiency: interveinal chlorosis on new upper leaves, lower and mid leaves dark green P9.",
+    "Manganese deficiency: bright yellow netted interveinal chlorosis on upper and central foliage P9.",
+    "Nitrogen deficiency: starts with slight yellowing of the lowest leaves, the reverse P9.",
+    "Powdery mildew: white powdery growth on upper leaf surfaces P10.",
+    "Two-toned leaves are likely the result of genetic chimerism (a mixture of two cell types) P6."
+  ],
+  "image": {
+    "drawing": "light-burn"
+  },
+  "sources": {
+    "P1": "VIVOSUN, How Far Should Grow Lights Be From Plants?, Lampenabstand, allgemeiner Hersteller-Leitfaden, Erfahrungsquelle, aus der Kartei übernommen (kartei/stages/autoflower.json, S7), abgerufen 2026-10-22: https://vivosun.com/growing_guide/how-far-away-should-lights-be.md",
+    "P3": "Fluence Bioengineering (LED-Hersteller), Understanding Photobleaching in Cannabis, 2023-01-06, Erfahrungsquelle, abgerufen 2026-10-23: https://fluence-led.com/understanding-photobleaching-in-cannabis/",
+    "P4": "VIVOSUN, VGrow Smart Grow Box Handbuch, Hersteller der Box, Seitenstand 2026-05-25, aus der Kartei übernommen (kartei/stages/autoflower.json, S1), abgerufen 2026-10-22: https://vivosun.com/support/guide/vgrow-smart-grow-box.md",
+    "P5": "UC Statewide IPM Program, Pittenger und Hodel, Houseplant Problems (74172), Stand 08/2020, Zimmerpflanzen, abgerufen 2026-10-23: https://ipm.ucanr.edu/PMG/PESTNOTES/pn74172.html",
+    "P6": "Cornell University, Cornell Hemp, Schwartz und Smart, Abiotic vs. Biotic Issues in Hemp Fields, Januar 2024, Feldhanf, abgerufen 2026-10-23: https://hemp.cals.cornell.edu/resources/reports-factsheets/2024-factsheets/abiotic-vs-biotic-issues-in-hemp-fields/",
+    "P7": "Rodriguez-Morrison, Llewellyn, Zheng (University of Guelph) 2021, Cannabis Yield, Potency, and Leaf Photosynthesis Respond Differently to Increasing Light Levels in an Indoor Environment, Frontiers in Plant Science, doi:10.3389/fpls.2021.646020, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC8144505/",
+    "P8": "VIVOSUN, Ideal Grow Tent Temperature and Humidity Guide, allgemeiner Hersteller-Leitfaden, nennt Cannabis nicht, Seitenstand dynamisch, Erfahrungsquelle, aus der Kartei übernommen (kartei/stages/autoflower.json, S5), abgerufen 2026-10-22: https://vivosun.com/growing_guide/temperature-and-humidity.md",
+    "P9": "Cockson, Landis, Smith, Hicks, Whipker (NC State University) 2019, Characterization of Nutrient Disorders of Cannabis sativa, Applied Sciences 9(20):4432, Sandkultur, abgerufen 2026-10-23: https://www.mdpi.com/2076-3417/9/20/4432",
+    "P10": "University of Kentucky Cooperative Extension, Smith, Gauthier, Villanueva u. a., An IPM Scouting Guide for Common Pests and Diseases of Kentucky Hemp (PPFS-AG-H-03), Juni 2026, Feldhanf, abgerufen 2026-10-23: https://plantpathology.mgcafe.uky.edu/sites/plantpathology.ca.uky.edu/files/PPFS-AG-H-03.pdf"
+  },
+  "_left_out": [
+    "'Abstand vergrößern' als feste Maßnahme: das Handbuch beschreibt keine Höhenverstellung.",
+    "'beim größten empfohlenen Abstand beginnen' als Abhilfe nach Schaden: ist ein Einrichtungsrat, jetzt unter Vorbeugung.",
+    "Fluence 'besonders rotlastig': Wortlaut nicht geprüft.",
+    "Potenz- und Duftaussagen aus VIVOSUN-Blog und Fluence: nicht übernommen.",
+    "Bessere Hochschulquelle zu Lichtbleiche bei Cannabis: nicht gefunden (Suche nicht möglich).",
+    "Offener Punkt der Recherche: die VIVOSUN-Seiten wurden automatisiert abgerufen (AGB Abschnitt 12). Entschieden 23.10.2026: Aussagen, die nur auf den an diesem Tag erstmals abgerufenen Seiten stehen, sind unten zurückgehalten.",
+    {
+      "section": "symptoms",
+      "text": "Wachstumsphase: Blätter vergilben, die Spitzen besonders stark, die Adern bleiben grün (P2, Erfahrungsquelle).",
+      "text_en": "Vegetative: leaves yellow, the tips most, veins stay green (P2, experience source).",
+      "sources": [
+        "P2"
+      ],
+      "reason": "VIVOSUN-Seite automatisch abgerufen, erst nach Lesen von Hand verwenden",
+      "url": "https://vivosun.com/growing_guide/light-burn-and-light-stress",
+      "action": "entfernt"
+    },
+    {
+      "section": "symptoms",
+      "text": "Spät: Blätter werden braun oder fallen ab, die Erde im Topf ist trocken; geschädigtes Gewebe erholt sich nicht (P2, Erfahrungsquelle). Trockene Erde mit braunen Blättern passt auch zu Unterwässern.",
+      "text_en": "Late: leaves turn brown or drop and the pot soil is dry; damaged tissue does not recover (P2, experience source). Dry soil with brown leaves also fits underwatering.",
+      "sources": [
+        "P2"
+      ],
+      "reason": "VIVOSUN-Seite automatisch abgerufen, erst nach Lesen von Hand verwenden",
+      "url": "https://vivosun.com/growing_guide/light-burn-and-light-stress",
+      "held": "Ganzer Eintrag; der zweite Satz (Unterwässern) hängt am ersten.",
+      "action": "entfernt"
+    },
+    {
+      "section": "causes",
+      "text": "Zu viel Licht und zu viel Wärme zusammen (P2, Erfahrungsquelle).",
+      "text_en": "Too much light combined with heat (P2, experience source).",
+      "sources": [
+        "P2"
+      ],
+      "reason": "VIVOSUN-Seite automatisch abgerufen, erst nach Lesen von Hand verwenden",
+      "url": "https://vivosun.com/growing_guide/light-burn-and-light-stress",
+      "action": "entfernt"
+    },
+    {
+      "section": "do_now",
+      "text": "light_percent senken. Abstand vergrößern nur, wenn die Lampe verstellbar ist: Das Handbuch beschreibt keine Höhenverstellung P4. VIVOSUN nennt als Weg, die Pflanze durch Training (LST, HST) nicht zu nah an die Lampe wachsen zu lassen (P2, Erfahrungsquelle).",
+      "text_en": "Lower light_percent. Increase distance only if the lamp can be moved: the manual describes no height adjustment P4. VIVOSUN names plant training (LST, HST) as a way to keep the plant from growing too close to the lamp (P2, experience source).",
+      "sources": [
+        "P2",
+        "P4"
+      ],
+      "reason": "VIVOSUN-Seite automatisch abgerufen, erst nach Lesen von Hand verwenden",
+      "url": "https://vivosun.com/growing_guide/light-burn-and-light-stress",
+      "held": "Satz 'VIVOSUN nennt als Weg, die Pflanze durch Training (LST, HST) nicht zu nah an die Lampe wachsen zu lassen (P2)'.",
+      "action": "gekürzt",
+      "now": "light_percent senken. Abstand vergrößern nur, wenn die Lampe verstellbar ist: Das Handbuch beschreibt keine Höhenverstellung P4."
+    },
+    {
+      "section": "do_now",
+      "text": "probe_temp prüfen, Wärme verstärkt den Schaden (P2, Erfahrungsquelle).",
+      "text_en": "Check probe_temp, heat adds to the damage (P2, experience source).",
+      "sources": [
+        "P2"
+      ],
+      "reason": "VIVOSUN-Seite automatisch abgerufen, erst nach Lesen von Hand verwenden",
+      "url": "https://vivosun.com/growing_guide/light-burn-and-light-stress",
+      "action": "entfernt"
+    },
+    {
+      "section": "do_now",
+      "text": "Gebleichte Blätter erholen sich nicht, nur weiterer Schaden lässt sich verhindern (P2, Erfahrungsquelle).",
+      "text_en": "Bleached leaves do not recover; only further damage can be prevented (P2, experience source).",
+      "sources": [
+        "P2"
+      ],
+      "reason": "VIVOSUN-Seite automatisch abgerufen, erst nach Lesen von Hand verwenden",
+      "url": "https://vivosun.com/growing_guide/light-burn-and-light-stress",
+      "action": "entfernt"
+    },
+    {
+      "section": "check",
+      "metric": "probe_temp",
+      "text": "Wärme an der Krone ausschließen, sie verstärkt den Schaden (P2, Erfahrungsquelle).",
+      "text_en": "Rule out heat at the canopy, it adds to the damage (P2, experience source).",
+      "sources": [
+        "P2"
+      ],
+      "reason": "VIVOSUN-Seite automatisch abgerufen, erst nach Lesen von Hand verwenden",
+      "url": "https://vivosun.com/growing_guide/light-burn-and-light-stress",
+      "action": "Hinweis ersetzt",
+      "now": "Zum Einfluss von Wärme auf Lichtbrand keine andere Quelle gefunden."
+    },
+    "Laut Auftrag vom 23.10.2026: Der VIVOSUN-Lampenabstandsratgeber steht seit 22.10.2026 als S7 in kartei/stages/autoflower.json und gilt deshalb als Quelle (hier P1, abgerufen 2026-10-22). Zurück im vollen Wortlaut und an der alten Stelle: Anzeichen 'Früh', Ursache 'Lampe zu stark oder zu nah' mit den Richtwerten, Vorbeugen 'oben anfangen', Prüf-Hinweis light_percent mit dem Keimling-Startwert. Offen bis zum Lesen von S7 von Hand: ob die Seite diese Anzeichen als früh einordnet; sonst fällt 'Früh:' weg wie bei Hitzestress und Windbrand. Weiter zurückgehalten bleibt nur die Seite light-burn-and-light-stress (P2)."
+  ],
+  "status_note": "Unvollständig: Zwei Herstellerseiten warten noch darauf, von Hand gelesen zu werden; diese Karte betrifft die Seite zu Lichtbrand und Lichtstress. Bis dahin fehlen hier zwei Anzeichen (Wachstumsphase, spät), eine Ursache (Licht und Wärme zusammen), ein Teil der Maßnahmen und der Prüf-Hinweis zur Temperatur. Die Richtwerte zum Lampenabstand stehen wieder in der Karte.",
+  "status_note_en": "Incomplete: two maker pages are still waiting to be read by hand; this card is affected by the page on light burn and light stress. Until then two signs (vegetative, late), one cause (light and heat together), some of the steps and the temperature check note are missing here. The lamp distance guide values are back in the card."
+}

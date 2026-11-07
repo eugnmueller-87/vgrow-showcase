@@ -1,0 +1,19 @@
+<!-- @dsCard group="Controls" height=270 subtitle="a pressed switch, an armed one, a locked one, and the rule rows they live in" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Toggle</title></head>
+<body style="margin:0">
+<div class="vg" style="padding:16px;display:grid;gap:16px;max-width:620px">
+  <div class="btn-row">
+    <button class="toggle" aria-pressed="true">On</button>
+    <button class="toggle" aria-pressed="false">Off</button>
+    <button class="toggle arm" aria-pressed="true">Take over</button>
+    <button class="toggle is-locked" aria-pressed="true" aria-disabled="true">On</button>
+    <span class="muted" style="font-size:13px">Locked: the box is offline</span>
+  </div>
+  <div>
+    <div class="toggle-row"><span class="what">Humidifier rule<small>off at 55%, back on below 45% (probe)</small></span><button class="toggle" aria-pressed="true">On</button></div>
+    <div class="toggle-row"><span class="what">Daily photo<small>at 12 PM while the light is on · suggestions only, you confirm</small></span><button class="toggle" aria-pressed="true">On</button></div>
+    <div class="toggle-row"><span class="what">Push alerts<small>7 rules active</small></span><button class="toggle" aria-pressed="false">Off</button></div>
+  </div>
+</div>
+</body></html>

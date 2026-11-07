@@ -1,0 +1,33 @@
+<!-- @dsCard group="Containers" height=340 subtitle="a row with a chevron, a title and what is inside · one open" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Disclosure</title></head>
+<body style="margin:0">
+<div class="vg" style="padding:16px">
+  <details class="disclosure" open>
+    <summary>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+      <span class="t"><b>Device settings and limits</b><span>Policy per device, the humidifier rule, hourly and daily command quotas</span></span>
+      <span class="status warn">1 needs you</span>
+    </summary>
+    <div class="disclosure-body">
+      <p style="margin:0 0 8px">Exhaust fan 0 to 3; light at most +25 a day; 60 minutes pause after your own change. Automatic commands: 0 this hour, 3 in the last 24 hours.</p>
+      <div class="seg block" role="group" aria-label="Light policy" style="max-width:420px"><button aria-pressed="true">Automatic</button><button aria-pressed="false">Suggest</button><button aria-pressed="false">Manual</button></div>
+    </div>
+  </details>
+  <details class="disclosure">
+    <summary>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+      <span class="t"><b>All entries</b><span>20 steps and reasons since midnight, oldest last</span></span>
+      <span class="status">20</span>
+    </summary>
+    <div class="disclosure-body"><p style="margin:0">…</p></div>
+  </details>
+  <details class="disclosure">
+    <summary>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+      <span class="t"><b>How the thirst index computes</b><span>Pot size, stage plan and the last confirmed watering</span></span>
+    </summary>
+    <div class="disclosure-body"><p style="margin:0">…</p></div>
+  </details>
+</div>
+</body></html>

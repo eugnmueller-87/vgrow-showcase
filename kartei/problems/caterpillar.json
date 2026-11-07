@@ -1,0 +1,150 @@
+{
+  "key": "caterpillar",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "schaedlinge",
+  "label": "Raupen (zum Beispiel Maiszünsler, Ostrinia nubilalis)",
+  "label_en": "Caterpillars (for example European corn borer, Ostrinia nubilalis)",
+  "tile": "Fraßlöcher, Kot an Blättern, Gänge in Knospen und Stängeln",
+  "tile_en": "Feeding holes and frass on leaves, tunnels in buds and stems",
+  "aliases": {
+    "de": [
+      "Raupe",
+      "Raupen",
+      "Maiszünsler",
+      "Ostrinia nubilalis",
+      "Baumwollkapselbohrer",
+      "Helicoverpa zea",
+      "Grapholita delineana"
+    ],
+    "en": [
+      "caterpillar",
+      "caterpillars",
+      "European corn borer",
+      "ECB",
+      "corn earworm",
+      "Helicoverpa zea",
+      "Eurasian hemp borer",
+      "Grapholita delineana"
+    ]
+  },
+  "symptoms": [
+    "In den Blüten: Kot, welke Blätter und Fraßgänge in den Knospen zeigen den Baumwollkapselbohrer (Helicoverpa zea, englisch corn earworm) an; er bohrt sich in Knospen und zerstört sie (P1, noch nicht geprüft). Die Art kommt laut Wikipedia nur in Amerika vor P2; die EPPO führt Niederlande, Slowenien und Schweiz als nicht vorkommend P3. Eine Raupe an Hanfblüten in Europa belegt keine gelesene Quelle.",
+    "Über Fraßgänge und Wunden dringen Erreger der Knospenfäule (Botrytis, ein Pilz) ein P4.",
+    "Am Stängel: Wunden, Löcher, verfärbtes Gewebe, manchmal Kot wie Sägemehl (P5, Maiszünsler, noch nicht geprüft); geschwächte Stängel brechen leichter P5.",
+    "An Blättern: Fraßlöcher, Kot, eingesponnene oder eingerollte Blätter, Raupen und Eier P6.",
+    "Spät: Grapholita delineana (englisch Eurasian hemp borer) frisst spät in der Saison im oberen Stängel und schädigt und tötet oft die Endknospen P7.",
+    "Die Raupe des Maiszünslers: ausgewachsen etwa 25 mm (P5, Colorado, noch nicht geprüft); AGES (Österreich): ältere Raupen dunkelbraun bis blassrot mit schwarzem Kopf, bis zu 20 mm P8. Widerspruch, nicht aufgelöst."
+  ],
+  "symptoms_en": [
+    "In the buds: frass, wilting leaves and tunnels in buds indicate the corn earworm (Helicoverpa zea); it bores into buds and destroys them (P1, not yet checked). According to Wikipedia the species occurs only in the Americas P2; EPPO lists the Netherlands, Slovenia and Switzerland as absent P3. No source read documents a caterpillar in hemp buds in Europe.",
+    "Bud rot pathogens (Botrytis, a fungus) enter through the tunnels and wounds P4.",
+    "On the stem: wounds, holes, discolored tissue, sometimes sawdust-like frass (P5, European corn borer, not yet checked); weakened stalks break more easily P5.",
+    "On leaves: feeding holes, excrement, webbed or rolled leaves, caterpillars and eggs P6.",
+    "Late: Grapholita delineana (Eurasian hemp borer) tunnels in upper stems late in the season and damages and often kills terminal buds P7.",
+    "European corn borer larva: about 25 mm when fully grown (P5, Colorado, not yet checked); AGES (Austria): older larvae dark brown to pale red with a black head, up to 20 mm P8. Contradiction, not resolved."
+  ],
+  "causes": [
+    "Der Baumwollkapselbohrer wird von Hanf angezogen, sobald die Pflanzen blühen; vorher ist er selten (P7, USA).",
+    "Der Maiszünsler lebt an Mais, aber auch an Hanf, Hopfen, Sorghum, Hirse, Beifuß oder Paprika P8.",
+    "Im Stängel sind die Raupen geschützt P9."
+  ],
+  "causes_en": [
+    "The corn earworm is attracted to hemp once plants begin to flower and is rarely seen earlier (P7, USA).",
+    "The European corn borer lives on corn, but also on hemp, hops, sorghum, millet, mugwort or peppers P8.",
+    "Inside the stem the borers are protected P9."
+  ],
+  "check": [
+    {
+      "metric": "probe_humidity",
+      "text": "Nach Fraß in der Blüte: Botrytis dringt nur über Wunden oder absterbende Teile ein P10. USU rät im Gewächshaus zu unter 50 % relativer Luftfeuchte P10; das Zielband der App für die Mitte der Blüte nennt 40 bis 60 % (Händlerquelle Hydrobuilder, in der Phasenkarte als Teilbeleg geführt, Erfahrungsquelle). Widerspruch, nicht geglättet. Keine Box-Messgröße zeigt Raupen an; Hinweise sind Fraßlöcher, Kot und Gespinste P6.",
+      "text_en": "After feeding damage in flower: Botrytis invades only through wounds or dying plant parts P10. USU advises below 50% RH in the greenhouse P10; the app's mid-flower band gives 40 to 60% (retailer source Hydrobuilder, partial in the stage card, experience source). Contradiction, not smoothed over. No box reading shows caterpillars; the signs are feeding holes, excrement and webbing P6."
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "watering",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    }
+  ],
+  "do_now": [
+    "Absuchen: Blätter auf Fraßlöcher, Kot, Gespinste, Raupen und Eier prüfen P6; Knospen und Stängel auf Fraßgänge (P1, P4).",
+    "Eingerollte oder eingesponnene Blätter abschneiden, Raupen absammeln und zerdrücken oder in Seifenwasser werfen P6.",
+    "Btk (Bacillus thuringiensis kurstaki, ein biologisches Raupenmittel) wirkt nur gegen blattfressende Raupen und nur, wenn sie behandeltes Laub fressen; am besten bei kleinen, frisch geschlüpften Raupen, das Mittel baut sich schnell ab, der Zeitpunkt ist entscheidend P6. Raupen im Stängel sind geschützt P9. AGES nennt Bt-Präparate gegen den Maiszünsler wirksam, für Maisfelder in Österreich, bei Spritzung zum Zeitpunkt des maximalen Larvenschlupfes P8. Für eine Raupe in der Hanfblüte nennt keine gelesene Quelle Btk. Etikett und Zulassung beachten: Im Haus- und Kleingarten dürfen nur Mittel angewandt werden, die für nichtberufliche Anwender zugelassen sind; sie tragen den Aufdruck 'Anwendung durch nichtberufliche Anwender zulässig' P11. Ob ein Mittel für Hanf zugelassen ist und ob eine Growbox in der Wohnung als Haus- und Kleingarten gilt, sagt diese Seite nicht."
+  ],
+  "do_now_en": [
+    "Search: check leaves for feeding holes, excrement, webbing, caterpillars and eggs P6; buds and stems for tunnels (P1, P4).",
+    "Cut off rolled or webbed leaves, handpick caterpillars and crush them or drop them into soapy water P6.",
+    "Btk (Bacillus thuringiensis kurstaki, a biological caterpillar product) only works on leaf-feeding caterpillars and only when they eat treated leaves; best on small, newly hatched ones, it breaks down quickly, so timing is critical P6. Borers inside the stem are protected P9. AGES calls Bt products effective against the European corn borer, for corn fields in Austria, sprayed at peak larval hatch P8. No source read names Btk for a caterpillar inside hemp buds. Follow label and approval (Etikett und Zulassung beachten): in German home and allotment gardens only products approved for non-professional users may be used; they carry the mark 'Anwendung durch nichtberufliche Anwender zulässig' P11. Whether a product is approved for hemp and whether a grow box in a flat counts as a home garden, this page does not say."
+  ],
+  "prevention": [
+    "Ab Blühbeginn regelmäßig in die Blüten schauen, denn der Baumwollkapselbohrer kommt in den USA mit der Blüte P7.",
+    "Fraß früh erkennen, weil Btk bei kleinen Raupen am besten wirkt P6."
+  ],
+  "prevention_en": [
+    "From the start of flowering, look into the buds regularly, as in the USA the corn earworm arrives with flowering P7.",
+    "Spot feeding early, because Btk works best on small caterpillars P6."
+  ],
+  "look_alikes": [
+    "Knospenfäule ohne Raupe: zuerst wasserdurchtränkte Stellen an Blütenteilen, die absterben P10. Faule Stellen deshalb auf Raupen und Kot prüfen.",
+    "Raupenfraß in der Blüte kann ohne Mikroskop wie Knospenfäule aussehen P10."
+  ],
+  "look_alikes_en": [
+    "Bud rot without a caterpillar: first water-soaked lesions on flower parts that turn necrotic P10. So check rotting spots for caterpillars and frass.",
+    "Caterpillar feeding in flower can look like bud rot without a microscope P10."
+  ],
+  "image": {
+    "file": "corn-borer.webp",
+    "thumb": "corn-borer-t.webp",
+    "w": 1200,
+    "h": 799,
+    "alt": "Raupe des Maiszünslers auf einem längs geaderten Blatt",
+    "alt_en": "European corn borer caterpillar on a leaf with parallel veins",
+    "note": "Gleiche Art wie im Kartentitel, aber auf einem anderen Blatt (vermutlich Mais), nicht auf Hanf.",
+    "note_en": "Same species as in the card title, but on another leaf (probably maize), not cannabis.",
+    "compare": true,
+    "credit": {
+      "work": "File:Corn borer.jpg",
+      "author": "Keith Weller (USDA ARS)",
+      "license": "Public Domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-USDA-ARS",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Corn_borer.jpg"
+    }
+  },
+  "sources": {
+    "P1": "Colorado State University, Agricultural Biology, Corn earworm, ohne Autor und Datum, am 2026-10-23 nicht abrufbar, Wortlaut ungeprüft, abgerufen 2026-10-23: https://agsci.colostate.edu/agbio/ipm-pests/corn-earworm/",
+    "P2": "Wikipedia (deutsch), Helicoverpa zea (Baumwollkapselbohrer), abgerufen 2026-10-23: https://de.wikipedia.org/wiki/Helicoverpa_zea",
+    "P3": "EPPO Global Database, Helicoverpa zea, Verbreitung, abgerufen 2026-10-23: https://gd.eppo.int/taxon/HELIZE/distribution",
+    "P4": "PNW Insect Management Handbook, Hemp-Caterpillars (Hanf-Kapitel Stand März 2026 laut Kapitelseite), Feldhanf, abgerufen 2026-10-23: https://pnwhandbooks.org/insect/agronomic/hemp/hemp-caterpillars",
+    "P5": "Colorado State University, Agricultural Biology, European corn borer, ohne Autor und Datum, am 2026-10-23 nicht abrufbar, Wortlaut ungeprüft, abgerufen 2026-10-23: https://agsci.colostate.edu/agbio/ipm-pests/european-corn-borer/",
+    "P6": "UC Statewide IPM Program, Leaf-Feeding Caterpillars, Stand 10/2025, Garten, nur Blattfresser, nicht Hanf, abgerufen 2026-10-23: https://ipm.ucanr.edu/home-and-landscape/leaf-feeding-caterpillars/",
+    "P7": "Cranshaw et al., Developing Insect Pest Management Systems for Hemp in the United States, Journal of Integrated Pest Management 10(1):26, 2019-08-28, abgerufen 2026-10-23: https://academic.oup.com/jipm/article/doi/10.1093/jipm/pmz023/5555744",
+    "P8": "AGES (Österreichische Agentur für Gesundheit und Ernährungssicherheit), Maiszünsler, aktualisiert 11.12.2025, Landwirtschaft in Österreich, abgerufen 2026-10-23: https://www.ages.at/pflanze/pflanzengesundheit/schaderreger-von-a-bis-z/maiszuensler",
+    "P9": "Cornell University, Cornell Hemp, Grab und Zuefle, Hemp Insect Management, Feldtag-Handout 2022, abgerufen 2026-10-23: https://hemp.cals.cornell.edu/resources/reports-factsheets/2022-cornell-hemp-field-day-handouts/hemp-insect-management",
+    "P10": "Utah State University Extension, Hemp Bud Rot, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-bud-rot.php",
+    "P11": "Pflanzenschutzamt Berlin, Anwendung von Pflanzenschutzmitteln in Haus-, Klein- und Siedlergärten, ohne Datum, abgerufen 2026-10-23: https://www.berlin.de/pflanzenschutzamt/ueberwachung/pflanzenschutzmittel-im-haus-und-kleingarten/"
+  },
+  "_hinweis_wortwahl": "Wortwahl angepasst, ohne den Inhalt zu ändern: der Wiki-Filter gegen Konsumaussagen (vgrow/wiki.py, CONSUMPTION_RE) blendet Sätze mit Wirkung, effect oder CBD auf der Seite aus, und der Zwillingstest zählt Einheiten je Paar: do_now[2] de: 'die Wirkung lässt schnell nach' -> 'das Mittel baut sich schnell ab'",
+  "_left_out": [
+    "Alias 'Maiswurm': keine belegte deutsche Bezeichnung, ersetzt durch Baumwollkapselbohrer.",
+    "'Für Deutschland liegt die AGES-Angabe näher': keine Quelle.",
+    "CSU-Seiten (Corn earworm, European corn borer): am 2026-10-23 nicht abrufbar, Aussagen als ungeprüft markiert; vor Veröffentlichung im Browser prüfen.",
+    "Btk für Raupen in der Hanfblüte: keine Quelle.",
+    "Wie Falter in eine geschlossene Box gelangen: keine Quelle."
+  ]
+}

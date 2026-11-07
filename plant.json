@@ -1,0 +1,106 @@
+{
+  "_hinweis": "Der laufende Durchgang. Eine Pflanze pro Durchgang. Neue Pflanze: neue Datei hier, Karten in kartei/ wiederverwenden. Angezeigte Texte haben einen englischen Zwilling mit _en. Düngen (feeding): die Woche folgt der Phase, die du auf der Seite setzt. bloom_start nur für ein Datum, das du selbst festlegst (es gilt dann vor dem Tag deiner Blütephase); bloom_start_estimate ist eine Schätzung und rechnet nie Mengen. confirm_above_liters (Standard 5): ab so vielen Litern fragt die Seite ein zweites Mal nach.",
+  "plant": {
+    "strain": "Ice Cream Cake Automatic",
+    "start_date": "2026-09-10",
+    "start_approx": true,
+    "start_note": "Wächst laut Betreiber seit etwa 10.09.2026, zuerst draußen, dann in die Box umgetopft (420Flow Lightmix, gekauft 26.09.), damit sie optimale Bedingungen hat. Datum des Umtopfens nicht notiert. Saatgut von Hanfgarten, bestellt am 23.08.",
+    "strain_note": "Sorte vom Betreiber am 22.10.2026 bestätigt: Ice Cream Cake."
+  },
+  "stages_card": "autoflower",
+  "strain_card": "ice-cream-cake-auto",
+  "stage_estimate": {
+    "key": "early_flower",
+    "since": "2026-10-22",
+    "note": "Geschätzt aus dem Kamerabild vom 22.10.2026 (weiße Härchen an den Spitzen). Bitte bestätigen oder die Phase setzen.",
+    "note_en": "Estimated from the camera image of Oct 22, 2026 (white pistils at the tips). Please confirm or set the stage."
+  },
+  "medium": {
+    "name": "420Flow Grow Erde Lightmix (Erde mit Perlite)",
+    "name_en": "420Flow Grow Erde Lightmix (soil with perlite)",
+    "type": "soil",
+    "note": "Gekauft am 26.09.2026 (Amazon, 40 Liter), laut Betreiber am 22.10.2026 das Substrat der Pflanze."
+  },
+  "water_targets": {
+    "ph": {
+      "min": 6.0,
+      "max": 6.5,
+      "unit": "pH",
+      "label": "pH der Nährlösung",
+      "label_en": "pH of the nutrient solution",
+      "sources": [
+        "W1"
+      ],
+      "note": "Cornell: Cannabis wächst am besten bei pH 6 bis 6,5, Gießwasser 6,2 oder etwas darunter (W1). CANNA nennt für Erde 5,8 bis 6,2 (W2).",
+      "note_en": "Cornell: 'Cannabis grows best in a pH of 6-6.5', irrigation water 6.2 or slightly below (W1). CANNA gives 5.8 to 6.2 for soil (W2)."
+    },
+    "ec": {
+      "min": null,
+      "max": null,
+      "unit": "mS/cm",
+      "label": "EC der Nährlösung",
+      "label_en": "EC of the nutrient solution",
+      "sources": [
+        "W3",
+        "W4"
+      ],
+      "note": "Für Erde keine belegte EC-Spanne gefunden; die Studien (W3, W4) liefen in Hydro und Substrat. Ziel setzt die Düngertabelle.",
+      "note_en": "No documented EC range found for soil; the studies (W3, W4) ran in hydro and substrate. The feeding chart sets the target."
+    }
+  },
+  "feeding": {
+    "_hinweis_setups": "Zwei Dünger hier, dazu mit from_library jede Düngerkarte in kartei/nutrients/ mit einem Block selectable (feeding.library_setups); es gilt immer nur einer: welchen du gibst, wählst du auf der Seite (gespeichert im Zustandsordner, nie hier). Faktor und Blütebeginn unten gelten für alle.",
+    "from_library": true,
+    "setups": {
+      "biobizz": {
+        "label": "BioBizz (flüssig, organisch)",
+        "label_en": "BioBizz (liquid, organic)",
+        "card": "biobizz-2026",
+        "page": "light_mix",
+        "page_note": "Seite Light-Mix oder Coco-Mix: du hast angegeben, dass der Hersteller 420Flow Grow Erde Lightmix als leicht vorgedüngt beschreibt.",
+        "page_note_en": "Light-Mix or Coco-Mix page: you said the maker describes 420Flow Grow Erde Lightmix as lightly pre-fertilized.",
+        "components": [
+          "bio_grow",
+          "bio_bloom",
+          "top_max"
+        ]
+      },
+      "vivosun": {
+        "label": "VIVOSUN Base A + B (Granulat)",
+        "label_en": "VIVOSUN Base A + B (granules)",
+        "card": "vivosun-base-ab",
+        "page": "label",
+        "page_note": "Das Etikett hat eine Tabelle und nennt kein Medium. Dein Substrat ist 420Flow Lightmix (Erde); die Tabelle sagt dazu nichts und gilt hier nur als Etikettwert.",
+        "page_note_en": "The label has one table and names no medium. Your substrate is 420Flow Lightmix (soil); the table says nothing about it and counts here only as a label value.",
+        "components": [
+          "base_a",
+          "base_b"
+        ]
+      }
+    },
+    "dose_factor": 0.5,
+    "dose_factor_note": "Faktor 0,5 für die Autoflower: VIVOSUN nennt für Autoflower etwa 1/2 bis 1/4 der Nährstoffmenge einer normal großen Pflanze (N5), 420seedz beginnt in Light-Mix-Erde mit der halben Dosis (N6). 0,5 ist das obere Ende dieser Spanne und der halbe Start. Nie mehr als die Tabelle.",
+    "dose_factor_note_en": "Factor 0.5 for the autoflower: VIVOSUN gives about 1/2 to 1/4 of the nutrients of a normal-sized plant for autoflowers (N5), 420seedz starts with half the dose in light-mix soil (N6). 0.5 is the upper end of that range and the half-dose start. Never more than the chart.",
+    "dose_factor_sources": [
+      "N5",
+      "N6"
+    ],
+    "bloom_start": null,
+    "bloom_start_estimate": "2026-10-22",
+    "bloom_start_estimate_note": "Obergrenze, kein Beginn: das erste ausgewertete Kamerabild (22.10.2026, der Tag, an dem die Bildauswertung begann) zeigte schon weiße Härchen. Die Blüte begann also an diesem Tag oder früher; den echten Tag trägst du in der Pflanzenkarte unter Blütebeginn ein.",
+    "bloom_start_estimate_note_en": "An upper bound, not a start: the first analysed camera image (Oct 22, 2026, the day the photo reading began) already showed white pistils. Flowering therefore began on that day or earlier; enter the real day on the plant card under flowering start.",
+    "bloom_start_note": "Eigene Festlegung des Cockpits: eine Autoflower stellt nicht auf Blüte um, die Blütewochen zählen deshalb ab dem ersten Blütenansatz, also ab dem Tag, an dem du die erste Blütephase setzt. BioBizz zählt ab dem Tag der Umstellung (N3).",
+    "bloom_start_note_en": "The cockpit's own convention: an autoflower does not flip to flowering, so the flowering weeks count from the first flower sites, that is from the day you set the first flowering stage. BioBizz counts from the day of the flip (N3).",
+    "bloom_start_sources": [
+      "N3"
+    ]
+  },
+  "sources": {
+    "W1": "Cornell Cooperative Extension (J. Reid), High Tunnel Soil Management for Cannabis sativa: https://hemp.cals.cornell.edu/resources/reports-factsheets/2022-cornell-hemp-field-day-handouts/high-tunnel-soil-management-for-cannabis-sativa",
+    "W2": "CANNA FAQ, pH je Medium: https://www.canna.com.au/faq/389",
+    "W3": "Hershkowitz, Westmoreland, Bugbee 2025, Frontiers in Plant Science: https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2025.1433985/full",
+    "W4": "Baas & Wijnen 2023, Acta Horticulturae 1377: https://www.ishs.org/ishs-article/1377_97",
+    "N5": "VIVOSUN, was Autoflower-Samen sind: https://vivosun.com/en-CA/growing_guide/what-are-autoflowering-seeds/",
+    "N6": "420seedz, Cannabis anbauen für Anfänger (vom Hersteller der Erde 420Flow): https://420seedz.de/guide/cannabis-anbauen-anfaenger"
+  }
+}

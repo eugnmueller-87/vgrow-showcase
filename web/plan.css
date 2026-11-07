@@ -1,0 +1,62 @@
+/* The grow plan's card on the automation page (web/plan.js). Shared cards, tiles and pills come from style.css and cockpit.css. */
+.plan-head { align-items: flex-start; }
+.plan-sub { margin: 2px 0 0; color: var(--muted); font-size: 13px; line-height: 18px; }
+.plan-tiles { margin-top: 12px; }
+.plan-tile-warn { color: var(--warn); }
+.plan-tile-bad { color: var(--bad); }
+.plan-tile-ok { color: var(--accent-strong); }
+.plan-light { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 12px; }
+.plan-light-text { margin: 0; flex: 1 1 280px; font-size: 14px; line-height: 20px; }
+.plan-section { margin-top: 20px; }
+.plan-h { margin: 0 0 8px; font-size: 13px; line-height: 18px; font-weight: 600; color: var(--muted); }
+.plan-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.plan-step { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 20px; color: var(--muted); }
+.plan-step.next { color: inherit; padding: 12px; border: 1px solid var(--line); border-radius: 10px; }
+.plan-step.done { color: var(--muted); }
+.plan-step-n { flex: none; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; background: var(--line); color: var(--ink); }
+.plan-step.next .plan-step-n { background: var(--accent-soft); color: var(--accent-strong); }
+.plan-step.done .plan-step-n { background: var(--accent-soft); color: var(--accent-strong); }
+.plan-step-body { min-width: 0; flex: 1; }
+.plan-step-text { margin: 4px 0 0; font-size: 13px; line-height: 19px; color: var(--muted); }
+.plan-step-done { font-variant-numeric: tabular-nums; }
+.plan-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; }
+.plan-runs { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.plan-ml { width: 170px; max-width: 100%; }
+.plan-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.plan-marks { list-style: none; margin: 0 0 12px; padding: 0; }
+.plan-mark { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 14px; line-height: 20px; }
+.plan-mark.later, .plan-mark.past, .plan-mark.done { color: var(--muted); }
+.plan-mark-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+.plan-mark-span { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.plan-mark-head .pill { margin-left: auto; }
+.plan-photo { margin: 20px 0 0; }
+.plan-photo-frame { position: relative; border-radius: 10px; overflow: hidden; line-height: 0; background: var(--line); }
+.plan-photo-frame img { display: block; width: 100%; height: auto; }
+.plan-photo-line { position: absolute; left: 0; right: 0; height: 0; border-top: 2px solid var(--bad); }
+.plan-photo-tag { position: absolute; left: 8px; bottom: 4px; padding: 2px 6px; border-radius: 6px; background: var(--bad); color: var(--bad-soft);
+  font-size: 12px; line-height: 16px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.plan-photo figcaption { margin-top: 6px; }
+.plan-table-wrap { margin-top: 20px; overflow-x: auto; }
+.plan-table { border-collapse: collapse; width: 100%; font-size: 13px; line-height: 18px; }
+.plan-table th { text-align: left; font-weight: 600; color: var(--muted); padding: 8px 12px 8px 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.plan-table td { vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); }
+.plan-table td:first-child { font-weight: 600; white-space: nowrap; }
+.plan-now { font-variant-numeric: tabular-nums; }
+.plan-now.warn { color: var(--warn); font-weight: 600; }
+.plan-now.ok { color: var(--accent-strong); }
+.plan-hint { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; line-height: 16px; }
+.plan-log { margin-top: 16px; font-size: 13px; }
+.plan-field { display: inline-flex; flex-direction: column; gap: 4px; color: var(--muted); font-size: 12px; }
+.plan-log summary { cursor: pointer; color: var(--muted); }
+@media (max-width: 959px) {
+  .plan-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 699px) {
+  .plan-table, .plan-table tbody, .plan-table tr, .plan-table td { display: block; }
+  .plan-table thead { display: none; }
+  .plan-table tr { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .plan-table td { border: 0; padding: 2px 0; white-space: normal; }
+  .plan-table td[data-label]::before { content: attr(data-label) ": "; color: var(--muted); font-size: 12px; }
+  .plan-table td.plan-none { display: none; }
+}

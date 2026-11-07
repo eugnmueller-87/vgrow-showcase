@@ -1,0 +1,149 @@
+{
+  "key": "thrips",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "schaedlinge",
+  "label": "Thripse (Zwiebelthrips, Kalifornischer Blütenthrips)",
+  "label_en": "Thrips (onion thrips, western flower thrips)",
+  "tile": "Silbrige Narben mit dunklen Kotpunkten",
+  "tile_en": "Silvery scars with dark droppings",
+  "aliases": {
+    "de": [
+      "Thrips",
+      "Thripse",
+      "Fransenflügler",
+      "Blasenfüße",
+      "Zwiebelthrips",
+      "Kalifornischer Blütenthrips",
+      "Thrips tabaci",
+      "Frankliniella occidentalis"
+    ],
+    "en": [
+      "thrips",
+      "onion thrips",
+      "western flower thrips",
+      "WFT",
+      "Thrips tabaci",
+      "Frankliniella occidentalis"
+    ]
+  },
+  "symptoms": [
+    "Weiße Pünktchen oder silbrige Narben auf den Blättern mit dunklen Kotpunkten P1, meist entlang der Blattadern P1.",
+    "Wo: auf Blättern und versteckt in Blütenknospen, deshalb oft erst bei schwerem Schaden entdeckt P2.",
+    "Spät: verformte junge Blätter P1; im Innenanbau kann der Zwiebelthrips ernste Blattschäden machen P3.",
+    "Die Tiere: winzig. P4: kleiner als 1/20 Zoll (1,27 mm), Farbe je nach Art und Stadium verschieden. P1: ausgewachsene Tiere länglich, gelb bis gelbbraun, mit zwei Paar gefransten Flügeln. P2 nennt für den Kalifornischen Blütenthrips 1/16 Zoll (umgerechnet, gerundet: 1,59 mm). Die Größenangaben widersprechen sich, nicht aufgelöst."
+  ],
+  "symptoms_en": [
+    "White flecks or silvery scars on the leaves with dark fecal spots P1, usually along the leaf veins P1.",
+    "Where: on leaves and hidden in flower buds, so often found only after severe damage P2.",
+    "Late: distorted young leaves P1; in indoor growing, onion thrips can cause serious foliage damage P3.",
+    "The insects: minute. P4: less than 1/20 inch (1.27 mm), color varies with species and life stage. P1: adults elongated, yellow to yellow-brown, with two pairs of fringed wings. P2 gives 1/16 inch (converted, rounded: 1.59 mm) for the western flower thrips. The size figures contradict each other, not resolved."
+  ],
+  "causes": [
+    "Heiß und trocken fördert sie (P1, Freiland). Starker Regen oder Beregnung von oben senkt die Zahl (P1, Freiland); das gilt nicht für die Box und ist kein Rat zum Befeuchten, denn Knospenfäule braucht Feuchte und Nässe P5.",
+    "Bei Wärme kann der Lebenszyklus vom Ei bis zum ausgewachsenen Tier schon nach 2 Wochen abgeschlossen sein P4. P2 (Kalifornischer Blütenthrips, Gewächshaus-Zierpflanzen, nicht Hanf): 7 bis 14 Tage bei schwankenden 68 bis 98 °F (umgerechnet, gerundet: 20 bis 36,7 °C). Die Quellen weichen ab, nicht aufgelöst.",
+    "Eingeschleppt mit befallenen Pflanzen oder Stecklingen (P4, P2), im Innenanbau auch über Personen, die befallene Pflanzen angefasst haben (P6, für Schädlinge allgemein). Die Tiere können außerdem mit dem Wind weit treiben P4.",
+    "Verpuppung im Substrat: Die Larve lässt sich nach dem zweiten Stadium in die Erde fallen P2."
+  ],
+  "causes_en": [
+    "Hot and dry conditions favor them (P1, outdoors). Heavy rain or overhead irrigation lowers numbers (P1, outdoors); this does not apply to the box and is no reason to humidify, because bud rot needs humidity and moisture P5.",
+    "In warm weather the life cycle from egg to adult can be completed in as little as 2 weeks P4. P2 (western flower thrips, greenhouse ornamentals, not hemp): 7 to 14 days at fluctuating 68 to 98 °F (converted, rounded: 20 to 36.7 °C). The sources differ, not resolved.",
+    "Brought in with infested plants or cuttings (P4, P2); in indoor growing also by people who handled infested plants (P6, pests in general). The insects can also drift long distances on the wind P4.",
+    "Pupation in the medium: after the second larval stage the larva drops into the soil P2."
+  ],
+  "check": [
+    {
+      "metric": "probe_temp",
+      "text": "Heiß und trocken fördert Thripse (P1, Freiland); eine Zahl für Hanf nennt keine gelesene Quelle. P2 (Gewächshaus-Zierpflanzen, nicht Hanf): Entwicklung nur zwischen 50 und 90 °F (umgerechnet, gerundet: 10 bis 32,2 °C), bei 50 °F keine. Ein Messwert im Zielband ist kein Befund: Thripse bestätigt nur die Sichtprüfung P4.",
+      "text_en": "Hot and dry favors thrips (P1, outdoors); no source read gives a figure for hemp. P2 (greenhouse ornamentals, not hemp): development only between 50 and 90 °F (converted, rounded: 10 to 32.2 °C), none at 50 °F. A reading within the target band is no finding: only a visual check confirms thrips P4."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Trockene Luft fördert sie (P1, Freiland); keine Zahl in den gelesenen Quellen.",
+      "text_en": "Dry air favors them (P1, outdoors); no figure in the sources read."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Hoher VPD heißt Luft zu trocken oder zu warm (Hinweis der App, kein öffentlicher Beleg).",
+      "text_en": "High VPD means air too dry or too warm (app note, no public source)."
+    },
+    {
+      "metric": "watering",
+      "text": "Kein direkter Bezug; die Puppen liegen aber in der Erde P2.",
+      "text_en": "No direct link; the pupae do sit in the soil P2."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    }
+  ],
+  "do_now": [
+    "Blätter entlang der Adern auf weiße Flecken prüfen P1; Blätter oder Blüten über weißem Papier abschütteln P4.",
+    "Blaue oder hellgelbe Klebetafeln aufhängen P4.",
+    "Vor jeder Maßnahme nach den Tieren selbst suchen, um sicherzugehen, dass Thripse da sind und den Schaden machen P4.",
+    "Nützlinge im Handel (Gewächshaus): Raubmilben Neoseiulus cucumeris und Amblyseius swirskii, Blumenwanzen (Orius), Kurzflügelkäfer Dalotia coriaria, Nematoden Steinernema feltiae P2.",
+    "Mittel erst, wenn Sichtprüfung oder Klebetafeln Thripse bestätigen: Öl-Präparate, Insektizidseifen und Pyrethrine können vorübergehend helfen, vor allem gegen Gewächshausthripse. Spinosad darf nicht an blühenden Pflanzen angewendet werden, weil es beim Spritzen und etwa 1 Tag danach für Nützlinge und Bienen giftig sein kann P4. Etikett und Zulassung beachten: Im Haus- und Kleingarten dürfen nur Mittel angewandt werden, die für nichtberufliche Anwender zugelassen sind; sie tragen den Aufdruck 'Anwendung durch nichtberufliche Anwender zulässig' P7. Ob ein Mittel für Hanf zugelassen ist und ob eine Growbox in der Wohnung als Haus- und Kleingarten gilt, sagt diese Seite nicht."
+  ],
+  "do_now_en": [
+    "Check leaves along the veins for white flecks P1; shake leaves or flowers over white paper P4.",
+    "Hang blue or bright yellow sticky traps P4.",
+    "Before any action, look for the insects themselves to be certain that thrips are present and cause the damage P4.",
+    "Commercial beneficials (greenhouse): predatory mites Neoseiulus cucumeris and Amblyseius swirskii, minute pirate bugs (Orius), rove beetle Dalotia coriaria, nematodes Steinernema feltiae P2.",
+    "Products only once a visual check or sticky traps confirm thrips: oil products, insecticidal soaps and pyrethrins can give temporary control, especially for greenhouse thrips. Spinosad must not be applied to plants that are flowering, because it can be toxic to certain natural enemies and to bees when sprayed and for about 1 day afterward P4. Follow label and approval (Etikett und Zulassung beachten): in German home and allotment gardens only products approved for non-professional users may be used; they carry the mark 'Anwendung durch nichtberufliche Anwender zulässig' P7. Whether a product is approved for hemp and whether a grow box in a flat counts as a home garden, this page does not say."
+  ],
+  "prevention": [
+    "Jungpflanzen mit einer 10-fach-Lupe prüfen, befallene aussortieren oder behandeln P1.",
+    "Klebetafeln zur laufenden Überwachung P4."
+  ],
+  "prevention_en": [
+    "Inspect transplants with a 10x hand lens; discard or manage infested ones P1.",
+    "Sticky traps for ongoing monitoring P4."
+  ],
+  "look_alikes": [
+    "Nützliche Raubthripse, zum Beispiel Aeolothrips P1: erst die Tiere selbst bestimmen, bevor man handelt P4.",
+    "Spinnmilben: ebenfalls helle Sprenkel, dazu oft viel Gespinst; das Gespinst unterscheidet sie von Thripsen P8."
+  ],
+  "look_alikes_en": [
+    "Beneficial predatory thrips, for example Aeolothrips P1: identify the insects first before acting P4.",
+    "Spider mites: also light stippling, often with lots of webbing; the webbing distinguishes them from thrips P8."
+  ],
+  "image": {
+    "file": "thrips-specimens.webp",
+    "thumb": "thrips-specimens-t.webp",
+    "w": 480,
+    "h": 720,
+    "alt": "Zwei Thripse auf weißem Grund: links der kleinere, hellbraune Zwiebelthrips, rechts der größere, gelbliche Kalifornische Blütenthrips",
+    "alt_en": "Two thrips on a white background: the smaller, tan onion thrips on the left, the larger, yellowish western flower thrips on the right",
+    "note": "Präparierte Tiere auf weißem Grund, kein Schadbild an einer Pflanze.",
+    "note_en": "Prepared specimens on a white background, no damage on a plant.",
+    "compare": false,
+    "credit": {
+      "work": "File:Thrips tabaci, Frankliniella occidentalis.jpg",
+      "author": "Alton N. Sparks, Jr., University of Georgia, Bugwood.org",
+      "license": "CC BY 3.0 US",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/us/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Thrips_tabaci,_Frankliniella_occidentalis.jpg"
+    }
+  },
+  "sources": {
+    "P1": "Utah State University Extension, Hemp Thrips, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-thrips.php",
+    "P2": "UConn Extension, Pundt, Managing Western Flower Thrips on Greenhouse Crops, Stand Juni 2024, gewerbliche Gewächshäuser, nicht Hanf, abgerufen 2026-10-23: https://ipm.cahnr.uconn.edu/?p=13109",
+    "P3": "Cranshaw et al., Developing Insect Pest Management Systems for Hemp in the United States, Journal of Integrated Pest Management 10(1):26, 2019-08-28, abgerufen 2026-10-23: https://academic.oup.com/jipm/article/doi/10.1093/jipm/pmz023/5555744",
+    "P4": "UC Statewide IPM Program, Pest Notes Thrips 7429 (Bethke, Dreistadt, Varela, Stand 05/2014), Garten-Merkblatt, nicht Hanf, abgerufen 2026-10-23: https://ipm.ucanr.edu/home-and-landscape/thrips/",
+    "P5": "Utah State University Extension, Hemp Bud Rot, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-bud-rot.php",
+    "P6": "Purdue Extension E-275, Serber und Long, Management Strategies for Common Arthropod Pests of Greenhouse Hemp in Indiana, Dezember 2021, abgerufen 2026-10-23: https://www.extension.entm.purdue.edu/publications/E-275/E-275.html",
+    "P7": "Pflanzenschutzamt Berlin, Anwendung von Pflanzenschutzmitteln in Haus-, Klein- und Siedlergärten, ohne Datum, abgerufen 2026-10-23: https://www.berlin.de/pflanzenschutzamt/ueberwachung/pflanzenschutzmittel-im-haus-und-kleingarten/",
+    "P8": "UC Statewide IPM Program, Pest Notes Spider Mites (L.D. Godfrey, Stand 12/2011), Garten-Merkblatt, nicht Hanf, abgerufen 2026-10-23: https://ipm.ucanr.edu/home-and-landscape/spider-mites/"
+  },
+  "_left_out": [
+    "'Eingeschleppt mit Jungpflanzen (USU)': USU gibt nur den Prüfrat; Beleg jetzt UC IPM, UConn, Purdue.",
+    "'Gelb bis gelbbraun' als allgemeines Merkmal: gilt laut USU für ausgewachsene Tiere.",
+    "'Nicht bekämpfen' bei Raubthripsen als Quellenaussage: ersetzt durch 'erst bestimmen'.",
+    "UC IPM: 'auch Wanzen und Milben sprenkeln Blätter': Wortlaut nicht geprüft.",
+    "'Früh' und 'Spät' für Thrips-Symptome: keine Quelle datiert sie.",
+    "Erklärung von Pyrethrinen, Spinosad, Nematoden: keine gelesene Quelle liefert sie.",
+    "UC IPM 'Spinosad wirkt meist besser' (P4): gestrichen, liest sich wie eine Empfehlung an den Hobbygärtner; der Hinweis 'nicht an blühenden Pflanzen' bleibt (Review 23.10.2026)."
+  ]
+}

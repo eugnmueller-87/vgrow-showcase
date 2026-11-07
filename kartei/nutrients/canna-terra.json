@@ -1,0 +1,146 @@
+{
+  "name": "CANNA Terra",
+  "name_en": "CANNA Terra",
+  "summary": "Mineralische Komplettdünger für Erde: Terra Vega im Wachstum, Terra Flores in der Blüte, dazu Zusätze von CANNA. Das deutsche Schema V26.02 druckt Spannen je 10 Liter; die Karte zeigt sie je Liter, und das Cockpit rechnet vom unteren Wert.",
+  "summary_en": "Mineral complete feeds for soil: Terra Vega in the vegetative phase, Terra Flores in flowering, plus CANNA's additives. The German schedule V26.02 prints ranges per 10 litres; the card shows them per litre, and the cockpit computes from the lower value.",
+  "product": "CANNA",
+  "version": "DE V26.02",
+  "status": "draft",
+  "status_note": "Abgetippt aus dem deutschen CANNA-Terra-Düngerschema V26.02 (CT1) am 23.10.2026. Die Tabelle steht je 10 Liter, die Karte je Liter (32 ml je 10 l sind 3,2 ml/l). Ein Entwurf, bis du die Karte auf der Seite mit dem Schema vergleichst und bestätigst; bis dahin rechnet das Cockpit keine Mengen.",
+  "status_note_en": "Transcribed from the German CANNA Terra feeding schedule V26.02 (CT1) on Oct 23, 2026. The chart is per 10 litres, the card per litre (32 ml per 10 l is 3.2 ml/l). A draft until you compare the card with the schedule on the page and confirm it; until then the cockpit computes no amounts.",
+  "check": {"state": "checked", "on": "2026-10-23", "text": "Jede Zahl der Tabelle am 23.10.2026 gegen das deutsche Schema V26.02 (CT1) geprüft: das PDF als Bild gerendert und gegen seine Textebene gelesen.", "text_en": "Every number of the chart checked on Oct 23, 2026 against the German schedule V26.02 (CT1): the PDF rendered as an image and read against its text layer."},
+  "unit": "ml/l",
+  "printed_unit": "ml/10 l",
+  "aliases": {
+    "de": ["CANNA Terra", "Canna Terra Vega", "Canna Terra Flores", "Terra Vega", "Terra Flores"],
+    "en": ["CANNA Terra", "Canna Terra Vega", "Canna Terra Flores", "Terra Vega", "Terra Flores"]
+  },
+  "line": {
+    "maker": "CANNA",
+    "types": ["mineral_liquid"],
+    "media": ["soil"],
+    "media_text": "Erde auf Torfbasis; laut Produktseite vorgedüngte Mischungen, nährstoffarme Anzuchterde und wiederverwendete Erde.",
+    "media_text_en": "Peat-based soil; per the product page pre-fertilized mixes, low-nutrient seed soil and reused soil.",
+    "products": [
+      {"product": "CANNA Terra Vega", "role": "Mineralischer Komplettdünger für das Wachstum; Produktseite 500 ml je 100 l (1:200), EC 0,9 bis 1,6 mS/cm, pH 5,8 bis 6,2.", "role_en": "Mineral complete feed for the vegetative phase; product page 500 ml per 100 l (1:200), EC 0.9 to 1.6 mS/cm, pH 5.8 to 6.2.", "sources": ["CT3"]},
+      {"product": "CANNA Terra Flores", "role": "Mineralischer Komplettdünger für Blüte und Frucht; Produktseite 500 ml je 100 l (1:200), EC 0,9 bis 1,6 mS/cm mit Wasser, pH 5,8 bis 6,2.", "role_en": "Mineral complete feed for flowering and fruiting; product page 500 ml per 100 l (1:200), EC 0.9 to 1.6 mS/cm including water, pH 5.8 to 6.2.", "sources": ["CT4"]},
+      {"product": "CANNA Rhizotonic", "role": "Wurzelzusatz in der Tabelle; die Produktseite wurde nicht gelesen.", "role_en": "Root additive on the chart; its product page was not read.", "sources": ["CT1"]},
+      {"product": "CANNAZYM", "role": "Enzymzusatz in der Tabelle; bei wiederverwendeter Erde doppelt (5 ml/l).", "role_en": "Enzyme additive on the chart; doubled with reused soil (5 ml/l).", "sources": ["CT1"]},
+      {"product": "CANNABOOST", "role": "Blütezusatz in der Tabelle; in der Blüte bis höchstens 4 ml/l.", "role_en": "Flowering additive on the chart; in flowering up to 4 ml/l at most.", "sources": ["CT1"]},
+      {"product": "CANNA PK 13/14", "role": "Phosphor- und Kaliumzusatz für eine Woche (W6), in den 3 bis 4 Wochen vor der Ernte.", "role_en": "Phosphorus and potassium supplement for one week (W6), in the 3 to 4 weeks before harvest.", "sources": ["CT1"]},
+      {"product": "CANNA CALMAG AGENT", "role": "Wasserkorrektur: die Menge hängt von der EC deines Wassers ab, ideal 0,2 bis 0,4 mS/cm; die Tabelle nennt bis 0,7 ml/l.", "role_en": "Water correction: the amount depends on the EC of your water, ideally 0.2 to 0.4 mS/cm; the chart gives up to 0.7 ml/l.", "sources": ["CT1"]},
+      {"product": "CANNA FLUSH", "role": "Steht in der deutschen Tabelle in W7 und W9 mit 4 ml/l; die Produktseite wurde nicht gelesen.", "role_en": "Stands in the German chart in W7 and W9 at 4 ml/l; its product page was not read.", "sources": ["CT1"]}
+    ],
+    "application_short": "Ins Gießwasser, laut Tabelle je 10 Liter: Terra Vega im Wachstum, Terra Flores ab W3, pH 5,8 bis 6,2; nährstoffreiche Erde 1 bis 3 Mal pro Woche.",
+    "application_short_en": "Into the watering water, per the chart per 10 litres: Terra Vega in the vegetative phase, Terra Flores from W3, pH 5.8 to 6.2; nutrient-rich soil 1 to 3 times a week.",
+    "application": "Mengen je 10 Liter. Spalten: Bewurzelung Tag 1 bis 5 und Wachstum I Tag 6 bis 25 bei 18 Stunden Licht, Wachstum II W1 bis W2 und Blüte W3 bis W9 bei 12 Stunden Licht. pH 5,8 bis 6,2; pH-Minus kann die EC heben, im Wachstum pH-Minus Grow nehmen. Wie oft laut Produktseiten: nährstoffarme Erde täglich, nährstoffreiche Erde 1 bis 3 Mal pro Woche. Längeres Wachstum: die Mengen von Tag 6 bis 25 wiederholen; längere Blüte: die von W3 bis W5. Die Tabelle rechnet mit Wasser von EC 0,4 mS/cm (mit CalMag eingestellt).",
+    "application_en": "Amounts per 10 litres. Columns: rooting days 1 to 5 and vegetative I days 6 to 25 at 18 hours of light, vegetative II W1 to W2 and flowering W3 to W9 at 12 hours of light. pH 5.8 to 6.2; pH minus can raise the EC, in the vegetative phase use pH minus Grow. How often per the product pages: low-nutrient soil daily, nutrient-rich soil 1 to 3 times a week. Longer vegetative phase: repeat the amounts of days 6 to 25; longer flowering: those of W3 to W5. The chart counts with water of EC 0.4 mS/cm (adjusted with CalMag).",
+    "application_sources": ["CT1", "CT3", "CT4"],
+    "cautions": [
+      {"text": "Widerspruch zwischen CANNA-Ländern: das australische Schema V25.01 nennt Einzelwerte statt Spannen, CalMag bis 1,1 ml/l und keine Zeile CANNA FLUSH. Für Deutschland gilt hier das deutsche Schema.", "text_en": "Contradiction between CANNA markets: the Australian schedule V25.01 gives single values instead of ranges, CalMag up to 1.1 ml/l and no CANNA FLUSH row. For Germany this card follows the German schedule.", "sources": ["CT1", "CT5"]},
+      {"text": "In W7 steht CANNA FLUSH neben der vollen Menge Terra Flores; warum, erklärt die Tabelle nicht.", "text_en": "In W7 CANNA FLUSH stands next to the full amount of Terra Flores; why, the chart does not explain.", "sources": ["CT1"]},
+      {"text": "Widerspruch zwischen Tabelle und Produktseiten: die Produktseiten nennen 500 ml je 100 l (5 ml/l), die Tabelle für Terra Vega bis 7,1 ml/l und für Terra Flores 5,7 bis 7,6 ml/l, bei Terra Flores also schon am unteren Ende mehr. Das Cockpit rechnet vom unteren Wert und mit dem Faktor der Einstellung, nie über die Tabelle.", "text_en": "Contradiction between the chart and the product pages: the product pages give 500 ml per 100 l (5 ml/l), the chart up to 7.1 ml/l for Terra Vega and 5.7 to 7.6 ml/l for Terra Flores, so for Terra Flores more even at the low end. The cockpit computes from the lower value and with the setting's factor, never above the chart.", "sources": ["CT1", "CT3", "CT4"]}
+    ]
+  },
+  "selectable": {
+    "label": "CANNA Terra (mineralisch, flüssig)",
+    "label_en": "CANNA Terra (mineral, liquid)",
+    "page": "low",
+    "page_note": "Seite untere Werte: das Schema druckt je Woche eine Spanne; das Cockpit rechnet vom unteren Wert, nie über die Tabelle.",
+    "page_note_en": "Lower values page: the schedule prints a range per week; the cockpit computes from the lower value, never above the chart.",
+    "components": ["terra_vega", "terra_flores"]
+  },
+  "weeks": {
+    "columns": [
+      {"key": "propagation", "label": "Tag 1 bis 5 (Bewurzelung)", "label_en": "Days 1 to 5 (rooting)", "printed": "D1-5"},
+      {"key": "veg", "label": "Tag 6 bis 25 (Wachstum I, für längeres Wachstum wiederholen)", "label_en": "Days 6 to 25 (vegetative I, repeat for a longer vegetative phase)", "printed": "D6-25"},
+      {"key": "bloom_1", "bloom_week": 1, "label": "Blütewoche 1 (W1, Wachstum II)", "label_en": "Flowering week 1 (W1, vegetative II)", "printed": "W1"},
+      {"key": "bloom_2", "bloom_week": 2, "label": "Blütewoche 2 (W2, Wachstum II)", "label_en": "Flowering week 2 (W2, vegetative II)", "printed": "W2"},
+      {"key": "bloom_3", "bloom_week": 3, "label": "Blütewoche 3 (W3)", "label_en": "Flowering week 3 (W3)", "printed": "W3"},
+      {"key": "bloom_4", "bloom_week": 4, "label": "Blütewoche 4 (W4)", "label_en": "Flowering week 4 (W4)", "printed": "W4"},
+      {"key": "bloom_5", "bloom_week": 5, "label": "Blütewoche 5 (W5)", "label_en": "Flowering week 5 (W5)", "printed": "W5"},
+      {"key": "bloom_6", "bloom_week": 6, "label": "Blütewoche 6 (W6)", "label_en": "Flowering week 6 (W6)", "printed": "W6"},
+      {"key": "bloom_7", "bloom_week": 7, "label": "Blütewoche 7 (W7)", "label_en": "Flowering week 7 (W7)", "printed": "W7"},
+      {"key": "bloom_8", "bloom_week": 8, "label": "Blütewoche 8 (W8)", "label_en": "Flowering week 8 (W8)", "printed": "W8"},
+      {"key": "bloom_9", "bloom_week": 9, "label": "Blütewoche 9 (W9)", "label_en": "Flowering week 9 (W9)", "printed": "W9"}
+    ],
+    "end": {"key": "label_end", "bloom_week": 10, "label": "Ab Blütewoche 10: die Tabelle endet, keine Menge", "label_en": "From flowering week 10: the chart ends, no amount"},
+    "sources": ["CT1"]
+  },
+  "components": {
+    "terra_vega": {"label": "Terra Vega", "label_en": "Terra Vega"},
+    "terra_flores": {"label": "Terra Flores", "label_en": "Terra Flores"},
+    "rhizotonic": {"label": "Rhizotonic", "label_en": "Rhizotonic", "optional": true},
+    "cannazym": {"label": "CANNAZYM", "label_en": "CANNAZYM", "optional": true},
+    "cannaboost": {"label": "CANNABOOST", "label_en": "CANNABOOST", "optional": true},
+    "pk_13_14": {"label": "PK 13/14", "label_en": "PK 13/14", "optional": true},
+    "canna_flush": {"label": "CANNA FLUSH", "label_en": "CANNA FLUSH", "optional": true}
+  },
+  "pages": {
+    "low": {
+      "label": "Untere Werte der Spanne",
+      "label_en": "Lower values of the range",
+      "rows": {
+        "terra_vega": [3.2, 4.5, 5.4, 5.4, null, null, null, null, null, null, null],
+        "terra_flores": [null, null, null, null, 5.7, 5.7, 5.7, 5.7, 5.7, 3.4, null],
+        "rhizotonic": [4, 2, 2, 2, 0.5, 0.5, 0.5, 0.5, 0.5, null, null],
+        "cannazym": [null, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5],
+        "cannaboost": [null, null, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+        "pk_13_14": [null, null, null, null, null, null, null, 1.5, null, null, null],
+        "canna_flush": [null, null, null, null, null, null, null, null, 4, null, 4]
+      },
+      "sources": ["CT1"]
+    },
+    "high": {
+      "label": "Obere Werte der Spanne",
+      "label_en": "Upper values of the range",
+      "rows": {
+        "terra_vega": [4.9, 6.2, 7.1, 7.1, null, null, null, null, null, null, null],
+        "terra_flores": [null, null, null, null, 7.6, 7.6, 7.6, 7.6, 7.6, 5.3, null],
+        "rhizotonic": [4, 2, 2, 2, 0.5, 0.5, 0.5, 0.5, 0.5, null, null],
+        "cannazym": [null, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 5, 5],
+        "cannaboost": [null, null, 2, 2, 4, 4, 4, 4, 4, 4, 4],
+        "pk_13_14": [null, null, null, null, null, null, null, 1.5, null, null, null],
+        "canna_flush": [null, null, null, null, null, null, null, null, 4, null, 4]
+      },
+      "sources": ["CT1"]
+    }
+  },
+  "frequency": {
+    "text": "Die Tabelle sagt nicht, wie oft gedüngt wird. Die Produktseiten: nährstoffarme Erde täglich, nährstoffreiche Erde 1 bis 3 Mal pro Woche. Das Cockpit gibt keinen Takt vor.",
+    "text_en": "The chart does not say how often to feed. The product pages: low-nutrient soil daily, nutrient-rich soil 1 to 3 times a week. The cockpit sets no schedule.",
+    "sources": ["CT1", "CT3", "CT4"]
+  },
+  "notes": [
+    {
+      "text": "EC der fertigen Lösung laut Tabelle, mit Wasser von 0,4 mS/cm: Tag 1 bis 5 1,2 bis 1,6; Tag 6 bis 25 1,5 bis 1,9; W1 bis W5 1,7 bis 2,1; W6 2,1 bis 2,5; W7 1,7 bis 2,1; W8 1,2 bis 1,6; W9 0,4 mS/cm.",
+      "text_en": "EC of the mixed solution per the chart, with water of 0.4 mS/cm: days 1 to 5 1.2 to 1.6; days 6 to 25 1.5 to 1.9; W1 to W5 1.7 to 2.1; W6 2.1 to 2.5; W7 1.7 to 2.1; W8 1.2 to 1.6; W9 0.4 mS/cm.",
+      "sources": ["CT1"]
+    },
+    {
+      "text": "CANNA zählt W1 ab der Umstellung auf 12 Stunden Licht; W1 und W2 heißen dort noch Wachstum II. Die Karte führt sie als Blütewoche 1 und 2, so wie das Cockpit die Blütewochen ab dem Blütebeginn zählt.",
+      "text_en": "CANNA counts W1 from the switch to 12 hours of light; there W1 and W2 are still called vegetative II. The card lists them as flowering weeks 1 and 2, the way the cockpit counts flowering weeks from the start of flowering.",
+      "sources": ["CT1"]
+    },
+    {
+      "text": "Spannen: das Schema druckt zum Beispiel Terra Vega 32 bis 49 ml je 10 l. Die Karte führt die unteren und die oberen Werte als zwei Seiten und mittelt nie. CalMag (bis 7 ml je 10 l, je nach Wasser) steht nicht in den Gießmengen.",
+      "text_en": "Ranges: the schedule prints for example Terra Vega 32 to 49 ml per 10 l. The card keeps the lower and the upper values as two pages and never averages. CalMag (up to 7 ml per 10 l, depending on the water) is not part of the watering amounts.",
+      "sources": ["CT1"]
+    },
+    {
+      "package": "cannabis",
+      "text": "Für Autoflower fand die Recherche bei CANNA keine Angabe. Der Faktor 0,5 aus plant.json gilt auch hier, mit denselben Quellen wie bei BioBizz (N5, N6), nie mehr als die Tabelle.",
+      "text_en": "For autoflowers the research found nothing at CANNA. The factor 0.5 from plant.json applies here too, with the same sources as for BioBizz (N5, N6), never more than the chart.",
+      "sources": ["CT1", "N5", "N6"]
+    }
+  ],
+  "sources": {
+    "CT1": {"title": "CANNA, Terra Düngerschema DE V26.02 (PDF)", "title_en": "CANNA, Terra feeding schedule DE V26.02 (PDF)", "url": "https://www.canna-de.com/sites/germany/files/2026-04/downloads-grow-schedule-de-terra.pdf", "retrieved": "2026-10-23"},
+    "CT2": {"title": "CANNA Deutschland, Downloads", "title_en": "CANNA Germany, downloads page", "url": "https://www.canna-de.com/downloads", "retrieved": "2026-10-23"},
+    "CT3": {"title": "CANNA, Produktseite Terra Vega (deutsch)", "title_en": "CANNA, Terra Vega product page (German)", "url": "https://www.canna-de.com/canna-terra-vega", "retrieved": "2026-10-23"},
+    "CT4": {"title": "CANNA, Produktseite Terra Flores (deutsch)", "title_en": "CANNA, Terra Flores product page (German)", "url": "https://www.canna-de.com/canna-terra-flores", "retrieved": "2026-10-23"},
+    "CT5": {"title": "CANNA, Terra Düngerschema Australien V25.01 (PDF, anderer Markt, zum Vergleich)", "title_en": "CANNA, Terra grow schedule Australia V25.01 (PDF, other market, for comparison)", "url": "https://www.canna.com.au/sites/australia/files/2026-04/downloads-grow-schedule-au-terra.pdf", "retrieved": "2026-10-23"},
+    "N5": {"title": "VIVOSUN, was Autoflower-Samen sind", "title_en": "VIVOSUN, what autoflowering seeds are", "url": "https://vivosun.com/en-CA/growing_guide/what-are-autoflowering-seeds/", "retrieved": "2026-10-22"},
+    "N6": {"title": "420seedz, Cannabis anbauen für Anfänger (vom Hersteller der Erde 420Flow)", "title_en": "420seedz, growing cannabis for beginners (by the maker of the 420Flow soil)", "url": "https://420seedz.de/guide/cannabis-anbauen-anfaenger", "retrieved": "2026-10-22"}
+  }
+}

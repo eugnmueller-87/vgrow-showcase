@@ -1,0 +1,139 @@
+{
+  "key": "phosphorus_deficiency",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "naehrstoffe",
+  "label": "Phosphormangel (P)",
+  "label_en": "Phosphorus deficiency (P)",
+  "tile": "Winzige helle Flecken an unteren Fächerblättern",
+  "tile_en": "Tiny pale spots on lower fan leaves",
+  "aliases": {
+    "de": [
+      "P-Mangel",
+      "lila Blattstiele"
+    ],
+    "en": [
+      "P deficiency",
+      "purple petioles"
+    ]
+  },
+  "symptoms": [
+    "Hinweis: Alle Wochenangaben stammen aus einem Hydrokultur-Versuch (P1, Sorte Gelato 29). Das Element fehlte von Anfang an komplett, gezählt wird ab dem Tag der Umstellung auf 12 Stunden Licht und 12 Stunden Dunkel. Für eine Autoflower in Erde gilt diese Zählung nicht.",
+    "Früh: winzige helle Flecken an unteren Fächerblättern (den großen, fingerförmigen Blättern), im Versuch ab Woche 3 nach Umstellung auf 12/12 P1.",
+    "Woche 4: die Flecken werden größer und fließen zu toten Stellen zusammen; Woche 5: große, unregelmäßige tote Flächen P1.",
+    "Lila Blattstiele, blaugrüne Blätter, dunkle kupferfarbene oder violette Flecken an den unteren Blättern; diese Blätter rollen sich nach unten ein oder verdrehen sich P2.",
+    "Spät, bei stark betroffenen Blättern: tote Stellen, violett bis bronzefarben verfärbt; kleine Blütenknospen; verspätete Blüte P2."
+  ],
+  "symptoms_en": [
+    "Note: all week counts come from a hydroponic trial (P1, cultivar Gelato 29). The element was missing completely from the start; weeks count from the day the light was switched to 12 hours on, 12 hours off. This count does not apply to an autoflower in soil.",
+    "Early: tiny pale spots on lower fan leaves (the large, finger-shaped leaves), from week 3 after the switch to 12/12 in the trial P1.",
+    "Week 4: spots grow and merge into dead lesions; week 5: large, irregular dead areas P1.",
+    "Purple petioles, bluish-green leaves, dark copper or purple blotches on the lower leaves; these leaves curl down or contort P2.",
+    "Late, on heavily affected leaves: dead areas with purple to bronze colour; small flower buds; delayed flowering P2."
+  ],
+  "causes": [
+    "Tritt laut Utah State häufig in der Blüte auf P2.",
+    "Stärker in tonigem, schlecht drainiertem, nassem Boden; pH über 7 macht Phosphor unverfügbar P2.",
+    "Kalte Erde kann die Aufnahme ebenfalls bremsen P2.",
+    "Zu viel Zink und Eisen kann Phosphormangel auslösen P2.",
+    "Mikroben binden in organischen Substraten etwas Phosphor, weniger als Stickstoff (P3, Gewächshaus-Substrate, nicht Cannabis)."
+  ],
+  "causes_en": [
+    "Common during flowering per Utah State P2.",
+    "Worse in clayey, poorly drained, soggy soil; pH above 7 makes phosphorus unavailable P2.",
+    "Cold soil can also prevent uptake P2.",
+    "Excess zinc and iron can cause phosphorus deficiency P2.",
+    "Microbes tie up some phosphorus in organic substrates, less than nitrogen (P3, greenhouse substrates, not cannabis)."
+  ],
+  "check": [
+    {
+      "metric": "watering",
+      "text": "Läuft Wasser unten ab, oder steht die Erde nass? Staunässe verstärkt den Mangel P2. Düngeschema mit der BioBizz-Karte vergleichen. pH: Das Handbuch der Box nennt keinen pH-Sensor P4.",
+      "text_en": "Does water drain, or is the soil waterlogged? Waterlogging makes the deficiency worse P2. Compare the feeding schedule with the BioBizz card. pH: the box manual names no pH sensor P4."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Hohe Feuchte fördert die ähnliche Septoria-Blattfleckenkrankheit P5.",
+      "text_en": "High humidity favors the look-alike Septoria leaf spot P5."
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Der Fühler misst die Luft 2 bis 4 Zoll (5,08 bis 10,16 cm) über der Krone, nicht die Erde P4. Utah State nennt kalte Erde als Bremse der Phosphoraufnahme P2; ein Luftwert sagt darüber nichts sicher.",
+      "text_en": "The probe reads air 2 to 4 inches (5.08 to 10.16 cm) above the canopy, not the soil P4. Utah State names cold soil as a brake on P uptake P2; an air reading does not tell for sure."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    }
+  ],
+  "do_now": [
+    "Auf Staunässe prüfen P2.",
+    "Nur falls ein pH-Messgerät vorhanden ist: pH von Gießwasser und Ablauf messen (Karte pH-Blockade).",
+    "Nicht mit Phosphor überdosieren: Ausspülen hilft bei zu viel Phosphor nicht, anders als bei Salzen P2.",
+    "Flecken mit einer Lupe ansehen: winzige schwarze Pünktchen, die wie Pfefferflocken aussehen, können auf Septoria hinweisen P5."
+  ],
+  "do_now_en": [
+    "Check for waterlogging P2.",
+    "Only if a pH meter is at hand: measure pH of irrigation water and runoff (see pH lockout card).",
+    "Do not overdose P: leaching does not fix excess phosphorus, unlike salts P2.",
+    "Look at the spots with a hand lens: tiny black dots that resemble pepper flakes may point to Septoria P5."
+  ],
+  "prevention": [
+    "Staunässe vermeiden P2.",
+    "Alle Nährstoffe ausgewogen geben, weil auch zu viel Zink und Eisen Phosphormangel auslösen kann P2."
+  ],
+  "prevention_en": [
+    "Avoid waterlogging P2.",
+    "Keep all nutrients balanced, because excess zinc and iron can also cause phosphorus deficiency P2."
+  ],
+  "look_alikes": [
+    "Calciummangel: Flecken zwischen den Adern unterer Fächerblätter, gelber Ring um ein braunes, totes Zentrum P1.",
+    "Septoria-Blattflecken: unten und innen im Bestand, mit schwarzen Pünktchen P5.",
+    "Staunässe-Schaden: Bei Phosphormangel sahen tote Blattränder im Versuch teils aus wie ein Staunässe-Schaden P1.",
+    "Kaliummangel: rostfarbene Flecken, die braun werden P2."
+  ],
+  "look_alikes_en": [
+    "Calcium deficiency: spots between the veins of lower fan leaves, yellow ring around a brown dead center P1.",
+    "Septoria leaf spot: low and inside the canopy, with black dots P5.",
+    "Waterlogging injury: with P deficiency, dead leaf margins sometimes looked like waterlogging injury in the trial P1.",
+    "Potassium deficiency: rust-colored blotches that turn brown P2."
+  ],
+  "image": {
+    "file": "phosphorus-maize.webp",
+    "thumb": "phosphorus-maize-t.webp",
+    "w": 768,
+    "h": 576,
+    "alt": "Junge Maispflanzen mit violett verfärbten Blättern",
+    "alt_en": "Young maize plants with purple-tinted leaves",
+    "note": "Mais, kein Hanf. Er zeigt die Violettfärbung, die auch die Karte nennt.",
+    "note_en": "Maize, not cannabis. It shows the purple tint the card also mentions.",
+    "compare": true,
+    "credit": {
+      "work": "File:نقص الفسفور على الذرة.jpg",
+      "author": "عمرو بن كلثوم (ar.wikipedia)",
+      "license": "CC BY-SA 2.5",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.5/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:%D9%86%D9%82%D8%B5_%D8%A7%D9%84%D9%81%D8%B3%D9%81%D9%88%D8%B1_%D8%B9%D9%84%D9%89_%D8%A7%D9%84%D8%B0%D8%B1%D8%A9.jpg"
+    }
+  },
+  "sources": {
+    "P1": "Llewellyn, Golem, Jones, Zheng (University of Guelph) 2023, Plants 12:422, Nährstoffmangel bei Cannabis, Hydrokultur (DWC), Sorte Gelato 29, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC9920212/",
+    "P2": "Utah State University Extension, Hemp Nutrient Deficiencies, Ratgeber für Hanfanbau ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-nutrient-deficiencies",
+    "P3": "Jackson (NC State), 10 things to know about growing in wood substrates, Greenhouse Canada 2020-12-18, Gewächshaus-Substrate, nicht Cannabis, abgerufen 2026-10-23: https://www.greenhousecanada.com/10-things-to-know-about-growing-in-wood-substrates/",
+    "P4": "VIVOSUN, VGrow Smart Grow Box Handbuch, Hersteller der Box, Seitenstand 2026-05-25, aus der Kartei übernommen (kartei/stages/autoflower.json, S1), abgerufen 2026-10-22: https://vivosun.com/support/guide/vgrow-smart-grow-box.md",
+    "P5": "University of Kentucky Extension, Gauthier, Leonberger, Rahnama, Septoria Leaf Spot of Field Hemp (PPFS-AG-H-01), 2021-09-16, Feldhanf, vom Herausgeber als archiviert markiert, abgerufen 2026-10-23: https://plantpathology.mgcafe.uky.edu/files/ppfs-ag-h-01.pdf"
+  },
+  "_left_out": [
+    "Cornell, Hajarian 2022: 'kleinere, dunkelgrüne Blätter; Blüte leidet meist mehr; zuerst ältere Blätter'. PDF nicht lesbar, nicht geprüft.",
+    "Utah State: Knochenmehl vor der Pflanzung. Mitten im Anbau nicht anwendbar; eine geprüfte Maßnahme während des Anbaus nennt keine Quelle.",
+    "pH 'von Hand messen' als feste Anweisung: Vorgabe 22.10.2026 (keine Messgeräte vorschlagen), deshalb nur bedingt formuliert.",
+    "'mit Lupe' und 'sprechen für Septoria': abgeschwächt auf 'können hinweisen', wie in der Quelle."
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "key": "potassium_deficiency",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "naehrstoffe",
+  "label": "Kaliummangel (K)",
+  "label_en": "Potassium deficiency (K)",
+  "tile": "Braune, trockene Blattränder und Blattspitzen",
+  "tile_en": "Brown, dry leaf margins and tips",
+  "aliases": {
+    "de": [
+      "K-Mangel",
+      "braune Blattränder"
+    ],
+    "en": [
+      "K deficiency",
+      "brown leaf margins"
+    ]
+  },
+  "symptoms": [
+    "Hinweis: Alle Wochenangaben stammen aus einem Hydrokultur-Versuch (P1, Sorte Gelato 29). Das Element fehlte von Anfang an komplett, gezählt wird ab dem Tag der Umstellung auf 12 Stunden Licht und 12 Stunden Dunkel. Für eine Autoflower in Erde gilt diese Zählung nicht.",
+    "Im Versuch ab Woche 3 nach Umstellung auf 12/12: dunkelbraune Stellen rund um die Seitenadern größerer Zuckerblätter (kleine Blätter zwischen den Blüten); an unteren Fächerblättern (große, fingerförmige Blätter) leichtes Braun, vor allem an den Spitzen der Blattfinger und an den Randzähnchen P1.",
+    "Rostbraune, vertrocknete, nach oben gerollte Ränder und Spitzen junger Blätter; rostfarbene Flecken, die braun werden; schwache Stängel P2.",
+    "Bei 15 ppm K (ppm = Teile pro Million, Konzentration in der Nährlösung) waren die Blätter kleiner und stark vergilbt, bei der Sorte Desert Queen auch mit weniger Blattfingern (P3, Perlite).",
+    "Spät: In Woche 6 blieb nur an den Blütenständen, entlang der Mittelrippe der Zuckerblätter und an einigen unteren Fächerblättern Grün übrig P1.",
+    "Wo es beginnt, widersprechen sich die Quellen: Utah State nennt junge Blätter P2, Purdue ordnet Kalium den beweglichen Nährstoffen zu, also Mangel unten an alten Blättern P4. Die Cannabis-Studie aus Guelph sah braune Stellen an Zuckerblättern oben und an Fächerblättern unten P1."
+  ],
+  "symptoms_en": [
+    "Note: all week counts come from a hydroponic trial (P1, cultivar Gelato 29). The element was missing completely from the start; weeks count from the day the light was switched to 12 hours on, 12 hours off. This count does not apply to an autoflower in soil.",
+    "In the trial from week 3 after the switch to 12/12: dark brown lesions around the secondary veins of larger sugar leaves (small leaves between the flowers); light browning on lower fan leaves (large, finger-shaped leaves), mainly at the leaflet tips and margin teeth P1.",
+    "Rusty-brown, dried, upcurled margins and tips of young leaves; rust-colored blotches that turn brown; weak stems P2.",
+    "At 15 ppm K (ppm = parts per million in the nutrient solution) leaves were smaller and strongly yellowed, in the cultivar Desert Queen also with fewer leaflets (P3, perlite).",
+    "Late: by week 6 green remained only at the flower clusters, along the midrib of sugar leaves and on some lower fan leaves P1.",
+    "The sources disagree on where it starts: Utah State says young leaves P2, Purdue lists potassium as mobile, so deficiency low on old leaves P4. The cannabis study from Guelph saw brown lesions on sugar leaves at the top and on fan leaves at the bottom P1."
+  ],
+  "causes": [
+    "Hoher Salzgehalt durch zu viel Dünger oder Natrium im Wasser macht Kalium unverfügbar P2.",
+    "Kalte Erde bremst die Aufnahme P2.",
+    "Zu wenig Kalium: 15 ppm reichten im Versuch nicht P3."
+  ],
+  "causes_en": [
+    "High salinity from excess fertilizer or sodium in the water makes potassium unavailable P2.",
+    "Cold soil reduces uptake P2.",
+    "Too little potassium: 15 ppm was not enough in the trial P3."
+  ],
+  "check": [
+    {
+      "metric": "watering",
+      "text": "Weiße oder hellbraune Kruste auf der Erde? Steht Ablaufwasser im Untersetzer? Beides spricht für Salzstau P5P2.",
+      "text_en": "White or tan crust on the soil? Drained water standing in the saucer? Both point to salt buildup P5P2."
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Kalte Erde bremst die Aufnahme P2. Der Fühler misst die Luft 2 bis 4 Zoll (5,08 bis 10,16 cm) über der Krone, nicht die Erde P6.",
+      "text_en": "Cold soil reduces uptake P2. The probe reads air 2 to 4 inches (5.08 to 10.16 cm) above the canopy, not the soil P6."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    }
+  ],
+  "do_now": [
+    "Weiße oder hellbraune Kruste auf der Erde? Das sind Salze (P5, Zimmerpflanzen). Dann mit klarem Wasser spülen (P2; für Töpfe P7: Salze durch kräftiges Gießen ausspülen) und erst einmal nicht nachdüngen (Folgerung: Salz blockiert die Aufnahme).",
+    "Ohne Salzkruste: Utah State empfiehlt bei Kaliummangel einen ausgewogenen NPK-Dünger mit höherem Kaliumanteil P2. In kleinen Schritten und nach Etikett, weil 240 ppm K einer Sorte schadeten P3.",
+    "Nicht auf Verdacht Kalium nachgeben: 240 ppm schadeten der Sorte Royal Medic, und mehr Kalium senkte im Versuch Calcium und Magnesium im Laub P3.",
+    "Kalte Erde bremst die Aufnahme P2. Der Fühler der Box misst Luft, nicht die Erde P6."
+  ],
+  "do_now_en": [
+    "White or tan crust on the soil? Those are salts (P5, houseplants). Then leach with clear water (P2; for pots P7: leach excess salts by heavy watering) and hold off on feeding for now (inference: salt blocks uptake).",
+    "Without a salt crust: Utah State advises a well-balanced N-P-K fertilizer with higher potassium content P2. In small steps and per label, because 240 ppm K harmed one cultivar P3.",
+    "Do not add potassium on a hunch: 240 ppm harmed the cultivar Royal Medic, and more potassium lowered calcium and magnesium in the foliage in the trial P3.",
+    "Cold soil reduces uptake P2. The box probe reads air, not soil P6."
+  ],
+  "prevention": [
+    "Ablaufwasser nicht im Untersetzer stehen lassen: Salze fließen nicht aus dem Topf ab, wenn der Untersetzer Wasser hält, weil es wieder aufgesogen wird (P5, Zimmerpflanzen; der Rat ist eine Folgerung).",
+    "Kalium nicht überdosieren P3."
+  ],
+  "prevention_en": [
+    "Do not leave drained water in the saucer: salts cannot drain out of the pot when the saucer holds water because it is re-absorbed (P5, houseplants; the advice itself is an inference).",
+    "Do not overdose potassium P3."
+  ],
+  "look_alikes": [
+    "Nährstoffbrand (zu viel Dünger): braune Spitzen und Ränder (P7, Gartenpflanzen).",
+    "Bor-Überschuss: ältere Blätter zuerst, gelbe Blattränder, danach abgestorbenes Gewebe; ähnelt der Verbrennung durch salzreichen Boden P2.",
+    "Magnesiummangel: rostbraune Flecken an Rändern, Spitzen und zwischen den Adern, die Blätter rollen sich nach oben P2.",
+    "Hanfrostmilbe: Bronzefärbung, kleinere und spröde Blätter, nach oben gerollte Ränder P8."
+  ],
+  "look_alikes_en": [
+    "Nutrient burn (too much fertilizer): brown tips and margins (P7, garden plants).",
+    "Boron excess: older leaves first, yellow margins followed by necrosis; similar to scorching from saline soils P2.",
+    "Magnesium deficiency: rust-brown spots on margins, tips and between the veins, leaves curl upward P2.",
+    "Hemp russet mite: bronzing, smaller and brittle leaves, upward-curled margins P8."
+  ],
+  "image": {
+    "file": "potassium-potato.webp",
+    "thumb": "potassium-potato-t.webp",
+    "w": 1200,
+    "h": 800,
+    "alt": "Kartoffelblätter mit braunen, vertrockneten, eingerollten Rändern",
+    "alt_en": "Potato leaves with brown, dried, curled margins",
+    "note": "Kartoffel, kein Hanf. Laut Bildseite Kaliummangel.",
+    "note_en": "Potato, not cannabis. According to the image page, potassium deficiency.",
+    "compare": true,
+    "credit": {
+      "work": "File:Potassium deficiency in potatoes.jpg",
+      "author": "Simranpreetsidhu",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Potassium_deficiency_in_potatoes.jpg"
+    }
+  },
+  "sources": {
+    "P1": "Llewellyn, Golem, Jones, Zheng (University of Guelph) 2023, Plants 12:422, Nährstoffmangel bei Cannabis, Hydrokultur (DWC), Sorte Gelato 29, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC9920212/",
+    "P2": "Utah State University Extension, Hemp Nutrient Deficiencies, Ratgeber für Hanfanbau ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-nutrient-deficiencies",
+    "P3": "Saloner, Sacks, Bernstein (Volcani Center) 2019, Frontiers in Plant Science, Kaliumversorgung von Cannabis in Perlite, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC6876614/",
+    "P4": "Purdue University, Nemali, My plants are yellowing! What is wrong with them?, Ratgeber 2017-03-18, Gewächshauspflanzen, abgerufen 2026-10-23: https://www.purdue.edu/hla/sites/cea/article/my-plants-are-yellowing-what-is-wrong-with-them/",
+    "P5": "Colorado State Extension, PlantTalk 1338, Whitish crust on potting mixes, Zimmerpflanzen, ohne Autor und Datum, abgerufen 2026-10-23: https://planttalk.colostate.edu/topics/houseplants/1338-whitish-crust-potting-mixes/",
+    "P6": "VIVOSUN, VGrow Smart Grow Box Handbuch, Hersteller der Box, Seitenstand 2026-05-25, aus der Kartei übernommen (kartei/stages/autoflower.json, S1), abgerufen 2026-10-22: https://vivosun.com/support/guide/vgrow-smart-grow-box.md",
+    "P7": "Washington State University, HortSense, Common cultural: Fertilizer burn, geprüft 2026-03-26, Gartenpflanzen, abgerufen 2026-10-23: https://hortsense.cahnrs.wsu.edu/fact-sheet/common-cultural-fertilizer-burn/",
+    "P8": "Utah State University Extension, Hemp Russet Mite, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-hemp-russet-mite-.php"
+  },
+  "_left_out": [
+    "Cornell, Hajarian 2022: 'tote Blattränder, schwache Stängel, Umkippen, zuerst ältere Blätter' und 'Bor-Überschuss: tote Ränder an älteren Blättern'. PDF nicht lesbar, nicht geprüft.",
+    "'Topf und Raum nicht auskühlen lassen' als Rat: Utah State sagt nur, kalte Erde bremse die Aufnahme.",
+    "'nicht nachdüngen' als allgemeine Regel: steht in keiner Quelle; nur bei Salzverdacht als Folgerung gekennzeichnet.",
+    "Mittel gegen Hanfrostmilbe von der Utah-Seite (Utah-Zulassung): nicht übernommen."
+  ]
+}

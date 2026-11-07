@@ -1,0 +1,44 @@
+<!-- @dsCard height=300 -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Cover</title>
+<style>
+  body { margin: 0; }
+  .cover { position: relative; width: 960px; height: 300px; overflow: hidden; background: var(--bg); font-family: var(--font-sans); }
+  .cover svg { position: absolute; inset: 0; width: 960px; height: 300px; display: block; }
+  .forest { fill: var(--brand-forest); }
+  .strong { fill: var(--accent-strong); }
+  .soft { fill: var(--accent-soft); }
+  .warn { fill: var(--warn); }
+  .info { fill: var(--info); }
+  .leaf { fill: var(--accent); }
+  .block { rx: var(--radius-lg); }
+  .small { rx: var(--radius-sm); }
+  .name { position: absolute; left: 48px; bottom: 60px; margin: 0; width: 440px; font-weight: 700; font-size: 100px; line-height: 0.92; letter-spacing: -0.02em; color: var(--ink); }
+  .tag { position: absolute; left: 48px; bottom: 36px; margin: 0; width: 440px; font-size: 13px; line-height: 18px; color: var(--muted); }
+</style></head>
+<body>
+<div class="cover">
+  <!-- Derivation
+       blocks: brand-forest 200×316 slab (x 520, bleeds top and bottom) · accent-strong 216×152 (x 744, bleeds top and right) · accent-soft 216×92 · warn 96×40 and info 96×40 (state colours stay small, bleed bottom) — gaps space-6 (24)
+       arrangement: one tall slab with satellites stacked to its right; nothing crosses x < 480
+       pattern: the literal motif — the mark's leaf, a square with two opposite corners at full radius — because the brand is a sprout and the UI is calm and rounded; 18 leaves in accent on the forest slab, alternating the diagonal row by row
+       scales: leaf side space-8 (32), pitch space-12 (48), inset space-6 (24); block corners radius-lg (16), the small blocks radius-sm (6) -->
+  <svg viewBox="0 0 960 300" aria-hidden="true">
+    <rect class="forest block" x="520" y="-16" width="200" height="332"/>
+    <rect class="strong block" x="744" y="-16" width="232" height="152"/>
+    <rect class="soft block" x="744" y="160" width="232" height="92"/>
+    <rect class="warn small" x="744" y="276" width="96" height="56"/>
+    <rect class="info small" x="864" y="276" width="112" height="56"/>
+    <g class="leaf">
+      <path d="M544 8a32 32 0 0 1 32 32a32 32 0 0 1-32-32zM592 8a32 32 0 0 1 32 32a32 32 0 0 1-32-32zM640 8a32 32 0 0 1 32 32a32 32 0 0 1-32-32z"/>
+      <path d="M576 56a32 32 0 0 0-32 32a32 32 0 0 0 32-32zM624 56a32 32 0 0 0-32 32a32 32 0 0 0 32-32zM672 56a32 32 0 0 0-32 32a32 32 0 0 0 32-32z"/>
+      <path d="M544 104a32 32 0 0 1 32 32a32 32 0 0 1-32-32zM592 104a32 32 0 0 1 32 32a32 32 0 0 1-32-32zM640 104a32 32 0 0 1 32 32a32 32 0 0 1-32-32z"/>
+      <path d="M576 152a32 32 0 0 0-32 32a32 32 0 0 0 32-32zM624 152a32 32 0 0 0-32 32a32 32 0 0 0 32-32zM672 152a32 32 0 0 0-32 32a32 32 0 0 0 32-32z"/>
+      <path d="M544 200a32 32 0 0 1 32 32a32 32 0 0 1-32-32zM592 200a32 32 0 0 1 32 32a32 32 0 0 1-32-32zM640 200a32 32 0 0 1 32 32a32 32 0 0 1-32-32z"/>
+      <path d="M576 248a32 32 0 0 0-32 32a32 32 0 0 0 32-32zM624 248a32 32 0 0 0-32 32a32 32 0 0 0 32-32zM672 248a32 32 0 0 0-32 32a32 32 0 0 0 32-32z"/>
+    </g>
+  </svg>
+  <h1 class="name">VGrow<br>Cockpit</h1>
+  <p class="tag">Hank advises, the autopilot decides, you own every threshold.</p>
+</div>
+</body></html>

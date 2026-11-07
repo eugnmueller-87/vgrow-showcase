@@ -1,0 +1,450 @@
+{
+  "name": "Hesi Soil",
+  "name_en": "Hesi Soil",
+  "summary": "Flüssiger Dünger für Erde, laut Hersteller reich an organischem Dünger: TNT Complex im Wachstum, Bloom Complex in der Blüte, Phosphorus Plus ab der Mitte der Blüte, dazu Booster. Laut Hersteller 1 bis 2 Mal pro Woche. Für Erde und mit geprüftem Wochenplan im Cockpit wählbar.",
+  "summary_en": "Liquid fertilizer for soil, per the maker rich in organic fertilizer: TNT Complex in growth, Bloom Complex in flowering, Phosphorus Plus from mid-flowering, plus boosters. Per the maker 1 to 2 times a week. For soil and with a checked weekly plan, selectable in the cockpit.",
+  "product": "Hesi",
+  "version": "SOIL Grow schedule 2022",
+  "status": "draft",
+  "status_note": "Abgetippt aus dem Hesi-SOIL-Wachstumsplan 2022 (HS1) am 23.10.2026. Das PDF ist ein Bild: die Seiten wurden gerendert und gelesen, jede Zahl mit dem Original verglichen. Die Tabelle steht je 10 Liter, die Karte je Liter (50 ml je 10 l sind 5 ml/l). Ein Entwurf, bis du die Karte auf der Seite mit dem Schema vergleichst und bestätigst; bis dahin rechnet das Cockpit keine Mengen.",
+  "status_note_en": "Transcribed from the Hesi SOIL grow schedule 2022 (HS1) on Oct 23, 2026. The PDF is an image: its pages were rendered and read, every number compared with the original. The chart is per 10 litres, the card per litre (50 ml per 10 l is 5 ml/l). A draft until you compare the card with the schedule on the page and confirm it; until then the cockpit computes no amounts.",
+  "check": {
+    "state": "checked",
+    "on": "2026-10-23",
+    "text": "Jede Zahl gegen das gerenderte Original (HS1) geprüft, am 23.10.2026; die Wochen von Phosphorus Plus und Boost aus der Lage der Balken gelesen.",
+    "text_en": "Every number checked against the rendered original (HS1), on Oct 23, 2026; the weeks of Phosphorus Plus and Boost read from the position of the bars."
+  },
+  "unit": "ml/l",
+  "printed_unit": "ml/10 l",
+  "aliases": {
+    "de": [
+      "Hesi",
+      "Hesi Soil",
+      "Hesi Erde",
+      "Hesi TNT Complex",
+      "TNT Complex",
+      "Hesi Bloom Complex",
+      "Bloom Complex",
+      "Phosphorus Plus",
+      "Hesi Phosphorus Plus"
+    ],
+    "en": [
+      "Hesi",
+      "Hesi Soil",
+      "Hesi TNT Complex",
+      "TNT Complex",
+      "Hesi Bloom Complex",
+      "Bloom Complex",
+      "Phosphorus Plus",
+      "Hesi Phosphorus Plus"
+    ]
+  },
+  "line": {
+    "maker": "Hesi (Hesi Plantenvoeding BV)",
+    "types": [
+      "mineral_liquid",
+      "organic_liquid"
+    ],
+    "media": [
+      "soil"
+    ],
+    "media_text": "Erde. TNT Complex laut Hersteller auch für Kokos; Hesi führt für Kokos und Hydro eigene Dünger und Pläne.",
+    "media_text_en": "Soil. Per the maker TNT Complex also suits coco; Hesi has its own fertilizers and plans for coco and hydro.",
+    "products": [
+      {
+        "product": "TNT Complex",
+        "role": "NPK-Dünger für das Wachstum; 50 ml je 10 l, halbe Menge für sehr junge Sämlinge und Stecklinge oder bei längerer Daueranwendung.",
+        "role_en": "NPK fertilizer for growth; 50 ml per 10 l, half the amount for very young seedlings and cuttings or for longer continuous use.",
+        "sources": [
+          "HS1",
+          "HS2"
+        ]
+      },
+      {
+        "product": "Bloom Complex",
+        "npk": "3-3-4",
+        "role": "NPK-Volldünger für die Blüte; 50 ml je 10 l, laut Produktseite etwa jedes zweite Gießen, 1 bis 2 Mal pro Woche.",
+        "role_en": "Complete NPK fertilizer for flowering; 50 ml per 10 l, per the product page about every second watering, 1 to 2 times a week.",
+        "sources": [
+          "HS1",
+          "HS3"
+        ]
+      },
+      {
+        "product": "Phosphorus Plus",
+        "role": "PK-Dünger ab der Mitte der Blüte, immer mit Bloom Complex; 25 ml je 10 l.",
+        "role_en": "PK fertilizer from mid-flowering, always with Bloom Complex; 25 ml per 10 l.",
+        "sources": [
+          "HS1",
+          "HS4"
+        ]
+      },
+      {
+        "product": "Root Complex",
+        "role": "Booster für junge Pflanzen und bei Stress; 50 ml je 10 l, laut Plan 1 bis 2 Mal pro Woche, bis die Pflanzen gut wachsen. Laut Produktseite die halbe Menge bei Dauer- und häufiger Anwendung.",
+        "role_en": "Booster for young plants and under stress; 50 ml per 10 l, per the plan 1 to 2 times a week until the plants grow well. Per the product page half the amount for long-term and frequent use.",
+        "sources": [
+          "HS1",
+          "HS7"
+        ]
+      },
+      {
+        "product": "PowerZyme",
+        "role": "Enzymbooster für das Wurzelmedium; 20 ml je 10 l, laut Plan 1 bis 2 Mal pro Woche mit dem Dünger, laut Produktseite durchgehend über den ganzen Zyklus.",
+        "role_en": "Enzyme booster for the root medium; 20 ml per 10 l, per the plan 1 to 2 times a week with the fertilizer, per the product page continuously throughout the cycle.",
+        "sources": [
+          "HS1",
+          "HS6"
+        ]
+      },
+      {
+        "product": "SuperVit",
+        "role": "Vitamine und Aminosäuren; 1 Tropfen je 4,5 l Wasser, regelmäßig.",
+        "role_en": "Vitamins and amino acids; 1 drop per 4.5 l of water, regularly.",
+        "sources": [
+          "HS1"
+        ]
+      },
+      {
+        "product": "Boost",
+        "role": "Blütebooster; 20 ml je 10 l, laut Plan einmal zu Beginn der Blüte, dann 1 bis 2 Mal pro Woche in der Blüte. Laut Produktseite ab dem Ende der Wachstumsphase und regelmäßig.",
+        "role_en": "Flowering booster; 20 ml per 10 l, per the plan once at the start of flowering, then 1 to 2 times a week in flowering. Per the product page from the end of the growth phase and regularly.",
+        "sources": [
+          "HS1",
+          "HS5"
+        ]
+      }
+    ],
+    "application_short": "Ins Gießwasser, 1 bis 2 Mal pro Woche: TNT Complex im Wachstum, Bloom Complex in der Blüte, Phosphorus Plus ab Blütewoche 4 (aus der Lage der Balken gelesen, keine gedruckte Zahl), Woche 8 nur klares Wasser.",
+    "application_short_en": "Into the watering water, 1 to 2 times a week: TNT Complex in growth, Bloom Complex in flowering, Phosphorus Plus from flowering week 4 (read from the position of the bars, no printed number), week 8 plain water only.",
+    "application": "Mengen je 10 Liter Gießwasser. Steckling: TNT Complex 25 ml. Wachstum (Woche 1 und 2, 18 Stunden Licht): TNT Complex 50 ml. Blüte (Woche 1 bis 7, 12 Stunden Licht): Bloom Complex 50 ml, ab Woche 4 dazu Phosphorus Plus 25 ml (die Woche ist aus der Lage des Balkens gelesen; die Produktseite sagt: ab der Mitte der Blüte). Woche 8: mit klarem Wasser spülen. Nur so oft gießen, wie die Pflanze es braucht, und 1 bis 2 Mal pro Woche düngen. Mit dem Düngen erst beginnen, wenn die Keimblätter verbraucht sind (Produktseite TNT Complex). Einen pH- oder EC-Wert nennt der Plan nicht.",
+    "application_en": "Amounts per 10 litres of watering water. Cutting: TNT Complex 25 ml. Growth (weeks 1 and 2, 18 hours of light): TNT Complex 50 ml. Flowering (weeks 1 to 7, 12 hours of light): Bloom Complex 50 ml, from week 4 plus Phosphorus Plus 25 ml (the week is read from the position of the bar; the product page says: from mid-flowering). Week 8: flush with plain water. Water only as often as the plant needs it, and feed 1 to 2 times a week. Start feeding only once the seed leaves are used up (TNT Complex product page). The plan gives no pH or EC value.",
+    "application_sources": [
+      "HS1",
+      "HS2",
+      "HS4"
+    ],
+    "cautions": [
+      {
+        "text": "Die Wochen von Phosphorus Plus und vom zweiten Boost-Block stehen nicht als Zahl im Plan: ihr Balken beginnt an der Grenze von Blütewoche 3 und 4, dort, wo auch die Farbe der Spalten wechselt. Die Karte liest das als ab Blütewoche 4; die Produktseite sagt: ab der Mitte der Blüte, nicht früher.",
+        "text_en": "The weeks of Phosphorus Plus and of the second Boost block are not printed as numbers: their bar starts at the border of flowering weeks 3 and 4, where the colour of the columns also changes. The card reads that as from flowering week 4; the product page says: from mid-flowering, not earlier.",
+        "sources": [
+          "HS1",
+          "HS4"
+        ]
+      },
+      {
+        "text": "Zu viel Phosphor und Kalium kann laut Hersteller die Aufnahme anderer Nährstoffe hemmen; Phosphorus Plus deshalb nicht vor der Mitte der Blüte.",
+        "text_en": "Too much phosphorus and potassium can, per the maker, hinder the uptake of other nutrients; so no Phosphorus Plus before mid-flowering.",
+        "sources": [
+          "HS4"
+        ]
+      },
+      {
+        "text": "Der Plan zeigt zwei Wachstumswochen mit derselben Menge. Was bei längerem Wachstum gilt, sagt er nicht; das Cockpit zeigt im Wachstum die Menge dieser Spalte.",
+        "text_en": "The plan shows two growth weeks with the same amount. What applies to a longer vegetative phase it does not say; in growth the cockpit shows this column's amount.",
+        "sources": [
+          "HS1"
+        ]
+      }
+    ]
+  },
+  "selectable": {
+    "label": "Hesi Soil (flüssig, für Erde)",
+    "label_en": "Hesi Soil (liquid, for soil)",
+    "page": "soil",
+    "page_note": "Seite Erde: Hesi druckt einen Plan für Erde, ohne Unterschied nach vorgedüngter oder leichter Erde. Gedüngt wird laut Hesi 1 bis 2 Mal pro Woche, nicht bei jedem Gießen. Die Wochen von Phosphorus Plus und vom zweiten Boost-Block druckt der Plan nicht als Zahl; die Karte liest sie aus der Lage der Balken.",
+    "page_note_en": "Soil page: Hesi prints one plan for soil, with no difference between pre-fertilized and light soil. Per Hesi you feed 1 to 2 times a week, not at every watering. The plan prints no number for the weeks of Phosphorus Plus and of the second Boost block; the card reads them from the position of the bars.",
+    "components": [
+      "tnt_complex",
+      "bloom_complex"
+    ]
+  },
+  "weeks": {
+    "columns": [
+      {
+        "key": "propagation",
+        "label": "Steckling",
+        "label_en": "Cutting",
+        "printed": "clone"
+      },
+      {
+        "key": "veg",
+        "label": "Wachstum (Hesi-Woche 1 und 2)",
+        "label_en": "Growth (Hesi weeks 1 and 2)",
+        "printed": "Week 1-2 Growth"
+      },
+      {
+        "key": "bloom_1",
+        "bloom_week": 1,
+        "label": "Blütewoche 1",
+        "label_en": "Flowering week 1",
+        "printed": "Week 1 Bloom"
+      },
+      {
+        "key": "bloom_2",
+        "bloom_week": 2,
+        "label": "Blütewoche 2",
+        "label_en": "Flowering week 2",
+        "printed": "Week 2 Bloom"
+      },
+      {
+        "key": "bloom_3",
+        "bloom_week": 3,
+        "label": "Blütewoche 3",
+        "label_en": "Flowering week 3",
+        "printed": "Week 3 Bloom"
+      },
+      {
+        "key": "bloom_4",
+        "bloom_week": 4,
+        "label": "Blütewoche 4",
+        "label_en": "Flowering week 4",
+        "printed": "Week 4 Bloom"
+      },
+      {
+        "key": "bloom_5",
+        "bloom_week": 5,
+        "label": "Blütewoche 5",
+        "label_en": "Flowering week 5",
+        "printed": "Week 5 Bloom"
+      },
+      {
+        "key": "bloom_6",
+        "bloom_week": 6,
+        "label": "Blütewoche 6",
+        "label_en": "Flowering week 6",
+        "printed": "Week 6 Bloom"
+      },
+      {
+        "key": "bloom_7",
+        "bloom_week": 7,
+        "label": "Blütewoche 7",
+        "label_en": "Flowering week 7",
+        "printed": "Week 7 Bloom"
+      }
+    ],
+    "water": {
+      "key": "water",
+      "bloom_week": 8,
+      "label": "Blütewoche 8: mit klarem Wasser spülen",
+      "label_en": "Flowering week 8: flush with plain water"
+    },
+    "end": {
+      "key": "label_end",
+      "bloom_week": 9,
+      "label": "Ab Blütewoche 9: der Plan endet nach der Spülwoche, keine Menge",
+      "label_en": "From flowering week 9: the plan ends after the flush week, no amount"
+    },
+    "sources": [
+      "HS1"
+    ]
+  },
+  "components": {
+    "tnt_complex": {
+      "label": "TNT Complex",
+      "label_en": "TNT Complex"
+    },
+    "bloom_complex": {
+      "label": "Bloom Complex",
+      "label_en": "Bloom Complex"
+    },
+    "phosphorus_plus": {
+      "label": "Phosphorus Plus",
+      "label_en": "Phosphorus Plus",
+      "optional": true
+    },
+    "root_complex": {
+      "label": "Root Complex",
+      "label_en": "Root Complex",
+      "optional": true
+    },
+    "powerzyme": {
+      "label": "PowerZyme",
+      "label_en": "PowerZyme",
+      "optional": true
+    },
+    "boost": {
+      "label": "Boost",
+      "label_en": "Boost",
+      "optional": true
+    }
+  },
+  "pages": {
+    "soil": {
+      "label": "Erde (Hesi SOIL)",
+      "label_en": "Soil (Hesi SOIL)",
+      "rows": {
+        "tnt_complex": [
+          2.5,
+          5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "bloom_complex": [
+          null,
+          null,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "phosphorus_plus": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          2.5,
+          2.5,
+          2.5,
+          2.5
+        ],
+        "root_complex": [
+          5,
+          5,
+          5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "powerzyme": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "boost": [
+          null,
+          null,
+          2,
+          null,
+          null,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "sources": [
+        "HS1"
+      ]
+    }
+  },
+  "frequency": {
+    "text": "Laut Plan: nur gießen, wenn die Pflanze Wasser braucht, und 1 bis 2 Mal pro Woche düngen; laut Produktseite Bloom Complex etwa jedes zweite Gießen. PowerZyme und Boost laut Plan ebenfalls 1 bis 2 Mal pro Woche, laut ihren Produktseiten durchgehend beziehungsweise regelmäßig. Das Cockpit gibt keinen Takt vor.",
+    "text_en": "Per the plan: water only when the plant needs water, and feed 1 to 2 times a week; per the product page Bloom Complex about every second watering. PowerZyme and Boost per the plan also 1 to 2 times a week, per their product pages continuously and regularly. The cockpit sets no schedule.",
+    "sources": [
+      "HS1",
+      "HS3",
+      "HS5",
+      "HS6"
+    ]
+  },
+  "notes": [
+    {
+      "text": "Hesi nennt TNT Complex und Bloom Complex NPK-Dünger und schreibt zugleich, die Dünger für Erde seien reich an organischem Dünger; die Karte führt deshalb beide Arten.",
+      "text_en": "Hesi calls TNT Complex and Bloom Complex NPK fertilizers and also writes that its soil fertilizers are rich in organic fertilizer; so the card lists both types.",
+      "sources": [
+        "HS1",
+        "HS2"
+      ]
+    },
+    {
+      "text": "SuperVit wird in Tropfen dosiert (1 Tropfen je 4,5 l) und steht deshalb nicht in der Tabelle je Liter.",
+      "text_en": "SuperVit is dosed in drops (1 drop per 4.5 l), so it is not in the per-litre chart.",
+      "sources": [
+        "HS1"
+      ]
+    },
+    {
+      "text": "Root Complex reicht im Plan vom Steckling bis zum Ende von Blütewoche 1, Boost steht in Blütewoche 1 und dann ab Woche 4. PowerZyme läuft vom Steckling bis Blütewoche 7.",
+      "text_en": "In the plan Root Complex runs from the cutting to the end of flowering week 1, Boost stands in flowering week 1 and again from week 4. PowerZyme runs from the cutting to flowering week 7.",
+      "sources": [
+        "HS1"
+      ]
+    },
+    {
+      "package": "cannabis",
+      "text": "Für Autoflower fand die Recherche bei Hesi keine Angabe (Plan, Produktseiten, FAQ). Der Faktor 0,5 aus plant.json gilt auch hier, mit denselben Quellen wie bei BioBizz (N5, N6), nie mehr als der Plan.",
+      "text_en": "For autoflowers the research found nothing at Hesi (plan, product pages, FAQ). The factor 0.5 from plant.json applies here too, with the same sources as for BioBizz (N5, N6), never more than the plan.",
+      "sources": [
+        "HS1",
+        "N5",
+        "N6"
+      ]
+    }
+  ],
+  "sources": {
+    "HS1": {
+      "title": "Hesi, SOIL Grow schedule 2022 (PDF, Bild)",
+      "title_en": "Hesi, SOIL grow schedule 2022 (PDF, image)",
+      "url": "https://www.hesi.nl/media/d7/b3/e6/1660824259/EN%20Aarde%202022%20klein.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "HS2": {
+      "title": "Hesi, Produktseite TNT Complex",
+      "title_en": "Hesi, TNT Complex product page",
+      "url": "https://hesi.nl/en/TNT-Complex/SW10008",
+      "retrieved": "2026-10-23"
+    },
+    "HS3": {
+      "title": "Hesi, Produktseite Bloom Complex",
+      "title_en": "Hesi, Bloom Complex product page",
+      "url": "https://hesi.nl/en/Bloom-Complex",
+      "retrieved": "2026-10-23"
+    },
+    "HS4": {
+      "title": "Hesi, Produktseite Phosphorus Plus",
+      "title_en": "Hesi, Phosphorus Plus product page",
+      "url": "https://hesi.nl/en/Phosphorus-Plus",
+      "retrieved": "2026-10-23"
+    },
+    "HS5": {
+      "title": "Hesi, Produktseite Boost",
+      "title_en": "Hesi, Boost product page",
+      "url": "https://hesi.nl/en/Boost",
+      "retrieved": "2026-10-24"
+    },
+    "HS6": {
+      "title": "Hesi, Produktseite PowerZyme",
+      "title_en": "Hesi, PowerZyme product page",
+      "url": "https://hesi.nl/en/PowerZyme",
+      "retrieved": "2026-10-24"
+    },
+    "HS7": {
+      "title": "Hesi, Produktseite Root Complex",
+      "title_en": "Hesi, Root Complex product page",
+      "url": "https://hesi.nl/en/Root-Complex",
+      "retrieved": "2026-10-24"
+    },
+    "N5": {
+      "title": "VIVOSUN, was Autoflower-Samen sind",
+      "title_en": "VIVOSUN, what autoflowering seeds are",
+      "url": "https://vivosun.com/en-CA/growing_guide/what-are-autoflowering-seeds/",
+      "retrieved": "2026-10-22"
+    },
+    "N6": {
+      "title": "420seedz, Cannabis anbauen für Anfänger (vom Hersteller der Erde 420Flow)",
+      "title_en": "420seedz, growing cannabis for beginners (by the maker of the 420Flow soil)",
+      "url": "https://420seedz.de/guide/cannabis-anbauen-anfaenger",
+      "retrieved": "2026-10-22"
+    }
+  }
+}

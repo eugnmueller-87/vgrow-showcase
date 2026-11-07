@@ -1,0 +1,11 @@
+<!-- @dsCard group="Controls" height=220 subtitle="a labelled slider with its value, and a locked one" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Range</title></head>
+<body style="margin:0">
+<div class="vg" style="padding:16px;display:grid;gap:12px;max-width:560px">
+  <div class="range"><label for="r1">Light</label><input id="r1" type="range" min="0" max="100" step="1" value="87"><output for="r1">87%</output></div>
+  <div class="range"><label for="r2">Exhaust</label><input id="r2" type="range" min="0" max="3" step="1" value="2"><output for="r2">2</output></div>
+  <div class="range"><label for="r3">Light</label><input id="r3" type="range" min="0" max="100" value="0" class="is-locked" aria-disabled="true"><output for="r3">0%</output></div>
+  <p class="muted" style="margin:0;font-size:13px">Locked: paused until 9:37 AM, you took over.</p>
+</div>
+</body></html>

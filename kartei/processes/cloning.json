@@ -1,0 +1,431 @@
+{
+  "key": "cloning",
+  "kind": "process",
+  "status": "draft",
+  "label": "Klonen: Stecklinge bewurzeln (Cannabis und Kräuter)",
+  "label_en": "Cloning: rooting cuttings (cannabis and herbs)",
+  "if_off": {
+    "cannabis": {
+      "label": "Klonen: Stecklinge bewurzeln (Kräuter)",
+      "label_en": "Cloning: rooting cuttings (herbs)"
+    }
+  },
+  "fit_for_vgrow": {
+    "height_ok": true,
+    "light_note": "Lampe: 100 W, dimmbar 25 bis 100 %; VIVOSUN veröffentlicht keine PPFD dafür. Studie: Stecklinge bei etwa 104 bis 110 µmol/m²/s und 24 h Licht [Q4]. Welche Dimmstufe das in der VGrow ergibt, ist offen (Messung nötig). Herstellervoreinstellungen, keine Belege: VSeed Bewurzelung 70 %, 18H/6H [Q13]; VGrow Sämling 60 %, 18h/6h [Q14]. Die VGrow-Anleitung kennt keine Stecklings- oder Bewurzelungsphase [Q14].",
+    "light_note_en": "Lamp: 100 W, dimmable 25 to 100%; VIVOSUN publishes no PPFD for it. Study: cuttings at about 104 to 110 µmol/m²/s and 24 h of light [Q4]. Which dimming level gives that in the VGrow is open (a measurement is needed). Manufacturer presets, not evidence: VSeed rooting 70%, 18H/6H [Q13]; VGrow seedling 60%, 18h/6h [Q14]. The VGrow manual has no cutting or rooting stage [Q14].",
+    "heat_note": "VGrow-Voreinstellung Sämling: höchstens 29 °C (85 °F) und höchstens 85 % Luftfeuchte [Q14]. Cornell: für Stecklinge etwa 72 bis 75 °F, Wurzelzone 2 bis 3 °F wärmer [Q3]. VSeed Bewurzelung: Wurzeltemperatur 25 °C (77 °F) [Q13]. Eine Wurzelheizung steht nicht in der Geräteliste der VGrow; ob die Box diese Werte hält, ist offen (messen).",
+    "heat_note_en": "VGrow seedling preset: at most 29 °C (85 °F) and at most 85% humidity [Q14]. Cornell: for cuttings about 72 to 75 °F, root zone 2 to 3 °F warmer [Q3]. VSeed rooting: root temperature 25 °C (77 °F) [Q13]. A root heater is not in the VGrow's equipment list; whether the box holds these values is open (measure)."
+  },
+  "steps": [
+    {
+      "key": "cannabis_hygiene",
+      "package": "cannabis",
+      "label": "Cannabis: Mutterpflanze prüfen und Werkzeug reinigen",
+      "label_en": "Cannabis: check the mother plant and clean the tools",
+      "conditions": [],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": []
+      },
+      "notes": "Mutterpflanzen vor dem Schneiden auf Hopfen-Latent-Viroid (HLVd) testen; das Viroid wird mit Stecklingen infizierter Mutterpflanzen weitergegeben [Q7]. Im Versuch mit infiziertem Pflanzensaft auf Filterpapier inaktivierten 10 % Bleiche, 20 % Bleiche und 1000 ppm hypochlorige Säure das Viroid; Ethanol, Virkon und Wasserstoffperoxid wirken nicht [Q7]. Der Hypochlorit-Gehalt der Bleiche steht nicht dabei: offen. Einschränkung der Quelle: Es gibt derzeit kein verlässliches Verfahren, das alle HLVd-Teilchen auf Werkzeug sicher inaktiviert (laut Gegenprüfung). NC State nennt Reinigungsalkohol oder Bleiche 1:9, aber im Abschnitt über Holzgewächse (Stand Februar 2022) und im Widerspruch zu OSU beim Alkohol [Q8]. Richtung für Cannabis: Bleiche statt Alkohol, ohne Garantie.",
+      "notes_en": "Test mother plants for hop latent viroid (HLVd) before taking cuttings; the viroid is passed on with cuttings from infected mother plants [Q7]. In a test with infected plant sap on filter paper, 10% bleach, 20% bleach and 1000 ppm hypochlorous acid inactivated the viroid; ethanol, Virkon and hydrogen peroxide do not work [Q7]. The hypochlorite content of the bleach is not stated: open. Limit stated by the source: there is currently no reliable method that inactivates all HLVd particles on tools (per cross-check). NC State names rubbing alcohol or bleach 1:9, but in its section on woody plants (as of February 2022) and in conflict with OSU on alcohol [Q8]. Direction for cannabis: bleach rather than alcohol, with no guarantee."
+    },
+    {
+      "key": "cannabis_cutting",
+      "package": "cannabis",
+      "label": "Cannabis: Kopfsteckling schneiden",
+      "label_en": "Cannabis: take an apical cutting",
+      "conditions": [
+        {
+          "metric": "cutting_length",
+          "min": 15,
+          "max": 20,
+          "unit": "cm",
+          "sources": [
+            "Q1"
+          ]
+        },
+        {
+          "metric": "fully_expanded_leaves",
+          "min": 2,
+          "max": 3,
+          "unit": "",
+          "sources": [
+            "Q1"
+          ]
+        },
+        {
+          "metric": "nodes",
+          "min": 3,
+          "max": 5,
+          "unit": "",
+          "sources": [
+            "Q1"
+          ]
+        }
+      ],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": []
+      },
+      "notes": "Kopfsteckling (Triebspitze der Mutterpflanze), etwa 15 bis 20 cm lang, mit 2 bis 3 voll entwickelten Blättern und 3 bis 5 Knoten [Q1]. Die Studie lief mit zwei Hanf-Sorten (CBD und CBG); die Stecklinge wurden danach in 0,31 % IBA-Gel getaucht (laut Gegenprüfung). Eine Cornell-Folie nennt für Hanf weniger Knoten (Randbefund der Gegenprüfung, nicht als eigene Aussage geprüft: offen). Höhe in der VGrow: Steckling 15 bis 20 cm gegen 92 cm nutzbare Höhe; die Maße von Haube und Töpfchen sind offen.",
+      "notes_en": "Apical cutting (tip of the mother plant), about 15 to 20 cm long, with 2 to 3 fully expanded leaves and 3 to 5 nodes [Q1]. The study used two hemp cultivars (CBD and CBG); the cuttings were then dipped in 0.31% IBA gel (per cross-check). A Cornell slide gives fewer nodes for hemp (side finding of the cross-check, not checked as a statement of its own: open). Height in the VGrow: cutting 15 to 20 cm against 92 cm usable height; the size of the dome and the pot is open."
+    },
+    {
+      "key": "cannabis_leaves",
+      "package": "cannabis",
+      "label": "Cannabis: Blätter am Steckling",
+      "label_en": "Cannabis: leaves on the cutting",
+      "conditions": [],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": []
+      },
+      "notes": "Studie: Das Kürzen der Blattspitzen senkte die Bewurzelungsrate von 71 % auf 53 %, ohne die Wurzelqualität zu beeinflussen [Q2]. Entfernt wurde ein Drittel der Blattspitzen, ausgewertet nach zwölf Tagen (laut Abstract). Cornell-Folie: große untere Blätter entfernen und große obere Fächerblätter kürzen, keine Zahl [Q3]. Die Folie sagt 'wenn sie groß sind'; ein sicherer Widerspruch ist das nicht (laut Gegenprüfung). Die Studie wiegt schwerer, weil sie ein kontrollierter Versuch ist und die Folie ein Vortrag.",
+      "notes_en": "Study: removing leaf tips lowered the rooting rate from 71% to 53% without affecting root quality [Q2]. One third of the leaf tips were removed, assessed after twelve days (per the abstract). Cornell slide: remove large lower leaves and trim large upper fan leaves, no number [Q3]. The slide says 'if they are big'; that is not a certain contradiction (per cross-check). The study weighs more because it is a controlled trial and the slide is a talk."
+    },
+    {
+      "key": "cannabis_wounding",
+      "package": "cannabis",
+      "label": "Cannabis: Stängelbasis anritzen",
+      "label_en": "Cannabis: wound the stem base",
+      "conditions": [
+        {
+          "metric": "wound_length_from_base",
+          "min": 5,
+          "max": 5,
+          "unit": "cm",
+          "sources": [
+            "Q4"
+          ]
+        }
+      ],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": []
+      },
+      "notes": "Untere 5 cm der Stängelbasis anritzen: Oberhaut mit einem Skalpell parallel zur Stängeloberfläche abschaben [Q4]. Angeritzte Stängel wurzelten mit 162 % höherer Wahrscheinlichkeit ('more likely') und 1,5 Tage früher als unverletzte [Q4]. Wortlaut beibehalten und nicht in Faktoren umrechnen: Die Studie sagt nicht, ob eine Chance (Odds) oder eine Wahrscheinlichkeit gemeint ist (laut Gegenprüfung). Drei Drogentyp-Sorten, Torf-Pellets, 24 h Licht. Cornell: Basis leicht verwunden [Q3].",
+      "notes_en": "Wound the bottom 5 cm of the stem base: scrape off the epidermis with a scalpel parallel to the stem surface [Q4]. Wounded stems were 162% more likely to root ('more likely') and rooted 1.5 days earlier than unwounded ones [Q4]. Keep the wording and do not convert it into factors: the study does not say whether odds or probability is meant (per cross-check). Three drug-type cultivars, peat pellets, 24 h light. Cornell: gently wound the base [Q3]."
+    },
+    {
+      "key": "cannabis_hormone",
+      "package": "cannabis",
+      "label": "Cannabis: Bewurzelungshormon",
+      "label_en": "Cannabis: rooting hormone",
+      "conditions": [
+        {
+          "metric": "iba_rooting_powder",
+          "min": 0.1,
+          "max": 0.1,
+          "unit": "%",
+          "sources": [
+            "Q3"
+          ]
+        }
+      ],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": []
+      },
+      "notes": "Cornell: Basis leicht verwunden, dann Bewurzelungspulver mit 0,1 % IBA (Indol-3-Buttersäure), laut Folie 1.000 ppm [Q3]. Studie an Hanf für ätherische Öle: Hormon verbesserte den Bewurzelungserfolg deutlich (Abstract: 15- bis 18-fach, Ergebnisteil: 2-fach; die Studie erklärt den Unterschied nicht); zwischen den getesteten Hormonkonzentrationen und Anwendungsarten gab es keinen gesicherten Unterschied [Q5]. 'Bewurzelungserfolg' ist dort ein Maß aus Wurzelzahl, -länge und -masse, kein Anteil bewurzelter Stecklinge. Getestet wurden unter anderem IBA mit 1.000 und 3.000 ppm (laut Gegenprüfung). Die Studie Q1 tauchte die Stecklinge in 0,31 % IBA-Gel. Welche Form und Menge zur eigenen Sorte passt, ist offen.",
+      "notes_en": "Cornell: gently wound the base, then a rooting powder with 0.1% IBA (indole-3-butyric acid), 1,000 ppm according to the slide [Q3]. Study on essential-oil hemp: hormone clearly improved rooting success (abstract: 15- to 18-fold, results: 2-fold; the study does not explain the difference); no significant difference between the tested hormone concentrations and application methods [Q5]. 'Rooting success' there is a measure of root number, length and mass, not a share of rooted cuttings. Tested were, among others, IBA at 1,000 and 3,000 ppm (per cross-check). Study Q1 dipped the cuttings in 0.31% IBA gel. Which form and amount suits the grower's own cultivar is open."
+    },
+    {
+      "key": "cannabis_medium",
+      "package": "cannabis",
+      "label": "Cannabis: Medium",
+      "label_en": "Cannabis: rooting medium",
+      "conditions": [],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": []
+      },
+      "notes": "Das Medium hatte in der Studie den stärksten Einfluss; der Bewurzelungserfolg lag je nach Medium zwischen 13,3 und 80,4 % [Q5]. Steinwolle (Rockwool) war am besten: laut Abstract 10-fach höhere Werte als das nächstbeste Medium (Berger BM6), laut Ergebnisteil 7- bis 13-fach je Merkmal [Q5]. Achtung: Die Prozentzahl ist ein Index aus Wurzelzahl, -länge und -masse, nicht der Anteil bewurzelter Stecklinge (laut Gegenprüfung). Vier Medien, Hanf für ätherische Öle, ausgewertet nach 12 Tagen. Einstecktiefe und Würfelgröße: offen.",
+      "notes_en": "In the study the medium had the strongest influence; rooting success ranged from 13.3 to 80.4% depending on the medium [Q5]. Rockwool was best: 10-fold higher values than the next best medium (Berger BM6) per the abstract, 7- to 13-fold per trait per the results [Q5]. Note: the percentage is an index of root number, length and mass, not the share of rooted cuttings (per cross-check). Four media, essential-oil hemp, assessed after 12 days. Insertion depth and cube size: open."
+    },
+    {
+      "key": "cannabis_dome",
+      "package": "cannabis",
+      "label": "Cannabis: Haube und Luftfeuchte",
+      "label_en": "Cannabis: humidity dome and humidity",
+      "conditions": [],
+      "duration": {
+        "min": 10,
+        "max": 14,
+        "unit": "d",
+        "sources": [
+          "Q4",
+          "Q1"
+        ]
+      },
+      "notes": "Zwei Haubenpläne aus Studien, beide Teil der Methode und keine geprüfte Variante; die Dauer 10 bis 14 Tage sind die Eckpunkte beider Pläne, kein Streubereich. Studie A [Q4]: Haube mit geschlossenen Lüftungsschlitzen (auf einer Heizmatte mit 26 °C, laut Gegenprüfung); an Tag 3 Lüftungsschlitze öffnen; ab Tag 6 die Haube einige Stunden täglich abnehmen; an Tag 10 ganz entfernen. Studie B [Q1] (Steinwolle und Schaumstoff): Haube die ersten 6 Tage geschlossen, danach schrittweise lüften bis Tag 14. Einen Zielwert für die relative Luftfeuchte nennt keine der beiden Studien: offen. Die Übersichtsarbeit sagt, Stecklinge werden über zwei Wochen bei hoher Luftfeuchte bewurzelt und genau das begünstigt Fusarium und Grauschimmel [Q6]. Geräteeinstellungen (Hersteller): VSeed Bewurzelung lüftet ab 80 % Luftfeuchte [Q13]; VGrow Sämling höchstens 85 % [Q14].",
+      "notes_en": "Two dome plans from studies, both part of the method and not a tested variant; the duration of 10 to 14 days gives the end points of the two plans, not a spread. Study A [Q4]: dome with closed vents (on a heat mat at 26 °C, per cross-check); open the vents on day 3; from day 6 take the dome off for some hours a day; remove it entirely on day 10. Study B [Q1] (rockwool and foam): dome closed for the first 6 days, then vented step by step until day 14. Neither study gives a target for relative humidity: open. The review says cuttings are rooted over two weeks under high humidity and that this very environment favors Fusarium and gray mold [Q6]. Device settings (manufacturer): VSeed rooting vents at 80% humidity [Q13]; VGrow seedling at most 85% [Q14]."
+    },
+    {
+      "key": "cannabis_temperature",
+      "package": "cannabis",
+      "label": "Cannabis: Temperatur",
+      "label_en": "Cannabis: temperature",
+      "conditions": [
+        {
+          "metric": "air_temp_cuttings",
+          "min": 72,
+          "max": 75,
+          "unit": "°F",
+          "sources": [
+            "Q3"
+          ]
+        },
+        {
+          "metric": "root_zone_above_air_temp",
+          "min": 2,
+          "max": 3,
+          "unit": "°F",
+          "sources": [
+            "Q3"
+          ]
+        },
+        {
+          "metric": "air_temp_rooting_most_plants",
+          "min": 73,
+          "max": 77,
+          "unit": "°F",
+          "sources": [
+            "Q3"
+          ]
+        },
+        {
+          "metric": "air_temp_hemp_up_to",
+          "min": 80,
+          "max": 82,
+          "unit": "°F",
+          "sources": [
+            "Q3"
+          ]
+        }
+      ],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": []
+      },
+      "notes": "Cornell (Hanf): für Stecklinge sind etwa 72 bis 75 °F üblich, die Wurzelzone 2 bis 3 °F wärmer [Q3, Folie 38]. Allgemein seien 73 bis 77 °F ideal für Keimung und Bewurzelung der meisten Pflanzen, für Hanf bis 80 bis 82 °F [Q3, Folie 11, gemeint ist die Gewächshaus-Lufttemperatur]. Werte in °F wie auf den Folien, nicht umgerechnet. Geräteeinstellungen (Hersteller, keine Belege): VSeed Bewurzelung Wurzeltemperatur 25 °C (77 °F), Lüftung ab 30 °C (86 °F) [Q13]; VGrow Sämling höchstens 29 °C (85 °F) [Q14]. Eine Wurzelheizung steht nicht in der Geräteliste der VGrow: offen.",
+      "notes_en": "Cornell (hemp): about 72 to 75 °F is usual for cuttings, root zone 2 to 3 °F warmer [Q3, slide 38]. In general 73 to 77 °F is ideal for germination and rooting of most plants, for hemp up to 80 to 82 °F [Q3, slide 11, meaning greenhouse air temperature]. Values in °F as on the slides, not converted. Device settings (manufacturer, not evidence): VSeed rooting root temperature 25 °C (77 °F), vent from 30 °C (86 °F) [Q13]; VGrow seedling at most 29 °C (85 °F) [Q14]. A root heater is not in the VGrow's equipment list: open."
+    },
+    {
+      "key": "cannabis_light",
+      "package": "cannabis",
+      "label": "Cannabis: Licht",
+      "label_en": "Cannabis: light",
+      "conditions": [
+        {
+          "metric": "photon_flux_study",
+          "min": 104,
+          "max": 110,
+          "unit": "µmol/m²/s",
+          "sources": [
+            "Q4"
+          ]
+        },
+        {
+          "metric": "photoperiod_light_study",
+          "min": 24,
+          "max": 24,
+          "unit": "h",
+          "sources": [
+            "Q4"
+          ]
+        },
+        {
+          "metric": "photoperiod_light_cornell",
+          "min": 16,
+          "max": 16,
+          "unit": "h",
+          "sources": [
+            "Q3"
+          ]
+        }
+      ],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": []
+      },
+      "notes": "Studie: etwa 104 bis 110 µmol/m²/s Photonenfluss, zwischen den Zelten auf höchstens 10 µmol/m²/s Abweichung angeglichen, 24 Stunden Licht nach Branchenpraxis [Q4]. Cornell: Langtag mit 16 Stunden Licht und 8 Stunden Dunkelheit [Q3]. Geräteeinstellungen (Hersteller, keine Belege): VSeed Bewurzelung 70 %, 18H/6H [Q13]; VGrow Sämling 60 %, 18h/6h [Q14]. VIVOSUN veröffentlicht keine PPFD für die VGrow-Lampe; welche Dimmstufe etwa 104 bis 110 µmol/m²/s ergibt, ist offen.",
+      "notes_en": "Study: about 104 to 110 µmol/m²/s photon flux, matched between tents to within 10 µmol/m²/s, 24 hours of light as industry practice [Q4]. Cornell: long days with 16 hours of light and 8 hours of dark [Q3]. Device settings (manufacturer, not evidence): VSeed rooting 70%, 18H/6H [Q13]; VGrow seedling 60%, 18h/6h [Q14]. VIVOSUN publishes no PPFD for the VGrow lamp; which dimming level gives about 104 to 110 µmol/m²/s is open."
+    },
+    {
+      "key": "cannabis_check",
+      "package": "cannabis",
+      "label": "Cannabis: Dauer und Erfolgszeichen",
+      "label_en": "Cannabis: time to roots and success signs",
+      "conditions": [],
+      "duration": {
+        "min": 12,
+        "max": 14,
+        "unit": "d",
+        "sources": [
+          "Q5",
+          "Q6"
+        ]
+      },
+      "notes": "Studie an Hanf: Nach 12 Tagen hatten mehr als 50 % der Stecklinge sichtbar austretende Wurzeln; das ist der Zeitpunkt der Auswertung, keine Dauer, nach der alle gewurzelt sind [Q5]. Erfolgszeichen in der Studie: sichtbare Wurzeln am Stängel, wenn man den Steckling vorsichtig aus dem Medium hebt (die Studie erntete die Stecklinge dafür); ob man das bei eigenen Stecklingen tun sollte, sagt die Quelle nicht (laut Gegenprüfung). Übersichtsarbeit: Bewurzelung über zwei Wochen [Q6]. Mindestdauer und Dauer bis alle Stecklinge wurzeln: offen.",
+      "notes_en": "Study on hemp: after 12 days more than 50% of the cuttings had visibly emerging roots; that is the time of assessment, not a duration after which all have rooted [Q5]. Success sign in the study: visible roots on the stem when the cutting is gently lifted out of the medium (the study harvested the cuttings for this); whether to do that with one's own cuttings the source does not say (per cross-check). Review: rooting over two weeks [Q6]. Minimum time and time until all cuttings have rooted: open."
+    },
+    {
+      "key": "herbs_cutting",
+      "label": "Kräuter: Trieb schneiden",
+      "label_en": "Herbs: take the cutting",
+      "conditions": [
+        {
+          "metric": "cutting_length",
+          "min": 4,
+          "max": 6,
+          "unit": "inch",
+          "sources": [
+            "Q16"
+          ]
+        }
+      ],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": []
+      },
+      "notes": "Gut über Stecklinge zu vermehren sind Basilikum, Oregano, Lavendel, Rosmarin, Thymian und Salbei [Q16]. Gesunde Triebe von 4 bis 6 Zoll direkt an einem Knoten schneiden, dort setzen die Blätter am Stängel an [Q16]. Zoll wie in der Quelle, nicht umgerechnet. Medium, Hormon und Haube für Kräuter: keine Aussage, offen.",
+      "notes_en": "Well suited to propagation by cuttings: basil, oregano, lavender, rosemary, thyme and sage [Q16]. Cut healthy shoots of 4 to 6 inches directly at a node, where the leaves attach to the stem [Q16]. Inches as in the source, not converted. Medium, hormone and dome for herbs: no statement, open."
+    },
+    {
+      "key": "herbs_temperature",
+      "label": "Kräuter: Temperatur",
+      "label_en": "Herbs: temperature",
+      "conditions": [
+        {
+          "metric": "air_temp_cuttings_general",
+          "min": 65,
+          "max": 85,
+          "unit": "°F",
+          "sources": [
+            "Q18"
+          ]
+        }
+      ],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": []
+      },
+      "notes": "65 bis 85 °F ist für Stecklinge allgemein am besten; ein Heizkabel liefert Bodenwärme und kann die Bewurzelung beschleunigen [Q18]. Das ist kein kräuterspezifischer Wert (offen), und die Quelle ist undatiert; der Druckvermerk deutet vermutlich auf Oktober 1980 (Deutung der Gegenprüfung).",
+      "notes_en": "65 to 85 °F is best for cuttings in general; a heating cable supplies bottom heat and can speed up rooting [Q18]. This is not an herb-specific value (open), and the source is undated; the print mark probably points to October 1980 (interpretation of the cross-check)."
+    },
+    {
+      "key": "herbs_humidity_light",
+      "label": "Kräuter: Luftfeuchte und Licht",
+      "label_en": "Herbs: humidity and light",
+      "conditions": [],
+      "duration": {
+        "min": null,
+        "max": null,
+        "unit": null,
+        "sources": []
+      },
+      "notes": "Um die Blätter hohe Luftfeuchte halten, sonst welkt der Steckling und stirbt; nicht luftdicht verschließen, etwas Gasaustausch zulassen [Q18]. Stängel- und Blattstecklinge brauchen Licht, damit die Pflanze Nährstoffe für die Wurzelbildung bilden kann (mehrere Stunden helles Licht ohne direkte Sonne, laut Gegenprüfung); volle Sonne wird nicht empfohlen [Q18]. Keine Zahl für Luftfeuchte oder Lichtmenge: offen.",
+      "notes_en": "Keep humidity high around the leaves, otherwise the cutting wilts and dies; do not seal airtight, allow some gas exchange [Q18]. Stem and leaf cuttings need light so the plant can make the nutrients for root formation (several hours of bright light out of direct sun, per cross-check); full sunlight is not recommended [Q18]. No number for humidity or amount of light: open."
+    },
+    {
+      "key": "herbs_duration_check",
+      "label": "Kräuter: Dauer und Erfolgszeichen",
+      "label_en": "Herbs: time to roots and success signs",
+      "conditions": [],
+      "duration": {
+        "min": 4,
+        "max": 6,
+        "unit": "wk",
+        "sources": [
+          "Q17"
+        ]
+      },
+      "notes": "Die meisten krautigen Stecklinge bilden in 4 bis 6 Wochen Wurzeln [Q17]; der Artikel behandelt Stauden und Einjährige, darunter Lavendel, Minze, Thymian, Rosmarin und Salbei (laut Gegenprüfung). Je nach Art anders: Basilikum kann innerhalb von zwei Wochen wurzeln, Rosmarin braucht fast zwei Monate [Q16]. Dieselbe Quelle nennt im Satz davor eine Spanne von einer Woche bis sechs Wochen (laut Gegenprüfung); Rosmarin liegt darüber, die Quelle widerspricht sich, nicht geglättet. Zugtest: sanft an der Triebspitze ziehen; spürbarer Widerstand kann auf feine Wurzeln hindeuten [Q17].",
+      "notes_en": "Most herbaceous cuttings form roots in 4 to 6 weeks [Q17]; the article covers perennials and annuals, including lavender, mint, thyme, rosemary and sage (per cross-check). It differs by species: basil can root within two weeks, rosemary takes almost two months [Q16]. The same source gives a range of one week to six weeks in the sentence before (per cross-check); rosemary lies above that, so the source contradicts itself, left unsmoothed. Tug test: gently pull on the shoot tip; noticeable resistance may mean fine roots [Q17]."
+    }
+  ],
+  "warnings": [
+    "Cannabis, Recht (keine Rechtsberatung): § 9 Abs. 1 KCanG erlaubt privat nicht mehr als drei Cannabispflanzen gleichzeitig [Q9]; § 3 Abs. 2 erlaubt den Besitz von bis zu drei lebenden Cannabispflanzen [Q10]. Ob Stecklinge mitzählen, sagt das Gesetz nicht ausdrücklich [Q11]: offen, vor dem Klonen klären.",
+    "Cannabis, Kinderschutz: Vermehrungsmaterial, also auch Stecklinge, muss am Wohnsitz durch geeignete Maßnahmen vor dem Zugriff Dritter, besonders Kinder und Jugendlicher, geschützt werden (§ 10 KCanG) [Q12].",
+    "Cannabis, Krankheiten: HLVd wandert mit Stecklingen infizierter Mutterpflanzen, Mutterpflanzen vor dem Schneiden testen [Q7]. Es gibt kein verlässliches Verfahren, das alle Viroid-Teilchen auf Werkzeug sicher inaktiviert (laut Gegenprüfung zu Q7). Stecklinge von Mutterpflanzen, die innen mit Fusarium befallen sind, können den Pilz weitergeben [Q6].",
+    "Hohe Luftfeuchte schützt vor dem Welken, begünstigt aber Fusarium (Umfallkrankheit: Mark und Leitgewebe kollabieren, der Steckling stirbt), Grauschimmel (Botrytis cinerea) und Penicillium [Q6, Q18]. Nicht luftdicht verschließen, etwas Gasaustausch zulassen [Q18].",
+    "Die Prozentzahlen zum Bewurzelungserfolg in Q5 sind ein Index aus Wurzelzahl, -länge und -masse, kein Anteil bewurzelter Stecklinge. Die Angabe 162 % in Q4 nicht in Faktoren umrechnen.",
+    "Herkunft der Werte: Studien an Hanf-Typ (Q1, Q5) und Drogentyp (Q4), dazu Vortragsfolien und Hochschul-Beratung. Ob sie zur eigenen Sorte passen, ist offen. Herstellervoreinstellungen (Q13, Q14) sind keine Wirksamkeitsbelege.",
+    "Einheiten stehen wie in den Quellen (°F, Zoll); nichts wurde umgerechnet."
+  ],
+  "warnings_en": [
+    "Cannabis, law (not legal advice): section 9(1) KCanG allows privately growing no more than three cannabis plants at the same time [Q9]; section 3(2) allows possessing up to three living cannabis plants [Q10]. Whether cuttings count, the law does not say expressly [Q11]: open, clarify before cloning.",
+    "Cannabis, child protection: propagation material, so also cuttings, must be protected at home by suitable measures from access by third parties, especially children and adolescents (section 10 KCanG) [Q12].",
+    "Cannabis, diseases: HLVd travels with cuttings from infected mother plants, test mother plants before cutting [Q7]. There is no reliable method that inactivates all viroid particles on tools (per cross-check of Q7). Cuttings from mother plants infected inside by Fusarium can pass the fungus on [Q6].",
+    "High humidity prevents wilting but favors Fusarium (damping-off: pith and xylem collapse and the cutting dies), gray mold (Botrytis cinerea) and Penicillium [Q6, Q18]. Do not seal airtight, allow some gas exchange [Q18].",
+    "The percentages for rooting success in Q5 are an index of root number, length and mass, not a share of rooted cuttings. Do not convert the 162% in Q4 into factors.",
+    "Origin of the values: studies on hemp type (Q1, Q5) and drug type (Q4), plus talk slides and university extension advice. Whether they fit the grower's own cultivar is open. Manufacturer presets (Q13, Q14) are not proof that they work.",
+    "Units are given as in the sources (°F, inches); nothing was converted."
+  ],
+  "warnings_packages": [
+    "cannabis",
+    "cannabis",
+    "cannabis",
+    null,
+    "cannabis",
+    null,
+    null
+  ],
+  "image": {
+    "file": "basil-cuttings.webp",
+    "thumb": "basil-cuttings-t.webp",
+    "w": 1200,
+    "h": 900,
+    "alt": "Fünf bewurzelte Basilikum-Stecklinge auf dunklem Grund",
+    "alt_en": "Five rooted basil cuttings on a dark background",
+    "credit": {
+      "work": "File:Basilikum (Ocimum basilicum) Stecklinge -- Josef Schlaghecken.jpg",
+      "author": "Josef Schlaghecken",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Basilikum_(Ocimum_basilicum)_Stecklinge_--_Josef_Schlaghecken.jpg"
+    }
+  },
+  "sources": {
+    "Q1": "Weingarten, Mattson, Grab (2024), Evaluating Propagation Techniques for Cannabis sativa L. Cultivation (a comparative analysis of soilless methods and aeroponic parameters; Plants 13(9):1256; Studie an Hanf-Sorten CBD und CBG): https://pmc.ncbi.nlm.nih.gov/articles/PMC11085668/",
+    "Q2": "Caplan, Stemeroff, Dixon, Zheng (2018), Vegetative propagation of cannabis by stem cuttings (effects of leaf number, cutting position, rooting hormone, and leaf tip removal; Canadian Journal of Plant Science 98(5):1126-1132; Studie, nur Abstract; die BioOne-Seite lieferte beim Abruf keinen Text, Wortlaut über Semantic Scholar und OpenAlex bestätigt): https://doi.org/10.1139/cjps-2018-0038",
+    "Q3": "Bridgen, Cornell University, Propagation of hemp (Cannabis sativa), Hemp Webinar Series vom 8. Februar 2023 (Vortragsfolien, keine Studie): https://hemp.cals.cornell.edu/files/2024/01/Hemp-Propagation-Bridgen-FINAL-8Feb2023-6ad947c1a74827bc.pdf",
+    "Q4": "Campbell, Naraine, Dusfresne (2019), Phenotypic plasticity influences the success of clonal propagation in industrial pharmaceutical Cannabis sativa (PLOS ONE 14(3):e0213434; Studie an Sorten vom Drogentyp): https://pmc.ncbi.nlm.nih.gov/articles/PMC6422331/",
+    "Q5": "Campbell, Anderson, Brym, Pearson (2021), Evaluation of substrate composition and exogenous hormone application on vegetative propagule rooting success of essential oil hemp (PLOS ONE; Studie): https://pmc.ncbi.nlm.nih.gov/articles/PMC8320905/",
+    "Q6": "Buirs, Punja (2024), Integrated Management of Pathogens and Microbes in Cannabis sativa L. (Cannabis) under Greenhouse Conditions (Plants 13(6):786; Übersichtsarbeit): https://pmc.ncbi.nlm.nih.gov/articles/PMC10974757/",
+    "Q7": "Ocamb, Oregon State University Extension Service, Hop latent viroid in hemp (EM 9570, August 2024): https://extension.oregonstate.edu/catalog/em-9570-hop-latent-viroid-hemp",
+    "Q8": "NC State Extension, Extension Gardener Handbook, Kapitel 13 Propagation (Stand 1. Februar 2022; der zitierte Satz steht im Abschnitt zu Holzgewächsen): https://content.ces.ncsu.edu/extension-gardener-handbook/13-propagation",
+    "Q9": "Konsumcannabisgesetz (KCanG) § 9 Anforderungen an den privaten Eigenanbau, amtliche Fassung: https://www.gesetze-im-internet.de/kcang/__9.html",
+    "Q10": "KCanG § 3 Erlaubter Besitz von Cannabis, amtliche Fassung: https://www.gesetze-im-internet.de/kcang/__3.html",
+    "Q11": "KCanG § 1 Nr. 6 und 7, amtliche Fassung: https://www.gesetze-im-internet.de/kcang/__1.html",
+    "Q12": "KCanG § 10 Schutzmaßnahmen im privaten Raum, amtliche Fassung: https://www.gesetze-im-internet.de/kcang/__10.html",
+    "Q13": "VIVOSUN, VSeed Smart Seedling Box, Bedienungsanleitung im Support-Bereich (Hersteller, kommerzielle Quelle): https://www.vivosun.com/support/guide/vseed",
+    "Q14": "VIVOSUN, VGrow Smart Grow Box, Bedienungsanleitung im Support-Bereich (Hersteller, kommerzielle Quelle): https://www.vivosun.com/support/guide/vgrow-smart-grow-box",
+    "Q15": "VIVOSUN, VCure Smart Curing Box, Bedienungsanleitung im Support-Bereich (Hersteller, kommerzielle Quelle): https://www.vivosun.com/support/guide/vcure-smart-curing-box",
+    "Q16": "Fernandez, Cornell Cooperative Extension Orleans County, Propagate herbs now, enjoy all winter (17. Juli 2026, Master Gardener Volunteer): https://cce.cornell.edu/orleans/propagate-herbs-now-enjoy-all-winter",
+    "Q17": "Steil, Iowa State University Extension and Outreach, Propagating Herbaceous Plants from Stem Cuttings (Oktober 2025): https://yardandgarden.extension.iastate.edu/how-to/propagating-herbaceous-plants-stem-cuttings",
+    "Q18": "Williams, University of New Hampshire Cooperative Extension, Vegetative Plant Propagation (PDF ohne Datum, Druckvermerk 10/80/5M): https://extension.unh.edu/resources/files/Resource000957_Rep1057.pdf"
+  }
+}

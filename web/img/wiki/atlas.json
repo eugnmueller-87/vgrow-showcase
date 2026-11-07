@@ -1,0 +1,59 @@
+[
+  {
+    "id": "roots", "part": "roots", "article": "glossary/cutting",
+    "label": {"en": "Root anatomy · basil", "de": "Wurzelaufbau · Basilikum"},
+    "description": {"en": "Basil roots against a dark background. This is a botanical comparison photograph.", "de": "Basilikumwurzeln vor dunklem Hintergrund. Ein botanisches Vergleichsfoto."},
+    "markers": [
+      {"x": 25, "y": 88, "label": {"en": "Root cluster", "de": "Wurzelbüschel"}, "text": {"en": "Many fine, pale roots extend below the stem.", "de": "Viele feine, helle Wurzeln gehen unterhalb des Stängels ab."}},
+      {"x": 38, "y": 76, "label": {"en": "Stem and roots", "de": "Stängel und Wurzeln"}, "text": {"en": "The upright stem meets a branching mass of roots.", "de": "Der aufrechte Stängel geht in verzweigte Wurzeln über."}}
+    ]
+  },
+  {
+    "id": "interveinal", "part": "leaf", "article": "problems/magnesium_deficiency",
+    "label": {"en": "Interveinal yellowing · tomato", "de": "Gelb zwischen den Adern · Tomate"},
+    "description": {"en": "A tomato leaf with yellow areas between greener veins. Compare the pattern with scattered pale stippling; this photograph alone does not establish a cause.", "de": "Ein Tomatenblatt mit gelben Flächen zwischen grüneren Adern. Zum Vergleich mit verstreuten hellen Punkten; das Foto allein belegt keine Ursache."},
+    "lookalikes": ["stippling"],
+    "markers": [
+      {"x": 25, "y": 40, "label": {"en": "Yellow tissue", "de": "Gelbes Gewebe"}, "text": {"en": "The pale area occupies the space between veins.", "de": "Die helle Fläche liegt zwischen den Blattadern."}},
+      {"x": 50, "y": 50, "label": {"en": "Greener vein", "de": "Grünere Ader"}, "text": {"en": "A darker vein separates paler areas of the leaf blade.", "de": "Eine dunklere Ader trennt hellere Flächen der Blattspreite."}}
+    ]
+  },
+  {
+    "id": "stippling", "part": "leaf", "article": "problems/spider_mite",
+    "label": {"en": "Stippling and webbing · leaf", "de": "Punkte und Gespinst · Blatt"},
+    "description": {"en": "The image page identifies a cannabis leaf with mite damage but does not identify the mite species. Compare fine spots with broad areas of yellowing.", "de": "Die Bildseite nennt ein Hanfblatt mit Milbenschäden, aber keine Milbenart. Feine Punkte lassen sich mit flächiger Vergilbung vergleichen."},
+    "lookalikes": ["interveinal"],
+    "markers": [
+      {"x": 42, "y": 50, "label": {"en": "Pale stippling", "de": "Helle Punkte"}, "text": {"en": "Small pale spots are scattered across the leaf surface.", "de": "Kleine helle Punkte verteilen sich über die Blattoberfläche."}},
+      {"x": 29, "y": 25, "label": {"en": "Brown edge", "de": "Brauner Rand"}, "text": {"en": "Part of the leaf margin is brown and dry.", "de": "Ein Teil des Blattrands ist braun und trocken."}},
+      {"x": 80, "y": 39, "label": {"en": "Fine webbing", "de": "Feines Gespinst"}, "text": {"en": "Fine threads cross the space beside the leaf edge.", "de": "Feine Fäden verlaufen neben dem Blattrand."}}
+    ]
+  },
+  {
+    "id": "stomata", "part": "leaf", "article": "glossary/vpd",
+    "label": {"en": "Leaf epidermis · microscope", "de": "Blattoberhaut · Mikroskop"},
+    "description": {"en": "Microscope photograph of epidermal cells, stomata and guard cells. The image source does not specify a scale here.", "de": "Mikroskopfoto von Oberhautzellen, Spaltöffnungen und Schließzellen. Die Bildquelle nennt hier keinen Maßstab."},
+    "markers": [
+      {"x": 60, "y": 57, "label": {"en": "Stoma and guard cells", "de": "Spaltöffnung und Schließzellen"}, "text": {"en": "A darker pore and its surrounding guard cells are visible within the epidermis.", "de": "In der Oberhaut sind eine dunklere Öffnung und die umgebenden Schließzellen sichtbar."}},
+      {"x": 34, "y": 33, "label": {"en": "Epidermal cells", "de": "Oberhautzellen"}, "text": {"en": "Long neighbouring cells form the surface layer.", "de": "Lange benachbarte Zellen bilden die Oberflächenschicht."}}
+    ]
+  },
+  {
+    "id": "larva", "part": "insect", "article": "problems/caterpillar",
+    "label": {"en": "Caterpillar anatomy · corn borer", "de": "Raupenaufbau · Maiszünsler"},
+    "description": {"en": "A corn borer larva on a leaf with parallel veins, probably maize. The host shown is not cannabis.", "de": "Eine Maiszünslerraupe auf einem parallelnervigen Blatt, vermutlich Mais. Die gezeigte Wirtspflanze ist kein Hanf."},
+    "markers": [
+      {"x": 19, "y": 47, "label": {"en": "Head capsule", "de": "Kopfkapsel"}, "text": {"en": "The darker head is at the left end of the larva.", "de": "Der dunklere Kopf liegt am linken Ende der Raupe."}},
+      {"x": 49, "y": 54, "label": {"en": "Body segments", "de": "Körpersegmente"}, "text": {"en": "Repeated segments are visible along the pale body.", "de": "Am hellen Körper sind wiederkehrende Segmente sichtbar."}}
+    ]
+  },
+  {
+    "id": "mold", "part": "flower", "article": "problems/botrytis_bud_rot",
+    "label": {"en": "Gray fungal growth · flower", "de": "Grauer Pilzbelag · Blüte"},
+    "description": {"en": "A flower cluster covered in gray growth. The source image page does not name the plant species.", "de": "Ein Blütenstand mit grauem Belag. Die Bildseite nennt die Pflanzenart nicht."},
+    "markers": [
+      {"x": 60, "y": 47, "label": {"en": "Filamentous growth", "de": "Fädiger Belag"}, "text": {"en": "A pale gray mat covers part of the flower cluster.", "de": "Ein hellgrauer Belag bedeckt einen Teil des Blütenstands."}},
+      {"x": 28, "y": 48, "label": {"en": "Plant tissue", "de": "Pflanzengewebe"}, "text": {"en": "Green tissue is visible beside the gray growth.", "de": "Neben dem grauen Belag ist grünes Gewebe sichtbar."}}
+    ]
+  }
+]

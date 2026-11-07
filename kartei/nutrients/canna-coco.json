@@ -1,0 +1,525 @@
+{
+  "name": "CANNA COCO A und B",
+  "name_en": "CANNA COCO A and B",
+  "summary": "Mineralischer Zweikomponentendünger für Kokos: COCO A und COCO B zu gleichen Teilen, eine Formel für Wachstum und Blüte, dazu die Zusätze von CANNA. Das deutsche Schema V26.02 steht hier vollständig; für Erde ist die Linie nicht gemacht, deshalb im Cockpit nicht wählbar.",
+  "summary_en": "Mineral two-part fertilizer for coco: COCO A and COCO B in equal parts, one formula for growth and flowering, plus CANNA's additives. The German schedule V26.02 is complete here; the line is not made for soil, so it cannot be chosen in the cockpit.",
+  "product": "CANNA",
+  "version": "DE V26.02",
+  "status": "draft",
+  "status_note": "Abgetippt aus dem deutschen CANNA-COCO-Düngerschema V26.02 (CC3) am 23.10.2026 und Zahl für Zahl mit dem Original verglichen (PDF als Bild gerendert und gegen seine Textebene gelesen). Die Tabelle steht je 10 Liter, die Karte je Liter. Für Kokos, nicht für Erde: im Wiki zum Lesen, im Cockpit nicht wählbar.",
+  "status_note_en": "Transcribed from the German CANNA COCO feeding schedule V26.02 (CC3) on Oct 23, 2026 and compared number by number with the original (PDF rendered as an image and read against its text layer). The chart is per 10 litres, the card per litre. For coco, not for soil: for reading in the wiki, not selectable in the cockpit.",
+  "check": {
+    "state": "checked",
+    "on": "2026-10-23",
+    "text": "Jede Zahl der Tabelle gegen das deutsche Schema V26.02 (CC3) geprüft, am 23.10.2026.",
+    "text_en": "Every number of the chart checked against the German schedule V26.02 (CC3), on Oct 23, 2026."
+  },
+  "unit": "ml/l",
+  "printed_unit": "ml/10 l",
+  "aliases": {
+    "de": [
+      "CANNA COCO",
+      "Canna Coco A",
+      "Canna Coco B",
+      "Coco A und B",
+      "Coco A+B",
+      "Canna Coco A+B"
+    ],
+    "en": [
+      "CANNA COCO",
+      "Canna Coco A",
+      "Canna Coco B",
+      "Coco A and B",
+      "Coco A+B",
+      "Canna Coco A+B"
+    ]
+  },
+  "line": {
+    "maker": "CANNA",
+    "types": [
+      "multi_part",
+      "mineral_liquid"
+    ],
+    "media": [
+      "coco"
+    ],
+    "media_text": "Kokos; laut Produktseite für jedes Gießsystem (Run-to-waste, Flut, Ebbe und Flut). Nicht für Erde.",
+    "media_text_en": "Coco; per the product page for every watering system (run-to-waste, flood, ebb and flow). Not for soil.",
+    "products": [
+      {
+        "product": "CANNA COCO A",
+        "role": "Grunddünger Teil A, eine Formel für Wachstum und Blüte. Zuerst ins Wasser geben, rühren, dann B.",
+        "role_en": "Base nutrient part A, one formula for growth and flowering. Add it to the water first, stir, then B.",
+        "sources": [
+          "CC3",
+          "CC4"
+        ]
+      },
+      {
+        "product": "CANNA COCO B",
+        "role": "Grunddünger Teil B, in gleicher Menge wie A.",
+        "role_en": "Base nutrient part B, in the same amount as A.",
+        "sources": [
+          "CC3",
+          "CC4"
+        ]
+      },
+      {
+        "product": "CANNA RHIZOTONIC",
+        "role": "Wurzelzusatz; die höchste Menge bei der Bewurzelung, später weniger.",
+        "role_en": "Root additive; the highest amount at rooting, less later.",
+        "sources": [
+          "CC3"
+        ]
+      },
+      {
+        "product": "CANNAZYM",
+        "role": "Enzymzusatz; bei wiederverwendetem Substrat doppelt (50 ml je 10 l).",
+        "role_en": "Enzyme additive; doubled with reused substrate (50 ml per 10 l).",
+        "sources": [
+          "CC3"
+        ]
+      },
+      {
+        "product": "CANNABOOST",
+        "role": "Blütezusatz; in der Blüte bis höchstens 40 ml je 10 l.",
+        "role_en": "Flowering additive; in flowering up to 40 ml per 10 l at most.",
+        "sources": [
+          "CC3"
+        ]
+      },
+      {
+        "product": "CANNA PK 13/14",
+        "role": "Phosphor- und Kaliumzusatz für eine Woche (W6), in den 3 bis 4 Wochen vor der Ernte.",
+        "role_en": "Phosphorus and potassium supplement for one week (W6), in the 3 to 4 weeks before harvest.",
+        "sources": [
+          "CC3"
+        ]
+      },
+      {
+        "product": "CANNA CALMAG AGENT",
+        "role": "Wasserkorrektur: 0 bis 7 ml je 10 l, je nach EC des Ausgangswassers (ideal 0,2 bis 0,4 mS/cm).",
+        "role_en": "Water correction: 0 to 7 ml per 10 l, depending on the EC of the starting water (ideally 0.2 to 0.4 mS/cm).",
+        "sources": [
+          "CC3"
+        ]
+      },
+      {
+        "product": "CANNA FLUSH",
+        "role": "Steht in der Tabelle in W7 und W9 mit 40 ml je 10 l.",
+        "role_en": "Stands in the chart in W7 and W9 at 40 ml per 10 l.",
+        "sources": [
+          "CC3"
+        ]
+      }
+    ],
+    "application_short": "Bei jedem Gießen A und B zu gleichen Teilen ins Wasser, erst A, dann B, pH 5,5 bis 6,2; für Kokos, nicht für Erde.",
+    "application_short_en": "At every watering A and B in equal parts into the water, A first, then B, pH 5.5 to 6.2; for coco, not for soil.",
+    "application": "Ins Gießwasser. Produktseite: 1:250, also 40 ml A und 40 ml B je 10 l; das Schema nimmt 26 bis 37 ml je 10 l. Erst A ins Wasser, rühren, dann B, rühren, die Mischung einige Stunden stehen lassen; die Konzentrate nie unverdünnt mischen. pH 5,5 bis 6,2, laut Schema immer mit pH-Minus Wuchs senken. EC der fertigen Lösung laut Produktseite 1,2 bis 2,3 mS/cm; das Schema rechnet mit Wasser von EC 0,4 mS/cm (mit CALMAG AGENT eingestellt). Längeres Wachstum: die Mengen von Tag 6 bis 25 wiederholen; längere Blüte: die von W3 bis W5.",
+    "application_en": "Into the watering water. Product page: 1:250, so 40 ml A and 40 ml B per 10 l; the schedule uses 26 to 37 ml per 10 l. First A into the water, stir, then B, stir, let the mix stand for a few hours; never mix the concentrates undiluted. pH 5.5 to 6.2, per the schedule always lowered with pH minus Grow. EC of the mixed solution per the product page 1.2 to 2.3 mS/cm; the schedule counts with water of EC 0.4 mS/cm (adjusted with CALMAG AGENT). Longer vegetative phase: repeat the amounts of days 6 to 25; longer flowering: those of W3 to W5.",
+    "application_sources": [
+      "CC3",
+      "CC4"
+    ],
+    "cautions": [
+      {
+        "text": "Für Kokos, nicht für Erde: auf deiner Erde gilt das Schema nicht, das Cockpit bietet die Linie deshalb nicht an.",
+        "text_en": "For coco, not for soil: the schedule does not apply to your soil, so the cockpit does not offer the line.",
+        "sources": [
+          "CC3",
+          "CC4"
+        ]
+      },
+      {
+        "text": "A und B nie unverdünnt zusammengießen: es entstehen unlösliche Verbindungen.",
+        "text_en": "Never pour A and B together undiluted: insoluble compounds form.",
+        "sources": [
+          "CC4"
+        ]
+      },
+      {
+        "text": "Widerspruch zwischen CANNA-Ländern: das australische Schema V25.01 nennt Einzelwerte (29 und 33 ml je 10 l), CalMag bis 11 ml je 10 l und keine Zeile CANNA FLUSH. Hier steht das deutsche Schema.",
+        "text_en": "Contradiction between CANNA markets: the Australian schedule V25.01 gives single values (29 and 33 ml per 10 l), CalMag up to 11 ml per 10 l and no CANNA FLUSH row. This card follows the German schedule.",
+        "sources": [
+          "CC1",
+          "CC3"
+        ]
+      }
+    ]
+  },
+  "weeks": {
+    "columns": [
+      {
+        "key": "propagation",
+        "label": "Tag 1 bis 5 (Bewurzelung)",
+        "label_en": "Days 1 to 5 (rooting)",
+        "printed": "T1-5"
+      },
+      {
+        "key": "veg",
+        "label": "Tag 6 bis 25 (Wachstum I, für längeres Wachstum wiederholen)",
+        "label_en": "Days 6 to 25 (vegetative I, repeat for a longer vegetative phase)",
+        "printed": "T6-25"
+      },
+      {
+        "key": "bloom_1",
+        "bloom_week": 1,
+        "label": "Blütewoche 1 (W1, Wachstum II)",
+        "label_en": "Flowering week 1 (W1, vegetative II)",
+        "printed": "W1"
+      },
+      {
+        "key": "bloom_2",
+        "bloom_week": 2,
+        "label": "Blütewoche 2 (W2, Wachstum II)",
+        "label_en": "Flowering week 2 (W2, vegetative II)",
+        "printed": "W2"
+      },
+      {
+        "key": "bloom_3",
+        "bloom_week": 3,
+        "label": "Blütewoche 3 (W3)",
+        "label_en": "Flowering week 3 (W3)",
+        "printed": "W3"
+      },
+      {
+        "key": "bloom_4",
+        "bloom_week": 4,
+        "label": "Blütewoche 4 (W4)",
+        "label_en": "Flowering week 4 (W4)",
+        "printed": "W4"
+      },
+      {
+        "key": "bloom_5",
+        "bloom_week": 5,
+        "label": "Blütewoche 5 (W5)",
+        "label_en": "Flowering week 5 (W5)",
+        "printed": "W5"
+      },
+      {
+        "key": "bloom_6",
+        "bloom_week": 6,
+        "label": "Blütewoche 6 (W6)",
+        "label_en": "Flowering week 6 (W6)",
+        "printed": "W6"
+      },
+      {
+        "key": "bloom_7",
+        "bloom_week": 7,
+        "label": "Blütewoche 7 (W7)",
+        "label_en": "Flowering week 7 (W7)",
+        "printed": "W7"
+      },
+      {
+        "key": "bloom_8",
+        "bloom_week": 8,
+        "label": "Blütewoche 8 (W8)",
+        "label_en": "Flowering week 8 (W8)",
+        "printed": "W8"
+      },
+      {
+        "key": "bloom_9",
+        "bloom_week": 9,
+        "label": "Blütewoche 9 (W9)",
+        "label_en": "Flowering week 9 (W9)",
+        "printed": "W9"
+      }
+    ],
+    "end": {
+      "key": "label_end",
+      "bloom_week": 10,
+      "label": "Ab Blütewoche 10: die Tabelle endet, keine Menge",
+      "label_en": "From flowering week 10: the chart ends, no amount"
+    },
+    "sources": [
+      "CC3"
+    ]
+  },
+  "components": {
+    "coco_a": {
+      "label": "COCO A",
+      "label_en": "COCO A"
+    },
+    "coco_b": {
+      "label": "COCO B",
+      "label_en": "COCO B"
+    },
+    "rhizotonic": {
+      "label": "Rhizotonic",
+      "label_en": "Rhizotonic",
+      "optional": true
+    },
+    "cannazym": {
+      "label": "CANNAZYM",
+      "label_en": "CANNAZYM",
+      "optional": true
+    },
+    "cannaboost": {
+      "label": "CANNABOOST",
+      "label_en": "CANNABOOST",
+      "optional": true
+    },
+    "pk_13_14": {
+      "label": "PK 13/14",
+      "label_en": "PK 13/14",
+      "optional": true
+    },
+    "canna_flush": {
+      "label": "CANNA FLUSH",
+      "label_en": "CANNA FLUSH",
+      "optional": true
+    }
+  },
+  "pages": {
+    "low": {
+      "label": "Untere Werte der Spanne",
+      "label_en": "Lower values of the range",
+      "rows": {
+        "coco_a": [
+          2.6,
+          2.6,
+          2.9,
+          2.9,
+          2.9,
+          2.9,
+          2.9,
+          2.9,
+          2.6,
+          2.6,
+          null
+        ],
+        "coco_b": [
+          2.6,
+          2.6,
+          2.9,
+          2.9,
+          2.9,
+          2.9,
+          2.9,
+          2.9,
+          2.6,
+          2.6,
+          null
+        ],
+        "rhizotonic": [
+          4,
+          2,
+          2,
+          2,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          null,
+          null
+        ],
+        "cannazym": [
+          null,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5
+        ],
+        "cannaboost": [
+          null,
+          null,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "pk_13_14": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1.5,
+          null,
+          null,
+          null
+        ],
+        "canna_flush": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          4,
+          null,
+          4
+        ]
+      },
+      "sources": [
+        "CC3"
+      ]
+    },
+    "high": {
+      "label": "Obere Werte der Spanne",
+      "label_en": "Upper values of the range",
+      "rows": {
+        "coco_a": [
+          3.3,
+          3.3,
+          3.7,
+          3.7,
+          3.7,
+          3.7,
+          3.7,
+          3.7,
+          3.3,
+          3.3,
+          null
+        ],
+        "coco_b": [
+          3.3,
+          3.3,
+          3.7,
+          3.7,
+          3.7,
+          3.7,
+          3.7,
+          3.7,
+          3.3,
+          3.3,
+          null
+        ],
+        "rhizotonic": [
+          4,
+          2,
+          2,
+          2,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          null,
+          null
+        ],
+        "cannazym": [
+          null,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          5,
+          5
+        ],
+        "cannaboost": [
+          null,
+          null,
+          2,
+          2,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "pk_13_14": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1.5,
+          null,
+          null,
+          null
+        ],
+        "canna_flush": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          4,
+          null,
+          4
+        ]
+      },
+      "sources": [
+        "CC3"
+      ]
+    }
+  },
+  "frequency": {
+    "text": "Die Tabelle sagt nicht, wie oft gegossen wird; laut Produktseite kommt der Dünger in jede Nährlösung.",
+    "text_en": "The chart does not say how often to water; per the product page the fertilizer goes into every nutrient solution.",
+    "sources": [
+      "CC3",
+      "CC4"
+    ]
+  },
+  "notes": [
+    {
+      "text": "EC der fertigen Lösung laut Tabelle, mit Wasser von 0,4 mS/cm: Tag 1 bis 25 1,8 bis 2,2; W1 bis W5 2,0 bis 2,4; W6 2,4 bis 2,9; W7 und W8 1,8 bis 2,2; W9 0,4 mS/cm.",
+      "text_en": "EC of the mixed solution per the chart, with water of 0.4 mS/cm: days 1 to 25 1.8 to 2.2; W1 to W5 2.0 to 2.4; W6 2.4 to 2.9; W7 and W8 1.8 to 2.2; W9 0.4 mS/cm.",
+      "sources": [
+        "CC3"
+      ]
+    },
+    {
+      "text": "Spannen: das Schema druckt zum Beispiel COCO A 26 bis 33 ml je 10 l. Die Karte führt die unteren und die oberen Werte als zwei Seiten und mittelt nie.",
+      "text_en": "Ranges: the schedule prints for example COCO A 26 to 33 ml per 10 l. The card keeps the lower and the upper values as two pages and never averages.",
+      "sources": [
+        "CC3"
+      ]
+    }
+  ],
+  "sources": {
+    "CC1": {
+      "title": "CANNA, COCO Düngerschema Australien V25.01 (PDF, anderer Markt, zum Vergleich)",
+      "title_en": "CANNA, COCO grow schedule Australia V25.01 (PDF, other market, for comparison)",
+      "url": "https://www.canna.com.au/sites/australia/files/2026-04/downloads-grow-schedule-au-coco.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "CC2": {
+      "title": "CANNA Deutschland, Downloads (COCO in der Liste der Düngerschemata)",
+      "title_en": "CANNA Germany, downloads page (COCO in the list of feeding schedules)",
+      "url": "https://www.canna-de.com/downloads",
+      "retrieved": "2026-10-23"
+    },
+    "CC3": {
+      "title": "CANNA, COCO Düngerschema DE V26.02 (PDF)",
+      "title_en": "CANNA, COCO feeding schedule DE V26.02 (PDF)",
+      "url": "https://www.canna-de.com/sites/germany/files/2026-04/downloads-grow-schedule-de-coco.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "CC4": {
+      "title": "CANNA Deutschland, Produktseite CANNA COCO A und B",
+      "title_en": "CANNA Germany, CANNA COCO A and B product page",
+      "url": "https://www.canna-de.com/canna-coco-a-b",
+      "retrieved": "2026-10-23"
+    }
+  }
+}

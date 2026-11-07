@@ -1,0 +1,845 @@
+{
+  "name": "Allgemeine Pflanzenpathologie",
+  "name_en": "General plant pathology",
+  "status": "reference",
+  "entries": [
+    {
+      "key": "powdery-mildew",
+      "kind": "plant_condition",
+      "group": "krankheiten",
+      "label": "Echter Mehltau",
+      "label_en": "Powdery mildew",
+      "summary": "Helle, mehlartige Beläge auf Blättern, Trieben oder Blüten. Die beteiligten Pilzarten und Wirtspflanzen sind unterschiedlich.",
+      "summary_en": "Pale, powder-like growth on foliage, stems or flowers. The fungal species and susceptible hosts vary.",
+      "facts": {
+        "features": "Oberflächlicher weißlicher Belag; Blätter können sich verformen oder verfärben.",
+        "context": "Verwandte, aber nicht identische Pilze. Falscher Mehltau ist eine andere Krankheitsgruppe.",
+        "reference": "H1"
+      },
+      "facts_en": {
+        "features": "Whitish surface growth; foliage may become distorted or discoloured.",
+        "context": "Related but distinct fungi. Downy mildews are a different disease group.",
+        "reference": "H1"
+      },
+      "sources": [
+        "H1"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "downy-mildew",
+      "kind": "plant_condition",
+      "group": "krankheiten",
+      "label": "Falscher Mehltau",
+      "label_en": "Downy mildew",
+      "summary": "Eine Gruppe wirtsspezifischer Erkrankungen durch pilzähnliche Oomyceten.",
+      "summary_en": "A group of host-specific diseases caused by fungus-like oomycetes.",
+      "facts": {
+        "features": "Verfärbte Blattoberseiten; unterseits kann weißlicher, grauer oder violetter Belag erscheinen.",
+        "context": "Peronospora, Plasmopara und verwandte Gattungen. Das Schadbild allein belegt keine bestimmte Art.",
+        "reference": "H2"
+      },
+      "facts_en": {
+        "features": "Discoloured upper leaf surfaces, sometimes with pale, grey or purple growth underneath.",
+        "context": "Peronospora, Plasmopara and related genera. Appearance alone does not establish a particular species.",
+        "reference": "H2"
+      },
+      "sources": [
+        "H2"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "damping-off",
+      "kind": "plant_condition",
+      "group": "krankheiten",
+      "label": "Umfallkrankheit",
+      "label_en": "Damping-off",
+      "summary": "Sammelbegriff für den Zusammenbruch von Keimlingen durch verschiedene Pilze und Oomyceten.",
+      "summary_en": "An umbrella term for seedling collapse associated with several fungi and oomycetes.",
+      "facts": {
+        "features": "Keimlinge knicken an der Stängelbasis um; sichtbarer weißlicher Bewuchs kann auftreten.",
+        "context": "Kein einzelner Erreger. Mechanische Verletzung oder physiologischer Zusammenbruch können ähnlich aussehen.",
+        "reference": "H3"
+      },
+      "facts_en": {
+        "features": "Seedlings collapse at the stem base; pale fungal growth may be present.",
+        "context": "Not one pathogen. Physical injury and physiological collapse can look similar.",
+        "reference": "H3"
+      },
+      "sources": [
+        "H3"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "pythium-root-rot",
+      "kind": "plant_condition",
+      "group": "krankheiten",
+      "label": "Pythium-Wurzelfäule",
+      "label_en": "Pythium root rot",
+      "summary": "Botanischer Krankheitskomplex an jungen Wurzeln und Keimlingen durch Oomyceten.",
+      "summary_en": "A botanical disease complex of young roots and seedlings involving oomycetes.",
+      "facts": {
+        "features": "Wurzeln können braun bis schwarz faulen; oberirdisch sind Welke und Entwicklungsstörungen möglich.",
+        "context": "Pythium-Arten sind keine echten Pilze. Sauerstoffmangel und andere Wurzelfäulen können ähnliche Symptome erzeugen.",
+        "reference": "H4"
+      },
+      "facts_en": {
+        "features": "Roots may develop brown-to-black decay, with wilting or stunting above ground.",
+        "context": "Pythium species are not true fungi. Oxygen deprivation and other root rots may produce similar symptoms.",
+        "reference": "H4"
+      },
+      "sources": [
+        "H4"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "phytophthora-root-rot",
+      "kind": "plant_condition",
+      "group": "krankheiten",
+      "label": "Phytophthora-Wurzelfäule",
+      "label_en": "Phytophthora root rot",
+      "summary": "Wurzel- und Stängelgrunderkrankungen verschiedener Gehölze, Stauden und Topfpflanzen.",
+      "summary_en": "Root and stem-base diseases affecting various woody, herbaceous and container plants.",
+      "facts": {
+        "features": "Absterbende Wurzeln, schwaches Wachstum und welkendes oder verfärbtes Laub können gemeinsam auftreten.",
+        "context": "Mehrere Phytophthora-Arten erzeugen ähnliche Schäden; eine genaue Bestimmung kann Laboruntersuchungen erfordern.",
+        "reference": "H5"
+      },
+      "facts_en": {
+        "features": "Root death, weak growth and wilting or discoloured foliage may occur together.",
+        "context": "Several Phytophthora species produce similar damage; precise identification may require laboratory testing.",
+        "reference": "H5"
+      },
+      "sources": [
+        "H5"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "fusarium-wilt",
+      "kind": "plant_condition",
+      "group": "krankheiten",
+      "label": "Fusarium-Welke",
+      "label_en": "Fusarium wilt",
+      "summary": "Allgemeines Krankheitsbild einer Gefäßwelke; die zitierte Referenz beschreibt insbesondere Nachtschattengewächse.",
+      "summary_en": "A vascular wilt disease reference; the cited account specifically concerns solanaceous crops.",
+      "facts": {
+        "features": "Vergilbung und Welke können einseitig beginnen; verfärbtes Leitgewebe ist ein Hinweis.",
+        "context": "Fusarium oxysporum umfasst wirtsspezifische Formen. Eine Welke an einer anderen Pflanzenart belegt nicht denselben Erreger.",
+        "reference": "H6"
+      },
+      "facts_en": {
+        "features": "Yellowing and wilting may begin on one side; discoloured vascular tissue is a clue.",
+        "context": "Fusarium oxysporum includes host-specific forms. Wilting in another plant species does not establish the same pathogen.",
+        "reference": "H6"
+      },
+      "sources": [
+        "H6"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "verticillium-wilt",
+      "kind": "plant_condition",
+      "group": "krankheiten",
+      "label": "Verticillium-Welke",
+      "label_en": "Verticillium wilt",
+      "summary": "Bodenbürtige Pilzerkrankung an verschiedenen Gemüse-, Obst- und Zierpflanzen.",
+      "summary_en": "A soil-borne fungal disease of various vegetables, fruit and ornamental plants.",
+      "facts": {
+        "features": "Vergilbung, Welke und Triebsterben; das Erscheinungsbild ist nicht auf einen Erreger beschränkt.",
+        "context": "Verticillium-Arten gelangen über die Wurzeln in die Pflanze. Ähnliche Symptome sind bei anderen Gefäßwelken möglich.",
+        "reference": "H7"
+      },
+      "facts_en": {
+        "features": "Yellowing, wilting and dieback; this appearance is not unique to one pathogen.",
+        "context": "Verticillium species enter through roots. Other vascular wilts can have similar symptoms.",
+        "reference": "H7"
+      },
+      "sources": [
+        "H7"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "septoria-leaf-spot",
+      "kind": "plant_condition",
+      "group": "krankheiten",
+      "label": "Septoria-Blattflecken",
+      "label_en": "Septoria leaf spot",
+      "summary": "Allgemeine Vergleichsreferenz für Blattflecken; die Quelle beschreibt Septoria lycopersici an Tomaten.",
+      "summary_en": "A comparative leaf-spot reference; the source describes Septoria lycopersici on tomato.",
+      "facts": {
+        "features": "Kleine Flecken mit dunklem Rand und hellerem Zentrum; dunkle Fruchtkörper können sichtbar werden.",
+        "context": "Septoria-Arten und ihre Wirte unterscheiden sich. Ein Blattfoto allein reicht nicht zur sicheren Artbestimmung.",
+        "reference": "H8"
+      },
+      "facts_en": {
+        "features": "Small spots with dark margins and paler centres; dark fruiting structures may appear.",
+        "context": "Septoria species and their hosts differ. A leaf photograph alone cannot securely identify the species.",
+        "reference": "H8"
+      },
+      "sources": [
+        "H8"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "bacterial-leaf-spot",
+      "kind": "plant_condition",
+      "group": "krankheiten",
+      "label": "Bakterielle Blattflecken",
+      "label_en": "Bacterial leaf spots",
+      "summary": "Botanische Vergleichsreferenz zu bakteriellen Fleckenkrankheiten, hier am Beispiel der Tomate.",
+      "summary_en": "A botanical comparison of bacterial spotting diseases, using tomato as the source example.",
+      "facts": {
+        "features": "Dunkle Blattflecken können Pilzflecken ähneln. Bei Tomaten unterscheiden sich manche Erkrankungen erst deutlicher an der Frucht.",
+        "context": "Bakterien und Pilze erfordern unterschiedliche Diagnosen; Flecken allein belegen weder Erreger noch Wirtsspektrum.",
+        "reference": "H9"
+      },
+      "facts_en": {
+        "features": "Dark leaf spots can resemble fungal lesions. In tomato, some diseases are more readily distinguished by fruit lesions.",
+        "context": "Bacteria and fungi require different diagnoses; spots alone establish neither pathogen nor host range.",
+        "reference": "H9"
+      },
+      "sources": [
+        "H9"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "mealybugs",
+      "kind": "plant_condition",
+      "group": "schaedlinge",
+      "label": "Wollläuse",
+      "label_en": "Mealybugs",
+      "summary": "Saftsaugende Insekten verschiedener Zimmer- und Gewächshauspflanzen.",
+      "summary_en": "Sap-feeding insects of various houseplants and greenhouse plants.",
+      "facts": {
+        "features": "Weiße, wollig wirkende Wachsausscheidungen; Honigtau und darauf wachsende Rußtaupilze sind möglich.",
+        "context": "Wachs und Eigelege anderer Insekten können ähnlich aussehen. Honigtau ist kein sicherer Nachweis einer bestimmten Art.",
+        "reference": "H10"
+      },
+      "facts_en": {
+        "features": "White, cotton-like wax; honeydew and secondary sooty mould may be present.",
+        "context": "Wax or egg masses from other insects may look similar. Honeydew does not identify a particular species.",
+        "reference": "H10"
+      },
+      "sources": [
+        "H10"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "scale-insects",
+      "kind": "plant_condition",
+      "group": "schaedlinge",
+      "label": "Schildläuse",
+      "label_en": "Scale insects",
+      "summary": "Viele Arten saftsaugender Insekten mit unterschiedlichem Wirtsspektrum.",
+      "summary_en": "Many sap-feeding insect species with differing host ranges.",
+      "facts": {
+        "features": "Schildartige Erhebungen auf Stängeln oder Blättern; einige Arten geben Honigtau ab.",
+        "context": "Nicht jede Erhebung ist ein Insekt. Korkige Gewebeschäden und andere Wachsausscheidungen sind mögliche Verwechslungen.",
+        "reference": "H11"
+      },
+      "facts_en": {
+        "features": "Shell-like bumps on stems or foliage; some species produce honeydew.",
+        "context": "Not every bump is an insect. Corky tissue damage and other waxy deposits are possible lookalikes.",
+        "reference": "H11"
+      },
+      "sources": [
+        "H11"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "leafminers",
+      "kind": "plant_condition",
+      "group": "schaedlinge",
+      "label": "Minierfliegen und Blattminierer",
+      "label_en": "Leafminers",
+      "summary": "Larven verschiedener Insekten fressen innerhalb des Blattes und hinterlassen typische Minen.",
+      "summary_en": "Larvae of several insects feed inside leaves, leaving characteristic mines.",
+      "facts": {
+        "features": "Gewundene helle Gänge oder flächige Minen zwischen den Blattoberflächen.",
+        "context": "Die Art hängt vom Wirt und der Larve ab. Oberflächliche Fraßspuren anderer Tiere sind keine echten Blattminen.",
+        "reference": "H12"
+      },
+      "facts_en": {
+        "features": "Winding pale trails or blotch-like mines between the leaf surfaces.",
+        "context": "Species identification depends on host and larva. Surface feeding scars are not true leaf mines.",
+        "reference": "H12"
+      },
+      "sources": [
+        "H12"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "broad-mites",
+      "kind": "plant_condition",
+      "group": "schaedlinge",
+      "label": "Breitmilben",
+      "label_en": "Broad mites",
+      "summary": "Mikroskopisch kleine Milben; Polyphagotarsonemus latus ist an zahlreichen Zier- und Nutzpflanzen beschrieben.",
+      "summary_en": "Microscopic mites; Polyphagotarsonemus latus is documented on numerous ornamental and crop plants.",
+      "facts": {
+        "features": "Junge Blätter können verformt, verdickt, brüchig oder bronzefarben erscheinen.",
+        "context": "Breitmilben und Weichhautmilben sind ohne geeignete Vergrößerung schwer zu unterscheiden. Deformation allein ist kein Milbennachweis.",
+        "reference": "H13"
+      },
+      "facts_en": {
+        "features": "Young foliage may become distorted, thickened, brittle or bronze-coloured.",
+        "context": "Broad and cyclamen mites are difficult to distinguish without suitable magnification. Distortion alone does not prove a mite infestation.",
+        "reference": "H13"
+      },
+      "sources": [
+        "H13"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "slugs-snails",
+      "kind": "plant_condition",
+      "group": "schaedlinge",
+      "label": "Nackt- und Gehäuseschnecken",
+      "label_en": "Slugs and snails",
+      "summary": "Weichtiere mit verschiedenen Ernährungsweisen; viele Arten zersetzen abgestorbenes Material.",
+      "summary_en": "Molluscs with differing diets; many species recycle dead organic material.",
+      "facts": {
+        "features": "Unregelmäßiger Loch- oder Randfraß kann mit Schleimspuren auftreten.",
+        "context": "Nicht alle Schneckenarten fressen lebende Pflanzen. Fraßlöcher können auch von Insekten stammen.",
+        "reference": "H14"
+      },
+      "facts_en": {
+        "features": "Irregular holes or edge feeding may occur together with mucus trails.",
+        "context": "Not all slug or snail species eat living plants. Insects can also produce feeding holes.",
+        "reference": "H14"
+      },
+      "sources": [
+        "H14"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "vine-weevil",
+      "kind": "plant_condition",
+      "group": "schaedlinge",
+      "label": "Dickmaulrüssler",
+      "label_en": "Vine weevil",
+      "summary": "Otiorhynchus sulcatus ist ein Käfer vieler Zierpflanzen und einiger Obstpflanzen.",
+      "summary_en": "Otiorhynchus sulcatus is a beetle associated with many ornamentals and some fruit plants.",
+      "facts": {
+        "features": "Käfer hinterlassen Buchten am Blattrand; die Larven fressen an Wurzeln.",
+        "context": "Der Wurzelfraß kann oberirdisch wie andere Wurzelschäden aussehen. Ein Buchtenfraß allein bestimmt keine Larvenart.",
+        "reference": "H15"
+      },
+      "facts_en": {
+        "features": "Adults leave notches at leaf margins; larvae feed on roots.",
+        "context": "Root feeding can resemble other root damage above ground. Leaf notches alone do not identify a larval species.",
+        "reference": "H15"
+      },
+      "sources": [
+        "H15"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "root-knot-nematodes",
+      "kind": "plant_condition",
+      "group": "schaedlinge",
+      "label": "Wurzelgallennematoden",
+      "label_en": "Root-knot nematodes",
+      "summary": "Meloidogyne-Arten sind mikroskopische pflanzenparasitäre Fadenwürmer.",
+      "summary_en": "Meloidogyne species are microscopic plant-parasitic roundworms.",
+      "facts": {
+        "features": "Gallen oder Verdickungen an Wurzeln; oberirdisch sind Vergilbung, Welke und kleine Pflanzen möglich.",
+        "context": "Stickstoffbindende Wurzelknöllchen mancher Pflanzen sind keine Nematodengallen. Die Artenbestimmung benötigt Fachdiagnostik.",
+        "reference": "H16"
+      },
+      "facts_en": {
+        "features": "Root galls or swellings; foliage may yellow or wilt and plants may remain small.",
+        "context": "Nitrogen-fixing nodules of some plants are not nematode galls. Species identification requires specialist diagnostics.",
+        "reference": "H16"
+      },
+      "sources": [
+        "H16"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "root-bound",
+      "kind": "plant_condition",
+      "group": "stress",
+      "label": "Wurzelbindung im Topf",
+      "label_en": "Root-bound plants",
+      "summary": "Dicht verfilzte oder kreisende Wurzeln können den verfügbaren Topfraum ausfüllen.",
+      "summary_en": "Dense, tangled or circling roots can occupy the available container space.",
+      "facts": {
+        "features": "Wurzeln am Topfausgang, instabiler Pflanzenstand und schwache Entwicklung können gemeinsam auftreten.",
+        "context": "Ähnliche Blattsymptome gibt es bei anderen Wurzelschäden. Der sichtbare Wurzelzustand liefert mehr Hinweise als die Blattfarbe allein.",
+        "reference": "H17"
+      },
+      "facts_en": {
+        "features": "Roots at container outlets, instability and weak development may occur together.",
+        "context": "Similar leaf symptoms occur with other root problems. Root condition is more informative than leaf colour alone.",
+        "reference": "H17"
+      },
+      "sources": [
+        "H17"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "oedema",
+      "kind": "plant_condition",
+      "group": "stress",
+      "label": "Ödeme und Verkorkung",
+      "label_en": "Oedema and corking",
+      "summary": "Nicht ansteckende Gewebeschädigung, wenn die Wasseraufnahme zeitweise die Abgabe über die Blätter übersteigt.",
+      "summary_en": "Non-infectious tissue injury when water uptake temporarily exceeds water loss through foliage.",
+      "facts": {
+        "features": "Zunächst wassergetränkte Stellen, später erhabene Bläschen oder korkige Flecken.",
+        "context": "Ödeme sind kein Pilzbelag und können mit Rost oder Schildläusen verwechselt werden.",
+        "reference": "H18"
+      },
+      "facts_en": {
+        "features": "Initially water-soaked areas, later raised blisters or corky patches.",
+        "context": "Oedema is not fungal growth and may be confused with rust or scale insects.",
+        "reference": "H18"
+      },
+      "sources": [
+        "H18"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "herbicide-injury",
+      "kind": "plant_condition",
+      "group": "stress",
+      "label": "Herbizid- und Spritzschäden",
+      "label_en": "Herbicide and spray injury",
+      "summary": "Nicht ansteckende Schädigung durch chemische Einwirkung; das Aussehen hängt vom Stoff ab.",
+      "summary_en": "Non-infectious injury from chemical exposure; appearance depends on the substance.",
+      "facts": {
+        "features": "Verbrannte Kontaktstellen, verdrehte Triebe oder ungewöhnlich schmale und verformte Blätter sind möglich.",
+        "context": "Mangel, Milben und Viruskrankheiten können ähnliche Deformationen erzeugen. Eine Formveränderung allein belegt keine Chemikalienexposition.",
+        "reference": "H19"
+      },
+      "facts_en": {
+        "features": "Scorched contact areas, twisted shoots or unusually narrow and distorted foliage may occur.",
+        "context": "Deficiencies, mites and viral diseases can cause similar distortion. Leaf shape alone does not establish chemical exposure.",
+        "reference": "H19"
+      },
+      "sources": [
+        "H19"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "transplant-shock",
+      "kind": "plant_condition",
+      "group": "stress",
+      "label": "Umpflanzschock",
+      "label_en": "Transplant shock",
+      "summary": "Vorübergehende Stressreaktion nach Standortwechsel und Störung des Wurzelsystems.",
+      "summary_en": "A temporary stress response following relocation and disturbance of the root system.",
+      "facts": {
+        "features": "Welke und Abwurf älterer Blätter können nach dem Umpflanzen auftreten.",
+        "context": "Das zeitliche Zusammentreffen ist ein Hinweis, keine sichere Diagnose. Andere Wurzelschäden und Mangelbilder können ähnlich wirken.",
+        "reference": "H20"
+      },
+      "facts_en": {
+        "features": "Wilting and loss of older foliage may follow transplanting.",
+        "context": "Timing is a clue, not a confirmed diagnosis. Other root damage and deficiency patterns can look similar.",
+        "reference": "H20"
+      },
+      "sources": [
+        "H20"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "ozone-injury",
+      "kind": "plant_condition",
+      "group": "stress",
+      "label": "Ozon- und Luftschadstoffschäden",
+      "label_en": "Ozone and air-pollution injury",
+      "summary": "Nicht ansteckende Blattschäden durch Luftschadstoffe; Empfindlichkeit und Erscheinungsbild unterscheiden sich nach Pflanzenart.",
+      "summary_en": "Non-infectious foliage injury from air pollutants; sensitivity and appearance differ among plant species.",
+      "facts": {
+        "features": "Punktförmige Aufhellungen, Flecken, bronzene Verfärbung oder abgestorbenes Gewebe können auftreten.",
+        "context": "Milben, andere Blattkrankheiten und chemische Schäden können ähnlich aussehen. Die Quelle beschreibt Gehölze als Vergleichsbeispiele.",
+        "reference": "H21"
+      },
+      "facts_en": {
+        "features": "Stippling, flecks, bronzing or dead tissue may occur.",
+        "context": "Mites, other foliage diseases and chemical injury can look similar. The source uses trees and shrubs as comparison examples.",
+        "reference": "H21"
+      },
+      "sources": [
+        "H21"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    },
+    {
+      "key": "mosaic-viruses",
+      "kind": "plant_condition",
+      "group": "krankheiten",
+      "label": "Mosaikartige Viruskrankheiten (TMV/ToMV)",
+      "label_en": "Mosaic-type viral diseases (TMV/ToMV)",
+      "summary": "Botanische Vergleichsreferenz zu Pflanzenviren, insbesondere Tabakmosaikvirus und Tomatenmosaikvirus.",
+      "summary_en": "A botanical comparison of plant viruses, particularly tobacco mosaic virus and tomato mosaic virus.",
+      "facts": {
+        "features": "Mosaikartige Hell-Dunkel-Muster, verformte Blätter und kleinere Pflanzen sind mögliche, aber nicht eindeutige Merkmale.",
+        "context": "Die zitierte Quelle beschreibt Tomaten und weitere bekannte Wirte. Ähnliche Muster können chemische oder physiologische Ursachen haben; die Virusbestimmung benötigt Labordiagnostik.",
+        "reference": "H22"
+      },
+      "facts_en": {
+        "features": "Mottled light-and-dark patterns, distorted foliage and stunting are possible but non-specific features.",
+        "context": "The source describes tomato and other documented hosts. Chemical or physiological injury can look similar; identifying a virus requires laboratory diagnosis.",
+        "reference": "H22"
+      },
+      "sources": [
+        "H22"
+      ],
+      "fact_labels": {
+        "features": "Merkmale",
+        "context": "Einordnung und Verwechslungen",
+        "reference": "Referenz"
+      },
+      "fact_labels_en": {
+        "features": "Visible features",
+        "context": "Context and lookalikes",
+        "reference": "Reference"
+      }
+    }
+  ],
+  "sources": {
+    "H1": {
+      "title": "RHS, Powdery mildew",
+      "title_en": "RHS, Powdery mildew",
+      "url": "https://www.rhs.org.uk/disease/powdery-mildews",
+      "retrieved": "2026-10-25"
+    },
+    "H2": {
+      "title": "RHS, Downy mildew",
+      "title_en": "RHS, Downy mildew",
+      "url": "https://www.rhs.org.uk/disease/downy-mildews",
+      "retrieved": "2026-10-25"
+    },
+    "H3": {
+      "title": "RHS, Damping-off",
+      "title_en": "RHS, Damping-off",
+      "url": "https://www.rhs.org.uk/disease/damping-off",
+      "retrieved": "2026-10-25"
+    },
+    "H4": {
+      "title": "UC IPM, Pythium root rot",
+      "title_en": "UC IPM, Pythium root rot",
+      "url": "https://ipm.ucanr.edu/agriculture/floriculture-and-ornamental-nurseries/pythium-root-rot/",
+      "retrieved": "2026-10-25"
+    },
+    "H5": {
+      "title": "RHS, Phytophthora root rot",
+      "title_en": "RHS, Phytophthora root rot",
+      "url": "https://www.rhs.org.uk/disease/phytophthora-root-rot",
+      "retrieved": "2026-10-25"
+    },
+    "H6": {
+      "title": "University of Minnesota Extension, Fusarium wilt",
+      "title_en": "University of Minnesota Extension, Fusarium wilt",
+      "url": "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/fusarium-wilt",
+      "retrieved": "2026-10-25"
+    },
+    "H7": {
+      "title": "RHS, Verticillium wilt",
+      "title_en": "RHS, Verticillium wilt",
+      "url": "https://www.rhs.org.uk/disease/verticillium-wilt",
+      "retrieved": "2026-10-25"
+    },
+    "H8": {
+      "title": "University of Minnesota Extension, Septoria leaf spot",
+      "title_en": "University of Minnesota Extension, Septoria leaf spot",
+      "url": "https://apps.extension.umn.edu/garden/diagnose/plant/vegetable/tomato/leavesspots.html",
+      "retrieved": "2026-10-25"
+    },
+    "H9": {
+      "title": "University of Minnesota Extension, Bacterial leaf spots",
+      "title_en": "University of Minnesota Extension, Bacterial leaf spots",
+      "url": "https://extension.umn.edu/garden-and-home/yard-and-garden/gardening-in-minnesota/yard-and-garden-problems/tomato-leaf-spot-diseases",
+      "retrieved": "2026-10-25"
+    },
+    "H10": {
+      "title": "RHS, Mealybugs",
+      "title_en": "RHS, Mealybugs",
+      "url": "https://www.rhs.org.uk/biodiversity/mealybug",
+      "retrieved": "2026-10-25"
+    },
+    "H11": {
+      "title": "RHS, Scale insects",
+      "title_en": "RHS, Scale insects",
+      "url": "https://www.rhs.org.uk/biodiversity/scale-insects",
+      "retrieved": "2026-10-25"
+    },
+    "H12": {
+      "title": "University of Minnesota Extension, Leafminers",
+      "title_en": "University of Minnesota Extension, Leafminers",
+      "url": "https://extension.umn.edu/garden-and-home/yard-and-garden/yard-and-garden-insects/leafminers",
+      "retrieved": "2026-10-25"
+    },
+    "H13": {
+      "title": "Texas A&M AgriLife Extension, Broad mites",
+      "title_en": "Texas A&M AgriLife Extension, Broad mites",
+      "url": "https://texasinsects.tamu.edu/broad-mite/",
+      "retrieved": "2026-10-25"
+    },
+    "H14": {
+      "title": "RHS, Slugs and snails",
+      "title_en": "RHS, Slugs and snails",
+      "url": "https://www.rhs.org.uk/biodiversity/slugs-and-snails",
+      "retrieved": "2026-10-25"
+    },
+    "H15": {
+      "title": "RHS, Vine weevil",
+      "title_en": "RHS, Vine weevil",
+      "url": "https://www.rhs.org.uk/biodiversity/vine-weevil",
+      "retrieved": "2026-10-25"
+    },
+    "H16": {
+      "title": "UK government-hosted vegetable IPM manual, Root-knot nematodes",
+      "title_en": "UK government-hosted vegetable IPM manual, Root-knot nematodes",
+      "url": "https://assets.publishing.service.gov.uk/media/57a08d40e5274a31e0001748/R6764IPMVegMan.pdf",
+      "retrieved": "2026-10-25"
+    },
+    "H17": {
+      "title": "Montana State University Extension, Root-bound plants",
+      "title_en": "Montana State University Extension, Root-bound plants",
+      "url": "https://nios.montana.edu/extension/lila_extn/askstewardrepothouseplant.html",
+      "retrieved": "2026-10-25"
+    },
+    "H18": {
+      "title": "RHS, Oedema and corking",
+      "title_en": "RHS, Oedema and corking",
+      "url": "https://www.rhs.org.uk/problems/oedema",
+      "retrieved": "2026-10-25"
+    },
+    "H19": {
+      "title": "RHS, Herbicide and spray injury",
+      "title_en": "RHS, Herbicide and spray injury",
+      "url": "https://www.rhs.org.uk/prevention-protection/weedkiller-damage",
+      "retrieved": "2026-10-25"
+    },
+    "H20": {
+      "title": "Singapore National Parks, Transplant shock",
+      "title_en": "Singapore National Parks, Transplant shock",
+      "url": "https://gardeningsg.nparks.gov.sg/gardening-resource-library/transplanting-shock/",
+      "retrieved": "2026-10-25"
+    },
+    "H21": {
+      "title": "University of Maryland Extension, Ozone and air-pollution injury",
+      "title_en": "University of Maryland Extension, Ozone and air-pollution injury",
+      "url": "https://www.extension.umd.edu/resource/air-pollution-damage-trees-and-shrubs",
+      "retrieved": "2026-10-25"
+    },
+    "H22": {
+      "title": "University of Minnesota Extension, Mosaic-type viral diseases (TMV/ToMV)",
+      "title_en": "University of Minnesota Extension, Mosaic-type viral diseases (TMV/ToMV)",
+      "url": "https://extension.umn.edu/agriculture/specialty-crops/vegetable-farming/disease-management/tomato-viruses",
+      "retrieved": "2026-10-25"
+    }
+  }
+}

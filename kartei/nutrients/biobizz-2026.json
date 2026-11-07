@@ -1,0 +1,160 @@
+{
+  "name": "BioBizz Düngeschema 2026",
+  "name_en": "BioBizz nutrient schedule 2026",
+  "summary": "Das Düngeschema von BioBizz, Stand 2026, in Milliliter je Liter Wasser: Seite All-Mix (vorgedüngte Erde) und Seite Light-Mix oder Coco-Mix (leicht vorgedüngt). Spalten Anzucht, Wachstum, Blütewoche 1 bis 8; Woche 9 nur Wasser, Woche 10 Ernte.",
+  "summary_en": "BioBizz's nutrient schedule, 2026 edition, in milliliters per liter of water: the All-Mix page (pre-fertilized soil) and the Light-Mix or Coco-Mix page (lightly pre-fertilized). Columns propagation, vegetative, flowering weeks 1 to 8; week 9 plain water, week 10 harvest.",
+  "product": "BioBizz",
+  "version": "2026",
+  "status": "draft",
+  "status_note": "Abgetippt aus dem Düngeschema 2026 und am 22.10.2026 Zahl für Zahl mit dem deutschen und dem englischen PDF verglichen (N1, N2). Ein Entwurf, bis du die Karte auf der Seite bestätigst; bis dahin rechnet das Cockpit keine Mengen.",
+  "status_note_en": "Transcribed from the 2026 schedule and checked number by number against the German and the English PDF on Oct 22, 2026 (N1, N2). A draft until you confirm the card on the page; until then the cockpit computes no amounts.",
+  "unit": "ml/l",
+  "aliases": {
+    "de": ["BioBizz", "Bio Bizz", "Bio-Grow", "Bio Grow", "Bio-Bloom", "Bio Bloom", "Top-Max", "Top Max", "BioBizz Try Pack"],
+    "en": ["BioBizz", "Bio Bizz", "Bio-Grow", "Bio Grow", "Bio-Bloom", "Bio Bloom", "Top-Max", "Top Max", "BioBizz Try Pack"]
+  },
+  "line": {
+    "maker": "BioBizz",
+    "types": ["organic_liquid"],
+    "media": ["soil", "coco"],
+    "media_text": "Erde und Kokos: eine Seite für All-Mix (stark vorgedüngte Erde), eine für Light-Mix (leicht vorgedüngte Erde) oder Coco-Mix.",
+    "media_text_en": "Soil and coco: one page for All-Mix (heavily pre-fertilized soil), one for Light-Mix (lightly pre-fertilized soil) or Coco-Mix.",
+    "products": [
+      {"product": "Bio-Grow", "role": "Grunddünger für Wachstum und Blüte, auch Futter fürs Bodenleben (Vinasse aus Zuckerrüben). Datenblatt 2 bis 4 ml/l, ab den ersten Blättern bis zum Ende.", "role_en": "Base feed for growth and flowering, also food for soil microbes (sugar beet vinasse). Data sheet 2 to 4 ml/l, from the first leaves to the end.", "sources": ["N8"]},
+      {"product": "Fish-Mix", "role": "Statt Bio-Grow, nur im Wachstum; eins von beiden, mit Blütebeginn auf Bio-Grow wechseln.", "role_en": "Instead of Bio-Grow, vegetative phase only; one or the other, switch to Bio-Grow when flowering starts.", "sources": ["N1", "N2"]},
+      {"product": "Bio-Bloom", "role": "Grunddünger für die Blüte. Datenblatt 2 bis 4 ml/l, von der Blüte bis zur Ernte.", "role_en": "Base feed for flowering. Data sheet 2 to 4 ml/l, from flowering to harvest.", "sources": ["N9"]},
+      {"product": "Top-Max", "role": "Blütezusatz mit Humin- und Fulvosäuren. Datenblatt 1 bis 4 ml/l über die ganze Blüte.", "role_en": "Flowering stimulant with humic and fulvic acids. Data sheet 1 to 4 ml/l over the whole flowering period.", "sources": ["N10"]},
+      {"product": "Root-Juice", "role": "Wurzeln und Bodenleben, von der Vermehrung bis Blütewoche 2.", "role_en": "Roots and soil biology, from propagation to flowering week 2.", "sources": ["N1", "N2"]},
+      {"product": "Microbes", "role": "Mikroorganismen in Gramm je Liter, einmal pro Woche, bei hohem Bedarf zweimal.", "role_en": "Microbial inoculant in grams per litre, once a week, twice at high demand.", "sources": ["N1", "N2"]},
+      {"product": "Bio-Heaven", "role": "Zusatz in der Tabelle, von der Vermehrung bis Blütewoche 8.", "role_en": "Booster on the chart, from propagation to flowering week 8.", "sources": ["N1", "N2"]},
+      {"product": "Acti-Vera", "role": "Zusatz in der Tabelle; auf Kokos nennt der Hersteller ein Enzymprodukt wie Acti-Vera unverzichtbar; auch zum Sprühen.", "role_en": "Booster on the chart; on coco the maker calls an enzyme product like Acti-Vera essential; also usable as foliar.", "sources": ["N1", "N2"]},
+      {"product": "Bio-Down, Bio-Up, CalMag, Leaf-Coat", "role": "Fußzeile der Tabelle: hartes Wasser Bio-Down, pH heben Bio-Up, weiches oder Osmosewasser CalMag, bei Schädlingen Leaf-Coat versuchen.", "role_en": "Chart footer: hard water Bio-Down, raise pH Bio-Up, soft or RO water CalMag, against pests try Leaf-Coat.", "sources": ["N1", "N2"]}
+    ],
+    "application_short": "Ins Gießwasser, Milliliter je Liter, mit der Tabelle von BioBizz: Bio-Grow ab den ersten Blättern, Bio-Bloom und Top-Max ab der Blüte, Blütewoche 9 nur Wasser.",
+    "application_short_en": "Into the watering water, millilitres per litre, by the BioBizz chart: Bio-Grow from the first leaves, Bio-Bloom and Top-Max from flowering, flowering week 9 plain water.",
+    "application": "Mengen in ml je Liter Wasser (Microbes in g je Liter). Spalten: Vermehrung, Wachstum (dauert so lange wie nötig), Blütewoche 1 bis 8, Woche 9 nur Wasser, Woche 10 Ernte; die Blütewochen zählen ab der Umstellung auf Blüte. Alg-A-Mic, Acti-Vera und Fish-Mix lassen sich bis Blütewoche 2 auch 1 bis 3 Mal pro Woche sprühen: 1 bis 2 ml/l je Produkt bei einem oder zwei, höchstens 1 ml/l je Produkt bei allen drei. All-Mix vor dem ersten Gebrauch anfeuchten und 36 Stunden stehen lassen; All-Mix trägt einige Wochen ohne Dünger. Düngen ab 10 bis 15 cm Höhe oder 2 bis 4 echten Blättern; von Hand gießen 3 bis 5 Mal pro Woche, je nach Erde, Wärme und Verdunstung.",
+    "application_en": "Amounts in ml per litre of water (Microbes in g per litre). Columns: propagation, vegetative (lasts as long as needed), flowering weeks 1 to 8, week 9 plain water, week 10 harvest; the flowering weeks count from the switch to flowering. Alg-A-Mic, Acti-Vera and Fish-Mix can also be sprayed 1 to 3 times a week until flowering week 2: 1 to 2 ml/l per product with one or two of them, at most 1 ml/l per product with all three. Moisten All-Mix before first use and let it stand 36 hours; All-Mix carries a couple of weeks without fertilizer. Start feeding at 10 to 15 cm height or 2 to 4 true leaves; hand watering 3 to 5 times a week, depending on soil, warmth and evaporation.",
+    "application_sources": ["N1", "N2", "N4", "N7", "N11"],
+    "cautions": [
+      {"text": "Lieber sparsam: laut BioBizz stirbt eine Pflanze an zu wenig nicht, eine Überdosis überlebt sie nicht.", "text_en": "Rather sparingly: per BioBizz a plant does not die from too little, it does not survive an overdose.", "sources": ["N3", "N4"]},
+      {"text": "Bio-Grow und Fish-Mix machen dieselbe Arbeit, nie beide.", "text_en": "Bio-Grow and Fish-Mix do the same job, never both.", "sources": ["N1", "N2"]},
+      {"text": "Widerspruch in den Unterlagen von 2026: das Bio-Bloom-Datenblatt druckt für Light-Mix oder Coco-Mix 2, 3, 4, 5, 5, 5, 3, 3 (Blütewoche 1 bis 8), das Düngeschema 2, 3, 3, 4, 4, 4, 3, 3. Die Karte folgt dem Düngeschema.", "text_en": "Contradiction in the 2026 documents: the Bio-Bloom data sheet prints 2, 3, 4, 5, 5, 5, 3, 3 for Light-Mix or Coco-Mix (flowering weeks 1 to 8), the nutrient schedule 2, 3, 3, 4, 4, 4, 3, 3. The card follows the nutrient schedule.", "sources": ["N1", "N2", "N9"]}
+    ]
+  },
+  "selectable": {
+    "label": "BioBizz (flüssig, organisch)",
+    "label_en": "BioBizz (liquid, organic)",
+    "page": "light_mix",
+    "page_note": "Seite Light-Mix oder Coco-Mix: für leicht vorgedüngte Erde.",
+    "page_note_en": "Light-Mix or Coco-Mix page: for lightly pre-fertilized soil.",
+    "components": ["bio_grow", "bio_bloom", "top_max"]
+  },
+  "boosters": {
+    "text": "Die übrigen Zeilen der Tabelle, Zusätze: nur zum Nachlesen, das Cockpit rechnet sie nicht. Spalten wie oben: Vermehrung, Wachstum, Blütewoche 1 bis 8.",
+    "text_en": "The chart's other rows, boosters: for reading only, the cockpit does not compute them. Columns as above: propagation, vegetative, flowering weeks 1 to 8.",
+    "sources": ["N1", "N2"],
+    "rows": [
+      {"page": "all_mix", "product": "Root-Juice", "unit": "ml/l", "values": [4, 4, 2, 2, null, null, null, null, null, null]},
+      {"page": "all_mix", "product": "Microbes", "unit": "g/l", "values": [0.4, 0.4, 0.2, 0.2, 0.4, 0.4, 0.4, 0.2, 0.2, 0.2]},
+      {"page": "all_mix", "product": "Bio-Heaven", "unit": "ml/l", "values": [2, 2, 2, 3, 4, 5, 5, 4, 4, 3]},
+      {"page": "all_mix", "product": "Acti-Vera", "unit": "ml/l", "values": [2, 2, 3, 4, 5, 5, 3, 3, 2, 1]},
+      {"page": "light_mix", "product": "Root-Juice", "unit": "ml/l", "values": [4, 4, 2, 2, null, null, null, null, null, null]},
+      {"page": "light_mix", "product": "Microbes", "unit": "g/l", "values": [0.4, 0.4, 0.2, 0.2, 0.4, 0.4, 0.4, 0.2, 0.2, 0.2]},
+      {"page": "light_mix", "product": "Bio-Heaven", "unit": "ml/l", "values": [2, 2, 2, 3, 4, 5, 5, 3, 3, 2]},
+      {"page": "light_mix", "product": "Acti-Vera", "unit": "ml/l", "values": [2, 2, 3, 4, 5, 5, 3, 3, 2, 1]}
+    ]
+  },
+  "weeks": {
+    "columns": [
+      {"key": "propagation", "label": "Anzucht", "label_en": "Propagation"},
+      {"key": "veg", "label": "Wachstum", "label_en": "Vegetative"},
+      {"key": "bloom_1", "bloom_week": 1, "label": "Blütewoche 1", "label_en": "Flowering week 1"},
+      {"key": "bloom_2", "bloom_week": 2, "label": "Blütewoche 2", "label_en": "Flowering week 2"},
+      {"key": "bloom_3", "bloom_week": 3, "label": "Blütewoche 3", "label_en": "Flowering week 3"},
+      {"key": "bloom_4", "bloom_week": 4, "label": "Blütewoche 4", "label_en": "Flowering week 4"},
+      {"key": "bloom_5", "bloom_week": 5, "label": "Blütewoche 5", "label_en": "Flowering week 5"},
+      {"key": "bloom_6", "bloom_week": 6, "label": "Blütewoche 6", "label_en": "Flowering week 6"},
+      {"key": "bloom_7", "bloom_week": 7, "label": "Blütewoche 7", "label_en": "Flowering week 7"},
+      {"key": "bloom_8", "bloom_week": 8, "label": "Blütewoche 8", "label_en": "Flowering week 8"}
+    ],
+    "water": {"key": "water", "bloom_week": 9, "label": "Blütewoche 9: nur Wasser", "label_en": "Flowering week 9: plain water only"},
+    "harvest": {"key": "harvest", "bloom_week": 10, "label": "Ab Blütewoche 10: Ernte", "label_en": "From flowering week 10: harvest"},
+    "sources": ["N1", "N2", "N3"]
+  },
+  "components": {
+    "bio_grow": {"label": "Bio-Grow", "label_en": "Bio-Grow"},
+    "bio_bloom": {"label": "Bio-Bloom", "label_en": "Bio-Bloom"},
+    "top_max": {"label": "Top-Max", "label_en": "Top-Max"},
+    "alg_a_mic": {"label": "Alg-A-Mic", "label_en": "Alg-A-Mic", "optional": true}
+  },
+  "pages": {
+    "all_mix": {
+      "label": "All-Mix (vorgedüngte Erde)",
+      "label_en": "All-Mix (pre-fertilized soil)",
+      "rows": {
+        "bio_grow": [2, 2, 3, 2, 2, 2, 2, 2, 2, 1],
+        "bio_bloom": [null, null, 1, 2, 3, 3, 3, 4, 4, 4],
+        "top_max": [null, null, 1, 2, 2, 3, 3, 4, 4, 4]
+      },
+      "sources": ["N1", "N2"]
+    },
+    "light_mix": {
+      "label": "Light-Mix oder Coco-Mix (leicht vorgedüngt)",
+      "label_en": "Light-Mix or Coco-Mix (lightly pre-fertilized)",
+      "rows": {
+        "bio_grow": [2, 2, 3, 4, 4, 4, 2, 2, 2, 1],
+        "bio_bloom": [null, null, 2, 3, 3, 4, 4, 4, 3, 3],
+        "top_max": [null, null, 1, 2, 2, 3, 3, 4, 4, 1],
+        "alg_a_mic": [null, 2, 2, 2, 3, 3, 4, 4, 3, 2]
+      },
+      "sources": ["N1", "N2"]
+    }
+  },
+  "frequency": {
+    "text": "Die Tabelle sagt nicht, wie oft gedüngt wird, außer für Microbes (einmal pro Woche, bei hohem Bedarf zweimal) und fürs Sprühen (1 bis 3 Mal pro Woche bis Blütewoche 2); für Bio-Grow, Bio-Bloom und Top-Max gibt das Cockpit deshalb keinen Takt vor.",
+    "text_en": "The chart does not say how often to feed, except for Microbes (once a week, twice at high demand) and for spraying (1 to 3 times a week until flowering week 2); so the cockpit sets no schedule for Bio-Grow, Bio-Bloom and Top-Max.",
+    "sources": ["N1", "N2"]
+  },
+  "notes": [
+    {
+      "text": "BioBizz zählt die Blütewochen ab dem Tag der Umstellung auf Blüte; Woche 9 ist nur Wasser, Woche 10 die Ernte. All-Mix braucht eine leichtere Hand als Light-Mix oder Coco-Mix.",
+      "text_en": "BioBizz counts the flowering weeks from the day of the switch to flowering; week 9 is plain water, week 10 harvest. All-Mix needs a lighter hand than Light-Mix or Coco-Mix.",
+      "sources": ["N3"]
+    },
+    {
+      "package": "cannabis",
+      "text": "BioBizz: Für Autoflower gibt es kein eigenes Düngeschema; vom regulären Schema sollen einige Wochen übersprungen werden.",
+      "text_en": "BioBizz: there is no own feeding schedule for autoflowers; some weeks of the regular schedule are to be skipped.",
+      "sources": ["N4"]
+    },
+    {
+      "text": "BioBizz: Die organischen Produkte senken den pH meist auf 6,2 bis 6,3; nachregeln ist in der Regel nicht nötig, außer bei sehr hartem Leitungswasser.",
+      "text_en": "BioBizz: the organic products tend to lower the pH to 6.2-6.3; adjusting is generally not necessary, except with very hard tap water.",
+      "sources": ["N4"]
+    },
+    {
+      "package": "cannabis",
+      "text": "VIVOSUN: Autoflower brauchen etwa 1/2 bis 1/4 der Nährstoffmenge einer normal großen Pflanze.",
+      "text_en": "VIVOSUN: autoflowers need about 1/2 to 1/4 of the nutrient amount of a normal-sized plant.",
+      "sources": ["N5"]
+    },
+    {
+      "text": "420seedz, der Hersteller der Erde: in Light-Mix-Erde in den ersten 2 bis 3 Wochen kein zusätzlicher Dünger, danach mit der halben Dosis beginnen.",
+      "text_en": "420seedz, the soil's maker: in light-mix soil no extra fertilizer in the first 2-3 weeks, then start with half the dose.",
+      "sources": ["N6"]
+    }
+  ],
+  "sources": {
+    "N1": {"title": "BioBizz, Düngeschema 2026 (PDF, deutsch)", "title_en": "BioBizz, nutrient schedule 2026 (PDF, German)", "url": "https://biobizz.com/downloads/biobizz-nutrient-schedule-2026-de.pdf", "retrieved": "2026-10-22"},
+    "N2": {"title": "BioBizz, Düngeschema 2026 (PDF, englisch)", "title_en": "BioBizz, nutrient schedule 2026 (PDF, English)", "url": "https://biobizz.com/downloads/biobizz-nutrient-schedule-2026.pdf", "retrieved": "2026-10-22"},
+    "N3": {"title": "BioBizz, Wissensseite zum Düngeschema", "title_en": "BioBizz knowledge base, nutrient schedule", "url": "https://biobizz.com/knowledge-base/nutrient-schedule", "retrieved": "2026-10-22"},
+    "N4": {"title": "BioBizz, Anbautipps", "title_en": "BioBizz, cultivation tips", "url": "https://biobizz.com/cultivation-tips/", "retrieved": "2026-10-22"},
+    "N5": {"title": "VIVOSUN, was Autoflower-Samen sind", "title_en": "VIVOSUN, what autoflowering seeds are", "url": "https://vivosun.com/en-CA/growing_guide/what-are-autoflowering-seeds/", "retrieved": "2026-10-22"},
+    "N6": {"title": "420seedz, Cannabis anbauen für Anfänger (vom Hersteller der Erde 420Flow)", "title_en": "420seedz, growing cannabis for beginners (by the maker of the 420Flow soil)", "url": "https://420seedz.de/guide/cannabis-anbauen-anfaenger", "retrieved": "2026-10-22"},
+    "N7": {"title": "BioBizz, Seite All-Mix", "title_en": "BioBizz, All-Mix page", "url": "https://biobizz.com/allmix/", "retrieved": "2026-10-23"},
+    "N8": {"title": "BioBizz, Datenblatt Bio-Grow 2026 (PDF)", "title_en": "BioBizz, Bio-Grow data sheet 2026 (PDF)", "url": "https://biobizz.com/downloads/bio-grow-data-sheet-2026-en-gb-988ef409.pdf", "retrieved": "2026-10-23"},
+    "N9": {"title": "BioBizz, Datenblatt Bio-Bloom 2026 (PDF)", "title_en": "BioBizz, Bio-Bloom data sheet 2026 (PDF)", "url": "https://biobizz.com/downloads/bio-bloom-data-sheet-2026-en-gb-9ad87a34.pdf", "retrieved": "2026-10-23"},
+    "N10": {"title": "BioBizz, Datenblatt Top-Max 2026 (PDF)", "title_en": "BioBizz, Top-Max data sheet 2026 (PDF)", "url": "https://biobizz.com/downloads/top-max-data-sheet-2026-en-gb-93e37af0.pdf", "retrieved": "2026-10-23"},
+    "N11": {"title": "BioBizz, Datenblatt All-Mix 2026 (PDF)", "title_en": "BioBizz, All-Mix data sheet 2026 (PDF)", "url": "https://biobizz.com/downloads/all-mix-data-sheet-2026-en-gb-762f8623.pdf", "retrieved": "2026-10-23"}
+  }
+}

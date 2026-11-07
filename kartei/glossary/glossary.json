@@ -1,0 +1,1367 @@
+{
+  "name": "Glossar für Hank",
+  "name_en": "Glossary for Hank",
+  "summary": "Kurze Erklärungen der Begriffe rund um die VGrow Y18, für Fragen wie 'Was ist VPD?'. Hank erklärt zuerst den Begriff und nennt erst danach einen Live-Wert, wenn die Box ihn misst. Jede Erklärung nennt ihre Quelle; Quellen abgerufen am 23.10.2026, Texte gegengeprüft am 23.10.2026. Lollipopping, Entlauben und Mainlining am selben Tag aus G28 ergänzt (Volltext über Europe PMC gelesen).",
+  "summary_en": "Short explanations of the terms around the VGrow Y18, for questions like 'What is VPD?'. Hank explains the term first and only then gives a live reading, if the box measures it. Every explanation names its source; sources retrieved on Oct 23, 2026, texts cross-checked on Oct 23, 2026. Lollipopping, defoliation and mainlining added the same day from G28 (full text read via Europe PMC).",
+  "status": "draft",
+  "verified_at": "2026-10-23",
+  "notes": [
+    "Erst erklären, dann messen: Bei 'Was ist X?' kommt zuerst der Text, danach höchstens ein Satz mit dem Live-Wert aus relates_to_metric. Ist relates_to_metric null, misst die Box den Begriff nicht, und Hank sagt das, statt eine Zahl zu nennen. Daneben: relates_to_device nennt ein Gerät der Box, dessen Stand Hank statt einer Zahl nennt (Abluft und Umluft, Spektrum, Lichtplan); measurable heißt, es ist eine Messgröße: nur bei einer Messgröße ohne Messung sagt Hank 'Die Box misst das nicht.', bei EC und pH mit deinem letzten eingetragenen Wert. kind 'process' sind Handgriffe (Toppen, LST, Lollipopping).",
+    "PPFD und DLI: Für die VGrow-Lampe veröffentlicht VIVOSUN keinen PPFD-Wert (autoflower.json). light_percent ist die Dimmstufe der Lampe und kein Ersatz für PPFD oder DLI.",
+    "Zielwerte stehen nicht im Glossar, sondern in den Phasen- und Kulturkarten.",
+    "Topping und LST sind Erklärungen, keine Empfehlungen. Die Quelle G28 nennt Autoflower-Sorten für harte Eingriffe wie Topping 'generally unsuitable'; Hank rät deshalb nicht zum Toppen einer Autoflower.",
+    "Angezeigte Texte haben einen englischen Zwilling mit _en: gleiche Zahlen, Einheiten und Quellen."
+  ],
+  "notes_en": [
+    "Explain first, then measure: for 'What is X?' the text comes first, then at most one sentence with the live reading from relates_to_metric. If relates_to_metric is null, the box does not measure the term, and Hank says so instead of giving a number. Besides: relates_to_device names a box device whose state Hank gives instead of a number (exhaust and circulation, spectrum, light schedule); measurable marks a quantity: only for a quantity without a reading does Hank say 'The box does not measure this.', for EC and pH with your last logged value. kind 'process' marks hands-on techniques (topping, LST, lollipopping).",
+    "PPFD and DLI: VIVOSUN publishes no PPFD value for the VGrow lamp (autoflower.json). light_percent is the lamp's dimming level and no substitute for PPFD or DLI.",
+    "Target values are not in the glossary but in the stage and crop cards.",
+    "Topping and LST are explanations, not recommendations. Source G28 calls autoflowering strains 'generally unsuitable' for high stress techniques such as topping; Hank therefore does not advise topping an autoflower.",
+    "Displayed texts have an English twin with _en: same numbers, units and sources."
+  ],
+  "terms": [
+    {
+      "key": "vpd",
+      "image": {
+        "file": "leaf-stomata.webp",
+        "thumb": "leaf-stomata-t.webp",
+        "w": 1200,
+        "h": 962,
+        "alt": "Blattoberhaut unter dem Mikroskop mit Spaltöffnungen",
+        "alt_en": "Leaf epidermis under a microscope with stomata",
+        "credit": {
+          "work": "File:Leaf epithelium, stomata and guard cells.jpg",
+          "author": "Emilio Ermini",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Leaf_epithelium,_stomata_and_guard_cells.jpg"
+        }
+      },
+      "label": "VPD (Dampfdruckdefizit)",
+      "label_en": "VPD (vapor pressure deficit)",
+      "aliases": {
+        "de": [
+          "VPD",
+          "vpd",
+          "Dampfdruckdefizit",
+          "Dampfdruck-Defizit",
+          "Sättigungsdefizit",
+          "Dampfdruckdifferenz",
+          "Wasserdampfdruckdefizit",
+          "VPD-Wert",
+          "vpd wert",
+          "Dampfdruckdefiziet",
+          "Dampfdruckdeffizit",
+          "vdp"
+        ],
+        "en": [
+          "VPD",
+          "vpd",
+          "vapor pressure deficit",
+          "vapour pressure deficit",
+          "vapor-pressure deficit",
+          "saturation deficit",
+          "VPD value",
+          "vapor pressure defecit",
+          "vapour presure deficit",
+          "vdp"
+        ]
+      },
+      "text": "VPD steht für Dampfdruckdefizit und gibt in kPa (Kilopascal, eine Druckeinheit) an, wie viel Feuchtigkeit der Luft noch fehlt, bis sie gesättigt ist, also 100 % Luftfeuchte hat. Bei gleicher relativer Luftfeuchte kann warme Luft mehr Wasser aufnehmen und entzieht den Blättern deshalb mehr Feuchtigkeit. Ist das VPD hoch, schließt die Pflanze ihre Spaltöffnungen (kleine Öffnungen auf den Blättern), nimmt weniger CO2 auf und wächst langsamer.",
+      "text_en": "VPD stands for vapor pressure deficit and gives, in kPa (kilopascals, a unit of pressure), how much moisture the air is still missing before it is saturated, meaning 100% humidity. At the same relative humidity, warm air can hold more water, so it draws more moisture from the leaves. When VPD is high, the plant closes its stomata (small openings on the leaves), takes in less CO2 and grows more slowly.",
+      "sources": [
+        "G1",
+        "G2",
+        "G3"
+      ],
+      "relates_to_metric": "probe_vpd",
+      "relates_to_device": null,
+      "measurable": true,
+      "kind": null
+    },
+    {
+      "key": "relative-humidity",
+      "image": {
+        "file": "hygrometer.webp",
+        "thumb": "hygrometer-t.webp",
+        "w": 1200,
+        "h": 1171,
+        "alt": "Analoges Haar-Hygrometer mit Skala für relative Feuchte",
+        "alt_en": "Analog hair hygrometer with a relative humidity scale",
+        "credit": {
+          "work": "File:Haar-Hygrometer (Firma Fischer).jpg",
+          "author": "Rhetos",
+          "license": "CC0 1.0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Haar-Hygrometer_(Firma_Fischer).jpg"
+        }
+      },
+      "label": "Relative Luftfeuchte",
+      "label_en": "Relative humidity",
+      "aliases": {
+        "de": [
+          "Luftfeuchte",
+          "Luftfeuchtigkeit",
+          "luftfeuchtigkeit",
+          "relative Luftfeuchte",
+          "relative Luftfeuchtigkeit",
+          "relative Feuchte",
+          "Luftfeuchte relativ",
+          "rel. Feuchte",
+          "rF",
+          "r.F.",
+          "Feuchte",
+          "Feuchtigkeit",
+          "Luftfeuchtikeit",
+          "Luftfeuchtigkiet",
+          "Luftfeuchtichkeit",
+          "Luftfeute"
+        ],
+        "en": [
+          "humidity",
+          "relative humidity",
+          "RH",
+          "rh",
+          "air humidity",
+          "rel humidity",
+          "humidity percent",
+          "humidty",
+          "humiditiy",
+          "humdity",
+          "relativ humidity"
+        ]
+      },
+      "text": "Die relative Luftfeuchte gibt in Prozent an, wie viel Wasserdampf gerade in der Luft ist, gemessen an dem, was bei dieser Temperatur höchstens hineinpasst. Warme Luft kann mehr Wasserdampf aufnehmen, deshalb hängt die Prozentzahl auch von der Temperatur ab. Kühlt feuchte Luft unter den Taupunkt ab, schlägt sich Wasser nieder, wie an einer beschlagenen Scheibe.",
+      "text_en": "Relative humidity gives, in percent, how much water vapor is in the air right now compared with the most the air can hold at that temperature. Warm air can hold more water vapor, so the percentage also depends on the temperature. If moist air cools below its dew point, water condenses out, like on a fogged-up window.",
+      "sources": [
+        "G4",
+        "G5",
+        "G6"
+      ],
+      "relates_to_metric": "probe_humidity",
+      "relates_to_device": null,
+      "measurable": true,
+      "kind": null
+    },
+    {
+      "key": "ppfd",
+      "image": {
+        "drawing": "spectrum"
+      },
+      "label": "PPFD (Photonenflussdichte)",
+      "label_en": "PPFD (photosynthetic photon flux density)",
+      "aliases": {
+        "de": [
+          "PPFD",
+          "ppfd",
+          "Photonenflussdichte",
+          "photosynthetische Photonenflussdichte",
+          "photosynthetisch aktive Photonenflussdichte",
+          "PAR-Wert",
+          "Lichtstärke in µmol",
+          "µmol",
+          "umol",
+          "Mikromol",
+          "ppfd wert",
+          "PPDF"
+        ],
+        "en": [
+          "PPFD",
+          "ppfd",
+          "photosynthetic photon flux density",
+          "PAR value",
+          "PAR reading",
+          "µmol/m²/s",
+          "umol/m2/s",
+          "micromoles",
+          "PPDF"
+        ]
+      },
+      "text": "PPFD zählt, wie viele Lichtteilchen (Photonen) pro Sekunde auf einen Quadratmeter fallen, angegeben in µmol pro m² und Sekunde. Gezählt wird nur Licht mit 400 bis 700 nm Wellenlänge, das Pflanzen für die Photosynthese nutzen. Gemessen wird das mit einem Quantensensor, oft PAR-Messgerät genannt; der Wert ist eine Momentaufnahme, wie viel Licht über den ganzen Tag zusammenkommt, zeigt erst das DLI.",
+      "text_en": "PPFD counts how many light particles (photons) land on one square meter each second, given in µmol per m² per second. Only light with a wavelength of 400 to 700 nm counts, the light plants use for photosynthesis. It is measured with a quantum sensor, often called a PAR meter; the value is a snapshot, and how much light adds up over the whole day is what DLI shows.",
+      "sources": [
+        "G7",
+        "G8"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": true,
+      "kind": null
+    },
+    {
+      "key": "dli",
+      "image": {
+        "file": "rain-gauge.webp",
+        "thumb": "rain-gauge-t.webp",
+        "w": 800,
+        "h": 1200,
+        "alt": "Niederschlagsmesser auf einer Wiese: er sammelt den Regen eines ganzen Tages",
+        "alt_en": "Rain gauge on a lawn: it collects the rain of a whole day",
+        "note": "Der Regenmesser sammelt den Regen eines ganzen Tages, so zählt das DLI das Licht eines ganzen Tages zusammen.",
+        "note_en": "The rain gauge collects a whole day of rain; the DLI adds up a whole day of light the same way.",
+        "compare": true,
+        "credit": {
+          "work": "File:Rain gauge Hellmann.jpg",
+          "author": "Bocholter",
+          "license": "Public Domain",
+          "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Rain_gauge_Hellmann.jpg"
+        }
+      },
+      "label": "DLI (Tageslichtintegral)",
+      "label_en": "DLI (daily light integral)",
+      "aliases": {
+        "de": [
+          "DLI",
+          "dli",
+          "Tageslichtintegral",
+          "Tageslicht-Integral",
+          "Tageslichtsumme",
+          "Tageslichtmenge",
+          "tägliche Lichtmenge",
+          "Lichtmenge pro Tag",
+          "Licht pro Tag",
+          "mol pro Tag",
+          "Tageslichintegral",
+          "DIL"
+        ],
+        "en": [
+          "DLI",
+          "dli",
+          "daily light integral",
+          "daily light sum",
+          "daily light amount",
+          "light per day",
+          "mol per day",
+          "mol/m²/d",
+          "daily light intergral",
+          "DIL"
+        ]
+      },
+      "text": "DLI (Tageslichtintegral) ist die gesamte für die Photosynthese nutzbare Lichtmenge, die an einem Tag auf einen Quadratmeter fällt, angegeben in mol pro m² und Tag. Es funktioniert wie ein Regenmesser, der den Regen eines ganzen Tages sammelt. Deshalb hängt es von zwei Dingen ab: wie stark das Licht ist (PPFD) und wie viele Stunden es brennt.",
+      "text_en": "DLI (daily light integral) is the total amount of light usable for photosynthesis that falls on one square meter in a day, given in mol per m² per day. It works like a rain gauge that collects a whole day's rain. That is why it depends on two things: how strong the light is (PPFD) and how many hours it is on.",
+      "sources": [
+        "G8",
+        "G7"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": true,
+      "kind": null
+    },
+    {
+      "key": "photoperiod",
+      "image": {
+        "drawing": "photoperiod"
+      },
+      "label": "Photoperiode (Tageslänge)",
+      "label_en": "Photoperiod (day length)",
+      "aliases": {
+        "de": [
+          "Photoperiode",
+          "photoperiode",
+          "Fotoperiode",
+          "Photoperiodismus",
+          "Tageslänge",
+          "Lichtzyklus",
+          "Lichtzyklen",
+          "Lichtplan",
+          "Lichtrhythmus",
+          "Lichtstunden",
+          "Lichtdauer",
+          "Belichtungsdauer",
+          "Hell-Dunkel-Rhythmus",
+          "Kurztag",
+          "Photoperode",
+          "Fotoperiod"
+        ],
+        "en": [
+          "photoperiod",
+          "photo period",
+          "photoperiodism",
+          "day length",
+          "daylength",
+          "light cycle",
+          "light schedule",
+          "light hours",
+          "short day",
+          "photoperoid",
+          "fotoperiod"
+        ]
+      },
+      "text": "Die Photoperiode ist die Tageslänge, also wie viele Stunden am Tag Licht ist. Hanf gilt als Kurztagpflanze und blüht erst, wenn die Nacht eine bestimmte Länge erreicht; tagneutrale Pflanzen blühen dagegen unabhängig von der Tageslänge. Autoflower-Sorten sind unempfindlich gegen die Tageslänge: In einem Versuch blühten Pflanzen, die für die Erbanlage Autoflower1 reinerbig waren, sogar unter Dauerlicht.",
+      "text_en": "The photoperiod is the day length, meaning how many hours of light there are per day. Hemp is considered a short-day plant and only flowers once the night reaches a certain length; day-neutral plants flower regardless of day length. Autoflower varieties do not depend on day length: in one trial, plants that carried Autoflower1 on both gene copies flowered even under continuous light.",
+      "sources": [
+        "G9",
+        "G10"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": [
+        "light.plan"
+      ],
+      "measurable": false,
+      "kind": null,
+      "if_off": {
+        "cannabis": {
+          "text": "Die Photoperiode ist die Tageslänge, also wie viele Stunden am Tag Licht ist. Tagneutrale Pflanzen blühen unabhängig von der Tageslänge.",
+          "text_en": "The photoperiod is the day length, meaning how many hours of light there are per day. Day-neutral plants flower regardless of day length."
+        }
+      }
+    },
+    {
+      "key": "light-spectrum",
+      "image": {
+        "drawing": "spectrum"
+      },
+      "label": "Lichtspektrum (Wachstum, Blüte)",
+      "label_en": "Light spectrum (veg, bloom)",
+      "aliases": {
+        "de": [
+          "Lichtspektrum",
+          "Spektrum",
+          "spektrum",
+          "Lichtfarbe",
+          "Lichtfarben",
+          "Wachstumsspektrum",
+          "Blütespektrum",
+          "Blühspektrum",
+          "Keimlingsspektrum",
+          "Veg-Spektrum",
+          "Bloom-Spektrum",
+          "Blaulicht",
+          "blaues Licht",
+          "Rotlicht",
+          "rotes Licht",
+          "Fernrot",
+          "Dunkelrot",
+          "Lichtspecktrum",
+          "Specktrum"
+        ],
+        "en": [
+          "light spectrum",
+          "spectrum",
+          "veg spectrum",
+          "bloom spectrum",
+          "flower spectrum",
+          "flowering spectrum",
+          "seedling spectrum",
+          "light color",
+          "light colour",
+          "blue light",
+          "red light",
+          "far red",
+          "far-red",
+          "specturm",
+          "spectrom"
+        ]
+      },
+      "text": "Das Lichtspektrum ist die Mischung der Lichtfarben, also wie viel Blau, Rot und Fernrot eine Lampe abgibt. Blaues Licht bremst meist das Strecken von Stängeln und Blättern, Fernrot bewirkt das Gegenteil. In der VGrow betont die Keimlingsphase Blau, die Wachstumsphase ist ausgewogen, und die Blütephase setzt gezielt Rot (660 Nanometer) und Fernrot (730 Nanometer) ein.",
+      "text_en": "The light spectrum is the mix of light colors, meaning how much blue, red and far-red a lamp gives off. Blue light typically holds back the stretching of stems and leaves, and far-red does the opposite. In the VGrow, the seedling stage boosts blue, the vegetative stage is balanced, and the flowering stage uses targeted red (660 nanometers) and far-red (730 nanometers).",
+      "sources": [
+        "G11",
+        "G12"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": [
+        "light.spectrum"
+      ],
+      "measurable": false,
+      "kind": null
+    },
+    {
+      "key": "exhaust-and-circulation",
+      "image": {
+        "file": "greenhouse-fan.webp",
+        "thumb": "greenhouse-fan-t.webp",
+        "w": 1200,
+        "h": 900,
+        "alt": "Umluftventilator unter dem Dach eines Gewächshauses",
+        "alt_en": "Circulation fan under the roof of a greenhouse",
+        "credit": {
+          "work": "File:Ventilatore assiale a soffitto.jpg",
+          "author": "Antonio Mette",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Ventilatore_assiale_a_soffitto.jpg"
+        }
+      },
+      "label": "Abluft und Umluft",
+      "label_en": "Exhaust and circulation",
+      "aliases": {
+        "de": [
+          "Abluft",
+          "Umluft",
+          "Abluft und Umluft",
+          "Abluft vs Umluft",
+          "Unterschied Abluft Umluft",
+          "Lüftung",
+          "Belüftung",
+          "Luftaustausch",
+          "Luftzirkulation",
+          "Luftumwälzung",
+          "Abluftventilator",
+          "Umluftventilator",
+          "Rohrventilator",
+          "Clip-Ventilator",
+          "Frischluft",
+          "Abluft-Automatik",
+          "Abuft",
+          "Ablufft"
+        ],
+        "en": [
+          "exhaust",
+          "exhaust fan",
+          "circulation",
+          "circulation fan",
+          "exhaust vs circulation",
+          "ventilation",
+          "air exchange",
+          "air circulation",
+          "airflow",
+          "duct fan",
+          "inline fan",
+          "clip fan",
+          "oscillating fan",
+          "fresh air",
+          "HAF",
+          "horizontal air flow",
+          "exaust",
+          "exhaust fann"
+        ]
+      },
+      "text": "Die Abluft sorgt für den Luftaustausch: Der Abluftventilator zieht warme, feuchte Luft aus der Box, und frische Luft strömt von außen nach. Die Umluft mischt nur die Luft in der Box, damit es überall ähnlich warm und feucht ist und die Blätter abtrocknen. Beides gehört zusammen: Ohne Umluft können Ecken vom Luftaustausch wenig abbekommen, ohne Abluft kann es in der Box zu warm und zu feucht werden.",
+      "text_en": "Exhaust exchanges the air: the exhaust fan pulls warm, humid air out of the box, and fresh air flows in from outside. Circulation only mixes the air inside the box so conditions are similar everywhere and the leaves dry off. The two belong together: without circulation some corners can miss out on the air exchange, and without exhaust the box can get too hot and too humid.",
+      "sources": [
+        "G13",
+        "G14",
+        "G12"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": [
+        "dfan_step",
+        "cfan_step"
+      ],
+      "measurable": false,
+      "kind": null
+    },
+    {
+      "key": "hysteresis",
+      "image": {
+        "drawing": "hysteresis"
+      },
+      "label": "Hysterese (Schaltdifferenz der Automatik)",
+      "label_en": "Hysteresis (switching differential)",
+      "aliases": {
+        "de": [
+          "Hysterese",
+          "hysterese",
+          "Schaltdifferenz",
+          "Schalthysterese",
+          "Schaltabstand",
+          "Hysteresebreite",
+          "Ein-Aus-Abstand",
+          "Einschaltpunkt und Ausschaltpunkt",
+          "Hysteresis",
+          "Histerese",
+          "Hysterse"
+        ],
+        "en": [
+          "hysteresis",
+          "differential",
+          "thermostat differential",
+          "switching differential",
+          "on/off differential",
+          "on-off gap",
+          "hysterisis",
+          "histeresis",
+          "hysteresys"
+        ]
+      },
+      "text": "Hysterese, auch Schaltdifferenz genannt, ist der Abstand zwischen dem Wert, bei dem eine Automatik ein Gerät einschaltet, und dem Wert, bei dem sie es wieder ausschaltet. Eine Gewächshausheizung springt zum Beispiel beim Sollwert an und geht erst wieder aus, wenn es um diesen Abstand wärmer ist. Je größer der Abstand, desto seltener schaltet das Gerät, desto stärker schwankt aber auch der Messwert.",
+      "text_en": "Hysteresis, also called the differential, is the gap between the value at which an automation switches a device on and the value at which it switches it off again. A greenhouse heater, for example, starts at the set point and only turns off once it is warmer by that gap. The wider the gap, the less often the device switches, but the more the reading swings.",
+      "sources": [
+        "G15",
+        "G16"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": false,
+      "kind": null
+    },
+    {
+      "key": "carbon-filter",
+      "image": {
+        "file": "activated-carbon.webp",
+        "thumb": "activated-carbon-t.webp",
+        "w": 1200,
+        "h": 863,
+        "alt": "Aktivkohle als Pulver und als Block",
+        "alt_en": "Activated carbon as powder and as a block",
+        "credit": {
+          "work": "File:Activated Carbon.jpg",
+          "author": "Ravedave",
+          "license": "CC BY 2.5",
+          "license_url": "https://creativecommons.org/licenses/by/2.5/",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Activated_Carbon.jpg"
+        }
+      },
+      "label": "Aktivkohlefilter",
+      "label_en": "Carbon filter",
+      "aliases": {
+        "de": [
+          "Kohlefilter",
+          "Aktivkohlefilter",
+          "Aktivkohle",
+          "Aktiv-Kohle-Filter",
+          "AKF",
+          "Geruchsfilter",
+          "Carbonfilter",
+          "Filter im Deckel",
+          "Kohle Filter",
+          "Kohlefliter",
+          "Aktivkohlefliter",
+          "Kolefilter"
+        ],
+        "en": [
+          "carbon filter",
+          "charcoal filter",
+          "activated carbon filter",
+          "activated charcoal filter",
+          "odor filter",
+          "odour filter",
+          "carbon scrubber",
+          "scrubber",
+          "cabon filter",
+          "carbon fliter"
+        ]
+      },
+      "text": "Ein Aktivkohlefilter holt Geruchsstoffe aus der Luft: Die Gasmoleküle bleiben an der riesigen inneren Oberfläche der Kohle haften, das nennt man Adsorption. Weil die Kohle nur begrenzt aufnehmen kann, muss der Filter regelmäßig getauscht werden; für Staub und andere Partikel ist er nicht gedacht. In der VGrow sitzt er zusammen mit dem Lüfter im Deckel, und VIVOSUN rät, ihn bei normalem Betrieb alle 3 Monate zu wechseln und sofort, wenn Geruch austritt oder weniger Luft durchkommt.",
+      "text_en": "An activated carbon filter takes odors out of the air: the gas molecules stick to the carbon's huge inner surface, which is called adsorption. Because the carbon can only take up so much, the filter has to be replaced regularly; it is not meant for dust and other particles. In the VGrow it sits with the fan in the top cover, and VIVOSUN advises replacing it every 3 months in regular use, and right away if odor leaks or less air gets through.",
+      "sources": [
+        "G17",
+        "G12"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": false,
+      "kind": null
+    },
+    {
+      "key": "ec",
+      "image": {
+        "file": "ph-ec-testers.webp",
+        "thumb": "ph-ec-testers-t.webp",
+        "w": 900,
+        "h": 1200,
+        "alt": "Zwei Taschenmessgeräte: links pH, rechts EC (Leitfähigkeit)",
+        "alt_en": "Two pocket testers: pH on the left, EC (conductivity) on the right",
+        "note": "Dasselbe Foto wie beim pH-Wert: den EC misst das rechte Gerät.",
+        "note_en": "The same photo as for pH: the device on the right measures the EC.",
+        "credit": {
+          "work": "File:PH- und Leitfähigkeitsmessgeräte.jpg",
+          "author": "Rotkaeppchen68",
+          "license": "CC0 1.0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "page_url": "https://commons.wikimedia.org/wiki/File:PH-_und_Leitf%C3%A4higkeitsmessger%C3%A4te.jpg"
+        }
+      },
+      "label": "EC (Leitfähigkeit)",
+      "label_en": "EC (electrical conductivity)",
+      "aliases": {
+        "de": [
+          "ec",
+          "e.c.",
+          "ec-wert",
+          "ec wert",
+          "ecwert",
+          "ec-messung",
+          "leitwert",
+          "leitwer",
+          "leitfähigkeit",
+          "leitfaehigkeit",
+          "leitfahigkeit",
+          "elektrische leitfähigkeit",
+          "elektrische leitfaehigkeit",
+          "elektrischer leitwert",
+          "salzgehalt"
+        ],
+        "en": [
+          "ec",
+          "e.c.",
+          "electrical conductivity",
+          "electric conductivity",
+          "conductivity",
+          "conductivty",
+          "ec value",
+          "ec level",
+          "ec reading",
+          "salinity"
+        ]
+      },
+      "text": "EC ist die Abkürzung für Electrical Conductivity, also die elektrische Leitfähigkeit. Der Wert zeigt, wie viele Salze im Wasser gelöst sind, vor allem aus dem Dünger, aber auch aus dem Leitungswasser: je mehr, desto höher der EC. Welche Nährstoffe drin sind, verrät er nicht, nur wie viel insgesamt gelöst ist.",
+      "text_en": "EC is short for electrical conductivity. It shows how much salt is dissolved in the water, mostly from fertilizer but also from the tap water itself: the more salt, the higher the EC. It does not tell you which nutrients are in there, only how much is dissolved in total.",
+      "sources": [
+        "G18",
+        "G19"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": true,
+      "kind": null
+    },
+    {
+      "key": "ph",
+      "image": {
+        "file": "ph-ec-testers.webp",
+        "thumb": "ph-ec-testers-t.webp",
+        "w": 900,
+        "h": 1200,
+        "alt": "Zwei Taschenmessgeräte: links pH, rechts EC (Leitfähigkeit)",
+        "alt_en": "Two pocket testers: pH on the left, EC (conductivity) on the right",
+        "note": "Dasselbe Foto wie beim EC: den pH-Wert misst das linke Gerät.",
+        "note_en": "The same photo as for EC: the device on the left measures the pH.",
+        "credit": {
+          "work": "File:PH- und Leitfähigkeitsmessgeräte.jpg",
+          "author": "Rotkaeppchen68",
+          "license": "CC0 1.0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "page_url": "https://commons.wikimedia.org/wiki/File:PH-_und_Leitf%C3%A4higkeitsmessger%C3%A4te.jpg"
+        }
+      },
+      "label": "pH-Wert (Erde und Gießwasser)",
+      "label_en": "pH (soil and irrigation water)",
+      "aliases": {
+        "de": [
+          "ph",
+          "ph-wert",
+          "ph wert",
+          "phwert",
+          "p h",
+          "ph erde",
+          "ph der erde",
+          "ph boden",
+          "ph wasser",
+          "ph gießwasser",
+          "ph giesswasser",
+          "ph-wert erde",
+          "ph-wert wasser",
+          "ph-wert gießwasser",
+          "säuregrad",
+          "saeuregrad",
+          "säurewert"
+        ],
+        "en": [
+          "ph",
+          "p.h.",
+          "ph value",
+          "ph level",
+          "soil ph",
+          "water ph",
+          "ph of water",
+          "ph of soil",
+          "acidity",
+          "ph balance"
+        ]
+      },
+      "text": "Der pH-Wert sagt, wie sauer oder basisch eine Flüssigkeit ist: Auf der Skala von 0 bis 14 ist 7 neutral, darunter ist es sauer, darüber basisch. Ist er in der Erde zu hoch oder zu niedrig, kommt die Pflanze an manche Nährstoffe nur noch schlecht heran, obwohl sie da sind. Beim Gießwasser zählt für die Erde weniger sein pH-Wert als seine Alkalinität, also wie viel Säure es abpuffern kann.",
+      "text_en": "pH tells you how acidic or basic a liquid is: on the scale from 0 to 14, 7 is neutral, anything below is acidic and anything above is basic. If the pH in the soil is too high or too low, the plant struggles to take up some nutrients even though they are there. For irrigation water, its alkalinity, meaning how much acid it can buffer, matters more for the soil than its pH.",
+      "sources": [
+        "G20",
+        "G21"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": true,
+      "kind": null
+    },
+    {
+      "key": "autoflower",
+      "image": {
+        "file": "cannabis-young-plant.webp",
+        "thumb": "cannabis-young-plant-t.webp",
+        "w": 1200,
+        "h": 991,
+        "alt": "Junge Hanfpflanze in der Wachstumsphase im Topf, nur Blätter und Stängel",
+        "alt_en": "Young cannabis plant in the vegetative stage in a pot, leaves and stems only",
+        "credit": {
+          "work": "File:Young cannabis plant in the vegetative stage 01.jpg",
+          "author": "Plantlady223",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Young_cannabis_plant_in_the_vegetative_stage_01.jpg"
+        }
+      },
+      "package": "cannabis",
+      "label": "Autoflower",
+      "label_en": "Autoflower",
+      "aliases": {
+        "de": [
+          "autoflower",
+          "autoflowers",
+          "autoflowering",
+          "auto flower",
+          "auto-flower",
+          "autoflowr",
+          "autoflwoer",
+          "autoflover",
+          "auto",
+          "autos",
+          "automatic",
+          "autoflower-pflanze",
+          "selbstblühend",
+          "selbstbluehend",
+          "selbstblühende sorte",
+          "tagneutral"
+        ],
+        "en": [
+          "autoflower",
+          "autoflowers",
+          "autoflowering",
+          "auto flower",
+          "auto-flowering",
+          "autoflowr",
+          "auto",
+          "autos",
+          "automatic",
+          "autoflowering strain",
+          "day-neutral",
+          "day neutral",
+          "photoperiod insensitive",
+          "photoperiod-insensitive"
+        ]
+      },
+      "text": "Eine Autoflower ist eine Sorte, die von allein blüht, egal wie lang Tag und Nacht sind. Sonst gilt Cannabis als Kurztagpflanze: Die meisten Sorten blühen erst richtig, wenn die Nächte lang genug werden. Eine Autoflower braucht diese langen Nächte nicht und blüht auch, wenn das Licht lange an ist.",
+      "text_en": "An autoflower is a variety that flowers on its own, no matter how long the days and nights are. Otherwise cannabis counts as a short-day plant: most varieties only flower properly once the nights are long enough. An autoflower does not need those long nights and also flowers when the light stays on for long hours.",
+      "sources": [
+        "G22",
+        "G10"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": false,
+      "kind": null
+    },
+    {
+      "key": "stretch",
+      "image": {
+        "drawing": "stretch"
+      },
+      "package": "cannabis",
+      "label": "Stretch (frühe Blüte)",
+      "label_en": "Stretch (early flower)",
+      "aliases": {
+        "de": [
+          "stretch",
+          "stretchen",
+          "stretcht",
+          "stretchphase",
+          "streckphase",
+          "streckung",
+          "strecken",
+          "blütestretch",
+          "bluetestretch",
+          "blütenstretch",
+          "strech",
+          "stertch"
+        ],
+        "en": [
+          "stretch",
+          "the stretch",
+          "flowering stretch",
+          "flower stretch",
+          "bloom stretch",
+          "stretching",
+          "stretch phase",
+          "stretch week",
+          "strech"
+        ]
+      },
+      "text": "Als Stretch bezeichnen Grower die Streckung zu Beginn der Blüte: Der Haupttrieb und die Stängelstücke zwischen den Blattknoten wachsen dann schnell in die Länge. In einer Studie mit einer Sorte, die auf die Tageslänge reagiert, lief das vom 5. bis zum 10. Tag nach der Umstellung auf 12 Stunden Licht; danach streckten sich neu gebildete Stängelstücke nicht mehr, und ein dichter Blütenstand entstand. Ob und wie stark sich eine Autoflower streckt, zeigt die Studie nicht.",
+      "text_en": "Stretch is what growers call the stretching at the start of flowering: the main stem and the stem sections between the leaf nodes then grow quickly in length. In a study with a variety that responds to day length, this ran from day 5 to day 10 after the switch to 12 hours of light; after that, newly formed stem sections stopped getting longer and a dense flower cluster formed. Whether and how much an autoflower stretches, the study does not show.",
+      "sources": [
+        "G23"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": false,
+      "kind": null
+    },
+    {
+      "key": "trichome",
+      "image": {
+        "file": "trichomes-micrograph.webp",
+        "thumb": "trichomes-micrograph-t.webp",
+        "w": 1024,
+        "h": 768,
+        "alt": "Mikroskopbild: gestielte Drüsenhaare auf Pflanzengewebe",
+        "alt_en": "Micrograph: stalked glandular hairs on plant tissue",
+        "credit": {
+          "work": "File:Cannabis glandular trichomes.jpg",
+          "author": "rodzief",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Cannabis_glandular_trichomes.jpg"
+        }
+      },
+      "package": "cannabis",
+      "label": "Trichome (Reifezeichen)",
+      "label_en": "Trichomes (ripeness sign)",
+      "aliases": {
+        "de": [
+          "trichome",
+          "trichom",
+          "trichomen",
+          "tricome",
+          "trichone",
+          "trychome",
+          "trichomfarbe",
+          "trichome farbe",
+          "harzdrüsen",
+          "harzdruesen",
+          "harzdrüse",
+          "drüsenhaare",
+          "drüsenhärchen"
+        ],
+        "en": [
+          "trichome",
+          "trichomes",
+          "trichs",
+          "trics",
+          "tricomes",
+          "trichome color",
+          "trichome colour",
+          "resin glands",
+          "glandular trichomes"
+        ]
+      },
+      "text": "Trichome sind winzige Härchen auf der Pflanzenoberfläche; bei Cannabis sitzen die gestielten Drüsenhärchen vor allem an den Blüten und den kleinen Blättern dazwischen. Während die Blüte reift, sind sie erst klar, dann milchig weiß und später bernsteinfarben, aber nicht alle gleichzeitig. Weil sich die Farbe mit der Reife ändert, gelten sie als Reifezeichen; um die Farbe zu erkennen, brauchst du eine Lupe.",
+      "text_en": "Trichomes are tiny hairs on the plant surface; on cannabis the stalked glandular ones sit mostly on the buds and the small leaves between them. As the bud ripens they start out clear, then turn milky white and later amber, but not all at the same time. Because the color changes as the bud ripens, they count as a ripeness sign; you need a loupe to see the color.",
+      "sources": [
+        "G24",
+        "G25",
+        "G26"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": false,
+      "kind": null
+    },
+    {
+      "key": "cutting",
+      "image": {
+        "file": "basil-cuttings.webp",
+        "thumb": "basil-cuttings-t.webp",
+        "w": 1200,
+        "h": 900,
+        "alt": "Fünf bewurzelte Basilikum-Stecklinge auf dunklem Grund",
+        "alt_en": "Five rooted basil cuttings on a dark background",
+        "credit": {
+          "work": "File:Basilikum (Ocimum basilicum) Stecklinge -- Josef Schlaghecken.jpg",
+          "author": "Josef Schlaghecken",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Basilikum_(Ocimum_basilicum)_Stecklinge_--_Josef_Schlaghecken.jpg"
+        }
+      },
+      "label": "Steckling (Klon)",
+      "label_en": "Cutting (clone)",
+      "aliases": {
+        "de": [
+          "steckling",
+          "stecklinge",
+          "stekling",
+          "stecki",
+          "steckis",
+          "klon",
+          "klone",
+          "klonen",
+          "geklont",
+          "kopfsteckling",
+          "stecklingsvermehrung"
+        ],
+        "en": [
+          "cutting",
+          "cuttings",
+          "cuting",
+          "clone",
+          "clones",
+          "cloning",
+          "clonning",
+          "stem cutting",
+          "taking cuttings"
+        ]
+      },
+      "text": "Ein Steckling ist ein abgeschnittenes Stück einer Pflanze, zum Beispiel ein Trieb, das eigene Wurzeln bildet und so zu einer neuen Pflanze wird. Weil die neue Pflanze nicht aus einem Samen wächst, ist sie bis auf wenige Ausnahmen genetisch identisch mit der Mutterpflanze; deshalb sagt man auch Klon.",
+      "text_en": "A cutting is a piece cut from a plant, for example a shoot, that grows its own roots and becomes a new plant. Because the new plant does not grow from a seed, it is, with few exceptions, genetically identical to the mother plant; that is why it is also called a clone.",
+      "sources": [
+        "G27"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": false,
+      "kind": "process"
+    },
+    {
+      "key": "topping",
+      "image": {
+        "drawing": "topping"
+      },
+      "package": "cannabis",
+      "label": "Topping (Toppen)",
+      "label_en": "Topping",
+      "aliases": {
+        "de": [
+          "topping",
+          "toping",
+          "toppen",
+          "getoppt",
+          "getopt",
+          "köpfen",
+          "koepfen",
+          "geköpft",
+          "spitze abschneiden",
+          "triebspitze abschneiden",
+          "spitze kappen"
+        ],
+        "en": [
+          "topping",
+          "toping",
+          "topped",
+          "topping a plant",
+          "top the plant",
+          "cutting the top"
+        ]
+      },
+      "text": "Beim Toppen schneidest du die Spitze des Haupttriebs ab. Dann treiben schlafende Knospen weiter unten aus, und die Pflanze bildet mehr Seitentriebe, statt nur in die Höhe zu wachsen. Toppen gehört zum High Stress Training, also zu den harten Eingriffen, die die Pflanze länger unter Stress setzen. Eine Übersichtsarbeit nennt Autoflower-Sorten für Mainlining, das auf wiederholtem Toppen beruht, meist ungeeignet: ihre Wachstumsphase ist kurz, und sie sprechen wenig auf harte Eingriffe an.",
+      "text_en": "Topping means cutting off the tip of the main stem. Dormant buds further down then grow out, and the plant forms more side shoots instead of only growing upward. Topping counts as high stress training, a heavy intervention that keeps the plant stressed for longer. A review calls autoflowering strains generally unsuitable for mainlining, which relies on repeated topping: their vegetative stage is short and they respond little to heavy interventions.",
+      "sources": [
+        "G28",
+        "G29"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": false,
+      "kind": "process"
+    },
+    {
+      "key": "low-stress-training",
+      "image": {
+        "drawing": "lst"
+      },
+      "package": "cannabis",
+      "label": "LST (Herunterbinden)",
+      "label_en": "LST (low stress training)",
+      "aliases": {
+        "de": [
+          "lst",
+          "l.s.t.",
+          "low stress training",
+          "low-stress-training",
+          "low stress",
+          "niederbinden",
+          "herunterbinden",
+          "runterbinden",
+          "runter binden",
+          "triebe runterbinden",
+          "triebe biegen",
+          "triebe binden",
+          "pflanze binden",
+          "sanftes training"
+        ],
+        "en": [
+          "lst",
+          "l.s.t.",
+          "low stress training",
+          "low-stress training",
+          "low stress",
+          "lst training",
+          "tying down",
+          "tie down",
+          "tie-down",
+          "bending branches"
+        ]
+      },
+      "text": "LST steht für Low Stress Training, auf Deutsch sagt man auch Herunterbinden. Dabei biegst du die Triebe vorsichtig zur Seite und bindest sie fest, damit die Pflanze mehr in die Breite wächst und mehr Blütenansätze Licht abbekommen. Das stresst die Pflanze kaum, und sie erholt sich meist schnell.",
+      "text_en": "LST stands for low stress training, also called tying down. You gently bend the shoots to the side and tie them in place, so the plant grows wider and more bud sites get light. This hardly stresses the plant, and it usually recovers quickly.",
+      "sources": [
+        "G28",
+        "G30"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": false,
+      "kind": "process"
+    },
+    {
+      "key": "lollipopping",
+      "image": {
+        "drawing": "lolli"
+      },
+      "package": "cannabis",
+      "label": "Lollipopping (untere Triebe entfernen)",
+      "label_en": "Lollipopping (removing the lower growth)",
+      "aliases": {
+        "de": [
+          "lollipopping",
+          "lolipopping",
+          "lollipoping",
+          "lolipoping",
+          "lollipop",
+          "lollipoppen",
+          "untere triebe entfernen",
+          "untere triebe abschneiden",
+          "unten ausputzen"
+        ],
+        "en": [
+          "lollipopping",
+          "lollipop",
+          "lolipopping",
+          "lollipoping",
+          "lollipop pruning",
+          "removing lower branches",
+          "lower pruning"
+        ]
+      },
+      "text": "Beim Lollipopping entfernst du im unteren Drittel der Pflanze die Seitentriebe, Knoten und großen Blätter, die kaum Licht bekommen. Die Kraft der Pflanze geht dann in die oberen Blütenstände, die das meiste Licht abbekommen; übrig bleibt ein kahler Stängel mit dichter Krone, wie ein Lolli. Es gilt als harter Eingriff, der das Wachstum eine Weile bremsen kann; eine Übersichtsarbeit rät, es gegen Ende der Wachstumsphase zu machen, am besten etwa eine Woche vor Blühbeginn, und nennt es für Autoflower-Sorten wie für tagabhängige Sorten geeignet.",
+      "text_en": "Lollipopping means removing the side shoots, nodes and large fan leaves in the bottom third of the plant that get little light. The plant's energy then goes to the upper flower sites that get the most light; what remains is a bare stem with a dense top, like a lollipop. It counts as a heavy intervention that can slow growth for a while; a review advises doing it near the end of the vegetative stage, ideally about a week before flowering begins, and calls it suitable for autoflowering as well as photoperiod strains.",
+      "sources": [
+        "G28"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": false,
+      "kind": "process"
+    },
+    {
+      "key": "defoliation",
+      "image": {
+        "drawing": "defol"
+      },
+      "label": "Entlauben (Defoliation)",
+      "label_en": "Defoliation",
+      "aliases": {
+        "de": [
+          "entlauben",
+          "entlaubung",
+          "entlaubt",
+          "entblättern",
+          "entblaettern",
+          "entblättert",
+          "defoliation",
+          "defoliieren",
+          "defolieren",
+          "blätter abschneiden",
+          "blaetter abschneiden",
+          "blätter entfernen",
+          "fächerblätter entfernen",
+          "schwazzen",
+          "schwazze"
+        ],
+        "en": [
+          "defoliation",
+          "defoliate",
+          "defoliating",
+          "defoilate",
+          "defoliaton",
+          "leaf stripping",
+          "stripping leaves",
+          "removing fan leaves",
+          "remove fan leaves",
+          "schwazzing",
+          "schwazze"
+        ]
+      },
+      "text": "Entlauben heißt, gezielt große Blätter (Fächerblätter) abzuschneiden. Eine Übersichtsarbeit beschreibt es als Teil der Kronenpflege: Blätter unterhalb des vierten Knotens zu entfernen, lenkt Kraft in die obere Krone und lässt mehr Licht und Luft hinein. Die härteste Form, Schwazzen genannt, nimmt in der Blüte alle Fächerblätter ab; sie verlangt viel Erfahrung.",
+      "text_en": "Defoliation means cutting off selected large leaves (fan leaves). A review describes it as part of canopy management: removing leaves below the fourth node directs energy to the upper canopy and lets in more light and air. The most extreme form, called schwazzing, removes all fan leaves during flowering; it relies on a lot of experience.",
+      "sources": [
+        "G28"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": false,
+      "kind": "process"
+    },
+    {
+      "key": "mainlining",
+      "image": {
+        "drawing": "main"
+      },
+      "package": "cannabis",
+      "label": "Mainlining (Manifold)",
+      "label_en": "Mainlining (manifolding)",
+      "aliases": {
+        "de": [
+          "mainlining",
+          "mainline",
+          "mainlinen",
+          "manifolding",
+          "mainlinig",
+          "mainlineing",
+          "main lining"
+        ],
+        "en": [
+          "mainlining",
+          "mainline",
+          "manifolding",
+          "main lining",
+          "mainlinig",
+          "mainlineing"
+        ]
+      },
+      "text": "Mainlining verbindet sanftes Training wie Herunterbinden mit harten Eingriffen wie Toppen und Lollipopping. Früh in der Wachstumsphase wird der Haupttrieb gekappt, sodass ein Y-förmiger Verteiler (Manifold) entsteht, der Wasser und Nährstoffe gleichmäßig auf die Triebe verteilt; jedes weitere Toppen verdoppelt die Zahl der Haupttriebe. Laut einer Übersichtsarbeit sind Autoflower-Sorten dafür meist ungeeignet, weil ihre Wachstumsphase kurz ist, und mit Beginn der Blüte endet das Training.",
+      "text_en": "Mainlining combines gentle training such as tying down with heavy interventions such as topping and lollipopping. Early in the vegetative stage the main stem is cut so that a Y-shaped manifold forms that spreads water and nutrients evenly to the shoots; each further round of topping doubles the number of main shoots. According to a review, autoflowering strains are generally unsuitable for it because their vegetative stage is short, and training stops once flowering begins.",
+      "sources": [
+        "G28"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": false,
+      "kind": "process"
+    },
+    {
+      "key": "overwatering",
+      "image": {
+        "file": "root-rot.webp",
+        "thumb": "root-rot-t.webp",
+        "w": 473,
+        "h": 1200,
+        "alt": "Kichererbse aus Hydrokultur mit braunen, kranken Wurzeln",
+        "alt_en": "Hydroponic chickpea plant with brown, diseased roots",
+        "note": "Eine Kichererbse aus Hydrokultur, keine Pflanze aus der Box. So sehen braune, kranke Wurzeln aus.",
+        "note_en": "A hydroponic chickpea, not a plant from the box. This is what brown, diseased roots look like.",
+        "compare": true,
+        "credit": {
+          "work": "File:Root rot in cicer arietinum (hydro-grown).jpg",
+          "author": "Bjornwireen",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Root_rot_in_cicer_arietinum_(hydro-grown).jpg"
+        }
+      },
+      "label": "Überwässern",
+      "label_en": "Overwatering",
+      "aliases": {
+        "de": [
+          "überwässern",
+          "überwässert",
+          "überwässerung",
+          "ueberwaessern",
+          "ueberwaessert",
+          "uberwassern",
+          "übergießen",
+          "übergossen",
+          "übergießt",
+          "zu viel gießen",
+          "zu viel giessen",
+          "zu viel gegossen",
+          "zu oft gießen",
+          "zu oft giessen",
+          "zu viel wasser",
+          "staunässe",
+          "staunaesse"
+        ],
+        "en": [
+          "overwatering",
+          "overwatered",
+          "over watering",
+          "over-watering",
+          "overwater",
+          "too much water",
+          "watering too much",
+          "watering too often",
+          "waterlogged",
+          "waterlogging",
+          "soggy soil"
+        ]
+      },
+      "text": "Überwässern heißt, so viel oder so oft zu gießen, dass die Erde im Topf ständig nass bleibt. Das Wasser verdrängt dann den Sauerstoff, den die Wurzeln brauchen, und mit der Zeit sterben sie ab. Weil kranke Wurzeln immer weniger Wasser aufnehmen, lässt die Pflanze die Blätter hängen, obwohl die Erde nass ist.",
+      "text_en": "Overwatering means watering so much or so often that the soil in the pot stays wet all the time. The water then pushes out the oxygen the roots need, and over time they die. Because damaged roots take up less and less water, the plant droops even though the soil is wet.",
+      "sources": [
+        "G31",
+        "G32"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": false,
+      "kind": null
+    },
+    {
+      "key": "nutrient-burn",
+      "image": {
+        "file": "nutrient-burn-leaf.webp",
+        "thumb": "nutrient-burn-leaf-t.webp",
+        "w": 811,
+        "h": 1200,
+        "alt": "Hanfblatt mit braunen, abgestorbenen Rändern (Düngerbrand)",
+        "alt_en": "Hemp leaf with brown, dead edges (fertilizer burn)",
+        "credit": {
+          "work": "File:Fertilizer-Burn.jpg",
+          "author": "Fenrisulfir",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Fertilizer-Burn.jpg"
+        },
+        "package": "cannabis"
+      },
+      "label": "Nährstoffbrand (Überdüngung)",
+      "label_en": "Nutrient burn (overfeeding)",
+      "aliases": {
+        "de": [
+          "nährstoffbrand",
+          "naehrstoffbrand",
+          "nahrstoffbrand",
+          "nährstoff-brand",
+          "düngerbrand",
+          "duengerbrand",
+          "dungerbrand",
+          "überdüngung",
+          "ueberduengung",
+          "uberdungung",
+          "überdüngt",
+          "überdüngen",
+          "zu viel dünger",
+          "zu viel duenger",
+          "nutrient burn",
+          "nute burn"
+        ],
+        "en": [
+          "nutrient burn",
+          "nute burn",
+          "nutes burn",
+          "fertilizer burn",
+          "fertiliser burn",
+          "overfeeding",
+          "over feeding",
+          "overfertilizing",
+          "over fertilizing",
+          "overfertilization",
+          "too much fertilizer",
+          "too many nutes"
+        ]
+      },
+      "text": "Nährstoffbrand kommt von zu viel Dünger: Zu viele Salze in der Erde schädigen die Wurzeln und bremsen die Wasseraufnahme. Sammeln sich die Salze auch in den Blättern, werden Blattspitzen und Blattränder braun und sterben ab. Im Topf sieht man manchmal zusätzlich eine bräunliche oder weißliche Kruste auf der Erde oder innen am Topfrand.",
+      "text_en": "Nutrient burn, also called fertilizer burn, comes from too much fertilizer: too much salt in the soil damages the roots and slows down water uptake. If the salts also build up in the leaves, the leaf tips and edges turn brown and die off. In a pot you may also see a brownish or whitish crust on the soil or along the inside rim.",
+      "sources": [
+        "G33",
+        "G32"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": false,
+      "kind": null
+    },
+    {
+      "key": "durst-index",
+      "label": "Durst-Index (Topfstand)",
+      "label_en": "Thirst index (pot level)",
+      "aliases": {
+        "de": [
+          "Durst-Index",
+          "Durstindex",
+          "Durst Index",
+          "Topfstand",
+          "Gießindex",
+          "Giessindex"
+        ],
+        "en": [
+          "thirst index",
+          "thirst-index",
+          "pot level",
+          "watering index"
+        ]
+      },
+      "text": "Der Durst-Index sagt, wie viel Wasser dem Topf fehlt: 0 heißt frisch gegossen und abgetropft, 100 heißt Zeit zum Prüfen. Bei 100 ist die Hälfte des Wassers verbraucht, das die Erde für die Pflanze halten kann, der übliche Gießzeitpunkt für Topfsubstrate (G34). Wie viel Wasser das ist, hängt von der Topfgröße ab: Topferden halten meist 25 bis 35 Volumenprozent verfügbares Wasser (G35). Das Cockpit rechnet den Index aus Topfgröße, Gießen und Verdunstung. Gegossen wird erst nach einer Messung: eine Fingerprobe oder die Waage setzt den Index neu.",
+      "text_en": "The thirst index says how much water the pot is missing: 0 means just watered and drained, 100 means time to check. At 100 half of the water the soil can hold for the plant is used, the usual time to irrigate potting substrates (G34). How much water that is depends on the pot size: potting soils usually hold 25 to 35 percent available water by volume (G35). The cockpit computes the index from the pot size, the waterings and the evaporation. Watering waits for a measurement: a finger test or the scale sets the index anew.",
+      "sources": [
+        "G34",
+        "G35"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": false,
+      "kind": null
+    },
+    {
+      "key": "et",
+      "label": "ET (Verdunstung über Blätter und Erde)",
+      "label_en": "ET (evapotranspiration)",
+      "aliases": {
+        "de": [
+          "ET",
+          "Evapotranspiration",
+          "Verdunstung",
+          "Wasserverbrauch der Pflanze"
+        ],
+        "en": [
+          "ET",
+          "evapotranspiration",
+          "evaporation",
+          "plant water use"
+        ]
+      },
+      "text": "ET steht für Evapotranspiration, die Verdunstung über Blätter und Erde zusammen: Wasser, das die Pflanze über ihre Blätter abgibt, und Wasser, das aus der Erde im Topf verdunstet. Ein Gewächshausversuch mit Cannabis hat die Verdunstung des ganzen Bestands gemessen und die aus den Töpfen eigens genannt (G36). Das Cockpit rechnet die Verdunstung aus Licht, VPD und Pflanzenhöhe, nachts nur mit einem kleinen Rest, nach der Form eines Verdunstungsmodells für Salat (G37).",
+      "text_en": "ET stands for evapotranspiration, the evaporation through leaves and soil together: water the plant gives off through its leaves, and water that evaporates from the soil in the pot. A greenhouse trial with cannabis measured the evaporation of the whole crop and named that from the pots on its own (G36). The cockpit computes the evaporation from the light, the VPD and the plant height, at night only with a small remainder, after the form of a transpiration model for lettuce (G37).",
+      "sources": [
+        "G36",
+        "G37"
+      ],
+      "relates_to_metric": null,
+      "relates_to_device": null,
+      "measurable": false,
+      "kind": null
+    }
+  ],
+  "left_out": [],
+  "_hinweis_left_out": "Kein Begriff wurde in der Prüfung als 'unsupported' oder 'unreachable' bewertet; alle 19 sind drin. Bei den 10 'partial'-Begriffen steht der korrigierte Text der Prüfung. Entfernte Aliase, weil sie auf eine falsche Antwort führen würden: VPD 'Dampfdruck', 'dampfdruck', 'Dampdruck', 'vapor pressure', 'vapour pressure' (Dampfdruck ist nicht VPD, DWD-Lexikon 'Dampfdruck'); PPFD 'PFD', 'photon flux density' (andere Größe in G7, Tabelle 1); Lichtspektrum 'Vollspektrum', 'full spectrum' (Text erklärt es nicht, keine Quelle); Photoperiode '18/6', '12/12', '20/4', 'Langtag', 'long day' (Text erklärt sie nicht); Steckling 'ableger' (andere Methode, de.wikipedia 'Ableger (Pflanze)'). Ergänzt: Überwässern 'übergießen', 'übergossen', 'übergießt'.",
+  "not_found": [
+    "Stretch: für das Wort selbst gibt es keine gute öffentliche Quelle. Die Studie (G23) beschreibt den Vorgang, ohne das Wort zu benutzen; belegt ist der Sprachgebrauch nur in einem US-Pflanzenpatent (Anmeldertext), dessen Zahlen bewusst nicht übernommen sind. Zu Stretch bei Autoflowern keine Studie, keine Hochschul- oder Behördenquelle.",
+    "LST: kein kontrollierter Versuch zur Wirkung auf Wuchs oder Ertrag gefunden; belegt ist nur die Beschreibung (G28). Das deutsche Wort 'Herunterbinden' ist nur auf Anbauseiten belegt (G30), nicht in einem Hochschultext; 'Niederbinden' fand sich nirgends und bleibt nur als Alias.",
+    "Nährstoffbrand: das Wort ist Grower-Sprache und auf keiner Hochschulseite belegt; 'Düngerbrand' fand sich auf keiner deutschen Seite und steht deshalb nicht mehr im Text, nur als Alias.",
+    "Tageslichtintegral, Photonenflussdichte: als deutsche Bezeichnungen gebräuchlich, aber in keiner geprüften Behörden- oder Hochschulquelle gelesen. Die deutschen Texte zu PPFD, DLI, Lichtspektrum und Lüftung sind Übersetzungen englischer Quellen.",
+    "Lichtspektrum: eine Klammer, die Fernrot erklärt, ist gestrichen. Die MSU-Extension-Seite 'A closer look at far-red radiation' (Runkle) lieferte beim Abruf keinen Inhalt; erst einfügen, wenn jemand sie von Hand geöffnet hat.",
+    "Niedriges VPD: nur eine Vereinsquelle (American Orchid Society) gefunden, deshalb nicht im Text; die MSU-Extension-Seiten lieferten keinen Inhalt.",
+    "VGrow und Vivosun-App: ob die Automatik eine Hysterese nutzt oder einstellbar macht, und ob die Abluft durch den Aktivkohlefilter geht, steht nicht im Handbuch (G12).",
+    "PPFD der VGrow-Lampe und damit das DLI der Box: von VIVOSUN nicht veröffentlicht (autoflower.json, gesucht in S1 bis S4 am 22.10.2026).",
+    "Gesperrt beim Abruf (HTTP 403): UMass-Extension-Blätter zu Horizontal Air Flow, Thermostaten und EC, Oklahoma State EC/pH, UC Davis Soil and Water pH; ersetzt oder nicht verwendet."
+  ],
+  "sources": {
+    "G1": "WSL Eidgenössische Forschungsanstalt für Wald, Schnee und Landschaft, VPDrought, Was ist VPD? (ohne Autor und Datum), abgerufen 2026-10-23: https://vpdrought.wsl.ch/de/was-ist-vpd/",
+    "G2": "WSL Swiss Federal Research Institute, VPDrought, What is VPD? (englische Fassung von G1), abgerufen 2026-10-23: https://vpdrought.wsl.ch/en/what-is-vpd/",
+    "G3": "Virginia Cooperative Extension (Virginia Tech), SPES-817NP (2026), VPD und Luftfeuchte, S. 3 und 4, abgerufen 2026-10-23: https://www.pubs.ext.vt.edu/content/dam/pubs_ext_vt_edu/spes/spes-817/SPES-817.pdf",
+    "G4": "Deutscher Wetterdienst (DWD), Wetter- und Klimalexikon, Relative Feuchte, abgerufen 2026-10-23: https://www.dwd.de/DE/service/lexikon/Functions/glossar.html?nn=103346&lv2=102134&lv3=102222",
+    "G5": "Deutscher Wetterdienst (DWD), Wetter- und Klimalexikon, Luftfeuchte, abgerufen 2026-10-23: https://www.dwd.de/DE/service/lexikon/Functions/glossar.html?nn=103346&lv2=101518&lv3=101616",
+    "G6": "NOAA National Weather Service, Glossary, relative humidity, abgerufen 2026-10-23: https://forecast.weather.gov/glossary.php?word=relative%20humidity",
+    "G7": "Virginia Cooperative Extension (Virginia Tech), Eric Stallknecht, Calculating and Using Daily Light Integral (DLI): An Introductory Guide, SPES-720NP, 13.08.2025, abgerufen 2026-10-23: https://pubs.ext.vt.edu/SPES/spes-720/spes-720.html",
+    "G8": "Purdue Extension, Ariana P. Torres und Roberto G. Lopez, Measuring Daily Light Integral in a Greenhouse, HO-238-W, abgerufen 2026-10-23: https://www.extension.purdue.edu/extmedia/ho/ho-238-w.pdf",
+    "G9": "University of Minnesota, John Erwin, Ryan Warner, Neil Mattson, Day Length Effects on Bedding Plant Flowering I, Minnesota Commercial Flower Growers Bulletin Vol. 53 Issue 1, April 2004 (PDF auf NC State HortScans), abgerufen 2026-10-23: https://hortscans.ces.ncsu.edu/uploads/d/a/day_leng_524d9a0c5fc5b.pdf",
+    "G10": "Toth, Stack, Carlson, Smart, Identification and mapping of major-effect flowering time loci Autoflower1 and Early1 in Cannabis sativa L., Frontiers in Plant Science 13:991680, 2022 (begutachtet), abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC9533707/",
+    "G11": "Erik Runkle (Michigan State University), Light Spectrum for Different Applications, GPN Greenhouse Product News, September 2021, S. 58 (PDF University of Kentucky), abgerufen 2026-10-23: https://greenhousehort.mgcafe.uky.edu/sites/greenhousehort.ca.uky.edu/files/2022-03/Light%20Spectrum%20for%20Different%20Applications.pdf",
+    "G12": "VIVOSUN, VGrow Smart Grow Box Handbuch (Herstellerseite, Gerätebegriffe; in autoflower.json S1), abgerufen 2026-10-23: https://vivosun.com/support/guide/vgrow-smart-grow-box.md",
+    "G13": "UVM Extension Ag Engineering (University of Vermont), Chris Callahan, Ventilation in Greenhouses and High Tunnels, 14.08.2019, abgerufen 2026-10-23: https://blog.uvm.edu/cwcallah/?p=2360",
+    "G14": "eXtension Farm Energy, John Bartok Jr. und Vern Grubinger, Horizontal Air Flow is Best for Greenhouse Air Circulation, 03.04.2019, abgerufen 2026-10-23: https://farm-energy.extension.org/horizontal-air-flow-is-best-for-greenhouse-air-circulation",
+    "G15": "eXtension Farm Energy, Vern Grubinger und Scott Sanford, Selecting and Maintaining Greenhouse Thermostats, 03.04.2019, abgerufen 2026-10-23: https://farm-energy.extension.org/selecting-and-maintaining-greenhouse-thermostats/",
+    "G16": "K. Magnus, Schwingungen in einem unstetigen Temperatur-Regelkreis mit Totzeit, Forschung auf dem Gebiete des Ingenieurwesens Bd. 23 (1957) Nr. 5 (PDF TU München), abgerufen 2026-10-23: https://www.mec.ed.tum.de/fileadmin/w00cbp/am/pdf/Magnus57a_02.pdf",
+    "G17": "U.S. Environmental Protection Agency (EPA), Residential Air Cleaners: A Technical Summary, 3. Auflage, EPA 402-F-09-002, Juli 2018, S. 15, 17 und 29, abgerufen 2026-10-23: https://www.epa.gov/sites/default/files/2018-07/documents/residential_air_cleaners_-_a_technical_summary_3rd_edition.pdf",
+    "G18": "Purdue Extension, Krishna Nemali, Details of Electrical Conductivity Measurements in Greenhouse Production, HO-286-W, März 2018, abgerufen 2026-10-23: https://www.extension.purdue.edu/extmedia/HO/HO-286-w.pdf",
+    "G19": "Landis und Dumroese, USDA Forest Service, Forest Nursery Notes, Monitoring Electrical Conductivity in Soils and Growing Media, 2006, abgerufen 2026-10-23: https://npn.rngr.net/publications/fnn/2006-summer/articles/monitoring-electrical-conductivity-in-soils-and-growing-media/at_download/file",
+    "G20": "Purdue Extension, Lopez, Mickelbart, Pasian, Alkalinity Management in Soilless Substrates, HO-242-W, März 2010, abgerufen 2026-10-23: https://www.extension.purdue.edu/extmedia/HO/HO-242-W.pdf",
+    "G21": "Virginia Cooperative Extension (Virginia Tech), Criscione, SPES-718NP, 2025, S. 1, abgerufen 2026-10-23: https://www.pubs.ext.vt.edu/content/dam/pubs_ext_vt_edu/spes/spes-718/SPES-718.pdf",
+    "G22": "Cornell Hemp (Cornell University), Toth, Stack, Dowling, Shi, Melzer, Schilling, Smart, Flowering Time in Hemp, Cornell Hemp Field Day 2022, abgerufen 2026-10-23: https://hemp.cals.cornell.edu/resources/reports-factsheets/2022-cornell-hemp-field-day-handouts/flowering-time-in-hemp",
+    "G23": "Alter, Sade, Sood, Carmeli-Weissberg, Shaya, Kamenetsky-Goldstein, Bernstein, Spitzer-Rimon, Inflorescence development in female cannabis plants is mediated by photoperiod and gibberellin, Horticulture Research 11(11):uhae245, 2024 (begutachtet), abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC11560369/",
+    "G24": "NC State Extension, Keith Edmisten, Hemp Harvest Timing and Drying, 29.08.2019, überprüft 06.11.2024, abgerufen 2026-10-23: https://hemp.ces.ncsu.edu/hemp-harvest-timing-and-drying",
+    "G25": "Purdue Landscape Report, Ruhl, Trichomes, 13.08.2019, abgerufen 2026-10-23: https://purduelandscapereport.org/article/trichomes/",
+    "G26": "Tanney, Backer, Geitmann, Smith, Cannabis Glandular Trichomes: A Cellular Metabolite Factory, Frontiers in Plant Science 12:721986, 2021 (begutachtet), abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC8488169/",
+    "G27": "NC State Extension, Anthony V. LeBude und Frank A. Blazich, Extension Gardener Handbook, Kapitel 13 Propagation, Stand 01.02.2022, abgerufen 2026-10-23: https://content.ces.ncsu.edu/extension-gardener-handbook/13-propagation",
+    "G28": "Ijoma, Mannie, Nurmahomed, Adriaanse, Tekere, The curious origins of a high-stress training technique mainlining, Journal of Cannabis Research 8:3, 2025 (Übersicht), abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC12771868/",
+    "G29": "Rodale Institute, Bozzolo und Gonzales-Siemens, Influence of Topping Pruning Practice on Growth and Development of Industrial Hemp in Southern California, 14.01.2021, abgerufen 2026-10-23: https://rodaleinstitute.org/science/articles/topping-pruning-industrial-hemp-cannabis-sativa-southern-california/",
+    "G30": "grow-outdoor.de, Cannabis beschneiden und runterbinden (Anbauseite, nur Beleg für das deutsche Wort), abgerufen 2026-10-23: https://www.grow-outdoor.de/cannabis-beschneiden-runterbinden",
+    "G31": "UConn Home and Garden Education Center (University of Connecticut), Houseplant Watering Recommendations, 2016, abgerufen 2026-10-23: https://homegarden.cahnr.uconn.edu/factsheets/houseplant-watering-recommendations",
+    "G32": "Iowa State University Extension and Outreach, Steil, Diagnosing Houseplant Problems Related to Poor Culture, geprüft Januar 2024, abgerufen 2026-10-23: https://yardandgarden.extension.iastate.edu/how-to/diagnosing-houseplant-problems-related-poor-culture",
+    "G33": "Washington State University, WSU Extension Hortsense, Common Cultural: Fertilizer burn, geprüft 26.03.2026, abgerufen 2026-10-23: https://hortsense.cahnrs.wsu.edu/fact-sheet/common-cultural-fertilizer-burn/",
+    "G34": "UC ANR (University of California), Nursery and Flower Grower blog, Soil mixes part 7: how much to irrigate, abgerufen 2026-10-23: https://ucanr.edu/blog/nursery-and-flower-grower/article/soil-mixes-part-7-how-much-irrigate",
+    "G35": "HortTechnology 15(4), 2005, Healthy substrates need physicals too!, S. 747 bis 751 (begutachtet; PDF beim USDA Agricultural Research Service), abgerufen 2026-10-23: https://www.ars.usda.gov/ARSUserFiles/11847/bilderback_etal_2005_Hort%20Tech%2015(4)%20pp%20747-751.pdf",
+    "G36": "Frontiers in Plant Science 15, 2024, Supplemental greenhouse lighting increased the water use efficiency, crop growth, and cutting production in Cannabis sativa (begutachtet), abgerufen 2026-10-23: https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2024.1371702/full",
+    "G37": "KoreaScience, Transpirationsmodell für Salat in einer Pflanzenfabrik (Fachzeitschrift, nur die Form des Modells), abgerufen 2026-10-23: https://db.koreascholar.com/Article/Detail/252745"
+  },
+  "_hinweis_aliases": "aliases: die Schreibweisen je Sprache, mit denen Hank einen Begriff in 'Was ist X?' erkennt, Tippfehler absichtlich eingeschlossen. Ein Objekt {de, en} statt aliases und aliases_en: es sind keine Übersetzungen voneinander."
+}

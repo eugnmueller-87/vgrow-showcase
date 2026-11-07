@@ -1,0 +1,148 @@
+{
+  "name": "Athena Pro Line",
+  "name_en": "Athena Pro Line",
+  "summary": "Mineralische Pulverdünger für Fertigation: Pro Core in allen Phasen, dazu Pro Grow im Wachstum und Pro Bloom in der Blüte, nach Gewicht gemischt. Laut Etikett nur für Hydro; der Wochenplan war nicht lesbar. Karte ohne Plan, nicht wählbar.",
+  "summary_en": "Mineral powder fertilizers for fertigation: Pro Core in every phase, plus Pro Grow in growth and Pro Bloom in flowering, mixed by weight. Per the label hydro only; the weekly plan was not readable. Card without a plan, not selectable.",
+  "product": "Athena",
+  "version": "Etiketten",
+  "status": "draft",
+  "status_note": "Aus den Etiketten von Pro Core, Pro Grow und Pro Bloom (AP2 bis AP4) und der Seite der Linie (AP1) am 23.10.2026; jede Zahl mit dem Etikett verglichen. Die Etiketten liegen auf dem Server eines Händlers, ob sie der aktuellen Fassung entsprechen, ist offen. Der Wochenplan des Herstellers liegt nur als Google-Drive-Datei vor und war nicht lesbar: keine Wochentabelle.",
+  "status_note_en": "From the labels of Pro Core, Pro Grow and Pro Bloom (AP2 to AP4) and the line's page (AP1) on Oct 23, 2026; every number compared with the label. The labels sit on a retailer's server, whether they match the current version is open. The maker's weekly plan exists only as a Google Drive file and was not readable: no weekly chart.",
+  "check": {
+    "state": "checked",
+    "on": "2026-10-23",
+    "text": "Etikettenangaben (Mengen je Gallone, NPK) gegen die Etiketten geprüft; ein Wochenplan liegt nicht vor.",
+    "text_en": "Label figures (amounts per gallon, NPK) checked against the labels; there is no weekly plan."
+  },
+  "aliases": {
+    "de": [
+      "Athena Pro",
+      "Athena Pro Line",
+      "Athena Pro Core",
+      "Pro Core",
+      "Athena Pro Grow",
+      "Athena Pro Bloom"
+    ],
+    "en": [
+      "Athena Pro",
+      "Athena Pro Line",
+      "Athena Pro Core",
+      "Pro Core",
+      "Athena Pro Grow",
+      "Athena Pro Bloom"
+    ]
+  },
+  "line": {
+    "maker": "Athena",
+    "types": [
+      "powder",
+      "multi_part"
+    ],
+    "media": [
+      "hydro"
+    ],
+    "media_text": "Fertigation und Hydro; das Etikett von Pro Core sagt: nur für Hydro empfohlen. Nicht für Erde.",
+    "media_text_en": "Fertigation and hydro; the Pro Core label says: recommended for hydroponic use only. Not for soil.",
+    "products": [
+      {
+        "product": "Pro Core",
+        "npk": "14-0-0",
+        "role": "Grunddünger in allen Phasen (Calciumnitrat mit chelatierten Spurenelementen, 17 % Calcium); Etikett: 2 bis 4 g je Gallone Wasser in Wachstum und Blüte.",
+        "role_en": "Base fertilizer in every phase (calcium nitrate with chelated micronutrients, 17 % calcium); label: 2 to 4 g per gallon of water in growth and flowering.",
+        "sources": [
+          "AP2"
+        ]
+      },
+      {
+        "product": "Pro Grow",
+        "npk": "2-8-20",
+        "role": "Wachstum, mit Pro Core; Etikett: 4 bis 6 g je Gallone Wasser im Wachstum.",
+        "role_en": "Growth, with Pro Core; label: 4 to 6 g per gallon of water in growth.",
+        "sources": [
+          "AP3"
+        ]
+      },
+      {
+        "product": "Pro Bloom",
+        "npk": "0-12-24",
+        "role": "Blüte, mit Pro Core; Etikett: 4 bis 7 g je Gallone Wasser ab Blütewoche 2.",
+        "role_en": "Flowering, with Pro Core; label: 4 to 7 g per gallon of water from flowering week 2.",
+        "sources": [
+          "AP4"
+        ]
+      },
+      {
+        "product": "Pro Fade",
+        "role": "Ersetzt Pro Core in den letzten 2 Wochen der Blüte, um den Stickstoff wegzulassen.",
+        "role_en": "Replaces Pro Core in the last 2 weeks of flowering to leave out the nitrogen.",
+        "sources": [
+          "AP1"
+        ]
+      }
+    ],
+    "application_short": "Nach Gewicht, nie nach Volumen: je 1 g Pro Grow oder Pro Bloom 0,6 g Pro Core, nie trocken oder im selben Konzentrat mischen; für Hydro, nicht für Erde.",
+    "application_short_en": "By weight, never by volume: 0.6 g Pro Core per 1 g Pro Grow or Pro Bloom, never mixed dry or in the same concentrate; for hydro, not for soil.",
+    "application": "Nach Gewicht abmessen, nicht nach Volumen. Auf 1 g Pro Grow oder Pro Bloom kommen 0,6 g Pro Core. Nie trocken oder im selben Konzentrat mit anderen Düngern mischen. Stammlösung höchstens 2,5 Pfund je Gallone Wasser. Ins Becken laut Etiketten: Pro Core 2 bis 4 g je Gallone in Wachstum und Blüte, Pro Grow 4 bis 6 g je Gallone im Wachstum, Pro Bloom 4 bis 7 g je Gallone ab Blütewoche 2. Die Etiketten rechnen in US-Gallonen (eine Gallone sind laut Etikett 3,78 l). Das Programm des Herstellers: Wachstum 2 bis 3 Wochen, Blüte 8 bis 9 Wochen, gleichbleibende EC.",
+    "application_en": "Measure by weight, not by volume. 0.6 g Pro Core goes with 1 g Pro Grow or Pro Bloom. Never mix dry or in the same concentrate with other fertilizers. Stock solution at most 2.5 pounds per gallon of water. Into the reservoir per the labels: Pro Core 2 to 4 g per gallon in growth and flowering, Pro Grow 4 to 6 g per gallon in growth, Pro Bloom 4 to 7 g per gallon from flowering week 2. The labels count in US gallons (one gallon is 3.78 l per the label). The maker's program: growth 2 to 3 weeks, flowering 8 to 9 weeks, steady EC.",
+    "application_sources": [
+      "AP1",
+      "AP2",
+      "AP3",
+      "AP4"
+    ],
+    "cautions": [
+      {
+        "text": "Laut Etikett nur für Hydro empfohlen, nicht für Erde: das Cockpit bietet die Linie nicht an.",
+        "text_en": "Per the label recommended for hydro only, not for soil: the cockpit does not offer the line.",
+        "sources": [
+          "AP2"
+        ]
+      },
+      {
+        "text": "Die Pulver reizen laut Etikett Augen und Haut: beim Mischen Schutzkleidung tragen, trocken lagern.",
+        "text_en": "Per the label the powders irritate eyes and skin: wear protective clothing when mixing, store dry.",
+        "sources": [
+          "AP2",
+          "AP3",
+          "AP4"
+        ]
+      }
+    ]
+  },
+  "components": {},
+  "notes": [
+    {
+      "text": "Der Wochenplan, das Dosierblatt und die Anleitung fürs Gießen von Hand liegen beim Hersteller als Google-Drive-Dateien; sie waren nicht lesbar. Deshalb steht hier keine Wochentabelle.",
+      "text_en": "The weekly plan, the dosage sheet and the hand-watering guide sit at the maker as Google Drive files; they were not readable. So there is no weekly chart here.",
+      "sources": [
+        "AP1"
+      ]
+    }
+  ],
+  "sources": {
+    "AP1": {
+      "title": "Athena, Seite der Pro Line",
+      "title_en": "Athena, Pro Line page",
+      "url": "https://www.athenaag.com/pro-line",
+      "retrieved": "2026-10-23"
+    },
+    "AP2": {
+      "title": "Athena, Etikett Pro Core (PDF auf dem Server eines Händlers)",
+      "title_en": "Athena, Pro Core label (PDF on a retailer's server)",
+      "url": "https://cdn.shopify.com/s/files/1/0910/5912/6550/files/Athena-Pro-Core-Product-Label.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "AP3": {
+      "title": "Athena, Etikett Pro Grow (PDF auf dem Server eines Händlers)",
+      "title_en": "Athena, Pro Grow label (PDF on a retailer's server)",
+      "url": "https://cdn.shopify.com/s/files/1/0910/5912/6550/files/Athena-Pro-Grow-Product-Label.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "AP4": {
+      "title": "Athena, Etikett Pro Bloom (PDF auf dem Server eines Händlers)",
+      "title_en": "Athena, Pro Bloom label (PDF on a retailer's server)",
+      "url": "https://cdn.shopify.com/s/files/1/0910/5912/6550/files/Athena-Pro-Bloom-Product-Label.pdf",
+      "retrieved": "2026-10-23"
+    }
+  }
+}

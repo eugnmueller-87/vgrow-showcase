@@ -1,0 +1,15 @@
+{
+  "_hinweis": "Was an welchem USB-Anschluss haengt. always_on: das Cockpit schaltet diesen Anschluss nie aus, auch nicht ueber die Automatik oder eine Voreinstellung. label_en: die englische Fassung. device: was dort haengt (humidifier, pump, other ...); die Befeuchter-Regel schaltet nur einen Anschluss mit device humidifier, und jede Aenderung der Belegung pausiert alle Automatik, bis du sie auf der Seite bestaetigst (vgrow/portguard.py).",
+  "usb1": {
+    "label": "Tropfbewässerung (Pumpe)",
+    "label_en": "Drip irrigation (pump)",
+    "device": "pump",
+    "reason": "Seit 23.10.2026 nachmittags steckt die FlexFeed-Pumpe an USB 1, wo vorher die Kamera hing (laut dem Betreiber). Nie immer an: eine Pumpe an einem Dauer-An-Anschluss gießt ohne Ende. Keine Automatik und kein Autopilot schaltet sie; nur von Hand, bis eine Gieß-Karte mit fester Dauer gebaut ist."
+  },
+  "usb2": {
+    "label": "Luftbefeuchter",
+    "label_en": "Humidifier",
+    "device": "humidifier",
+    "reason": "Bestätigt 22.10.2026: nach USB 2 aus fiel die Feuchte am Fühler von 82,7 auf 76,7 %. Geregelt von vgrow/automation.py."
+  }
+}

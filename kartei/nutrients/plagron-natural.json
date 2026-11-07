@@ -1,0 +1,145 @@
+{
+  "name": "Plagron 100% NATURAL",
+  "name_en": "Plagron 100% NATURAL",
+  "summary": "Organische Flüssigdünger auf Algenbasis für Erde: Alga Grow im Wachstum, Alga Bloom in der Blüte, dazu Zusätze von Plagron. Der Hersteller druckt die Mengen je 10 Liter Wasser, mit jedem Gießen; die Karte teilt sie durch 10 und zeigt sie je Liter.",
+  "summary_en": "Organic algae-based liquid feeds for soil: Alga Grow in the vegetative phase, Alga Bloom in flowering, plus Plagron's additives. The maker prints the amounts per 10 litres of water, with every watering; the card divides them by 10 and shows them per litre.",
+  "product": "Plagron",
+  "version": "PL-25-083/08/EN",
+  "status": "draft",
+  "status_note": "Abgetippt aus dem Plagron-Düngeschema 100% NATURAL (PN1) am 23.10.2026. Die Tabelle steht je 10 Liter, die Karte je Liter (20 ml je 10 l sind 2 ml/l). Ein Entwurf, bis du die Karte auf der Seite mit dem Schema vergleichst und bestätigst; bis dahin rechnet das Cockpit keine Mengen.",
+  "status_note_en": "Transcribed from the Plagron 100% NATURAL grow schedule (PN1) on Oct 23, 2026. The chart is per 10 litres, the card per litre (20 ml per 10 l is 2 ml/l). A draft until you compare the card with the schedule on the page and confirm it; until then the cockpit computes no amounts.",
+  "unit": "ml/l",
+  "printed_unit": "ml/10 l",
+  "aliases": {
+    "de": ["Plagron Natural", "Plagron 100% Natural", "100% Natural", "Alga Grow", "Alga Bloom", "Plagron Alga", "Plagron Alga Grow", "Plagron Alga Bloom"],
+    "en": ["Plagron Natural", "Plagron 100% Natural", "100% Natural", "Alga Grow", "Alga Bloom", "Plagron Alga", "Plagron Alga Grow", "Plagron Alga Bloom"]
+  },
+  "line": {
+    "maker": "Plagron",
+    "types": ["organic_liquid"],
+    "media": ["soil"],
+    "media_text": "Erde: die Tabelle hat eine Spalte für Plagron Bio Lightmix und eine für die reicheren Mischungen Allmix, Royalmix und Batmix; nicht für Hydro.",
+    "media_text_en": "Soil: the chart has one column for Plagron Bio Lightmix and one for the richer mixes Allmix, Royalmix and Batmix; not for hydro.",
+    "products": [
+      {"product": "Alga Grow", "npk": "4-2-4", "role": "Organischer Grunddünger auf Algenbasis für das Wachstum, laut Produktseite 4 ml/l (1:250) mit jedem Gießen.", "role_en": "Organic algae-based base feed for the vegetative phase, per the product page 4 ml/l (1:250) with every watering.", "sources": ["PN2"]},
+      {"product": "Alga Bloom", "npk": "3-2-5", "role": "Organischer Grunddünger auf Algenbasis für die Blüte, laut Produktseite 4 ml/l (1:250) mit jedem Gießen.", "role_en": "Organic algae-based base feed for flowering, per the product page 4 ml/l (1:250) with every watering.", "sources": ["PN3"]},
+      {"product": "Power Roots", "role": "Organischer Wurzelstimulator, 1 ml/l.", "role_en": "Organic root stimulator, 1 ml/l.", "sources": ["PN1"]},
+      {"product": "Pure Zym", "role": "Organischer Enzym-Bodenverbesserer, 1 ml/l.", "role_en": "Organic enzyme soil improver, 1 ml/l.", "sources": ["PN1"]},
+      {"product": "Sugar Royal", "npk": "8.5-0-0", "role": "Organischer Aminosäure-Zusatz, 1 ml/l.", "role_en": "Organic amino acid additive, 1 ml/l.", "sources": ["PN1"]},
+      {"product": "Green Sensation", "npk": "0-8-9", "role": "Blütezusatz ab Blütewoche 4. Die eigene Produktseite nennt ihn mineralisch, die Tabelle führt ihn als Zusatz der Linie.", "role_en": "Bloom booster from flowering week 4. Its own product page calls it mineral, the chart lists it as an additive of the line.", "sources": ["PN1", "PN5"]},
+      {"product": "Vita Race", "role": "Nur zum Sprühen, einmal pro Woche (Fußnote der Tabelle); die Produktseite wurde nicht gelesen.", "role_en": "Spray only, once a week (chart footnote); its product page was not read.", "sources": ["PN1"]}
+    ],
+    "application_short": "Mit jedem Gießen, laut Tabelle je 10 Liter: Alga Grow im Wachstum, Alga Bloom ab Plagron-Woche 3, Woche 11 nur Wasser; nicht für Hydro.",
+    "application_short_en": "With every watering, per the chart per 10 litres: Alga Grow in the vegetative phase, Alga Bloom from Plagron week 3, week 11 plain water; not for hydro.",
+    "application": "Mengen je 10 Liter Wasser, mit jedem Gießen. Woche 1 und 2 Wachstum, Woche 3 bis 10 Blüte, Woche 11 Ernte mit Wasser. Für ein längeres Wachstum die Menge von Woche 2 wiederholen. Die Tabelle nennt pH 5,5 bis 6,5; die Alga-Produktseiten sagen, mit Plagrons natürlicher Erde müsse der pH nicht eingestellt werden und die EC sei bei organischem Material nicht sinnvoll messbar. Mit entmineralisiertem Wasser den pH nach dem Mischen prüfen, er kann niedriger sein als erwartet.",
+    "application_en": "Amounts per 10 litres of water, with every watering. Weeks 1 and 2 vegetative, weeks 3 to 10 flowering, week 11 harvest with water. For a longer vegetative phase repeat the week 2 amount. The chart prints pH 5.5 to 6.5; the Alga product pages say that with Plagron's natural soil the pH needs no adjusting and that the EC of organic matter cannot be measured meaningfully. With demineralised water check the pH after mixing, it can be lower than expected.",
+    "application_sources": ["PN1", "PN2", "PN3"],
+    "cautions": [
+      {"text": "Die Alga-Dünger sind nicht für Hydro-Systeme; Bewässerungsleitungen nach dem Gebrauch spülen.", "text_en": "The Alga feeds are not for hydroponic systems; flush irrigation lines after use.", "sources": ["PN2", "PN3"]},
+      {"text": "Laut Hersteller sind alle Mengen Richtwerte, je nach Zustand der Pflanze.", "text_en": "Per the maker all amounts are guide values, depending on the plant's condition.", "sources": ["PN1"]},
+      {"text": "Vita Race wird gesprüht, nicht gegossen: die Karte führt es deshalb nicht in den Gießmengen.", "text_en": "Vita Race is sprayed, not watered in: the card therefore keeps it out of the watering amounts.", "sources": ["PN1"]}
+    ]
+  },
+  "selectable": {
+    "label": "Plagron 100% NATURAL (organisch, flüssig)",
+    "label_en": "Plagron 100% NATURAL (organic, liquid)",
+    "page": "bio_lightmix",
+    "page_note": "Seite Bio Lightmix: Plagron druckt die Spalten für seine eigene Erde. Deine Erde ist als leicht vorgedüngt beschrieben, wie Plagron Bio Lightmix (eine Woche vorgedüngt); das ist die Zuordnung des Cockpits, keine Angabe von Plagron.",
+    "page_note_en": "Bio Lightmix page: Plagron prints the columns for its own soil. Your soil is described as lightly pre-fertilized, like Plagron Bio Lightmix (pre-fertilized for one week); that is the cockpit's mapping, not a statement by Plagron.",
+    "components": ["alga_grow", "alga_bloom"]
+  },
+  "weeks": {
+    "columns": [
+      {"key": "propagation", "label": "Plagron-Woche 1 (Wachstum)", "label_en": "Plagron week 1 (vegetative)", "printed": "Week 1 (grow)"},
+      {"key": "veg", "label": "Plagron-Woche 2 (Wachstum, für längeres Wachstum wiederholen)", "label_en": "Plagron week 2 (vegetative, repeat for a longer vegetative phase)", "printed": "Week 2 (grow)"},
+      {"key": "bloom_1", "bloom_week": 1, "label": "Blütewoche 1 (Plagron-Woche 3)", "label_en": "Flowering week 1 (Plagron week 3)", "printed": "Week 3 (bloom)"},
+      {"key": "bloom_2", "bloom_week": 2, "label": "Blütewoche 2 (Plagron-Woche 4)", "label_en": "Flowering week 2 (Plagron week 4)", "printed": "Week 4 (bloom)"},
+      {"key": "bloom_3", "bloom_week": 3, "label": "Blütewoche 3 (Plagron-Woche 5)", "label_en": "Flowering week 3 (Plagron week 5)", "printed": "Week 5 (bloom)"},
+      {"key": "bloom_4", "bloom_week": 4, "label": "Blütewoche 4 (Plagron-Woche 6)", "label_en": "Flowering week 4 (Plagron week 6)", "printed": "Week 6 (bloom)"},
+      {"key": "bloom_5", "bloom_week": 5, "label": "Blütewoche 5 (Plagron-Woche 7)", "label_en": "Flowering week 5 (Plagron week 7)", "printed": "Week 7 (bloom)"},
+      {"key": "bloom_6", "bloom_week": 6, "label": "Blütewoche 6 (Plagron-Woche 8)", "label_en": "Flowering week 6 (Plagron week 8)", "printed": "Week 8 (bloom)"},
+      {"key": "bloom_7", "bloom_week": 7, "label": "Blütewoche 7 (Plagron-Woche 9)", "label_en": "Flowering week 7 (Plagron week 9)", "printed": "Week 9 (bloom)"},
+      {"key": "bloom_8", "bloom_week": 8, "label": "Blütewoche 8 (Plagron-Woche 10)", "label_en": "Flowering week 8 (Plagron week 10)", "printed": "Week 10 (bloom)"}
+    ],
+    "harvest": {"key": "harvest", "bloom_week": 9, "label": "Ab Blütewoche 9 (Plagron-Woche 11): Ernte, nur Wasser", "label_en": "From flowering week 9 (Plagron week 11): harvest, plain water only"},
+    "sources": ["PN1"]
+  },
+  "components": {
+    "alga_grow": {"label": "Alga Grow", "label_en": "Alga Grow"},
+    "alga_bloom": {"label": "Alga Bloom", "label_en": "Alga Bloom"},
+    "power_roots": {"label": "Power Roots", "label_en": "Power Roots", "optional": true},
+    "pure_zym": {"label": "Pure Zym", "label_en": "Pure Zym", "optional": true},
+    "sugar_royal": {"label": "Sugar Royal", "label_en": "Sugar Royal", "optional": true},
+    "green_sensation": {"label": "Green Sensation", "label_en": "Green Sensation", "optional": true}
+  },
+  "pages": {
+    "bio_lightmix": {
+      "label": "Plagron Bio Lightmix (eine Woche organisch vorgedüngt)",
+      "label_en": "Plagron Bio Lightmix (organic pre-fertilized for one week)",
+      "rows": {
+        "alga_grow": [2, 4, null, null, null, null, null, null, null, null],
+        "alga_bloom": [null, null, 4, 4, 4, 3, 3.5, 4, 4, 4],
+        "power_roots": [1, 1, 1, 1, 1, null, null, null, null, null],
+        "pure_zym": [1, 1, 1, 1, 1, 1, null, null, null, null],
+        "sugar_royal": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "green_sensation": [null, null, null, null, null, 1, 1, 1, 1, 1]
+      },
+      "sources": ["PN1"]
+    },
+    "allmix": {
+      "label": "Plagron Allmix, Royalmix oder Batmix (reicher vorgedüngt)",
+      "label_en": "Plagron Allmix, Royalmix or Batmix (richer pre-fertilization)",
+      "rows": {
+        "alga_bloom": [null, null, null, null, 4, 3, 3.5, 4, 4, 4],
+        "power_roots": [1, 1, 1, 1, 1, null, null, null, null, null],
+        "pure_zym": [1, 1, 1, 1, 1, 1, null, null, null, null],
+        "sugar_royal": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "green_sensation": [null, null, null, null, null, 1, 1, 1, 1, 1]
+      },
+      "sources": ["PN1"]
+    }
+  },
+  "frequency": {
+    "text": "Laut Tabelle mit jedem Gießen, Vita Race einmal pro Woche gesprüht. Wie oft gegossen wird, sagt sie nicht; das Cockpit gibt deshalb keinen Takt vor.",
+    "text_en": "Per the chart with every watering, Vita Race sprayed once a week. How often to water it does not say, so the cockpit sets no schedule.",
+    "sources": ["PN1"]
+  },
+  "notes": [
+    {
+      "text": "Vita Race laut Tabelle zum Sprühen: 3 ml/l in Plagron-Woche 1 und 2, 5 ml/l in Woche 3 bis 5 (30 und 50 ml je 10 l), einmal pro Woche.",
+      "text_en": "Vita Race per the chart for spraying: 3 ml/l in Plagron weeks 1 and 2, 5 ml/l in weeks 3 to 5 (30 and 50 ml per 10 l), once a week.",
+      "sources": ["PN1"]
+    },
+    {
+      "text": "Plagron Bio Lightmix ist laut Tabelle eine Woche organisch vorgedüngt (2 kg je Kubikmeter Dünger NPK 6-5-7, EC 0,4 mS/cm). Auf Allmix, Royalmix und Batmix kein Alga Grow und Alga Bloom erst ab Plagron-Woche 5.",
+      "text_en": "Per the chart Plagron Bio Lightmix is organic pre-fertilized for one week (2 kg per cubic metre of fertilizer NPK 6-5-7, EC 0.4 mS/cm). On Allmix, Royalmix and Batmix no Alga Grow, and Alga Bloom only from Plagron week 5.",
+      "sources": ["PN1", "PN4"]
+    },
+    {
+      "text": "Wer streng organisch düngt, lässt Green Sensation weg: seine eigene Produktseite nennt es mineralisch. Das ist eine Beobachtung, keine Angabe von Plagron.",
+      "text_en": "A strictly organic grow leaves Green Sensation out: its own product page calls it mineral. That is an observation, not a statement by Plagron.",
+      "sources": ["PN5"]
+    },
+    {
+      "text": "Die Karte zählt Plagron-Woche 3 als Blütewoche 1: die Blütewochen des Cockpits beginnen mit dem Tag, an dem die Blüte beginnt, die Tabelle mit Woche 3.",
+      "text_en": "The card counts Plagron week 3 as flowering week 1: the cockpit's flowering weeks start on the day flowering begins, the chart's with week 3.",
+      "sources": ["PN1"]
+    },
+    {
+      "package": "cannabis",
+      "text": "Für Autoflower fand die Recherche bei Plagron keine Angabe. Der Faktor 0,5 aus plant.json gilt auch hier, mit denselben Quellen wie bei BioBizz (N5, N6), nie mehr als die Tabelle.",
+      "text_en": "For autoflowers the research found nothing at Plagron. The factor 0.5 from plant.json applies here too, with the same sources as for BioBizz (N5, N6), never more than the chart.",
+      "sources": ["PN1", "N5", "N6"]
+    }
+  ],
+  "sources": {
+    "PN1": {"title": "Plagron, Düngeschema 100% NATURAL (PDF, PL-25-083/08/EN)", "title_en": "Plagron, 100% NATURAL grow schedule (PDF, PL-25-083/08/EN)", "url": "https://plagron.com/downloads/en/grow-schedule-100-natural", "retrieved": "2026-10-23"},
+    "PN2": {"title": "Plagron, Produktseite Alga Grow", "title_en": "Plagron, Alga Grow product page", "url": "https://plagron.com/en/hobby/products/alga-grow", "retrieved": "2026-10-23"},
+    "PN3": {"title": "Plagron, Produktseite Alga Bloom", "title_en": "Plagron, Alga Bloom product page", "url": "https://plagron.com/en/hobby/products/alga-bloom", "retrieved": "2026-10-23"},
+    "PN4": {"title": "Plagron, Produktseite Bio Lightmix", "title_en": "Plagron, Bio Lightmix product page", "url": "https://plagron.com/en/hobby/products/bio-lightmix", "retrieved": "2026-10-23"},
+    "PN5": {"title": "Plagron, Produktseite Green Sensation", "title_en": "Plagron, Green Sensation product page", "url": "https://plagron.com/en/hobby/products/green-sensation", "retrieved": "2026-10-23"},
+    "PN6": {"title": "Plagron, Wissensseite mit den Düngeschemata 100% NATURAL, TERRA, COCO und HYDRO", "title_en": "Plagron, grow knowledge page listing the 100% NATURAL, TERRA, COCO and HYDRO schedules", "url": "https://plagron.com/en/grow-knowledge", "retrieved": "2026-10-23"},
+    "N5": {"title": "VIVOSUN, was Autoflower-Samen sind", "title_en": "VIVOSUN, what autoflowering seeds are", "url": "https://vivosun.com/en-CA/growing_guide/what-are-autoflowering-seeds/", "retrieved": "2026-10-22"},
+    "N6": {"title": "420seedz, Cannabis anbauen für Anfänger (vom Hersteller der Erde 420Flow)", "title_en": "420seedz, growing cannabis for beginners (by the maker of the 420Flow soil)", "url": "https://420seedz.de/guide/cannabis-anbauen-anfaenger", "retrieved": "2026-10-22"}
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "key": "botrytis_bud_rot",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "krankheiten",
+  "label": "Grauschimmel / Blütenfäule (Botrytis)",
+  "label_en": "Gray mold / bud rot (Botrytis)",
+  "tile": "Die Blüte wird braun, später grauer Schimmel",
+  "tile_en": "The flower turns brown, later gray mold",
+  "aliases": {
+    "de": [
+      "Grauschimmel",
+      "Blütenfäule",
+      "Graufäule",
+      "Knospenfäule",
+      "Bud Rot",
+      "Botrytis cinerea"
+    ],
+    "en": [
+      "gray mold",
+      "grey mould",
+      "bud rot",
+      "Botrytis blight",
+      "Botrytis cinerea"
+    ]
+  },
+  "symptoms": [
+    "Früh: Ein Hochblatt (kleines Blättchen an der Blüte) wird gelb; USU nennt das als frühes Zeichen P1.",
+    "Früh, an der Blüte: Sie wirkt weich und verfärbt P2, mit braunen, wassergetränkten Flecken P3. Der Befall beginnt meist innen in der Blüte, wo es am feuchtesten ist und am wenigsten Luft zieht, und wächst nach außen P2.",
+    "Spät: Die Blüte wird knusprig braun P2, stirbt ab und trägt eine Masse grauer Sporen P4. Bei hoher Feuchte entsteht der typische graue Schimmel P2.",
+    "Am Stängel: leicht eingesunkene, hellbraune oder grauweiße Stellen am Haupttrieb oder an Verzweigungen, wo die Pflanze verletzt wurde P2. Sie können den Stängel umfassen, dann brechen Äste oder der Stamm P4.",
+    "Tempo: Eine Cannabispflanze kann innerhalb einer Woche absterben P3.",
+    "Nach der Ernte: weiche, verfärbte Blüten mit weißem, grauem oder grauweißem Pilzgeflecht, meist 2 bis 5 Tage nach der Ernte P2; das gilt für mehrere Nacherntepilze.",
+    "Keimlinge und Stecklinge: Umfallen bei kühlen, nassen Bedingungen im Gewächshaus P4."
+  ],
+  "symptoms_en": [
+    "Early: a bract (small leaf on the bud) turns yellow; USU names this as an early symptom P1.",
+    "Early, on the bud: it looks soft and discoloured P2, with brown, water-soaked spots P3. Infection usually starts inside the bud, where humidity is highest and air movement lowest, and spreads outwards P2.",
+    "Late: the bud turns crisp and brown P2, dies and carries a mass of gray spores P4. Under high humidity the typical gray mould forms P2.",
+    "On the stem: slightly sunken tan or off-white areas on the main stem or at branching points where the plant was injured P2. They can girdle the stem so branches or the stalk break P4.",
+    "Speed: a cannabis plant can be killed within one week P3.",
+    "After harvest: soft, discoloured buds with white, gray or off-white mycelium, usually 2 to 5 days after harvest P2; this applies to several post-harvest fungi.",
+    "Seedlings and cuttings: damping-off under cool, wet greenhouse conditions P4."
+  ],
+  "causes": [
+    "Pilz Botrytis cinerea; dringt leicht in schwaches, verletztes oder alterndes Gewebe ein P3 und hat sehr viele Wirtspflanzen (P2: über 500 Arten; P4 und P1: über 200). Häufigste Hanfkrankheit in New York, im Feld wie im Gewächshaus P5.",
+    "Hohe Luftfeuchte, wenig Luftbewegung und Wasser, das sich auf der Pflanze niederschlägt P2.",
+    "Feuchte in Zahlen (P6, allgemein): Infektionen am besten bei 90 % relativer Luftfeuchte, verletztes Gewebe schon bei 80 %.",
+    "Temperatur, je Quelle verschieden: P3 50 bis 80 °F (umgerechnet 10 bis 26,7 °C), Optimum 68 °F (20 °C); P4 65 bis 75 °F (18 bis 24 °C); P6 60 bis 75 °F (umgerechnet 15,6 bis 23,9 °C), Infektionen enden über 85 °F (umgerechnet 29,4 °C); P2: kein Wachstum über 30 °C, aber noch bei 5 bis 10 °C.",
+    "Kondenswasser bei warmen Tagen und kühlen Nächten P6; kühlere Luft hebt die relative Feuchte, überschüssiger Wasserdampf schlägt sich als Tau nieder P7. In der Box ist das vor allem die Zeit nach Licht aus (Folgerung).",
+    "Risiko steigt mit der Reife; Sorten mit großen, dicht gepackten Blüten sind anfälliger P2. Zu viel Stickstoff und Verletzungen können anfälliger machen (P2, P6).",
+    "Sporen fliegen durch die Luft, kommen aber auch über Pflanzenreste, Werkzeug und Kleidung; anfällige Nachbarkulturen können eine Sporenquelle sein P2."
+  ],
+  "causes_en": [
+    "The fungus Botrytis cinerea; it easily invades weak, damaged or senescing tissue P3 and has very many hosts (P2: over 500 species; P4 and P1: over 200). Most frequent hemp disease in New York, in fields and greenhouses P5.",
+    "High humidity, poor air circulation and moisture condensing on the plant P2.",
+    "Humidity in numbers (P6, general): infection optimal at 90% relative humidity, wounded tissue already at 80%.",
+    "Temperature, differing by source: P3 50 to 80 °F (10 to 26.7 °C), optimum 68 °F (20 °C); P4 65 to 75 °F (18 to 24 °C); P6 60 to 75 °F (15.6 to 23.9 °C), infections cease above 85 °F (29.4 °C); P2: no growth above 30 °C but growth at 5 to 10 °C.",
+    "Condensation with warm days and cool nights P6; cooler air raises relative humidity and excess water vapor is released as dew P7. In the box this is mainly the time after lights off (inference).",
+    "Risk rises as buds mature; strains with large, densely packed buds are more susceptible P2. Excess nitrogen and wounds can increase susceptibility (P2, P6).",
+    "Spores travel through the air but also via plant debris, tools and clothing; susceptible neighbouring crops can be a spore source P2."
+  ],
+  "check": [
+    {
+      "metric": "probe_humidity",
+      "text": "Befall beginnt in der Blüte, wo es am feuchtesten ist P2; im dichten Bestand ist die Feuchte höher als in der Umgebungsluft P7, der Fühler sitzt über der Krone. Gewächshaus unter 50 % (P3, P4, P1); Box-Ziele je Phase: Phasenkarte.",
+      "text_en": "Infection starts in the bud where humidity is highest P2; in a dense canopy humidity is higher than in the surrounding air P7, the probe sits above the canopy. Greenhouse below 50% (P3, P4, P1); box targets per stage: stage card."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Niedriger VPD heißt feuchte Luft. Buirs und Punja: Bud Rot hing vom Dampfdruckdefizit der Außenluft ab, ohne Zahl P8.",
+      "text_en": "Low VPD means humid air. Buirs and Punja: bud rot depended on the external vapour pressure deficit, no figure P8."
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Kondenswasser bei kühlen Nächten (P6, P7), vor allem nach Licht aus (Folgerung).",
+      "text_en": "Condensation on cool nights (P6, P7), especially after lights off (inference)."
+    },
+    {
+      "metric": "watering",
+      "text": "Laub nicht lange nass halten (P3, P6).",
+      "text_en": "Do not keep foliage wet for long (P3, P6)."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    }
+  ],
+  "do_now": [
+    "Werte prüfen: Luftfeuchte (probe_humidity), VPD (probe_vpd) und Temperatur (probe_temp), vor allem nach Licht aus.",
+    "Befall beginnt meist innen in der Blüte P2. Blüten nicht aufreißen oder verletzen, Verletzungen machen anfälliger (P2, P1).",
+    "Befallene Blüten, welkes und abgestorbenes Gewebe entfernen, wenn nötig die ganze Pflanze; nicht kompostieren P6.",
+    "Feuchte senken: Befeuchter aus, Abluft höher. Die Zielwerte widersprechen sich: unter 50 % im Gewächshaus laut drei Hanf-Quellen (P3, P4, P1), unter 80 % P6 und tagsüber unter 70 % P7, beide allgemein. Die drei Hanf-Quellen gelten für Gewächshaus-Hanf, nicht für eine Box; die Zielwerte je Phase stehen in der Phasenkarte.",
+    "Umluft in feuchten Phasen, etwa kühlen Nächten, durchgehend laufen lassen P7.",
+    "Aus der Praxis (Pott Planter): gegen Mehltau mehr Luftbewegung um die Pflanze und befallene Blätter entfernen P10. Für Grauschimmel tragen das die Quellen dieser Karte: Umluft in feuchten Phasen durchgehend laufen lassen P7, Befallenes entfernen und nicht kompostieren P6.",
+    "Früh in der Lichtphase gießen (P3, P6); nichts, was die Pflanze 12 Stunden oder länger nass hält P3. Die Quellen meinen nasses Laub: beim Gießen Blätter und Blüten möglichst nicht benetzen (Folgerung).",
+    "Werkzeug desinfizieren: USU nennt eine Lösung mit 10 bis 15 % Haushaltsbleiche P1. Etikett beachten.",
+    "Fast reif und stark befallen: Früher ernten nennen Buirs und Punja als Weg, die Blüten kürzer günstigen Bedingungen auszusetzen P8. Das kann den Ertrag mindern, wenn die Pflanzen noch nicht fast reif sind. Die Entscheidung liegt bei dir.",
+    "Spritzmittel: Die Quellen widersprechen sich. P4 (Stand 2024-06-18) und P1 kennen für Hanf in den USA keine zugelassenen Mittel gegen Grauschimmel; P2 (Juni 2024) und P3 (Stand März 2026) nennen dagegen Produkte, die in Kanada beziehungsweise den USA registriert sind; P6: nur für die Kultur registrierte Mittel, nach Etikett. Keine dieser Listen gilt in Deutschland. Etikett und Zulassung beachten."
+  ],
+  "do_now_en": [
+    "Check readings: humidity (probe_humidity), VPD (probe_vpd) and temperature (probe_temp), especially after lights off.",
+    "Infection usually starts inside the bud P2. Do not tear or injure buds, wounds increase susceptibility (P2, P1).",
+    "Remove infected buds and dead or senescing tissue, the whole plant if needed; do not compost P6.",
+    "Lower humidity: humidifier off, exhaust fan up. Targets conflict: below 50% in greenhouses per three hemp sources (P3, P4, P1), below 80% P6 and below 70% by day P7, both general. The three hemp sources apply to greenhouse hemp, not to a box; stage targets are on the stage card.",
+    "Run the circulation fan continuously during humid periods such as cool nights P7.",
+    "From practice (Pott Planter): against mildew, more air movement around the plant and remove the affected leaves P10. For gray mold this card's sources carry this: run the circulation fan continuously in humid phases P7, remove infected material and do not compost it P6.",
+    "Water early in the light period (P3, P6); avoid anything that keeps the plant wet for 12 hours or longer P3. The sources mean wet foliage: avoid wetting leaves and buds when watering (inference).",
+    "Disinfect tools: USU names a solution with 10 to 15% household bleach P1. Follow the label.",
+    "Nearly ripe and heavily infected: Buirs and Punja name earlier harvest as a way to shorten exposure to favorable conditions P8. It can reduce yield if the plants are not close to maturity. The decision is yours.",
+    "Sprays: the sources disagree. P4 (as of 2024-06-18) and P1 know no registered products against gray mold on hemp in the USA; P2 (June 2024) and P3 (as of March 2026) name products registered in Canada and the USA; P6: only products registered for the crop, per label. None of these lists applies in Germany. Follow label and registration (Etikett und Zulassung beachten)."
+  ],
+  "prevention": [
+    "Feuchte und Lufttemperatur passend halten, Luftbewegung verbessern, auch beim Trocknen (P2, P1).",
+    "Kronenpflege (canopy management) ist laut PNW die beste Vorbeugung P3; dicht gedrängte, schattige Pflanzen mit wenig Luft erkranken schnell P6.",
+    "Beim Schneiden nicht reißen P6, Blüten nicht verletzen P1.",
+    "Nicht überdüngen P4; Stickstoffüberschuss kann anfälliger machen P2 und fördert weiches Gewebe, das leicht befallen wird P6.",
+    "Welkes und Abgestorbenes regelmäßig entfernen P6.",
+    "Nachbarpflanzen: Basilikum, Thymian und Salat sind ebenfalls Grauschimmel-Wirte P6.",
+    "Sorten mit locker gebauten Blüten sind weniger anfällig P2."
+  ],
+  "prevention_en": [
+    "Keep humidity and air temperature appropriate and improve air movement, also when drying (P2, P1).",
+    "Canopy management is the best prevention per PNW P3; crowded, shaded plants with poor air movement get sick quickly P6.",
+    "Avoid tearing when pruning P6 and injuring buds P1.",
+    "Do not over-fertilize P4; excess nitrogen can increase susceptibility P2 and promotes soft tissue that is easily infected P6.",
+    "Remove dead and senescing tissue regularly P6.",
+    "Neighbouring plants: basil, thyme and lettuce are also gray mold hosts P6.",
+    "Strains with loosely arranged buds are less susceptible P2."
+  ],
+  "look_alikes": [
+    "Fusarium-Blütenschimmel: ähnliches Bild, aber ohne graue Sporenrasen P4.",
+    "Hanfkrebs (Sclerotinia): zerfasernde, brechende Stängel mit weißem Pilzgeflecht und schwarzen, unregelmäßigen Dauerkörpern (Sklerotien) P4.",
+    "Fraß durch Raupen (USU nennt corn earworm) und andere Nacherntepilze sehen ohne Mikroskop ähnlich aus P1.",
+    "Folgerung: Wurzel- und Wurzelhalsfäule; auch hier können Blüten braun und faulig werden P9.",
+    "Folgerung: Echter Mehltau bildet weiße, pudrige Flecken oben auf Blättern und Blüten P2, keinen grauen Sporenrasen."
+  ],
+  "look_alikes_en": [
+    "Fusarium flower mold: similar look but without gray spore mats P4.",
+    "Hemp canker (Sclerotinia): shredding, breaking stems with white fungal mats and black, irregular sclerotia P4.",
+    "Caterpillar feeding (USU names corn earworm) and other post-harvest molds look similar without a microscope P1.",
+    "Inference: root and crown rot; buds can also turn brown and rotten P9.",
+    "Inference: powdery mildew forms white powdery patches on the upper surface of leaves and flowers P2, not gray spore mats."
+  ],
+  "image": {
+    "file": "botrytis-flower.webp",
+    "thumb": "botrytis-flower-t.webp",
+    "w": 432,
+    "h": 416,
+    "alt": "Blütenstand, von grauem Schimmelrasen überzogen, darin braunes, abgestorbenes Gewebe",
+    "alt_en": "Flower cluster covered in a gray mold mat, with brown dead tissue",
+    "note": "Aus einem finnischen Anbau-Ratgeber für Hanf (Wikibooks); die Pflanzenart nennt die Bildseite nicht.",
+    "note_en": "From a Finnish hemp-growing guide (Wikibooks); the image page does not name the plant species.",
+    "compare": false,
+    "credit": {
+      "work": "File:Harmaahome kukinnossa.jpg",
+      "author": "Book editor (fi.wikibooks)",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Harmaahome_kukinnossa.jpg"
+    }
+  },
+  "sources": {
+    "P1": "Utah State University Extension, Hemp Bud Rot, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-bud-rot.php",
+    "P2": "British Columbia Ministry of Agriculture and Food, Scott, Punja, Sabaratnam, Diseases of Cannabis in British Columbia, Juni 2024, abgerufen 2026-10-23: https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/agriculture-and-seafood/animal-and-crops/plant-health/disease-factsheets/specialty-crops/diseases_of_cannabis_in_british_columbia.pdf",
+    "P3": "PNW Plant Disease Management Handbook, Ocamb und Osterbauer, Hemp-Gray Mold (Botrytis Bud Blight and Stem Canker), Stand März 2026, abgerufen 2026-10-23: https://pnwhandbooks.org/plantdisease/host-disease/hemp-cannabis-sativa-gray-mold-botrytis-bud-blight-stem-canker",
+    "P4": "NC State Extension, Ferrell und Thiessen, Gray Mold of Industrial Hemp, 2019-09-09, überarbeitet 2024-06-18, abgerufen 2026-10-23: https://content.ces.ncsu.edu/gray-mold-of-industrial-hemp",
+    "P5": "Cornell Hemp, Bergstrom, Starr, Myers, Diseases Affecting Hemp in New York, August 2020, abgerufen 2026-10-23: https://hemp.cals.cornell.edu/files/2021/01/2020-HempDiseaseHandout_compressed.pdf",
+    "P6": "University of Kentucky Extension, Boice, Gauthier, Kaiser, Leonberger, Botrytis Blight (PPFS-GEN-19), November 2021, viele Kulturen inklusive Hanf, abgerufen 2026-10-23: https://plantpathology.mgcafe.uky.edu/files/ppfs-gen-19.pdf",
+    "P7": "University of Kentucky Extension, Gauthier, Kaiser, Konopka, Managing Greenhouse and High Tunnel Environmental Conditions to Reduce Plant Diseases (PPFS-GH-01), Juli 2025, allgemein, abgerufen 2026-10-23: https://plantpathology.mgcafe.uky.edu/files/ppfs-gh-01.pdf",
+    "P8": "Buirs und Punja 2024, Integrated Management of Pathogens and Microbes in Cannabis sativa L. under Greenhouse Conditions, Plants 13(6):786, doi:10.3390/plants13060786, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC10974757/",
+    "P9": "PNW Plant Disease Management Handbook, Osterbauer und Ocamb, Hemp-Root and Crown Rot, Stand März 2026, abgerufen 2026-10-23: https://pnwhandbooks.org/plantdisease/host-disease/hemp-cannabis-sativa-root-crown-rot",
+    "P10": {
+      "title": "Pott Planter, YouTube: Schluss mit mickrigen Pflanzen, 5 Fehler beim Eigenanbau",
+      "title_en": "Pott Planter, YouTube: 5 beginner mistakes in home growing",
+      "url": "https://www.youtube.com/watch?v=G2g8oC86m44",
+      "retrieved": "2026-10-23",
+      "note": "Erfahrungsquelle; Transkript von Hand kopiert",
+      "note_en": "experience source; transcript copied by hand"
+    }
+  },
+  "_left_out": [
+    "'Verdächtige Blüten vorsichtig öffnen und von innen ansehen (BC)': steht nicht in BC und widerspricht 'Blüten nicht verletzen'.",
+    "'Von außen sieht man anfangs oft wenig': eigene Folgerung, keine Quelle.",
+    "Produktnamen aus BC und PNW (in Kanada und den USA registriert): nicht übernommen.",
+    "Potenz-Aussage zur frühen Ernte (Buirs und Punja): nicht übernommen.",
+    "Fusarium-Stängelkrebs-Doppelgänger: im geprüften Text nicht einzeln belegt, ausgelassen.",
+    "Portnummer des Befeuchters (USB 2): Belegung in den Projektnotizen widersprüchlich, nicht übernommen.",
+    "Pott Planter (Video): 'Mehltau kommt vor allem von zu feuchter Luft oben an der Pflanze': nicht übernommen. Echter Mehltau kann laut Kentucky schon bei 40 % Luftfeuchte infizieren.",
+    "Pott Planter (Video): Neemöl gegen alle Schädlinge, als Mehltaukiller und als Schutzschild für Wochen: nicht übernommen. Die Milben-Karten sagen, Öle wirken nur bei direktem Kontakt und ohne Dauerwirkung; ob Neem gegen Echten Mehltau hilft, prüft keine Karte. Spritzmittel nur nach Etikett und Zulassung.",
+    "Pott Planter (Video): gezeigte Erden, Dünger, das Neemöl-Set und die Produktlinks, Sketch, Witze, Aufrufe zum Abonnieren und Verweise auf eigene Videos: nicht übernommen.",
+    "Pott Planter (Video): keine Zeitmarken aus dem Video übernommen, auf Wunsch des Owners vom 23.10.2026 ('Hank wird nur durch die Minuten verwirrt')."
+  ]
+}

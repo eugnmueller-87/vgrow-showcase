@@ -1,0 +1,508 @@
+{
+  "_about": "Every photo of the wiki: Wikimedia Commons, Public Domain, CC0, CC BY or CC BY-SA, downloaded once (the cockpit never loads an image from the internet). drawings.svg is the cockpit's own drawing.",
+  "images": [
+    {
+      "file": "basil-pot.webp",
+      "thumb": "basil-pot-t.webp",
+      "cards": [
+        "crops/basil"
+      ],
+      "work": "File:Lush basil (Ocimum basilicum).jpg",
+      "author": "Surplusvalue",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Lush_basil_(Ocimum_basilicum).jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "chives-clump.webp",
+      "thumb": "chives-clump-t.webp",
+      "cards": [
+        "crops/chives"
+      ],
+      "work": "File:Ruohosipuli.jpg",
+      "author": "Johanna Verhiö",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Ruohosipuli.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "lettuce-lollo.webp",
+      "thumb": "lettuce-lollo-t.webp",
+      "cards": [
+        "crops/lettuce-leaf"
+      ],
+      "work": "File:Lactuca sativa 'Lollo Bionda'.jpg",
+      "author": "DeFacto",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Lactuca_sativa_%27Lollo_Bionda%27.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "microgreens-sunflower.webp",
+      "thumb": "microgreens-sunflower-t.webp",
+      "cards": [
+        "crops/microgreens"
+      ],
+      "work": "File:Sunflower microgreens 01.jpg",
+      "author": "Pannet",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Sunflower_microgreens_01.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "cannabis-young-plant.webp",
+      "thumb": "cannabis-young-plant-t.webp",
+      "cards": [
+        "stages/autoflower",
+        "glossary/autoflower"
+      ],
+      "work": "File:Young cannabis plant in the vegetative stage 01.jpg",
+      "author": "Plantlady223",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Young_cannabis_plant_in_the_vegetative_stage_01.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "basil-cuttings.webp",
+      "thumb": "basil-cuttings-t.webp",
+      "cards": [
+        "processes/cloning",
+        "glossary/cutting"
+      ],
+      "work": "File:Basilikum (Ocimum basilicum) Stecklinge -- Josef Schlaghecken.jpg",
+      "author": "Josef Schlaghecken",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Basilikum_(Ocimum_basilicum)_Stecklinge_--_Josef_Schlaghecken.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "preserving-jars.webp",
+      "thumb": "preserving-jars-t.webp",
+      "cards": [
+        "processes/curing"
+      ],
+      "work": "File:Weckgläser in drei verschiedenen Größen-5717.jpg",
+      "author": "Raimond Spekking",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Weckgl%C3%A4ser_in_drei_verschiedenen_Gr%C3%B6%C3%9Fen-5717.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "herbs-drying.webp",
+      "thumb": "herbs-drying-t.webp",
+      "cards": [
+        "processes/drying"
+      ],
+      "work": "File:Gyogynovenyek1.jpg",
+      "author": "Szalkijanos",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Gyogynovenyek1.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "pea-germination.webp",
+      "thumb": "pea-germination-t.webp",
+      "cards": [
+        "processes/germination"
+      ],
+      "work": "File:Erbsen (Pisum sativum) kurz nach der Keimung, Wurzeln freigelegt, Josef Schlaghecken.jpg",
+      "author": "Josef Schlaghecken",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Erbsen_(Pisum_sativum)_kurz_nach_der_Keimung,_Wurzeln_freigelegt,_Josef_Schlaghecken.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "tomato-suckering.webp",
+      "thumb": "tomato-suckering-t.webp",
+      "cards": [
+        "methods/tomato_suckering"
+      ],
+      "work": "File:Tomatenpflanzen Ausgeizen IMG 20170708 221615964.jpg",
+      "author": "Hans Haase",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Tomatenpflanzen_Ausgeizen_IMG_20170708_221615964.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "leaf-stomata.webp",
+      "thumb": "leaf-stomata-t.webp",
+      "cards": [
+        "glossary/vpd"
+      ],
+      "work": "File:Leaf epithelium, stomata and guard cells.jpg",
+      "author": "Emilio Ermini",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Leaf_epithelium,_stomata_and_guard_cells.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "hygrometer.webp",
+      "thumb": "hygrometer-t.webp",
+      "cards": [
+        "glossary/relative-humidity"
+      ],
+      "work": "File:Haar-Hygrometer (Firma Fischer).jpg",
+      "author": "Rhetos",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Haar-Hygrometer_(Firma_Fischer).jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "rain-gauge.webp",
+      "thumb": "rain-gauge-t.webp",
+      "cards": [
+        "glossary/dli"
+      ],
+      "work": "File:Rain gauge Hellmann.jpg",
+      "author": "Bocholter",
+      "license": "Public Domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Rain_gauge_Hellmann.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "greenhouse-fan.webp",
+      "thumb": "greenhouse-fan-t.webp",
+      "cards": [
+        "glossary/exhaust-and-circulation"
+      ],
+      "work": "File:Ventilatore assiale a soffitto.jpg",
+      "author": "Antonio Mette",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Ventilatore_assiale_a_soffitto.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "activated-carbon.webp",
+      "thumb": "activated-carbon-t.webp",
+      "cards": [
+        "glossary/carbon-filter"
+      ],
+      "work": "File:Activated Carbon.jpg",
+      "author": "Ravedave",
+      "license": "CC BY 2.5",
+      "license_url": "https://creativecommons.org/licenses/by/2.5/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Activated_Carbon.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "ph-ec-testers.webp",
+      "thumb": "ph-ec-testers-t.webp",
+      "cards": [
+        "glossary/ec",
+        "glossary/ph"
+      ],
+      "work": "File:PH- und Leitfähigkeitsmessgeräte.jpg",
+      "author": "Rotkaeppchen68",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:PH-_und_Leitf%C3%A4higkeitsmessger%C3%A4te.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "trichomes-micrograph.webp",
+      "thumb": "trichomes-micrograph-t.webp",
+      "cards": [
+        "glossary/trichome"
+      ],
+      "work": "File:Cannabis glandular trichomes.jpg",
+      "author": "rodzief",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Cannabis_glandular_trichomes.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "root-rot.webp",
+      "thumb": "root-rot-t.webp",
+      "cards": [
+        "glossary/overwatering",
+        "problems/overwatering"
+      ],
+      "work": "File:Root rot in cicer arietinum (hydro-grown).jpg",
+      "author": "Bjornwireen",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Root_rot_in_cicer_arietinum_(hydro-grown).jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "nutrient-burn-leaf.webp",
+      "thumb": "nutrient-burn-leaf-t.webp",
+      "cards": [
+        "glossary/nutrient-burn",
+        "problems/nutrient_burn"
+      ],
+      "work": "File:Fertilizer-Burn.jpg",
+      "author": "Fenrisulfir",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Fertilizer-Burn.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "spider-mite-leaf.webp",
+      "thumb": "spider-mite-leaf-t.webp",
+      "cards": [
+        "problems/spider_mite"
+      ],
+      "work": "File:Spint op Cannabis Sativa.jpg",
+      "author": "Rikva (nl.wikipedia)",
+      "license": "Public Domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-user-nl",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Spint_op_Cannabis_Sativa.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "root-aphid-leaf.webp",
+      "thumb": "root-aphid-leaf-t.webp",
+      "cards": [
+        "problems/root_aphid"
+      ],
+      "work": "File:5596897-PPT.jpg",
+      "author": "Whitney Cranshaw, Colorado State University, Bugwood.org",
+      "license": "CC BY 3.0 US",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/us/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:5596897-PPT.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "botrytis-flower.webp",
+      "thumb": "botrytis-flower-t.webp",
+      "cards": [
+        "problems/botrytis_bud_rot"
+      ],
+      "work": "File:Harmaahome kukinnossa.jpg",
+      "author": "Book editor (fi.wikibooks)",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Harmaahome_kukinnossa.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP",
+      "license_path": "Dateiseite: nur GFDL mit migration=relicense; die Vorlage GFDL-disclaimers fügt damit CC BY-SA 3.0 hinzu (geprüft 2026-10-23) / File page: GFDL only with migration=relicense; the template GFDL-disclaimers adds CC BY-SA 3.0 with it (checked 2026-10-23)"
+    },
+    {
+      "file": "fusarium-flower.webp",
+      "thumb": "fusarium-flower-t.webp",
+      "cards": [
+        "problems/high_humidity_flower"
+      ],
+      "work": "File:Fungal Pathogens, Epiphytes, and Endophytes Affecting Cannabis Inflorescences.png",
+      "author": "Kimberly D Gwinn, Maxwell C K Leung, Ariell B Stephens, Zamir K Punja",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Fungal_Pathogens,_Epiphytes,_and_Endophytes_Affecting_Cannabis_Inflorescences.png",
+      "retrieved": "2026-10-23",
+      "changes": "Ausschnitt Feld D, verkleinert und als WebP gespeichert / cropped to panel D, resized and saved as WebP"
+    },
+    {
+      "file": "fungus-gnat-trap.webp",
+      "thumb": "fungus-gnat-trap-t.webp",
+      "cards": [
+        "problems/fungus_gnat"
+      ],
+      "work": "File:Gelbsticker mit Trauermücken.jpg",
+      "author": "User:Ich (Wikimedia Commons)",
+      "author_url": "https://commons.wikimedia.org/wiki/User:Ich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Gelbsticker_mit_Trauerm%C3%BCcken.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "thrips-specimens.webp",
+      "thumb": "thrips-specimens-t.webp",
+      "cards": [
+        "problems/thrips"
+      ],
+      "work": "File:Thrips tabaci, Frankliniella occidentalis.jpg",
+      "author": "Alton N. Sparks, Jr., University of Georgia, Bugwood.org",
+      "license": "CC BY 3.0 US",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/us/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Thrips_tabaci,_Frankliniella_occidentalis.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "whitefly-squash.webp",
+      "thumb": "whitefly-squash-t.webp",
+      "cards": [
+        "problems/whitefly"
+      ],
+      "work": "File:Pro Huerta - Cucurbita maxima var. zapallito - Trialeurodes vaporariorum 01 adults.jpg",
+      "author": "Pablo Oliveri (Pro Huerta)",
+      "license": "CC BY-SA 2.5",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.5/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Pro_Huerta_-_Cucurbita_maxima_var._zapallito_-_Trialeurodes_vaporariorum_01_adults.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "corn-borer.webp",
+      "thumb": "corn-borer-t.webp",
+      "cards": [
+        "problems/caterpillar"
+      ],
+      "work": "File:Corn borer.jpg",
+      "author": "Keith Weller (USDA ARS)",
+      "license": "Public Domain",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-USDA-ARS",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Corn_borer.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "iron-chlorosis-rose.webp",
+      "thumb": "iron-chlorosis-rose-t.webp",
+      "cards": [
+        "problems/iron_deficiency"
+      ],
+      "work": "File:Iron chlorosis on young rose leaves in a garden, by baby-bear.org.jpg",
+      "author": "Natalka Ukraine",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Iron_chlorosis_on_young_rose_leaves_in_a_garden,_by_baby-bear.org.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "iron-chlorosis-peach.webp",
+      "thumb": "iron-chlorosis-peach-t.webp",
+      "cards": [
+        "problems/ph_lockout"
+      ],
+      "work": "File:2006 1017 Iron deficiency in peach.JPG",
+      "author": "Alandmanson",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:2006_1017_Iron_deficiency_in_peach.JPG",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "magnesium-tomato-leaf.webp",
+      "thumb": "magnesium-tomato-leaf-t.webp",
+      "cards": [
+        "problems/magnesium_deficiency"
+      ],
+      "work": "File:TomateBlattMgMangel.jpg",
+      "author": "Goldlocki",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:TomateBlattMgMangel.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP",
+      "license_path": "Dateiseite: nur GFDL mit migration=relicense; die Vorlage GFDL-disclaimers fügt damit CC BY-SA 3.0 hinzu (geprüft 2026-10-23) / File page: GFDL only with migration=relicense; the template GFDL-disclaimers adds CC BY-SA 3.0 with it (checked 2026-10-23)"
+    },
+    {
+      "file": "nitrogen-bean.webp",
+      "thumb": "nitrogen-bean-t.webp",
+      "cards": [
+        "problems/nitrogen_deficiency"
+      ],
+      "work": "File:Phaseolus vulgaris nitrogen deficiency.jpg",
+      "author": "Rasbak",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Phaseolus_vulgaris_nitrogen_deficiency.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "phosphorus-maize.webp",
+      "thumb": "phosphorus-maize-t.webp",
+      "cards": [
+        "problems/phosphorus_deficiency"
+      ],
+      "work": "File:نقص الفسفور على الذرة.jpg",
+      "author": "عمرو بن كلثوم (ar.wikipedia)",
+      "license": "CC BY-SA 2.5",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.5/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:%D9%86%D9%82%D8%B5_%D8%A7%D9%84%D9%81%D8%B3%D9%81%D9%88%D8%B1_%D8%B9%D9%84%D9%89_%D8%A7%D9%84%D8%B0%D8%B1%D8%A9.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "potassium-potato.webp",
+      "thumb": "potassium-potato-t.webp",
+      "cards": [
+        "problems/potassium_deficiency"
+      ],
+      "work": "File:Potassium deficiency in potatoes.jpg",
+      "author": "Simranpreetsidhu",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Potassium_deficiency_in_potatoes.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "zinc-macadamia.webp",
+      "thumb": "zinc-macadamia-t.webp",
+      "cards": [
+        "problems/zinc_deficiency"
+      ],
+      "work": "File:Zn deficiency macadamia 2003 0627a.jpg",
+      "author": "Alandmanson",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Zn_deficiency_macadamia_2003_0627a.jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    },
+    {
+      "file": "drought-sugar-beet.webp",
+      "thumb": "drought-sugar-beet-t.webp",
+      "cards": [
+        "problems/underwatering"
+      ],
+      "work": "File:Beta vulgaris subsp. vulgaris var. altissima drought (02).jpg",
+      "author": "Rasbak",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Beta_vulgaris_subsp._vulgaris_var._altissima_drought_(02).jpg",
+      "retrieved": "2026-10-23",
+      "changes": "verkleinert und als WebP gespeichert / resized and saved as WebP"
+    }
+  ],
+  "drawings": {
+    "file": "drawings.svg",
+    "author": "VGrow Cockpit",
+    "license": "own illustration"
+  }
+}

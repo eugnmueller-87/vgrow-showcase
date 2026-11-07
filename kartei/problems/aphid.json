@@ -1,0 +1,151 @@
+{
+  "key": "aphid",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "schaedlinge",
+  "label": "Blattläuse, vor allem Hanfblattlaus (Phorodon cannabis)",
+  "label_en": "Aphids, mainly the cannabis aphid (Phorodon cannabis)",
+  "tile": "Birnenförmige Läuse und klebriger Honigtau",
+  "tile_en": "Pear-shaped aphids and sticky honeydew",
+  "aliases": {
+    "de": [
+      "Blattlaus",
+      "Blattläuse",
+      "Hanfblattlaus",
+      "Phorodon cannabis"
+    ],
+    "en": [
+      "aphid",
+      "aphids",
+      "cannabis aphid",
+      "hemp aphid",
+      "bhang aphid",
+      "Phorodon cannabis"
+    ]
+  },
+  "symptoms": [
+    "Wo: Blattunterseiten und Stängel P1; spät in der Saison reifende Blüten und die Blättchen daran P2.",
+    "Erkennen: birnenförmige Läuse mit zwei Röhrchen am Hinterende (Siphonen) und langen Fühlern P1. Ausgewachsene Hanfblattläuse sind 1,8 bis 2,7 mm groß und mit bloßem Auge sichtbar P3; Farbe je nach Saison cremig, blassgelb, hellgrün, blassrosa oder hellbraun P1.",
+    "Zeichen: weiße Häutungsreste und ein glänzender, klebriger Belag (Honigtau, die zuckrige Ausscheidung der Läuse) auf den Pflanzenteilen; beides zusammen kann auf Befall hinweisen P1. Purdue: Der Honigtau sammelt sich auf der Pflanzenoberfläche und lässt sie glänzend oder nass aussehen P3.",
+    "Bei starkem Befall: Blätter vergilben, das Wachstum stockt, die Pflanze welkt P1; auf dem Honigtau wächst schwarzer Rußtau, ein Pilzbelag P4."
+  ],
+  "symptoms_en": [
+    "Where: leaf undersides and stems P1; late in the season, maturing flowers and their leaflets P2.",
+    "Recognize: pear-shaped aphids with two tubes at the rear end (cornicles) and long antennae P1. Adult cannabis aphids are 1.8 to 2.7 mm and visible to the naked eye P3; color varies by season from cream and pale yellow to light green, pale pink or light brown P1.",
+    "Signs: white shed skins and a shiny, sticky coating (honeydew, the sugary waste of the aphids) on the plant surfaces; together they can point to an infestation P1. Purdue: honeydew collects on plant surfaces and makes them look shiny or wet P3.",
+    "Under high aphid pressure: leaves yellow, growth slows, the plant wilts P1; black sooty mold, a fungal coating, grows on the honeydew P4."
+  ],
+  "causes": [
+    "Drinnen kann sich die Hanfblattlaus bei ausreichender Beleuchtung das ganze Jahr ungeschlechtlich vermehren P2; als Innenphasen nennt die Quelle Stecklingsvermehrung und die Anzucht von Jungpflanzen.",
+    "Bei Wärme können sich viele Blattlausarten in sieben bis acht Tagen von der neugeborenen Larve zum fortpflanzungsfähigen Tier entwickeln (P5, allgemein, nicht Hanf).",
+    "Viel Stickstoffdünger fördert die Vermehrung P5.",
+    "Eingeschleppt mit befallenen Pflanzen oder Stecklingen, auch über Personen, die befallene Pflanzen angefasst haben P3. UC IPM rät, Jungpflanzen vor dem Einpflanzen auf Blattläuse zu prüfen P5; das PNW-Handbuch rät zu gesunden Sämlingen aus verlässlicher Quelle P6."
+  ],
+  "causes_en": [
+    "Indoors, with adequate lighting, the cannabis aphid may reproduce asexually year round P2; the source names propagation by cuttings and transplant production as the indoor phases.",
+    "In warm weather many aphid species can develop from newborn nymph to reproducing adult in seven to eight days (P5, general, not hemp).",
+    "High nitrogen fertilizer favors reproduction P5.",
+    "Brought in with infested plants or cuttings, also by people who handled infested plants P3. UC IPM advises checking transplants for aphids before planting P5; the PNW handbook advises healthy seedlings from reliable sources P6."
+  ],
+  "check": [
+    {
+      "metric": "watering",
+      "text": "Mit dem Gießwasser kommt der Dünger: zu viel Stickstoff vermeiden P1P5. Wie viel Stickstoff die einzelnen BioBizz-Produkte liefern, steht in keiner gelesenen Quelle.",
+      "text_en": "Fertilizer comes with the water: avoid excess nitrogen P1P5. How much nitrogen each BioBizz product supplies is in none of the sources read."
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Wärme beschleunigt die Entwicklung vieler Blattlausarten P5; einen Grenzwert dafür nennt keine Quelle. Für Seifen und Öle gilt: nicht über 90 °F (32,2 °C), vorher probe_temp ansehen P5.",
+      "text_en": "Warmth speeds development of many aphid species P5; no source gives a threshold. For soaps and oils: not above 90 °F (32.2 °C), check probe_temp first P5."
+    },
+    {
+      "metric": "light_percent",
+      "text": "JIPM 2019 sagt nur, dass ausreichende Beleuchtung drinnen ganzjährige Vermehrung erlaubt P2.",
+      "text_en": "JIPM 2019 only says adequate lighting allows year-round reproduction indoors P2."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    }
+  ],
+  "do_now": [
+    "Aus der Praxis (Pott Planter): bei Schädlingen ruhig bleiben und den Schädling erst bestimmen, dann handeln P10. Das deckt sich mit dieser Karte: Erkennen an den zwei Röhrchen am Hinterende, an Honigtau und Häutungsresten P1; Doppelgänger ist die Weiße Fliege P3.",
+    "Kontrolle: Das PNW-Handbuch (Feldhanf) sagt mindestens wöchentlich ab kurz nach dem Auflaufen P6, Purdue (Gewächshaus) mindestens zweimal pro Woche P3; die Quellen weichen ab. Blattunterseiten, Stängel und Knospen ansehen (P1, P3).",
+    "Abspülen: mit kräftigem Wasserstrahl von robusten Pflanzen spülen P5. In der Blüte besser nicht in die Blüten spritzen (Folgerung, nicht aus einer Quelle: Knospenfäule braucht Feuchte und Nässe, auch aus Bewässerung P7).",
+    "Aus der Praxis (Pott Planter): Läuse mit den Fingern entfernen oder wegpusten P10. Das prüft keine andere gelesene Quelle; belegt ist nur das Abspülen mit kräftigem Wasserstrahl von robusten Pflanzen P5.",
+    "Schlupfwespen (laut Purdue Aphidius colemani, A. ervi, A. matricariae) können bei schwachem Befall sehr wirksam sein, sind aber Vorbeugung und keine Rettung: bei starkem Befall beseitigen sie die Läuse nicht mehr P3. Das PNW-Handbuch nennt für den Innenanbau im Handel erhältliche Arten, darunter Aphidius matricaria gegen Hanfblattläuse P6.",
+    "Seifen oder Öle erst, wenn die Zahl hoch ist und andere Maßnahmen nicht reichen; nicht bei Wasserstress und nicht über 90 °F (umgerechnet, gerundet: 32,2 °C); vorher an einem Teil der Blätter einige Tage testen, weil sie manche Pflanzen schädigen können P5. Etikett und Zulassung beachten: Im Haus- und Kleingarten dürfen nur Mittel angewandt werden, die für nichtberufliche Anwender zugelassen sind; sie tragen den Aufdruck 'Anwendung durch nichtberufliche Anwender zulässig' P8. Ob ein Mittel für Hanf zugelassen ist und ob eine Growbox in der Wohnung als Haus- und Kleingarten gilt, sagt diese Seite nicht.",
+    "Zu viel Stickstoff vermeiden (P1, Hanf). UC IPM, allgemein: in kleinen Gaben und in langsam löslicher Form, organische Dünger gelten als gut geeignet P5."
+  ],
+  "do_now_en": [
+    "From practice (Pott Planter): with pests, stay calm and identify the pest first, then act P10. This matches this card: recognize them by the two tubes at the rear end, by honeydew and shed skins P1; the lookalike is the whitefly P3.",
+    "Monitoring: the PNW handbook (field hemp) says at least weekly from shortly after emergence P6, Purdue (greenhouse) at least twice a week P3; the sources differ. Check leaf undersides, stems and buds (P1, P3).",
+    "Rinse off: knock aphids off sturdy plants with a strong stream of water P5. In flower, better not spray into the buds (inference, not from a source: bud rot needs humidity and moisture, including from irrigation P7).",
+    "From practice (Pott Planter): remove aphids with your fingers or blow them off P10. No other source read checks this; only knocking them off sturdy plants with a strong stream of water is backed P5.",
+    "Parasitoid wasps (Purdue names Aphidius colemani, A. ervi, A. matricariae) can be very effective at low infestation levels, but they are a preventative measure and not a rescue treatment: once populations are high they can no longer eliminate the aphids P3. The PNW handbook names commercially available species for indoor production, including Aphidius matricaria for cannabis aphids P6.",
+    "Soaps or oils only when numbers are high and other methods are not effective; not on water-stressed plants and not above 90 °F (converted, rounded: 32.2 °C); test on part of the foliage several days first, because they can injure some plants P5. Follow label and approval (Etikett und Zulassung beachten): in German home and allotment gardens only products approved for non-professional users may be used; they carry the mark 'Anwendung durch nichtberufliche Anwender zulässig' P8. Whether a product is approved for hemp and whether a grow box in a flat counts as a home garden, this page does not say.",
+    "Avoid excess nitrogen (P1, hemp). UC IPM, general: in small portions and in less soluble form, organic fertilizers count as well suited P5."
+  ],
+  "prevention": [
+    "Gesunde Sämlinge aus verlässlicher Quelle P6; neue Pflanzen auf Blattläuse prüfen P5.",
+    "Zu viel Stickstoff vermeiden (P1; P5).",
+    "Regelmäßig kontrollieren (P6; P3).",
+    "Aus der Praxis (Pott Planter): Schädlinge lassen sich auch mit Nützlingen bekämpfen P10. Die Karte sagt genauer: Schlupfwespen helfen bei schwachem Befall und sind Vorbeugung, keine Rettung P3.",
+    "Aus der Praxis (Pott Planter): je gesünder die Pflanze wächst, desto seltener kommen Schädlinge P10. Den allgemeinen Satz prüft keine andere gelesene Quelle. Gesund heißt nicht viel gedüngt: viel Stickstoffdünger fördert die Vermehrung der Blattläuse P5."
+  ],
+  "prevention_en": [
+    "Healthy seedlings from reliable sources P6; check new plants for aphids P5.",
+    "Avoid excess nitrogen (P1; P5).",
+    "Check regularly (P6; P3).",
+    "From practice (Pott Planter): pests can also be controlled with beneficial insects P10. This card is more precise: parasitoid wasps help at low infestation and are prevention, not a rescue P3.",
+    "From practice (Pott Planter): the healthier the plant grows, the less often pests come P10. No other source read checks the general statement. Healthy does not mean heavily fed: high nitrogen fertilizer favors aphid reproduction P5."
+  ],
+  "look_alikes": [
+    "Weiße Fliege: ähnliche Schäden mit Vergilbung, Welke, Honigtau und Rußtau P3; Weiße Fliegen fliegen auf, wenn man die Pflanze stört P9.",
+    "Andere Blattläuse, zum Beispiel die Hopfenblattlaus P1."
+  ],
+  "look_alikes_en": [
+    "Whiteflies: similar damage with yellowing, wilting, honeydew and sooty mold P3; whiteflies fly up when the plant is disturbed P9.",
+    "Other aphids, for example the hop aphid P1."
+  ],
+  "image": {
+    "drawing": "aphid"
+  },
+  "sources": {
+    "P1": "Utah State University Extension, Cannabis Aphids, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-cannabis-aphid.php",
+    "P2": "Cranshaw et al., Developing Insect Pest Management Systems for Hemp in the United States, Journal of Integrated Pest Management 10(1):26, 2019-08-28, abgerufen 2026-10-23: https://academic.oup.com/jipm/article/doi/10.1093/jipm/pmz023/5555744",
+    "P3": "Purdue Extension E-275, Serber und Long, Management Strategies for Common Arthropod Pests of Greenhouse Hemp in Indiana, Dezember 2021, abgerufen 2026-10-23: https://www.extension.entm.purdue.edu/publications/E-275/E-275.html",
+    "P4": "NC State Extension, Pulkoski und Burrack, Cannabis Aphid in Industrial Hemp, 2020-07-03, abgerufen 2026-10-23: https://content.ces.ncsu.edu/cannabis-aphid-in-industrial-hemp",
+    "P5": "UC Statewide IPM Program, Pest Notes Aphids (M.L. Flint, Stand 07/2013), Garten-Merkblatt, nicht Hanf, abgerufen 2026-10-23: https://ipm.ucanr.edu/home-and-landscape/aphids/",
+    "P6": "PNW Insect Management Handbook, Hemp-Aphids (Hanf-Kapitel Stand März 2026 laut Kapitelseite), abgerufen 2026-10-23: https://pnwhandbooks.org/insect/agronomic/hemp/hemp-aphids",
+    "P7": "Utah State University Extension, Hemp Bud Rot, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-bud-rot.php",
+    "P8": "Pflanzenschutzamt Berlin, Anwendung von Pflanzenschutzmitteln in Haus-, Klein- und Siedlergärten, ohne Datum, abgerufen 2026-10-23: https://www.berlin.de/pflanzenschutzamt/ueberwachung/pflanzenschutzmittel-im-haus-und-kleingarten/",
+    "P9": "UC Statewide IPM Program, Pest Notes Whiteflies 7401 (M.L. Flint, Stand 09/2015), Garten-Merkblatt, nicht Hanf, abgerufen 2026-10-23: https://ipm.ucanr.edu/home-and-landscape/whiteflies/",
+    "P10": {
+      "title": "Pott Planter, YouTube: Schluss mit mickrigen Pflanzen, 5 Fehler beim Eigenanbau",
+      "title_en": "Pott Planter, YouTube: 5 beginner mistakes in home growing",
+      "url": "https://www.youtube.com/watch?v=G2g8oC86m44",
+      "retrieved": "2026-10-23",
+      "note": "Erfahrungsquelle; Transkript von Hand kopiert",
+      "note_en": "experience source; transcript copied by hand"
+    }
+  },
+  "_left_out": [
+    "'klebriger Honigtau auf den Flächen darunter (Purdue)': 'klebrig' und 'darunter' stehen nicht bei Purdue; jetzt mit USU belegt.",
+    "'vermehrt sich das ganze Jahr' ohne 'kann': korrigiert.",
+    "Alias 'Hanflaus': kein Beleg gefunden.",
+    "Schlupfwespen als Soforthilfe bei starkem Befall: Purdue sagt ausdrücklich, keine Rettung.",
+    "Pott Planter (Video): Neemöl gegen alle Schädlinge, als Mehltaukiller und als Schutzschild für Wochen: nicht übernommen. Die Milben-Karten sagen, Öle wirken nur bei direktem Kontakt und ohne Dauerwirkung; ob Neem gegen Echten Mehltau hilft, prüft keine Karte. Spritzmittel nur nach Etikett und Zulassung.",
+    "Pott Planter (Video): Blattläuse als häufigster Schädling draußen: gilt draußen, nicht für die Box.",
+    "Pott Planter (Video): mit dem Drucksprüher 'rausblasten': ob er Wasser meint, sagt er nicht eindeutig; nicht übernommen.",
+    "Pott Planter (Video): gezeigte Erden, Dünger, das Neemöl-Set und die Produktlinks, Sketch, Witze, Aufrufe zum Abonnieren und Verweise auf eigene Videos: nicht übernommen.",
+    "Pott Planter (Video): keine Zeitmarken aus dem Video übernommen, auf Wunsch des Owners vom 23.10.2026 ('Hank wird nur durch die Minuten verwirrt')."
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "name": "Vorgedüngte Erde",
+  "name_en": "Pre-fertilized soil",
+  "summary": "Keine Düngerlinie, sondern Erde, die selbst Nährstoffe mitbringt: leicht vorgedüngte Erde (Light-Mix) für die ersten Wochen und stark vorgedüngte (All-Mix) für länger. Eine Karte zum Lesen, ohne Plan.",
+  "summary_en": "Not a fertilizer line but soil that brings its own nutrients: lightly pre-fertilized soil (Light-Mix) for the first weeks and heavily pre-fertilized (All-Mix) for longer. A card for reading, without a plan.",
+  "status": "draft",
+  "status_note": "Aus den Produktseiten von BioBizz (VE1, VE2), den Angaben von Green House Feeding und Atami zum Düngen auf vorgedüngter Erde (VE3, VE4), am 23.10.2026; jede Angabe mit der Seite verglichen. Wie viele Nährstoffe eine Erde mitbringt, nennt keiner der Hersteller als Zahl.",
+  "status_note_en": "From BioBizz's product pages (VE1, VE2), what Green House Feeding and Atami say about feeding on pre-fertilized soil (VE3, VE4), on Oct 23, 2026; every statement compared with the page. None of the makers gives the nutrients a soil brings as a number.",
+  "check": {
+    "state": "checked",
+    "on": "2026-10-23",
+    "text": "Jede Angabe gegen ihre Seite geprüft; ein Plan ist hier nicht vorgesehen.",
+    "text_en": "Every statement checked against its page; this card has no plan."
+  },
+  "aliases": {
+    "de": [
+      "vorgedüngte Erde",
+      "Light-Mix-Erde",
+      "All-Mix-Erde"
+    ],
+    "en": [
+      "pre-fertilized soil",
+      "pre-fertilised soil",
+      "light mix soil",
+      "all mix soil"
+    ]
+  },
+  "line": {
+    "maker": "",
+    "types": [
+      "pre_fertilised_soil"
+    ],
+    "media": [
+      "soil"
+    ],
+    "media_text": "Erde; die Nährstoffe stecken im Substrat.",
+    "media_text_en": "Soil; the nutrients sit in the substrate.",
+    "products": [
+      {
+        "product": "Leicht vorgedüngte Erde (zum Beispiel BioBizz Light-Mix)",
+        "product_en": "Lightly pre-fertilized soil (for example BioBizz Light-Mix)",
+        "role": "Für Sämlinge, junge Pflanzen und Stecklinge, wenn man von Anfang an selbst steuern will; laut BioBizz eine mittlere EC aus organischen Bestandteilen.",
+        "role_en": "For seedlings, young plants and cuttings, if you want to steer from the start; per BioBizz a medium EC from organic components.",
+        "sources": [
+          "VE1"
+        ]
+      },
+      {
+        "product": "Stark vorgedüngte Erde (zum Beispiel BioBizz All-Mix)",
+        "product_en": "Heavily pre-fertilized soil (for example BioBizz All-Mix)",
+        "role": "Lebende, stark vorgedüngte Erde mit hoher EC; laut BioBizz reicht sie ein paar Wochen ohne zusätzlichen Dünger.",
+        "role_en": "Living, heavily pre-fertilized soil with a high EC; per BioBizz it lasts a couple of weeks without extra fertilizer.",
+        "sources": [
+          "VE2"
+        ]
+      }
+    ],
+    "application_short": "Eintopfen und gießen; Dünger erst, wenn die Nährstoffe der Erde nachlassen.",
+    "application_short_en": "Pot up and water; fertilizer only once the soil's nutrients run low.",
+    "application": "All-Mix vor dem ersten Einpflanzen anfeuchten und 36 Stunden stehen lassen, leicht warm halten und zwischen dem Gießen abtrocknen lassen (BioBizz). Wann man auf vorgedüngter Erde mit Dünger beginnt, sagen die Hersteller verschieden: Green House Feeding 2 bis 4 Wochen nach der Aussaat mit milder Lösung; Atami gibt für stark vorgedüngte Erde 1 bis 3 ml A und B je Liter, für leicht vorgedüngte 1 bis 5 ml.",
+    "application_en": "Moisten All-Mix and let it stand for 36 hours before the first planting, keep it slightly warm and let it dry between waterings (BioBizz). When to start fertilizing on pre-fertilized soil the makers say differently: Green House Feeding 2 to 4 weeks after sowing with a mild solution; Atami gives 1 to 3 ml A and B per litre for heavily pre-fertilized soil, 1 to 5 ml for lightly pre-fertilized.",
+    "application_sources": [
+      "VE2",
+      "VE3",
+      "VE4"
+    ],
+    "cautions": [
+      {
+        "text": "Wie viele Nährstoffe die Erde mitbringt, nennt kein Hersteller als Zahl. Ab wann gedüngt wird, entscheidet sich an der Pflanze, nicht am Kalender.",
+        "text_en": "No maker gives the nutrients the soil brings as a number. When to start feeding is decided by the plant, not the calendar.",
+        "sources": [
+          "VE1",
+          "VE2"
+        ]
+      }
+    ]
+  },
+  "components": {},
+  "notes": [
+    {
+      "text": "Warum ohne Plan: die Nährstoffe stecken in der Erde, es gibt nichts je Liter Gießwasser zu rechnen. Wer auf vorgedüngter Erde zusätzlich düngt, wählt dafür eine Düngerlinie.",
+      "text_en": "Why without a plan: the nutrients sit in the soil, there is nothing per litre of watering water to compute. Anyone who feeds on top of pre-fertilized soil chooses a fertilizer line for it.",
+      "sources": [
+        "VE1",
+        "VE2"
+      ]
+    }
+  ],
+  "sources": {
+    "VE1": {
+      "title": "BioBizz, Produktseite Light-Mix",
+      "title_en": "BioBizz, Light-Mix product page",
+      "url": "https://www.biobizz.com/products/light-mix",
+      "retrieved": "2026-10-23"
+    },
+    "VE2": {
+      "title": "BioBizz, Produktseite All-Mix",
+      "title_en": "BioBizz, All-Mix product page",
+      "url": "https://www.biobizz.com/products/all-mix",
+      "retrieved": "2026-10-23"
+    },
+    "VE3": {
+      "title": "Green House Feeding, Anwendung der Mineraldünger (vorgedüngte Erde)",
+      "title_en": "Green House Feeding, how to use mineral feeding (pre-fertilized soil)",
+      "url": "https://www.greenhousefeeding.com/en/content/9-how-to-use-mineral-feeding",
+      "retrieved": "2026-10-23"
+    },
+    "VE4": {
+      "title": "Atami, Produktseite B'cuzz Soil A und B (leicht und stark vorgedüngte Erde)",
+      "title_en": "Atami, B'cuzz Soil A and B product page (lightly and heavily pre-fertilized soil)",
+      "url": "https://atami.com/product/bcuzz-soil-ab",
+      "retrieved": "2026-10-23"
+    }
+  }
+}

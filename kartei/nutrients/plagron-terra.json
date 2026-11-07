@@ -1,0 +1,145 @@
+{
+  "name": "Plagron 100% TERRA",
+  "name_en": "Plagron 100% TERRA",
+  "summary": "Mineralische Flüssigdünger für Erde: Terra Grow im Wachstum, Terra Bloom in der Blüte, dazu Zusätze von Plagron. Der Hersteller druckt die Mengen je 10 Liter Wasser, mit jedem Gießen; die Karte teilt sie durch 10 und zeigt sie je Liter.",
+  "summary_en": "Mineral liquid feeds for soil: Terra Grow in the vegetative phase, Terra Bloom in flowering, plus Plagron's additives. The maker prints the amounts per 10 litres of water, with every watering; the card divides them by 10 and shows them per litre.",
+  "product": "Plagron",
+  "version": "PL-23-083/04/EN",
+  "status": "draft",
+  "status_note": "Abgetippt aus dem Plagron-Düngeschema 100% TERRA (PT1) am 23.10.2026. Die Tabelle steht je 10 Liter, die Karte je Liter (25 ml je 10 l sind 2,5 ml/l). Ein Entwurf, bis du die Karte auf der Seite mit dem Schema vergleichst und bestätigst; bis dahin rechnet das Cockpit keine Mengen.",
+  "status_note_en": "Transcribed from the Plagron 100% TERRA grow schedule (PT1) on Oct 23, 2026. The chart is per 10 litres, the card per litre (25 ml per 10 l is 2.5 ml/l). A draft until you compare the card with the schedule on the page and confirm it; until then the cockpit computes no amounts.",
+  "unit": "ml/l",
+  "printed_unit": "ml/10 l",
+  "aliases": {
+    "de": ["Plagron Terra", "Plagron 100% Terra", "100% Terra", "Terra Grow", "Terra Bloom", "Plagron Terra Grow", "Plagron Terra Bloom"],
+    "en": ["Plagron Terra", "Plagron 100% Terra", "100% Terra", "Terra Grow", "Terra Bloom", "Plagron Terra Grow", "Plagron Terra Bloom"]
+  },
+  "line": {
+    "maker": "Plagron",
+    "types": ["mineral_liquid"],
+    "media": ["soil"],
+    "media_text": "Erde: die Tabelle hat je eine Spalte für Plagron Lightmix und Plagron Growmix; die Produktseiten nennen alle Erdmischungen.",
+    "media_text_en": "Soil: the chart has one column each for Plagron Lightmix and Plagron Growmix; the product pages name all soil mixes.",
+    "products": [
+      {"product": "Terra Grow", "npk": "3-1-3", "role": "Mineralischer Grunddünger für das Wachstum, laut Produktseite 5 ml/l (1:200) mit jedem Gießen.", "role_en": "Mineral base feed for the vegetative phase, per the product page 5 ml/l (1:200) with every watering.", "sources": ["PT2"]},
+      {"product": "Terra Bloom", "npk": "2-2-4", "role": "Mineralischer Grunddünger für die Blüte, laut Produktseite höchstens 5 ml/l (1:200) mit jedem Gießen.", "role_en": "Mineral base feed for flowering, per the product page at most 5 ml/l (1:200) with every watering.", "sources": ["PT3"]},
+      {"product": "Power Roots", "role": "Organischer Wurzelstimulator, 1 ml/l (1:1000) vom Einpflanzen bis Blütewoche 3; nicht für NFT, DWC und Aeroponik.", "role_en": "Organic root stimulator, 1 ml/l (1:1000) from planting to flowering week 3; not for NFT, DWC and aeroponics.", "sources": ["PT4"]},
+      {"product": "Pure Zym", "role": "Organischer Enzym-Bodenverbesserer, baut abgestorbene Wurzeln ab; 1 ml/l (1:1000); nicht für NFT, DWC und Aeroponik.", "role_en": "Organic enzyme soil improver, breaks down dead root material; 1 ml/l (1:1000); not for NFT, DWC and aeroponics.", "sources": ["PT5"]},
+      {"product": "Sugar Royal", "npk": "8.5-0-0", "role": "Organischer Aminosäure-Zusatz für Geschmack und Geruch, 1 ml/l mit jedem Gießen über den ganzen Durchgang; Torf und Coco, nicht Hydro.", "role_en": "Organic amino acid additive for taste and smell, 1 ml/l with every watering over the whole cycle; peat and coco, not hydro.", "sources": ["PT6"]},
+      {"product": "Green Sensation", "npk": "0-8-9", "role": "Mineralischer Blütezusatz, 1 ml/l ab Blütewoche 4; Erde, Coco und Hydro.", "role_en": "Mineral bloom booster, 1 ml/l from flowering week 4; soil, coco and hydro.", "sources": ["PT7"]},
+      {"product": "Power Buds", "role": "Blütezusatz in der Tabelle; die Produktseite wurde nicht gelesen.", "role_en": "Flowering additive on the chart; its product page was not read.", "sources": ["PT1"]}
+    ],
+    "application_short": "Mit jedem Gießen, laut Tabelle je 10 Liter: Terra Grow im Wachstum, Terra Bloom ab Plagron-Woche 3, pH 5,5 bis 6,5, Woche 11 nur Wasser.",
+    "application_short_en": "With every watering, per the chart per 10 litres: Terra Grow in the vegetative phase, Terra Bloom from Plagron week 3, pH 5.5 to 6.5, week 11 plain water.",
+    "application": "Mengen je 10 Liter Wasser, mit jedem Gießen. Woche 1 und 2 Wachstum, Woche 3 bis 10 Blüte, Woche 11 Ernte mit Wasser. Für ein längeres Wachstum die Menge von Woche 2 wiederholen. pH 5,5 bis 6,5. Auf Lightmix kommt Terra Grow in Woche 1 und 2 und Terra Bloom ab Woche 3; auf Growmix kein Terra Grow und Terra Bloom erst ab Woche 4. Der Plan gilt ab einem bewurzelten Steckling oder einem eine Woche alten Sämling.",
+    "application_en": "Amounts per 10 litres of water, with every watering. Weeks 1 and 2 vegetative, weeks 3 to 10 flowering, week 11 harvest with water. For a longer vegetative phase repeat the week 2 amount. pH 5.5 to 6.5. On Lightmix Terra Grow goes in weeks 1 and 2 and Terra Bloom from week 3; on Growmix no Terra Grow and Terra Bloom only from week 4. The plan starts from a rooted cutting or a seedling one week old.",
+    "application_sources": ["PT1"],
+    "cautions": [
+      {"text": "Laut Hersteller sind alle Mengen Richtwerte, je nach Zustand der Pflanze. Die fertige Nährlösung bleibt unter 3,0 mS/cm.", "text_en": "Per the maker all amounts are guide values, depending on the plant's condition. The mixed solution stays below 3.0 mS/cm.", "sources": ["PT1"]},
+      {"text": "Die mineralischen Terra-Dünger nicht mit organischen Produkten mischen: die Mischung kann schon nach 48 Stunden verderben. Den pH der fertigen Lösung im Blick behalten, er steigt meist langsam.", "text_en": "Do not mix the mineral Terra feeds with organic products: the mix can spoil after just 48 hours. Watch the pH of the mixed solution, it usually creeps up slowly.", "sources": ["PT2", "PT3"]},
+      {"text": "Wie lange die fertige Lösung hält, sagen die beiden Produktseiten verschieden: Terra Grow vier Tage, Terra Bloom mindestens eine Woche.", "text_en": "How long the mixed solution keeps, the two product pages say differently: Terra Grow four days, Terra Bloom at least a week.", "sources": ["PT2", "PT3"]}
+    ]
+  },
+  "selectable": {
+    "label": "Plagron 100% TERRA (mineralisch, flüssig)",
+    "label_en": "Plagron 100% TERRA (mineral, liquid)",
+    "page": "lightmix",
+    "page_note": "Seite Lightmix: Plagron druckt die Spalten für seine eigene Erde. Deine Erde ist als leicht vorgedüngt beschrieben, wie Plagron Lightmix (eine Woche vorgedüngt); das ist die Zuordnung des Cockpits, keine Angabe von Plagron.",
+    "page_note_en": "Lightmix page: Plagron prints the columns for its own soil. Your soil is described as lightly pre-fertilized, like Plagron Lightmix (pre-fertilized for one week); that is the cockpit's mapping, not a statement by Plagron.",
+    "components": ["terra_grow", "terra_bloom"]
+  },
+  "weeks": {
+    "columns": [
+      {"key": "propagation", "label": "Plagron-Woche 1 (Wachstum)", "label_en": "Plagron week 1 (vegetative)", "printed": "Week 1 (grow)"},
+      {"key": "veg", "label": "Plagron-Woche 2 (Wachstum, für längeres Wachstum wiederholen)", "label_en": "Plagron week 2 (vegetative, repeat for a longer vegetative phase)", "printed": "Week 2 (grow)"},
+      {"key": "bloom_1", "bloom_week": 1, "label": "Blütewoche 1 (Plagron-Woche 3)", "label_en": "Flowering week 1 (Plagron week 3)", "printed": "Week 3 (bloom)"},
+      {"key": "bloom_2", "bloom_week": 2, "label": "Blütewoche 2 (Plagron-Woche 4)", "label_en": "Flowering week 2 (Plagron week 4)", "printed": "Week 4 (bloom)"},
+      {"key": "bloom_3", "bloom_week": 3, "label": "Blütewoche 3 (Plagron-Woche 5)", "label_en": "Flowering week 3 (Plagron week 5)", "printed": "Week 5 (bloom)"},
+      {"key": "bloom_4", "bloom_week": 4, "label": "Blütewoche 4 (Plagron-Woche 6)", "label_en": "Flowering week 4 (Plagron week 6)", "printed": "Week 6 (bloom)"},
+      {"key": "bloom_5", "bloom_week": 5, "label": "Blütewoche 5 (Plagron-Woche 7)", "label_en": "Flowering week 5 (Plagron week 7)", "printed": "Week 7 (bloom)"},
+      {"key": "bloom_6", "bloom_week": 6, "label": "Blütewoche 6 (Plagron-Woche 8)", "label_en": "Flowering week 6 (Plagron week 8)", "printed": "Week 8 (bloom)"},
+      {"key": "bloom_7", "bloom_week": 7, "label": "Blütewoche 7 (Plagron-Woche 9)", "label_en": "Flowering week 7 (Plagron week 9)", "printed": "Week 9 (bloom)"},
+      {"key": "bloom_8", "bloom_week": 8, "label": "Blütewoche 8 (Plagron-Woche 10)", "label_en": "Flowering week 8 (Plagron week 10)", "printed": "Week 10 (bloom)"}
+    ],
+    "harvest": {"key": "harvest", "bloom_week": 9, "label": "Ab Blütewoche 9 (Plagron-Woche 11): Ernte, nur Wasser", "label_en": "From flowering week 9 (Plagron week 11): harvest, plain water only"},
+    "sources": ["PT1"]
+  },
+  "components": {
+    "terra_grow": {"label": "Terra Grow", "label_en": "Terra Grow"},
+    "terra_bloom": {"label": "Terra Bloom", "label_en": "Terra Bloom"},
+    "power_roots": {"label": "Power Roots", "label_en": "Power Roots", "optional": true},
+    "pure_zym": {"label": "Pure Zym", "label_en": "Pure Zym", "optional": true},
+    "sugar_royal": {"label": "Sugar Royal", "label_en": "Sugar Royal", "optional": true},
+    "power_buds": {"label": "Power Buds", "label_en": "Power Buds", "optional": true},
+    "green_sensation": {"label": "Green Sensation", "label_en": "Green Sensation", "optional": true}
+  },
+  "pages": {
+    "lightmix": {
+      "label": "Plagron Lightmix (eine Woche vorgedüngt)",
+      "label_en": "Plagron Lightmix (pre-fertilized for one week)",
+      "rows": {
+        "terra_grow": [2.5, 5, null, null, null, null, null, null, null, null],
+        "terra_bloom": [null, null, 5, 5, 5, 4, 4.5, 5, 5, 5],
+        "power_roots": [1, 1, 1, 1, 1, null, null, null, null, null],
+        "pure_zym": [1, 1, 1, 1, 1, 1, null, null, null, null],
+        "sugar_royal": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "power_buds": [null, null, 1, 1, 1, 1, 1, 1, 1, 1],
+        "green_sensation": [null, null, null, null, null, 1, 1, 1, 1, 1]
+      },
+      "sources": ["PT1"]
+    },
+    "growmix": {
+      "label": "Plagron Growmix (stärker vorgedüngt)",
+      "label_en": "Plagron Growmix (more pre-fertilized)",
+      "rows": {
+        "terra_bloom": [null, null, null, 5, 5, 4, 4.5, 5, 5, 5],
+        "power_roots": [1, 1, 1, 1, 1, null, null, null, null, null],
+        "pure_zym": [1, 1, 1, 1, 1, 1, null, null, null, null],
+        "sugar_royal": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        "power_buds": [null, null, 1, 1, 1, 1, 1, 1, 1, 1],
+        "green_sensation": [null, null, null, null, null, 1, 1, 1, 1, 1]
+      },
+      "sources": ["PT1"]
+    }
+  },
+  "frequency": {
+    "text": "Laut Tabelle mit jedem Gießen. Wie oft gegossen wird, sagt sie nicht; das Cockpit gibt deshalb keinen Takt vor.",
+    "text_en": "Per the chart with every watering. How often to water it does not say, so the cockpit sets no schedule.",
+    "sources": ["PT1"]
+  },
+  "notes": [
+    {
+      "text": "EC-Ziel je Plagron-Woche 1 bis 10 laut Tabelle, mit Leitungswasser von 0,4 mS/cm gerechnet: Lightmix 1,0, 1,6, 1,6, 1,6, 1,6, 1,8, 1,9, 2,0, 2,0, 2,0; Growmix 0,6, 0,6, 0,6, 1,6, 1,6, 1,8, 1,9, 2,0, 2,0, 2,0 mS/cm.",
+      "text_en": "EC target per Plagron week 1 to 10 per the chart, counted with tap water of 0.4 mS/cm: Lightmix 1.0, 1.6, 1.6, 1.6, 1.6, 1.8, 1.9, 2.0, 2.0, 2.0; Growmix 0.6, 0.6, 0.6, 1.6, 1.6, 1.8, 1.9, 2.0, 2.0, 2.0 mS/cm.",
+      "sources": ["PT1"]
+    },
+    {
+      "text": "Plagron Lightmix ist laut Tabelle eine Woche mineralisch vorgedüngt (1,5 kg je Kubikmeter Dünger NPK 12-14-24); gefüttert wird nach der ersten Woche.",
+      "text_en": "Per the chart Plagron Lightmix is mineral pre-fertilized for one week (1.5 kg per cubic metre of fertilizer NPK 12-14-24); feeding starts after the first week.",
+      "sources": ["PT1", "PT8"]
+    },
+    {
+      "text": "Die Karte zählt Plagron-Woche 3 als Blütewoche 1: die Blütewochen des Cockpits beginnen mit dem Tag, an dem die Blüte beginnt, die Tabelle mit Woche 3.",
+      "text_en": "The card counts Plagron week 3 as flowering week 1: the cockpit's flowering weeks start on the day flowering begins, the chart's with week 3.",
+      "sources": ["PT1"]
+    },
+    {
+      "package": "cannabis",
+      "text": "Für Autoflower fand die Recherche bei Plagron keine Angabe (Produktseiten, Wissensseite, Tabelle). Der Faktor 0,5 aus plant.json gilt auch hier, mit denselben Quellen wie bei BioBizz (N5, N6), nie mehr als die Tabelle.",
+      "text_en": "For autoflowers the research found nothing at Plagron (product pages, knowledge page, chart). The factor 0.5 from plant.json applies here too, with the same sources as for BioBizz (N5, N6), never more than the chart.",
+      "sources": ["PT1", "N5", "N6"]
+    }
+  ],
+  "sources": {
+    "PT1": {"title": "Plagron, Düngeschema 100% TERRA (PDF, PL-23-083/04/EN)", "title_en": "Plagron, 100% TERRA grow schedule (PDF, PL-23-083/04/EN)", "url": "https://plagron.com/downloads/en/grow-schedule-100-terra", "retrieved": "2026-10-23"},
+    "PT2": {"title": "Plagron, Produktseite Terra Grow", "title_en": "Plagron, Terra Grow product page", "url": "https://plagron.com/en/hobby/products/terra-grow", "retrieved": "2026-10-23"},
+    "PT3": {"title": "Plagron, Produktseite Terra Bloom", "title_en": "Plagron, Terra Bloom product page", "url": "https://plagron.com/en/hobby/products/terra-bloom", "retrieved": "2026-10-23"},
+    "PT4": {"title": "Plagron, Produktseite Power Roots", "title_en": "Plagron, Power Roots product page", "url": "https://plagron.com/en/hobby/products/power-roots", "retrieved": "2026-10-23"},
+    "PT5": {"title": "Plagron, Produktseite Pure Zym", "title_en": "Plagron, Pure Zym product page", "url": "https://plagron.com/en/hobby/products/pure-zym", "retrieved": "2026-10-23"},
+    "PT6": {"title": "Plagron, Produktseite Sugar Royal", "title_en": "Plagron, Sugar Royal product page", "url": "https://plagron.com/en/hobby/products/sugar-royal", "retrieved": "2026-10-23"},
+    "PT7": {"title": "Plagron, Produktseite Green Sensation", "title_en": "Plagron, Green Sensation product page", "url": "https://plagron.com/en/hobby/products/green-sensation", "retrieved": "2026-10-23"},
+    "PT8": {"title": "Plagron, Produktseite Lightmix", "title_en": "Plagron, Lightmix product page", "url": "https://plagron.com/en/hobby/products/lightmix", "retrieved": "2026-10-23"},
+    "N5": {"title": "VIVOSUN, was Autoflower-Samen sind", "title_en": "VIVOSUN, what autoflowering seeds are", "url": "https://vivosun.com/en-CA/growing_guide/what-are-autoflowering-seeds/", "retrieved": "2026-10-22"},
+    "N6": {"title": "420seedz, Cannabis anbauen für Anfänger (vom Hersteller der Erde 420Flow)", "title_en": "420seedz, growing cannabis for beginners (by the maker of the 420Flow soil)", "url": "https://420seedz.de/guide/cannabis-anbauen-anfaenger", "retrieved": "2026-10-22"}
+  }
+}

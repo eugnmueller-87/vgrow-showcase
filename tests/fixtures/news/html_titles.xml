@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>HTML titles</title>
+    <item>
+      <title>&lt;b&gt;Cannabis&lt;/b&gt; &lt;i&gt;und&lt;/i&gt; Recht</title>
+      <link>https://html.example.org/1</link>
+    </item>
+    <item>
+      <title><![CDATA[<a href="https://evil.example/">KCanG</a> <script>alert(1)</script>Novelle]]></title>
+      <link>https://html.example.org/2</link>
+    </item>
+    <item>
+      <title>Hanf &amp;amp; Recht &amp;lt;br&amp;gt; doppelt</title>
+      <link>https://html.example.org/3</link>
+    </item>
+    <item>
+      <title>THC-Grenzwert: 3 &lt; 5 &gt; 1</title>
+      <link>https://html.example.org/4</link>
+    </item>
+  </channel>
+</rss>

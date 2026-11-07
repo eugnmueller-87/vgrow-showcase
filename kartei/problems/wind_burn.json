@@ -1,0 +1,147 @@
+{
+  "key": "wind_burn",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "stress",
+  "label": "Windbrand durch Ventilator",
+  "label_en": "Wind burn from the fan",
+  "tile": "Blätter im Luftstrom krallen sich, braune Ränder",
+  "tile_en": "Leaves in the airflow claw, brown margins",
+  "aliases": {
+    "de": [
+      "Windbrand",
+      "Ventilatorschaden",
+      "Windschaden"
+    ],
+    "en": [
+      "wind burn",
+      "fan damage",
+      "wind scorch"
+    ]
+  },
+  "symptoms": [
+    "Hinweis: Dass ein Ventilator Cannabis in der Box schädigt, belegen nur Erfahrungsquellen (P1, P2); Hochschulquellen betreffen Feldhanf, Gartengehölze und Gemüsesetzlinge.",
+    "Wo: Austrocknung durch Wind ist an der Windseite der Pflanze am stärksten (P3, Gartenpflanzen). Für die Box vermutlich: Blätter im Luftstrom des Ventilators (Schluss der Karte, keine Quelle).",
+    "Zamnesia nennt: Blätter krallen sich (sie biegen sich nach unten wie Krallen, englisch clawing), kleinere Knospen, schlechter Ertrag, gestauchtes Wachstum, gelbe, bronzefarbene und braune Flecken auf den Blättern (P1, Erfahrungsquelle). RHS (Gartenpflanzen im Freien): braune, ausgetrocknete Blattränder oder ganz braune, trockene Blätter P3. Eine zeitliche Reihenfolge nennt keine gelesene Quelle.",
+    "Bei frisch ausgepflanzten Gemüsesetzlingen im Freiland nach Sturm und anschließender Sonne: Randbrand, Bleiche, Austrocknung, Blattfall, braune Stängel. Die Quelle nennt Wind und Sonnenbrand zusammen P4.",
+    "Starker Wind (Sturm, Feldhanf): Löcher in Blättern, Stängel brechen P5; USU nennt nur gebrochene Stängel bei hohen, schweren Pflanzen P6. Für die Umluft in der Box ist das nicht belegt."
+  ],
+  "symptoms_en": [
+    "Note: that a fan damages cannabis in a box is shown only by experience sources (P1, P2); university sources cover field hemp, garden shrubs and vegetable seedlings.",
+    "Where: wind desiccation is worst on the windward side of the plant (P3, garden plants). For the box probably: leaves in the fan's airflow (card's inference, no source).",
+    "Zamnesia lists: clawing leaves (bending down like claws), smaller buds, poor yields, stunted growth, yellow, bronze and brown markings on leaves (P1, experience source). RHS (outdoor garden plants): brown, desiccated leaf edges or entirely brown, dry leaves P3. No source read gives a time order.",
+    "On freshly transplanted vegetable seedlings in the field after a storm followed by sun: marginal burn, bleaching, desiccation, leaf drop, brown stems. The source names wind and sun scorch together P4.",
+    "Strong wind (storm, field hemp): holes in leaves, stems snap P5; USU only names broken stems on tall, heavy plants P6. Not shown for circulation fans in a box."
+  ],
+  "causes": [
+    "Zu viel Luftstrom lässt die Pflanze mehr Wasser über die Blätter verdunsten (Transpiration) und Wasser verlieren (P1, Erfahrungsquelle).",
+    "Ventilator direkt auf die Pflanze gerichtet (P2, Erfahrungsquelle).",
+    "Das Blatt bekommt Wasser nicht schnell genug nach, wenn die Erde zu trocken, zu nass oder gefroren ist (P3, Gartenpflanzen im Freien).",
+    "Junge, schlecht bewurzelte Pflanzen leiden am stärksten P4."
+  ],
+  "causes_en": [
+    "Too much airflow ramps up transpiration and water loss (P1, experience source).",
+    "Fan pointed straight at the plant (P2, experience source).",
+    "The leaf cannot get water fast enough when the soil is too dry, waterlogged or frozen (P3, outdoor garden plants).",
+    "Young, poorly rooted plants suffer most P4."
+  ],
+  "check": [
+    {
+      "metric": "watering",
+      "text": "Wind entzieht Blatt und Erde Wasser P3: Erde prüfen, weder austrocknen noch vernässen lassen.",
+      "text_en": "Wind pulls water from leaves and soil P3: check the soil, neither dry nor waterlogged."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Mitprüfen (Karte zu niedrige Luftfeuchte).",
+      "text_en": "Check alongside (low humidity card)."
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    }
+  ],
+  "do_now": [
+    "Ventilator von der Pflanze weg zur Wand richten (P2; P1, Erfahrungsquellen); Umluftstufe in der VIVOSUN-App senken. Die Blüh-Voreinstellung steht laut Handbuch auf Umluft Stufe 10, 55 min an, 5 min aus P7; das Handbuch erklärt nicht, was Stufe 10 bedeutet, und ein Zusammenhang mit Windbrand steht in keiner Quelle.",
+    "Beschädigte und tote Blätter entfernen, Erde feucht, aber nicht nass halten (P1, Erfahrungsquelle).",
+    "Totes Gewebe auch wegen Botrytis entfernen: durch Wind verletztes Gewebe wird leicht besiedelt P8.",
+    "Neue Blätter, die nachwachsen, sollten normal aussehen, wenn die Ursache behoben ist (P5, Feldhanf)."
+  ],
+  "do_now_en": [
+    "Point the fan away from the plant toward the wall (P2; P1, experience sources); lower the fan step in the VIVOSUN app. Per the manual the flower preset runs the circulation fan at step 10, 55 min on, 5 min off P7; the manual does not explain what step 10 means, and no source links it to wind burn.",
+    "Remove damaged and dead leaves, keep soil moist but not overwatered (P1, experience source).",
+    "Remove dead tissue also because of Botrytis: wind-injured tissue is readily colonized P8.",
+    "New leaves that grow back should look normal once the cause is fixed (P5, field hemp)."
+  ],
+  "prevention": [
+    "Luft umwälzen statt die Pflanze anblasen (P1; P2, Erfahrungsquellen).",
+    "Die Erde gleichmäßig feucht halten, weder austrocknen noch vernässen lassen (P3 nennt trockene und staunasse Erde als Ursache; P1).",
+    "Topfpflanzen sind besonders gefährdet P3."
+  ],
+  "prevention_en": [
+    "Circulate air instead of blasting the plant (P1; P2, experience sources).",
+    "Keep the soil evenly moist, neither dry nor waterlogged (P3 names dry and waterlogged soil as causes; P1).",
+    "Potted plants are at particular risk P3."
+  ],
+  "look_alikes": [
+    "Stickstoffüberschuss, Unter- und Überwässern werden laut Zamnesia oft für Windbrand gehalten (P1, Erfahrungsquelle).",
+    "Kaliummangel: gelbe, dann braune Blattränder an unteren, älteren Blättern P10.",
+    "Niedrige Luftfeuchte, Salzüberschuss, mechanische Verletzung: braune Blattspitzen P11.",
+    "Hitzestress: Blattrollen und Hängen (P12, Erfahrungsquelle)."
+  ],
+  "look_alikes_en": [
+    "Nitrogen toxicity, under- and overwatering are often misdiagnosed as wind burn per Zamnesia (P1, experience source).",
+    "Potassium deficiency: yellow then brown margins on lower older leaves P10.",
+    "Low humidity, salt excess, mechanical injury: brown leaf tips P11.",
+    "Heat stress: leaf curl and drooping (P12, experience source)."
+  ],
+  "image": {
+    "drawing": "wind-burn"
+  },
+  "sources": {
+    "P1": "Zamnesia (Samen- und Growshop), Adam Parsons, How To Identify And Treat Cannabis Wind Burn, 2024-04-08, Erfahrungsquelle, abgerufen 2026-10-23: https://www.zamnesia.com/blog-how-to-identify-and-treat-cannabis-wind-burn-n2966",
+    "P2": "Spider Farmer (Hersteller), Produktseite 6-Zoll-Clip-Ventilator, Abschnitt Expert Tips, ohne Datum, Erfahrungsquelle, abgerufen 2026-10-23: https://spider-farmer.com/?p=98359",
+    "P3": "Royal Horticultural Society (RHS), Wind scorch, Gartenbau-Verein, Gartengehölze im Freien, ohne Datum, abgerufen 2026-10-23: https://www.rhs.org.uk/prevention-protection/wind-scorch",
+    "P4": "University of Delaware Cooperative Extension, Weekly Crop Update, Gordon Johnson, Wind and Sun Damage to Transplants, 2013-05-31, Gemüsesetzlinge im Feld, abgerufen 2026-10-23: https://sites.udel.edu/weeklycropupdate/?p=5658",
+    "P5": "Cornell University, Cornell Hemp, Schwartz und Smart, Abiotic vs. Biotic Issues in Hemp Fields, Januar 2024, Feldhanf, abgerufen 2026-10-23: https://hemp.cals.cornell.edu/resources/reports-factsheets/2024-factsheets/abiotic-vs-biotic-issues-in-hemp-fields/",
+    "P6": "Utah State University Extension, Hemp Other Abiotic Issues, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-other-abiotic-issues.php",
+    "P7": "VIVOSUN, VGrow Smart Grow Box Handbuch, Hersteller der Box, Seitenstand 2026-05-25, aus der Kartei übernommen (kartei/stages/autoflower.json, S1), abgerufen 2026-10-22: https://vivosun.com/support/guide/vgrow-smart-grow-box.md",
+    "P8": "University of Kentucky Extension, Boice, Gauthier, Kaiser, Leonberger, Botrytis Blight (PPFS-GEN-19), November 2021, viele Kulturen inklusive Hanf, abgerufen 2026-10-23: https://plantpathology.mgcafe.uky.edu/files/ppfs-gen-19.pdf",
+    "P10": "Cockson, Landis, Smith, Hicks, Whipker (NC State University) 2019, Characterization of Nutrient Disorders of Cannabis sativa, Applied Sciences 9(20):4432, Sandkultur, abgerufen 2026-10-23: https://www.mdpi.com/2076-3417/9/20/4432",
+    "P11": "UC Statewide IPM Program, Pittenger und Hodel, Houseplant Problems (74172), Stand 08/2020, Zimmerpflanzen, abgerufen 2026-10-23: https://ipm.ucanr.edu/PMG/PESTNOTES/pn74172.html",
+    "P12": "VIVOSUN, Ideal Grow Tent Temperature and Humidity Guide, allgemeiner Hersteller-Leitfaden, nennt Cannabis nicht, Seitenstand dynamisch, Erfahrungsquelle, aus der Kartei übernommen (kartei/stages/autoflower.json, S5), abgerufen 2026-10-22: https://vivosun.com/growing_guide/temperature-and-humidity.md"
+  },
+  "_left_out": [
+    "'Früh:' und 'Später:' als Zeitlabels: keine Quelle ordnet die Anzeichen zeitlich.",
+    "Umluft-Voreinstellung als Ursache: kein Beleg, jetzt nur als Prüfpunkt unter Maßnahmen.",
+    "Messgröße cfan_step: nicht in der Liste der Live-Werte, im Cockpit nicht geprüft.",
+    "RHS-Rat, verbrannte Blätter erst im Frühjahr zu entfernen: gilt für Gartengehölze.",
+    "Zamnesia-Rat, zusätzliche Nährstoffe zu geben: nicht übernommen.",
+    "RHS-Wortlaut zur Windseite: in zwei Abrufen leicht verschieden, vor dem Eintragen von Hand prüfen.",
+    {
+      "section": "look_alikes",
+      "text": "Lichtbrand: Blätter werden gelb mit gelberen Spitzen und grünen Adern, bei starkem Licht verliert das Blattgrün die Farbe (P9, Erfahrungsquelle). Wo an der Pflanze, nennt die Seite nicht.",
+      "text_en": "Light burn: leaves turn yellow with yellower tips and green veins, strong light bleaches the chlorophyll (P9, experience source). The page does not say where on the plant.",
+      "sources": [
+        "P9"
+      ],
+      "reason": "VIVOSUN-Seite automatisch abgerufen, erst nach Lesen von Hand verwenden",
+      "url": "https://vivosun.com/growing_guide/light-burn-and-light-stress",
+      "action": "entfernt"
+    }
+  ],
+  "status_note": "Unvollständig: Zwei Herstellerseiten warten noch darauf, von Hand gelesen zu werden; diese Karte betrifft die Seite zu Lichtbrand und Lichtstress. Bis dahin fehlt hier eine Verwechslung (Lichtbrand).",
+  "status_note_en": "Incomplete: two maker pages are still waiting to be read by hand; this card is affected by the page on light burn and light stress. Until then one look-alike (light burn) is missing here."
+}

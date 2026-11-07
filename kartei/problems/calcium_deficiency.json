@@ -1,0 +1,131 @@
+{
+  "key": "calcium_deficiency",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "naehrstoffe",
+  "label": "Calciummangel (Ca)",
+  "label_en": "Calcium deficiency (Ca)",
+  "tile": "Flecken zwischen den Adern: gelber Ring, braune Mitte",
+  "tile_en": "Spots between the veins: yellow ring, brown center",
+  "aliases": {
+    "de": [
+      "Ca-Mangel",
+      "Calcium-Flecken"
+    ],
+    "en": [
+      "Ca deficiency",
+      "calcium spots"
+    ]
+  },
+  "symptoms": [
+    "Hinweis: Alle Wochenangaben stammen aus einem Hydrokultur-Versuch (P1, Sorte Gelato 29). Das Element fehlte von Anfang an komplett, gezählt wird ab dem Tag der Umstellung auf 12 Stunden Licht und 12 Stunden Dunkel. Für eine Autoflower in Erde gilt diese Zählung nicht.",
+    "Im Versuch ab Woche 3 nach Umstellung auf 12/12: an unteren Fächerblättern (große, fingerförmige Blätter) Flecken zwischen den Adern, gelber Ring um ein braunes, totes Zentrum P1.",
+    "Woche 4: vor allem das untere Zweidrittel der Pflanze, nach oben schwächer; Woche 5: die Flecken fließen am Rand zu toten Flächen zusammen P1.",
+    "Später an kleineren, jüngeren Fächerblättern; die Spitzen oberer Fächerblätter rollen sich nach oben P1.",
+    "Verformte, eingerollte untere Blätter; gelbbraune, unregelmäßige Flecken, das Blatt bleibt sonst grün; langsamere Bildung der Blütenknospen; absterbende Wurzelspitzen P2.",
+    "Wo es beginnt, widersprechen sich die Quellen: Bei Cannabis (P1, P2) zeigte sich Calciummangel zuerst unten, bei Salat P3 an jungen Blättern der Triebspitze. Purdue zählt Calcium zu den unbeweglichen Nährstoffen, also Symptome an neuen Blättern P4."
+  ],
+  "symptoms_en": [
+    "Note: all week counts come from a hydroponic trial (P1, cultivar Gelato 29). The element was missing completely from the start; weeks count from the day the light was switched to 12 hours on, 12 hours off. This count does not apply to an autoflower in soil.",
+    "In the trial from week 3 after the switch to 12/12: spots between the veins on lower fan leaves (large, finger-shaped leaves), yellow ring around a brown dead center P1.",
+    "Week 4: mostly the bottom two thirds of the plant, weaker higher up; week 5: spots merge into dead areas along the margins P1.",
+    "Later on smaller, younger fan leaves; tips of upper fan leaves curl upward P1.",
+    "Contorted, curled lower leaves; yellow-brown irregular spots, leaf otherwise green; slower flower bud development; root tip dieback P2.",
+    "The sources disagree on where it starts: in cannabis (P1, P2) calcium deficiency showed first on lower leaves, in lettuce P3 on young leaves at the shoot tip. Purdue lists calcium as immobile, so symptoms on new leaves P4."
+  ],
+  "causes": [
+    "Unausgewogener Dünger oder ein Transportproblem in der Pflanze durch zu viel Wasser, Salz oder Wurzelschäden P2.",
+    "Viel Kalium senkte im Versuch das Calcium, das im Laub ankommt P5.",
+    "Salat: viel Licht bei hoher Feuchte und wenig Luftbewegung bremst die Verdunstung, dann fehlt jungen Blättern Calcium trotz Düngung (P3, nicht Cannabis).",
+    "Utah State: in Utah selten, häufiger bei saurerem Boden (Aussage gilt für Utah, nicht allgemein) P2.",
+    "BioBizz empfiehlt bei weichem Wasser oder Osmosewasser einen Calcium-Magnesium-Zusatz (CalMag) (P6, Hersteller). Dass dort Calcium fehlt, ist eine Folgerung, der Satz nennt keine Ursache."
+  ],
+  "causes_en": [
+    "Imbalanced fertilizer or a transport problem in the plant from excess water, salinity or root damage P2.",
+    "High potassium lowered the calcium reaching the foliage in the trial P5.",
+    "Lettuce: high light with high humidity and low air movement suppresses transpiration, and young leaves lack calcium despite feeding (P3, not cannabis).",
+    "Utah State: rare in Utah, more common where soils are more acidic (a statement for Utah, not general) P2.",
+    "BioBizz recommends a calcium-magnesium supplement (CalMag) for soft or RO water (P6, maker). That calcium is missing there is an inference; the sentence names no cause."
+  ],
+  "check": [
+    {
+      "metric": "probe_humidity",
+      "text": "Hohe Feuchte bedeutet wenig Verdunstung. Das ist eine Folgerung: P3 (Salat) nennt hohe Feuchte, wenig Luftbewegung und viel Licht.",
+      "text_en": "High humidity means little transpiration. This is an inference: P3 (lettuce) names high humidity, low air movement and high light."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Niedriger VPD (Dampfdruckdefizit) bedeutet feuchte Luft. VPD kommt in keiner gelesenen Quelle zu Calcium vor, der Bezug ist eine Folgerung aus P3.",
+      "text_en": "Low VPD (vapor pressure deficit) means humid air. VPD appears in no calcium source read; the link is an inference from P3."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Viel Licht bei gebremster Verdunstung erhöhte beim Salat das Risiko P3.",
+      "text_en": "High light with suppressed transpiration raised the risk in lettuce P3."
+    },
+    {
+      "metric": "watering",
+      "text": "Staunässe? P2 Wasser weich oder Osmosewasser? P6",
+      "text_en": "Waterlogging? P2 Soft or RO water? P6"
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    }
+  ],
+  "do_now": [
+    "Wo möglich mit Wasser spülen, um angesammelte Düngersalze auszuwaschen P2.",
+    "Feuchte und Umluft prüfen (Folgerung aus der Salat-Quelle P3).",
+    "Staunässe vermeiden P2.",
+    "Bei weichem Wasser oder Osmosewasser empfiehlt BioBizz einen Calcium-Magnesium-Zusatz (CalMag) P6. Wer fast die ganze BioBizz-Reihe nutzt, braucht laut BioBizz normalerweise keinen P7. Ob das bei einer Erde gilt, die nicht von BioBizz ist (420Flow), ist offen. Etikett beachten.",
+    "Nicht zusätzlich Kalium geben: Viel Kalium senkte im Versuch das Calcium im Laub (P5, Folgerung)."
+  ],
+  "do_now_en": [
+    "Where possible leach with water to wash out built-up fertilizer salts P2.",
+    "Check humidity and air movement (inference from the lettuce source P3).",
+    "Avoid waterlogging P2.",
+    "For soft or RO water BioBizz recommends a calcium-magnesium supplement (CalMag) P6. If you use most or all of the BioBizz range, BioBizz says you normally need none P7. Whether that holds for a soil not made by BioBizz (420Flow) is open. Follow the label.",
+    "Do not add extra potassium: high potassium lowered calcium in the foliage in the trial (P5, inference)."
+  ],
+  "prevention": [
+    "Feuchte im Zielbereich der Phase halten, Umluft an. Eine Calcium-Quelle dazu wurde nicht gelesen, nur die Salat-Beobachtung P3.",
+    "Kalium nicht überdosieren P5."
+  ],
+  "prevention_en": [
+    "Keep humidity within the stage target, circulation fan on. No calcium source was read for this, only the lettuce observation P3.",
+    "Do not overdose potassium P5."
+  ],
+  "look_alikes": [
+    "Phosphormangel: winzige helle Flecken an unteren Fächerblättern P1.",
+    "Septoria-Blattflecken: braune Flecken mit deutlichem gelbem Hof, unten und innen im Bestand P8.",
+    "Spinnmilben: Sprenkel, Gespinst, Milben auf der Blattunterseite, sichtbar unter mindestens 10-facher Vergrößerung P9.",
+    "Hanfrostmilbe: Bronzefärbung, kleinere, spröde Blätter, nach oben gerollte Ränder P10."
+  ],
+  "look_alikes_en": [
+    "Phosphorus deficiency: tiny pale spots on lower fan leaves P1.",
+    "Septoria leaf spot: brown spots with a prominent yellow halo, low and inside the canopy P8.",
+    "Spider mites: stippling, webbing, mites on the leaf underside, visible under at least 10x magnification P9.",
+    "Hemp russet mite: bronzing, smaller brittle leaves, upward-curled margins P10."
+  ],
+  "image": {
+    "drawing": "calcium-deficiency"
+  },
+  "sources": {
+    "P1": "Llewellyn, Golem, Jones, Zheng (University of Guelph) 2023, Plants 12:422, Nährstoffmangel bei Cannabis, Hydrokultur (DWC), Sorte Gelato 29, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC9920212/",
+    "P2": "Utah State University Extension, Hemp Nutrient Deficiencies, Ratgeber für Hanfanbau ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-nutrient-deficiencies",
+    "P3": "Rutgers Cooperative Extension, VanVranken, Conditions a perfect storm for lettuce tip burn, 2023-09-27, Salat, nicht Cannabis, abgerufen 2026-10-23: https://plant-pest-advisory.rutgers.edu/timely-reminder-conditions-a-perfect-storm-for-lettuce-tip-burn/",
+    "P4": "Purdue University, Nemali, My plants are yellowing! What is wrong with them?, Ratgeber 2017-03-18, Gewächshauspflanzen, abgerufen 2026-10-23: https://www.purdue.edu/hla/sites/cea/article/my-plants-are-yellowing-what-is-wrong-with-them/",
+    "P5": "Saloner, Sacks, Bernstein (Volcani Center) 2019, Frontiers in Plant Science, Kaliumversorgung von Cannabis in Perlite, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC6876614/",
+    "P6": "BioBizz, Nutrient schedule, Hersteller, abgerufen 2026-10-23: https://biobizz.com/knowledge-base/nutrient-schedule",
+    "P7": "BioBizz, Cultivation tips (FAQ), Hersteller, abgerufen 2026-10-23: https://biobizz.com/cultivation-tips/",
+    "P8": "University of Kentucky Extension, Gauthier, Leonberger, Rahnama, Septoria Leaf Spot of Field Hemp (PPFS-AG-H-01), 2021-09-16, Feldhanf, vom Herausgeber als archiviert markiert, abgerufen 2026-10-23: https://plantpathology.mgcafe.uky.edu/files/ppfs-ag-h-01.pdf",
+    "P9": "NC State Extension, Pulkoski und Burrack, Twospotted Spider Mite in Industrial Hemp, 2020-08-05, abgerufen 2026-10-23: https://content.ces.ncsu.edu/twospotted-spider-mite-in-industrial-hemp",
+    "P10": "Utah State University Extension, Hemp Russet Mite, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-hemp-russet-mite-.php"
+  },
+  "_left_out": [
+    "'mit BioBizz kein Ca/Mg-Zusatz nötig' ohne Bedingung: die Quelle sagt 'wenn man fast alle BioBizz-Produkte nutzt'; Bedingung jetzt im Text.",
+    "Rutgers: Calcium-Dünger hilft beim Salat-Spitzenbrand nicht. Nicht übernommen, weil Salat."
+  ]
+}

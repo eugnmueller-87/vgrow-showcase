@@ -1,0 +1,133 @@
+{
+  "kind": "fertilizer_types",
+  "name": "Düngerarten im Vergleich",
+  "name_en": "Fertilizer types compared",
+  "summary": "Sechs Arten, wie Dünger zur Pflanze kommt: organisch flüssig, mineralisch flüssig, mehrteilig, Pulver oder Granulat, Langzeitdünger und vorgedüngte Erde. Je Art: wofür sie passt, wie sie angewendet wird und die üblichen Fehler, jeweils mit Quelle: meist vom Hersteller, sonst ist das Etikett oder ein Händler genannt.",
+  "summary_en": "Six ways fertilizer reaches the plant: organic liquid, mineral liquid, multi-part, powder or granules, slow-release and pre-fertilized soil. For each type: what it suits, how it is applied and the usual mistakes, each with a source: mostly the maker, otherwise the label or a retailer is named.",
+  "status": "draft",
+  "status_note": "Zusammengestellt am 23.10.2026 aus den Herstellerunterlagen der Dünger im Wiki. Keine Preise, keine Rangliste: welcher Dünger besser ist, sagt keine Quelle.",
+  "status_note_en": "Compiled on Oct 23, 2026 from the makers' documents of the fertilizers in the wiki. No prices, no ranking: no source says which fertilizer is better.",
+  "aliases": {
+    "de": ["Düngerarten", "Dünger Vergleich", "Düngertypen", "welche Dünger gibt es"],
+    "en": ["fertilizer types", "fertiliser types", "types of fertilizer", "nutrient types"]
+  },
+  "types": [
+    {
+      "key": "organic_liquid",
+      "label": "Organisch, flüssig",
+      "label_en": "Organic liquid",
+      "suits": "Erde. Die Linien im Wiki: BioBizz, Plagron 100% NATURAL, BIOCANNA.",
+      "suits_en": "Soil. The lines in the wiki: BioBizz, Plagron 100% NATURAL, BIOCANNA.",
+      "applied": "Ins Gießwasser, Milliliter je Liter oder je 10 Liter. BioBizz: die Produkte bringen den pH meist auf 6,2 bis 6,3. Plagron Alga: mit Plagrons natürlicher Erde kein pH einstellen, die EC ist bei organischem Material nicht sinnvoll messbar. BIOCANNA: fertige Mischung innerhalb von 24 Stunden verbrauchen.",
+      "applied_en": "Into the watering water, millilitres per litre or per 10 litres. BioBizz: the products tend to bring the pH to 6.2 to 6.3. Plagron Alga: with Plagron's natural soil no pH adjusting, the EC of organic matter cannot be measured meaningfully. BIOCANNA: use the mixed solution within 24 hours.",
+      "mistakes": [
+        {"text": "Zu viel geben. BioBizz: an zu wenig stirbt eine Pflanze nicht, eine Überdosis überlebt sie nicht.", "text_en": "Giving too much. BioBizz: a plant does not die from too little, it does not survive an overdose.", "sources": ["M3"]},
+        {"text": "Zwei Dünger für dieselbe Aufgabe zusammen geben: BioBizz Bio-Grow und Fish-Mix nie beide.", "text_en": "Giving two feeds for the same job together: BioBizz Bio-Grow and Fish-Mix never both.", "sources": ["M14"]},
+        {"text": "Organische Flüssigdünger in Hydro oder in Tropfern: Plagron Alga ist nicht für Hydro, Leitungen spülen; BioTabs rät bei Tropfbewässerung ab (Verstopfung).", "text_en": "Organic liquids in hydro or drippers: Plagron Alga is not for hydro, flush the lines; BioTabs advises against drip irrigation (blockages).", "sources": ["M6", "M17"]}
+      ],
+      "examples": ["biobizz-2026", "plagron-natural", "biocanna-indoor"],
+      "sources": ["M5", "M6", "M14", "M15"]
+    },
+    {
+      "key": "mineral_liquid",
+      "label": "Mineralisch, flüssig",
+      "label_en": "Mineral liquid",
+      "suits": "Erde (Plagron 100% TERRA, CANNA Terra) und Kokos (CANNA COCO).",
+      "suits_en": "Soil (Plagron 100% TERRA, CANNA Terra) and coco (CANNA COCO).",
+      "applied": "Mit jedem Gießen, Milliliter je 10 Liter. Die Hersteller drucken einen pH (Plagron 5,5 bis 6,5, CANNA Terra 5,8 bis 6,2) und eine EC je Woche, gerechnet mit Wasser von 0,4 mS/cm.",
+      "applied_en": "With every watering, millilitres per 10 litres. The makers print a pH (Plagron 5.5 to 6.5, CANNA Terra 5.8 to 6.2) and an EC per week, counted with water of 0.4 mS/cm.",
+      "mistakes": [
+        {"text": "Mineralisch und organisch in einer Mischung: laut Plagron kann sie schon nach 48 Stunden verderben; Terra Grow fertig gemischt höchstens vier Tage aufheben.", "text_en": "Mineral and organic in one mix: per Plagron it can spoil after just 48 hours; keep mixed Terra Grow for four days at most.", "sources": ["M7"]},
+        {"text": "Den pH mit pH-Minus senken und die EC vergessen: laut CANNA kann pH-Minus die EC heben.", "text_en": "Lowering the pH with pH minus and forgetting the EC: per CANNA pH minus can raise the EC.", "sources": ["M4"]},
+        {"text": "Über die Grenze gehen: bei Plagron bleibt die fertige Lösung unter 3,0 mS/cm.", "text_en": "Going over the limit: with Plagron the mixed solution stays below 3.0 mS/cm.", "sources": ["M11"]}
+      ],
+      "examples": ["plagron-terra", "canna-terra", "canna-coco", "hesi-soil", "canna-aqua", "advanced-nutrients-ph-perfect", "terra-aquatica-tripart", "athena-blended", "atami-bcuzz-soil"],
+      "sources": ["M4", "M7", "M11"]
+    },
+    {
+      "key": "multi_part",
+      "label": "Mehrteilig (A und B)",
+      "label_en": "Multi-part (A and B)",
+      "suits": "Zwei Teile, die erst im Gießwasser zusammenkommen: CANNA COCO A und B für Kokos, VIVOSUN Base A und B (Granulat, das Etikett nennt kein Medium).",
+      "suits_en": "Two parts that only meet in the watering water: CANNA COCO A and B for coco, VIVOSUN Base A and B (granules, the label names no medium).",
+      "applied": "Beide Teile in gleicher Menge, nacheinander: erst A ins Wasser und rühren, dann B und rühren.",
+      "applied_en": "Both parts in the same amount, one after the other: first A into the water and stir, then B and stir.",
+      "mistakes": [
+        {"text": "Die Konzentrate direkt zusammengießen: CANNA sagt, immer erst ins Wasser.", "text_en": "Pouring the concentrates straight together: CANNA says always into the water first.", "sources": ["M9"]},
+        {"text": "Nur einen Teil geben: beide Etiketten nennen gleiche Mengen von A und B.", "text_en": "Giving only one part: both labels give equal amounts of A and B.", "sources": ["M9", "M18"]}
+      ],
+      "examples": ["canna-coco", "vivosun-base-ab", "canna-aqua", "advanced-nutrients-ph-perfect", "terra-aquatica-tripart", "athena-blended", "atami-bcuzz-soil"],
+      "sources": ["M9", "M18"]
+    },
+    {
+      "key": "powder",
+      "label": "Pulver oder Granulat",
+      "label_en": "Powder or granules",
+      "suits": "Wasserlösliche Salze zum Abwiegen: VIVOSUN Base A und B als Granulat, in Gramm je Liter.",
+      "suits_en": "Water-soluble salts to weigh out: VIVOSUN Base A and B as granules, in grams per litre.",
+      "applied": "Abwiegen oder mit dem Messlöffel (VIVOSUN: 1 Löffel 0,5 g), im Wasser vollständig lösen.",
+      "applied_en": "Weigh it or use the measuring spoon (VIVOSUN: 1 spoon 0.5 g), dissolve it fully in the water.",
+      "mistakes": [
+        {"text": "Mit der flüssigen Ausgabe verwechseln: VIVOSUN Base A und B gibt es auch flüssig (4-0-1 und 1-4-2) mit Mengen in Milliliter; die gelten für das Granulat nicht.", "text_en": "Mixing it up with the liquid version: VIVOSUN Base A and B also exist as a liquid (4-0-1 and 1-4-2) with amounts in millilitres; those do not apply to the granules.", "sources": ["M19", "M18"]},
+        {"text": "Hartes Wasser übersehen: das VIVOSUN-Etikett empfiehlt Wasser unter 0,3 mS/cm.", "text_en": "Overlooking hard water: the VIVOSUN label recommends water below 0.3 mS/cm.", "sources": ["M18"]}
+      ],
+      "examples": ["vivosun-base-ab", "green-house-feeding-mineral", "athena-pro", "green-house-feeding-bio"],
+      "sources": ["M18", "M19"]
+    },
+    {
+      "key": "slow_release",
+      "label": "Langzeitdünger",
+      "label_en": "Slow-release",
+      "suits": "Wer wenig mischen will: BioTabs-Tabletten werden einmal in die Erde gedrückt, danach gießt man vor allem Wasser.",
+      "suits_en": "Growers who want to mix little: BioTabs tablets are pressed into the soil once, afterwards it is mostly plain water.",
+      "applied": "Einmal beim Einpflanzen, Tabletten nach Topfgröße 10 cm tief; dazu wenige Einzelgaben in der Blüte, je 1 l je Pflanze.",
+      "applied_en": "Once at planting, tablets by pot size 10 cm deep; plus a few single feeds in flowering, 1 l per plant each.",
+      "mistakes": [
+        {"text": "Auf stark vorgedüngter Erde: BioTabs will Bio-Lightmix oder leicht vorgedüngte organische Erde, ausdrücklich kein Allmix.", "text_en": "On heavily pre-fertilized soil: BioTabs wants bio light-mix or lightly pre-fertilized organic soil, explicitly not Allmix.", "sources": ["M10"]},
+        {"text": "Die Einzelgaben bei jedem Gießen geben: der Leitfaden nennt sie einmal in der Woche.", "text_en": "Giving the single feeds with every watering: the guide gives them once that week.", "sources": ["M10"]}
+      ],
+      "examples": ["biotabs", "green-house-feeding-bio"],
+      "sources": ["M10", "M17"]
+    },
+    {
+      "key": "pre_fertilised_soil",
+      "label": "Vorgedüngte Erde",
+      "label_en": "Pre-fertilized soil",
+      "suits": "Der Start ohne Dünger: die Erde trägt die ersten Wochen. BioBizz All-Mix hat eine hohe EC und trägt einige Wochen, Light-Mix eine mittlere; Plagron Lightmix ist eine Woche mineralisch vorgedüngt (1,5 kg je Kubikmeter NPK 12-14-24), Bio Lightmix eine Woche organisch (2 kg je Kubikmeter NPK 6-5-7).",
+      "suits_en": "Starting without fertilizer: the soil carries the first weeks. BioBizz All-Mix has a high EC and carries a couple of weeks, Light-Mix a medium one; Plagron Lightmix is mineral pre-fertilized for one week (1.5 kg per cubic metre NPK 12-14-24), Bio Lightmix organic for one week (2 kg per cubic metre NPK 6-5-7).",
+      "applied": "Der Dünger beginnt später, je reicher die Erde ist. BioBizz: All-Mix vor dem ersten Gebrauch anfeuchten und 36 Stunden stehen lassen, düngen ab 10 bis 15 cm Höhe oder 2 bis 4 echten Blättern.",
+      "applied_en": "The feeding starts later the richer the soil is. BioBizz: moisten All-Mix before first use and let it stand 36 hours, start feeding at 10 to 15 cm height or 2 to 4 true leaves.",
+      "mistakes": [
+        {"text": "Auf reicher Erde zu früh düngen: Plagron gibt auf Growmix Terra Bloom erst ab Woche 4 und auf Allmix Alga Bloom erst ab Woche 5.", "text_en": "Feeding too early on rich soil: Plagron gives Terra Bloom on Growmix only from week 4 and Alga Bloom on Allmix only from week 5.", "sources": ["M11", "M12"]},
+        {"text": "Die volle Tabelle auf All-Mix: BioBizz sagt, All-Mix braucht eine leichtere Hand als Light-Mix oder Coco-Mix.", "text_en": "The full chart on All-Mix: BioBizz says All-Mix needs a lighter hand than Light-Mix or Coco-Mix.", "sources": ["M3"]}
+      ],
+      "examples": ["biobizz-2026", "plagron-terra", "plagron-natural", "vorgeduengte-erde"],
+      "sources": ["M3", "M11", "M12", "M13"]
+    }
+  ],
+  "market": [
+    {"text": "Plagron veröffentlicht vier Düngeschemata für Hobbygärtner: 100% NATURAL, 100% TERRA, 100% COCO und 100% HYDRO.", "text_en": "Plagron publishes four grow schedules for hobby growers: 100% NATURAL, 100% TERRA, 100% COCO and 100% HYDRO.", "sources": ["M1"]},
+    {"text": "CANNA Deutschland führt acht deutsche Düngerschemata vom April 2026: TERRA, BIOCANNA indoor, BIOCANNA outdoor, COCO, AQUA, HYDRO für weiches Wasser, HYDRO für hartes Wasser und COGr.", "text_en": "CANNA Germany lists eight German feeding schedules from April 2026: TERRA, BIOCANNA indoor, BIOCANNA outdoor, COCO, AQUA, HYDRO for soft water, HYDRO for hard water and COGr.", "sources": ["M2"]},
+    {"text": "BioBizz veröffentlicht ein Schema 2026 mit zwei Seiten (All-Mix; Light-Mix oder Coco-Mix), auf Englisch und Deutsch.", "text_en": "BioBizz publishes one 2026 schedule with two pages (All-Mix; Light-Mix or Coco-Mix), in English and German.", "sources": ["M3"]},
+    {"text": "Die pH-Ziele unterscheiden sich je Hersteller: BioBizz bestens 6,2 bis 6,5, Plagron 5,5 bis 6,5, CANNA Terra 5,8 bis 6,2.", "text_en": "The pH targets differ by maker: BioBizz best at 6.2 to 6.5, Plagron 5.5 to 6.5, CANNA Terra 5.8 to 6.2.", "sources": ["M4", "M5", "M11"]}
+  ],
+  "sources": {
+    "M1": {"title": "Plagron, Wissensseite mit den Düngeschemata", "title_en": "Plagron, grow knowledge page with the schedules", "url": "https://plagron.com/en/grow-knowledge", "retrieved": "2026-10-23"},
+    "M2": {"title": "CANNA Deutschland, Downloads", "title_en": "CANNA Germany, downloads page", "url": "https://www.canna-de.com/downloads", "retrieved": "2026-10-23"},
+    "M3": {"title": "BioBizz, Wissensseite zum Düngeschema", "title_en": "BioBizz knowledge base, nutrient schedule", "url": "https://biobizz.com/knowledge-base/nutrient-schedule", "retrieved": "2026-10-23"},
+    "M4": {"title": "CANNA, Terra Düngerschema DE V26.02 (PDF)", "title_en": "CANNA, Terra feeding schedule DE V26.02 (PDF)", "url": "https://www.canna-de.com/sites/germany/files/2026-04/downloads-grow-schedule-de-terra.pdf", "retrieved": "2026-10-23"},
+    "M5": {"title": "BioBizz, Anbautipps", "title_en": "BioBizz, cultivation tips", "url": "https://biobizz.com/cultivation-tips/", "retrieved": "2026-10-23"},
+    "M6": {"title": "Plagron, Produktseite Alga Grow", "title_en": "Plagron, Alga Grow product page", "url": "https://plagron.com/en/hobby/products/alga-grow", "retrieved": "2026-10-23"},
+    "M7": {"title": "Plagron, Produktseite Terra Grow", "title_en": "Plagron, Terra Grow product page", "url": "https://plagron.com/en/hobby/products/terra-grow", "retrieved": "2026-10-23"},
+    "M9": {"title": "CANNA, COCO Düngerschema Australien (PDF, 2026-04)", "title_en": "CANNA, COCO grow schedule Australia (PDF, 2026-04)", "url": "https://www.canna.com.au/sites/australia/files/2026-04/downloads-grow-schedule-au-coco.pdf", "retrieved": "2026-10-23"},
+    "M10": {"title": "BioTabs, Organic Grow Guide V.2026.01 (PDF)", "title_en": "BioTabs, Organic Grow Guide V.2026.01 (PDF)", "url": "https://biotabs.nl/wp-content/uploads/ENG-GRANDE-nueva-TABLA-DE-CULTIVO.pdf", "retrieved": "2026-10-23"},
+    "M11": {"title": "Plagron, Düngeschema 100% TERRA (PDF)", "title_en": "Plagron, 100% TERRA grow schedule (PDF)", "url": "https://plagron.com/downloads/en/grow-schedule-100-terra", "retrieved": "2026-10-23"},
+    "M12": {"title": "Plagron, Düngeschema 100% NATURAL (PDF)", "title_en": "Plagron, 100% NATURAL grow schedule (PDF)", "url": "https://plagron.com/downloads/en/grow-schedule-100-natural", "retrieved": "2026-10-23"},
+    "M13": {"title": "BioBizz, Seite All-Mix", "title_en": "BioBizz, All-Mix page", "url": "https://biobizz.com/allmix/", "retrieved": "2026-10-23"},
+    "M14": {"title": "BioBizz, Düngeschema 2026 (PDF, englisch)", "title_en": "BioBizz, nutrient schedule 2026 (PDF, English)", "url": "https://biobizz.com/downloads/biobizz-nutrient-schedule-2026.pdf", "retrieved": "2026-10-23"},
+    "M15": {"title": "CANNA UK, Produktseite BIOCANNA Bio Vega", "title_en": "CANNA UK, BIOCANNA Bio Vega product page", "url": "https://www.canna-uk.com/bio-vega", "retrieved": "2026-10-23"},
+    "M17": {"title": "BioTabs, Produktblatt Bio PK 5-8 (PDF)", "title_en": "BioTabs, Bio PK 5-8 product sheet (PDF)", "url": "https://biotabs.nl/download/technical-sheet-bio-pk-english.pdf", "retrieved": "2026-10-23"},
+    "M18": {"title": "VIVOSUN Base A und B, Etikett der Flaschen (Karte VIVOSUN im Wiki)", "title_en": "VIVOSUN Base A and B, label of the bottles (VIVOSUN card in the wiki)", "retrieved": "2026-10-23"},
+    "M19": {"title": "Trimleaf (US-Händler), VIVOSUN Base A & B, flüssiges Zwei-Teile-Set", "title_en": "Trimleaf (US retailer), VIVOSUN Base A & B, liquid two-part kit", "url": "https://trimleaf.com/products/vivosun-base-a-b-2-part-nutrient-kit-8oz-1gal", "retrieved": "2026-10-23"}
+  }
+}

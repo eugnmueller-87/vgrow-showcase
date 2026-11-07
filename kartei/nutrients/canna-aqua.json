@@ -1,0 +1,531 @@
+{
+  "name": "CANNA AQUA Vega und Flores",
+  "name_en": "CANNA AQUA Vega and Flores",
+  "summary": "Mineralischer Zweikomponentendünger für rezirkulierende Hydrosysteme (NFT, Ebbe und Flut): Aqua Vega A und B im Wachstum, Aqua Flores A und B in der Blüte. Für Hydro, nicht für Erde; im Cockpit nicht wählbar.",
+  "summary_en": "Mineral two-part fertilizer for recirculating hydro systems (NFT, ebb and flow): Aqua Vega A and B in the vegetative phase, Aqua Flores A and B in flowering. For hydro, not for soil; not selectable in the cockpit.",
+  "product": "CANNA",
+  "version": "DE V26.02",
+  "status": "draft",
+  "status_note": "Abgetippt aus dem deutschen CANNA-AQUA-Düngerschema V26.02 (CA1) am 23.10.2026 und Zahl für Zahl mit dem Original verglichen. Die Tabelle steht je 10 Liter, die Karte je Liter. Für Hydro, nicht für Erde: im Wiki zum Lesen, im Cockpit nicht wählbar.",
+  "status_note_en": "Transcribed from the German CANNA AQUA feeding schedule V26.02 (CA1) on Oct 23, 2026 and compared number by number with the original. The chart is per 10 litres, the card per litre. For hydro, not for soil: for reading in the wiki, not selectable in the cockpit.",
+  "check": {
+    "state": "checked",
+    "on": "2026-10-23",
+    "text": "Jede Zahl der Tabelle gegen das deutsche Schema V26.02 (CA1) geprüft, am 23.10.2026.",
+    "text_en": "Every number of the chart checked against the German schedule V26.02 (CA1), on Oct 23, 2026."
+  },
+  "unit": "ml/l",
+  "printed_unit": "ml/10 l",
+  "aliases": {
+    "de": [
+      "CANNA AQUA",
+      "Canna Aqua Vega",
+      "Canna Aqua Flores",
+      "Aqua Vega",
+      "Aqua Flores"
+    ],
+    "en": [
+      "CANNA AQUA",
+      "Canna Aqua Vega",
+      "Canna Aqua Flores",
+      "Aqua Vega",
+      "Aqua Flores"
+    ]
+  },
+  "line": {
+    "maker": "CANNA",
+    "types": [
+      "multi_part",
+      "mineral_liquid"
+    ],
+    "media": [
+      "hydro"
+    ],
+    "media_text": "Rezirkulierende Hydrosysteme wie NFT oder Ebbe und Flut. Nicht für Erde.",
+    "media_text_en": "Recirculating hydro systems such as NFT or ebb and flow. Not for soil.",
+    "products": [
+      {
+        "product": "CANNA Aqua Vega A und B",
+        "product_en": "CANNA Aqua Vega A and B",
+        "role": "Grunddünger für das Wachstum und die ersten 1 bis 3 Wochen bei 12 Stunden Licht; Produktseite 1:500 (200 ml A und 200 ml B je 100 l).",
+        "role_en": "Base nutrient for the vegetative phase and the first 1 to 3 weeks at 12 hours of light; product page 1:500 (200 ml A and 200 ml B per 100 l).",
+        "sources": [
+          "CA2"
+        ]
+      },
+      {
+        "product": "CANNA Aqua Flores A und B",
+        "product_en": "CANNA Aqua Flores A and B",
+        "role": "Grunddünger für die Blüte; Produktseite 1:333 (300 ml A und 300 ml B je 100 l), EC mit Wasser 1,3 bis 2,1 mS.",
+        "role_en": "Base nutrient for flowering; product page 1:333 (300 ml A and 300 ml B per 100 l), EC including water 1.3 to 2.1 mS.",
+        "sources": [
+          "CA3"
+        ]
+      },
+      {
+        "product": "CANNA RHIZOTONIC",
+        "role": "Wurzelzusatz; die höchste Menge bei der Bewurzelung.",
+        "role_en": "Root additive; the highest amount at rooting.",
+        "sources": [
+          "CA1"
+        ]
+      },
+      {
+        "product": "CANNAZYM",
+        "role": "Enzymzusatz; bei wiederverwendetem Substrat doppelt (50 ml je 10 l).",
+        "role_en": "Enzyme additive; doubled with reused substrate (50 ml per 10 l).",
+        "sources": [
+          "CA1"
+        ]
+      },
+      {
+        "product": "CANNABOOST",
+        "role": "Blütezusatz; in der Blüte bis höchstens 40 ml je 10 l.",
+        "role_en": "Flowering additive; in flowering up to 40 ml per 10 l at most.",
+        "sources": [
+          "CA1"
+        ]
+      },
+      {
+        "product": "CANNA PK 13/14",
+        "role": "Phosphor- und Kaliumzusatz für eine Woche (W6).",
+        "role_en": "Phosphorus and potassium supplement for one week (W6).",
+        "sources": [
+          "CA1"
+        ]
+      },
+      {
+        "product": "CANNA CALMAG AGENT",
+        "role": "Wasserkorrektur: 0 bis 7 ml je 10 l, je nach EC des Ausgangswassers.",
+        "role_en": "Water correction: 0 to 7 ml per 10 l, depending on the EC of the starting water.",
+        "sources": [
+          "CA1"
+        ]
+      }
+    ],
+    "application_short": "Ins Nährlösungsbecken, erst A, rühren, dann B, einige Stunden stehen lassen, pH 5,2 bis 6,2; für Hydro, nicht für Erde.",
+    "application_short_en": "Into the reservoir, A first, stir, then B, let it stand for a few hours, pH 5.2 to 6.2; for hydro, not for soil.",
+    "application": "Ins Nährlösungsbecken: erst A, gut rühren, dann B, nochmals rühren und die Mischung ein paar Stunden stehen lassen; A und B nie unverdünnt mischen. Auf Aqua Flores wechseln nach 1 bis 3 Wochen bei 12 Stunden Licht oder wenn der pH des umlaufenden Wassers unter 5,0 bis 5,2 sinkt (Produktseite); das Schema wechselt ab W3. pH laut Schema 5,2 bis 6,2. Das Schema rechnet mit Wasser von EC 0,2 mS/cm (mit CalMag eingestellt).",
+    "application_en": "Into the reservoir: A first, stir well, then B, stir again and let the mix stand for a few hours; never mix A and B undiluted. Switch to Aqua Flores after 1 to 3 weeks at 12 hours of light or when the pH of the circulating water drops below 5.0 to 5.2 (product page); the schedule switches from W3. pH per the schedule 5.2 to 6.2. The schedule counts with water of EC 0.2 mS/cm (adjusted with CalMag).",
+    "application_sources": [
+      "CA1",
+      "CA2",
+      "CA3"
+    ],
+    "cautions": [
+      {
+        "text": "Für rezirkulierende Hydrosysteme, nicht für Erde: das Cockpit bietet die Linie deshalb nicht an.",
+        "text_en": "For recirculating hydro systems, not for soil: so the cockpit does not offer the line.",
+        "sources": [
+          "CA2"
+        ]
+      },
+      {
+        "text": "A und B nie unverdünnt zusammengießen: es entstehen unlösliche Verbindungen.",
+        "text_en": "Never pour A and B together undiluted: insoluble compounds form.",
+        "sources": [
+          "CA2",
+          "CA3"
+        ]
+      }
+    ]
+  },
+  "weeks": {
+    "columns": [
+      {
+        "key": "propagation",
+        "label": "Tag 1 bis 5 (Bewurzelung)",
+        "label_en": "Days 1 to 5 (rooting)",
+        "printed": "T1-5"
+      },
+      {
+        "key": "veg",
+        "label": "Tag 6 bis 25 (Wachstum I, für längeres Wachstum wiederholen)",
+        "label_en": "Days 6 to 25 (vegetative I, repeat for a longer vegetative phase)",
+        "printed": "T6-25"
+      },
+      {
+        "key": "bloom_1",
+        "bloom_week": 1,
+        "label": "Blütewoche 1 (W1, Wachstum II)",
+        "label_en": "Flowering week 1 (W1, vegetative II)",
+        "printed": "W1"
+      },
+      {
+        "key": "bloom_2",
+        "bloom_week": 2,
+        "label": "Blütewoche 2 (W2, Wachstum II)",
+        "label_en": "Flowering week 2 (W2, vegetative II)",
+        "printed": "W2"
+      },
+      {
+        "key": "bloom_3",
+        "bloom_week": 3,
+        "label": "Blütewoche 3 (W3)",
+        "label_en": "Flowering week 3 (W3)",
+        "printed": "W3"
+      },
+      {
+        "key": "bloom_4",
+        "bloom_week": 4,
+        "label": "Blütewoche 4 (W4)",
+        "label_en": "Flowering week 4 (W4)",
+        "printed": "W4"
+      },
+      {
+        "key": "bloom_5",
+        "bloom_week": 5,
+        "label": "Blütewoche 5 (W5)",
+        "label_en": "Flowering week 5 (W5)",
+        "printed": "W5"
+      },
+      {
+        "key": "bloom_6",
+        "bloom_week": 6,
+        "label": "Blütewoche 6 (W6)",
+        "label_en": "Flowering week 6 (W6)",
+        "printed": "W6"
+      },
+      {
+        "key": "bloom_7",
+        "bloom_week": 7,
+        "label": "Blütewoche 7 (W7)",
+        "label_en": "Flowering week 7 (W7)",
+        "printed": "W7"
+      },
+      {
+        "key": "bloom_8",
+        "bloom_week": 8,
+        "label": "Blütewoche 8 (W8)",
+        "label_en": "Flowering week 8 (W8)",
+        "printed": "W8"
+      },
+      {
+        "key": "bloom_9",
+        "bloom_week": 9,
+        "label": "Blütewoche 9 (W9)",
+        "label_en": "Flowering week 9 (W9)",
+        "printed": "W9"
+      }
+    ],
+    "end": {
+      "key": "label_end",
+      "bloom_week": 10,
+      "label": "Ab Blütewoche 10: die Tabelle endet, keine Menge",
+      "label_en": "From flowering week 10: the chart ends, no amount"
+    },
+    "sources": [
+      "CA1"
+    ]
+  },
+  "components": {
+    "aqua_vega_a": {
+      "label": "Aqua Vega A",
+      "label_en": "Aqua Vega A"
+    },
+    "aqua_vega_b": {
+      "label": "Aqua Vega B",
+      "label_en": "Aqua Vega B"
+    },
+    "aqua_flores_a": {
+      "label": "Aqua Flores A",
+      "label_en": "Aqua Flores A"
+    },
+    "aqua_flores_b": {
+      "label": "Aqua Flores B",
+      "label_en": "Aqua Flores B"
+    },
+    "rhizotonic": {
+      "label": "Rhizotonic",
+      "label_en": "Rhizotonic",
+      "optional": true
+    },
+    "cannazym": {
+      "label": "CANNAZYM",
+      "label_en": "CANNAZYM",
+      "optional": true
+    },
+    "cannaboost": {
+      "label": "CANNABOOST",
+      "label_en": "CANNABOOST",
+      "optional": true
+    },
+    "pk_13_14": {
+      "label": "PK 13/14",
+      "label_en": "PK 13/14",
+      "optional": true
+    }
+  },
+  "pages": {
+    "low": {
+      "label": "Untere Werte der Spanne",
+      "label_en": "Lower values of the range",
+      "rows": {
+        "aqua_vega_a": [
+          2.1,
+          2.5,
+          2.8,
+          2.8,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "aqua_vega_b": [
+          2.1,
+          2.5,
+          2.8,
+          2.8,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "aqua_flores_a": [
+          null,
+          null,
+          null,
+          null,
+          3,
+          3,
+          3,
+          3,
+          2.6,
+          2.6,
+          null
+        ],
+        "aqua_flores_b": [
+          null,
+          null,
+          null,
+          null,
+          3,
+          3,
+          3,
+          3,
+          2.6,
+          2.6,
+          null
+        ],
+        "rhizotonic": [
+          4,
+          2,
+          2,
+          2,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          null,
+          null
+        ],
+        "cannazym": [
+          null,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5
+        ],
+        "cannaboost": [
+          null,
+          null,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "pk_13_14": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1.5,
+          null,
+          null,
+          null
+        ]
+      },
+      "sources": [
+        "CA1"
+      ]
+    },
+    "high": {
+      "label": "Obere Werte der Spanne",
+      "label_en": "Upper values of the range",
+      "rows": {
+        "aqua_vega_a": [
+          2.8,
+          3.2,
+          3.6,
+          3.6,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "aqua_vega_b": [
+          2.8,
+          3.2,
+          3.6,
+          3.6,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "aqua_flores_a": [
+          null,
+          null,
+          null,
+          null,
+          3.8,
+          3.8,
+          3.8,
+          3.8,
+          3.4,
+          3.4,
+          null
+        ],
+        "aqua_flores_b": [
+          null,
+          null,
+          null,
+          null,
+          3.8,
+          3.8,
+          3.8,
+          3.8,
+          3.4,
+          3.4,
+          null
+        ],
+        "rhizotonic": [
+          4,
+          2,
+          2,
+          2,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          null,
+          null
+        ],
+        "cannazym": [
+          null,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          5,
+          5
+        ],
+        "cannaboost": [
+          null,
+          null,
+          2,
+          2,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "pk_13_14": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1.5,
+          null,
+          null,
+          null
+        ]
+      },
+      "sources": [
+        "CA1"
+      ]
+    }
+  },
+  "frequency": {
+    "text": "Die Tabelle sagt nicht, wie oft die Nährlösung erneuert wird. Das Cockpit gibt keinen Takt vor.",
+    "text_en": "The chart does not say how often to renew the nutrient solution. The cockpit sets no schedule.",
+    "sources": [
+      "CA1"
+    ]
+  },
+  "notes": [
+    {
+      "text": "EC der fertigen Lösung laut Tabelle, mit Wasser von 0,2 mS/cm: Tag 1 bis 5 1,4 bis 1,8; Tag 6 bis 25 1,6 bis 2,0; W1 bis W5 1,8 bis 2,2; W6 2,2 bis 2,7; W7 und W8 1,6 bis 2,0; W9 0,2 mS/cm.",
+      "text_en": "EC of the mixed solution per the chart, with water of 0.2 mS/cm: days 1 to 5 1.4 to 1.8; days 6 to 25 1.6 to 2.0; W1 to W5 1.8 to 2.2; W6 2.2 to 2.7; W7 and W8 1.6 to 2.0; W9 0.2 mS/cm.",
+      "sources": [
+        "CA1"
+      ]
+    },
+    {
+      "text": "Laut Produktseiten enthalten Aqua Vega und Aqua Flores pH-Stabilisatoren, so dass der pH nicht von Hand nachgestellt werden muss. Das ist eine Angabe des Herstellers.",
+      "text_en": "Per the product pages Aqua Vega and Aqua Flores contain pH stabilisers, so the pH need not be adjusted by hand. That is the maker's statement.",
+      "sources": [
+        "CA2",
+        "CA3"
+      ]
+    }
+  ],
+  "sources": {
+    "CA1": {
+      "title": "CANNA, AQUA Düngerschema DE V26.02 (PDF)",
+      "title_en": "CANNA, AQUA feeding schedule DE V26.02 (PDF)",
+      "url": "https://www.canna-de.com/sites/germany/files/2026-04/downloads-grow-schedule-de-aqua.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "CA2": {
+      "title": "CANNA Deutschland, Produktseite Aqua Vega",
+      "title_en": "CANNA Germany, Aqua Vega product page",
+      "url": "https://www.canna-de.com/canna-aqua-vega",
+      "retrieved": "2026-10-23"
+    },
+    "CA3": {
+      "title": "CANNA Deutschland, Produktseite Aqua Flores",
+      "title_en": "CANNA Germany, Aqua Flores product page",
+      "url": "https://www.canna-de.com/canna-aqua-flores",
+      "retrieved": "2026-10-23"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_hinweis": "Testdatei, nicht die Belegung der Box: USB 1 als immer an gesperrt, wie bis 23.10.2026 die Kamera. Sie prueft die Sperre always_on, die in ports.json fuer jeden Anschluss weiter gilt.",
+  "usb1": {
+    "label": "Kamera",
+    "label_en": "Camera",
+    "device": "camera",
+    "always_on": true,
+    "reason": "Testfall: ein gesperrter Anschluss."
+  },
+  "usb2": {
+    "label": "Luftbefeuchter",
+    "label_en": "Humidifier",
+    "device": "humidifier",
+    "reason": "Testfall: ein schaltbarer Anschluss."
+  }
+}

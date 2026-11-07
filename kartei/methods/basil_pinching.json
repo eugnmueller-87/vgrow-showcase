@@ -1,0 +1,83 @@
+{
+  "key": "basil_pinching",
+  "kind": "method",
+  "status": "draft",
+  "label": "Entspitzen bei Kräutern (Basilikum)",
+  "label_en": "Pinching herbs (basil)",
+  "aliases": {
+    "de": [
+      "Entspitzen",
+      "Einkürzen",
+      "Auskneifen"
+    ],
+    "en": [
+      "pinching",
+      "pinching back",
+      "pinching out"
+    ]
+  },
+  "what": "Entspitzen heißt, die oberste Triebspitze knapp über einem Blattpaar auszukneifen oder abzuschneiden. Aus den Blattachseln darunter treiben neue Triebe aus, die Pflanze verzweigt sich und bleibt kompakt (M1, M2, M3, M6). Beim Basilikum fallen Entspitzen und Ernte zusammen: Wer ganze Triebspitzen für die Küche nimmt, entspitzt (M2).",
+  "what_en": "Pinching means nipping or cutting off the top shoot tip just above a pair of leaves. New shoots grow from the leaf axils below, the plant branches and stays compact (M1, M2, M3, M6). In basil, pinching and harvesting are the same act: taking whole shoot tips for the kitchen is pinching (M2).",
+  "steps": [
+    "Warten, bis die Pflanze etwa 6 Zoll (rund 15 cm, umgerechnet) hoch ist (M5). M6 nennt als frühesten Erntebeginn 6 bis 8 Zoll (rund 15 bis 20 cm, umgerechnet).",
+    "Ein Blattpaar am Stängel suchen und knapp darüber schneiden oder auskneifen (M5, M6, M4).",
+    "Möglichst nicht mehr als die Hälfte der Pflanze ernten (M5), oder mindestens die Hälfte stehen lassen (M4). Genug Blätter dranlassen, damit das Wachstum nicht deutlich nachlässt (M1).",
+    "Neue Triebe kommen innerhalb einer Woche aus den Blattachseln unter dem Schnitt (M6, M4).",
+    "Regelmäßig wiederholen. Regelmäßiges Ernten fördert Verzweigung und neue Blätter (M2, M5).",
+    "Blütenknospen auskneifen, sobald sie erscheinen (M1, M2, M6).",
+    "Gekauftes Topfbasilikum: am besten kaufen, solange es noch nicht zu groß ist, und jeweils 2 bis 3 Pflanzen in neue Töpfe vereinzeln. Eventuell bis auf 2 bis 3 Blattpaare einkürzen (M7)."
+  ],
+  "steps_en": [
+    "Wait until the plant is about 6 inches (roughly 15 cm, converted) tall (M5). M6 gives 6 to 8 inches (roughly 15 to 20 cm, converted) as the earliest point to start harvesting.",
+    "Find a pair of leaves on the stem and cut or pinch just above it (M5, M6, M4).",
+    "Avoid harvesting more than half of the plant (M5), or leave at least half standing (M4). Leave enough leaves on the plant so growth is not significantly reduced (M1).",
+    "New shoots appear from the leaf axils below the cut within a week (M6, M4).",
+    "Repeat regularly. Regular harvesting encourages branching and new leaves (M2, M5).",
+    "Pinch out flower buds as soon as they appear (M1, M2, M6).",
+    "Bought pot basil: buy it while it is still small, separate it into new pots with 2 to 3 plants each, and optionally cut back to 2 to 3 leaf pairs (M7)."
+  ],
+  "when": "Ab etwa 6 Zoll Höhe (M5), nach M6 frühestens ab 6 bis 8 Zoll. Danach regelmäßig während der Wachstumszeit (M6, M5). Blütenknospen sofort beim Erscheinen entfernen (M1). Ein Versuch in einem Netzhaus (englisch net house) in Vietnam (M8) verglich vier Varianten: nicht entspitzt sowie entspitzt bei vier, sechs oder acht Blättern. Bei sechs Blättern war der Ertrag am höchsten. Ob der Unterschied statistisch gesichert ist, steht im Abstract nicht, auch nicht, wie genau geschnitten wurde. Höhe in Zoll (M5, M6) und Blattzahl (M8) sind verschiedene Maßstäbe und nicht gleichzusetzen.",
+  "when_en": "From about 6 inches tall (M5), per M6 at the earliest from 6 to 8 inches. Then regularly during the growing season (M6, M5). Remove flower buds as soon as they appear (M1). A trial in a net house in Vietnam (M8) compared four variants: not pinched, and pinched at four, six or eight leaves. At six leaves the yield was highest. The abstract does not say whether the difference is statistically significant, nor exactly how the plants were cut. Height in inches (M5, M6) and leaf count (M8) are different measures and must not be equated.",
+  "box_fit": "Passt mit Einschränkung. Die meisten Höhenangaben bleiben unter der Wuchshöhe der Box von 92 cm / 36 Zoll (M9, angegeben für eine Pflanze): bis 50 cm (M7), etwa 18 Zoll (45,7 cm, umgerechnet; M3, ebenso 'Sweet Broadleaf' in M2), 'Marseillaise Dwarf' etwa 1 Fuß (30,5 cm; M2). Für 'Genovese' widersprechen sich die Quellen: etwa 2 Fuß (61,0 cm; M2) gegen 3 bis 4 Fuß (91,4 bis 121,9 cm; M1). 3 Fuß sind 36 Zoll, also die ganze Wuchshöhe. M2 nennt außerdem 'Greek Column-Lesbos' mit bis zu 3 Fuß. Offen ist, wie viel der 92 cm Topf und Lampenabstand abziehen; in der Spezifikationstabelle von M9 steht dazu nichts. Alle Höhen stammen aus Garten- und Beratungstexten, keine Quelle behandelt Basilikum in einer Growbox. Dass Entspitzen die Pflanze kompakt hält, sagen M2 und M3, in den gelesenen Stellen ohne Zahl. Pflanzabstände widersprechen sich: 20 x 25 cm (M7, Abschnitt Kultur, ohne Angabe zum Standort), endgültig 6 bis 12 Zoll (M6), 12 Zoll in der Reihe und 18 Zoll zwischen den Reihen (M3), 2 Fuß für 'Genovese' (M1). Eine Pflanzenzahl für 46 x 46 cm nennt keine Quelle.",
+  "box_fit_en": "Fits with a caveat. Most height figures stay below the box's 92 cm / 36 in growing height (M9, stated for one plant): up to 50 cm (M7), about 18 inches (45.7 cm, converted; M3, likewise 'Sweet Broadleaf' in M2), 'Marseillaise Dwarf' about 1 foot (30.5 cm; M2). For 'Genovese' the sources disagree: about 2 feet (61.0 cm; M2) versus 3 to 4 feet (91.4 to 121.9 cm; M1). 3 feet are 36 inches, i.e. the whole growing height. M2 also names 'Greek Column-Lesbos' at up to 3 feet. How much of the 92 cm the pot and lamp distance take up is open; the specification table of M9 says nothing about it. All heights come from garden and extension texts; no source covers basil in a grow box. M2 and M3 say pinching keeps the plant compact, without a figure in the passages read. Spacing figures disagree: 20 x 25 cm (M7, section on cultivation, no location given), final spacing 6 to 12 inches (M6), 12 inches in the row and 18 inches between rows (M3), 2 feet for 'Genovese' (M1). No source gives a plant count for 46 x 46 cm.",
+  "risks": "Frische Schnitte sind anfällig für Grauschimmel (Botrytis cinerea): nach 24 Stunden deutlich weniger anfällig, nach 48 Stunden verheilt; gegen Grauschimmel und andere Blattkrankheiten rät M1, die Blätter beim Gießen nicht nass zu machen und nicht bei nassem Wetter zu ernten (M1). Warmes, nasses, feuchtes Wetter fördert Falschen Mehltau; M3 rät, die Pflanzen nicht zu eng zu setzen, weil gute Luftbewegung um die Blätter das Infektionsrisiko senkt (M3, Gartentext). Lässt man Basilikum blühen und Samen bilden, hört es auf zu wachsen und wird etwas bitter (M6). Zu stark zu ernten kann das Wachstum bremsen: M1 verlangt genug Blätter an der Pflanze, damit das Wachstum nicht deutlich leidet, und M5 rät, nicht mehr als die Hälfte der Pflanze zu ernten (einen Grund nennt M5 nicht).",
+  "risks_en": "Fresh cuts are susceptible to gray mold (Botrytis cinerea): much less susceptible after 24 hours, healed after 48 hours; against gray mold and other leaf diseases M1 advises not wetting the foliage when watering and not harvesting in wet weather (M1). Warm, wet, humid weather encourages downy mildew; M3 advises not crowding the plants, because good air circulation around the foliage reduces the risk of infection (M3, garden text). If basil flowers and forms seed it stops growing and becomes somewhat bitter (M6). Harvesting too hard can slow growth: M1 says to leave enough leaves so growth is not significantly reduced, and M5 advises against taking more than half of the plant (M5 gives no reason).",
+  "image": {
+    "drawing": "bp",
+    "steps": [
+      {
+        "step": 1,
+        "fig": "bp-1"
+      },
+      {
+        "step": 2,
+        "fig": "bp-2"
+      },
+      {
+        "step": 4,
+        "fig": "bp-3"
+      }
+    ]
+  },
+  "sources": {
+    "M1": "Williamson J., Clemson Cooperative Extension, Home & Garden Information Center, Basil (HGIC 1327), Ratgeber Stand 2019-05-01, abgerufen 2026-10-23: https://hgic.clemson.edu/factsheet/basil/",
+    "M2": "University of Florida IFAS Extension, Gardening Solutions, Basil, Ratgeber ohne Autor und Datum, abgerufen 2026-10-23: https://gardeningsolutions.ifas.ufl.edu/plants/edibles/vegetables/basil/",
+    "M3": "University of Maryland Extension, Growing Basil in a Home Garden, Ratgeber Stand 2026-02-25, abgerufen 2026-10-23: https://extension.umd.edu/resource/growing-basil-home-garden",
+    "M4": "Haag B., Illinois Extension, Blog Flowers, Fruits, and Frass, Growing basil in your backyard, 2020-05-13, abgerufen 2026-10-23: https://extension.illinois.edu/blogs/flowers-fruits-and-frass/2020-05-13-growing-basil-your-backyard",
+    "M5": "Knepper A. (Extension Master Gardener), University of Vermont Extension, Growing basil for eating and preserving, 2023-05-09, abgerufen 2026-10-23: https://www.uvm.edu/extension/news/growing-basil-eating-and-preserving",
+    "M6": "Schalau J., University of Arizona Cooperative Extension, Yavapai County, Backyard Gardener #245, Basil, Stand 2024-07-17 (PDF über einen Textkonverter gelesen), abgerufen 2026-10-23: https://www.extension.arizona.edu/sites/default/files/2024-10/Basil.pdf",
+    "M7": "Bayerische Landesanstalt für Weinbau und Gartenbau (LWG), Bayerische Gartenakademie, Merkblatt 2151, Basilikum - ein königliches Kraut, Mai 2020 (PDF über einen Textkonverter gelesen), abgerufen 2026-10-23: https://www.lwg.bayern.de/mam/cms06/gartenakademie/dateien/2151-2020.pdf",
+    "M8": "Pham und Nguyen 2018, Effects of topping times on growth and yield of three sweet basil (Ocimum basilicum L.) varieties cultivated in the net house, The Journal of Agriculture and Development 17(4), doi:10.52997/jad.3.04.2018, Fachartikel (nur Abstract gelesen), abgerufen 2026-10-23: https://jad.hcmuaf.edu.vn/index.php/jad/article/view/42",
+    "M9": "VIVOSUN, VGrow Smart Grow Box Manual, Herstellerhandbuch, Stand laut Seitenmetadaten 2026-05-25, abgerufen 2026-10-23: https://vivosun.com/support/guide/vgrow-smart-grow-box"
+  },
+  "_left_out": [
+    "USDA-SARE-Projekt FNE97-174 (1997) zum Entspitzen von Genoveser Basilikum im Erwerbsanbau: Förderantrag ohne Ergebnis, für Hobbygärtner ohne Nutzen, weggelassen.",
+    "Alias 'topping': kollidiert mit dem Eintrag Topping (Cannabis), gestrichen.",
+    "'Höchstens' und 'nie mehr als die Hälfte': M5 sagt 'avoid', abgeschwächt.",
+    "'Im Garten' beim Pflanzabstand 20 x 25 cm: steht nicht in M7.",
+    "Einschätzung 'Passt.' ohne Einschränkung: Genovese erreicht laut M1 bis 4 Fuß, korrigiert.",
+    "Q8-Ertragszahl (2.172,3 kg je 1.000 m²): ohne Signifikanzangabe und ohne die anderen Varianten nicht vergleichbar, weggelassen.",
+    "Ernteschnitt etwa handbreit über dem Boden (M7): betrifft die Freilandernte vor dem Frost, nicht übernommen.",
+    "Cornell-Grenze unter 85 % Luftfeuchte im Bestand: steht in der Basilikum-Karte, für diesen Eintrag nicht selbst geprüft."
+  ]
+}

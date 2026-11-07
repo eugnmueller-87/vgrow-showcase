@@ -1,0 +1,26 @@
+<!-- @dsCard group="Status" height=380 subtitle="warn with a lead and an action · bad · info · ok" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Banner</title></head>
+<body style="margin:0">
+<div class="vg" style="padding:16px;display:grid;gap:12px">
+  <div class="banner" role="status">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+    <div class="banner-body">
+      <p><b>Setup needed:</b> set the run time and confirm the pump power switch first. Without a pot there is no thirst index, so Water once waters without the need check.</p>
+      <button class="btn sm">Set up the pot</button>
+    </div>
+  </div>
+  <div class="banner bad" role="alert">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3 2 20h20L12 3Z" stroke-linejoin="round"/><path d="M12 10v4M12 17h.01"/></svg>
+    <div class="banner-body"><p><b>Check the humidifier:</b> little humidity rise for about 20 minutes, so the startup check stopped it. An empty tank, a blocked nozzle or strong exhaust are possible.</p></div>
+  </div>
+  <div class="banner info">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+    <div class="banner-body"><p><b>Paused:</b> you set the light yourself. The autopilot leaves it alone until 9:37 AM.</p></div>
+  </div>
+  <div class="banner ok">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+    <div class="banner-body"><p><b>On target:</b> temperature, humidity and VPD inside the band since 6:10 AM.</p></div>
+  </div>
+</div>
+</body></html>

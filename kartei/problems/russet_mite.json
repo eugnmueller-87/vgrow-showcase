@@ -1,0 +1,132 @@
+{
+  "key": "russet_mite",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "schaedlinge",
+  "label": "Hanfrostmilbe (Aculops cannabicola)",
+  "label_en": "Hemp russet mite (Aculops cannabicola)",
+  "tile": "Blätter wölben sich wie ein Boot und werden bronzefarben",
+  "tile_en": "Leaves cup like a canoe and turn bronze",
+  "aliases": {
+    "de": [
+      "Hanfrostmilbe",
+      "Hanf-Rostmilbe",
+      "Rostmilbe",
+      "Rostmilben",
+      "Aculops cannabicola",
+      "Aculops cannibicola"
+    ],
+    "en": [
+      "hemp russet mite",
+      "russet mite",
+      "russet mites",
+      "HRM",
+      "eriophyid mite",
+      "Aculops cannabicola",
+      "Aculops cannibicola"
+    ]
+  },
+  "symptoms": [
+    "Früh: Bei wenigen Milben ist nichts zu sehen P1. Erste Zeichen: Die Blätter wölben sich längs wie ein Boot (Kanu-Form) oder rollen sich, besonders nahe am Blattstielansatz, dazu fleckige Vergilbung zwischen den Adern P2.",
+    "Wo: Bronzefärbung an unteren Blättern und Stängeln suchen P1; auf dem Blatt sitzen die Milben in geschützten Stellen neben der Mittelrippe und zwischen den Pflanzenhaaren P3.",
+    "Später: Bronzefärbung, kleinere, spröde Blätter, nach oben gerollte Ränder, bronzefarbene Stängel P1; Blätter vergilben, wölben sich, trocknen und fallen ab P2. Feiner goldbrauner Staub auf den Blättern zeigt, dass viele Milben da sind P2.",
+    "In der Blüte: weniger und verzwergte Knospen P4.",
+    "Die Milbe: 0,16 bis 0,21 mm, mit bloßem Auge nicht sichtbar P5; ab 20-facher Vergrößerung erkennbar, aber leicht zu übersehen P3; selbst mit starker Vergrößerung schwer zu finden P5; sicher nur unter dem Mikroskop P4."
+  ],
+  "symptoms_en": [
+    "Early: with few mites nothing is visible P1. First signs: leaves canoe lengthwise or curl, especially close to the petiole attachment, with spotted interveinal yellowing P2.",
+    "Where: look for bronzing on lower leaves and stems P1; on the leaf the mites sit in protected sites next to the midrib and among the trichomes P3.",
+    "Later: bronzing, smaller brittle leaves, edges curling upward, bronzed stems P1; leaves yellow, cup, dry out and fall P2. A fine golden-brown dust on leaf surfaces indicates a large population P2.",
+    "In flower: fewer and dwarfed buds P4.",
+    "The mite: 0.16 to 0.21 mm, not visible to the naked eye P5; detectable from 20x magnification but easily missed P3; hard to find even with high magnification P5; confirmed only under a microscope P4."
+  ],
+  "causes": [
+    "Im Feldanbau mit Klonvermehrung sind befallene Jungpflanzen die Hauptquelle für späteren Befall P3. Für Boxen belegt das keine gelesene Quelle.",
+    "Verschleppung: Milben überleben lange in Erde, an Stecklingen, Samen, Kleidung und Werkzeug P2. Widerspruch bei Samen: NC State schreibt, auf Samen könnten sie sich nicht halten, Aussaat sei der beste Schutz P4. JEE 2023 sagt dazu nichts, USU rät zu milbenfreiem Saatgut oder milbenfreien Jungpflanzen P1. Die Frage bleibt offen.",
+    "Warm und trocken: deutlich schnellere Vermehrung P2.",
+    "Kurze Entwicklungszeit: eine Generation dauert 8 bis 15 Tage, bei Wärme schneller P5; NC State nennt 7 bis 10 bis 30 Tage je nach Bedingungen P4. Die Spannen widersprechen sich."
+  ],
+  "causes_en": [
+    "In field production with clonal propagation, infested transplants are the primary source of later infestations P3. No source read shows this for boxes.",
+    "Spread: mites survive for long periods in potting soil, on cuttings, seeds, clothing and tools P2. Contradiction on seeds: NC State says they cannot be sustained on seeds and planting from seed is the best prevention P4. JEE 2023 says nothing on seeds, USU advises mite-free seed or starts P1. The question stays open.",
+    "Warm and dry: markedly faster reproduction P2.",
+    "Short development time: a generation takes 8 to 15 days, faster when warm P5; NC State gives 7 to 10 up to 30 days depending on conditions P4. The ranges contradict each other."
+  ],
+  "check": [
+    {
+      "metric": "probe_temp",
+      "text": "Warm und trocken beschleunigt die Vermehrung (P2, P5); bei heißen, trockenen Bedingungen in der Box untere Blätter und Stängel auf Bronzefärbung prüfen P1. Zahlen nennt keine gelesene Quelle.",
+      "text_en": "Warm and dry speeds reproduction (P2, P5); in hot, dry conditions in the box check lower leaves and stems for bronzing P1. No source read gives figures."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Trockene Luft beschleunigt die Vermehrung P2; keine Zahl in den gelesenen Quellen.",
+      "text_en": "Dry air speeds reproduction P2; no figure in the sources read."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Hoher VPD heißt: Luft zu trocken oder zu warm (Phasenkarte).",
+      "text_en": "High VPD means: air too dry or too warm (stage card)."
+    },
+    {
+      "metric": "watering",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    }
+  ],
+  "do_now": [
+    "Verdacht prüfen: Blätter mit einer starken Lupe ansehen, ab 20-facher Vergrößerung, besonders neben der Mittelrippe und zwischen den Haaren P3. Selbst mit starker Vergrößerung ist die Milbe schwer zu finden P5. Sicher bestätigt wird sie nur unter dem Mikroskop P4. Die Lupe der Phasenkarte (30- bis 60-fach) ist dort für Trichome an Blüten gedacht.",
+    "Befallene Pflanzenreste entfernen und vernichten P1.",
+    "Behandlung, nur als Stand der Quellen aus dem gewerblichen Hanfanbau (keine Quelle richtet sich an Hobbygärtner): Öle wirken nur, solange sie die Milben überziehen und ersticken, ohne Dauerwirkung P4. NC State merkt an, dass die Wirksamkeit an Hanf weiter untersucht werden muss und dass in North Carolina kein geprüftes Material zugelassen ist P4. Etikett und Zulassung beachten: Im Haus- und Kleingarten dürfen nur Mittel angewandt werden, die für nichtberufliche Anwender zugelassen sind; sie tragen den Aufdruck 'Anwendung durch nichtberufliche Anwender zulässig' P6. Ob ein Mittel für Hanf zugelassen ist und ob eine Growbox in der Wohnung als Haus- und Kleingarten gilt, sagt diese Seite nicht.",
+    "Raubmilben: LSU nennt Neoseiulus californicus, Amblyseius andersoni und Amblyseius swirskii als erfolgreich P2. JEE 2023 schreibt, kein käuflicher Nützling sei als wirtschaftlich wirksam belegt; der Satz stützt sich auf unveröffentlichte Daten der Autoren P3. Welche Aussage stimmt, ist offen."
+  ],
+  "do_now_en": [
+    "Confirm a suspicion: check the leaves with a strong loupe, from 20x, especially next to the midrib and among the trichomes P3. Even with high magnification the mite is hard to find P5. Only a microscope confirms it P4. The stage card's loupe (30x to 60x) is meant there for trichomes on flowers.",
+    "Remove and destroy infested plant debris P1.",
+    "Treatment, only as the state of sources from commercial hemp growing (no source addresses hobby growers): oils only work by coating and suffocating the mites, with no residual activity P4. NC State notes that efficacy on hemp needs further study and that no tested material is registered in North Carolina P4. Follow label and approval (Etikett und Zulassung beachten): in German home and allotment gardens only products approved for non-professional users may be used; they carry the mark 'Anwendung durch nichtberufliche Anwender zulässig' P6. Whether a product is approved for hemp and whether a grow box in a flat counts as a home garden, this page does not say.",
+    "Predatory mites: LSU names Neoseiulus californicus, Amblyseius andersoni and Amblyseius swirskii as successful P2. JEE 2023 says no commercially available biological control agent has been shown to manage the mite economically; the sentence rests on unpublished data of the authors P3. Which statement holds is open."
+  ],
+  "prevention": [
+    "Aus Samen ziehen: laut NC State der beste Schutz P4.",
+    "Stecklinge nur nehmen, wenn sie gründlich geprüft sind und die Mutterpflanze befallsfrei ist P4."
+  ],
+  "prevention_en": [
+    "Grow from seed: per NC State the best prevention P4.",
+    "Take cuttings only when they are thoroughly inspected and the mother plant is free of mites P4."
+  ],
+  "look_alikes": [
+    "Spinnmilben, Thripse oder physiologische Störungen mit Blattrollen und Vergilbung P1.",
+    "Sortentypisches Blattrollen: Manche Hanfsorten rollen die Blätter auch ohne Milben P7.",
+    "Nährstoffmangel, physiologische Störungen oder Mosaikviren P2."
+  ],
+  "look_alikes_en": [
+    "Spider mites, thrips or physiological conditions causing leaf curl and yellowing P1.",
+    "Cultivar-typical curling: some hemp cultivars curl their leaves even without mites P7.",
+    "Nutrient deficiencies, physiological disorders or mosaic viruses P2."
+  ],
+  "image": {
+    "drawing": "russet-mite"
+  },
+  "sources": {
+    "P1": "Utah State University Extension, Hemp Russet Mite, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-hemp-russet-mite-.php",
+    "P2": "LSU AgCenter, des Bordes, Huval, Reagan, Carlton, Aculops cannibicola, Hemp Russet Mite, 2022-04-05, abgerufen 2026-10-23: https://www.lsuagcenter.com/articles/page1649168950500",
+    "P3": "Hayes et al., Biology and management of hemp russet mite (Acari: Eriophyidae), Journal of Economic Entomology 116(5), Oktober 2023, online 2023-07-14, abgerufen 2026-10-23: https://academic.oup.com/jee/article/116/5/1706/7224444",
+    "P4": "NC State Extension, Pulkoski und Burrack, Hemp Russet Mite in Industrial Hemp, 2020-08-04, abgerufen 2026-10-23: https://content.ces.ncsu.edu/hemp-russet-mite-in-industrial-hemp",
+    "P5": "Purdue Extension E-275, Serber und Long, Management Strategies for Common Arthropod Pests of Greenhouse Hemp in Indiana, Dezember 2021, abgerufen 2026-10-23: https://www.extension.entm.purdue.edu/publications/E-275/E-275.html",
+    "P6": "Pflanzenschutzamt Berlin, Anwendung von Pflanzenschutzmitteln in Haus-, Klein- und Siedlergärten, ohne Datum, abgerufen 2026-10-23: https://www.berlin.de/pflanzenschutzamt/ueberwachung/pflanzenschutzmittel-im-haus-und-kleingarten/",
+    "P7": "Cranshaw et al., Developing Insect Pest Management Systems for Hemp in the United States, Journal of Integrated Pest Management 10(1):26, 2019-08-28, abgerufen 2026-10-23: https://academic.oup.com/jipm/article/doi/10.1093/jipm/pmz023/5555744"
+  },
+  "_left_out": [
+    "'Blattunterseiten' als Fundort: steht nicht in JEE 2023; Colorado State (abaxial) nicht abrufbar.",
+    "'NC State passt zu JEE', 'Samen-Angabe von LSU steht allein', 'liegt näher an der Wahrheit': keine Quelle wertet so.",
+    "Schwefel kurz vor und während der Blüte meiden (LSU): Begründung betrifft den Verwendungszweck der Ernte; JEE 2023 fand im Versuch weniger Milben unter Schwefel. Ganz weggelassen.",
+    "Alias 'Gallmilbe': meint die ganze Familie.",
+    "Deutscher Name 'Hanfrostmilbe': Eigenübersetzung, keine deutsche Quelle gelesen."
+  ]
+}

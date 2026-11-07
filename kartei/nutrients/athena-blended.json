@@ -1,0 +1,192 @@
+{
+  "name": "Athena Blended Line",
+  "name_en": "Athena Blended Line",
+  "summary": "Mineralische Flüssigdünger in zwei Teilen: Grow A und B im Wachstum, Bloom A und B in der Blüte, dazu CaMg und PK. Laut Etiketten nur für Hydro; der Wochenplan war nicht lesbar. Karte ohne Plan, nicht wählbar.",
+  "summary_en": "Mineral liquid fertilizers in two parts: Grow A and B in growth, Bloom A and B in flowering, plus CaMg and PK. Per the labels hydro only; the weekly plan was not readable. Card without a plan, not selectable.",
+  "product": "Athena",
+  "version": "Etiketten",
+  "status": "draft",
+  "status_note": "Aus den Etiketten von Grow A und B, Bloom A und B, CaMg und PK (AB2 bis AB7) und der Seite der Linie (AB1) am 23.10.2026; jede Zahl mit dem Etikett verglichen. Die Etiketten liegen auf dem Server eines Händlers, ob sie der aktuellen Fassung entsprechen, ist offen. Der Wochenplan liegt nur als Google-Drive-Datei vor und war nicht lesbar.",
+  "status_note_en": "From the labels of Grow A and B, Bloom A and B, CaMg and PK (AB2 to AB7) and the line's page (AB1) on Oct 23, 2026; every number compared with the label. The labels sit on a retailer's server, whether they match the current version is open. The weekly plan exists only as a Google Drive file and was not readable.",
+  "check": {
+    "state": "checked",
+    "on": "2026-10-23",
+    "text": "Etikettenangaben (Mengen je Gallone, NPK) gegen die Etiketten geprüft; ein Wochenplan liegt nicht vor.",
+    "text_en": "Label figures (amounts per gallon, NPK) checked against the labels; there is no weekly plan."
+  },
+  "aliases": {
+    "de": [
+      "Athena Blended",
+      "Athena Blended Line",
+      "Athena Grow A",
+      "Athena Grow B",
+      "Athena Bloom A",
+      "Athena Bloom B",
+      "Athena CaMg",
+      "Athena PK"
+    ],
+    "en": [
+      "Athena Blended",
+      "Athena Blended Line",
+      "Athena Grow A",
+      "Athena Grow B",
+      "Athena Bloom A",
+      "Athena Bloom B",
+      "Athena CaMg",
+      "Athena PK"
+    ]
+  },
+  "line": {
+    "maker": "Athena",
+    "types": [
+      "multi_part",
+      "mineral_liquid"
+    ],
+    "media": [
+      "hydro"
+    ],
+    "media_text": "Hydro; jedes Etikett sagt: nur für Hydro empfohlen. Nicht für Erde.",
+    "media_text_en": "Hydro; every label says: recommended for hydroponic use only. Not for soil.",
+    "products": [
+      {
+        "product": "Grow A",
+        "npk": "4-0-1",
+        "role": "Wachstum, Teil A (4,2 % Calcium); Etikett: 2 bis 5 ml je Gallone Wasser im Wachstum.",
+        "role_en": "Growth, part A (4.2 % calcium); label: 2 to 5 ml per gallon of water in growth.",
+        "sources": [
+          "AB2"
+        ]
+      },
+      {
+        "product": "Grow B",
+        "npk": "1-3-5",
+        "role": "Wachstum, Teil B, immer gleich viel wie A; Etikett: 2 bis 5 ml je Gallone.",
+        "role_en": "Growth, part B, always the same amount as A; label: 2 to 5 ml per gallon.",
+        "sources": [
+          "AB3"
+        ]
+      },
+      {
+        "product": "Bloom A",
+        "npk": "4-0-5",
+        "role": "Blüte, Teil A; Etikett: 2 bis 7 ml je Gallone Wasser in der Blüte.",
+        "role_en": "Flowering, part A; label: 2 to 7 ml per gallon of water in flowering.",
+        "sources": [
+          "AB4"
+        ]
+      },
+      {
+        "product": "Bloom B",
+        "npk": "0.7-6-5",
+        "role": "Blüte, Teil B, immer gleich viel wie A; Etikett: 2 bis 7 ml je Gallone.",
+        "role_en": "Flowering, part B, always the same amount as A; label: 2 to 7 ml per gallon.",
+        "sources": [
+          "AB5"
+        ]
+      },
+      {
+        "product": "CaMg",
+        "npk": "2-0-0",
+        "role": "Calcium, Magnesium und Eisen; Etikett: 2,5 ml je Gallone in allen Phasen nach Bedarf.",
+        "role_en": "Calcium, magnesium and iron; label: 2.5 ml per gallon in every phase as needed.",
+        "sources": [
+          "AB6"
+        ]
+      },
+      {
+        "product": "PK",
+        "npk": "0-4-5",
+        "role": "Blütezusatz; Etikett: 3 bis 10 ml je Gallone ab Blütewoche 3.",
+        "role_en": "Flowering supplement; label: 3 to 10 ml per gallon from flowering week 3.",
+        "sources": [
+          "AB7"
+        ]
+      }
+    ],
+    "application_short": "A und B je zu gleichen Teilen, nie unverdünnt zusammen; Grow im Wachstum, Bloom in der Blüte, Mengen je US-Gallone; für Hydro, nicht für Erde.",
+    "application_short_en": "A and B in equal parts each, never together undiluted; Grow in growth, Bloom in flowering, amounts per US gallon; for hydro, not for soil.",
+    "application": "Laut Etiketten: Grow A und Grow B je 2 bis 5 ml je Gallone im Wachstum, Bloom A und Bloom B je 2 bis 7 ml je Gallone in der Blüte, CaMg 2,5 ml je Gallone nach Bedarf, PK 3 bis 10 ml je Gallone ab Blütewoche 3. A und B immer zu gleichen Teilen und nie unverdünnt zusammengeben. Die EC regelmäßig messen und nach Pflanze und Phase anpassen. Die Etiketten rechnen in US-Gallonen (eine Gallone sind laut Etikett 3,78 l). Das Programm des Herstellers: Wachstum 2 bis 3 Wochen, Blüte 8 bis 9 Wochen, die EC über den Lauf verändert.",
+    "application_en": "Per the labels: Grow A and Grow B 2 to 5 ml per gallon each in growth, Bloom A and Bloom B 2 to 7 ml per gallon each in flowering, CaMg 2.5 ml per gallon as needed, PK 3 to 10 ml per gallon from flowering week 3. A and B always in equal parts and never together undiluted. Measure the EC regularly and adjust it by plant and phase. The labels count in US gallons (one gallon is 3.78 l per the label). The maker's program: growth 2 to 3 weeks, flowering 8 to 9 weeks, the EC changed over the run.",
+    "application_sources": [
+      "AB1",
+      "AB2",
+      "AB3",
+      "AB4",
+      "AB5",
+      "AB6",
+      "AB7"
+    ],
+    "cautions": [
+      {
+        "text": "Laut Etiketten nur für Hydro empfohlen, nicht für Erde: das Cockpit bietet die Linie nicht an.",
+        "text_en": "Per the labels recommended for hydro only, not for soil: the cockpit does not offer the line.",
+        "sources": [
+          "AB2",
+          "AB4"
+        ]
+      },
+      {
+        "text": "Andere Mengen im Umlauf: Händlerseiten nennen höhere Spannen als die Etiketten; hier stehen nur die Etiketten.",
+        "text_en": "Other amounts in circulation: retailer pages give higher ranges than the labels; this card follows the labels only.",
+        "sources": [
+          "AB2",
+          "AB3"
+        ]
+      }
+    ]
+  },
+  "components": {},
+  "notes": [
+    {
+      "text": "Der Wochenplan und die Anleitung fürs Gießen von Hand liegen beim Hersteller als Google-Drive-Dateien; sie waren nicht lesbar. Deshalb steht hier keine Wochentabelle.",
+      "text_en": "The weekly plan and the hand-watering guide sit at the maker as Google Drive files; they were not readable. So there is no weekly chart here.",
+      "sources": [
+        "AB1"
+      ]
+    }
+  ],
+  "sources": {
+    "AB1": {
+      "title": "Athena, Seite der Blended Line",
+      "title_en": "Athena, Blended Line page",
+      "url": "https://www.athenaag.com/blended-line",
+      "retrieved": "2026-10-23"
+    },
+    "AB2": {
+      "title": "Athena, Etikett Grow A (PDF auf dem Server eines Händlers)",
+      "title_en": "Athena, Grow A label (PDF on a retailer's server)",
+      "url": "https://cdn.shopify.com/s/files/1/0910/5912/6550/files/Athena-Grow-A-Product-Label.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "AB3": {
+      "title": "Athena, Etikett Grow B (PDF auf dem Server eines Händlers)",
+      "title_en": "Athena, Grow B label (PDF on a retailer's server)",
+      "url": "https://cdn.shopify.com/s/files/1/0910/5912/6550/files/Athena-Grow-B-Product-Label.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "AB4": {
+      "title": "Athena, Etikett Bloom A (PDF auf dem Server eines Händlers)",
+      "title_en": "Athena, Bloom A label (PDF on a retailer's server)",
+      "url": "https://cdn.shopify.com/s/files/1/0910/5912/6550/files/Athena-Bloom-A-Product-Label.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "AB5": {
+      "title": "Athena, Etikett Bloom B (PDF auf dem Server eines Händlers)",
+      "title_en": "Athena, Bloom B label (PDF on a retailer's server)",
+      "url": "https://cdn.shopify.com/s/files/1/0910/5912/6550/files/Athena-Bloom-B-Product-Label.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "AB6": {
+      "title": "Athena, Etikett CaMg (PDF auf dem Server eines Händlers)",
+      "title_en": "Athena, CaMg label (PDF on a retailer's server)",
+      "url": "https://cdn.shopify.com/s/files/1/0910/5912/6550/files/Athena-CaMg-Product-Label.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "AB7": {
+      "title": "Athena, Etikett PK (PDF auf dem Server eines Händlers)",
+      "title_en": "Athena, PK label (PDF on a retailer's server)",
+      "url": "https://cdn.shopify.com/s/files/1/0910/5912/6550/files/Athena-PK-Product-Label.pdf",
+      "retrieved": "2026-10-23"
+    }
+  }
+}

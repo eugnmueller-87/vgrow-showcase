@@ -1,0 +1,136 @@
+{
+  "key": "ph_lockout",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "naehrstoffe",
+  "label": "pH-bedingte Blockade (Lockout)",
+  "label_en": "pH-induced lockout",
+  "tile": "Nährstoff ist da, der pH-Wert sperrt die Aufnahme",
+  "tile_en": "The nutrient is there, the pH blocks the uptake",
+  "aliases": {
+    "de": [
+      "Nährstoffsperre",
+      "pH-Blockade",
+      "Lockout"
+    ],
+    "en": [
+      "nutrient lockout",
+      "pH lockout"
+    ]
+  },
+  "symptoms": [
+    "Lockout heißt: Ein Nährstoff ist da, die Wurzeln können ihn wegen des pH-Werts aber nicht aufnehmen. Beispiel Eisen: Hoher pH bindet das Eisen, sodass die Wurzeln es nicht aufnehmen können (P1, Feldhanf).",
+    "Bei hohem pH sind Eisen, Mangan, Bor und Zink schlechter verfügbar (P2, erdlose Substrate). Eisenmangel zeigt sich als Gelb zwischen den Adern, beginnend am jungen Wachstum P1.",
+    "pH über 7 macht Phosphor unverfügbar; Manganmangel kann bei pH über 6,5 auftreten P1.",
+    "Bei niedrigem pH sind Calcium und Magnesium schlechter verfügbar [abgeleitet: P2 schreibt, ihre Verfügbarkeit steige mit dem pH]. Magnesiummangel kommt unter anderem in sauren, kalten, überwässerten oder tonigen Böden vor und zeigt sich als Gelb zwischen den Adern an älteren Blättern P1."
+  ],
+  "symptoms_en": [
+    "Lockout means a nutrient is present but the roots cannot take it up because of the pH. Example iron: high pH binds the iron so roots cannot take it up (P1, field hemp).",
+    "At high pH, iron, manganese, boron and zinc are less available (P2, soilless substrates). Iron deficiency shows as yellowing between the veins, starting on young growth P1.",
+    "pH above 7 makes phosphorus unavailable; manganese deficiency may occur above pH 6.5 P1.",
+    "At low pH, calcium and magnesium are less available [derived: P2 writes their availability rises with pH]. Magnesium deficiency occurs, among others, in acidic, cold, overwatered or clayey soils and shows as interveinal yellowing on older leaves P1."
+  ],
+  "causes": [
+    "Der pH im Substrat hängt von der Alkalinität des Gießwassers (wie stark es Säure abpuffert), vom Dünger und vom Substrat ab P3.",
+    "Zu viel Wasser, schlechte Drainage, hoher Salzgehalt und kalter Boden verhindern die Eisenaufnahme der Wurzeln P1.",
+    "Hoher Salzgehalt macht Kalium unverfügbar P1."
+  ],
+  "causes_en": [
+    "Substrate pH depends on the alkalinity of the irrigation water (how strongly it buffers acid), the fertilizer and the substrate P3.",
+    "Excess water, poor drainage, high salt content and cold soil prevent root uptake of iron P1.",
+    "High salinity makes potassium unavailable P1."
+  ],
+  "check": [
+    {
+      "metric": "watering",
+      "text": "pH von Gießwasser und Ablauf, falls ein Messgerät vorhanden ist; die Box misst laut Handbuch keinen pH P4. Abfluss und Staunässe prüfen P1.",
+      "text_en": "pH of irrigation water and runoff, if a meter is at hand; per the manual the box measures no pH P4. Check drainage and waterlogging P1."
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    }
+  ],
+  "do_now": [
+    "Nur wenn ein Messgerät vorhanden ist, messen statt raten (PourThru, P2): wie gewohnt gießen, 30 bis 60 Minuten abtropfen lassen, Schale unter den Topf, destilliertes Wasser aufgießen (150 ml bei 1 Gallone, umgerechnet 3,8 Liter; 350 ml bei 3 Gallonen, umgerechnet 11,4 Liter; Ziel sind etwa 50 ml Auffangwasser, mehr als 70 ml verdünnen die Salze), im Auffangwasser pH und EC (elektrische Leitfähigkeit) messen.",
+    "Zielbereich je nach Substrat: P2 nennt 5,4 bis 6,2 für erdlose Substrate (jede Art hat ihr eigenes Optimum), BioBizz 6,2 bis 6,5 für das eigene System (P5, Hersteller).",
+    "Leitungswasser mit zu hohem pH: Bio·Down; pH anheben: Bio·Up P6. Herstellerangabe: 0,1 ml Bio·Down je Liter Mischung senkt den pH um 0,5, 0,1 ml Bio·Up hebt ihn um 0,1 P5. Etikett beachten.",
+    "Nicht auf Verdacht nachdüngen: Zu viel Dünger schädigt die Pflanze P7. Ob der pH die Ursache ist, zeigt nur eine Messung [abgeleitet, keine Quellenaussage]."
+  ],
+  "do_now_en": [
+    "Only if a meter is at hand, measure instead of guessing (PourThru, P2): water as usual, let drain 30 to 60 minutes, saucer under the pot, pour distilled water (150 ml for 1 gallon, converted 3.8 L; 350 ml for 3 gallons, converted 11.4 L; aim for about 50 ml leachate, more than 70 ml dilutes the salts), measure pH and EC (electrical conductivity) of the leachate.",
+    "Target range depends on the substrate: P2 gives 5.4 to 6.2 for soilless substrates (each species has its own optimum), BioBizz 6.2 to 6.5 for its own system (P5, maker).",
+    "Tap water with too high a pH: Bio·Down; to raise pH: Bio·Up P6. Maker statement: 0.1 ml Bio·Down per liter of mix lowers pH by 0.5, 0.1 ml Bio·Up raises it by 0.1 P5. Follow the label.",
+    "Do not top up feeding on suspicion: excess fertilizer harms the plant P7. Only a measurement shows whether pH is the cause [derived, not a source statement]."
+  ],
+  "prevention": [
+    "Das Gießwasser wirkt über seine Alkalinität auf den pH im Substrat P3. Ob und wie oft man es messen soll, sagt die Quelle nicht.",
+    "BioBizz (Hersteller): Bei organischen Düngern sei pH-Anpassen meist unnötig, die Produkte senkten den pH selbst auf 6,2 bis 6,3 P5. Bei weichem Wasser oder Osmosewasser empfiehlt BioBizz CalMag P6."
+  ],
+  "prevention_en": [
+    "Irrigation water affects substrate pH through its alkalinity P3. Whether and how often to measure it, the source does not say.",
+    "BioBizz (maker): with organic nutrients pH adjusting is usually unnecessary, the products lower the pH to 6.2 to 6.3 themselves P5. For soft or RO water BioBizz recommends CalMag P6."
+  ],
+  "look_alikes": [
+    "Echter Mangel durch zu wenig Dünger (übrige Nährstoffkarten).",
+    "Wurzelprobleme: Zu viel Wasser, schlechte Drainage, hoher Salzgehalt und kalter Boden verhindern die Eisenaufnahme P1.",
+    "Salzstau macht Kalium unverfügbar P1."
+  ],
+  "look_alikes_en": [
+    "True deficiency from too little fertilizer (other nutrient cards).",
+    "Root problems: excess water, poor drainage, high salt content and cold soil prevent iron uptake P1.",
+    "Salt buildup makes potassium unavailable P1."
+  ],
+  "image": {
+    "file": "iron-chlorosis-peach.webp",
+    "thumb": "iron-chlorosis-peach-t.webp",
+    "w": 1000,
+    "h": 750,
+    "alt": "Pfirsichplantage mit hellgelbgrünem Laub auf kalkhaltigem Boden",
+    "alt_en": "Peach orchard with pale yellow-green foliage on chalky soil",
+    "note": "Pfirsichbäume, kein Hanf. Laut Bildseite Eisenmangel auf kalkhaltigem, basischem Boden.",
+    "note_en": "Peach trees, not cannabis. According to the image page, iron deficiency on chalky, alkaline soil.",
+    "compare": true,
+    "credit": {
+      "work": "File:2006 1017 Iron deficiency in peach.JPG",
+      "author": "Alandmanson",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:2006_1017_Iron_deficiency_in_peach.JPG"
+    }
+  },
+  "sources": {
+    "P1": "Utah State University Extension, Hemp Nutrient Deficiencies, Ratgeber für Hanfanbau ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-nutrient-deficiencies",
+    "P2": "Purdue Extension HO-237-W, Camberato, Lopez, Mickelbart, pH und EC in erdlosen Substraten (PourThru), abgerufen 2026-10-23: https://ag.purdue.edu/department/hla/extension/extension-publications-library/ext-pubs/ho-237-w.html",
+    "P3": "Purdue University, Nemali, My plants are yellowing! What is wrong with them?, Ratgeber 2017-03-18, Gewächshauspflanzen, abgerufen 2026-10-23: https://www.purdue.edu/hla/sites/cea/article/my-plants-are-yellowing-what-is-wrong-with-them/",
+    "P4": "VIVOSUN, VGrow Smart Grow Box Handbuch, Hersteller der Box, Seitenstand 2026-05-25, aus der Kartei übernommen (kartei/stages/autoflower.json, S1), abgerufen 2026-10-22: https://vivosun.com/support/guide/vgrow-smart-grow-box.md",
+    "P5": "BioBizz, Cultivation tips (FAQ), Hersteller, abgerufen 2026-10-23: https://biobizz.com/cultivation-tips/",
+    "P6": "BioBizz, Nutrient schedule, Hersteller, abgerufen 2026-10-23: https://biobizz.com/knowledge-base/nutrient-schedule",
+    "P7": "Washington State University, HortSense, Common cultural: Fertilizer burn, geprüft 2026-03-26, Gartenpflanzen, abgerufen 2026-10-23: https://hortsense.cahnrs.wsu.edu/fact-sheet/common-cultural-fertilizer-burn/"
+  },
+  "_left_out": [
+    "'Gießwasser ab und zu messen, vor allem bei hartem Wasser (Purdue 2017)': steht nicht auf der Seite.",
+    "'NC State 2003' und 'Pythium (NC State)' als Belege: ohne URL und Zitat, ersetzt bzw. gestrichen.",
+    "'Erst pH klären, dann Dünger ändern (WSU)': WSU sagt nichts zum pH, jetzt als abgeleitet gekennzeichnet.",
+    "'Zielbereich strittig': überzeichnet, jetzt nach Substrat getrennt. Cockpit-Wert 6,0 bis 6,5 für Erde (Cornell) nicht geprüft und nicht übernommen.",
+    "PourThru und pH-Messung als feste Anweisung: Vorgabe 22.10.2026 (keine Messgeräte vorschlagen), deshalb nur bedingt.",
+    "Cannabis-spezifischer pH-Zielbereich: keine Quelle lesbar."
+  ]
+}

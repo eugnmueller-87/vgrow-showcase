@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test Ministerium Pressemitteilungen</title>
+    <link>https://www.example.org/</link>
+    <atom:link href="https://www.example.org/pressemitteilungen.xml" rel="self" type="application/rss+xml"/>
+    <copyright>Test Ministerium</copyright>
+    <item>
+      <title>Zweiter Zwischenbericht zur Evaluation des Konsumcannabisgesetzes (KCanG)</title>
+      <link>https://www.example.org/presse/ekocan-zwischenbericht.html</link>
+      <guid>pm-2026-041</guid>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 CET</pubDate>
+      <description>Teaser text that must never be stored.</description>
+      <content:encoded><![CDATA[<p>Full text that must never be stored.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[  Kabinett beschließt   Änderung des Medizinal-Cannabisgesetzes ]]></title>
+      <link>https://www.example.org/presse/medcang.html</link>
+      <guid isPermaLink="false">pm-2026-090</guid>
+      <pubDate>2026-10-07</pubDate>
+    </item>
+    <item>
+      <title>Neue Pflegereform vorgestellt</title>
+      <link>https://www.example.org/presse/pflege.html</link>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 CET</pubDate>
+      <description>Not about cannabis.</description>
+    </item>
+    <item>
+      <title>Growshop-Rabatt: Cannabis-Samen jetzt kaufen</title>
+      <link>https://www.example.org/presse/shop.html</link>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 CET</pubDate>
+    </item>
+    <item>
+      <title>Cannabis-Rechtsprechung ohne Datum</title>
+      <link>https://www.example.org/presse/ohne-datum.html</link>
+    </item>
+    <item>
+      <title>Ein Eintrag ohne Link</title>
+    </item>
+  </channel>
+</rss>

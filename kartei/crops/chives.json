@@ -1,0 +1,200 @@
+{
+  "key": "chives",
+  "kind": "crop",
+  "status": "draft",
+  "label": "Schnittlauch",
+  "label_en": "Chives",
+  "fit_for_vgrow": {
+    "height_ok": true,
+    "light_note": "Offen. VIVOSUN veröffentlicht keine PPFD für die eingebaute 100-W-LED (dimmbar 25 bis 100 %), und für Schnittlauch gibt es keinen belegten Lichtsollwert. Einziger schnittlauchspezifischer Hinweis: In einem Gewächshausversuch verdoppelten 70 µmol m⁻² s⁻¹ Zusatzlicht über Tageslicht das Frisch- und Trockengewicht der Triebe [Q5]. Die Quelle nennt keinen Optimalwert und ist ein Konferenzabstract. Allgemeiner Kräuterrat für Zusatzlicht: 12 bis 16 h am Tag, Lampe 6 bis 12 Zoll über den Blättern [Q3]. Topfhöhe plus Lampenabstand in der Box: offen.",
+    "light_note_en": "Open. VIVOSUN publishes no PPFD for the built-in 100 W LED (dimmable 25 to 100%), and there is no documented light setpoint for chives. The only chives-specific hint: in a greenhouse trial, 70 µmol m⁻² s⁻¹ of supplemental light on top of daylight doubled the fresh and dry weight of the shoots [Q5]. The source gives no optimum and is a conference abstract. General herb advice for supplemental light: 12 to 16 h a day, lamp 6 to 12 inches above the leaves [Q3]. Pot height plus lamp distance in the box: open.",
+    "heat_note": "Das Optimum endet bei 24 °C [Q1] bzw. 25 °C [Q2]. Über 25 °C wurde im Freiland (Japan, Asatsuki) die Sommerruhe beobachtet [Q2]. Ob Dauerwerte zwischen 25 und 29 °C in der Box das auslösen, belegt keine Quelle: offen. 29 °C ist der Wert der VGrow-Blühvoreinstellung für die Abluft-Automatik (zusammen mit 60 % Feuchte, laut vorhandener Kartei), kein belegter fester Schaltpunkt.",
+    "heat_note_en": "The optimum ends at 24 °C [Q1] or 25 °C [Q2]. Above 25 °C, summer dormancy was observed in the field (Japan, Asatsuki) [Q2]. No source shows whether constant values between 25 and 29 °C in the box trigger it: open. 29 °C is the value of the VGrow flowering preset for the exhaust automation (together with 60% humidity, per the existing card file), not a documented fixed switching point."
+  },
+  "stages": [
+    {
+      "key": "germination",
+      "label": "Keimung",
+      "label_en": "Germination",
+      "days_from": 0,
+      "days_to": 25,
+      "targets": [
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 18,
+          "max": 20,
+          "unit": "°C",
+          "sources": [
+            "Q4"
+          ]
+        }
+      ],
+      "notes": "Tag 0 ist die Aussaat (Zählanker, kein Quellenwert). Tag 25 ist das obere Ende der Keimdauer von 10 bis 25 Tagen [Q4]. Mindestkeimfähigkeit des Saatguts 70 % [Q4]. Die 18 bis 20 °C stammen aus der Anzucht von Jungpflanzen im Erdpresstopf (3 bis 4 cm). Danach 14 °C, später 5 bis 10 °C, zusammen 4 bis 8 Wochen [Q4]. Ob Luft oder Substrat gemeint ist, sagt die Quelle nicht: offen. Saattiefe 2 cm [Q4] oder 1/4 Zoll (0,64 cm) [Q7], die Quellen weichen ab. Topfware: 60 Körner je 12-cm-Topf haben sich bei Märzaussaat bewährt [Q11]. Licht, Luftfeuchte, VPD: offen.",
+      "notes_en": "Day 0 is sowing (counting anchor, not a source value). Day 25 is the upper end of the germination period of 10 to 25 days [Q4]. Minimum germination capacity of the seed: 70% [Q4]. The 18 to 20 °C come from raising transplants in pressed-soil pots (3 to 4 cm). After that 14 °C, later 5 to 10 °C, 4 to 8 weeks in total [Q4]. Whether this means air or substrate temperature is not stated: open. Sowing depth 2 cm [Q4] or 1/4 inch (0.64 cm) [Q7]; the sources differ. Potted herbs: 60 seeds per 12 cm pot proved for March sowings [Q11]. Light, humidity, VPD: open."
+    },
+    {
+      "key": "growth",
+      "label": "Wachstum",
+      "label_en": "Growth",
+      "days_from": 25,
+      "days_to": 60,
+      "targets": [
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 13,
+          "max": 24,
+          "unit": "°C",
+          "sources": [
+            "Q1"
+          ]
+        },
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 17,
+          "max": 25,
+          "unit": "°C",
+          "sources": [
+            "Q2"
+          ]
+        },
+        {
+          "metric": "photoperiod_h",
+          "when": null,
+          "min": 12,
+          "max": 16,
+          "unit": "h",
+          "sources": [
+            "Q3"
+          ]
+        }
+      ],
+      "notes": "Die Tagesgrenzen sind Quellenwerte: 25 ist das Ende der Keimdauer [Q4], 60 die früheste Ernte [Q7]. Ein belegter Phasenwechsel ist das nicht. Zwei Temperaturspannen, beide ohne Trennung nach Tag und Nacht: 13 bis 24 °C aus einem Feldmerkblatt [Q1] und 17 bis 25 °C für das Blattwachstum [Q2]. Sie überschneiden sich bei 17 bis 24 °C (Prüfhinweis zu chives-2). Wurzeln: 21 bis 25 °C [Q2]; der Fühler sitzt aber in Blatthöhe. Nachttemperatur: offen. Die 12 bis 16 h sind allgemeiner Kräuterrat für Zusatzlicht und nicht schnittlauchspezifisch [Q3]. Sie reichen in den Bereich, der die Ruhe auslöst (unter 15 h bei 6 bis 20 °C [Q4]). DLI: kein Sollwert; im Versuch lag das natürliche DLI im Mittel bei 8,5 mol m⁻² d⁻¹ (4 bis 18), dazu kamen 6,05 durch Zusatzlicht [Q5]. Luftfeuchte und VPD: offen. Nach dem Auflaufen auf 4 bis 6 Zoll in alle Richtungen ausdünnen [Q7]. Boden-pH 6,0 bis 7,0 [Q1]. Gießen: Boden nahe Feldkapazität [Q7] gegen zwischen den Gaben abtrocknen lassen [Q3]: offen. Düngung: offen.",
+      "notes_en": "The day limits are source values: 25 is the end of the germination period [Q4], 60 is the earliest harvest [Q7]. They are not a documented phase change. Two temperature ranges, both without a day/night split: 13 to 24 °C from a field fact sheet [Q1] and 17 to 25 °C for leaf growth [Q2]. They overlap at 17 to 24 °C (review note on chives-2). Roots: 21 to 25 °C [Q2]; the probe, however, sits at leaf height. Night temperature: open. The 12 to 16 h are general herb advice for supplemental light and not specific to chives [Q3]. They reach into the range that triggers dormancy (under 15 h at 6 to 20 °C [Q4]). DLI: no target value; in the trial the natural DLI averaged 8.5 mol m⁻² d⁻¹ (4 to 18), plus 6.05 from supplemental light [Q5]. Humidity and VPD: open. After emergence, thin to 4 to 6 inches in all directions [Q7]. Soil pH 6.0 to 7.0 [Q1]. Watering: soil kept near field capacity [Q7] versus letting it dry between waterings [Q3]: open. Fertilizing: open."
+    },
+    {
+      "key": "harvest",
+      "label": "Ernte und Nachwuchs",
+      "label_en": "Harvest and regrowth",
+      "days_from": 60,
+      "days_to": "offen",
+      "targets": [
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 13,
+          "max": 24,
+          "unit": "°C",
+          "sources": [
+            "Q1"
+          ]
+        },
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 17,
+          "max": 25,
+          "unit": "°C",
+          "sources": [
+            "Q2"
+          ]
+        },
+        {
+          "metric": "photoperiod_h",
+          "when": null,
+          "min": 12,
+          "max": 16,
+          "unit": "h",
+          "sources": [
+            "Q3"
+          ]
+        }
+      ],
+      "notes": "Temperatur und Licht sind aus Wachstum übernommen, weil die Quellen nicht nach Stufen trennen. Erste Ernte frühestens 60 Tage nach Aussaat oder 30 Tage nach dem Verpflanzen [Q7]; 70 bis 100 Tage ab Pflanzung, ohne Definition von 'Pflanzung' [Q8]. Ernte ab 20 bis 25 cm Blattlänge; im Aussaatjahr 1 bis 2 Schnitte, später 3 bis 5; Folgeschnitte alle 4 bis 6 Wochen (Feldanbau) [Q4]. Gegenregel: alle 2 bis 3 Wochen, höchstens ein Drittel der Blätter [Q9]. Schnitthöhe: zurück auf 1 bis 2 Zoll über dem Boden [Q7]. Die Schnittspitzen der nachwachsenden Blätter trocknen an [Q2]. Horste alle 2 bis 3 Jahre neu pflanzen [Q8]. Ein Ende der Stufe nennt keine Quelle. Luftfeuchte, VPD, DLI: offen.",
+      "notes_en": "Temperature and light are carried over from growth because the sources do not split by stage. First harvest as early as 60 days after seeding or 30 days after transplanting [Q7]; 70 to 100 days from planting, with 'planting' not defined [Q8]. Harvest from 20 to 25 cm leaf length; 1 to 2 cuts in the sowing year, 3 to 5 later; regrowth cuts every 4 to 6 weeks (field production) [Q4]. Counter rule: every 2 to 3 weeks, no more than one-third of the foliage [Q9]. Cut height: back to 1 to 2 inches above the soil [Q7]. The cut tips of the regrowing leaves dry out [Q2]. Replant clumps every 2 to 3 years [Q8]. No source gives an end to this stage. Humidity, VPD, DLI: open."
+    },
+    {
+      "key": "forcing",
+      "label": "Treiberei (ausgegrabene Gartenhorste)",
+      "label_en": "Forcing (dug-up garden clumps)",
+      "days_from": "offen",
+      "days_to": "offen",
+      "targets": [
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 18,
+          "max": 20,
+          "unit": "°C",
+          "sources": [
+            "Q4"
+          ]
+        },
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 20,
+          "max": 22,
+          "unit": "°C",
+          "sources": [
+            "Q2"
+          ]
+        }
+      ],
+      "notes": "Gilt nur für ausgegrabene Gartenhorste, nicht für Aussaat. Ob dieser Weg gegangen wird: offen. Treibtemperatur 18 bis 20 °C [Q4] oder Lufttemperatur 20 bis 22 °C [Q2]; bei [Q4] ist nicht genannt, ob Luft oder Boden gemeint ist. Laut Prüfhinweis gilt [Q2] nur für die ersten zwei Wochen bei wenig Licht, danach 18 bis 16 °C. Boden optimal 25 °C [Q2]. Ohne Zusatzlicht die Temperatur unter dem Optimum halten, sonst vergeilen die Pflanzen [Q2]. Töpfe üblich 9 bis 10 cm [Q4]. Zeitpunkt: nicht vor Mitte Oktober voll antreibbar [Q2]; Austriebsfähigkeit steigt erst ab November und ist vor Ende Dezember nicht voll da [Q4]. Ruhe brechen: Warmluft 42 °C über 16 h oder 35 °C über 10 bis 12 Tage [Q2]; Warmwasserbad 36 bis 38 °C oder Warmluft 30 bis 40 °C [Q4]. Beides sind Sekundärquellen, die Originalarbeiten wurden nicht abgerufen. Ob die Box das leisten soll: offen. Tage, Licht, Luftfeuchte, VPD: offen.",
+      "notes_en": "Applies only to dug-up garden clumps, not to sowing. Whether this route is taken: open. Forcing temperature 18 to 20 °C [Q4] or air temperature 20 to 22 °C [Q2]; [Q4] does not say whether this is air or soil. According to the review note, [Q2] applies only to the first two weeks in low light, then 18 to 16 °C. Soil optimum 25 °C [Q2]. Without supplemental light keep the temperature below the optimum, otherwise the plants etiolate [Q2]. Pots usually 9 to 10 cm [Q4]. Timing: cannot be pushed into full growth before mid-October [Q2]; the ability to resprout rises only from November and is not fully present before the end of December [Q4]. Breaking dormancy: warm air at 42 °C for 16 h or 35 °C for 10 to 12 days [Q2]; warm-water bath 36 to 38 °C or warm air 30 to 40 °C [Q4]. Both are secondary sources; the original papers were not retrieved. Whether the box should do this: open. Days, light, humidity, VPD: open."
+    }
+  ],
+  "warnings": [
+    "Quellenlage: Die Werte stammen aus Freiland-, Garten- und Gewächshausanbau, aus der Topfkräuter-Erzeugung oder aus allgemeinen Innenraum-Ratgebern für Kräuter. Keine geprüfte Aussage misst Schnittlauch in einer geschlossenen Box mit LED.",
+    "Ruhe durch kurzen Tag: Unter 15 h Licht bei 6 bis 20 °C (optimal 15 °C) setzt im Freiland die Knospenruhe ein, die Pflanze zieht danach ein [Q4]. Optimal für die Auslösung sind 14 h oder weniger bei 14 °C [Q2]. Der Kräuterrat von 12 bis 16 h [Q3] reicht in diesen Bereich hinein (Querlesung, steht in keiner Quelle).",
+    "Ruhe durch Wärme: Über 25 °C wurde im Freiland (Japan, Asatsuki) die Sommerruhe beobachtet [Q2]. Ob Dauerwerte zwischen 25 und 29 °C in der Box das auslösen, belegt keine Quelle. 29 °C ist ein Voreinstellungswert der Abluft-Automatik, kein belegter fester Schaltpunkt.",
+    "Rost: Infektion optimal bei etwa 15 °C und 100 % relativer Luftfeuchte über mindestens 4 Stunden [Q6]. Das ist eine Krankheitsschwelle, kein Sollwert. Betrifft den schaltbaren Befeuchter.",
+    "Falscher Mehltau: grauvioletter, flauschiger Belag in feuchten Phasen. Luftbewegung und schnell trocknende Blätter senken den Befall, beseitigen ihn nicht [Q7]. Betrifft Umluft und Befeuchter.",
+    "Spitzen: Nach dem Schnitt trocknen die Spitzen der nachwachsenden Blätter an, eine dokumentierte Schnittfolge [Q2]. Ein Blattfleck durch Botrytis byssoidea begann an den Spitzen mit Vergilbung und hellbraun abgestorbenem Gewebe [Q13]; ob Feuchte die Ursache war, belegt die Quelle nicht.",
+    "Gießen: Die Quellen widersprechen sich (Boden nahe Feldkapazität [Q7] gegen zwischen den Gaben abtrocknen lassen [Q3]). Ein belegter Wert für die Tropfpumpe fehlt.",
+    "Gartenhorste antreiben: Nicht vor Mitte Oktober voll antreibbar [Q2]; die Austriebsfähigkeit steigt erst ab November und ist vor Ende Dezember nicht voll da [Q4]."
+  ],
+  "warnings_en": [
+    "Source base: the values come from field, garden and greenhouse production, from potted-herb production, or from general indoor herb guides. None of the checked claims measures chives in a closed box with LED light.",
+    "Dormancy from short days: under 15 h of light at 6 to 20 °C (optimum 15 °C) starts bud dormancy in the field, and the plant dies back afterwards [Q4]. The optimum for triggering it is 14 h or less at 14 °C [Q2]. The herb advice of 12 to 16 h [Q3] reaches into this range (cross-reading, not stated in any source).",
+    "Dormancy from heat: above 25 °C, summer dormancy was observed in the field (Japan, asatsuki) [Q2]. No source shows whether constant 25 to 29 °C in the box triggers it. 29 °C is a preset value of the exhaust automation, not a proven fixed switching point.",
+    "Rust: infection is optimal at about 15 °C and 100% relative humidity for at least 4 hours [Q6]. This is a disease threshold, not a target value. It concerns the switchable humidifier.",
+    "Downy mildew: grayish-violet fuzzy growth in moist periods. Air movement and quickly drying leaves reduce the damage but do not remove it [Q7]. It concerns the circulation fan and the humidifier.",
+    "Tips: after cutting, the tips of the regrowing leaves dry out, a documented result of cutting [Q2]. A leaf blight caused by Botrytis byssoidea started at the tips with yellowing and tan dead tissue [Q13]; the source does not show that humidity was the cause.",
+    "Watering: the sources contradict each other (soil near field capacity [Q7] versus letting the soil dry between waterings [Q3]). A proven value for the drip pump is missing.",
+    "Forcing garden clumps: they cannot be pushed into full growth before mid-October [Q2]; the ability to resprout rises only from November and is not fully present before the end of December [Q4]."
+  ],
+  "image": {
+    "file": "chives-clump.webp",
+    "thumb": "chives-clump-t.webp",
+    "w": 1093,
+    "h": 1110,
+    "alt": "Ein Horst Schnittlauch ohne Blüten im Beet",
+    "alt_en": "A clump of chives without flowers in a garden bed",
+    "credit": {
+      "work": "File:Ruohosipuli.jpg",
+      "author": "Johanna Verhiö",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Ruohosipuli.jpg"
+    }
+  },
+  "sources": {
+    "Q1": "Ontario Ministry of Agriculture, Food and Rural Affairs (OMAFRA), Crop Opportunities, Chive (zuletzt geändert 2012-10-17, Behörde, abgerufen 2026-10-22): https://omafra.gov.on.ca/CropOp/en/herbs/culinary/chive.html",
+    "Q2": "Rodkiewicz T. (2013), Szczypiorek (Allium schoenoprasum L.) - biologia i uprawa, Annales UMCS Sectio EEE Horticultura XXIII(4): 19-27 (Fachzeitschrift, polnisch, abgerufen 2026-10-22): https://czasopisma.up.lublin.pl/ah/article/download/672/512",
+    "Q3": "Iowa State University Extension, Yard and Garden, Growing Herbs Indoors (Aaron Steil, November 2023, Hochschul-Beratung, abgerufen 2026-10-22): https://yardandgarden.extension.iastate.edu/how-to/growing-herbs-indoors",
+    "Q4": "DLR Rheinland-Pfalz, Anbau- und Sortenhinweise für den Gemüseanbau in Rheinland-Pfalz, Schnittlauch 2024/2025 (K. Mahler, Stand 24.01.2024, Behörde, abgerufen 2026-10-22): https://www.dlr-rnh.rlp.de/Internet/global/themen.nsf/b48832557a0e458bc1257ac50056c295/1ef319fcf05534dbc125876e002d5a6f/$FILE/Schnittlauch.pdf",
+    "Q5": "Sams C.E., Wheeler J., Kopsell D. (2016), Supplemental Light Improves Yield and Quality of Chives in a Commercial Hydroponic Production System, ASHS Annual Conference, Abstract 25132 (University of Tennessee, Konferenzabstract, abgerufen 2026-10-22): https://ashs.confex.com/ashs/2016/webprogram/Paper25132.html",
+    "Q6": "UC Statewide IPM Program, Onion and Garlic Pest Management Guidelines, Rust (Text 02/19, Hochschul-Beratung, abgerufen 2026-10-22): https://ipm.ucanr.edu/agriculture/onion-and-garlic/rust/",
+    "Q7": "Utah State University Extension, How to Grow Chives in Your Garden (Dan Drost, März 2020, Hochschul-Beratung, abgerufen 2026-10-22): https://extension.usu.edu/yardandgarden/research/chives-in-the-garden",
+    "Q8": "FAO, Ecocrop-Datenbank, Allium schoenoprasum, Crop-Code 810 (UN-Behörde, abgerufen 2026-10-22): https://ecocrop.apps.fao.org/ecocrop/srv/en/cropView?id=810",
+    "Q9": "UF/IFAS Extension Pasco County, Spice Up Your Life, A Beginners Guide to Growing Chives (Julia Sirchia, 2024-04-16, Hochschul-Beratung, Blogbeitrag, abgerufen 2026-10-22): https://blogs.ifas.ufl.edu/pascoco/2024/04/16/spice-up-your-life-chives/",
+    "Q10": "NC State Extension Gardener Plant Toolbox, Allium schoenoprasum (ohne Datum auf der Seite, Hochschul-Beratung, abgerufen 2026-10-22): https://plants.ces.ncsu.edu/plants/allium-schoenoprasum/",
+    "Q11": "Rupp J. (2011), Ökologische Topfkräuterproduktion - Schnittlauch, Bundesprogramm Ökologischer Landbau (BMELV), FKZ 08OE208, Organic Eprints 20825 (öffentlich geförderter Projektbericht, beschreibt gewerbliche Praxis, abgerufen 2026-10-22): https://orgprints.org/20825/",
+    "Q12": "University of Illinois Extension, Herbs all winter, Growing them indoors (2018-11-19, Hochschul-Beratung, abgerufen 2026-10-22): https://aces.illinois.edu/node/625",
+    "Q13": "Koike S.T., du Toit L.J., Derie M.L. (2009), A Leaf Blight of Chive Caused by Botrytis byssoidea in California, Plant Disease 93(8): 844, doi:10.1094/PDIS-93-8-0844A (Fachzeitschrift, abgerufen 2026-10-22): https://rex.libraries.wsu.edu/esploro/outputs/journalArticle/A-Leaf-Blight-of-Chive-Caused/99900547583201842"
+  }
+}

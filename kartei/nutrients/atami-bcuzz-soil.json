@@ -1,0 +1,544 @@
+{
+  "name": "Atami B'cuzz Soil",
+  "name_en": "Atami B'cuzz Soil",
+  "summary": "Mineralischer Zweikomponentendünger für Erde: B'cuzz Soil A und B bei jedem Gießen, dazu Stimulatoren und Zusätze von Atami. Der Plan nennt Stadien statt Wochen; deshalb im Cockpit nicht wählbar.",
+  "summary_en": "Mineral two-part fertilizer for soil: B'cuzz Soil A and B at every watering, plus Atami's stimulators and additives. The plan names stages instead of weeks; so not selectable in the cockpit.",
+  "product": "Atami",
+  "version": "Grow Guide Soil 2024",
+  "status": "draft",
+  "status_note": "Abgetippt aus dem B'cuzz-Soil-Grow-Guide (AT1) am 23.10.2026 und Zahl für Zahl mit dem gerenderten Original verglichen. Der Plan hat zehn Spalten nach Stadien und druckt keine Wochen; laut Hersteller hängt die Dauer der Abschnitte von der Pflanze ab. Das Cockpit würde die Woche raten müssen, deshalb im Wiki zum Lesen, im Cockpit nicht wählbar.",
+  "status_note_en": "Transcribed from the B'cuzz Soil grow guide (AT1) on Oct 23, 2026 and compared number by number with the rendered original. The plan has ten columns by stage and prints no weeks; per the maker the length of the periods depends on the plant. The cockpit would have to guess the week, so for reading in the wiki, not selectable in the cockpit.",
+  "check": {
+    "state": "checked",
+    "on": "2026-10-23",
+    "text": "Jede Zahl gegen den gerenderten Grow Guide (AT1) geprüft, am 23.10.2026.",
+    "text_en": "Every number checked against the rendered grow guide (AT1), on Oct 23, 2026."
+  },
+  "unit": "ml/l",
+  "aliases": {
+    "de": [
+      "Atami",
+      "B'cuzz",
+      "Bcuzz",
+      "B'cuzz Soil",
+      "Bcuzz Soil",
+      "B'cuzz Soil A",
+      "B'cuzz Soil B",
+      "Atami Bcuzz"
+    ],
+    "en": [
+      "Atami",
+      "B'cuzz",
+      "Bcuzz",
+      "B'cuzz Soil",
+      "Bcuzz Soil",
+      "B'cuzz Soil A",
+      "B'cuzz Soil B",
+      "Atami Bcuzz"
+    ]
+  },
+  "line": {
+    "maker": "Atami",
+    "types": [
+      "multi_part",
+      "mineral_liquid"
+    ],
+    "media": [
+      "soil"
+    ],
+    "media_text": "Erde (Soil A und B); die Stimulatoren laut Produktseiten auch für Kokos und Hydro.",
+    "media_text_en": "Soil (Soil A and B); per the product pages the stimulators also for coco and hydro.",
+    "products": [
+      {
+        "product": "B'cuzz Soil A",
+        "role": "Grunddünger Teil A (NK 3-3), getrennt von B ins Wasser.",
+        "role_en": "Base nutrient part A (NK 3-3), into the water separately from B.",
+        "sources": [
+          "AT1",
+          "AT2"
+        ]
+      },
+      {
+        "product": "B'cuzz Soil B",
+        "role": "Grunddünger Teil B (PK 3-4).",
+        "role_en": "Base nutrient part B (PK 3-4).",
+        "sources": [
+          "AT1",
+          "AT2"
+        ]
+      },
+      {
+        "product": "ATA CalMag",
+        "role": "Calcium und Magnesium, im Plan über den ganzen Lauf.",
+        "role_en": "Calcium and magnesium, in the plan through the whole run.",
+        "sources": [
+          "AT1"
+        ]
+      },
+      {
+        "product": "B'cuzz Blossom Builder",
+        "role": "Blüteprodukt von der frühen Blüte bis zur Reife.",
+        "role_en": "Flowering product from early bloom to ripening.",
+        "sources": [
+          "AT1"
+        ]
+      },
+      {
+        "product": "B'cuzz Soil Booster Uni",
+        "role": "Booster, eine Spalte am Ende des Wachstums.",
+        "role_en": "Booster, one column at the end of growth.",
+        "sources": [
+          "AT1"
+        ]
+      },
+      {
+        "product": "B'cuzz Bloom Stimulator",
+        "role": "Stimulator fast ohne NPK, ab der Blütenbildung täglich beim Gießen, 0,5 bis 1 ml je Liter.",
+        "role_en": "Stimulator with almost no NPK, from flower formation daily when watering, 0.5 to 1 ml per litre.",
+        "sources": [
+          "AT1",
+          "AT3"
+        ]
+      },
+      {
+        "product": "B'cuzz Root Stimulator",
+        "role": "Wurzelstimulator in den ersten 2 Wochen täglich beim Gießen, 0,5 bis 1 ml je Liter, danach ein Booster.",
+        "role_en": "Root stimulator daily when watering in the first 2 weeks, 0.5 to 1 ml per litre, then a booster.",
+        "sources": [
+          "AT1",
+          "AT4"
+        ]
+      },
+      {
+        "product": "B'cuzz Silic Boost",
+        "role": "Siliziumzusatz, 0,1 ml je Liter im Wachstum und in der ersten Hälfte der Blüte.",
+        "role_en": "Silicon additive, 0.1 ml per litre in growth and the first half of flowering.",
+        "sources": [
+          "AT1"
+        ]
+      },
+      {
+        "product": "Atazyme",
+        "role": "Enzymzusatz, 1 ml je Liter vom späten Wachstum bis zur Reife.",
+        "role_en": "Enzyme additive, 1 ml per litre from late growth to ripening.",
+        "sources": [
+          "AT1"
+        ]
+      }
+    ],
+    "application_short": "Bei jedem Gießen A und B getrennt ins Wasser, in ml je Liter; pH 5,8 bis 6,5, EC 1,2 bis 2,8; letzte Spalte nur Wasser.",
+    "application_short_en": "At every watering A and B separately into the water, in ml per litre; pH 5.8 to 6.5, EC 1.2 to 2.8; last column plain water.",
+    "application": "In ml je Liter Wasser. A und B nur mit Wasser zusammenbringen, nie unverdünnt mischen. Laut Plan bei jedem Gießen düngen; die Mengen sind Richtwerte, die von Pflanze, Bedingungen und Lichtstärke abhängen, nach der EC anpassen. Ziel für den ganzen Lauf: pH 5,8 bis 6,5, EC 1,2 bis 2,8. Grundmenge laut Produktseite: stark vorgedüngte Erde 1 bis 3 ml A und 1 bis 3 ml B je Liter, leicht vorgedüngte Erde 1 bis 5 ml A und 1 bis 5 ml B je Liter. Die letzte Spalte: nur Wasser.",
+    "application_en": "In ml per litre of water. Bring A and B together only with water, never mix them undiluted. Per the plan feed at every watering; the amounts are guidance that depends on the plant, the conditions and the light intensity, adjust by the EC. Target for the whole run: pH 5.8 to 6.5, EC 1.2 to 2.8. Base amount per the product page: heavily pre-fertilized soil 1 to 3 ml A and 1 to 3 ml B per litre, lightly pre-fertilized soil 1 to 5 ml A and 1 to 5 ml B per litre. The last column: plain water only.",
+    "application_sources": [
+      "AT1",
+      "AT2"
+    ],
+    "cautions": [
+      {
+        "text": "Der Plan druckt Stadien, keine Wochen, und laut Hersteller hängt die Dauer der Abschnitte von der Pflanze ab. Deshalb rechnet das Cockpit damit nicht.",
+        "text_en": "The plan prints stages, not weeks, and per the maker the length of the periods depends on the plant. So the cockpit computes nothing with it.",
+        "sources": [
+          "AT1"
+        ]
+      },
+      {
+        "text": "Gedüngt wird bei jedem Gießen, anders als bei Hesi (1 bis 2 Mal pro Woche) oder Green House Feeding auf Erde (jedes zweite Gießen).",
+        "text_en": "Feeding is at every watering, unlike Hesi (1 to 2 times a week) or Green House Feeding on soil (every second watering).",
+        "sources": [
+          "AT1"
+        ]
+      }
+    ]
+  },
+  "weeks": {
+    "columns": [
+      {
+        "key": "growth_1",
+        "label": "Wachstum, Spalte 1",
+        "label_en": "Growth, column 1",
+        "printed": "Growth"
+      },
+      {
+        "key": "growth_2",
+        "label": "Wachstum, Spalte 2",
+        "label_en": "Growth, column 2",
+        "printed": "Growth"
+      },
+      {
+        "key": "early_bloom_1",
+        "label": "Frühe Blüte, Spalte 1",
+        "label_en": "Early bloom, column 1",
+        "printed": "Early Bloom"
+      },
+      {
+        "key": "early_bloom_2",
+        "label": "Frühe Blüte, Spalte 2",
+        "label_en": "Early bloom, column 2",
+        "printed": "Early Bloom"
+      },
+      {
+        "key": "bloom_a",
+        "label": "Blüte, Spalte 1",
+        "label_en": "Bloom, column 1",
+        "printed": "Bloom"
+      },
+      {
+        "key": "bloom_b",
+        "label": "Blüte, Spalte 2",
+        "label_en": "Bloom, column 2",
+        "printed": "Bloom"
+      },
+      {
+        "key": "early_ripening_1",
+        "label": "Frühe Reife, Spalte 1",
+        "label_en": "Early ripening, column 1",
+        "printed": "Early ripening"
+      },
+      {
+        "key": "early_ripening_2",
+        "label": "Frühe Reife, Spalte 2",
+        "label_en": "Early ripening, column 2",
+        "printed": "Early ripening"
+      },
+      {
+        "key": "ripening_1",
+        "label": "Reife, Spalte 1",
+        "label_en": "Ripening, column 1",
+        "printed": "Ripening"
+      },
+      {
+        "key": "ripening_2",
+        "label": "Reife, Spalte 2: nur Wasser",
+        "label_en": "Ripening, column 2: plain water only",
+        "printed": "Ripening (water)"
+      }
+    ],
+    "sources": [
+      "AT1"
+    ]
+  },
+  "components": {
+    "soil_a": {
+      "label": "B'cuzz Soil A",
+      "label_en": "B'cuzz Soil A"
+    },
+    "soil_b": {
+      "label": "B'cuzz Soil B",
+      "label_en": "B'cuzz Soil B"
+    },
+    "ata_calmag": {
+      "label": "ATA CalMag",
+      "label_en": "ATA CalMag",
+      "optional": true
+    },
+    "blossom_builder": {
+      "label": "Blossom Builder",
+      "label_en": "Blossom Builder",
+      "optional": true
+    },
+    "booster_uni": {
+      "label": "Soil Booster Uni",
+      "label_en": "Soil Booster Uni",
+      "optional": true
+    },
+    "bloom_stimulator": {
+      "label": "Bloom Stimulator",
+      "label_en": "Bloom Stimulator",
+      "optional": true
+    },
+    "root_stimulator": {
+      "label": "Root Stimulator",
+      "label_en": "Root Stimulator",
+      "optional": true
+    },
+    "silic_boost": {
+      "label": "Silic Boost",
+      "label_en": "Silic Boost",
+      "optional": true
+    },
+    "atazyme": {
+      "label": "Atazyme",
+      "label_en": "Atazyme",
+      "optional": true
+    }
+  },
+  "pages": {
+    "low": {
+      "label": "Untere Werte der Spanne",
+      "label_en": "Lower values of the range",
+      "rows": {
+        "soil_a": [
+          2,
+          2.8,
+          3.5,
+          4,
+          4,
+          3.8,
+          3.8,
+          3.5,
+          3.5,
+          null
+        ],
+        "soil_b": [
+          2,
+          2.8,
+          3.5,
+          4,
+          4,
+          3.8,
+          3.8,
+          3.5,
+          3.5,
+          null
+        ],
+        "ata_calmag": [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          null
+        ],
+        "blossom_builder": [
+          null,
+          null,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          null
+        ],
+        "booster_uni": [
+          null,
+          0.5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "bloom_stimulator": [
+          null,
+          null,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          null
+        ],
+        "root_stimulator": [
+          1,
+          0.5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "silic_boost": [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          null,
+          null,
+          null,
+          null
+        ],
+        "atazyme": [
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "sources": [
+        "AT1"
+      ]
+    },
+    "high": {
+      "label": "Obere Werte der Spanne",
+      "label_en": "Upper values of the range",
+      "rows": {
+        "soil_a": [
+          3,
+          3.8,
+          4.5,
+          5,
+          5,
+          4.8,
+          4.8,
+          4.5,
+          4.5,
+          null
+        ],
+        "soil_b": [
+          3,
+          3.8,
+          4.5,
+          5,
+          5,
+          4.8,
+          4.8,
+          4.5,
+          4.5,
+          null
+        ],
+        "ata_calmag": [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          null
+        ],
+        "blossom_builder": [
+          null,
+          null,
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          null
+        ],
+        "booster_uni": [
+          null,
+          0.5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "bloom_stimulator": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ],
+        "root_stimulator": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "silic_boost": [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          null,
+          null,
+          null,
+          null
+        ],
+        "atazyme": [
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "sources": [
+        "AT1"
+      ]
+    }
+  },
+  "frequency": {
+    "text": "Laut Plan bei jedem Gießen. Wie oft gegossen wird, sagt er nicht; das Cockpit gibt keinen Takt vor.",
+    "text_en": "Per the plan at every watering. How often to water it does not say; the cockpit sets no schedule.",
+    "sources": [
+      "AT1"
+    ]
+  },
+  "notes": [
+    {
+      "text": "Spannen: der Plan druckt zum Beispiel Soil A 2 bis 3 ml; die Karte führt die unteren und die oberen Werte als zwei Seiten und mittelt nie. Root Stimulator steht in Spalte 1 als 1 bis 1 ml.",
+      "text_en": "Ranges: the plan prints for example Soil A 2 to 3 ml; the card keeps the lower and the upper values as two pages and never averages. Root Stimulator stands in column 1 as 1 to 1 ml.",
+      "sources": [
+        "AT1"
+      ]
+    }
+  ],
+  "sources": {
+    "AT1": {
+      "title": "Atami, B'cuzz Soil Grow Guide (PDF)",
+      "title_en": "Atami, B'cuzz Soil grow guide (PDF)",
+      "url": "https://atami.com/wp-content/uploads/2024/12/Atami-Grow-Guides-Bcuzz-soil.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "AT2": {
+      "title": "Atami, Produktseite B'cuzz Soil A und B",
+      "title_en": "Atami, B'cuzz Soil A and B product page",
+      "url": "https://atami.com/product/bcuzz-soil-ab",
+      "retrieved": "2026-10-23"
+    },
+    "AT3": {
+      "title": "Atami, Produktseite B'cuzz Bloom Stimulator",
+      "title_en": "Atami, B'cuzz Bloom Stimulator product page",
+      "url": "https://atami.com/product/bcuzz-bloom-stimulator",
+      "retrieved": "2026-10-23"
+    },
+    "AT4": {
+      "title": "Atami, Produktseite B'cuzz Root Stimulator",
+      "title_en": "Atami, B'cuzz Root Stimulator product page",
+      "url": "https://atami.com/product/bcuzz-root-stimulator",
+      "retrieved": "2026-10-23"
+    }
+  }
+}

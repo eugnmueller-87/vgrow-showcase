@@ -1,0 +1,155 @@
+{
+  "key": "magnesium_deficiency",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "naehrstoffe",
+  "label": "Magnesiummangel (Mg)",
+  "label_en": "Magnesium deficiency (Mg)",
+  "tile": "Gelb zwischen den Adern älterer Blätter",
+  "tile_en": "Yellow between the veins of older leaves",
+  "aliases": {
+    "de": [
+      "Mg-Mangel",
+      "Gelb zwischen den Adern unten",
+      "gelbe Blätter",
+      "Vergilbung"
+    ],
+    "en": [
+      "Mg deficiency",
+      "interveinal yellowing low",
+      "yellow leaves",
+      "yellowing"
+    ]
+  },
+  "symptoms": [
+    "Früh: im Versuch in Woche 4 nach Umstellung auf 12/12 leichte Aufhellung zwischen den Adern unterer Fächerblätter, zuerst zwischen Mittelrippe und Rand P1.",
+    "Gelb zwischen den Adern an älteren Blättern P2P3.",
+    "Unregelmäßige rostbraune Flecken an Rändern, Spitzen und zwischen den Adern; die Blätter rollen sich nach oben P2.",
+    "Spät: tote Blattränder P3; kränkliche Pflanze, deren Blätter absterben und abfallen P2.",
+    "Im Cannabis-Versuch nach Woche 4 schnell fortschreitend, vor allem an kleineren, jüngeren Fächerblättern P1.",
+    "Hinweis zur Übertragbarkeit: Die Wochen zählen im Versuch ab der Umstellung auf 12 Stunden Licht P1. Der Versuch lief in Hydrokultur mit der Sorte Gelato 29, Magnesium war komplett weggelassen. Ob das für Erde mit BioBizz und eine Autoflower gilt, sagt die Quelle nicht."
+  ],
+  "symptoms_en": [
+    "Early: in the trial in week 4 after the switch to 12/12 mild interveinal chlorosis on lower fan leaves, first between midrib and margin P1.",
+    "Yellow between the veins on older leaves P2P3.",
+    "Irregular rust-brown spots on margins, tips and between the veins; leaves curl upward P2.",
+    "Late: dead leaf margins P3; sickly plant with dying and dropping leaves P2.",
+    "In the cannabis trial it spread fast after week 4, mainly on smaller, younger fan leaves P1.",
+    "Transferability note: weeks are counted from the switch to 12 hours of light P1. The trial ran in hydroponics with cultivar Gelato 29, magnesium fully withheld. Whether this holds for soil with BioBizz and an autoflower, the source does not say."
+  ],
+  "causes": [
+    "Zu viel Kalium oder Calcium in der Erde; tonige, zu nasse, saure und kalte Erde P2.",
+    "Utah State (Hanf im Feld): Die Aufnahme sinkt, wenn die Nächte unter 64 °F (umgerechnet 17,8 °C) und die Tage unter 75 °F (umgerechnet 23,9 °C) liegen P2. Beide Werte stehen in einem Satz; ob Luft oder Boden gemeint ist, sagt die Quelle nicht.",
+    "Kalium, Calcium und Magnesium konkurrieren, wenn einer davon im Überschuss gegeben wird P3; mehr Kalium drückte bei Cannabis Calcium und Magnesium P4.",
+    "Calcium und Magnesium werden mit steigendem pH besser verfügbar (P5, erdlose Substrate); Utah State nennt saure Erde als Ursache von Magnesiummangel P2."
+  ],
+  "causes_en": [
+    "Excess potassium or calcium in the soil; clayey, overwatered, acidic and cold soil P2.",
+    "Utah State (field hemp): uptake is reduced when nights are below 64 °F (17.8 °C) and days below 75 °F (23.9 °C) P2. Both values are in one sentence; the source does not say whether air or soil is meant.",
+    "Potassium, calcium and magnesium compete when one of them is supplied in excess P3; more potassium lowered calcium and magnesium in cannabis P4.",
+    "Calcium and magnesium availability rises with pH (P5, soilless substrates); Utah State names acidic soil as a cause of magnesium deficiency P2."
+  ],
+  "check": [
+    {
+      "metric": "probe_temp",
+      "text": "Nacht unter 64 °F (17,8 °C) und Tag unter 75 °F (23,9 °C) bremst die Aufnahme (P2, Hanf im Feld); der Fühler misst die Luft, die Quelle sagt nicht, ob Luft oder Boden gemeint ist.",
+      "text_en": "Night below 64 °F (17.8 °C) and day below 75 °F (23.9 °C) reduce uptake (P2, field hemp); the probe reads air, the source does not say whether air or soil is meant."
+    },
+    {
+      "metric": "watering",
+      "text": "Zu nass gegossen? P2 Kalium-Zusätze im Düngeprotokoll? P3",
+      "text_en": "Overwatered? P2 Potassium additives in the feeding log? P3"
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Keine gelesene Quelle verknüpft dieses Problem mit diesem Messwert.",
+      "text_en": "No source read links this problem to this reading."
+    }
+  ],
+  "do_now": [
+    "probe_temp tags und nachts ansehen P2.",
+    "Nicht zu nass gießen P2.",
+    "Nur falls ein pH-Messgerät vorhanden ist: pH messen (Karte pH-Blockade).",
+    "Utah State (schreibt für Hanf-Erzeuger im Feld, nicht für den Heimanbau) nennt ein Blattspray mit einer Bittersalzlösung zu 2 % P2. Zum Zeitpunkt in der Blüte steht dort nichts. Etikett und Zulassung beachten.",
+    "Bittersalz sparsam: Der Richtwert von NC State (Lee County) gilt für Topfpflanzen im Haus, etwa 1 Teelöffel für einen 3-Gallonen-Topf (umgerechnet 11,36 l), mehr ist nicht besser P6. Wie oft und wie ausgebracht, sagt die Quelle nicht. Sie warnt, dass man es bei Topfpflanzen drinnen leicht übertreibt und dass schon genug Magnesium da sein kann.",
+    "Weiches Wasser oder Osmosewasser: BioBizz nennt dafür sein CalMag (P7, Herstellerseite, kein unabhängiger Beleg). Dosierung laut Packung."
+  ],
+  "do_now_en": [
+    "Check probe_temp by day and night P2.",
+    "Do not overwater P2.",
+    "Only if a pH meter is at hand: measure pH (see pH lockout card).",
+    "Utah State (written for hemp producers in the field, not for home growing) names a foliar spray of 2% Epsom salt solution P2. It says nothing about timing during flowering. Follow label and approval (Etikett und Zulassung beachten).",
+    "Epsom salt sparingly: the NC State (Lee County) guideline is for indoor potted plants, about 1 teaspoon for a 3-gallon pot (11.36 l), more is not better P6. How often and how to apply it, the source does not say. It warns that indoor potted plants are easily overdosed and that enough magnesium may already be present.",
+    "Soft or RO water: BioBizz names its CalMag for this (P7, maker page, not independent evidence). Dose per package."
+  ],
+  "prevention": [
+    "Nicht dauerhaft kühl: Nächte unter 64 °F und Tage unter 75 °F meiden (P2, Hanf im Feld). Ob die Werte für eine Box mit Luftfühler passen, sagt die Quelle nicht.",
+    "Kalium, Calcium und Magnesium im Gleichgewicht halten, keinen der drei überdosieren (P3, Zierpflanzen im Gewächshaus). Mehr Kalium drückte bei Cannabis Calcium und Magnesium P4."
+  ],
+  "prevention_en": [
+    "Avoid long cool spells: nights below 64 °F and days below 75 °F (P2, field hemp). Whether the values fit a box with an air probe, the source does not say.",
+    "Keep potassium, calcium and magnesium in balance, do not overdose any of the three (P3, greenhouse ornamentals). Higher potassium lowered calcium and magnesium in cannabis P4."
+  ],
+  "look_alikes": [
+    "Eisenmangel: gleiches Muster, nach Lehrbuch aber an jungen Blättern (P2, P3, P8). Im Cannabis-Versuch in der Blüte traf Magnesiummangel nach Woche 4 vor allem kleinere, jüngere Fächerblätter P1: Die Regel 'unten gleich Magnesium' trägt dort nicht.",
+    "Schwefelmangel ab Woche 5: Aufhellung zwischen den Adern an unteren Fächerblättern P1.",
+    "Stickstoffmangel: beginnt unten, Blatt blass bis gelb P8. Im Cannabis-Versuch zuerst gelbe Spitzen der Blattfinger an unteren Fächerblättern in Woche 3, am stärksten zwischen den Adern, dann breites Gelb P1; kann anfangs Magnesium ähneln.",
+    "Manganmangel: Gelb zwischen den Adern mit dunkelgrünem Rand an jüngeren Blättern P2.",
+    "Normale Alterung: Auch gut versorgte Kontrollpflanzen zeigten ab Blütewoche 6 mäßiges Vergilben der ältesten, größten Fächerblätter; die Autoren nennen das normal bei reifenden Cannabis-Pflanzen, selbst bei Überversorgung P1. Nicht gleich als Mangel deuten.",
+    "Kaliummangel: kann Magnesiummangel ähneln, auch an älteren Blättern; Ränder gelb bis braun, ältere Blätter rollen oft nach unten P8."
+  ],
+  "look_alikes_en": [
+    "Iron deficiency: same pattern, but by the textbook on young leaves (P2, P3, P8). In the cannabis trial during flowering, magnesium deficiency after week 4 hit mainly smaller, younger fan leaves P1: the rule 'low leaves means magnesium' does not hold there.",
+    "Sulfur deficiency from week 5: interveinal yellowing on lower fan leaves P1.",
+    "Nitrogen deficiency: starts low, leaf pale to yellow P8. In the cannabis trial first yellow leaflet tips on lower fan leaves in week 3, strongest between the veins, then broad yellowing P1; can resemble magnesium early on.",
+    "Manganese deficiency: interveinal yellowing with dark green margins on younger leaves P2.",
+    "Normal ageing: well-fed control plants also showed moderate yellowing of the oldest, largest fan leaves from flowering week 6; the authors call this normal in maturing cannabis even with luxury supply P1. Do not read it as a deficiency straight away.",
+    "Potassium deficiency: can resemble magnesium deficiency, also on older leaves; margins yellow to brown, older leaves often curl down P8."
+  ],
+  "image": {
+    "file": "magnesium-tomato-leaf.webp",
+    "thumb": "magnesium-tomato-leaf-t.webp",
+    "w": 1200,
+    "h": 900,
+    "alt": "Tomatenblatt, gelb zwischen den Adern, die Adern bleiben grün",
+    "alt_en": "Tomato leaf, yellow between the veins, the veins stay green",
+    "note": "Ein Tomatenblatt, kein Hanf. Es zeigt das Gelb zwischen den Adern, das auch die Karte beschreibt.",
+    "note_en": "A tomato leaf, not cannabis. It shows the yellowing between the veins that the card also describes.",
+    "compare": true,
+    "credit": {
+      "work": "File:TomateBlattMgMangel.jpg",
+      "author": "Goldlocki",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:TomateBlattMgMangel.jpg"
+    }
+  },
+  "sources": {
+    "P1": "Llewellyn, Golem, Jones, Zheng (University of Guelph) 2023, Plants 12:422, Nährstoffmangel bei Cannabis, Hydrokultur (DWC), Sorte Gelato 29, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC9920212/",
+    "P2": "Utah State University Extension, Hemp Nutrient Deficiencies, Ratgeber für Hanfanbau ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-nutrient-deficiencies",
+    "P3": "NC State, Whipker und Gibson, Magnesium Check-up, Flower Growers' Bulletin Februar 2003, Zierpflanzen im Gewächshaus, abgerufen 2026-10-23: https://hortscans.ces.ncsu.edu/uploads/m/a/magensiu_5405f3f9a49d5.pdf",
+    "P4": "Saloner, Sacks, Bernstein (Volcani Center) 2019, Frontiers in Plant Science, Kaliumversorgung von Cannabis in Perlite, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC6876614/",
+    "P5": "Purdue Extension HO-237-W, Camberato, Lopez, Mickelbart, pH und EC in erdlosen Substraten (PourThru), abgerufen 2026-10-23: https://ag.purdue.edu/department/hla/extension/extension-publications-library/ext-pubs/ho-237-w.html",
+    "P6": "NC State Extension Lee County, Bratcher, How to use Epsom salts the most effective way, 2025-01-10, Topfpflanzen im Haus, abgerufen 2026-10-23: https://lee.ces.ncsu.edu/2025/01/not-a-silver-or-well-magnesium-bullet-how-to-use-epsom-salts-the-most-effective-way/",
+    "P7": "BioBizz, CalMag, Produktseite des Herstellers, abgerufen 2026-10-23: https://biobizz.com/calmag/",
+    "P8": "Ontario Ministry of Agriculture, Food and Rural Affairs (OMAFRA), Nutrient Deficiency ID Guide for Hemp, 2023, Hanf in Nährlösung, vegetative Phase, abgerufen 2026-10-23: https://www.ontario.ca/files/2023-12/omafra-nutrient-deficiency-id-guide-for-hemp-en-2023-12-15_0.pdf"
+  },
+  "_hinweis_wortwahl": "Wortwahl angepasst, ohne den Inhalt zu ändern: der Wiki-Filter gegen Konsumaussagen (vgrow/wiki.py, CONSUMPTION_RE) blendet Sätze mit Wirkung, effect oder CBD auf der Seite aus, und der Zwillingstest zählt Einheiten je Paar: do_now[3] de: 'ein Blattspray mit 2-prozentiger Bittersalzlösung' -> 'ein Blattspray mit einer Bittersalzlösung zu 2 %'",
+  "_left_out": [
+    "Cornell 2022: 'Stickstoffmangel gleichmäßiges Gelb'. Keine URL, PDF nicht lesbar.",
+    "Guelph-Satz zur Remobilisierung: bezieht sich auf Kalium, nicht Magnesium.",
+    "'Kalium nicht überdosieren (NC State 2003)': Quelle meint K, Ca oder Mg; jetzt alle drei genannt.",
+    "Umkehrschluss 'bei niedrigem pH weniger Mg (Purdue)': so steht er dort nicht, ersetzt."
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "v": 3,
+  "assetGroups": {
+    "Hank": {
+      "files": {
+        "hank-avatar.svg": {
+          "blob": "50481f7a85b2e979b8fdbeeef974e592",
+          "name": "hank-avatar.svg",
+          "size": 2216,
+          "type": "image/svg+xml"
+        }
+      },
+      "name": "Hank",
+      "order": [
+        "hank-avatar.svg"
+      ],
+      "tile": "m"
+    },
+    "Icons": {
+      "files": {
+        "alerts.svg": {
+          "blob": "ebab2bb3558aa19c7d43f8fe86cdfc95",
+          "name": "alerts.svg",
+          "size": 258,
+          "type": "image/svg+xml"
+        },
+        "analytics.svg": {
+          "blob": "a7f3f196e70580fd141289936441c2a8",
+          "name": "analytics.svg",
+          "size": 229,
+          "type": "image/svg+xml"
+        },
+        "automation.svg": {
+          "blob": "cacea0909827a0c1f9ce2363078bda04",
+          "name": "automation.svg",
+          "size": 233,
+          "type": "image/svg+xml"
+        },
+        "boxes-plants.svg": {
+          "blob": "426d3582455c74c7cda81fea87a16498",
+          "name": "boxes-plants.svg",
+          "size": 274,
+          "type": "image/svg+xml"
+        },
+        "close.svg": {
+          "blob": "7962f28a301d3aedfe965b2e89446326",
+          "name": "close.svg",
+          "size": 222,
+          "type": "image/svg+xml"
+        },
+        "devices.svg": {
+          "blob": "cffbaa319ca809e912b0d1725b14dd91",
+          "name": "devices.svg",
+          "size": 316,
+          "type": "image/svg+xml"
+        },
+        "menu.svg": {
+          "blob": "d6a1ea28e4f7ce5e9aa3a243fc032809",
+          "name": "menu.svg",
+          "size": 225,
+          "type": "image/svg+xml"
+        },
+        "overview.svg": {
+          "blob": "cbdb943ea770f87d25ae8962a91f40b0",
+          "name": "overview.svg",
+          "size": 400,
+          "type": "image/svg+xml"
+        },
+        "settings.svg": {
+          "blob": "10999a570a7419c41954bf21337c36c4",
+          "name": "settings.svg",
+          "size": 297,
+          "type": "image/svg+xml"
+        }
+      },
+      "name": "Icons",
+      "order": [
+        "overview.svg",
+        "boxes-plants.svg",
+        "automation.svg",
+        "devices.svg",
+        "analytics.svg",
+        "alerts.svg",
+        "settings.svg",
+        "close.svg",
+        "menu.svg"
+      ],
+      "tile": "s"
+    },
+    "Logos": {
+      "files": {
+        "vgrow-mark.svg": {
+          "blob": "f10eb026d2d804371be1fe0c2e9a4dc3",
+          "name": "vgrow-mark.svg",
+          "size": 340,
+          "type": "image/svg+xml"
+        }
+      },
+      "name": "Logos",
+      "order": [
+        "vgrow-mark.svg"
+      ],
+      "tile": "l"
+    }
+  },
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-11-02T09:05:00Z",
+    "v": 1
+  },
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "groups": [
+    "Logos",
+    "Icons",
+    "Hank"
+  ],
+  "lastChange": {
+    "by": "Eugen Müller",
+    "at": "2026-11-02T11:15:53Z",
+    "via": "GitHub · eugnmueller-87/vgrow-control@e996440",
+    "note": "The repo is the source now: tokens.css is built from tokens.json, and the cockpit adopted Button, StatusChip, Banner, SegmentedControl, Disclosure, Card, DeviceCard, Timeline and SidebarNav; the Automation page follows the patterns."
+  },
+  "layout": "files",
+  "libraries": [],
+  "namespace": "VGrowCockpit",
+  "sections": {},
+  "title": "VGrow Cockpit"
+}

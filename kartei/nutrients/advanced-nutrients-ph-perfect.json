@@ -1,0 +1,287 @@
+{
+  "name": "Advanced Nutrients pH Perfect Grow, Micro, Bloom",
+  "name_en": "Advanced Nutrients pH Perfect Grow, Micro, Bloom",
+  "summary": "Mineralischer Dreikomponentendünger für Hydro und Kokos: Grow, Micro und Bloom immer zu gleichen Teilen, im Wachstum steigend von 1 auf 4 ml/l, in der Blüte 4 ml/l. Für Hydro und Kokos, nicht für Erde; im Cockpit nicht wählbar.",
+  "summary_en": "Mineral three-part fertilizer for hydro and coco: Grow, Micro and Bloom always in equal parts, rising from 1 to 4 ml/l in the vegetative phase, 4 ml/l in flowering. For hydro and coco, not for soil; not selectable in the cockpit.",
+  "product": "Advanced Nutrients",
+  "version": "Master Recipe GLOBAL",
+  "status": "draft",
+  "status_note": "Die Grundzeilen aus dem Master Recipe GLOBAL (AN1) am 23.10.2026 abgetippt und mit dem Original verglichen. Laut Produktseite für Hydro-Medien und Flüssigdüngung gemacht und sicher für Kokos; Erde nennt der Hersteller nicht. Deshalb im Cockpit nicht wählbar.",
+  "status_note_en": "The base rows transcribed from the Master Recipe GLOBAL (AN1) on Oct 23, 2026 and compared with the original. Per the product page made for hydro media and liquid feeding and safe for coco; the maker does not name soil. So not selectable in the cockpit.",
+  "check": {
+    "state": "checked",
+    "on": "2026-10-23",
+    "text": "Grundzeilen gegen das Master Recipe GLOBAL (AN1) geprüft, am 23.10.2026.",
+    "text_en": "Base rows checked against the Master Recipe GLOBAL (AN1), on Oct 23, 2026."
+  },
+  "unit": "ml/l",
+  "aliases": {
+    "de": [
+      "pH Perfect",
+      "Advanced Nutrients",
+      "pH Perfect Grow",
+      "pH Perfect Micro",
+      "pH Perfect Bloom",
+      "pH Perfect Grow Micro Bloom"
+    ],
+    "en": [
+      "pH Perfect",
+      "Advanced Nutrients",
+      "pH Perfect Grow",
+      "pH Perfect Micro",
+      "pH Perfect Bloom",
+      "pH Perfect Grow Micro Bloom"
+    ]
+  },
+  "line": {
+    "maker": "Advanced Nutrients",
+    "types": [
+      "multi_part",
+      "mineral_liquid"
+    ],
+    "media": [
+      "hydro",
+      "coco"
+    ],
+    "media_text": "Laut Produktseite für Hydro-Medien und alle Systeme mit laufender Flüssigdüngung (Aeroponik, Tropfer, NFT, Ebbe und Flut, DWC) und sicher für Kokos. Erde nennt der Hersteller nicht.",
+    "media_text_en": "Per the product page for hydro media and all continuous liquid-feed systems (aeroponics, drippers, NFT, flood and drain, DWC) and safe for coco. The maker does not name soil.",
+    "products": [
+      {
+        "product": "pH Perfect Grow",
+        "npk": "1-0-4",
+        "role": "Grunddünger, mit Micro und Bloom im Verhältnis 1:1:1, in allen Phasen.",
+        "role_en": "Base nutrient, with Micro and Bloom at 1:1:1, in every phase.",
+        "sources": [
+          "AN1",
+          "AN2"
+        ]
+      },
+      {
+        "product": "pH Perfect Micro",
+        "npk": "2-0-0",
+        "role": "Grunddünger mit Spurenelementen; kommt als Erstes ins Wasser.",
+        "role_en": "Base nutrient with micronutrients; goes into the water first.",
+        "sources": [
+          "AN1",
+          "AN2"
+        ]
+      },
+      {
+        "product": "pH Perfect Bloom",
+        "npk": "1-3-4",
+        "role": "Grunddünger mit dem Phosphor- und Kaliumanteil; kommt als Letztes ins Wasser.",
+        "role_en": "Base nutrient with the phosphorus and potassium share; goes into the water last.",
+        "sources": [
+          "AN1",
+          "AN2"
+        ]
+      }
+    ],
+    "application_short": "Micro, dann Grow, dann Bloom einzeln ins Becken, je gleich viel; Wachstum 1 bis 4 ml/l, Blüte 4 ml/l, Woche 8 nur Wasser; für Hydro und Kokos.",
+    "application_short_en": "Micro, then Grow, then Bloom one by one into the reservoir, the same amount each; growth 1 to 4 ml/l, flowering 4 ml/l, week 8 plain water; for hydro and coco.",
+    "application": "Die drei Teile einzeln ins Becken, in dieser Reihenfolge: Micro, gut mischen, dann Grow, dann Bloom; nie als Konzentrat zusammenmischen, Flaschen vorher schütteln. Immer 1:1:1. Wachstum (18 Stunden Licht): Woche 1 bis 4 mit 1, 2, 3 und 4 ml/l je Teil; Woche 1 für Stecklinge und Sämlinge wiederholbar, Woche 4 für längeres Wachstum. Blüte (12 Stunden Licht): Woche 1 bis 7 je 4 ml/l; Woche 8 eine nährstofffreie Spülzeit. Läuft die Pflanze länger als 8 Wochen, Woche 4 der Tabelle wiederholen. Bei Spitzenbrand die Grunddünger um 25 % verringern.",
+    "application_en": "The three parts one by one into the reservoir, in this order: Micro, mix well, then Grow, then Bloom; never mix them together as a concentrate, shake the bottles first. Always 1:1:1. Growth (18 hours of light): weeks 1 to 4 at 1, 2, 3 and 4 ml/l per part; week 1 may be repeated for cuttings and seedlings, week 4 for a longer vegetative phase. Flowering (12 hours of light): weeks 1 to 7 at 4 ml/l each; week 8 a nutrient-free flush period. If the plant runs longer than 8 weeks, repeat week 4 of the chart. With tip burn reduce the base nutrients by 25 %.",
+    "application_sources": [
+      "AN1",
+      "AN2"
+    ],
+    "cautions": [
+      {
+        "text": "Für Hydro und Kokos gemacht, Erde nennt der Hersteller nicht: das Cockpit bietet die Linie für deine Erde deshalb nicht an.",
+        "text_en": "Made for hydro and coco, the maker does not name soil: so the cockpit does not offer the line for your soil.",
+        "sources": [
+          "AN2"
+        ]
+      },
+      {
+        "text": "Die Tabelle druckt keinen EC-Zielwert. Dass der pH eine Woche lang im richtigen Bereich bleibt, ist eine Angabe des Herstellers.",
+        "text_en": "The chart prints no EC target. That the pH stays in the right range for a week is the maker's statement.",
+        "sources": [
+          "AN1",
+          "AN2"
+        ]
+      }
+    ]
+  },
+  "weeks": {
+    "columns": [
+      {
+        "key": "grow_1",
+        "label": "Wachstumswoche 1 (18 Stunden Licht)",
+        "label_en": "Grow week 1 (18 hours of light)",
+        "printed": "Grow cycle week 1"
+      },
+      {
+        "key": "grow_2",
+        "label": "Wachstumswoche 2 (18 Stunden Licht)",
+        "label_en": "Grow week 2 (18 hours of light)",
+        "printed": "Grow cycle week 2"
+      },
+      {
+        "key": "grow_3",
+        "label": "Wachstumswoche 3 (18 Stunden Licht)",
+        "label_en": "Grow week 3 (18 hours of light)",
+        "printed": "Grow cycle week 3"
+      },
+      {
+        "key": "grow_4",
+        "label": "Wachstumswoche 4 (18 Stunden Licht)",
+        "label_en": "Grow week 4 (18 hours of light)",
+        "printed": "Grow cycle week 4"
+      },
+      {
+        "key": "bloom_1",
+        "bloom_week": 1,
+        "label": "Blütewoche 1 (12 Stunden Licht)",
+        "label_en": "Flowering week 1 (12 hours of light)",
+        "printed": "Bloom cycle week 1"
+      },
+      {
+        "key": "bloom_2",
+        "bloom_week": 2,
+        "label": "Blütewoche 2 (12 Stunden Licht)",
+        "label_en": "Flowering week 2 (12 hours of light)",
+        "printed": "Bloom cycle week 2"
+      },
+      {
+        "key": "bloom_3",
+        "bloom_week": 3,
+        "label": "Blütewoche 3 (12 Stunden Licht)",
+        "label_en": "Flowering week 3 (12 hours of light)",
+        "printed": "Bloom cycle week 3"
+      },
+      {
+        "key": "bloom_4",
+        "bloom_week": 4,
+        "label": "Blütewoche 4 (12 Stunden Licht)",
+        "label_en": "Flowering week 4 (12 hours of light)",
+        "printed": "Bloom cycle week 4"
+      },
+      {
+        "key": "bloom_5",
+        "bloom_week": 5,
+        "label": "Blütewoche 5 (12 Stunden Licht)",
+        "label_en": "Flowering week 5 (12 hours of light)",
+        "printed": "Bloom cycle week 5"
+      },
+      {
+        "key": "bloom_6",
+        "bloom_week": 6,
+        "label": "Blütewoche 6 (12 Stunden Licht)",
+        "label_en": "Flowering week 6 (12 hours of light)",
+        "printed": "Bloom cycle week 6"
+      },
+      {
+        "key": "bloom_7",
+        "bloom_week": 7,
+        "label": "Blütewoche 7 (12 Stunden Licht)",
+        "label_en": "Flowering week 7 (12 hours of light)",
+        "printed": "Bloom cycle week 7"
+      }
+    ],
+    "water": {
+      "key": "water",
+      "bloom_week": 8,
+      "label": "Blütewoche 8: nährstofffreie Spülzeit",
+      "label_en": "Flowering week 8: nutrient-free flush period"
+    },
+    "sources": [
+      "AN1"
+    ]
+  },
+  "components": {
+    "ph_perfect_grow": {
+      "label": "pH Perfect Grow",
+      "label_en": "pH Perfect Grow"
+    },
+    "ph_perfect_micro": {
+      "label": "pH Perfect Micro",
+      "label_en": "pH Perfect Micro"
+    },
+    "ph_perfect_bloom": {
+      "label": "pH Perfect Bloom",
+      "label_en": "pH Perfect Bloom"
+    }
+  },
+  "pages": {
+    "base": {
+      "label": "Grunddünger (Master Recipe)",
+      "label_en": "Base nutrients (Master Recipe)",
+      "rows": {
+        "ph_perfect_grow": [
+          1,
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "ph_perfect_micro": [
+          1,
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "ph_perfect_bloom": [
+          1,
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "sources": [
+        "AN1"
+      ]
+    }
+  },
+  "frequency": {
+    "text": "Die Tabelle nennt Mengen je Woche, aber nicht, wie oft gegossen wird; laut Produktseite ist die Linie für Systeme mit laufender Flüssigdüngung gemacht. Das Cockpit gibt keinen Takt vor.",
+    "text_en": "The chart gives amounts per week, but not how often to water; per the product page the line is made for continuous liquid-feed systems. The cockpit sets no schedule.",
+    "sources": [
+      "AN1",
+      "AN2"
+    ]
+  },
+  "notes": [
+    {
+      "text": "Das Master Recipe führt dazu bis zu zwölf Zusätze des Herstellers mit je 2 ml/l; das Top-Shelf-Rezept auf Seite 2 nur fünf. Die Karte zeigt nur die drei Grunddünger, die die Tabelle selbst so nennt.",
+      "text_en": "The Master Recipe adds up to twelve of the maker's additives at 2 ml/l each; the Top Shelf recipe on page 2 only five. The card shows only the three base nutrients the chart itself calls that.",
+      "sources": [
+        "AN1"
+      ]
+    }
+  ],
+  "sources": {
+    "AN1": {
+      "title": "Advanced Nutrients, pH Perfect Grow Micro Bloom Master Recipe GLOBAL (PDF)",
+      "title_en": "Advanced Nutrients, pH Perfect Grow Micro Bloom Master Recipe GLOBAL (PDF)",
+      "url": "https://www.advancednutrients.com/feed-charts/pH_Perfect_Grow_Micro_Bloom-GLOBAL.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "AN2": {
+      "title": "Advanced Nutrients, Produktseite pH Perfect Grow, Micro, Bloom",
+      "title_en": "Advanced Nutrients, pH Perfect Grow, Micro, Bloom product page",
+      "url": "https://www.advancednutrients.com/products/ph-perfect-grow-micro-bloom/",
+      "retrieved": "2026-10-23"
+    }
+  }
+}

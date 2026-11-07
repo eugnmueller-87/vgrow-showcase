@@ -1,0 +1,26 @@
+{
+  "id": "kcang-grundregeln",
+  "kind": "legal",
+  "name": "Grundregeln Eigenanbau (KCanG)",
+  "name_en": "Basic rules for home growing (KCanG)",
+  "status": "draft",
+  "summary": "Zwei Grundregeln aus dem Konsumcannabisgesetz für den privaten Eigenanbau, nach dem Gesetzestext, abgerufen am 22.10.2026. Keine Rechtsberatung und keine Auslegung.",
+  "summary_en": "Two basic rules from the Consumer Cannabis Act (KCanG) for private home growing, per the statute text, retrieved on Oct 22, 2026. Not legal advice and no interpretation.",
+  "aliases": ["KCanG", "Konsumcannabisgesetz", "Eigenanbau", "Grundregeln"],
+  "facts": [
+    {"id": "plant_limit", "topic": "legal",
+     "text": "Wer 18 Jahre oder älter ist, darf an seinem Wohnsitz oder gewöhnlichen Aufenthalt privat insgesamt nicht mehr als drei Cannabispflanzen gleichzeitig anbauen (§ 9 Abs. 1 KCanG).",
+     "text_en": "Anyone aged 18 or over may privately grow no more than three cannabis plants at the same time in total at their residence or usual place of stay (section 9(1) KCanG).",
+     "value": {"min": null, "max": 3, "unit": "plants"},
+     "sources": ["L1"], "tags": ["legal", "plant_limit", "home_growing"]},
+    {"id": "child_protection", "topic": "legal",
+     "text": "Cannabis und Vermehrungsmaterial müssen am Wohnsitz und am gewöhnlichen Aufenthalt durch geeignete Maßnahmen und Sicherheitsvorkehrungen vor dem Zugriff Dritter geschützt werden, besonders vor Kindern und Jugendlichen (§ 10 KCanG). Zum Vermehrungsmaterial zählen auch Samen (§ 1 Nr. 7 KCanG).",
+     "text_en": "At the residence and usual place of stay, cannabis and propagation material must be protected by suitable measures and precautions from access by third parties, especially children and adolescents (section 10 KCanG). Propagation material includes seeds (section 1 no. 7 KCanG).",
+     "sources": ["L2", "L3"], "tags": ["legal", "child_protection", "home_growing"]}
+  ],
+  "sources": {
+    "L1": {"title": "Konsumcannabisgesetz (KCanG) § 9 Abs. 1, amtliche Fassung", "title_en": "Consumer Cannabis Act (KCanG) section 9(1), official text", "url": "https://www.gesetze-im-internet.de/kcang/__9.html", "retrieved": "2026-10-22"},
+    "L2": {"title": "Konsumcannabisgesetz (KCanG) § 10, amtliche Fassung", "title_en": "Consumer Cannabis Act (KCanG) section 10, official text", "url": "https://www.gesetze-im-internet.de/kcang/__10.html", "retrieved": "2026-10-22"},
+    "L3": {"title": "Konsumcannabisgesetz (KCanG) § 1 Nr. 7, amtliche Fassung", "title_en": "Consumer Cannabis Act (KCanG) section 1 no. 7, official text", "url": "https://www.gesetze-im-internet.de/kcang/__1.html", "retrieved": "2026-10-22"}
+  }
+}

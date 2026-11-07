@@ -1,0 +1,153 @@
+{
+  "key": "basil",
+  "kind": "crop",
+  "status": "draft",
+  "label": "Basilikum (Ocimum basilicum)",
+  "label_en": "Sweet basil (Ocimum basilicum)",
+  "fit_for_vgrow": {
+    "height_ok": true,
+    "light_note": "Lichtstärke (PPFD) der Lampe offen: VIVOSUN veröffentlicht keinen Wert, deshalb ist die Tageslichtmenge (DLI) nicht berechenbar. Die Lampe lässt sich auf 25 bis 100 % dimmen. Im getesteten Bereich bis DLI 15,0 gab mehr Licht mehr Wachstum (Q13).",
+    "light_note_en": "Light intensity (PPFD) of the lamp open: VIVOSUN publishes no value, so the daily light integral (DLI) cannot be calculated. The lamp dims from 25 to 100%. In the tested range up to a DLI of 15.0, more light gave more growth (Q13).",
+    "heat_note": "Wärme der Lampe am Blatt offen, keine Quelle. Obere Marken: Optimum 25 bis 30 °C, über 38 °C Ertragsschäden (Q6). Die 29 °C der Abluft-Automatik stammen aus der VGrow-Blühvoreinstellung für Cannabis und sind kein Basilikumwert.",
+    "heat_note_en": "Heat of the lamp at the leaf open, no source. Upper marks: optimum 25 to 30 °C, yield damage above 38 °C (Q6). The 29 °C of the exhaust automation come from the VGrow flowering preset for cannabis and are not a basil value."
+  },
+  "stages": [
+    {
+      "key": "germination",
+      "label": "Aussaat und Keimung",
+      "label_en": "Sowing and germination",
+      "days_from": 0,
+      "days_to": 14,
+      "targets": [
+        {
+          "metric": "probe_temp",
+          "when": null,
+          "min": 15.5,
+          "max": 27,
+          "unit": "°C",
+          "sources": [
+            "Q1"
+          ]
+        }
+      ],
+      "notes": "Saattemperatur 15,5 bis 27 °C (Q1), die Quelle sagt nicht, ob Luft oder Substrat. Aufgang nach etwa 5 Tagen bei 21 °C (Q1), 5 bis 10 Tagen bei 70 °F (Q2), 8 bis 14 Tagen (Q16) oder 10 bis 14 Tagen bei bester Bodentemperatur 75 bis 85 °F (Q15). Keine dieser Angaben beruht auf Versuchsdaten. Das Stadium endet bei 14 Tagen, der längsten Angabe. Topf mindestens 20 cm breit und tief (Q20), mindestens 6 Zoll und kein 3-Zoll-Topf (Q21).",
+      "notes_en": "Seed-starting temperature 15.5 to 27 °C (Q1); the source does not say whether this is air or substrate. Emergence after about 5 days at 21 °C (Q1), 5 to 10 days at 70 °F (Q2), 8 to 14 days (Q16) or 10 to 14 days at a best soil temperature of 75 to 85 °F (Q15). None of these figures rests on trial data. The stage ends at 14 days, the longest figure. Container at least 20 cm wide and deep (Q20), at least 6 inches and not a 3-inch pot (Q21)."
+    },
+    {
+      "key": "growth_harvest",
+      "label": "Wachstum und Ernte",
+      "label_en": "Growth and harvest",
+      "days_from": 14,
+      "days_to": null,
+      "targets": [
+        {
+          "metric": "probe_temp",
+          "when": "day",
+          "min": 21,
+          "max": 30,
+          "unit": "°C",
+          "sources": [
+            "Q1",
+            "Q6"
+          ]
+        },
+        {
+          "metric": "probe_temp",
+          "when": "night",
+          "min": 12.8,
+          "max": null,
+          "unit": "°C",
+          "sources": [
+            "Q3",
+            "Q4"
+          ]
+        },
+        {
+          "metric": "probe_humidity",
+          "when": null,
+          "min": null,
+          "max": 85,
+          "unit": "%",
+          "sources": [
+            "Q7",
+            "Q8"
+          ]
+        },
+        {
+          "metric": "photoperiod_h",
+          "when": null,
+          "min": 16,
+          "max": 18,
+          "unit": "h",
+          "sources": [
+            "Q11",
+            "Q12"
+          ]
+        }
+      ],
+      "notes": "Tag: untere Marke über 21 °C (Q1), obere Marke 30 °C als Ende des Optimums von 25 bis 30 °C (Q6). Im Versuch war 29 °C die beste von fünf Stufen (Q5), die Modellschätzung für Frischmasse liegt bei 32,6 bis 35,5 °C je nach DLI (Q4, 35,5 liegt 0,5 °C über der höchsten getesteten Stufe). Nacht: 12,8 °C (55 °F) als vorsichtige Untergrenze (Q3). Q1 und Q2 nennen 10 °C (50 °F), das liegt unter der Basistemperatur von 11,3 °C (Q4). Feuchte: nur eine Obergrenze belegt, unter 85 % im Bestand (Q7, Q8). Lüfterregel aus Israel laut Rutgers: Lüften ab 70 %, aus unter 60 % (Q8, ohne Begründung). Licht: 16 bis 18 h ist die Spanne zweier Versuche, 16 h in Q11 und 18 h in Q12, keine Quelle nennt sie als Spanne. Ocimum basilicum blüht laut vorläufigem Abstract unabhängig von der Tageslänge, getestet 9 bis 16 h (Q10). Abstand: im Garten etwa 30 cm in der Reihe und 45 cm zwischen den Reihen (Q1), in Hydroponik gab 10 cm den höchsten Ertrag je Fläche (Q14). Pflanzenzahl für etwa 46 x 46 cm: offen. Ernte: erster Schnitt nach 60 Tagen (Q17, Startpunkt unklar) oder 18 Tage nach dem Umsetzen, zweiter Schnitt 32 Tage nach dem Umsetzen, beide kurz vor der Blüte (Q18). VPD, Untergrenze der Feuchte, DLI-Zielwert und Düngung: offen.",
+      "notes_en": "Day: lower mark above 21 °C (Q1), upper mark 30 °C as the end of the optimum of 25 to 30 °C (Q6). In a trial 29 °C was the best of five steps (Q5); the model estimate for fresh mass is 32.6 to 35.5 °C depending on DLI (Q4, 35.5 lies 0.5 °C above the highest tested step). Night: 12.8 °C (55 °F) as a cautious floor (Q3). Q1 and Q2 give 10 °C (50 °F), which is below the base temperature of 11.3 °C (Q4). Humidity: only an upper limit is documented, below 85% in the canopy (Q7, Q8). Fan rule from Israel per Rutgers: fan on at 70%, off below 60% (Q8, no basis given). Light: 16 to 18 h is the span of two trials, 16 h in Q11 and 18 h in Q12; no source gives it as a range. Per a preliminary abstract, Ocimum basilicum flowers regardless of day length, tested 9 to 16 h (Q10). Spacing: in the garden about 30 cm in the row and 45 cm between rows (Q1); in hydroponics 10 cm gave the highest yield per area (Q14). Plant count for about 46 x 46 cm: open. Harvest: first cut after 60 days (Q17, start point unclear) or 18 days after transplanting, second cut 32 days after transplanting, both just before flowering (Q18). VPD, lower humidity limit, DLI target and fertilizer: open."
+    }
+  ],
+  "warnings": [
+    "Falscher Mehltau (Peronospora belbahrii): Die Infektion braucht mindestens 4 h nasse Blätter, die Sporenbildung mehr als 7,5 h über 95 % Luftfeuchte in der Nacht (Q9). Feuchte im Bestand unter 85 % halten (Q7).",
+    "Der USB-Befeuchter arbeitet gegen die Grenze von 85 %, wenn er die Feuchte im Bestand auf 85 % oder mehr hebt (Q7). Für die Tropfpumpe nennt Q9 Gießen, wenn die Pflanzen schnell abtrocknen, oder Tropfbewässerung, um die Blattnässe zu verkürzen.",
+    "Graufäule (Botrytis cinerea) beginnt an frischen Schnittstellen. Nach 48 h sind die Schnitte verheilt und nicht mehr anfällig (Q2). Q2 rät, nasses Laub zu vermeiden.",
+    "Fusarium-Welke kommt vor allem mit verseuchtem Saatgut, auch in Hydroponik und Gewächshaus. Befallene Pflanzen wachsen normal, bis sie 6 bis 12 Zoll hoch sind, dann bleiben sie klein und welken plötzlich (Q22). Q22 rät zu getestetem Saatgut.",
+    "Hitze und Wasserstress lassen Basilikum blühen und Samen ansetzen (Q15). Eine Temperaturzahl dafür nennt keine Quelle, sie ist offen. Basilikum verträgt keinen Wasserstress und braucht regelmäßig gleichmäßige Feuchte (Q16, Feldanbau).",
+    "Höhe: Die Art wird bis 3 ft hoch (Q19). Das sind 91,4 cm und nur 0,6 cm unter den 92 cm der Box. Clemson nennt für 'Genovese' 3 bis 4 ft, 4 ft sind 121,9 cm (Q2). Q3 und Q19 nennen etwa 2 ft.",
+    "Wärme der Lampe am Blatt ist offen, keine Quelle. Über 38 °C schadet dem Ertrag (Q6). Unter der Basistemperatur (11,3 °C für 'Nufar', Q4) wächst Basilikum nach Wachstumsmodellen nicht.",
+    "Lichtmenge unbekannt: Die PPFD der Lampe ist offen, damit auch die DLI. Q13 zeigt Versuche von DLI 2,1 bis 15,0.",
+    "Die Versuche mit genanntem Aufbau liefen in Wachstumskammern, Hydroponik oder Gewächshäusern. Ob die Zahlen für einen Topf in der VGrow gelten, ist offen."
+  ],
+  "warnings_en": [
+    "Downy mildew (Peronospora belbahrii): infection needs at least 4 h of wet leaves, spore formation more than 7.5 h above 95% humidity at night (Q9). Keep canopy humidity below 85% (Q7).",
+    "The USB humidifier works against the 85% limit if it lifts canopy humidity to 85% or more (Q7). For the drip pump, Q9 names watering when plants dry quickly, or drip irrigation, to shorten leaf wetness.",
+    "Gray mold (Botrytis cinerea) starts on fresh cuts. After 48 h the cuts have healed and are no longer susceptible (Q2). Q2 advises avoiding wet foliage.",
+    "Fusarium wilt arrives mainly with contaminated seed, also in hydroponic and greenhouse systems. Infected plants grow normally until they are 6 to 12 inches tall, then become stunted and wilt suddenly (Q22). Q22 advises tested seed.",
+    "Heat and water stress make basil flower and set seed (Q15). No source gives a temperature figure for this, so it is open. Basil does not tolerate water stress and needs a regular, even supply of moisture (Q16, field production).",
+    "Height: the species grows up to 3 ft (Q19). That is 91.4 cm and only 0.6 cm under the 92 cm of the box. Clemson gives 3 to 4 ft for 'Genovese', and 4 ft is 121.9 cm (Q2). Q3 and Q19 give about 2 ft.",
+    "Lamp heat at the leaf is open, no source. Above 38 °C yield suffers (Q6). Below the base temperature (11.3 °C for 'Nufar', Q4) basil does not grow according to growth models.",
+    "Light level unknown: the PPFD of the lamp is open, and so is the DLI. Q13 shows trials from DLI 2.1 to 15.0.",
+    "The trials with a stated setup ran in growth chambers, hydroponics or greenhouses. Whether the figures hold for a pot in the VGrow is open."
+  ],
+  "image": {
+    "file": "basil-pot.webp",
+    "thumb": "basil-pot-t.webp",
+    "w": 1200,
+    "h": 900,
+    "alt": "Basilikum in einem kleinen schwarzen Topf, von einer Hand gehalten",
+    "alt_en": "Sweet basil in a small black pot, held in one hand",
+    "credit": {
+      "work": "File:Lush basil (Ocimum basilicum).jpg",
+      "author": "Surplusvalue",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Lush_basil_(Ocimum_basilicum).jpg"
+    }
+  },
+  "sources": {
+    "Q1": "Penn State University, PlantVillage, Basil, Info-Seite der Universität ohne Datum, abgerufen 2026-10-22: https://plantvillage.psu.edu/topics/basil/infos",
+    "Q2": "Clemson Cooperative Extension, Home & Garden Information Center, Joey Williamson, Basil, Ratgeber Stand 2019-05-01, abgerufen 2026-10-22: https://hgic.clemson.edu/factsheet/basil/",
+    "Q3": "University of Florida IFAS Extension, Gardening Solutions, Basil, Ratgeber ohne Autor und Datum, abgerufen 2026-10-22: https://gardeningsolutions.ifas.ufl.edu/plants/edibles/vegetables/basil/",
+    "Q4": "Walters, Tarr, Lopez 2023, Modeling purple basil, sage, spearmint, and sweet basil responses to daily light integral and mean daily temperature, PLOS ONE, doi:10.1371/journal.pone.0294905, Fachartikel, abgerufen 2026-10-22: https://pmc.ncbi.nlm.nih.gov/articles/PMC10688745/",
+    "Q5": "Walters und Currey (Iowa State University) 2015, Air Temperature Affects the Growth and Development of Basil (Ocimum) Species, ASHS Annual Conference, Konferenzabstract, abgerufen 2026-10-22: https://ashs.confex.com/ashs/2015/webprogram/Paper21161.html",
+    "Q6": "Barickman, Olorunwa, Sehgal, Walne, Reddy, Gao 2021, Yield, Physiological Performance, and Phytochemistry of Basil (Ocimum basilicum L.) under Temperature Stress and Elevated CO2 Concentrations, Plants (Basel), doi:10.3390/plants10061072, Fachartikel, abgerufen 2026-10-22: https://pmc.ncbi.nlm.nih.gov/articles/PMC8226578/",
+    "Q7": "Cornell University, Cornell Vegetables, Margaret Tuttle McGrath, Basil Downy Mildew, Ratgeber Stand März 2023, abgerufen 2026-10-22: https://www.vegetables.cornell.edu/pest-management/disease-factsheets/basil-downy-mildew/",
+    "Q8": "Rutgers Cooperative Extension, Plant & Pest Advisory, Andy Wyenandt und Jim Simon, Controlling basil downy mildew in the greenhouse, Ratgeber 2020-01-22, abgerufen 2026-10-22: https://plant-pest-advisory.rutgers.edu/controlling-basil-downy-mildew-in-the-greenhouse/",
+    "Q9": "UConn Extension, Leanne Pundt, Downy Mildew on Basil in the Greenhouse, Ratgeber Mai 2024, abgerufen 2026-10-22: https://extension.uconn.edu/?p=15937",
+    "Q10": "Garcia und Lopez (Michigan State University) 2018, Photoperiodic Effect on Growth and Development of Basil Species and Cultivars, ASHS Annual Conference, vorläufiges Konferenzabstract, abgerufen 2026-10-22: https://ashs.confex.com/ashs/2018/webprogramarchives/Paper28899.html",
+    "Q11": "Puccinelli, Maggini, Pardossi, Incrocci 2025, Continuous lighting improves the leaf quality of sweet basil (Ocimum basilicum L.) grown in a controlled environment, Advances in Horticultural Science 39(1), Fachartikel (Abstract-Seite), abgerufen 2026-10-22: https://oaj.fupress.net/index.php/ahs/article/view/16590",
+    "Q12": "Eghbal et al. 2024, Growth, phytochemical, and phytohormonal responses of basil to different light durations and intensities under constant daily light integral, BMC Plant Biology, doi:10.1186/s12870-024-05637-w, Fachartikel (Inhalt über Crossref und Europe PMC gelesen), abgerufen 2026-10-22: https://pmc.ncbi.nlm.nih.gov/articles/PMC11462769/",
+    "Q13": "Litvin und Currey (Iowa State University) 2017, Daily Light Integral Affects Growth, Development, and Chlorophyll Fluorescence of Eight Culinary Herbs Grown Hydroponically, ASHS Annual Conference, Konferenzabstract, abgerufen 2026-10-22: https://ashs.confex.com/ashs/2017/webprogramarchives/Paper27344.html",
+    "Q14": "Walters und Currey (Iowa State University) 2015, Effect of Spacing and Daily Light Integral on Growth of Sweet Basil, ASHS Annual Conference, Konferenzabstract, abgerufen 2026-10-22: https://ashs.confex.com/ashs/2015/webprogram/Paper21160.html",
+    "Q15": "Utah State University Extension, Lindsay Pearson und Dan Drost, Basil in the Garden, Ratgeber Mai 2020, abgerufen 2026-10-22: https://extension.usu.edu/yardandgarden/research/basil-in-the-garden",
+    "Q16": "Purdue University Cooperative Extension Service, J.E. Simon, Sweet Basil, A Production Guide (HO-189), Ratgeber für den Feldanbau Januar 1985, abgerufen 2026-10-22: https://www.extension.purdue.edu/extmedia/HO/HO-189.html",
+    "Q17": "Ontario Ministry of Agriculture, Food and Rural Affairs (OMAFRA), CropOp, Basil Crop Profile, Behörde Stand 2012-10-17, abgerufen 2026-10-22: https://omafra.gov.on.ca/CropOp/en/herbs/culinary/basil.html",
+    "Q18": "Ciriello et al. 2021, Morpho-Physiological Responses and Secondary Metabolites Modulation by Preharvest Factors of Three Hydroponically Grown Genovese Basil Cultivars, Frontiers in Plant Science, doi:10.3389/fpls.2021.671026, Fachartikel, abgerufen 2026-10-22: https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2021.671026/full",
+    "Q19": "NC State Extension, North Carolina Extension Gardener Plant Toolbox, Ocimum basilicum, Ratgeber ohne Datum, abgerufen 2026-10-22: https://plants.ces.ncsu.edu/plants/ocimum-basilicum/",
+    "Q20": "Royal Horticultural Society (RHS), Basil, grow your own, britischer Gartenbau-Wohltätigkeitsverein und kein Extension-Dienst, ohne Datum, abgerufen 2026-10-22: https://www.rhs.org.uk/herbs/basil/grow-your-own",
+    "Q21": "Illinois Extension, Good Growing Blog, Growing herbs in containers (Titel aus der URL abgeleitet), Ratgeber 2015-04-09 ohne Autor, abgerufen 2026-10-22: https://extension.illinois.edu/blogs/good-growing/2015-04-09-growing-herbs-containers",
+    "Q22": "NC State Extension, Growing Small Farms, Debbie Roos, Fusarium Wilt of Basil, Ratgeber aktualisiert 2012-09-05, abgerufen 2026-10-22: https://growingsmallfarms.ces.ncsu.edu/growingsmallfarms-fusariumbasil"
+  }
+}

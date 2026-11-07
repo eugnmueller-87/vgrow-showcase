@@ -1,0 +1,82 @@
+{
+  "key": "fimming",
+  "kind": "method",
+  "status": "draft",
+  "package": "cannabis",
+  "label": "FIMing (Spitze teilweise abschneiden)",
+  "label_en": "FIMing (partial tip removal)",
+  "aliases": {
+    "de": [
+      "FIM",
+      "Fimming"
+    ],
+    "en": [
+      "FIM",
+      "fimming"
+    ]
+  },
+  "what": "Wie Topping (Triebspitze ganz abschneiden), aber nur ein Teil der jüngsten Triebspitze wird entfernt. Alle Zahlen dazu stammen aus Erfahrungsquellen (Saatgutfirmen, Hersteller, Grower-Blogs); keine der gelesenen Quellen hat FIMing getestet. Royal Queen Seeds und VIVOSUN nennen etwa 75 % (M5, M10), Zamnesia (Stand 09.2026) drei Viertel (M6), Zamnesia (2025) 70 bis 80 % (M7); Grow Weed Easy lässt laut Bildunterschrift etwa 20 % stehen (M8). Ziel sind mehr neue Spitzen als die zwei beim Topping: Royal Queen Seeds und Zamnesia (2025) nennen vier oder mehr (M5, M7), Zamnesia (Stand 09.2026) drei bis vier oder mehr (M6), Grow Weed Easy zwei bis vier (M8). FIM ist die Abkürzung eines derben englischen Ausrufs, sinngemäß 'verdammt, daneben' (M8); nach Zamnesia (Stand 09.2026) und VIVOSUN (2022) entstand die Methode aus einem Missgeschick beim Topping (M6, M11). Forschung: Ein Fachartikel von 2020 (nur der Abstract gelesen) erwähnt FIMing nur als Praxis einiger Betriebe und testet allein Topping (M1).",
+  "what_en": "Like topping (cutting the shoot tip off completely), but only part of the youngest shoot tip is removed. All figures come from experience-based sources (experience source: seed companies, a manufacturer, grower blogs); none of the sources read tested FIMing. Royal Queen Seeds and VIVOSUN name about 75% (M5, M10), Zamnesia (as of 09.2026) three quarters (M6), Zamnesia (2025) 70 to 80% (M7); Grow Weed Easy leaves about 20% according to a figure caption (M8). The aim is more new tops than the two from topping: Royal Queen Seeds and Zamnesia (2025) name four or more (M5, M7), Zamnesia (as of 09.2026) three to four or more (M6), Grow Weed Easy two to four (M8). FIM is the acronym of a crude English exclamation, roughly 'damn, missed' (M8); per Zamnesia (as of 09.2026) and VIVOSUN (2022) the method began as a mishap while topping (M6, M11). Research: a 2020 journal article (abstract only read) mentions FIMing only as a practice of some producers and tests topping alone (M1).",
+  "steps": [
+    "Erst wenn die Pflanze 3 bis 5 Knoten hat und nur in der Wachstumsphase (M5, M6, M8, alle Erfahrungsquelle; Zamnesia nennt das den üblichen Bereich).",
+    "Schere säubern. Gegen das Hop latent viroid (HLVd, ein Krankheitserreger, der mit dem Pflanzensaft an Werkzeug weitergegeben wird) hilft Bleichmittel, Ethanol hilft nicht; für ein anderes Viroid nennt dieselbe Quelle 70 % Isopropanol unwirksam (M3).",
+    "Die jüngste Spitze mit einer Hand leicht strecken und mit sauberer Schere etwa 75 % davon abschneiden (M5); Zamnesia (Stand 09.2026): drei Viertel entfernen, ein Viertel bleibt stehen (M6). Nicht durch den Haupttrieb schneiden (M8).",
+    "Auf die Schnitthöhe achten: Bei zu hohem Schnitt wächst die Pflanze womöglich weiter, als wäre nichts passiert; bei zu tiefem Schnitt kann daraus ein Topping werden (M7).",
+    "Erholung meist 3 bis 7 Tage, je nach Sorte und Bedingungen (M6); nie in der Blüte (M6, M8)."
+  ],
+  "steps_en": [
+    "Only once the plant has 3 to 5 nodes and only in the vegetative stage (M5, M6, M8, all experience source; Zamnesia calls this the usual range).",
+    "Clean the scissors. Against hop latent viroid (HLVd, a pathogen passed on in plant sap via tools) bleach works, ethanol does not; for a different viroid the same source reports 70% isopropanol as ineffective (M3).",
+    "Gently stretch the youngest tip with one hand and snip off about 75% of it with clean scissors (M5); Zamnesia (as of 09.2026): remove three quarters, leave one quarter (M6). Do not cut through the main stem (M8).",
+    "Mind the cut height: cut too high and the plant may keep growing as if untouched; cut too low and you may end up with a topping effect (M7).",
+    "Recovery usually 3 to 7 days, depending on strain and conditions (M6); never during flowering (M6, M8)."
+  ],
+  "when": "Nur in der Wachstumsphase, wenn die Pflanze 3 bis 5 Knoten hat (M5, M6, M8); in der Blüte nie (M6, M8). Für FIMing bei Autoflowern nennt keine der gelesenen Quellen einen Zeitpunkt. Royal Queen Seeds (2020) empfiehlt für Training oder Topping bei Autoflowern, ab 3 bis 4 Knoten zu beginnen (M9). Zamnesia (Stand 09.2026) empfiehlt FIMing bei Autoflowern nicht (M6).",
+  "when_en": "Only in the vegetative stage, once the plant has 3 to 5 nodes (M5, M6, M8); never during flowering (M6, M8). For FIMing autoflowers none of the sources read gives a timing. Royal Queen Seeds (2020) recommends starting training or topping autoflowers from 3 to 4 nodes (M9). Zamnesia (as of 09.2026) does not recommend FIMing for autoflowers (M6).",
+  "autoflower": "Forschung: In den gelesenen Forschungsquellen keine Aussage; Gaudreau et al. 2020 erwähnen FIMing nur am Rand (Abstract gelesen) und sagen nichts zu Autoflowern (M1). Hochschul-Beratung: Die University of Georgia schreibt in einem Merkblatt zu Nutzhanf, die meisten Autoflower-Sorten reagierten früh im Wachstum sehr empfindlich auf jeden Stress (Beispiel dort: eingeengte Wurzeln bei Jungpflanzen); zum Schneiden sagt das Merkblatt nichts (M2). Erfahrungsquellen (Saatgutfirmen, Hersteller, Grower-Blogs): Zamnesia (Stand 09.2026) empfiehlt FIMing bei Autoflowern nicht: Die kurze Wachstumsphase lasse keine Zeit zur Erholung, FIMing könne das Wachstum bremsen, den Ertrag senken und die Blüte zu früh auslösen; LST (Low-Stress-Training: Triebe sanft biegen und festbinden) oder sanftes Biegen seien sicherer (M6). Zamnesia (2025): Autoflower haben oft nicht genug Zeit, sich von Topping oder FIMing zu erholen (M7). Royal Queen Seeds (2020) nennt FIMing etwas weniger stressig als Topping, weil der Haupttrieb nicht verletzt wird, rät aber auf derselben Seite generell vom Topping bei Autoflowern ab, schlägt Training oder Topping nur mit Erfahrung vor (mindestens 1 bis 2 Autoflower-Ernten) und nennt 3 bis 4 Knoten als Beginn (M9). Grow Weed Easy sagt zum FIMing nichts zu Autoflowern, warnt aber beim Topping, es nicht zum Senken der Höhe von Autoflowern zu nutzen, weil sie keine Zeit zur Erholung haben (M8). VIVOSUN erwähnt Autoflower nur beim LST (kann für bestimmte Genetiken und Autoflower gut sein), nicht beim FIMing (M11).",
+  "autoflower_en": "Research: no statement in the research sources read; Gaudreau et al. 2020 mention FIMing only in passing (abstract read) and say nothing about autoflowers (M1). Extension: the University of Georgia writes in an industrial hemp bulletin that most autoflowering cultivars are very sensitive to any stress early in growth (example there: root restriction in transplants); the bulletin says nothing about cutting (M2). Experience-based sources (experience source: seed companies, a manufacturer, grower blogs): Zamnesia (as of 09.2026) does not recommend FIMing for autoflowers: the short vegetative stage leaves no time to recover, FIMing can slow growth, lower yield and trigger early flowering; LST (low-stress training: gently bending and tying down shoots) or gentle bending is safer (M6). Zamnesia (2025): autoflowers often lack the time to recover from topping or FIMing (M7). Royal Queen Seeds (2020) calls FIMing slightly less stressful than topping because it does not damage the main stem, but on the same page recommends staying away from topping autoflowers in general, suggests training or topping only with experience (at least 1 to 2 autoflower harvests) and names 3 to 4 nodes as the start (M9). Grow Weed Easy says nothing about autoflowers for FIMing but warns, for topping, not to use it to reduce the height of autoflowers because they have no time to recover (M8). VIVOSUN mentions autoflowers only for LST (can be good for certain genetics and autoflowers), not for FIMing (M11).",
+  "box_fit": "Zur Höhe sind die Quellen uneins, gemessen hat keine. Grow Weed Easy und Zamnesia schreiben, FIMing senke die Höhe nicht (M8, M6); Grow Weed Easy: FIMing bremse das Wachstum kaum, und in der Erholung nach Topping oder FIMing werde die Pflanze meist eher fülliger als höher (M8). Royal Queen Seeds schreibt, eine gefimmte Pflanze könne trotzdem recht hoch werden, FIMing dämpfe das Strecken aber etwas weniger als Topping (M5). VIVOSUN (2022) schreibt, FIMing bremse das Wachstum oben, damit untere Äste aufholen; eine Endhöhe nennt VIVOSUN nicht (M11). Alles Erfahrungsquellen. FIMing kann unberechenbar wachsen und manchmal schwächere Äste bringen, die zusätzlich gestützt werden müssen (M6). Zum VGrow gehören laut Handbuch unter anderem ein Trellis-Netz (1), eine Twist-Tie-Rolle (50 m) und eine Gartenschere (1); wofür Netz und Rolle gedacht sind, nennt das Handbuch nicht. Der Kabelbinder (1) dient dort zum Befestigen des Sensors. Das Handbuch nennt 46 x 46 x 122 cm als Abmessungen des Geräts und 92 cm Wuchshöhe für eine Pflanze (M12). Ob vier Spitzen in diesen Raum passen, sagt keine Quelle: offen.",
+  "box_fit_en": "On height the sources disagree and none measured it. Grow Weed Easy and Zamnesia say FIMing does not reduce height (M8, M6); Grow Weed Easy: FIMing barely slows growth, and while recovering from topping or FIMing the plant usually fills out rather than growing taller (M8). Royal Queen Seeds says a fimmed plant can still grow rather tall, but that FIMing curbs stretching slightly less than topping (M5). VIVOSUN (2022) says FIMing slows growth at the top so lower branches can catch up; it gives no final height (M11). All are experience sources. FIMing can grow unpredictably and sometimes produce weaker branches that need extra support (M6). According to the manual the VGrow comes with, among other things, a trellis net (1), a twist tie roll (50 m) and a pruner (1); the manual does not say what the net and the roll are for. The wire tie (1) is used there to fasten the sensor. The manual gives 46 x 46 x 122 cm as device dimensions and 92 cm growing height for one plant (M12). Whether four tops fit that space is not stated by any source: open.",
+  "risks": "Die Ergebnisse sind weniger verlässlich als beim Topping, und die vier Spitzen wachsen womöglich nicht gleich stark (M8); unberechenbares Wachstum bringt manchmal schwächere Äste (M6). VIVOSUN beschreibt FIMing auf einer älteren Seite (2022-05-14) als Topping, bei dem zugleich Blätter geschnitten werden (M11), auf einer jüngeren (2026-06-16) als Entfernen von etwa 75 % des neuen Wuchses an der Spitze (M10): Widerspruch im selben Haus; die jüngere Beschreibung deckt sich mit Royal Queen Seeds und Zamnesia. Grauschimmel (Botrytis) dringt leicht über Wunden ein; das Pacific Northwest Handbook nennt mechanische Verletzungen allgemein, dass eine Schnittstelle gemeint ist, ist ein Schluss des Eintrags (M4). Über die Schere kann HLVd weitergegeben werden (M3).",
+  "risks_en": "Results are less reliable than with topping, and the four tops may not grow equally strong (M8); unpredictable growth sometimes brings weaker branches (M6). VIVOSUN describes FIMing on an older page (2022-05-14) as topping while also cutting leaves (M11), and on a newer page (2026-06-16) as removing about 75% of the new growth at the tip (M10): a contradiction within one company; the newer description matches Royal Queen Seeds and Zamnesia. Gray mold (Botrytis) infects easily through wounds; the Pacific Northwest Handbook names mechanical injuries in general, that a cut is meant is an inference of this entry (M4). HLVd can be passed on via scissors (M3).",
+  "image": {
+    "drawing": "fim",
+    "steps": [
+      {
+        "step": 1,
+        "fig": "fim-1"
+      },
+      {
+        "step": 3,
+        "fig": "fim-2"
+      },
+      {
+        "step": 5,
+        "fig": "fim-3"
+      }
+    ]
+  },
+  "sources": {
+    "M1": "Gaudreau S., Missihoun T., Germain H. 2020, Early topping: An alternative to standard topping increases yield in cannabis production, Plant Science Today 7(4):627-630, doi:10.14719/pst.2020.7.4.927, Fachartikel (nur Abstract gelesen), abgerufen 2026-10-23: https://depot-e.uqtr.ca/id/eprint/11848/",
+    "M2": "Coolong T., University of Georgia Cooperative Extension, Industrial Hemp Production in Georgia (Bulletin B 1530), veröffentlicht 2020-01-28, kleine Überarbeitung 2023-08-16, abgerufen 2026-10-23: https://fieldreport.caes.uga.edu/publications/B1530/industrial-hemp-production-in-georgia/",
+    "M3": "Ocamb C.M., Oregon State University Extension Service, Hop latent viroid in hemp (EM 9570), August 2024, abgerufen 2026-10-23: https://extension.oregonstate.edu/catalog/em-9570-hop-latent-viroid-hemp",
+    "M4": "Ocamb C.M., Osterbauer N.K., Pacific Northwest Plant Disease Management Handbook, Hemp (Cannabis sativa)-Gray Mold (Botrytis Bud Blight and Stem Canker), Überarbeitung März 2026, abgerufen 2026-10-23: https://pnwhandbooks.org/plantdisease/host-disease/hemp-cannabis-sativa-gray-mold-botrytis-bud-blight-stem-canker",
+    "M5": "Royal Queen Seeds, Luke Sumpter, The Cannabis Pruning Faceoff: Topping or Fimming?, 2020-03-16, Blog einer Saatgutfirma (Erfahrungsquelle), abgerufen 2026-10-23: https://www.royalqueenseeds.com/blog-marijuana-pruning-topping-vs-fimming-n621",
+    "M6": "Zamnesia, Adam Parsons, Fimming cannabis for bigger yields: When and how to FIM your plants, Stand 2026-09-09, Blog eines Samenhändlers (Erfahrungsquelle), abgerufen 2026-10-23: https://www.zamnesia.com/grow-weed/58-fimming-cannabis",
+    "M7": "Zamnesia, Adam Parsons, Cannabis pruning: Topping vs fimming, 2025-10-15, Blog eines Samenhändlers (Erfahrungsquelle), abgerufen 2026-10-23: https://www.zamnesia.com/us/blog-cannabis-pruning-topping-vs-fimming-n2718",
+    "M8": "Grow Weed Easy, Nebula Haze, Topping vs FIMing Cannabis - Instruction Guide, ohne Datum, Grower-Blog (Erfahrungsquelle), abgerufen 2026-10-23: https://www.growweedeasy.com/topping-fiming",
+    "M9": "Royal Queen Seeds, Steven Voser, Topping and Training Autoflowering Cannabis: Can It Be Done?, veröffentlicht 2020-10-02, laut Seite aktualisiert 2026-10-05, Blog einer Saatgutfirma (Erfahrungsquelle), abgerufen 2026-10-23: https://www.royalqueenseeds.com/us/blog-can-topping-and-training-be-used-on-autoflowering-marijuana-n387",
+    "M10": "VIVOSUN Growing Guide, CalMag, Cannabis Vegetative Stage: 5 Training Techniques to Maximize Cannabis Growth, 2026-06-16, Ratgeber des Boxherstellers (Blog, Erfahrungsquelle), abgerufen 2026-10-23: https://vivosun.com/growing_guide/cannabis-vegetative-stage",
+    "M11": "VIVOSUN Growing Guide, CalMag, Maximizing Yield: Unleashing the Power of LST vs HST in Cannabis Plant Training, 2022-05-14, Ratgeber des Boxherstellers (Blog, Erfahrungsquelle), abgerufen 2026-10-23: https://vivosun.com/growing_guide/lst-vs-hst",
+    "M12": "VIVOSUN, VGrow Smart Grow Box Manual, Herstellerhandbuch (Zubehörliste und Spezifikation), Stand laut Seitenmetadaten 2026-05-25, abgerufen 2026-10-23: https://vivosun.com/support/guide/vgrow-smart-grow-box"
+  },
+  "_left_out": [
+    "'Rund drei Viertel' als zusammengefasste Zahl: abgeleitete Mitte, ersetzt durch die einzelnen Angaben der Quellen.",
+    "'Zamnesia rät bei Autoflowern ganz ab': Quelle sagt 'not recommended', 'ganz' gestrichen.",
+    "'Zu hoch geschnitten keine Wirkung, zu tief ein Topping' als Tatsache: die Quelle sagt zweimal 'may', abgeschwächt.",
+    "'Drei Quellen gegen eine' zur Höhe: Royal Queen Seeds gehört nicht eindeutig in das Lager 'senkt die Höhe nicht'.",
+    "Kabelbinder als Pflanzenstütze: laut Handbuch für den Sensor gedacht.",
+    "Deutscher Alias 'Fimmen': in keiner Quelle belegt.",
+    "Spezifikationszeile 'Yield' aus dem VGrow-Handbuch: nicht übernommen."
+  ]
+}

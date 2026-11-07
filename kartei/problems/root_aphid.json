@@ -1,0 +1,145 @@
+{
+  "key": "root_aphid",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "schaedlinge",
+  "label": "Wurzelblattläuse (an Cannabis in den gelesenen Quellen: Reiswurzellaus, Rhopalosiphum rufiabdominale)",
+  "label_en": "Root aphids (on cannabis in the sources read: rice root aphid, Rhopalosiphum rufiabdominale)",
+  "label_short": "Wurzelblattläuse",
+  "label_short_en": "Root aphids",
+  "tile": "Läuse an den Wurzeln, die Pflanze wächst langsamer",
+  "tile_en": "Aphids on the roots, the plant grows slower",
+  "aliases": {
+    "de": [
+      "Wurzelblattlaus",
+      "Wurzelblattläuse",
+      "Wurzellaus",
+      "Wurzelläuse",
+      "Reiswurzellaus",
+      "Rhopalosiphum rufiabdominale"
+    ],
+    "en": [
+      "root aphid",
+      "root aphids",
+      "rice root aphid",
+      "red rice root aphid",
+      "Rhopalosiphum rufiabdominale"
+    ]
+  },
+  "symptoms": [
+    "Früh oft nichts Eindeutiges: Bei Cannabis im Innenanbau keine eigenen Symptome, sondern allgemeiner Rückgang und langsameres Wachstum stark befallener Pflanzen; etwas Verfärbung unterer Blätter kann dazugehören P1.",
+    "Erstes Zeichen drinnen: tote geflügelte Läuse, die an den Pflanzenhaaren der Blattoberseite hängen P1.",
+    "Wo: ungeflügelte Läuse an den Wurzeln und in der Erde um die Pflanze P2; geflügelte Weibchen kommen besonders zahlreich aus der Erde, wenn die Pflanzen blühen und reifen P1.",
+    "Spät: weniger Wuchskraft, langsames Wachstum, Welke und Vergilbung P2.",
+    "Die Laus: dunkel olivgrün mit rundem Körper P2."
+  ],
+  "symptoms_en": [
+    "Early, often nothing clear: in indoor cannabis no unique symptoms, but a general decline and slower growth of heavily infested plants; some off-coloration of lower leaves may belong to it P1.",
+    "First sign indoors: dead winged aphids stuck on plant hairs of the upper leaf surface P1.",
+    "Where: wingless aphids on roots and in the soil around the plant P2; winged females emerge from the soil in particular abundance as plants flower and near maturity P1.",
+    "Late: reduced vigor, slow growth, wilting and leaf yellowing P2.",
+    "The aphid: dark olive-green with a round body P2."
+  ],
+  "causes": [
+    "Im Innenanbau liegen die Temperaturen oft nahe am Optimum der Laus P1. In einer zitierten Studie war die Vermehrung bei 25 °C am schnellsten, die Zahl verdoppelte sich in 1,61 Tagen (Tsai und Liu 1998, zitiert in P1).",
+    "Vorkommen in allen Substraten: Erde, Aeroponik, Kokos und Steinwolle P1.",
+    "Quellenlage: JIPM 2019 fand noch keinen Nachweis an Hanf P3, JIPM 2020 belegt Cannabis als Wirt P1; USU nennt Gewächshaus-Hanf als Wirt (belegt 2011, Seite ohne Datum) P2. JIPM 2019 ist durch JIPM 2020 überholt."
+  ],
+  "causes_en": [
+    "Indoor production temperatures are often near the optimum of the aphid P1. In a cited study reproduction was fastest at 25 °C, with a doubling time of 1.61 days (Tsai and Liu 1998, cited in P1).",
+    "Found in all media: soil, aeroponics, coconut coir and rockwool P1.",
+    "Source situation: JIPM 2019 had no record on hemp yet P3, JIPM 2020 documents cannabis as host P1; USU lists greenhouse hemp as host (documented 2011, page undated) P2. JIPM 2019 is superseded by JIPM 2020."
+  ],
+  "check": [
+    {
+      "metric": "probe_temp",
+      "text": "25 °C war in der zitierten Studie das Optimum P1. Die Tagesziele der Phasenkarte reichen über alle Phasen von 20 bis 28 °C und schließen 25 °C ein; nur späte Blüte und Erntefenster enden bei 24 °C.",
+      "text_en": "25 °C was the optimum in the cited study P1. The stage card's day targets span 20 to 28 °C across stages and include 25 °C; only late flower and harvest window end at 24 °C."
+    },
+    {
+      "metric": "watering",
+      "text": "USU rät, die Erde am Pflanzenfuß regelmäßig auf dunkle geflügelte Läuse anzusehen P2. Dass das bei Welke trotz passender Bewässerung sinnvoll ist, ist eine Folgerung. Häufiger sind Gießfehler und Wurzelfäule (P4, Zimmerpflanzen und Trauermücken, nicht Cannabis).",
+      "text_en": "USU advises regularly examining the soil at the base of the plant for dark winged aphids P2. That this makes sense when the plant wilts despite proper watering is an inference. Watering errors and root rot are more common (P4, houseplants and fungus gnats, not cannabis)."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    }
+  ],
+  "do_now": [
+    "Erde am Stängelfuß und Blattoberflächen auf dunkle geflügelte Läuse prüfen P2; auf tote geflügelte Läuse an den Blatthaaren achten P1.",
+    "Gelbtafeln aufhängen P2; ein klebriger Fangring (Leimring) am unteren Stängel fängt Läuse, die aus der Erde hochklettern (P1, Abbildung).",
+    "Forschungsstand zu Produkten (gewerblicher Innenanbau, keine Quelle für Hobbygärtner): Für Topfkulturen sind kaum wirksame Nützlinge bekannt; unter den käuflichen Produkten scheinen insektenpathogene Pilze wie Beauveria bassiana und Isaria fumosorosea am besten zu wirken P1. Etikett und Zulassung beachten: Im Haus- und Kleingarten dürfen nur Mittel angewandt werden, die für nichtberufliche Anwender zugelassen sind; sie tragen den Aufdruck 'Anwendung durch nichtberufliche Anwender zulässig' P5. Ob ein Mittel für Hanf zugelassen ist und ob eine Growbox in der Wohnung als Haus- und Kleingarten gilt, sagt diese Seite nicht.",
+    "Stickstoff nicht überdosieren P2."
+  ],
+  "do_now_en": [
+    "Examine the soil at the stem base and leaf surfaces for dark winged aphids P2; watch for dead winged aphids on leaf hairs P1.",
+    "Hang yellow sticky traps P2; a sticky band (glue ring) on the lower stem catches aphids climbing up from the soil (P1, figure).",
+    "State of research on products (commercial indoor growing, no source for hobby growers): few effective biological controls are known for container production; among commercial products, entomopathogenic fungi such as Beauveria bassiana and Isaria fumosorosea seem most effective P1. Follow label and approval (Etikett und Zulassung beachten): in German home and allotment gardens only products approved for non-professional users may be used; they carry the mark 'Anwendung durch nichtberufliche Anwender zulässig' P5. Whether a product is approved for hemp and whether a grow box in a flat counts as a home garden, this page does not say.",
+    "Do not overdose nitrogen P2."
+  ],
+  "prevention": [
+    "Gesunde Jungpflanzen aus verlässlicher Quelle (P6, allgemein für Blattläuse an Hanf).",
+    "Überschüssigen Stickstoff vermeiden P2.",
+    "Gelbtafeln zur Überwachung P2."
+  ],
+  "prevention_en": [
+    "Healthy young plants from reliable sources (P6, general for aphids on hemp).",
+    "Avoid excess nitrogen P2.",
+    "Yellow sticky traps for monitoring P2."
+  ],
+  "look_alikes": [
+    "Gießfehler oder Wurzelfäule: zu viel oder zu wenig Wasser und Wurzelfäulepilze sind viel häufigere Ursachen welker Pflanzen (P4, Zimmerpflanzen).",
+    "Auf den Blättern: andere geflügelte Blattläuse P2."
+  ],
+  "look_alikes_en": [
+    "Watering errors or root rot: too much or too little water and root decay fungi are much more common causes of wilted plants (P4, houseplants).",
+    "On foliage: other winged aphids P2."
+  ],
+  "image": {
+    "file": "root-aphid-leaf.webp",
+    "thumb": "root-aphid-leaf-t.webp",
+    "w": 1200,
+    "h": 746,
+    "alt": "Junge Reiswurzelläuse, frisch aus der Erde gekommen, auf der Unterseite eines Hanfblatts",
+    "alt_en": "Young rice root aphids, freshly emerged from the soil, on the underside of a cannabis leaf",
+    "note": "Läuse frisch aus der Erde, hier auf einem Hanfblatt, nicht an der Wurzel.",
+    "note_en": "Aphids freshly emerged from the soil, here on a cannabis leaf, not on the roots.",
+    "compare": false,
+    "credit": {
+      "work": "File:5596897-PPT.jpg",
+      "author": "Whitney Cranshaw, Colorado State University, Bugwood.org",
+      "license": "CC BY 3.0 US",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/us/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:5596897-PPT.jpg"
+    }
+  },
+  "sources": {
+    "P1": "Cranshaw und Wainwright-Evans, Cannabis sativa as a Host of Rice Root Aphid, Journal of Integrated Pest Management 11(1), 2020-07-20, abgerufen 2026-10-23: https://academic.oup.com/jipm/article/11/1/15/5873259",
+    "P2": "Utah State University Extension, Rice Root Aphids, ohne Autor und Datum, abgerufen 2026-10-23: https://extension.usu.edu/planthealth/ipm/notes_ag/hemp-rice-root-aphid.php",
+    "P3": "Cranshaw et al., Developing Insect Pest Management Systems for Hemp in the United States, Journal of Integrated Pest Management 10(1):26, 2019-08-28, abgerufen 2026-10-23: https://academic.oup.com/jipm/article/doi/10.1093/jipm/pmz023/5555744",
+    "P4": "UC Statewide IPM Program, Pest Notes Fungus Gnats 7448 (Bethke, Dreistadt, Stand 08/2013), Garten und Zimmerpflanzen, abgerufen 2026-10-23: https://ipm.ucanr.edu/PMG/PESTNOTES/pn7448.html",
+    "P5": "Pflanzenschutzamt Berlin, Anwendung von Pflanzenschutzmitteln in Haus-, Klein- und Siedlergärten, ohne Datum, abgerufen 2026-10-23: https://www.berlin.de/pflanzenschutzamt/ueberwachung/pflanzenschutzmittel-im-haus-und-kleingarten/",
+    "P6": "PNW Insect Management Handbook, Hemp-Aphids (Hanf-Kapitel Stand März 2026 laut Kapitelseite), abgerufen 2026-10-23: https://pnwhandbooks.org/insect/agronomic/hemp/hemp-aphids"
+  },
+  "_left_out": [
+    "'Zu viel Stickstoff' als Ursache: USU nennt es nur als Rat, steht jetzt unter Maßnahmen.",
+    "'vor allem Rhopalosiphum rufiabdominale': keine Quelle nennt eine andere Wurzellaus an Cannabis; Titel umformuliert.",
+    "PNW-Autoren und Datum (Shrestha und Rondon, März 2026) auf der Blattlaus-Seite: nicht sichtbar.",
+    "PNW-Farbangabe 'olivrot' gegen USU 'dunkel olivgrün': Widerspruch, PNW-Wortlaut nicht als Claim gelesen.",
+    "'Drinnen fast ideal': überhöht 'often near optimal', korrigiert.",
+    "Deutsche Namen 'Reiswurzellaus', 'Wurzellaus': keine deutsche Quelle gelesen, nur Suchhilfen."
+  ]
+}

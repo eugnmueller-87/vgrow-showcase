@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel rdf:about="https://kammer.example.de/rss_gartenbau.rdf">
+    <title>Kammer Gartenbau</title>
+    <link>https://kammer.example.de/</link>
+    <items>
+      <rdf:Seq>
+        <rdf:li rdf:resource="https://kammer.example.de/gartenbau/1"/>
+        <rdf:li rdf:resource="https://kammer.example.de/gartenbau/2"/>
+        <rdf:li rdf:resource="https://kammer.example.de/gartenbau/3"/>
+      </rdf:Seq>
+    </items>
+  </channel>
+  <item rdf:about="https://kammer.example.de/gartenbau/1">
+    <title>Schädlinge an Tomaten im Hausgarten erkennen</title>
+    <link>https://kammer.example.de/gartenbau/1</link>
+    <dc:date>2026-09-15T09:30:00+02:00</dc:date>
+    <description>Teaser that must never be stored.</description>
+  </item>
+  <item rdf:about="https://kammer.example.de/gartenbau/2">
+    <title>Marktbericht Spargel und Erdbeeren</title>
+    <link>https://kammer.example.de/gartenbau/2</link>
+    <dc:date>2026-09-14</dc:date>
+  </item>
+  <item rdf:about="https://kammer.example.de/gartenbau/3">
+    <title>Nutzhanf als Zwischenfrucht</title>
+    <dc:date>2026-09-10</dc:date>
+  </item>
+</rdf:RDF>

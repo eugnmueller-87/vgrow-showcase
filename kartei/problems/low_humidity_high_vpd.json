@@ -1,0 +1,133 @@
+{
+  "key": "low_humidity_high_vpd",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "stress",
+  "label": "Zu niedrige Luftfeuchte / hoher VPD",
+  "label_en": "Humidity too low / VPD too high",
+  "tile": "Blätter rollen sich, braune Blattspitzen",
+  "tile_en": "Leaves curl, brown leaf tips",
+  "aliases": {
+    "de": [
+      "trockene Luft",
+      "hoher VPD",
+      "Lufttrockenheit"
+    ],
+    "en": [
+      "dry air",
+      "high VPD",
+      "low humidity"
+    ]
+  },
+  "symptoms": [
+    "Blätter rollen sich, die Erde trocknet schnell (P1, Erfahrungsquelle). Wie sich das mit der Zeit entwickelt, beschreibt keine gelesene Quelle.",
+    "Braune Blattspitzen oder Ränder, unter anderem durch niedrige Luftfeuchte (P2, Zimmerpflanzen).",
+    "Spinnmilben werden von trockener, warmer Luft begünstigt (P2; P3). Sie machen helle Sprenkel auf den Blattoberseiten, bei starkem Befall gelbe, vertrocknende Blätter und Gespinst P3."
+  ],
+  "symptoms_en": [
+    "Leaves curl and the medium dries fast (P1, experience source). No source read describes how this develops over time.",
+    "Brown leaf tips or margins, among other causes from low humidity (P2, houseplants).",
+    "Spider mites are favored by dry, warm air (P2; P3). They cause light stippling on the upper leaf surface and, when severe, yellow drying leaves and webbing P3."
+  ],
+  "causes": [
+    "Trockene Raumluft: Drinnen ist die Luft meist trocken, das begünstigt Milben P2.",
+    "Zu viel Abluft oder eine ungeeignete Zuluft (P1, Erfahrungsquelle: unnötige Abluft verringern, Zuluft prüfen).",
+    "Befeuchter aus oder Tank leer (eigene Prüfung, keine Quelle).",
+    "Lücke: Dass Wärme den VPD hebt, ist in den gelesenen Quellen nicht ausdrücklich belegt; VIVOSUN nennt Temperatur und Feuchte die Grundregler, VPD die Feinabstimmung (P1, Erfahrungsquelle)."
+  ],
+  "causes_en": [
+    "Dry room air: indoor air is usually dry, which favors mites P2.",
+    "Too much exhaust or unsuitable intake air (P1, experience source: reduce unnecessary exhaust, check intake air).",
+    "Humidifier off or tank empty (own check, no source).",
+    "Gap: that warmth raises VPD is not stated explicitly in the sources read; VIVOSUN calls temperature and humidity the basic controls and VPD the fine-tuning (P1, experience source)."
+  ],
+  "check": [
+    {
+      "metric": "probe_humidity",
+      "text": "Ziel Wachstum 55 bis 70 %, frühe Blüte 45 bis 60 %, späte Blüte 40 bis 50 % (P1, Erfahrungsquelle).",
+      "text_en": "Target veg 55 to 70%, early flower 45 to 60%, late flower 40 to 50% (P1, experience source)."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "VPD (Dampfdruckdefizit, wie stark die Luft Wasser aus dem Blatt zieht): Ziel Wachstum 0,8 bis 1,2, frühe Blüte 1,0 bis 1,4, späte Blüte 1,2 bis 1,6 kPa (P1, Erfahrungsquelle).",
+      "text_en": "VPD (vapor pressure deficit, how strongly the air pulls water from the leaf): target veg 0.8 to 1.2, early flower 1.0 to 1.4, late flower 1.2 to 1.6 kPa (P1, experience source)."
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Mitprüfen (Karte Hitzestress).",
+      "text_en": "Check alongside (heat stress card)."
+    },
+    {
+      "metric": "watering",
+      "text": "Die Erde trocknet schneller (P1, Erfahrungsquelle); öfter mit dem Finger prüfen P4.",
+      "text_en": "The soil dries faster (P1, experience source); check with a finger more often P4."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    }
+  ],
+  "do_now": [
+    "Befeuchter an, unnötige Abluft reduzieren, Zuluft prüfen (P1, Erfahrungsquelle).",
+    "Wasserschalen und nasse Tücher nur als Notlösung, sie wirken wenig und können Schimmel fördern (P1, Erfahrungsquelle).",
+    "Die Erde öfter mit dem Finger prüfen (P4, allgemeiner Ratgeber für Topf- und Zimmerpflanzen).",
+    "Blattunterseiten mit einer 10-fach-Lupe auf Spinnmilben prüfen (P3; P2). Spritzmittel nur nach Etikett und Zulassung.",
+    "In der Blüte nicht über das Ziel befeuchten (siehe Karte zu hohe Luftfeuchte in der Blüte)."
+  ],
+  "do_now_en": [
+    "Humidifier on, reduce unnecessary exhaust, check intake air (P1, experience source).",
+    "Water pans and wet towels only as a stopgap, they help little and can encourage mold (P1, experience source).",
+    "Check the soil with a finger more often (P4, general guide for container and houseplants).",
+    "Check leaf undersides with a 10x lens for spider mites (P3; P2). Any spray only per label and approval (Etikett und Zulassung beachten).",
+    "Do not humidify above target in flower (see high humidity in flower card)."
+  ],
+  "prevention": [
+    "Feuchte und VPD im Phasenziel halten (P1, Erfahrungsquelle).",
+    "Im Versuch wuchsen die Pflanzen bei 37 bis 58 % Feuchte besser als bei 78 bis 98 % P5. Das VPD lag dabei in der Blüte bei 0,92 kPa, also unter den VIVOSUN-Zielen für die Blüte. Über hohes VPD sagt der Versuch nichts. Eine Untergrenze, ab der trockene Luft Cannabis schadet, nennt keine gelesene Quelle."
+  ],
+  "prevention_en": [
+    "Keep humidity and VPD in the stage target (P1, experience source).",
+    "In the trial plants grew better at 37 to 58% RH than at 78 to 98% P5. VPD in flower was 0.92 kPa there, below the VIVOSUN flower targets. The trial says nothing about high VPD. No source read gives a lower limit where dry air harms cannabis."
+  ],
+  "look_alikes": [
+    "Wasserstress (zu wenig oder zu viel Wasser): Welke und Blattrollen (P6, Feldhanf).",
+    "Hitzestress: Blattrollen und Hängen (P1, Erfahrungsquelle); Blattrollen und Verbrennungen bei Hitze (P6, Feldhanf).",
+    "Windbrand: ausgetrocknete braune Ränder an der Windseite P7.",
+    "Dünger- oder Salzüberschuss, mechanische Verletzung: braune Blattspitzen P2.",
+    "Kaliummangel: gelbe Blattränder an unteren, älteren Blättern, später hellbraun abgestorbene Stellen am gezackten Rand (P8, Sandkultur).",
+    "Hanfrostmilbe: Blattränder rollen sich nach oben oder unten, das Blattgewebe wirkt bronze- oder rostfarben P9. Hohe Temperatur und hohe Feuchte fördern laut Quelle ihre Vermehrung bei der Anzucht, nicht trockene Luft."
+  ],
+  "look_alikes_en": [
+    "Water stress (too little or too much water): wilting and leaf curl (P6, field hemp).",
+    "Heat stress: leaf curl and drooping (P1, experience source); leaf curling and scorching in heat (P6, field hemp).",
+    "Wind burn: dried brown edges on the windward side P7.",
+    "Fertilizer or salt excess, mechanical injury: brown leaf tips P2.",
+    "Potassium deficiency: yellow leaf margins on lower, older leaves, later tan dead patches along the serrated margin (P8, sand culture).",
+    "Hemp russet mite: leaf edges curl up or down and leaf tissue looks bronzed or rusty P9. The source says high temperature and high humidity promote its reproduction during propagation, not dry air."
+  ],
+  "image": {
+    "drawing": "low-humidity-high-vpd"
+  },
+  "sources": {
+    "P1": "VIVOSUN, Ideal Grow Tent Temperature and Humidity Guide, allgemeiner Hersteller-Leitfaden, nennt Cannabis nicht, Seitenstand dynamisch, Erfahrungsquelle, aus der Kartei übernommen (kartei/stages/autoflower.json, S5), abgerufen 2026-10-22: https://vivosun.com/growing_guide/temperature-and-humidity.md",
+    "P2": "UC Statewide IPM Program, Pittenger und Hodel, Houseplant Problems (74172), Stand 08/2020, Zimmerpflanzen, abgerufen 2026-10-23: https://ipm.ucanr.edu/PMG/PESTNOTES/pn74172.html",
+    "P3": "NC State Extension, Pulkoski und Burrack, Twospotted Spider Mite in Industrial Hemp, 2020-08-05, abgerufen 2026-10-23: https://content.ces.ncsu.edu/twospotted-spider-mite-in-industrial-hemp",
+    "P4": "K-State Research and Extension, Upham, Nolting, Sell, Watering Raised Beds, Berms, Containers, and Houseplants (MF-2805), Januar 2008, Topf- und Zimmerpflanzen, abgerufen 2026-10-23: https://bookstore.ksre.ksu.edu/download/watering-raised-beds-berms-containers-and-houseplants_MF2805",
+    "P5": "Corredor-Perilla, Kwon, Park (Colorado State University-Pueblo) 2025, Elevated relative humidity [...] while delaying flowering development in Cannabis sativa L., Frontiers in Plant Science, doi:10.3389/fpls.2025.1678142, Sorte Cherry Berry, abgerufen 2026-10-23: https://pmc.ncbi.nlm.nih.gov/articles/PMC12666426/",
+    "P6": "Cornell University, Cornell Hemp, Schwartz und Smart, Abiotic vs. Biotic Issues in Hemp Fields, Januar 2024, Feldhanf, abgerufen 2026-10-23: https://hemp.cals.cornell.edu/resources/reports-factsheets/2024-factsheets/abiotic-vs-biotic-issues-in-hemp-fields/",
+    "P7": "Royal Horticultural Society (RHS), Wind scorch, Gartenbau-Verein, Gartengehölze im Freien, ohne Datum, abgerufen 2026-10-23: https://www.rhs.org.uk/prevention-protection/wind-scorch",
+    "P8": "Cockson, Landis, Smith, Hicks, Whipker (NC State University) 2019, Characterization of Nutrient Disorders of Cannabis sativa, Applied Sciences 9(20):4432, Sandkultur, abgerufen 2026-10-23: https://www.mdpi.com/2076-3417/9/20/4432",
+    "P9": "University of Kentucky Entomology, Villanueva u. a., Hemp Russet Mite (ENTFACT-162), Stand 3/26, abgerufen 2026-10-23: https://entomology.mgcafe.uky.edu/ef162"
+  },
+  "_hinweis_wortwahl": "Wortwahl angepasst, ohne den Inhalt zu ändern: der Wiki-Filter gegen Konsumaussagen (vgrow/wiki.py, CONSUMPTION_RE) blendet Sätze mit Wirkung, effect oder CBD auf der Seite aus, und der Zwillingstest zählt Einheiten je Paar: do_now[1] en: 'small effect and' -> 'they help little and'",
+  "_left_out": [
+    "'Früh:' als Zeitangabe: keine Quelle beschreibt einen Verlauf.",
+    "'schadete niedrige Feuchte nicht': nicht getestet, ersetzt.",
+    "'Folge Spinnmilben': Quellen sagen begünstigt, nicht Folge.",
+    "'Hanfrostmilbe spröde' (Kentucky): Wort nicht gefunden.",
+    "'trockene oder warme Zuluft': 'warm' steht nicht im VIVOSUN-Absatz.",
+    "Untergrenze der Luftfeuchte oder Obergrenze des VPD für Schäden bei Cannabis: keine Quelle."
+  ]
+}

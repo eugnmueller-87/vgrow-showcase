@@ -1,0 +1,94 @@
+{
+  "_hinweis": "Startwerte, keine Zielwerte. Ein Alarm heisst: etwas stimmt nicht. Werte hier aendern, Server neu starten. fallback: dieser Messwert gilt nur, wenn der eigene fehlt (Temperatur und Feuchte am Fuehler auf Blatthoehe, sonst eingebauter Sensor). Ein Alarm, den der Fuehler ausgeloest hat, hebt der Ersatzwert nie auf. stage_max_margin: die Grenze folgt der Phase, Hoechstwert der aktuellen Phase fuer diesen Messwert plus diese Spanne; ohne Phase gilt above. label_en: die englische Fassung des Namens.",
+  "remind_hours": 6,
+  "rules": {
+    "temp_low": {
+      "label": "Zu kalt (Fühler)",
+      "label_en": "Too cold (probe)",
+      "metric": "probe_temp",
+      "fallback": "temp",
+      "below": 15,
+      "for_minutes": 10,
+      "source": "VIVOSUN nennt bei Licht 65 bis 80 F (18 bis 27 C) in der Bluete, nachts rund 10 F weniger: vivosun.com/growing_guide/ideal-growing-conditions-for-cannabis-plants"
+    },
+    "temp_high": {
+      "label": "Zu warm (Fühler)",
+      "label_en": "Too warm (probe)",
+      "metric": "probe_temp",
+      "fallback": "temp",
+      "above": 30,
+      "for_minutes": 10,
+      "source": "FloraFlex nennt 22 bis 28 C im Wachstum, 20 bis 26 C in der Bluete. 30 liegt bewusst darueber: floraflex.com/EU/blog/post/temperature-and-humidity-finding-the-optimal-climate-for-cannabis-cultivation"
+    },
+    "humidity_high": {
+      "label": "Zu feucht (Fühler)",
+      "label_en": "Too humid (probe)",
+      "metric": "probe_humidity",
+      "fallback": "humidity",
+      "above": 70,
+      "stage_max_margin": 10,
+      "stage_max_margin_note": "Eigene Regel des Cockpits, keine belegte Zahl: Alarm erst 10 Punkte ueber dem Feuchte-Hoechstwert der aktuellen Phase. Eine von dir gesetzte Phase hebt oder senkt die Grenze; eine nur geschaetzte (oder nach Tagen abgeleitete) senkt sie nur, nie ueber above. Ein gesetzter Keimling mit Ziel 65 bis 75 % alarmiert so erst ueber 85 %, die fruehe Bluete (Ziel bis 60 %) ueber 70 %. Ohne Phase gilt above (70).",
+      "for_minutes": 30,
+      "source": "Ueber etwa 70 % steigt die Schimmelgefahr (University of Vermont, Drying Basics). FloraFlex: 50 bis 70 % im Wachstum, 40 bis 50 % in der Bluete. In der Bluete auf 55 senken. Seit 22.10.2026 am Fuehler: das Kamerabild zeigt ihn auf Blatthoehe in der Box, der eingebaute Sensor sass bei 47 %, der Fuehler bei 79 %. Ohne Fuehlerwert gilt der eingebaute Sensor: er liest niedriger, ist aber besser als kein Alarm."
+    },
+    "water_low": {
+      "label": "Wasser niedrig",
+      "label_en": "Water low",
+      "metric": "water_level",
+      "at_most": 25,
+      "for_minutes": 5,
+      "source": "Startwert. Der DWC-Sensor meldet bisher in 25-%-Schritten (Issue #43 im Upstream-Repo), deshalb 25 % oder weniger."
+    },
+    "tank_empty": {
+      "label": "Tank leer",
+      "label_en": "Tank empty",
+      "metric": "water_state",
+      "is": "dry",
+      "for_minutes": 3,
+      "source": "Wassersensor der VGrow (aux35Dev 9): meldet nur nass (20000) oder trocken (0), keinen Fuellstand. Am 23.10.2026 mit dem Test des Besitzers gemessen (Sensor 16:05 bis 16:08 aus dem Wasser), nicht von VIVOSUN dokumentiert. 3 Minuten am Stueck trocken, damit ein kurzes Wackeln keinen Alarm ausloest. Mit dem Docht zieht die Pflanze ihr Wasser aus diesem Tank."
+    },
+    "offline": {
+      "label": "Box offline",
+      "label_en": "Box offline",
+      "metric": "offline",
+      "for_minutes": 10,
+      "source": "Die Box meldet sich nicht, oder seit 5 Minuten kein frischer Messwert. Gilt nur, solange dieser Server laeuft."
+    },
+    "camera_offline": {
+      "label": "Kamera offline",
+      "label_en": "Camera offline",
+      "metric": "camera",
+      "for_minutes": 10,
+      "source": "Die GrowCam antwortet nicht im Heimnetz. Seit 23.10.2026 braucht sie ein eigenes USB-Netzteil, nicht mehr USB 1 der Box (dort steckt die Pumpe, Luftbefeuchter an USB 2, ports.json). Ihre feste Adresse: GROWCAM_IP in ~/.vgrow.env."
+    },
+    "usb_camera_offline": {
+      "label": "Nahkamera offline",
+      "label_en": "Close-up camera offline",
+      "metric": "usb_camera",
+      "for_minutes": 30,
+      "remind_hours": 24,
+      "source": "Die Kamera aus camera-usb.json (C920) liefert kein Bild. Anlass: sie fiel am 03.11.2026 aus, drei Tage meldete das nichts, und die Schaedlingswache wich still auf die GrowCam aus. 30 Minuten und einmal am Tag sind eigene Werte, keine Quelle."
+    },
+    "dark_period": {
+      "label": "Keine Dunkelphase",
+      "label_en": "No dark period",
+      "metric": "dark_period",
+      "dark_hours_below": 1,
+      "min_measured_hours": 20,
+      "for_minutes": 60,
+      "remind_hours": 24,
+      "source": "Eigene Regel des Cockpits, keine belegte Zahl: unter 1 Stunde gemessenes Dunkel in den letzten 24 Stunden, wenn mindestens 20 davon gemessen sind. Anlass: die Lampe lief vom 23. bis 26.10. und vom 04. bis 06.11.2026 ohne Dunkelphase, und nichts meldete es (gemessen im Messwertspeicher). Zyklen mit Quellen: light_schedule.PRESETS."
+    },
+    "short_day": {
+      "label": "Licht läuft auf 12/12",
+      "label_en": "Light runs on 12/12",
+      "metric": "short_day",
+      "lit_hours": 12,
+      "within_hours": 1,
+      "min_measured_hours": 20,
+      "for_minutes": 360,
+      "remind_hours": 24,
+      "source": "Das Licht lief 11 bis 13 der letzten 24 Stunden, und die Karte der Phase erlaubt 12 Stunden nicht. 12/12 ist der Bluehzyklus photoperiodischer Pflanzen (growweedeasy.com/light-schedules); Autoflower laufen 18/6 oder 20/4 (VIVOSUN, light_schedule.PRESETS). Spanne und Mindestmessung sind eigene Werte, keine Quelle. 6 Stunden, weil das 24-Stunden-Fenster bei jedem Planwechsel durch diese Spanne rutscht: auf den echten Daten seit 22.10.2026 hielt das hoechstens 2,5 Stunden an (01.11. und 03.11.)."
+    }
+  }
+}

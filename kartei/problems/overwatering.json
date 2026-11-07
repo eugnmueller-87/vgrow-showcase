@@ -1,0 +1,173 @@
+{
+  "key": "overwatering",
+  "kind": "problem",
+  "package": "cannabis",
+  "status": "draft",
+  "group": "stress",
+  "label": "Überwässern",
+  "label_en": "Overwatering",
+  "tile": "Pflanze hängt, Blätter vergilben, Erde bleibt nass",
+  "tile_en": "Plant droops, leaves yellow, soil stays wet",
+  "aliases": {
+    "de": [
+      "Staunässe",
+      "Überwässerung",
+      "zu nasse Erde"
+    ],
+    "en": [
+      "waterlogging",
+      "soggy soil",
+      "overwatered"
+    ]
+  },
+  "symptoms": [
+    "Zeichen: Die Pflanze hängt oder welkt, Blätter vergilben (P1, Zimmerpflanzen). UC IPM: Welke kommt meist von zu wenig Wasser oder zu viel Licht, kann aber auch von Wurzelfäule durch zu nasse Erde kommen. Darum Erde und Wurzeln ansehen.",
+    "Weiche Stängelbasis spricht meist für Überwässern; matschige Erde kommt von zu viel Wasser oder schlechtem Abfluss P1.",
+    "Später: Kümmerwuchs, Welke, Blätter gelb und fallen ab (P2, Pythium bei Hanf); Welke besonders in der Blüte, Laub gelblich, Stängel auch innen braun P3.",
+    "Wurzeln: Gesunde Wurzeln sind weiß, ganz oder zumindest unter der äußeren Hülle; braune bis schwarze oder dunkelgelbe Wurzeln, besonders an den Spitzen, deuten auf Fäule P1. Feinwurzeln sterben zuerst, später wird der Wurzelhals braun bis schwarz (P4, Feldhanf).",
+    "Trauermücken an Topf und Erde: nasse Erde fördert sie P1."
+  ],
+  "symptoms_en": [
+    "Signs: the plant droops or wilts, leaves yellow (P1, houseplants). UC IPM: wilting usually comes from too little water or too much light but can also come from root rot linked to overwatering. So check soil and roots.",
+    "Soft stem bases usually indicate overwatering; soggy soil comes from overwatering or poor drainage P1.",
+    "Later: stunting, wilting, yellowing and leaf drop (P2, Pythium in hemp); wilting especially in flower, foliage yellowish, stems brown inside too P3.",
+    "Roots: healthy roots are white, entirely or at least under their outer covering; brown to black or dark yellowish roots, especially at the tips, suggest rot P1. Feeder roots die first, later the crown turns brown to black (P4, field hemp).",
+    "Fungus gnats at the pot and soil: wet soil favors them P1."
+  ],
+  "causes": [
+    "Gießen nach festem Plan statt nach Feuchte: nach starrem Zeitplan lässt sich nicht richtig gießen P5. Die VGrow-Pumpe arbeitet mit Voreinstellungen (Wachstum 20 min und 1000 ml, Blüte 35 min und 1400 ml; Tabellenkopf: eine Stunde nach Licht an); sie lassen sich in der VIVOSUN-App ändern, einen Zeitbezug der Menge nennt das Handbuch nicht P6. Ob die Voreinstellung für eine einzelne Pflanze zu viel ist, belegt keine Quelle: die Fingerprobe entscheidet.",
+    "Schlechter Abfluss: Wasser bleibt im Untersetzer; ein flacher Topfboden auf glatter Fläche kann einen Unterdruck bilden und das Abfließen sperren P5; alte, verdichtete Erde P1.",
+    "Kühle, nasse Erde begünstigt Pythium, einen Wasserschimmel, der Wurzelfäule macht P4; die Umfallkrankheit der Keimlinge tritt auch in staunassen Töpfen auf P7.",
+    "Hanf ist empfindlich gegen zu viel Wasser und wird dadurch anfälliger für Krankheiten P2.",
+    "Aus der Praxis (Pott Planter): wer Tag für Tag morgens und abends gießt, hält die Erde dauernd nass; den Wurzeln fehlt Sauerstoff, sie faulen und sterben ab P10. Das deckt sich mit dieser Karte: nach starrem Zeitplan lässt sich nicht richtig gießen P5, kühle, nasse Erde begünstigt Wurzelfäule P4."
+  ],
+  "causes_en": [
+    "Watering on a fixed schedule instead of by moisture: proper watering on a rigid, pre-determined schedule is impossible P5. The VGrow pump runs on presets (veg 20 min and 1000 ml, flower 35 min and 1400 ml; table header: one hour after lighting); they can be changed in the VIVOSUN app, the manual gives no time basis for the amount P6. Whether the preset is too much for a single plant, no source shows: the finger test decides.",
+    "Poor drainage: water stays in the saucer; a flat-bottomed pot on a flat surface can form an air-lock that seals off drainage P5; aged, compacted mix P1.",
+    "Cool wet soil favors Pythium, a water mold that causes root rot P4; damping-off of seedlings also occurs in waterlogged pots P7.",
+    "Hemp is sensitive to excess water, which makes it more susceptible to disease P2.",
+    "From practice (Pott Planter): watering morning and evening, day after day, keeps the soil permanently wet; the roots lack oxygen, rot and die P10. This matches this card: proper watering on a rigid schedule is impossible P5, cool wet soil favors root rot P4."
+  ],
+  "check": [
+    {
+      "metric": "watering",
+      "text": "Pumpenläufe der letzten Tage gegen die Fingerprobe halten P5. Steht Wasser im Untersetzer oder unter dem Topf? P5",
+      "text_en": "Compare pump runs of the last days with the finger test P5. Is water standing in the saucer or under the pot? P5"
+    },
+    {
+      "metric": "probe_temp",
+      "text": "Nachts: kühl plus nass begünstigt Pythium P4. Der Fühler misst Luft, nicht Erde P6.",
+      "text_en": "At night: cool plus wet favors Pythium P4. The probe reads air, not soil P6."
+    },
+    {
+      "metric": "probe_humidity",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "probe_vpd",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    },
+    {
+      "metric": "light_percent",
+      "text": "Kein Bezug in den gelesenen Quellen.",
+      "text_en": "No link in the sources read."
+    }
+  ],
+  "do_now": [
+    "Nicht gießen; läuft die Tropfbewässerung, in der VIVOSUN-App aussetzen (das Handbuch nennt nur, dass sich die Stufenwerte dort ändern lassen P6). Erst wieder gießen, wenn die Erde in der Tiefe trocken ist: K-State nennt für Zimmerpflanzen 1 Zoll (2,54 cm) Tiefe im 6-Zoll-Topf und 2 Zoll (5,08 cm) im 10-Zoll-Topf P5.",
+    "Wasser im Untersetzer nach dem Ablaufen wegschütten, Topf anheben oder auf Füße stellen P5.",
+    "Bei Welke die Wurzeln ansehen P1.",
+    "Stehendes Wasser entfernen (P1; P8, Abschnitt zu hoher Luftfeuchte).",
+    "Spritzmittel: Laut NC State (2019, USA, Nutzhanf) gibt es derzeit keine wirksamen, dort zulässigen Mittel gegen Pythium an Hanf P2. Für Deutschland und den Heimanbau sagt die Quelle nichts. Etikett und Zulassung beachten."
+  ],
+  "do_now_en": [
+    "Do not water; if the drip irrigation runs, pause it in the VIVOSUN app (the manual only says the stage values can be changed there P6). Water again only when the soil is dry at depth: K-State gives 1 inch (2.54 cm) depth in a 6-inch pot and 2 inches (5.08 cm) in a 10-inch pot for houseplants P5.",
+    "Empty the saucer after draining, raise the pot or put it on feet P5.",
+    "If wilting, inspect the roots P1.",
+    "Remove standing water (P1; P8, section on high humidity).",
+    "Sprays: NC State (2019, USA, industrial hemp) lists no effective, legal products against Pythium in hemp P2. The source says nothing about Germany or home growing. Follow label and registration (Etikett und Zulassung beachten)."
+  ],
+  "prevention": [
+    "Vor jedem Gießen die Feuchte mit dem Finger prüfen; gießen bis etwas unten herausläuft P5.",
+    "Überschüssiges Wasser vermeiden, um Stress und die Ausbreitung von Pythium zu begrenzen P2.",
+    "Saubere Töpfe und steriles Substrat, Erde kranker Pflanzen nicht wiederverwenden; hohe Anteile organischer Substanz im Substrat vermeiden P3. BioBizz-Erde ist organisch: dieser Zielkonflikt bleibt offen, die Quelle löst ihn nicht.",
+    "Aus der Praxis (Pott Planter): die Erde zwischen zwei Wassergaben antrocknen lassen; trockene oberste Zentimeter sind ein gutes Zeichen P10. Wie tief, sagt die Karte genauer, je nach Topfgröße P5.",
+    "Aus der Praxis (Pott Planter): den Topf vor und nach dem Gießen anheben und so sein Gewicht lernen: leicht heißt gießen, schwer heißt noch warten P10. Keine andere Quelle dieser Karte nennt das Topfgewicht, und ob sich der Topf in der Box samt Bewässerung anheben lässt, ist nicht geprüft; die Fingerprobe bleibt P5.",
+    "Aus der Praxis (Pott Planter): Cannabis mag lockere, luftige Erde P10. Das deckt sich mit dieser Karte: alte, verdichtete Erde lässt Wasser schlecht abfließen P1."
+  ],
+  "prevention_en": [
+    "Check moisture with a finger before each watering; water until some drains out P5.",
+    "Avoid excess water to limit stress and the spread of Pythium P2.",
+    "Clean pots and sterile media, never reuse media from diseased plants; avoid high levels of organic matter in the medium P3. Organic soil: the conflict stays open, the source does not resolve it.",
+    "From practice (Pott Planter): let the soil dry a little between waterings; dry top few centimeters are a good sign P10. How deep, this card says more precisely, by pot size P5.",
+    "From practice (Pott Planter): lift the pot before and after watering to learn its weight: light means water, heavy means wait a bit longer P10. No other source of this card mentions pot weight, and whether the pot can be lifted in the box together with the watering is not checked; the finger test remains P5.",
+    "From practice (Pott Planter): cannabis likes loose, airy soil P10. This matches this card: aged, compacted mix drains poorly P1."
+  ],
+  "look_alikes": [
+    "Unterwässern: Welke kommt laut UC IPM meist von zu wenig Wasser oder zu viel Licht P1; Wurzeln und Erde prüfen (Karten Unterwässern und Lichtbrand).",
+    "Stickstoffmangel: Vergilben beginnt unten P9.",
+    "Fusarium-Fäule: rotbraune Wurzeln und Stängelbasis, Vergilben und Welke, am häufigsten in schlecht drainiertem Boden P7.",
+    "Bormangel: starke Welke durch abgestorbene Wurzelspitzen, Triebspitzen sterben ab P9. Kupfermangel: verformte junge Blätter, nur leicht verminderte Spannkraft P9.",
+    "Blattläuse an Blattunterseiten: Blätter welken und vergilben P7."
+  ],
+  "look_alikes_en": [
+    "Underwatering: per UC IPM wilting usually comes from too little water or too much light P1; check roots and soil (underwatering and light burn cards).",
+    "Nitrogen deficiency: yellowing starts at the bottom P9.",
+    "Fusarium rot: reddish-brown roots and stem base, yellowing and wilting, most common in poorly drained soils P7.",
+    "Boron deficiency: severe wilting from dead root tips, shoot tips die P9. Copper deficiency: distorted young leaves, only slightly reduced turgor P9.",
+    "Aphids on leaf undersides: leaves wilt and yellow P7."
+  ],
+  "image": {
+    "file": "root-rot.webp",
+    "thumb": "root-rot-t.webp",
+    "w": 473,
+    "h": 1200,
+    "alt": "Kichererbse aus Hydrokultur mit braunen, kranken Wurzeln",
+    "alt_en": "Hydroponic chickpea plant with brown, diseased roots",
+    "note": "Eine Kichererbse aus Hydrokultur, kein Hanf. So sehen braune, kranke Wurzeln aus.",
+    "note_en": "A hydroponic chickpea, not cannabis. This is what brown, diseased roots look like.",
+    "compare": true,
+    "credit": {
+      "work": "File:Root rot in cicer arietinum (hydro-grown).jpg",
+      "author": "Bjornwireen",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Root_rot_in_cicer_arietinum_(hydro-grown).jpg"
+    }
+  },
+  "sources": {
+    "P1": "UC Statewide IPM Program, Pittenger und Hodel, Houseplant Problems (74172), Stand 08/2020, Zimmerpflanzen, abgerufen 2026-10-23: https://ipm.ucanr.edu/PMG/PESTNOTES/pn74172.html",
+    "P2": "NC State Extension, Troth und Thiessen, Pythium Root and Crown Rot of Industrial Hemp, 2019-08-08, abgerufen 2026-10-23: https://content.ces.ncsu.edu/pythium-root-and-crown-rot-of-industrial-hemp",
+    "P3": "PNW Plant Disease Management Handbook, Osterbauer und Ocamb, Hemp-Root and Crown Rot, Stand März 2026, abgerufen 2026-10-23: https://pnwhandbooks.org/plantdisease/host-disease/hemp-cannabis-sativa-root-crown-rot",
+    "P4": "UF/IFAS Extension, Korus, Elwakil, Dufault, Eldred, Field Guide to Hemp (Cannabis sativa) Diseases (PP379), 2024, Feldhanf, abgerufen 2026-10-23: https://ask.ifas.ufl.edu/publication/PP379",
+    "P5": "K-State Research and Extension, Upham, Nolting, Sell, Watering Raised Beds, Berms, Containers, and Houseplants (MF-2805), Januar 2008, Topf- und Zimmerpflanzen, abgerufen 2026-10-23: https://bookstore.ksre.ksu.edu/download/watering-raised-beds-berms-containers-and-houseplants_MF2805",
+    "P6": "VIVOSUN, VGrow Smart Grow Box Handbuch, Hersteller der Box, Seitenstand 2026-05-25, aus der Kartei übernommen (kartei/stages/autoflower.json, S1), abgerufen 2026-10-22: https://vivosun.com/support/guide/vgrow-smart-grow-box.md",
+    "P7": "University of Kentucky Cooperative Extension, Smith, Gauthier, Villanueva u. a., An IPM Scouting Guide for Common Pests and Diseases of Kentucky Hemp (PPFS-AG-H-03), Juni 2026, Feldhanf, abgerufen 2026-10-23: https://plantpathology.mgcafe.uky.edu/sites/plantpathology.ca.uky.edu/files/PPFS-AG-H-03.pdf",
+    "P8": "VIVOSUN, Ideal Grow Tent Temperature and Humidity Guide, allgemeiner Hersteller-Leitfaden, nennt Cannabis nicht, Seitenstand dynamisch, Erfahrungsquelle, aus der Kartei übernommen (kartei/stages/autoflower.json, S5), abgerufen 2026-10-22: https://vivosun.com/growing_guide/temperature-and-humidity.md",
+    "P9": "Cockson, Landis, Smith, Hicks, Whipker (NC State University) 2019, Characterization of Nutrient Disorders of Cannabis sativa, Applied Sciences 9(20):4432, Sandkultur, abgerufen 2026-10-23: https://www.mdpi.com/2076-3417/9/20/4432",
+    "P10": {
+      "title": "Pott Planter, YouTube: Schluss mit mickrigen Pflanzen, 5 Fehler beim Eigenanbau",
+      "title_en": "Pott Planter, YouTube: 5 beginner mistakes in home growing",
+      "url": "https://www.youtube.com/watch?v=G2g8oC86m44",
+      "retrieved": "2026-10-23",
+      "note": "Erfahrungsquelle; Transkript von Hand kopiert",
+      "note_en": "experience source; transcript copied by hand"
+    }
+  },
+  "_left_out": [
+    "'Pflanze welkt, obwohl die Erde nass ist (UC IPM)': steht nicht bei UC IPM.",
+    "'Keine Spritzmittel' als Anweisung: NC State sagt nur, es gebe keine wirksamen legalen Mittel in den USA.",
+    "'Pumpe pausieren' als Handbuchfunktion: kein Handbuchsatz dazu.",
+    "Corredor-Perilla 2025 'niedriger VPD senkt die Transpiration': Versuch bei 78 bis 98 % Feuchte, weit außerhalb der Boxwerte; Titel mit Cannabinoidthema.",
+    "Notulae 2025 (Wurzellänge bei Staunässe): Abstract nennt für die Kontrolle einen Fehlerwert; nicht übernommen.",
+    "UF/IFAS 'November 2024': nur das Jahr 2024 ist sicher.",
+    "Pott Planter (Video): 'Todesursache Nummer 1 bei Anfängern': belegt keine gelesene Studie oder Hochschulquelle.",
+    "Pott Planter (Video): Perlit, Kokosfaser und Kompost zum Verbessern der Erde: nicht übernommen. Diese Karte rät, hohe Anteile organischer Substanz zu meiden (P3), und nicht fertig verrotteter Kompost bringt oft Trauermücken mit (Karte Trauermücken).",
+    "Pott Planter (Video): 'keine x-beliebige Erde aus dem Supermarkt' und die gezeigten fertigen Erden: Produktplatzierung, nicht übernommen.",
+    "Praxis-Prüfung zum Video: sie nimmt in der Box einen Docht aus dem Tank an, diese Karte die Tropfbewässerung der VGrow-Pumpe (P6). Nicht geklärt, darum die Folgerung 'mit dem Docht keine Gießpausen' nicht übernommen.",
+    "Pott Planter (Video): gezeigte Erden, Dünger, das Neemöl-Set und die Produktlinks, Sketch, Witze, Aufrufe zum Abonnieren und Verweise auf eigene Videos: nicht übernommen.",
+    "Pott Planter (Video): keine Zeitmarken aus dem Video übernommen, auf Wunsch des Owners vom 23.10.2026 ('Hank wird nur durch die Minuten verwirrt')."
+  ]
+}

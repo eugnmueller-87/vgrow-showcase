@@ -1,0 +1,278 @@
+{
+  "name": "VIVOSUN Nutrients Base A und Base B (Etikett)",
+  "name_en": "VIVOSUN Nutrients Base A and Base B (label)",
+  "summary": "Das Etikett der beiden VIVOSUN-Flaschen, abgetippt von sechs Fotos: Base A (15-0-1, Calcium 17 %) und Base B (4-8-12, Magnesium 8 %), wasserlöslich, von beiden Teilen gleich viel, Dosis in Gramm je Liter. Eine Tabelle, die kein Medium nennt; sie endet nach Blütewoche 8.",
+  "summary_en": "The label of the two VIVOSUN bottles, transcribed from six photos: Base A (15-0-1, calcium 17%) and Base B (4-8-12, magnesium 8%), water soluble, the same amount of both parts, dose in grams per liter. One table that names no medium; it ends after flowering week 8.",
+  "product": "VIVOSUN",
+  "version": "label-2026-10-23",
+  "status": "draft",
+  "status_note": "Abgetippt von den sechs Etikettfotos, die du am 23.10.2026 gemacht hast (V1). Bitte jede Zahl mit den Flaschen vergleichen. Ein Entwurf, bis du die Karte auf der Seite mit den Flaschen vergleichst und bestätigst; bis dahin rechnet das Cockpit keine Mengen.",
+  "status_note_en": "Transcribed from the six label photos you took on Oct 23, 2026 (V1). Please compare every number with the bottles. A draft until you compare the card with the bottles on the page and confirm it; until then the cockpit computes no amounts.",
+  "unit": "g/l",
+  "aliases": {
+    "de": ["VIVOSUN", "Vivosun Base", "Vivosun Base A", "Vivosun Base B", "Base A und B", "Base A + B"],
+    "en": ["VIVOSUN", "Vivosun Base", "Vivosun Base A", "Vivosun Base B", "Base A and B", "Base A + B"]
+  },
+  "line": {
+    "maker": "VIVOSUN",
+    "types": ["powder", "multi_part"],
+    "media": [],
+    "media_text": "Das Etikett nennt kein Medium (weder Erde noch Kokos).",
+    "media_text_en": "The label names no medium (neither soil nor coco).",
+    "products": [
+      {"product": "Base A", "npk": "15-0-1", "role": "Granulat mit Calcium 17 %, wasserlöslich, in Gramm je Liter.", "role_en": "Granules with calcium 17%, water soluble, in grams per litre.", "sources": ["V1"]},
+      {"product": "Base B", "npk": "4-8-12", "role": "Granulat mit Magnesium 8 %, wasserlöslich, in gleicher Menge wie Base A.", "role_en": "Granules with magnesium 8%, water soluble, in the same amount as Base A.", "sources": ["V1"]}
+    ],
+    "application_short": "Granulat abwiegen oder mit dem Löffel (0,5 g) abmessen, von Base A und Base B gleich viel, erst A lösen, dann B.",
+    "application_short_en": "Weigh the granules or measure them with the spoon (0.5 g), the same amount of Base A and Base B, dissolve A first, then B.",
+    "application": "Von beiden Teilen gleich viel, erst Base A ins Wasser und lösen, dann Base B. Der Messlöffel fasst 0,5 g. Die Tabelle endet nach Blütewoche 8; für optimale Ergebnisse Wasser unter 0,3 mS/cm.",
+    "application_en": "The same amount of both parts, first Base A into the water and dissolve it, then Base B. The measuring spoon holds 0.5 g. The table ends after flowering week 8; for optimal results water below 0.3 mS/cm.",
+    "application_sources": ["V1"],
+    "cautions": [
+      {"text": "Nicht mit der flüssigen VIVOSUN Base A und B (4-0-1 und 1-4-2) verwechseln: deren Mengen in Milliliter gelten für das Granulat nicht.", "text_en": "Do not mix it up with the liquid VIVOSUN Base A and B (4-0-1 and 1-4-2): their amounts in millilitres do not apply to the granules.", "sources": ["V10", "V1"]}
+    ]
+  },
+  "selectable": {
+    "label": "VIVOSUN Base A + B (Granulat)",
+    "label_en": "VIVOSUN Base A + B (granules)",
+    "page": "label",
+    "page_note": "Das Etikett hat eine Tabelle und nennt kein Medium; sie gilt hier nur als Etikettwert.",
+    "page_note_en": "The label has one table and names no medium; it counts here only as a label value.",
+    "components": ["base_a", "base_b"]
+  },
+  "measure": {
+    "label": "Messlöffel",
+    "label_en": "Measuring spoon",
+    "grams": 0.5,
+    "printed": "1 spoon=0.5g",
+    "text": "Auf dem Etikett steht neben der Zeichnung eines Messlöffels mit Granulat: 1 Löffel entspricht 0,5 g.",
+    "text_en": "Beside a drawing of a measuring spoon holding granules the label prints: 1 spoon equals 0.5 g.",
+    "sources": ["V1"]
+  },
+  "parts": {
+    "mode": "equal",
+    "printed": "Use equal amounts of Base A and Base B.",
+    "text": "Von Base A und Base B kommt gleich viel in die Mischung; die Tabelle nennt für beide Teile dieselbe Zahl.",
+    "text_en": "Base A and Base B go into the mixture in equal amounts; the table gives the same number for both parts.",
+    "sources": ["V1"]
+  },
+  "weeks": {
+    "columns": [
+      {"key": "propagation", "label": "Anzucht (Woche 1 bis 2)", "label_en": "Seedling or clone (weeks 1 to 2)", "printed": "Seedling/Clone Week 1-2", "label_weeks": [1, 2]},
+      {"key": "veg", "label": "Wachstum (Woche 1 bis 4)", "label_en": "Vegetative (weeks 1 to 4)", "printed": "Vegetative Week 1-4", "label_weeks": [1, 4]},
+      {"key": "bloom_1", "bloom_week": 1, "label": "Blütewoche 1", "label_en": "Flowering week 1", "printed": "Flowering Week 1-4"},
+      {"key": "bloom_2", "bloom_week": 2, "label": "Blütewoche 2", "label_en": "Flowering week 2", "printed": "Flowering Week 1-4"},
+      {"key": "bloom_3", "bloom_week": 3, "label": "Blütewoche 3", "label_en": "Flowering week 3", "printed": "Flowering Week 1-4"},
+      {"key": "bloom_4", "bloom_week": 4, "label": "Blütewoche 4", "label_en": "Flowering week 4", "printed": "Flowering Week 1-4"},
+      {"key": "bloom_5", "bloom_week": 5, "label": "Blütewoche 5", "label_en": "Flowering week 5", "printed": "Flowering Week 5-8"},
+      {"key": "bloom_6", "bloom_week": 6, "label": "Blütewoche 6", "label_en": "Flowering week 6", "printed": "Flowering Week 5-8"},
+      {"key": "bloom_7", "bloom_week": 7, "label": "Blütewoche 7", "label_en": "Flowering week 7", "printed": "Flowering Week 5-8"},
+      {"key": "bloom_8", "bloom_week": 8, "label": "Blütewoche 8", "label_en": "Flowering week 8", "printed": "Flowering Week 5-8"}
+    ],
+    "end": {"key": "label_end", "bloom_week": 9, "label": "Ab Blütewoche 9: die Tabelle endet, keine Menge", "label_en": "From flowering week 9: the table ends, no amount"},
+    "sources": ["V1"]
+  },
+  "components": {
+    "base_a": {
+      "label": "Base A",
+      "label_en": "Base A",
+      "npk": "15-0-1",
+      "analysis": [
+        {"nutrient": "Gesamtstickstoff (N)", "nutrient_en": "Total nitrogen (N)", "printed": "Total Nitrogen (N) 15%", "percent": 15},
+        {"nutrient": "Lösliches Kali (K2O)", "nutrient_en": "Soluble potash (K2O)", "printed": "Soluble Potash (K2O) 1.0%", "percent": 1.0},
+        {"nutrient": "Calcium (Ca)", "nutrient_en": "Calcium (Ca)", "printed": "Calcium (Ca) 17%", "percent": 17},
+        {"nutrient": "Eisen (Fe)", "nutrient_en": "Iron (Fe)", "printed": "Iron (Fe) 0.09%", "percent": 0.09}
+      ]
+    },
+    "base_b": {
+      "label": "Base B",
+      "label_en": "Base B",
+      "npk": "4-8-12",
+      "analysis": [
+        {"nutrient": "Gesamtstickstoff (N)", "nutrient_en": "Total nitrogen (N)", "printed": "Total Nitrogen (N) 4%", "percent": 4},
+        {"nutrient": "Verfügbares Phosphat (P2O5)", "nutrient_en": "Available phosphate (P2O5)", "printed": "Available Phosphate (P2O5) 8%", "percent": 8},
+        {"nutrient": "Lösliches Kali (K2O)", "nutrient_en": "Soluble potash (K2O)", "printed": "Soluble Potash (K2O) 12%", "percent": 12},
+        {"nutrient": "Magnesium (Mg)", "nutrient_en": "Magnesium (Mg)", "printed": "Magnesium (Mg) 8%", "percent": 8},
+        {"nutrient": "Kupfer (Cu)", "nutrient_en": "Copper (Cu)", "printed": "Copper (Cu) 0.003%", "percent": 0.003},
+        {"nutrient": "Mangan (Mn)", "nutrient_en": "Manganese (Mn)", "printed": "Manganese (Mn) 0.036%", "percent": 0.036},
+        {"nutrient": "Zink (Zn)", "nutrient_en": "Zinc (Zn)", "printed": "Zinc (Zn) 0.022%", "percent": 0.022},
+        {"nutrient": "Bor (B)", "nutrient_en": "Boron (B)", "printed": "Boron (B) 0.03%", "percent": 0.03}
+      ]
+    }
+  },
+  "pages": {
+    "label": {
+      "label": "Etikett-Tabelle (nennt kein Medium)",
+      "label_en": "Label table (names no medium)",
+      "rows": {
+        "base_a": [0.5, 1, 1.5, 1.5, 1.5, 1.5, 1, 1, 1, 1],
+        "base_b": [0.5, 1, 1.5, 1.5, 1.5, 1.5, 1, 1, 1, 1]
+      },
+      "sources": ["V1"]
+    }
+  },
+  "frequency": {
+    "text": "Das Etikett sagt nicht, wie oft gedüngt wird. Das Cockpit gibt deshalb keinen Takt vor.",
+    "text_en": "The label does not say how often to feed, so the cockpit sets no schedule.",
+    "sources": ["V1"]
+  },
+  "notes": [
+    {
+      "text": "Laut Etikett: gleiche Mengen Base A und Base B. Erst Base A in die Mischung geben und gründlich rühren, bis es gelöst ist, dann Base B ebenso.",
+      "text_en": "Per the label: equal amounts of Base A and Base B. Add Base A to the mixture first and stir thoroughly until dissolved, then Base B the same way.",
+      "sources": ["V1"]
+    },
+    {
+      "text": "Laut Etikett wird das System vom Beginn der Wachstumsphase bis zum Ende der Blütephase verwendet. Die Tabelle endet aber nach Blütewoche 8 und nennt für spätere Wochen keine Menge; das Cockpit rechnet dann keine.",
+      "text_en": "Per the label the system is used from the beginning of the vegetative phase until the end of the flowering phase. The table, however, ends after flowering week 8 and gives no amount for later weeks; the cockpit then computes none.",
+      "sources": ["V1"]
+    },
+    {
+      "text": "Mögliche Erklärung für die Reihenfolge, nicht vom Etikett (das Etikett nennt keinen Grund): Base A trägt das Calcium (17 %), Base B Phosphat (8 % P2O5) und Magnesium (8 %). Penn State: Calcium in Stammlösungen getrennt von Sulfaten und Phosphaten führen, sie können Niederschläge bilden, die Tropfer verstopfen. University of Hawaii: ihre zwei Stammlösungen reagieren konzentriert miteinander, verdünnt in der Nährlösung sind sie in Ordnung. Beides gilt für andere Dünger; welche Salze in Base B stecken, steht nicht auf dem Etikett.",
+      "text_en": "A possible explanation for the order, not from the label (the label gives no reason): Base A carries the calcium (17%), Base B phosphate (8% P2O5) and magnesium (8%). Penn State: keep calcium apart from sulfates and phosphates in stock solutions, they can form precipitates that clog drip emitters. University of Hawaii: its two stock solutions react when mixed concentrated, but are ok in the dilute growing solution. Both are about other fertilizers; which salts are in Base B is not on the label.",
+      "sources": ["V4", "V5", "V1"]
+    },
+    {
+      "text": "Die Tabelle zählt Wochen je Phase (Anzucht 1 bis 2, Wachstum 1 bis 4, Blüte 1 bis 4 und 5 bis 8), nicht das Alter. Den Beginn einer Phase und den Wechsel zur Blüte nennen die Flaschen nicht: das Cockpit nimmt deine Phase und deinen Blütebeginn. Das Alter macht den Plan lesbar, die Dosis setzt es nie.",
+      "text_en": "The table counts weeks per stage (seedling 1 to 2, vegetative 1 to 4, flowering 1 to 4 and 5 to 8), not the age. The bottles name neither the start of a stage nor the switch to flowering: the cockpit uses your stage and your flowering start. The age makes the plan easier to follow, it never sets the dose.",
+      "sources": ["V1"]
+    },
+    {
+      "text": "Auf den Flaschen stehen kein Medium (Erde, Coco), kein Zielwert für EC oder pH der fertigen Lösung und keine Pflanzenart. Die einzige EC-Angabe gilt deinem Wasser: für optimale Ergebnisse unter 0,3 mS/cm.",
+      "text_en": "The bottles name no medium (soil, coco), no EC or pH target for the mixed solution and no plant type. The only EC figure is about your water: below 0.3 mS/cm for optimal results.",
+      "sources": ["V1"]
+    },
+    {
+      "text": "Das Etikett empfiehlt für optimale Ergebnisse Wasser unter 0,3 mS/cm, also unter 300 µS/cm. Das Leitungswasser der BWB (des Wasserversorgers der Stadt) hat 650 µS/cm (Spandau, Stolpe) bis 1040 µS/cm (Tiefwerder), Jahresmedianwerte 2025 der neun Wasserwerke. Alle neun liegen darüber. Die Folge für die Dosis nennt keine Quelle.",
+      "text_en": "For optimal results the label recommends water below 0.3 mS/cm, that is below 300 µS/cm. The tap water of the BWB (the city's water utility) has 650 µS/cm (Spandau, Stolpe) to 1040 µS/cm (Tiefwerder), 2025 annual medians of the nine waterworks. All nine are above it. No source names the consequence for the dose.",
+      "sources": ["V1", "V2"]
+    },
+    {
+      "text": "Das BWB-Wasser ist hart: 15,1 bis 23,3 °dH Gesamthärte und 93 bis 143 mg/l Calcium (Jahresmedianwerte 2025); Base A bringt selbst 17 % Calcium mit. Ob es deshalb weniger Base A verträgt, steht in keiner Quelle. Welches Wasserwerk deine Adresse versorgt, ist nicht ermittelt; die Werte zeigt die Postleitzahl-Suche der BWB.",
+      "text_en": "The BWB water is hard: 15.1 to 23.3 °dH total hardness and 93 to 143 mg/l calcium (2025 annual medians); Base A itself brings 17% calcium. Whether it therefore tolerates less Base A is in no source. Which waterworks supplies your address has not been determined; the BWB postal code search shows the values.",
+      "sources": ["V2", "V3", "V1"]
+    },
+    {
+      "package": "cannabis",
+      "text": "Der Faktor 0,5 aus plant.json gilt auch für diese Karte, mit denselben Quellen wie bei BioBizz (VIVOSUN zu Autoflower, 420seedz zur Light-Mix-Erde): Dosis = Etikettwert mal 0,5, nie mehr als das Etikett. Das Etikett selbst nennt keine Autoflower.",
+      "text_en": "The factor 0.5 from plant.json applies to this card too, with the same sources as for BioBizz (VIVOSUN on autoflowers, 420seedz on light-mix soil): dose = label value times 0.5, never more than the label. The label itself mentions no autoflowers.",
+      "sources": ["N5", "N6"]
+    },
+    {
+      "package": "cannabis",
+      "text": "Andere Hersteller nennen ihre Autoflower-Pläne Richtwerte (Zamnesia einen Startpunkt; Cronk: die Pflanze zählt, nicht der Kalender, und den Photoperiode-Plan nicht für Autoflower nehmen) und setzen den Blütebeginn verschieden an: Cronk Classic um Woche 3 bis 4, Cronk Bonnie and Clyde meist um Woche 4 bis 5, Zamnesia Blüte in Woche 5 bis 7. Das VIVOSUN-Etikett ist kein Autoflower-Plan.",
+      "text_en": "Other makers call their autoflower schedules a rough reference (Zamnesia a starting point; Cronk: watch the plant, not the calendar, and do not use the photoperiod chart for autoflowers) and each put the start of flowering elsewhere: Cronk Classic around weeks 3 to 4, Cronk Bonnie and Clyde typically around week 4 to 5, Zamnesia flowering in weeks 5 to 7. The VIVOSUN label is not an autoflower schedule.",
+      "sources": ["V6", "V7", "V12"]
+    },
+    {
+      "text": "Falls von unten bewässert wird (Anstau, Docht): In Versuchen der University of Georgia (Weihnachtssterne, Einblatt, Neuguinea-Impatiens) sammelten sich die Düngersalze oben im Substrat, bis zu zehnmal mehr als unten; Ausspülen war nach der Quelle bei Weihnachtssternen nicht nötig. UF/IFAS rät bei Dochtbewässerung, ab und zu von oben zu wässern. Ob und wie die VGrow-Basis von unten wässert, ist hier nicht belegt.",
+      "text_en": "If watering is from below (subirrigation, wick): in University of Georgia trials (poinsettias, peace lilies, New Guinea impatiens) the fertilizer salts built up in the top of the substrate, up to ten times more than below; the source did not consider leaching necessary for poinsettias. UF/IFAS advises watering wick-watered plants from the top now and then. Whether and how the VGrow base waters from below is not established here.",
+      "sources": ["V8", "V9"]
+    },
+    {
+      "text": "Nicht verwechseln: VIVOSUN Base A und B gibt es auch als Flüssigkeit (4-0-1 und 1-4-2), eine Händlerseite nennt dafür Milliliter je Gallone. Deine Flaschen sind Granulat mit 15-0-1 und 4-8-12 in Gramm je Liter. Die Mengen aus der Händlertabelle gelten nicht für dich.",
+      "text_en": "Do not mix them up: VIVOSUN Base A and B also exist as a liquid (4-0-1 and 1-4-2), and a retailer page gives milliliters per gallon for it. Your bottles hold granules with 15-0-1 and 4-8-12 in grams per liter. The amounts in the retailer table do not apply to you.",
+      "sources": ["V10", "V1"]
+    },
+    {
+      "text": "Laut Etikett kühl, dunkel und trocken lagern; zwei Jahre haltbar ab Herstellung, wenn sachgemäß gelagert; außer Reichweite von Kindern halten. Ein Herstelldatum, eine Chargennummer und die Füllmenge sind auf den Fotos nicht zu lesen.",
+      "text_en": "Per the label: store in a cool, dark and dry place; keeps for two years from manufacture when stored properly; keep out of reach of children. A manufacture date, a batch number and the net content are not legible on the photos.",
+      "sources": ["V1"]
+    }
+  ],
+  "source_notes": [
+    "Zwei unabhängige Lesungen und der Referenzlauf: alle Tabellenzellen und alle Analysezeilen gleich. Unterschiede nur in der Schreibweise (K2O gegen K₂O, P2O5 gegen P₂O₅).",
+    "Leseunsicherheit: Base-A-Foto der Anwendungsseite, letzte Zeile, erste Ziffer von 5-8 klein und schräg (könnte als 6 gelesen werden). Auf dem Base-B-Foto steht 5-8 klar, und beide Tabellen sind laut Leser 1 in allen Zellen gleich.",
+    "Base A, Lösliches Kali: 1.0 % mit Punkt gelesen, ein Komma ist bei der Auflösung nicht auszuschließen. Derselbe Wert; betrifft nur die Analyse, nicht die Dosis.",
+    "Etiketttext (base-a-anwendung.jpg, base-b-anwendung.jpg): 'Vivosun Nutrients Base A and Base B water soluble fertilizer is a two-part base nutrient system, which is used from the beginning of the vegetative phase until the end of the flowering phase.' Der Satz läuft über den Flaschenrand: die Anwendungsfotos zeigen den Anfang und 'vegetative phase until the end of the flowering phase', base-a-analyse.jpg zeigt 'used from the beginning of the'.",
+    "Nicht lesbar: Füllmenge (nur ein abgeschnittenes Bruchstück, das auf g endet), Abzeichen unter dem V-Logo, Herstelldatum und Charge.",
+    "Lücke im Etikett, keine Lesefrage: die Wochen zählen je Phase, und nirgends steht, wann eine Phase beginnt oder endet; die Tabelle endet mit Blütewoche 8.",
+    "BWB, analysewerte-wasserwerke.pdf, abgerufen am 23.10.2026 und mit pdftotext selbst gelesen (Jahresmedianwerte 2025). Elektrische Leitfähigkeit µS/cm, Gesamthärte °dH, Calcium mg/l: Beelitzhof 800, 17,0, 106; Friedrichshagen 880, 20,3, 122; Kaulsdorf 780, 20,0, 121; Kladow 790, 18,4, 113; Spandau 650, 15,1, 95; Stolpe 650, 15,3, 93; Tegel 700, 15,3, 94; Tiefwerder 1.040, 22,4, 143; Wuhlheide 920, 23,3, 141. Grenzwert Leitfähigkeit 2790. Alle neun als hart eingestuft.",
+    "Hawaii (V5), selbst gelesen: 'The fertilizers in Stock solutions A and B react when mixed together in a concentrated form, but are ok when in the dilute growing solution.' Stammlösung A: Chem-Gro 8-15-36 plus Magnesiumsulfat; B: Calciumnitrat.",
+    "Penn State (V4), laut Recherche und Gegenprüfung: 'we want to keep the calcium in a different tank than the sulfates and phosphates because they can form precipitates that can clog drip emitters'.",
+    "University of Georgia (V9), selbst gelesen: 'soluble salt levels ... in the top soil layer of subirrigated plants can be up to ten times higher than those in the middle and bottom layers'; Versuche mit New Guinea impatiens, peace lily und poinsettia; 'Leaching salts from subirrigated poinsettias does not appear to be necessary'.",
+    "UF/IFAS MG028 (V8), selbst gelesen, Abschnitt Dochtbewässerung: 'Plants should occasionally be watered from the top to flush accumulated fertilizer salts from the soil.'",
+    "Selbst gelesen am 23.10.2026: Cronk Classic (V7) 'They will begin flowering on their own around weeks 3 to 4', 'Watch the plant, not the calendar', 'Do not use the photoperiod Classic 3-Part chart for autoflowers'; Cronk Bonnie and Clyde (V12) 'Switch when you see pistils, typically around week 4-5'; Zamnesia (V6) 'starting point, not a strict script' und Tabellenzeile '5-7 Flowering'. Der Satz einer früheren Fassung, Cronk zähle die Blütewochen ab den ersten Härchen neu bei 1, steht so in V7 nicht und wurde gestrichen.",
+    "Hintergrund auf den Fotos: eine Versandkiste mit TRY und PACK, FROM DUTCH O... und ein orange-gelbes Etikett, dessen drei Zeilen niedrig sicher als Bio-Grow, Bio-Bloom und Top-Max gelesen wurden (Anhaltspunkt, nicht abgeschrieben). Das passt zum BioBizz-Try-Pack des Betreibers.",
+    "Händler widersprechen sich zur Form des Düngers im VGrow-Set (Pulver laut Dr Greenthumbs, flüssig laut Trimleaf für das Einzelprodukt). Entscheidend sind die eigenen Fotos: Granulat, Löffel 0,5 g."
+  ],
+  "sources": {
+    "V1": {
+      "title": "VIVOSUN Nutrients Base A und Base B, Etikett der beiden Flaschen (6 Fotos, die du am 23.10.2026 gemacht hast)",
+      "title_en": "VIVOSUN Nutrients Base A and Base B, label of both bottles (6 photos you took on Oct 23, 2026)",
+      "retrieved": "2026-10-23"
+    },
+    "V2": {
+      "title": "Berliner Wasserbetriebe, Analysendaten der Wasserwerke, Jahresmedianwerte 2025 (PDF)",
+      "title_en": "Berliner Wasserbetriebe, analysis data of the waterworks, 2025 annual medians (PDF)",
+      "url": "https://www.bwb.de/de/assets/downloads/analysewerte-wasserwerke.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "V3": {
+      "title": "Berliner Wasserbetriebe, Analysedaten nach Postleitzahlen",
+      "title_en": "Berliner Wasserbetriebe, analysis data by postal code",
+      "url": "https://www.bwb.de/de/analysedaten-nach-postleitzahlen.php",
+      "retrieved": "2026-10-23"
+    },
+    "V4": {
+      "title": "Penn State Extension, Hydroponics Systems: Using the Two Basic Equations to Calculate a Nutrient Solution Recipe",
+      "title_en": "Penn State Extension, Hydroponics Systems: Using the Two Basic Equations to Calculate a Nutrient Solution Recipe",
+      "url": "https://extension.psu.edu/hydroponics-systems-using-the-two-basic-equations-to-calculate-a-nutrient-solution-recipe",
+      "retrieved": "2026-10-23"
+    },
+    "V5": {
+      "title": "University of Hawaii CTAHR (B. A. Kratky), Hydroponic Lettuce Production, Suggestions and Notes",
+      "title_en": "University of Hawaii CTAHR (B. A. Kratky), Hydroponic Lettuce Production, Suggestions and Notes",
+      "url": "https://www3.ctahr.hawaii.edu/Hawaii/downloads/Hydroponic_lettuce_production_Suggestions_Notes.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "V6": {
+      "title": "Zamnesia, Autoflower-Nährstoffe (Wochenplan als Startpunkt)",
+      "title_en": "Zamnesia, autoflower nutrients (week-by-week schedule as a starting point)",
+      "url": "https://www.zamnesia.com/grow-weed/371-autoflowers-nutrients",
+      "retrieved": "2026-10-23"
+    },
+    "V7": {
+      "title": "Cronk Nutrients, Classic 3-Part Autoflower Feeding Guide",
+      "title_en": "Cronk Nutrients, Classic 3-Part Autoflower Feeding Guide",
+      "url": "https://growers.cronknutrients.com/en-US/classic-3-part-autoflower-feeding-guide-4815465",
+      "retrieved": "2026-10-23"
+    },
+    "V8": {
+      "title": "UF/IFAS Extension, African Violets (Abschnitt Dochtbewässerung)",
+      "title_en": "UF/IFAS Extension, African Violets (section on wick watering)",
+      "url": "https://ask.ifas.ufl.edu/publication/MG028",
+      "retrieved": "2026-10-23"
+    },
+    "V9": {
+      "title": "University of Georgia (Pennisi, van Iersel), Anstaubewässerung und Salzansammlung bei Weihnachtssternen (PDF bei NC State)",
+      "title_en": "University of Georgia (Pennisi, van Iersel), subirrigation and salt build-up in poinsettias (PDF hosted by NC State)",
+      "url": "https://hortscans.ces.ncsu.edu/uploads/s/u/subirrig_51e435ff2e468.pdf",
+      "retrieved": "2026-10-23"
+    },
+    "V10": {
+      "title": "Trimleaf (US-Händler), VIVOSUN Base A & B, flüssiges Zwei-Teile-Set",
+      "title_en": "Trimleaf (US retailer), VIVOSUN Base A & B, liquid two-part kit",
+      "url": "https://trimleaf.com/products/vivosun-base-a-b-2-part-nutrient-kit-8oz-1gal",
+      "retrieved": "2026-10-23"
+    },
+    "V12": {
+      "title": "Cronk Nutrients, Bonnie and Clyde, der vollständige Autoflower-Leitfaden",
+      "title_en": "Cronk Nutrients, Bonnie and Clyde, the complete autoflower nutrient guide",
+      "url": "https://growers.cronknutrients.com/en-US/bonnie-and-clyde-the-complete-autoflower-nutrient-guide-|-cronk-nutrients-4162136",
+      "retrieved": "2026-10-23"
+    },
+    "N5": {
+      "title": "VIVOSUN, was Autoflower-Samen sind",
+      "title_en": "VIVOSUN, what autoflowering seeds are",
+      "url": "https://vivosun.com/en-CA/growing_guide/what-are-autoflowering-seeds/",
+      "retrieved": "2026-10-22"
+    },
+    "N6": {
+      "title": "420seedz, Cannabis anbauen für Anfänger (vom Hersteller der Erde 420Flow)",
+      "title_en": "420seedz, growing cannabis for beginners (by the maker of the 420Flow soil)",
+      "url": "https://420seedz.de/guide/cannabis-anbauen-anfaenger",
+      "retrieved": "2026-10-22"
+    }
+  }
+}

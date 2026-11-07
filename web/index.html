@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- The German name with its marker until app.js sets document.title in the page language. -->
+<title>VGrow Cockpit (inoffiziell)</title>
+<meta name="description" content="" data-i18n-attr="content:meta.description">
+<meta name="theme-color" content="#14181f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="VGrow Cockpit (inoffiziell)" data-i18n-attr="content:meta.title">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon.svg">
+<link rel="stylesheet" href="/vendor/uPlot.min.css">
+<link rel="stylesheet" href="/design-system/tokens.css">
+<link rel="stylesheet" href="/static/ds-components.css">
+<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/hank.css">
+<link rel="stylesheet" href="/static/hank-scenes.css">
+<link rel="stylesheet" href="/static/news.css">
+<link rel="stylesheet" href="/static/wiki.css">
+<link rel="stylesheet" href="/static/cockpit.css">
+<link rel="stylesheet" href="/static/protocol.css">
+<link rel="stylesheet" href="/static/workspace.css">
+<link rel="stylesheet" href="/static/community.css">
+<link rel="stylesheet" href="/static/thirst.css">
+<link rel="stylesheet" href="/static/water.css">
+<link rel="stylesheet" href="/static/plan.css">
+<link rel="stylesheet" href="/static/garden.css">
+<script>
+// The chosen theme before the first paint, so a dark choice never flashes light. app.js owns the switch.
+(function () {
+  try { var m = localStorage.getItem("vgrow.theme"); if (m === "light" || m === "dark" || m === "safe") document.documentElement.setAttribute("data-theme", m); } catch (e) {}
+})();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content" data-i18n="cockpit.skip"></a>
+<div class="nav-backdrop" id="nav-backdrop" hidden></div>
+<aside class="side" id="app-sidebar" data-i18n-attr="aria-label:nav.label">
+  <a class="brand" href="#overview">    <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#14181f"/><path d="M32 50V30" stroke="#2f9e62" stroke-width="4" stroke-linecap="round"/><path d="M32 34c-9 0-14-6-14-14 9 0 14 6 14 14zM32 30c0-9 6-14 14-14 0 9-6 14-14 14z" fill="#3ccf7f"/></svg><span class="brand-t"><b>VGrow Cockpit</b><small data-i18n="brand.unofficial"></small></span></a>
+  <button class="icon-btn nav-close" id="nav-close" type="button" data-i18n-attr="aria-label:cockpit.closeNav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+  <p class="nav-caption" data-i18n="cockpit.workspace"></p>
+  <nav class="side-nav" data-i18n-attr="aria-label:nav.sections"><a href="#overview" data-route-link="overview"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg><span data-i18n="cockpit.nav.overview"></span></a>
+<a href="#grow" data-route-link="grow"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-9M12 15C5 15 3 11 3 5c6 0 9 4 9 10Zm0-4c0-6 3-9 9-9 0 6-3 9-9 9Z"/></svg><span data-i18n="cockpit.nav.grow"></span></a>
+<a href="#automation" data-route-link="automation"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z"/></svg><span data-i18n="cockpit.nav.automation"></span></a>
+<a href="#devices" data-route-link="devices"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M7 9h4M7 13h2M16 9v6"/><circle cx="16" cy="12" r="2"/></svg><span data-i18n="cockpit.nav.devices"></span></a>
+<a href="#analytics" data-route-link="analytics"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v18h17M8 16l4-6 4 3 5-7"/></svg><span data-i18n="cockpit.nav.analytics"></span></a>
+<a href="#water" data-route-link="water"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6.5 6.6 6.5 11.2A6.5 6.5 0 0 1 5.5 14.2C5.5 9.6 12 3 12 3Z"/></svg><span data-i18n="waterPage.title"></span></a>
+<a href="#activity" data-route-link="activity"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg><span data-i18n="cockpit.nav.activity"></span></a>
+<a href="#settings" data-route-link="settings"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 3-1 3-3 1-2 5 2 5 3 1 1 3h4l1-3 3-1 2-5-2-5-3-1-1-3Z"/><circle cx="12" cy="12" r="3"/></svg><span data-i18n="cockpit.nav.settings"></span></a></nav>
+  <div class="side-resources"><p class="nav-caption" data-i18n="cockpit.resources"></p>
+    <button type="button" class="news-open" data-news-open hidden data-i18n="news.title"></button>
+    <button type="button" class="wiki-open" data-wiki-open hidden data-i18n="wiki.title"></button>
+    <button type="button" class="garden-open" data-garden-open hidden data-i18n="garden.open"></button>
+    <a class="resource-link" href="#community" data-route-link="community" data-i18n="community.title"></a>
+  </div>
+  <div class="side-foot"><div class="side-status"><span class="pill" id="side-pill"><i class="dot"></i><b id="side-status" data-i18n="status.connecting"></b></span><small id="side-foot"></small></div>
+    <p class="unofficial" data-i18n="brand.disclaimer"></p></div>
+</aside>
+<header class="app-topbar">
+  <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-controls="app-sidebar" aria-expanded="false" data-i18n-attr="aria-label:cockpit.openNav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <div class="page-title-wrap"><h1 id="page-title" tabindex="-1" data-i18n="cockpit.page.overview"></h1><span id="top-device" class="top-device"></span></div>
+  <div class="top-health"><span class="pill" id="status-pill"><i class="dot"></i><b id="status-text" data-i18n="status.connecting"></b></span><div class="age" id="age"></div></div>
+  <button class="garden-top" type="button" data-garden-open hidden data-i18n-attr="aria-label:garden.open"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 15.5c3-1.8 6.5-2.5 10.5-2.5s7.5.7 10.5 2.5c-3 1.700-6.5 2.5-10.5 2.5s-7.5-.8-10.5-2.5Z" fill="#e7b85a"/><path d="M6.5 14.5C6.5 8.5 8.7 6 12 6s5.5 2.5 5.5 8.5c-3.6-.8-7.400-.8-11 0Z" fill="#f8de8e"/><path d="M6.6 12.300c3.500-.8 7.300-.8 10.800 0l.1 2.200c-3.600-.8-7.400-.8-11 0Z" fill="#2f9e62"/></svg><span data-i18n="garden.open"></span></button>
+  <a class="icon-btn notification-link" href="#activity/active" data-i18n-attr="aria-label:cockpit.notifications"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg><span id="notification-count" hidden></span></a>
+  <a class="icon-btn top-settings" href="#settings" data-i18n-attr="aria-label:cockpit.nav.settings"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 3-1 3-3 1-2 5 2 5 3 1 1 3h4l1-3 3-1 2-5-2-5-3-1-1-3Z"/><circle cx="12" cy="12" r="3"/></svg></a>
+</header>
+<!-- Retained status hooks for older integrations; navigation now uses independent pages. -->
+<nav id="chip-nav" hidden><i id="nav-dot"></i><div id="chip-row"></div></nav>
+<main id="main-content" tabindex="-1">
+<div class="banner" id="demo-banner" hidden data-i18n="banner.demo"></div>
+<div class="banner bad" id="error-banner" hidden role="alert"></div>
+<section class="app-page" id="page-overview" data-page="overview">
+  <div class="page-intro"><div><span class="eyebrow" data-i18n="cockpit.yourGrow"></span><h2 id="overview-plant" data-i18n="plant.title"></h2><p id="overview-context" class="muted" data-i18n="status.connecting"></p></div><a class="btn" href="#grow/growth" data-i18n="cockpit.openGrow"></a></div>
+  <a class="overview-urgent" id="overview-urgent" href="#activity/active" hidden></a>
+  <section class="tiles" data-i18n-attr="aria-label:tiles.label">
+    <div class="tile" id="tile-temp">
+      <span class="k"><span data-i18n="tiles.temp"></span><em class="src" id="src-temp"></em></span>
+      <span class="val"><span class="v" id="t-temp">–</span><span class="u">°C</span></span>
+      <span class="meta"><span class="pill sm" id="st-temp" hidden></span><span class="sub" id="p-temp"></span></span>
+      <svg class="spark" id="s-temp" aria-hidden="true"></svg>
+    </div>
+    <div class="tile" id="tile-hum">
+      <span class="k"><span data-i18n="tiles.hum"></span><em class="src" id="src-hum"></em></span>
+      <span class="val"><span class="v" id="t-hum">–</span><span class="u">%</span></span>
+      <span class="meta"><span class="pill sm" id="st-hum" hidden></span><span class="sub" id="p-hum"></span></span>
+      <svg class="spark" id="s-hum" aria-hidden="true"></svg>
+    </div>
+    <div class="tile" id="tile-vpd">
+      <span class="k" data-i18n-attr="title:tiles.vpdTitle"><span data-i18n="tiles.vpd"></span><em class="src" id="src-vpd"></em></span>
+      <span class="val"><span class="v" id="t-vpd">–</span><span class="u">kPa</span></span>
+      <span class="meta"><span class="pill sm" id="st-vpd" hidden></span><span class="sub" id="p-vpd"></span></span>
+      <svg class="spark" id="s-vpd" aria-hidden="true"></svg>
+    </div>
+    <a class="tile light-tile" id="tile-light" href="#devices/light"><span class="k" data-i18n="light.title"></span><span class="val"><span class="v" id="overview-light-value">–</span></span><span class="sub" id="overview-light-note" data-i18n="lightView.open"></span><svg class="metric-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+    <div class="tile" id="water-tile">
+      <span class="k"><span data-i18n="tiles.water"></span><em class="src"></em></span>
+      <span class="val"><span class="v" id="t-water">–</span><span class="u" id="t-water-u">%</span></span>
+      <span class="meta"><span class="pill sm warn" id="st-water" hidden></span><span class="sub" id="t-wtemp"></span></span>
+    </div>
+    <div class="tile" id="soil-tile" data-i18n-attr="title:tiles.soilTitle" hidden>
+      <span class="k"><span data-i18n="tiles.soil"></span><em class="src" data-i18n="tiles.soilRaw"></em></span>
+      <span class="val"><span class="v" id="t-soil">–</span><span class="u">%</span></span>
+      <span class="meta"><span class="pill sm warn" id="st-soil" data-i18n="tiles.soilSilent" hidden></span><span class="sub" id="p-soil"></span></span>
+    </div>
+  </section>
+<div class="overview-grid"><div id="overview-camera-slot"><div class="camera-views" id="camera-views">  <article class="card wide camera-card" id="card-cam" data-sec="kamera" hidden>
+    <div class="card-h"><span class="num"></span><h3 id="cam-name">GrowCam</h3><span class="pill sm" id="cam-pill" data-i18n="cam.still"></span></div>
+    <p class="hint" id="cam-role"></p>
+    <div class="cam-layout" id="camera-player">
+      <div class="cam-main">
+        <div class="cam-frame" id="camera-frame">
+          <img id="cam-img" alt="" data-i18n-attr="alt:cam.alt">
+          <div class="camera-loading" id="camera-loading" hidden role="status" data-i18n="cockpit.cameraLoading"></div>
+          <div class="cam-ph" id="cam-ph" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5h3l1.6-2h6.8l1.6 2h3A1.5 1.5 0 0 1 21.5 9v9a1.5 1.5 0 0 1-1.5 1.5H4A1.5 1.5 0 0 1 2.5 18V9A1.5 1.5 0 0 1 4 7.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="13.5" r="3.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 3l18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span id="cam-ph-t" data-i18n="cam.noImage"></span>
+          </div>
+          <span class="cam-badge" id="cam-badge" hidden><i class="rec-dot"></i><span data-i18n="cam.rec"></span><span id="cam-badge-t"></span></span>
+        </div>
+        <p class="note" id="cam-offline" hidden></p>
+        <button class="btn sm cam-hide" id="cam-hide" type="button" hidden data-i18n="cam.hide" data-i18n-attr="title:cam.hideTitle"></button>
+      </div>
+      <div class="cam-side"><button class="btn sm cam-fullscreen" id="camera-fullscreen" type="button" data-i18n="cockpit.fullscreen"></button><span class="hint" id="camera-freshness"></span>
+        <div class="row cam-actions">
+          <div class="seg small quiet" id="cam-mode" role="group" data-i18n-attr="aria-label:cam.mode">
+            <button type="button" id="cam-live" data-mode="live" data-i18n="cam.modeLive"></button><button type="button" id="cam-still" data-mode="still" data-i18n="cam.modeStill"></button>
+          </div>
+          <div class="camera-record-tools">
+            <button class="btn rec" id="cam-rec"><i class="rec-dot"></i><span id="cam-rec-t" data-i18n="cam.start"></span></button>
+            <div class="camera-zoom" id="camera-zoom" role="group" data-i18n-attr="aria-label:cam.zoom" hidden>
+              <span data-i18n="cam.zoom"></span>
+              <button type="button" id="camera-zoom-out" data-i18n-attr="aria-label:cam.zoomOut;title:cam.zoomOut"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/></svg></button>
+              <button type="button" id="camera-zoom-reset" data-i18n-attr="aria-label:cam.zoomReset;title:cam.zoomReset"></button>
+              <button type="button" id="camera-zoom-in" data-i18n-attr="aria-label:cam.zoomIn;title:cam.zoomIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <details class="camera-details"><summary data-i18n="cockpit.recordingDetails"></summary><p class="hint" id="cam-hint" data-i18n="cam.hint"></p><ol class="recs" id="recs"></ol></details>
+        <p class="fb" id="fb-cam"></p>
+      </div>
+    </div>
+  </article></div>
+
+<p class="hint camera-hidden" id="camera-hidden" hidden></p>
+<p class="empty-state" id="camera-empty" hidden data-i18n="cockpit.cameraEmpty"></p></div>
+<article class="card action-center"><div class="card-h"><h3 data-i18n="cockpit.actionCenter"></h3><span class="pill sm" id="action-count">–</span></div><div id="action-items" aria-live="polite"><p class="muted" data-i18n="status.connecting"></p></div><p id="protocol-overview" class="hint"></p><a class="text-link protocol-open" href="#activity/protocol" data-i18n="protocol.open"></a><br><a class="text-link" href="#activity/active" data-i18n="cockpit.allActivity"></a></article></div>
+<div class="overview-bottom"><article class="card"><div class="card-h"><h3 data-i18n="cockpit.automationNow"></h3><span class="pill sm" id="overview-mode">–</span><a class="text-link" href="#automation" data-i18n="cockpit.viewRules"></a></div><p class="hint" id="overview-mode-note"></p><div id="automation-summary"></div></article>
+<article class="card"><div class="card-h"><h3 data-i18n="cockpit.upNext"></h3></div><div id="next-task"></div>  <a class="statusline" id="plant-status" href="#pflanze" hidden>
+    <span class="sl-art" id="sl-art" aria-hidden="true"></span>
+    <span class="sl-text" id="sl-text"></span>
+    <span class="pill sm" id="sl-todo"></span>
+    <svg class="sl-go" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5 10.5 8 6 12.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+
+</article></div><div id="hank-tip-slot"></div></section>
+<section class="app-page" id="page-grow" data-page="grow" hidden><nav class="page-tabs" data-i18n-attr="aria-label:cockpit.subnav"><a href="#grow/growth" data-tab="grow/growth" data-i18n="cockpit.tab.growth"></a><a href="#grow/feeding" data-tab="grow/feeding" data-i18n="cockpit.tab.feeding"></a><a href="#grow/insights" data-tab="grow/insights" data-i18n="cockpit.tab.insights"></a><a href="#grow/journal" data-tab="grow/journal" data-i18n="cockpit.tab.journal"></a></nav>  <article class="card wide" id="card-plant" data-sec="pflanze" hidden>
+    <div class="card-h"><span class="num"></span><h3 id="plant-name" data-i18n="plant.title"></h3><span class="pill sm" id="plant-stage">–</span></div>
+    <div class="plant-hero">
+      <div class="kpi"><span class="k" data-i18n="plant.day"></span><span class="v" id="plant-day">–</span><span class="u" id="plant-start"></span></div>
+      <div class="kpi"><span class="k" data-i18n="plant.height"></span><span class="v" id="plant-h">–</span><span class="u" id="plant-h-date"></span></div>
+      <div class="kpi"><span class="k" id="plant-record-kind" data-i18n="plant.inStage"></span><span class="v" id="plant-since">–</span><span class="u" id="plant-since-by"></span></div>
+    </div>
+<div class="grow-panel" data-grow-panel="growth">    <div class="stage-track" id="stage-track" data-i18n-attr="aria-label:stage.track"></div>
+    <div class="stage-confirm" id="stage-confirm" role="group" hidden>
+      <span class="sc-t" id="stage-confirm-t"></span>
+      <span class="sc-btns"><button class="btn primary sm" id="stage-confirm-yes" type="button" data-i18n="stage.set"></button><button class="btn sm" id="stage-confirm-no" type="button" data-i18n="stage.cancel"></button></span>
+    </div>
+    <ul class="hints" id="plant-hints"></ul>
+    <div class="todo" id="plant-todo" hidden><b data-i18n="plant.todo"></b><ol id="plant-todo-list"></ol></div>
+    <div class="gauges" id="plant-checks"></div>
+    <div class="water-box" id="water-box" hidden>
+      <div class="ai-h"><b data-i18n="waterPage.title"></b><span class="hint" id="water-medium"></span></div>
+      <div class="gauges" id="water-gauges"></div>
+      <div class="row plant-actions">
+        <input type="number" id="water-ph" min="0" max="14" step="0.1" data-i18n-attr="placeholder:water.ph;aria-label:water.ph">
+        <input type="number" id="water-ec" min="0" max="10" step="0.01" data-i18n-attr="placeholder:water.ecPlaceholder;aria-label:water.ecLabel">
+        <button class="btn" id="water-save" data-i18n="water.save"></button>
+      </div>
+      <p class="hint" id="water-note"></p>
+      <ol class="water-log" id="water-log"></ol>
+    </div>
+<details class="grow-settings" open><summary data-i18n="cockpit.growDetails"></summary>    <div class="row plant-actions">
+      <button class="btn primary" id="plant-apply" data-i18n="plant.apply"></button>
+    </div>
+    <p class="hint" id="plant-preset"></p>
+    <p class="hint" id="plant-water"></p>
+    <!-- One row per pair, so a narrow screen never pairs "set stage" with the height field. -->
+    <div class="row plant-actions">
+      <select id="plant-stage-select" data-i18n-attr="aria-label:plant.stageSelect"></select>
+      <button class="btn" id="plant-stage-save" data-i18n="plant.setStage"></button>
+    </div>
+    <div class="row plant-actions">
+      <input type="number" id="plant-height" min="1" max="300" step="1" data-i18n-attr="placeholder:plant.heightCm;aria-label:plant.heightCm">
+      <button class="btn" id="plant-height-save" data-i18n="plant.saveHeight"></button>
+    </div>
+    <label class="tank-button-option"><input type="checkbox" id="plant-height-estimated"><span data-i18n="plant.heightGrowCamOption"></span></label>
+    <p class="hint" data-i18n="plant.heightCameraHint"></p>
+    <p class="hint" id="plant-height-due"></p>
+    <!-- The flowering start the owner saw (first white pistils): two taps, into the plant log. It counts before the
+         camera's estimate for the stage, the feeding week and the assistant. The camera's date is never pre-filled:
+         it is an upper bound, and two taps would save it as the owner's own date. -->
+    <p class="hint field-label"><label for="plant-bloom" data-i18n="plant.bloomLabel"></label></p>
+    <div class="row plant-actions" id="plant-bloom-row">
+      <input type="date" id="plant-bloom" data-i18n-attr="aria-label:plant.bloomLabel;title:plant.bloomLabel">
+      <button class="btn" id="plant-bloom-save" type="button" data-i18n="plant.bloomSave"></button>
+    </div>
+    <p class="hint" id="plant-bloom-note"></p>
+    <div class="row plant-actions" id="plant-bloom-suggest-row" hidden>
+      <button class="btn" id="plant-bloom-suggest" type="button"></button>
+    </div>
+    <p class="fb" id="fb-plant-bloom"></p>
+    <!-- The plant's start (germination): a date, or the age in weeks, two taps, into the plant log. It dates the
+         feeding plan and the plant week; it never changes a dose. The server writes the age line and the preview. -->
+    <p class="hint field-label"><label for="plant-start-date" data-i18n="plant.startLabel"></label></p>
+    <div class="row plant-actions" id="plant-start-row">
+      <input type="date" id="plant-start-date" data-i18n-attr="aria-label:plant.startLabel;title:plant.startLabel">
+      <input type="number" id="plant-age-weeks" min="0" max="52" step="1" inputmode="numeric" data-i18n-attr="placeholder:plant.startWeeksShort;aria-label:plant.startWeeksLabel;title:plant.startWeeksLabel">
+      <button class="btn" id="plant-start-save" type="button" data-i18n="plant.startSave"></button>
+    </div>
+    <p class="hint" id="plant-start-note"></p>
+    <p class="hint" id="plant-start-preview"></p>
+    <p class="fb" id="fb-plant-start"></p>
+    <p class="hint" id="plant-sources"></p>
+    <p class="fb" id="fb-plant"></p>
+</details></div>
+<div class="grow-panel" data-grow-panel="feeding" hidden>    <!-- Feeding: every number comes from the server. A draft shows the chart only; amounts follow the owner's confirm
+         of the chart and of the stage the week comes from. Each button has its feedback line right under it. -->
+    <div class="feed" id="feed" hidden>
+      <div class="ai-h"><b data-i18n="feed.title"></b><span class="pill sm" id="feed-pill"></span></div>
+      <p class="feed-meta" id="feed-meta"></p>
+      <!-- The fertilizer switch: one doses at a time, two taps to change it (the server stores the choice). -->
+      <div class="feed-switch" id="feed-switch" role="group" hidden data-i18n-attr="aria-label:feed.switchLabel"></div>
+      <p class="note" id="feed-choice-note" hidden></p>
+      <p class="fb" id="fb-feed-switch"></p>
+      <p class="note" id="feed-problem" hidden></p>
+      <div class="kpi feed-now" id="feed-now" hidden><span class="k" data-i18n="feed.thisWeek"></span><span class="v" id="feed-week"></span><span class="u" id="feed-week-from"></span></div>
+      <p class="feed-age" id="feed-age" hidden><span id="feed-age-t"></span> <button class="linkish" id="feed-age-enter" type="button" hidden data-i18n="feed.ageEnter"></button></p>
+      <p class="feed-change" id="feed-nextchange" hidden></p>
+      <p class="note" id="feed-warning" hidden></p>
+      <div id="feed-draft" hidden>
+        <p class="note" id="feed-draft-note"></p>
+        <div id="feed-chart"></div>
+        <p class="hint" id="feed-official-draft"></p>
+        <div class="row plant-actions"><button class="btn primary" id="feed-confirm" type="button" data-i18n="feed.confirmBtn"></button></div>
+        <p class="fb" id="fb-feed-confirm"></p>
+      </div>
+      <div id="feed-stage" hidden>
+        <p class="note" id="feed-stage-note"></p>
+        <div class="row plant-actions" id="feed-stage-row"><button id="feed-stage-btn" type="button"></button></div>
+        <p class="fb" id="fb-feed-stage"></p>
+        <div id="feed-chart-stage"></div>
+      </div>
+      <div id="feed-done" hidden>
+        <p class="note info" id="feed-say" hidden></p>
+        <div id="feed-doses"></div>
+        <div class="row plant-actions" id="feed-log-row">
+          <input type="text" id="feed-liters" inputmode="decimal" autocomplete="off" enterkeyhint="done" data-i18n-attr="placeholder:feed.liters;aria-label:feed.litersLabel">
+          <button class="btn primary" id="feed-fed" type="button" data-i18n="feed.fed"></button>
+        </div>
+        <div class="feed-large" id="feed-large" hidden><span id="feed-large-t"></span><button class="btn sm" id="feed-large-yes" type="button"></button></div>
+        <p class="fb" id="fb-feed"></p>
+        <dl class="feed-facts" id="feed-facts"></dl>
+        <details class="feed-more" id="feed-next"><summary data-i18n="feed.plan"></summary><div id="feed-chart-next"></div></details>
+      </div>
+      <details class="feed-more" id="feed-notes" hidden><summary id="feed-notes-t"></summary><ul class="feed-notes" id="feed-notes-list"></ul></details>
+      <p class="hint" id="feed-official"></p>
+      <p class="hint" id="feed-status"></p>
+    </div>
+<p class="empty-state" id="feeding-empty" hidden data-i18n="cockpit.feedingEmpty"></p></div>
+<div class="grow-panel" data-grow-panel="insights" hidden>    <div class="ai pest" id="pest-card" hidden>
+      <div class="ai-h"><b data-i18n="pest.title"></b><span class="pill sm" id="pest-state"></span></div>
+      <div class="ai-meta" id="pest-when"></div>
+      <div class="ai-body">
+        <a id="pest-photo-link" target="_blank" rel="noopener"><img id="pest-photo" alt="" data-i18n-attr="alt:pest.photoAlt"></a>
+        <div class="ai-text">
+          <ul class="issues" id="pest-signs"></ul>
+          <p class="hint" id="pest-hint" data-i18n="pest.lookHint"></p>
+          <div id="pest-what" hidden>
+            <p class="ai-sub" data-i18n="pest.whatWasIt"></p>
+            <div class="row pest-cands" id="pest-cands"></div>
+            <div id="pest-steps" hidden>
+              <p><b id="pest-steps-h"></b></p>
+              <ol id="pest-steps-list"></ol>
+              <p class="hint"><a id="pest-card-link"></a></p>
+            </div>
+          </div>
+          <div class="row plant-actions" id="pest-buttons">
+            <button class="btn primary" data-pest-answer="yes" data-i18n="pest.yes"></button>
+            <button class="btn" data-pest-answer="no" data-i18n="pest.no"></button>
+            <button class="btn" data-pest-answer="unsure" data-i18n="pest.unsure"></button>
+          </div>
+          <span class="fb" id="fb-pest"></span>
+        </div>
+      </div>
+      <p class="footnote" id="pest-stats"></p>
+    </div>
+    <div class="ai" id="plant-ai" hidden>
+      <div class="ai-h"><b data-i18n="ai.title"></b><span class="pill sm" id="ai-conf"></span></div>
+      <div class="ai-meta" id="ai-when"></div>
+      <p class="note ai-lang" id="ai-lang" hidden></p>
+      <div class="ai-body">
+        <a id="ai-photo-link" target="_blank" rel="noopener"><img id="ai-photo" alt="" data-i18n-attr="alt:ai.photoAlt"></a>
+        <div class="ai-text">
+          <p id="ai-stage"></p>
+          <h4 class="ai-sub" id="ai-signs-h" hidden data-i18n="ai.signs"></h4>
+          <ul id="ai-signs"></ul>
+          <h4 class="ai-sub" id="ai-issues-h" hidden data-i18n="ai.issues"></h4>
+          <ul class="issues" id="ai-issues"></ul>
+          <h4 class="ai-sub" id="ai-steps-h" hidden data-i18n="ai.steps"></h4>
+          <ol id="ai-steps"></ol>
+        </div>
+      </div>
+      <p class="footnote" id="ai-na"></p>
+      <label class="row"><span data-i18n="ai.camera"></span><select id="ai-camera"></select></label>
+      <p class="hint" data-i18n="ai.observationHint"></p>
+      <div class="row plant-actions">
+        <button class="btn primary" id="ai-run" data-i18n="ai.run"></button>
+        <button class="btn" id="ai-take" hidden data-i18n="ai.take"></button>
+      </div>
+      <p class="fb" id="fb-ai-take"></p>
+    </div>
+<p class="empty-state" id="insights-empty" hidden data-i18n="cockpit.insightsEmpty"></p></div>
+<div class="grow-panel" data-grow-panel="journal" hidden>    <div class="photo-strip-wrap" id="photo-strip-wrap" hidden>
+      <b class="strip-title" data-i18n="photos.title"></b>
+      <div class="photo-strip" id="photo-strip"></div>
+    </div>
+<p class="hint" data-i18n="cockpit.journalHint"></p><div id="journal-summary"></div></div></article><p class="empty-state" id="grow-empty" hidden data-i18n="cockpit.growEmpty"></p></section>
+<section class="app-page" id="page-automation" data-page="automation" hidden><p class="page-description" data-i18n="cockpit.automationIntro"></p>  <article class="card wide" id="grow-plan" data-sec="plan" hidden></article>
+  <article class="card wide" id="autopilot" data-sec="autopilot">
+    <div class="card-h ap-card-head"><span class="num"></span><div class="ap-portrait hk-scope" id="ap-hank-art" aria-hidden="true"></div><div><span class="ap-kicker" data-i18n="pilot.care"></span><h3 class="hero" data-i18n="nav.autopilot"></h3></div></div>
+    <div class="ap-boxes" id="ap-boxes" hidden></div>
+    <details class="disclosure ap-legend"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span class="t"><b data-i18n="pilot.legend"></b><span data-i18n="pilot.legendDesc"></span></span></summary><div class="disclosure-body">
+    <ol class="ladder" data-i18n-attr="aria-label:auto.levels">
+      <li data-lvl="0"><span class="lvl" aria-hidden="true"><i></i><i></i><i></i></span><b data-i18n="auto.level.manual"></b><small data-i18n="auto.levelDesc.manual"></small></li>
+      <li data-lvl="1"><span class="lvl" aria-hidden="true"><i></i><i></i><i></i></span><b data-i18n="auto.level.suggest"></b><small data-i18n="auto.levelDesc.suggest"></small></li>
+      <li data-lvl="2"><span class="lvl" aria-hidden="true"><i></i><i></i><i></i></span><b data-i18n="auto.level.auto"></b><small data-i18n="auto.levelDesc.auto"></small></li>
+    </ol>
+    </div></details>
+    <div class="auto-grid">
+      <ul class="auto-rules" id="auto-rules"></ul>
+      <div class="auto-log">
+        <b class="sub-h" data-i18n="auto.log"></b>
+        <ol class="timeline" id="auto-log"></ol>
+      </div>
+    </div>
+    <p class="fb" id="fb-auto"></p>
+  </article>
+  <article class="card" id="light-timer-summary" hidden>
+    <div class="card-h"><h3 data-i18n="lightTimer.title"></h3><a class="text-link" href="#devices/light" data-i18n="lightTimer.configure"></a></div>
+    <p id="light-timer-summary-status" role="status"></p><p class="hint" id="light-timer-summary-times"></p>
+  </article>
+  <article class="card" id="watering" hidden>
+    <div class="card-h"><h3 data-i18n="watering.title"></h3><span class="status" id="watering-status" role="status"></span></div>
+    <div class="banner bad" id="watering-warning" hidden></div>
+    <p class="hint" data-i18n="watering.intro"></p>
+    <div class="watering-summary"><p id="watering-power"></p><p id="watering-countdown" role="timer"></p><p id="watering-next"></p></div>
+    <p class="hint" id="watering-need" role="status" hidden></p>
+    <div class="row"><button class="btn" id="watering-run" type="button" data-i18n="watering.run"></button><button class="btn" id="watering-stop" type="button" data-i18n="watering.stop"></button><button class="btn" id="watering-disable" type="button" data-i18n="watering.disable" hidden></button></div>
+    <form id="watering-settings">
+      <div class="tank-fields">
+        <label><span data-i18n="watering.duration"></span><input id="watering-duration" type="number" min="1" max="3600" step="1"></label>
+        <label><span data-i18n="watering.times"></span><input id="watering-times" type="text" inputmode="text" data-i18n-attr="placeholder:watering.timesPlaceholder"></label>
+        <label><span data-i18n="watering.every"></span><input id="watering-every" type="number" min="1" max="30" step="1" required></label>
+        <label><span data-i18n="watering.first"></span><input id="watering-first" type="date" min="1970-01-01" max="2100-12-31"></label>
+      </div>
+      <label class="tank-button-option"><input id="watering-power-confirmed" type="checkbox"><span data-i18n="watering.powerConfirmed"></span></label>
+      <label class="tank-button-option"><input id="watering-enabled" type="checkbox"><span data-i18n="watering.enable"></span></label>
+      <p class="hint" data-i18n="watering.scheduleHelp"></p>
+      <button class="btn" type="submit" data-i18n="watering.save"></button>
+    </form>
+    <p class="hint" data-i18n="watering.controllerHint"></p>
+    <details class="disclosure"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span class="t"><b data-i18n="watering.history"></b><span data-i18n="watering.historyDesc"></span></span></summary><div class="disclosure-body"><ol class="timeline" id="watering-events"></ol></div></details>
+    <p class="fb" id="fb-watering" role="status"></p>
+  </article>
+  <!-- The Durst-Index (vgrow/thirst.py, web/thirst.js): the pot's need, the forecast, the plan by stage and the one-tap
+       check; the need check asks it before every scheduled slot above. Drawn from /api/state "thirst". -->
+  <article class="card" id="thirst" hidden>
+    <div class="card-h"><h3 data-i18n="thirst.title"></h3><span class="status" id="thirst-pill" role="status"></span></div>
+    <p class="hint" data-i18n="thirst.intro"></p>
+    <div class="th-body" id="thirst-body"></div>
+    <p class="fb" id="fb-thirst" role="status"></p>
+  </article>
+  <article class="card" id="humidifier-tank" hidden>
+    <div class="card-h"><h3 data-i18n="tank.title"></h3></div>
+    <div class="banner" id="tank-warning" hidden></div>
+    <p class="hint" data-i18n="tank.explanation"></p>
+    <div id="tank-model" hidden><p id="tank-model-name"></p><details class="disclosure"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span class="t"><b data-i18n="tank.modelDetails"></b><span data-i18n="tank.modelDetailsDesc"></span></span></summary><div class="disclosure-body"><p class="hint" id="tank-model-specs"></p><p class="hint" data-i18n="tank.modelSensor"></p><p class="hint" data-i18n="tank.modelRestart"></p><a class="text-link" id="tank-model-manual" target="_blank" rel="noopener noreferrer" data-i18n="tank.modelManual"></a></div></details></div>
+    <p class="hint" id="tank-button-note" hidden data-i18n="tank.buttonNote"></p>
+    <button class="btn" type="button" id="tank-mist-confirm" hidden data-i18n="tank.confirmMist"></button>
+    <p id="tank-runtime"></p><p id="tank-remaining"></p><p class="hint" id="tank-rate"></p>
+    <p class="hint" id="tank-last-refill"></p>
+    <div class="tank-fields"><label><span data-i18n="tank.fillAmount"></span><input id="tank-fill-amount" type="number" min="1" step="1" required></label></div>
+    <div class="community-actions"><button class="btn" type="button" id="tank-refill" data-i18n="tank.refill"></button><button class="btn" type="button" id="tank-empty-refill" data-i18n="tank.emptyRefill"></button></div>
+    <p class="hint" data-i18n="tank.refillHelp"></p>
+    <details class="disclosure"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span class="t"><b data-i18n="tank.settings"></b><span data-i18n="tank.settingsDesc"></span></span></summary><div class="disclosure-body">
+      <form id="tank-settings"><div class="tank-fields">
+        <label><span data-i18n="tank.capacity"></span><input id="tank-capacity" type="number" min="50" max="10000" step="1" required></label>
+        <label><span data-i18n="tank.output"></span><input id="tank-output" type="number" min="0.1" max="5000" step="0.1"></label>
+        <label><span data-i18n="tank.mistMode"></span><select id="tank-mist-mode"><option value="unknown" data-i18n="tank.modeUnknown"></option><option value="continuous" data-i18n="tank.modeContinuous"></option><option value="intermittent" data-i18n="tank.modeIntermittent"></option></select></label>
+      </div><label class="tank-button-option"><input id="tank-has-button" type="checkbox"><span data-i18n="tank.hasButton"></span></label><p class="hint" data-i18n="tank.outputHelp"></p><button class="btn" type="submit" data-i18n="tank.save"></button></form></div>
+    </details>
+    <details class="disclosure"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span class="t"><b data-i18n="tank.history"></b><span data-i18n="tank.historyDesc"></span></span></summary><div class="disclosure-body"><ol class="timeline" id="tank-refills"></ol></div></details>
+    <p class="fb" id="fb-tank" role="status"></p>
+  </article>
+
+</section>
+<section class="app-page" id="page-devices" data-page="devices" hidden><nav class="page-tabs" data-i18n-attr="aria-label:cockpit.subnav"><a href="#devices/light" data-tab="devices/light" data-i18n="lightView.title"></a><a href="#devices/controls" data-tab="devices/controls" data-i18n="cockpit.tab.controls"></a><a href="#devices/camera" data-tab="devices/camera" data-i18n="cockpit.tab.camera"></a></nav>
+<div data-devices-panel="light" hidden>
+  <article class="card light-schedule-card">
+    <div class="card-h"><h2 data-i18n="lightView.title"></h2><a class="text-link" href="#card-light" data-i18n="lightView.controls"></a></div>
+    <p class="hint" data-i18n="lightView.intro"></p>
+    <div id="light-view-metrics" class="light-view-metrics"></div>
+    <p id="light-view-explanation" class="light-view-explanation"></p>
+    <dl id="light-view-times" class="light-view-times"></dl>
+    <p class="hint" data-i18n="lightView.timesHint"></p>
+    <form id="light-timer-settings" hidden>
+      <h3 data-i18n="lightTimer.title"></h3>
+      <p class="hint" data-i18n="lightTimer.presetsHint"></p>
+      <div class="row light-timer-presets" id="light-timer-presets" role="group" data-i18n-attr="aria-label:lightTimer.presets"></div>
+      <p class="hint" id="light-timer-preset-note" aria-live="polite"></p>
+      <div class="tank-fields">
+        <label><span data-i18n="lightView.onTime"></span><input id="light-timer-on" type="time" required></label>
+        <label><span data-i18n="lightView.offTime"></span><input id="light-timer-off" type="time" required></label>
+        <label><span data-i18n="lightTimer.level"></span><input id="light-timer-level" type="number" min="25" max="100" step="1" required></label>
+      </div>
+      <label class="tank-button-option"><input id="light-timer-enabled" type="checkbox"><span data-i18n="lightTimer.enable"></span></label>
+      <p class="hint" data-i18n="lightTimer.applyHint"></p>
+      <div class="row"><button class="btn primary" type="submit" data-i18n="lightTimer.save"></button><button class="btn" type="button" id="light-timer-disable" data-i18n="lightTimer.disable" hidden></button></div>
+      <p id="fb-light-timer" class="fb" role="status"></p>
+    </form>
+    <p class="hint" id="light-view-freshness"></p>
+  </article>
+  <article class="card light-history-card">
+    <div class="card-h"><h3 data-i18n="lightView.history"></h3><button class="btn sm" id="light-view-refresh" type="button" data-i18n="lightView.refresh"></button></div>
+    <p class="hint" data-i18n="lightView.historyHint"></p>
+    <div id="light-view-history" aria-live="polite"></div>
+    <p id="light-view-error" class="fb bad" role="status"></p>
+  </article>
+</div>
+<div data-devices-panel="controls" class="device-grid"><div class="banner bad offline" id="offline-banner" hidden></div>  <article class="card" id="card-light" data-sec="steuerung">
+    <div class="card-h"><span class="num"></span><h3 data-i18n="light.title"></h3><span class="big" id="light-val">–</span></div>
+    <div class="note plan" id="light-plan" hidden><span class="lock-reason" data-i18n="light.plan"></span></div>
+    <p class="device-meta" id="device-light-meta"></p>
+    <div class="light-automatic">
+      <div class="light-automatic-actions"><button class="toggle" id="light-automatic" type="button" aria-pressed="false" aria-describedby="light-automatic-plan light-automatic-note" data-i18n="lightAuto.button" disabled></button><a class="text-link" href="#devices/light" data-i18n="lightAuto.schedule"></a></div>
+      <p id="light-automatic-plan" class="light-automatic-plan"></p>
+      <p id="light-automatic-note" class="hint"></p>
+      <div id="light-automatic-sources" class="hint"></div>
+      <p class="fb" id="fb-light-automatic" role="status" aria-live="polite"></p>
+    </div>
+    <div class="row">
+      <button class="toggle" id="light-toggle" aria-pressed="false" data-i18n="ctl.off"></button>
+      <input type="range" id="light-range" min="25" max="100" step="5" value="75" data-i18n-attr="aria-label:light.brightness">
+    </div>
+    <div class="light-numeric"><label for="light-number" data-i18n="cockpit.requestedIntensity"></label><input type="number" id="light-number" min="25" max="100" step="5" value="75"><button class="btn sm" id="light-number-send" type="button" data-i18n="cockpit.applyIntensity"></button></div><p class="hint" id="light-target-value"></p>
+    <div class="seg block" id="spec-seg" role="group" data-i18n-attr="aria-label:light.spectrum">
+      <button data-spec="seedling" data-i18n="spectrum.seedling"></button>
+      <button data-spec="veg" data-i18n="spectrum.veg"></button>
+      <button data-spec="bloom" data-i18n="spectrum.bloom"></button>
+    </div>
+    <p class="hint lock-reason" id="spec-hint" hidden data-i18n="light.specLocked"></p>
+    <p class="fb" id="fb-light"></p>
+  </article>
+
+  <article class="card" id="card-cfan" data-sec="steuerung">
+    <div class="card-h"><span class="num"></span><h3 data-i18n="fan.cfan"></h3><span class="big" id="cfan-val">–</span></div>
+    <p class="device-meta" id="device-cfan-meta"></p><div class="stepper" data-fan="cfan">
+      <button class="st" data-d="-1" data-i18n-attr="aria-label:fan.less">−</button>
+      <div class="bars" id="cfan-bars"></div>
+      <button class="st" data-d="1" data-i18n-attr="aria-label:fan.more">+</button>
+    </div>
+    <div class="chips">
+      <button data-fan="cfan" data-step="0" data-i18n="ctl.off"></button>
+      <button data-fan="cfan" data-step="3">3</button>
+      <button data-fan="cfan" data-step="6">6</button>
+      <button data-fan="cfan" data-step="10" data-i18n="fan.max"></button>
+      <button data-fan="cfan" data-nw="1" id="nw-chip" data-i18n="fan.nw"></button>
+    </div>
+    <p class="hint lock-reason" id="nw-hint" hidden data-i18n="fan.nwHint"></p>
+    <p class="fb" id="fb-cfan"></p>
+  </article>
+
+  <article class="card" id="card-e6" data-sec="steuerung" hidden>
+    <div class="card-h"><span class="num"></span><h3 data-i18n="fanStick.title"></h3><span class="big" id="e6-val">–</span></div>
+    <p class="device-meta" id="e6-meta"></p>
+    <div class="chips" id="e6-steps">
+      <button type="button" data-e6-step="0" data-i18n="ctl.off"></button>
+      <button type="button" data-e6-step="3">3</button>
+      <button type="button" data-e6-step="6">6</button>
+      <button type="button" data-e6-step="10" data-i18n="fan.max"></button>
+      <button type="button" id="e6-osc" data-i18n="fanStick.osc"></button>
+    </div>
+    <div class="water-auto">
+      <button class="toggle" id="e6-auto" type="button" aria-pressed="false" data-i18n="fanStick.auto"></button>
+      <label><span data-i18n="fanStick.day"></span> <select id="e6-day"></select></label>
+      <label><span data-i18n="fanStick.night"></span> <select id="e6-night"></select></label>
+    </div>
+    <p class="hint" id="e6-hint"></p>
+    <p class="fb" id="fb-e6" role="status"></p>
+  </article>
+  <article class="card" id="card-dfan" data-sec="steuerung">
+    <div class="card-h"><span class="num"></span><h3 data-i18n="fan.dfan"></h3><span class="big" id="dfan-val">–</span></div>
+    <div class="note" id="dfan-auto" hidden data-i18n="fan.dfanAuto"></div>
+    <p class="device-meta" id="device-dfan-meta"></p><div class="stepper" data-fan="dfan">
+      <button class="st" data-d="-1" data-i18n-attr="aria-label:fan.less">−</button>
+      <div class="bars" id="dfan-bars"></div>
+      <button class="st" data-d="1" data-i18n-attr="aria-label:fan.more">+</button>
+    </div>
+    <div class="chips">
+      <button data-fan="dfan" data-step="0" data-i18n="ctl.off"></button>
+      <button data-fan="dfan" data-step="3">3</button>
+      <button data-fan="dfan" data-step="6">6</button>
+      <button data-fan="dfan" data-step="10" data-i18n="fan.max"></button>
+    </div>
+    <p class="hint" data-i18n="fan.filterHint"></p>
+    <p class="fb" id="fb-dfan"></p>
+  </article>
+
+  <article class="card" id="card-ports" data-sec="steuerung">
+    <div class="card-h"><span class="num"></span><h3 data-i18n="ports.title"></h3></div>
+    <div class="ports" id="ports"></div>
+    <p class="hint pointer" id="ports-auto" hidden></p>
+    <p class="fb" id="fb-port"></p>
+  </article>
+
+<article class="card device-camera"><div class="card-h"><h3 id="device-camera-title">GrowCam</h3><span class="pill sm" id="device-camera-status">–</span></div><p class="hint" data-i18n="cockpit.cameraDeviceHint"></p><a class="btn" href="#devices/camera" data-i18n="cockpit.openCamera"></a></article></div><div id="devices-camera-slot" data-devices-panel="camera" hidden><p class="empty-state" id="devices-camera-empty" hidden data-i18n="cockpit.cameraEmpty"></p></div></section>
+<section class="app-page" id="page-analytics" data-page="analytics" hidden>  <article class="card wide" id="card-history" data-sec="verlauf">
+    <div class="card-h"><span class="num"></span><h3 data-i18n="history.title"></h3>
+      <div class="seg small quiet" id="range-seg" role="group" data-i18n-attr="aria-label:history.range">
+        <button data-h="6" data-i18n="history.h6"></button><button data-h="24" class="on" data-i18n="history.h24"></button><button data-h="168" data-i18n="history.d7"></button>
+      </div>
+    </div>
+    <p class="hint" data-i18n="cockpit.historyHint"></p><h3 class="chart-heading" data-i18n="cockpit.climateChart"></h3><div class="chart" id="ch-climate"></div>
+    <div class="legend" id="lg-ch-climate"></div>
+    <h3 class="chart-heading" data-i18n="tiles.vpd"></h3><div class="chart" id="ch-vpd"></div>
+    <div class="legend" id="lg-ch-vpd"></div>
+    <h3 class="chart-heading" data-i18n="tiles.water"></h3><div class="chart" id="ch-water"></div>
+    <div class="legend" id="lg-ch-water"></div>
+    <p class="hint" id="hist-msg" role="status"></p><details class="history-data"><summary data-i18n="cockpit.dataTable"></summary><div class="table-scroll" id="history-data"></div></details>
+  </article>
+
+</section>
+<section class="app-page" id="page-water" data-page="water" hidden><p class="page-description" data-i18n="water.intro"></p>
+  <section class="tiles water-tiles" data-i18n-attr="aria-label:water.tilesLabel">
+    <div class="tile" id="wd-soil-tile">
+      <span class="k"><span data-i18n="tiles.soil"></span><em class="src" id="wd-soil-src"></em></span>
+      <span class="val"><span class="v" id="wd-soil">–</span><span class="u">%</span></span>
+      <span class="meta"><span class="pill sm" id="wd-soil-pill" hidden></span><span class="sub" id="wd-soil-sub"></span></span>
+    </div>
+    <div class="tile" id="wd-tank-tile">
+      <span class="k"><span data-i18n="water.tank"></span><em class="src" data-i18n="tiles.tankSensor"></em></span>
+      <span class="val"><span class="v" id="wd-tank">–</span></span>
+      <span class="meta"><span class="pill sm warn" id="wd-tank-pill" hidden></span><span class="sub" id="wd-tank-sub"></span></span>
+    </div>
+    <div class="tile" id="wd-given-tile">
+      <span class="k"><span data-i18n="water.given"></span><em class="src" data-i18n="water.givenSrc"></em></span>
+      <span class="val"><span class="v" id="wd-given">–</span><span class="u" id="wd-given-u"></span></span>
+      <span class="meta"><span class="sub" id="wd-given-sub"></span></span>
+    </div>
+    <div class="tile" id="wd-thirst-tile">
+      <span class="k"><span data-i18n="water.thirst"></span><em class="src" data-i18n="water.thirstSrc"></em></span>
+      <span class="val"><span class="v" id="wd-thirst">–</span><span class="u" id="wd-thirst-u"></span></span>
+      <span class="meta"><span class="sub" id="wd-thirst-sub"></span></span>
+    </div>
+  </section>
+  <article class="card wide" id="wd-chart-card">
+    <div class="card-h"><h3 id="wd-chart-title" data-i18n="water.chartRaw"></h3>
+      <div class="seg small quiet" id="wd-range" role="group" data-i18n-attr="aria-label:history.range">
+        <button data-h="24" class="on" data-i18n="history.h24"></button><button data-h="168" data-i18n="history.d7"></button><button data-h="720" data-i18n="water.d30"></button>
+      </div>
+    </div>
+    <p class="hint" id="wd-chart-hint"></p>
+    <div class="chart" id="wd-chart"></div>
+    <div class="legend" id="lg-wd-chart"></div>
+    <p class="hint" id="wd-chart-empty" data-i18n="water.chartEmpty" hidden></p>
+    <details class="history-data"><summary data-i18n="cockpit.dataTable"></summary><div class="table-scroll" id="wd-chart-data"></div></details>
+  </article>
+  <div class="water-grid">
+    <article class="card" id="wd-target-card">
+      <div class="card-h"><h3 data-i18n="water.targetTitle"></h3><span class="pill sm" id="wd-target-pill" hidden></span></div>
+      <p class="water-lead" id="wd-target-lead"></p>
+      <p class="hint" data-i18n="water.targetWhy"></p>
+      <ul class="water-sources">
+        <li><a class="text-link" href="https://ucanr.edu/blog/nursery-and-flower-grower/article/soil-mixes-part-7-how-much-irrigate" target="_blank" rel="noopener" data-i18n="water.sourceU1"></a></li>
+        <li><a class="text-link" href="https://www.ars.usda.gov/ARSUserFiles/11847/bilderback_etal_2005_Hort%20Tech%2015(4)%20pp%20747-751.pdf" target="_blank" rel="noopener" data-i18n="water.sourceB05"></a></li>
+      </ul>
+      <p class="hint" data-i18n="water.targetLimit"></p>
+      <h4 class="water-subhead" data-i18n="water.setTitle"></h4>
+      <p class="hint" id="wd-set-status"></p>
+      <div class="water-actions">
+        <button class="btn primary" id="wd-set-wet" type="button" data-i18n="water.setWet"></button>
+        <button class="btn" id="wd-set-reset" type="button" data-i18n="water.setReset" hidden></button>
+      </div>
+      <p class="fb" id="wd-set-fb" role="status"></p>
+    </article>
+    <article class="card" id="wd-water-card">
+      <div class="card-h"><h3 data-i18n="water.supplyTitle"></h3><a class="text-link" href="#automation" data-i18n="water.supplyOpen"></a></div>
+      <dl class="water-list" id="wd-supply"></dl>
+      <h4 class="water-subhead" data-i18n="water.eventsTitle"></h4>
+      <ul class="water-events" id="wd-events"></ul>
+    </article>
+  </div>
+  <article class="card wide" id="wd-check-card">
+    <div class="card-h"><h3 data-i18n="devcheck.title"></h3></div>
+    <p class="hint" data-i18n="devcheck.intro"></p>
+    <div class="table-scroll water-check-scroll"><table class="water-check">
+      <thead><tr><th data-i18n="devcheck.device"></th><th data-i18n="devcheck.now"></th><th data-i18n="devcheck.command"></th><th data-i18n="devcheck.effect"></th><th data-i18n="devcheck.auto"></th></tr></thead>
+      <tbody id="wd-check"></tbody>
+    </table></div>
+    <p class="fb" id="wd-check-fb" role="status"></p>
+  </article>
+</section>
+<section class="app-page" id="page-activity" data-page="activity" hidden>
+<nav class="page-tabs" data-i18n-attr="aria-label:cockpit.subnav"><a href="#activity/active" data-tab="activity/active" data-i18n="cockpit.tab.active"></a><a href="#activity/protocol" data-tab="activity/protocol" data-i18n="protocol.title"></a><a href="#activity/history" data-tab="activity/history" data-i18n="cockpit.tab.history"></a><a href="#activity/rules" data-tab="activity/rules" data-i18n="cockpit.tab.rules"></a></nav>
+<div data-activity-panel="protocol" hidden>
+  <article class="card protocol-header"><div class="card-h"><h2 data-i18n="protocol.title"></h2><button class="btn sm" type="button" id="protocol-refresh" data-i18n="protocol.refresh"></button></div><p class="hint" data-i18n="protocol.intro"></p><p id="protocol-summary"></p><p id="protocol-freshness" class="hint"></p><p id="protocol-error" role="status" class="fb bad"></p></article>
+  <article class="card"><div class="card-h"><h3 data-i18n="protocol.issues"></h3></div><div id="protocol-issues" class="protocol-issues"></div></article>
+  <article class="card"><div class="card-h"><h3 data-i18n="protocol.tasks"></h3></div><div class="protocol-filters"><label><span data-i18n="protocol.filter"></span><select id="protocol-filter"><option value="all" data-i18n="protocol.filterAll"></option><option value="working" data-i18n="protocol.filterWorking"></option><option value="attention" data-i18n="protocol.filterAttention"></option><option value="confirmed" data-i18n="protocol.filterConfirmed"></option></select></label><label><span data-i18n="protocol.source"></span><select id="protocol-origin"><option value="all" data-i18n="protocol.filterAll"></option><option value="automatic" data-i18n="protocol.originAutomatic"></option><option value="hank" data-i18n="protocol.originHank"></option><option value="manual" data-i18n="protocol.originManual"></option><option value="schedule" data-i18n="protocol.originSchedule"></option><option value="watering" data-i18n="protocol.originWatering"></option><option value="safety" data-i18n="protocol.originSafety"></option><option value="external" data-i18n="protocol.originExternal"></option></select></label></div><p class="hint" data-i18n="protocol.observations"></p><div id="protocol-tasks" class="protocol-tasks"></div><button type="button" class="btn" id="protocol-more" data-i18n="protocol.more" hidden></button><p class="hint" id="protocol-since"></p></article>
+</div>
+<div data-activity-panel="active"><article class="card"><div class="card-h"><h3 data-i18n="cockpit.activeAlerts"></h3><span class="pill sm" id="healthy-checks"></span></div><div id="active-alerts"></div></article></div><div data-activity-panel="history" hidden><article class="card"><div class="card-h"><h3 data-i18n="cockpit.eventHistory"></h3></div><p class="hint" data-i18n="cockpit.historyScope"></p><div id="activity-history"></div></article></div><div data-activity-panel="rules" hidden>  <article class="card wide" id="card-alerts" data-sec="alarme">
+    <div class="card-h"><span class="num"></span><h3 data-i18n="alerts.title"></h3><span class="pill sm" id="ntfy-pill"></span></div>
+    <ol class="rules" id="rules"></ol>
+    <div class="row"><button class="btn" id="test-push" data-i18n="alerts.test"></button></div>
+    <p class="hint" data-i18n="alerts.hint"></p>
+    <p class="fb" id="fb-push"></p>
+  </article>
+</div></section>
+<section class="app-page" id="page-settings" data-page="settings" hidden><div class="settings-grid">
+<article class="card"><div class="card-h"><h3 data-i18n="cockpit.appearance"></h3></div><label class="field-label" data-i18n="theme.title"></label><div class="seg block quiet" role="group" data-i18n-attr="aria-label:theme.title"><button type="button" data-theme-set="auto" data-i18n="theme.auto"></button><button type="button" data-theme-set="light" data-i18n="theme.light"></button><button type="button" data-theme-set="dark" data-i18n="theme.dark"></button><button type="button" data-theme-set="safe" data-i18n="theme.safe"></button></div><label class="field-label" data-i18n="lang.title"></label><div class="seg block quiet lang-seg" role="group" data-i18n-attr="aria-label:lang.title"><button type="button" data-lang-set="de" lang="de" aria-label="Deutsch">DE</button><button type="button" data-lang-set="en" lang="en" aria-label="English">EN</button></div><p class="hint" data-i18n="cockpit.preferenceHint"></p><button class="theme-btn" id="theme-btn" type="button" hidden data-i18n-attr="aria-label:theme.title"></button></article>
+<article class="card"><div class="card-h"><h3 data-i18n="cockpit.integrations"></h3></div><dl class="settings-facts" id="settings-integrations"></dl><a class="btn" href="#activity/rules" data-i18n="cockpit.notifications"></a></article>
+<article class="card"><div class="card-h"><h3 data-i18n="cockpit.about"></h3></div><p data-i18n="brand.disclaimer"></p><p class="hint" data-i18n="cockpit.aboutHint"></p><p class="hint" data-i18n="cockpit.unitsHint"></p><a class="btn" href="#automation" data-i18n="cockpit.advancedRules"></a></article>
+</div></section>
+<section class="app-page" id="page-community" data-page="community" hidden>
+  <div id="community-hub"></div>
+</section></main>
+<script src="/vendor/uPlot.iife.min.js"></script>
+<script src="/static/i18n.js"></script>
+<script src="/static/app.js"></script>
+<script src="/static/cockpit.js"></script>
+<script src="/static/workspace.js"></script>
+<script src="/static/light-view.js"></script>
+<script src="/static/protocol.js"></script>
+<script src="/static/thirst.js"></script>
+<script src="/static/water.js"></script>
+<script src="/static/plan.js"></script>
+<script src="/static/community.js"></script>
+<script src="/static/hank-i18n.js"></script>
+<script src="/static/hank-scenes.js"></script>
+<script src="/static/hank.js"></script>
+<script src="/static/news.js"></script>
+<script src="/static/wiki.js"></script>
+<script src="/static/wiki-tools.js"></script>
+<script src="/static/garden-logic.js"></script>
+<script src="/static/garden-art.js"></script>
+<script src="/static/garden.js"></script>
+</body>
+</html>

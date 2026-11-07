@@ -1,0 +1,511 @@
+{
+  "name": "Green House Feeding, mineralische Pulver",
+  "name_en": "Green House Feeding, mineral powders",
+  "summary": "Wasserlösliche Mineralpulver, je Phase eines: Grow im Wachstum, Short Flowering, Hybrids oder Long Flowering je nach Blütedauer. Für Erde, Kokos und Hydro, in Gramm je Liter. Die Pläne zählen das Wachstum in Stadien statt Wochen und rechnen mit weichem Wasser; deshalb im Cockpit nicht wählbar.",
+  "summary_en": "Water-soluble mineral powders, one per phase: Grow in growth, Short Flowering, Hybrids or Long Flowering by flowering length. For soil, coco and hydro, in grams per litre. The plans count growth in stages instead of weeks and assume soft water; so not selectable in the cockpit.",
+  "product": "Green House Feeding",
+  "version": "Pläne auf den Produktseiten",
+  "status": "draft",
+  "status_note": "Abgetippt aus den Plänen auf den Produktseiten (Bilder GH5 bis GH7) und den Seiten des Herstellers am 23.10.2026; jede Zahl mit dem Bild verglichen. Die Pläne gelten für weiches Wasser (Wasser-EC 0,0) mit zugesetztem Calcium, und das Wachstum hat vier Stadien ohne Wochenangabe: das Cockpit müsste raten, welche Spalte gilt. Deshalb im Wiki zum Lesen, im Cockpit nicht wählbar.",
+  "status_note_en": "Transcribed from the plans on the product pages (images GH5 to GH7) and the maker's pages on Oct 23, 2026; every number compared with the image. The plans are for soft water (water EC 0.0) with calcium added, and growth has four stages without weeks: the cockpit would have to guess which column applies. So for reading in the wiki, not selectable in the cockpit.",
+  "check": {
+    "state": "checked",
+    "on": "2026-10-23",
+    "text": "Jede Zahl gegen die Planbilder der Produktseiten (GH5 bis GH7) geprüft, am 23.10.2026.",
+    "text_en": "Every number checked against the plan images of the product pages (GH5 to GH7), on Oct 23, 2026."
+  },
+  "unit": "g/l",
+  "aliases": {
+    "de": [
+      "Green House Feeding",
+      "Green House Powder Feeding",
+      "GHF",
+      "GHF Grow",
+      "GHF Short Flowering",
+      "GHF Hybrids",
+      "GHF Long Flowering",
+      "Short Flowering",
+      "Long Flowering"
+    ],
+    "en": [
+      "Green House Feeding",
+      "Green House Powder Feeding",
+      "GHF",
+      "GHF Grow",
+      "GHF Short Flowering",
+      "GHF Hybrids",
+      "GHF Long Flowering",
+      "Short Flowering",
+      "Long Flowering"
+    ]
+  },
+  "line": {
+    "maker": "Green House Feeding",
+    "types": [
+      "powder"
+    ],
+    "media": [
+      "soil",
+      "coco",
+      "hydro"
+    ],
+    "media_text": "Laut FAQ für jedes Medium; außerhalb von Erde empfiehlt der Hersteller pH- und EC-Messung. Eigene Pläne für Erde und für Kokos, Steinwolle und Hydro.",
+    "media_text_en": "Per the FAQ for every medium; outside soil the maker recommends measuring pH and EC. Separate plans for soil and for coco, rockwool and hydro.",
+    "products": [
+      {
+        "product": "Grow",
+        "npk": "21-5-10",
+        "role": "Wachstum, Mutterpflanzen, Stecklinge, auch als Blattdüngung; 1 g/l ergibt EC 1,4.",
+        "role_en": "Growth, mother plants, cuttings, also for foliar feeding; 1 g/l gives EC 1.4.",
+        "sources": [
+          "GH3"
+        ]
+      },
+      {
+        "product": "Short Flowering",
+        "npk": "16-6-26",
+        "role": "Blüte bei 8 Wochen oder weniger, laut FAQ für Wachstum und Blüte ohne weiteren Zusatz; 1 g/l ergibt EC 1,4.",
+        "role_en": "Flowering at 8 weeks or less, per the FAQ for growth and flowering with nothing added; 1 g/l gives EC 1.4.",
+        "sources": [
+          "GH2",
+          "GH4"
+        ]
+      },
+      {
+        "product": "Hybrids",
+        "npk": "15-7-22",
+        "role": "Blüte bei 8 bis 10 Wochen und in Hydrosystemen (Steinwolle, Kokos, DWC); ohne Harnstoff; 1 g/l ergibt EC 1,3.",
+        "role_en": "Flowering at 8 to 10 weeks and in hydro systems (rockwool, coco, DWC); no urea; 1 g/l gives EC 1.3.",
+        "sources": [
+          "GH8"
+        ]
+      },
+      {
+        "product": "Long Flowering",
+        "npk": "18-12-18",
+        "role": "Blüte bei langer Blütedauer, laut Hersteller mehr als 10 Wochen.",
+        "role_en": "Flowering with a long flowering time, per the maker more than 10 weeks.",
+        "sources": [
+          "GH9"
+        ]
+      },
+      {
+        "product": "Booster PK+ und Calcium",
+        "product_en": "Booster PK+ and Calcium",
+        "role": "Stehen in den Plänen: PK+ ab Blütewoche 3, Calcium (Erde) oder CalMag (Hydro) bei weichem Wasser in allen Spalten.",
+        "role_en": "Stand in the plans: PK+ from flowering week 3, Calcium (soil) or CalMag (hydro) with soft water in every column.",
+        "sources": [
+          "GH5",
+          "GH7"
+        ]
+      }
+    ],
+    "application_short": "Pulver im Wasser lösen, auf Erde jedes zweite Gießen; Wasser 18 bis 22 °C, den pH erst nach dem Dünger einstellen.",
+    "application_short_en": "Dissolve the powder in water, on soil every second watering; water at 18 to 22 °C, adjust the pH only after the fertilizer.",
+    "application": "Das Pulver im Wasser lösen, 2 bis 3 Minuten mischen, die EC messen, 15 bis 30 Minuten warten, dann erst den pH einstellen. Wasser 18 bis 22 °C. Bei Osmose- oder Regenwasser (EC 0,0) zuerst Calcium zugeben, bis die EC 0,3 bis 0,4 erreicht. Auf Erde laut FAQ nur jedes zweite Gießen düngen (Wasser, Nährlösung, Wasser, Nährlösung). Einsteiger auf vorgedüngter Erde laut FAQ: 2 bis 4 Wochen nach der Aussaat mit 0,25 g/l beginnen, im Wachstum bis 0,7 g/l, in der Blüte langsam bis 1 g/l. Die Seite zur Anwendung nennt dafür 0,5, 1,0 und 1 bis 1,5 g/l. Stammlösung laut Produktseiten 30 g je Liter, höchstens 160 g je Liter löslich; der beigelegte Messlöffel fasst 10 g.",
+    "application_en": "Dissolve the powder in water, mix for 2 to 3 minutes, measure the EC, wait 15 to 30 minutes, only then adjust the pH. Water at 18 to 22 °C. With RO or rain water (EC 0.0) add calcium first until the EC reaches 0.3 to 0.4. On soil per the FAQ feed only every second watering (water, nutrient solution, water, nutrient solution). Beginners on pre-fertilized soil per the FAQ: start 2 to 4 weeks after sowing with 0.25 g/l, up to 0.7 g/l in growth, slowly up to 1 g/l in flowering. The how-to page gives 0.5, 1.0 and 1 to 1.5 g/l for the same. Stock solution per the product pages 30 g per litre, at most 160 g per litre soluble; the enclosed spoon holds 10 g.",
+    "application_sources": [
+      "GH1",
+      "GH2",
+      "GH3"
+    ],
+    "cautions": [
+      {
+        "text": "Die Pläne rechnen mit weichem Wasser (Wasser-EC 0,0) und zugesetztem Calcium. Mit Leitungswasser ändern sich die Mengen; der Hersteller nennt für hartes Wasser keinen eigenen Plan.",
+        "text_en": "The plans assume soft water (water EC 0.0) with added calcium. With tap water the amounts change; the maker gives no separate plan for hard water.",
+        "sources": [
+          "GH5",
+          "GH6",
+          "GH7"
+        ]
+      },
+      {
+        "text": "Das Wachstum hat vier Stadien ohne Wochenangabe (Sämling bis ausgewachsene Pflanze). Welche Spalte heute gilt, müsste das Cockpit raten, deshalb rechnet es damit nicht.",
+        "text_en": "Growth has four stages without weeks (seedling to mature plant). Which column applies today the cockpit would have to guess, so it computes nothing with it.",
+        "sources": [
+          "GH5",
+          "GH7"
+        ]
+      },
+      {
+        "text": "Die Seiten des Herstellers widersprechen sich bei den Einsteigermengen (FAQ 0,25, 0,7 und 1 g/l; Anwendungsseite 0,5, 1,0 und 1 bis 1,5 g/l).",
+        "text_en": "The maker's own pages disagree on the beginner amounts (FAQ 0.25, 0.7 and 1 g/l; how-to page 0.5, 1.0 and 1 to 1.5 g/l).",
+        "sources": [
+          "GH1",
+          "GH2"
+        ]
+      }
+    ],
+    "plan": [
+      {
+        "package": "cannabis",
+        "when": "Autoflower auf Erde, Sämling",
+        "when_en": "Autoflower on soil, seedling",
+        "text": "Short Flowering 0,8 g/l, Calcium 0,5 g/l (weiches Wasser).",
+        "text_en": "Short Flowering 0.8 g/l, Calcium 0.5 g/l (soft water).",
+        "sources": [
+          "GH6"
+        ]
+      },
+      {
+        "package": "cannabis",
+        "when": "Autoflower auf Erde, junge Pflanze bis Woche 1",
+        "when_en": "Autoflower on soil, young plant to week 1",
+        "text": "Short Flowering 1,0 g/l, Calcium 0,5 g/l.",
+        "text_en": "Short Flowering 1.0 g/l, Calcium 0.5 g/l.",
+        "sources": [
+          "GH6"
+        ]
+      },
+      {
+        "package": "cannabis",
+        "when": "Autoflower auf Erde, Woche 2 bis 4",
+        "when_en": "Autoflower on soil, weeks 2 to 4",
+        "text": "Short Flowering 1,2 g/l, Calcium 0,5 g/l.",
+        "text_en": "Short Flowering 1.2 g/l, Calcium 0.5 g/l.",
+        "sources": [
+          "GH6"
+        ]
+      },
+      {
+        "package": "cannabis",
+        "when": "Autoflower auf Erde, Woche 5",
+        "when_en": "Autoflower on soil, week 5",
+        "text": "Short Flowering 1,0 g/l, Booster PK+ 0,2 g/l, Calcium 0,5 g/l.",
+        "text_en": "Short Flowering 1.0 g/l, Booster PK+ 0.2 g/l, Calcium 0.5 g/l.",
+        "sources": [
+          "GH6"
+        ]
+      },
+      {
+        "package": "cannabis",
+        "when": "Autoflower auf Erde, Woche 6 bis 9",
+        "when_en": "Autoflower on soil, weeks 6 to 9",
+        "text": "Short Flowering 0,8 g/l, Booster PK+ 0,4 g/l, Calcium 0,5 g/l.",
+        "text_en": "Short Flowering 0.8 g/l, Booster PK+ 0.4 g/l, Calcium 0.5 g/l.",
+        "sources": [
+          "GH6"
+        ]
+      },
+      {
+        "package": "cannabis",
+        "when": "Autoflower auf Erde, Woche 10",
+        "when_en": "Autoflower on soil, week 10",
+        "text": "Short Flowering 0,5 g/l, Calcium 0,5 g/l.",
+        "text_en": "Short Flowering 0.5 g/l, Calcium 0.5 g/l.",
+        "sources": [
+          "GH6"
+        ]
+      }
+    ]
+  },
+  "weeks": {
+    "columns": [
+      {
+        "key": "seedlings",
+        "label": "Sämlinge",
+        "label_en": "Seedlings",
+        "printed": "Seedlings"
+      },
+      {
+        "key": "young",
+        "label": "Junge Pflanzen, bewurzelte Stecklinge",
+        "label_en": "Young plants, rooted cuttings",
+        "printed": "Young plants / rooted cuttings"
+      },
+      {
+        "key": "maturing",
+        "label": "Heranwachsende Pflanzen",
+        "label_en": "Maturing plants",
+        "printed": "Maturing plants"
+      },
+      {
+        "key": "mature",
+        "label": "Ausgewachsene Pflanzen",
+        "label_en": "Mature plants",
+        "printed": "Mature plants"
+      },
+      {
+        "key": "bloom_1",
+        "bloom_week": 1,
+        "label": "Blütewoche 1",
+        "label_en": "Flowering week 1",
+        "printed": "Week 1"
+      },
+      {
+        "key": "bloom_2",
+        "bloom_week": 2,
+        "label": "Blütewoche 2",
+        "label_en": "Flowering week 2",
+        "printed": "Week 2"
+      },
+      {
+        "key": "bloom_3",
+        "bloom_week": 3,
+        "label": "Blütewoche 3",
+        "label_en": "Flowering week 3",
+        "printed": "Week 3"
+      },
+      {
+        "key": "bloom_4",
+        "bloom_week": 4,
+        "label": "Blütewoche 4",
+        "label_en": "Flowering week 4",
+        "printed": "Week 4"
+      },
+      {
+        "key": "bloom_5",
+        "bloom_week": 5,
+        "label": "Blütewoche 5",
+        "label_en": "Flowering week 5",
+        "printed": "Week 5"
+      },
+      {
+        "key": "bloom_6",
+        "bloom_week": 6,
+        "label": "Blütewoche 6",
+        "label_en": "Flowering week 6",
+        "printed": "Week 6"
+      },
+      {
+        "key": "bloom_7",
+        "bloom_week": 7,
+        "label": "Blütewoche 7",
+        "label_en": "Flowering week 7",
+        "printed": "Week 7"
+      },
+      {
+        "key": "bloom_8",
+        "bloom_week": 8,
+        "label": "Blütewoche 8",
+        "label_en": "Flowering week 8",
+        "printed": "Week 8"
+      }
+    ],
+    "sources": [
+      "GH5",
+      "GH7"
+    ]
+  },
+  "components": {
+    "base_powder": {
+      "label": "Grow, Hybrids, Short oder Long Flowering",
+      "label_en": "Grow, Hybrids, Short or Long Flowering"
+    },
+    "booster_pk": {
+      "label": "Booster PK+",
+      "label_en": "Booster PK+",
+      "optional": true
+    },
+    "calcium": {
+      "label": "Calcium (weiches Wasser)",
+      "label_en": "Calcium (soft water)",
+      "optional": true
+    },
+    "calmag": {
+      "label": "CalMag (weiches Wasser)",
+      "label_en": "CalMag (soft water)",
+      "optional": true
+    }
+  },
+  "pages": {
+    "soil_soft": {
+      "label": "Erde und Torfsubstrat, weiches Wasser",
+      "label_en": "Soil and peat-based substrate, soft water",
+      "rows": {
+        "base_powder": [
+          0.8,
+          1.0,
+          1.0,
+          1.2,
+          1.2,
+          1.2,
+          1.0,
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.5
+        ],
+        "booster_pk": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0.2,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0
+        ],
+        "calcium": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "sources": [
+        "GH5"
+      ]
+    },
+    "hydro_soft": {
+      "label": "Kokos, Steinwolle und Hydro, weiches Wasser",
+      "label_en": "Coco, rockwool and hydro, soft water",
+      "rows": {
+        "base_powder": [
+          0.8,
+          0.8,
+          1.0,
+          1.2,
+          1.2,
+          1.2,
+          1.2,
+          1.2,
+          1.2,
+          1.2,
+          1.2,
+          0.5
+        ],
+        "booster_pk": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0
+        ],
+        "calmag": [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      },
+      "sources": [
+        "GH7"
+      ]
+    }
+  },
+  "frequency": {
+    "text": "Auf Erde laut FAQ jedes zweite Gießen (Wasser, Nährlösung, Wasser, Nährlösung). Bei Kokos und Hydro die Nährlösung wöchentlich wechseln. Das Cockpit gibt keinen Takt vor.",
+    "text_en": "On soil per the FAQ every second watering (water, nutrient solution, water, nutrient solution). With coco and hydro change the nutrient solution weekly. The cockpit sets no schedule.",
+    "sources": [
+      "GH2"
+    ]
+  },
+  "notes": [
+    {
+      "text": "Gesamt-EC laut Plan, Erde mit weichem Wasser: 1,2; 1,6; 1,6; 1,8 im Wachstum, Blütewoche 1 bis 7 1,8, Blütewoche 8 0,9 mS/cm; pH 6,0 bis 6,5. Hydro: 1,4; 1,4; 1,7; 2,0, Blütewoche 1 und 2 2,0, Woche 3 bis 7 2,2, Woche 8 1,0 mS/cm; pH 5,5 bis 6,0.",
+      "text_en": "Total EC per the plan, soil with soft water: 1.2; 1.6; 1.6; 1.8 in growth, flowering weeks 1 to 7 1.8, flowering week 8 0.9 mS/cm; pH 6.0 to 6.5. Hydro: 1.4; 1.4; 1.7; 2.0, flowering weeks 1 and 2 2.0, weeks 3 to 7 2.2, week 8 1.0 mS/cm; pH 5.5 to 6.0.",
+      "sources": [
+        "GH5",
+        "GH7"
+      ]
+    },
+    {
+      "package": "cannabis",
+      "text": "Laut FAQ eignet sich Short Flowering für Autoflower, über den ganzen Lauf ohne Wechsel des Produkts.",
+      "text_en": "Per the FAQ Short Flowering suits autoflowers, through the whole run without switching products.",
+      "sources": [
+        "GH2"
+      ]
+    },
+    {
+      "package": "cannabis",
+      "text": "Der Plan für Autoflower (Erde, weiches Wasser) zählt die Wochen ab Sämling und jungen Pflanzen, nicht ab Blütebeginn; er steht deshalb oben als Plan in Worten.",
+      "text_en": "The autoflower plan (soil, soft water) counts weeks from seedling and young plants, not from the start of flowering; so it stands above as a plan in words.",
+      "sources": [
+        "GH6"
+      ]
+    },
+    {
+      "text": "Laut FAQ sind die meisten Erden 3 bis 8 Wochen vorgedüngt; der Hersteller empfiehlt leicht vorgedüngte Erde, die für die ersten 3 bis 4 Wochen reicht.",
+      "text_en": "Per the FAQ most soils are pre-fertilized for 3 to 8 weeks; the maker recommends lightly pre-fertilized soil that lasts the first 3 to 4 weeks.",
+      "sources": [
+        "GH2"
+      ]
+    }
+  ],
+  "sources": {
+    "GH1": {
+      "title": "Green House Feeding, Anwendung der Mineraldünger",
+      "title_en": "Green House Feeding, how to use mineral feeding",
+      "url": "https://www.greenhousefeeding.com/en/content/9-how-to-use-mineral-feeding",
+      "retrieved": "2026-10-23"
+    },
+    "GH2": {
+      "title": "Green House Feeding, FAQ",
+      "title_en": "Green House Feeding, FAQ",
+      "url": "https://www.greenhousefeeding.com/en/content/11-faq",
+      "retrieved": "2026-10-23"
+    },
+    "GH3": {
+      "title": "Green House Feeding, Produktseite Grow",
+      "title_en": "Green House Feeding, Grow product page",
+      "url": "https://www.greenhousefeeding.com/en/mineral-fertilizers/9-34-ghf-grow",
+      "retrieved": "2026-10-23"
+    },
+    "GH4": {
+      "title": "Green House Feeding, Produktseite Short Flowering",
+      "title_en": "Green House Feeding, Short Flowering product page",
+      "url": "https://www.greenhousefeeding.com/en/mineral-fertilizers/12-52-ghf-shortflowering",
+      "retrieved": "2026-10-23"
+    },
+    "GH5": {
+      "title": "Green House Feeding, Plan für Erde und Torfsubstrat, weiches Wasser (Bild auf den Produktseiten)",
+      "title_en": "Green House Feeding, plan for soil and peat-based substrate, soft water (image on the product pages)",
+      "url": "https://www.greenhousefeeding.com/img/cms/Screenshot%202025-11-03%20at%2014-55-59.png",
+      "retrieved": "2026-10-23"
+    },
+    "GH6": {
+      "title": "Green House Feeding, Plan für Autoflower auf Erde, weiches Wasser (Bild auf der Produktseite Short Flowering)",
+      "title_en": "Green House Feeding, autoflower plan on soil, soft water (image on the Short Flowering product page)",
+      "url": "https://www.greenhousefeeding.com/img/cms/Screenshot%202025-11-03%20at%2013-03-47.png",
+      "retrieved": "2026-10-23"
+    },
+    "GH7": {
+      "title": "Green House Feeding, Plan für Kokos, Steinwolle und Hydro, weiches Wasser (Bild auf der Produktseite Short Flowering)",
+      "title_en": "Green House Feeding, plan for coco, rockwool and hydro, soft water (image on the Short Flowering product page)",
+      "url": "https://www.greenhousefeeding.com/img/cms/Screenshot%202026-09-10%20at%2010-51-06.png",
+      "retrieved": "2026-10-23"
+    },
+    "GH8": {
+      "title": "Green House Feeding, Produktseite Hybrids",
+      "title_en": "Green House Feeding, Hybrids product page",
+      "url": "https://www.greenhousefeeding.com/en/mineral-fertilizers/11-46-ghf-hybrids",
+      "retrieved": "2026-10-23"
+    },
+    "GH9": {
+      "title": "Green House Feeding, Produktseite Long Flowering",
+      "title_en": "Green House Feeding, Long Flowering product page",
+      "url": "https://www.greenhousefeeding.com/en/mineral-fertilizers/10-40-ghf-longflowering",
+      "retrieved": "2026-10-23"
+    }
+  }
+}

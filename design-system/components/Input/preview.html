@@ -1,0 +1,15 @@
+<!-- @dsCard group="Forms" height=320 subtitle="field = label + input + hint · grid · invalid · checkbox" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Input</title></head>
+<body style="margin:0">
+<div class="vg" style="padding:16px;display:grid;gap:16px">
+  <div class="field-grid">
+    <label class="field"><span class="label">Run time per slot (seconds)</span><input class="input" type="number" placeholder="e.g. 20" inputmode="numeric"></label>
+    <label class="field"><span class="label">Berlin times</span><input class="input" type="text" placeholder="HH:MM, HH:MM"><span class="hint">Separated by commas. Each time is a separate cycle.</span></label>
+    <label class="field invalid"><span class="label">Soil in the pot in litres</span><input class="input" type="number" value="0" aria-invalid="true" aria-describedby="litres-hint"><span class="hint" id="litres-hint">Enter the litres of soil, not the pot's capacity.</span></label>
+    <label class="field"><span class="label">First watering day</span><input class="input" type="date"></label>
+  </div>
+  <label class="check"><input type="checkbox"> I have checked: USB 1 reliably switches the pump and water flow on and off.</label>
+  <div class="btn-row"><button class="btn primary">Save watering schedule</button><span class="muted" style="font-size:13px">Missed slots are skipped. Changes apply after saving.</span></div>
+</div>
+</body></html>
