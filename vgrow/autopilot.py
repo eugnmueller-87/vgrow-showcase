@@ -1697,11 +1697,22 @@ class AutopilotHub:
         return pilot
 
     async def check(self, snap: dict[str, Any]) -> None:
+        """Every box's autopilot after a poll. One box failing never stops the others, and the first failure is raised
+        once all have run: the poll counts a step that raises (vgrow/supervision.py, supervision_failing). A hub that
+        only logged hid an autopilot failing on every poll, fans and light no longer regulated (review of
+        15.11.2026)."""
+        first: Exception | None = None
         for box_id, pilot in self.pilots.items():
             try:
                 await pilot.check(snap if box_id == DEFAULT_BOX else pilot.box.snapshot())
-            except Exception:  # one box failing never stops the others
-                _LOGGER.exception("Autopilot %s failed", box_id)
+            except Exception as err:  # one box failing never stops the others
+                if first is None:
+                    first = err  # raised below: the poll logs its traceback once and counts it
+                    _LOGGER.error("Autopilot %s failed (%s)", box_id, type(err).__name__)
+                else:
+                    _LOGGER.exception("Autopilot %s failed", box_id)
+        if first is not None:
+            raise first
 
     def view(self, snap: dict[str, Any] | None = None, lang: str | None = None) -> dict[str, Any]:
         boxes = []

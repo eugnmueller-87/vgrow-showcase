@@ -72,6 +72,16 @@ FINGER_ANSWERS = ("dry", "moist", "wet")
 LIFT_ANSWERS = ("light", "medium", "heavy")
 SENSOR_EVERY_S = 6 * 3600  # the soil sensor repeats an unchanged answer this often: a measured index holds 24 h
 SENSOR_DEPTH_CM = 5.0  # the WH51's blade sits about at the finger's depth; it counts as a check at 5 cm
+# Waterings the soil sensor sees (sensor_waterings), no setting needed: a rise is a rise on any scale. On the owner's
+# pot the reading fell less than a point an hour while drying and wobbles by one; moving the blade dropped it 8 points
+# (15.11.2026). Water lifted it 34 to 66 in two readings by hand (15.11.) and 14 to 36 in the pump's 20 minutes (06.11.).
+SENSOR_WATER_RISE = 10.0  # points above the lowest reading of the window before it
+SENSOR_WATER_WINDOW_S = 2 * 3600
+SENSOR_WATER_GAP_S = 12 * 3600  # with no reading in the window (the server was down) the last one counts, this old at most
+SENSOR_WATER_SETTLE_S = 1800  # a rise is logged once it is this old: a pump run that caused it is in the log by then
+SENSOR_WATER_MATCH_S = 3 * 3600  # a watering of the log this close to a rise is the water the sensor saw
+SENSOR_WATER_BACK_S = 14 * 86400  # how far back the sensor's log is read for waterings nobody entered
+SENSOR_WATER_LOOK_S = 300
 ARRIVED_ANSWERS = ("dry", "saucer", "no")  # Ja, Untersetzer trocken / Ja, Wasser im Untersetzer / Nein
 MAX_BACK_S = 7 * 86400  # a watering entered afterwards: at most 7 days back
 MIN_LITERS, MAX_LITERS = 0.05, 20.0
@@ -108,6 +118,14 @@ DE: dict[str, str] = {
                                   "Waage) heben die Sperre auf.",
     "thirst.decision.hold_dry": "Trocken gemeldet, aber zu nass seit {since}: das hebt die Sperre nicht auf. Ab {when} "
                                 "bitte noch einmal prüfen, oder wiegen.",
+    "thirst.decision.hold_unknown": "Gegossen {since}, Menge unbekannt: der Topf zählt als voll. Kein Wasser, bis der "
+                                    "Durst-Index wieder 100 erreicht und eine Prüfung das bestätigt (die Waage, oder "
+                                    "zweimal trocken in 5 cm, 12 h auseinander).",
+    "thirst.decision.hold_check_unknown": "Gegossen {since}, Menge unbekannt; der Durst-Index steht bei {ti} %. Bitte "
+                                          "Finger 5 cm tief: trocken, feucht oder nass? Erst zwei trockene Antworten "
+                                          "mit 12 h Abstand (oder die Waage) heben die Sperre auf.",
+    "thirst.decision.hold_dry_unknown": "Trocken gemeldet, aber die Menge vom {since} ist unbekannt: das hebt die Sperre "
+                                        "nicht auf. Ab {when} bitte noch einmal prüfen, oder wiegen.",
     "thirst.decision.wet": "Fingerprobe nass vor {h} h: 24 h kein Wasser, danach frage ich wieder.",
     "thirst.decision.weigh_or_wait": "Trocken in {depth} cm, aber laut Rechnung erst {ti} %: wiegen oder abwarten, "
                                      "nicht gießen.",
@@ -153,6 +171,7 @@ DE: dict[str, str] = {
     "thirst.block.ports": "die Belegung der Anschlüsse hat sich geändert und ist nicht bestätigt",
     "thirst.block.stage": "die Phase ist nicht bestätigt",
     "thirst.block.wet_hold": "zu nass seit {since}",
+    "thirst.block.wet_hold_unknown": "Menge unbekannt seit {since}",
     "thirst.block.wet": "Fingerprobe nass, 24 h Pause",
     "thirst.why.measured_weigh": "Gewogen vor {h} h.",
     "thirst.why.measured_finger": "Fingerprobe vor {h} h: {answer}.",
@@ -165,6 +184,8 @@ DE: dict[str, str] = {
     "thirst.why.saucer_less": "Beim letzten Gießen stand Wasser im Untersetzer: diesmal 25 % weniger.",
     "thirst.why.wick": "Mit Docht kommt ungezählt Wasser dazu: der Durst-Index ist unsicher.",
     "thirst.why.unknown_amount": "Die Pumpe lief mit unbekannter Menge: gerechnet wird, als wäre der Topf voll.",
+    "thirst.why.unknown_amount_sensor": "Der Bodensensor hat Gießen gesehen, die Menge ist unbekannt: gerechnet wird, als "
+                                        "wäre der Topf voll.",
     "thirst.why.unverified": "USB 1 hatte Strom, ob Wasser floss, ist nicht bestätigt: die Prüfung davor zählt nicht "
                              "mehr.",
     "thirst.why.stage_contested": "Phase strittig: bitte die Phase bestätigen.",
@@ -188,7 +209,9 @@ DE: dict[str, str] = {
     "thirst.origin.app": "App-Plan",
     "thirst.origin.other": "ohne Timer",
     "thirst.origin.owner": "du",
+    "thirst.origin.sensor": "vom Bodensensor gesehen",
     "thirst.event.water": "{litres} gegossen, {origin}",
+    "thirst.event.water_sensor": "Gegossen, vom Bodensensor gesehen ({low} auf {high} %), unbekannte Menge",
     "thirst.event.water_pump": "{port} lief etwa {minutes} min, {origin}: gezählt {litres}",
     "thirst.event.water_unknown": "{port} lief etwa {minutes} min, {origin}, unbekannte Menge",
     "thirst.event.arrived_no": "Wasser nicht angekommen",
@@ -212,6 +235,7 @@ DE: dict[str, str] = {
     "thirst.push.ask": "Durst-Index {ti} %. Seit {h} h keine Antwort: bitte prüfen, {check}",
     "thirst.push.high": "Durst-Index {ti} %. Der Topf braucht dich. Auf Schätzung gieße ich nicht.",
     "thirst.push.blocked": "Seit {h} h fällig und gesperrt: {reasons}.",
+    "thirst.push.due": "Der Topf ist fällig ({measured}), Durst-Index {ti} %. Bitte gießen und im Cockpit eintragen.",
     "thirst.push.wet": "Der Topf ist {h} h nach dem Überschuss noch nass. Bitte wiegen und die Wurzeln ansehen.",
     "thirst.gate.no_pot": "Topf nicht eingerichtet: Bedarf unbekannt.",
     "thirst.gate.unknown": "Noch kein Durst-Index: erst prüfen.",
@@ -254,6 +278,8 @@ DE: dict[str, str] = {
                               "gerade sehr wenig.",
     "thirst.forecast.hold": "Erst muss der Topf abtrocknen: der Durst-Index ab dem Überschuss erreicht 100 "
                             "voraussichtlich {when}.",
+    "thirst.forecast.hold_unknown": "Erst muss der Topf abtrocknen: der Durst-Index ab dem Gießen erreicht 100 "
+                                    "voraussichtlich {when}.",
     "thirst.forecast.check": "Davor prüfen: {check}",
     "thirst.forecast.slot": "Passender Gießtermin: {slot}.",
     "thirst.forecast.hand": "Ohne Gießtermin: von Hand gießen.",
@@ -327,6 +353,14 @@ EN: dict[str, str] = {
                                   "dry, moist or wet? Only two dry answers 12 h apart (or the scale) lift the hold.",
     "thirst.decision.hold_dry": "Dry reported, but too wet since {since}: that does not lift the hold. From {when} "
                                 "please check once more, or weigh.",
+    "thirst.decision.hold_unknown": "Watered {since}, amount unknown: the pot counts as full. No water until the thirst "
+                                    "index is back at 100 and a check confirms it (the scale, or dry twice at 5 cm, "
+                                    "12 h apart).",
+    "thirst.decision.hold_check_unknown": "Watered {since}, amount unknown; the thirst index stands at {ti}%. Please "
+                                          "finger 5 cm deep: dry, moist or wet? Only two dry answers 12 h apart (or the "
+                                          "scale) lift the hold.",
+    "thirst.decision.hold_dry_unknown": "Dry reported, but the amount watered {since} is unknown: that does not lift "
+                                        "the hold. From {when} please check once more, or weigh.",
     "thirst.decision.wet": "Finger test wet {h} h ago: no water for 24 h, then I will ask again.",
     "thirst.decision.weigh_or_wait": "Dry at {depth} cm, but by the model only {ti}%: weigh or wait, do not water.",
     "thirst.decision.alert_high": "Thirst index {ti}%. The pot needs you. I do not water on an estimate.",
@@ -371,6 +405,7 @@ EN: dict[str, str] = {
     "thirst.block.ports": "the port assignment has changed and is not confirmed",
     "thirst.block.stage": "the stage is not confirmed",
     "thirst.block.wet_hold": "too wet since {since}",
+    "thirst.block.wet_hold_unknown": "amount unknown since {since}",
     "thirst.block.wet": "finger test wet, 24 h pause",
     "thirst.why.measured_weigh": "Weighed {h} h ago.",
     "thirst.why.measured_finger": "Finger test {h} h ago: {answer}.",
@@ -383,6 +418,8 @@ EN: dict[str, str] = {
     "thirst.why.saucer_less": "Water stood in the saucer after the last watering: 25% less this time.",
     "thirst.why.wick": "With a wick, water comes in uncounted: the thirst index is uncertain.",
     "thirst.why.unknown_amount": "The pump ran with an unknown amount: the model counts the pot as full.",
+    "thirst.why.unknown_amount_sensor": "The soil sensor saw a watering of unknown amount: the model counts the pot as "
+                                        "full.",
     "thirst.why.unverified": "USB 1 had power, whether water flowed is not confirmed: the check before no longer counts.",
     "thirst.why.stage_contested": "Stage contested: please confirm the stage.",
     "thirst.confidence.high": "high",
@@ -405,7 +442,9 @@ EN: dict[str, str] = {
     "thirst.origin.app": "app plan",
     "thirst.origin.other": "without a timer",
     "thirst.origin.owner": "you",
+    "thirst.origin.sensor": "seen by the soil sensor",
     "thirst.event.water": "{litres} watered, {origin}",
+    "thirst.event.water_sensor": "Watered, seen by the soil sensor ({low} to {high}%), amount unknown",
     "thirst.event.water_pump": "{port} ran about {minutes} min, {origin}: counted {litres}",
     "thirst.event.water_unknown": "{port} ran about {minutes} min, {origin}, unknown amount",
     "thirst.event.arrived_no": "Water did not arrive",
@@ -429,6 +468,7 @@ EN: dict[str, str] = {
     "thirst.push.ask": "Thirst index {ti}%. No answer for {h} h: please check, {check}",
     "thirst.push.high": "Thirst index {ti}%. The pot needs you. I do not water on an estimate.",
     "thirst.push.blocked": "Due and blocked for {h} h: {reasons}.",
+    "thirst.push.due": "The pot is due ({measured}), thirst index {ti}%. Please water and log it in the cockpit.",
     "thirst.push.wet": "The pot is still wet {h} h after the overshoot. Please weigh it and look at the roots.",
     "thirst.gate.no_pot": "Pot not set up: need unknown.",
     "thirst.gate.unknown": "No thirst index yet: check first.",
@@ -468,6 +508,8 @@ EN: dict[str, str] = {
     "thirst.forecast.range_open": "Uncertain: at the earliest {early}, the latest is open.",
     "thirst.forecast.beyond": "No watering in the next {days} days: by the model the pot uses very little right now.",
     "thirst.forecast.hold": "First the pot has to dry: the thirst index from the overshoot reaches 100 about {when}.",
+    "thirst.forecast.hold_unknown": "First the pot has to dry: the thirst index from the watering reaches 100 about "
+                                    "{when}.",
     "thirst.forecast.check": "Check before: {check}",
     "thirst.forecast.slot": "Matching watering slot: {slot}.",
     "thirst.forecast.hand": "Without a watering slot: water by hand.",
@@ -975,6 +1017,7 @@ class Ledger:
     hard_drydown: bool = False
     first_cycle: bool = True
     unknown_amount: bool = False
+    unknown_origin: str | None = None  # who gave the water of unknown amount: a pump run's origin, or "sensor"
     unverified: dict[str, Any] | None = None
     waterings: list[dict[str, Any]] = field(default_factory=list)
     events: list[dict[str, Any]] = field(default_factory=list)
@@ -1004,6 +1047,47 @@ def _step_down(model: Model, volume: float) -> float:
     limit = volume * (1 - float(model("pot_step_margin")))
     steps = [float(s) for s in model("pot_steps_l") if float(s) < limit]
     return steps[-1] if steps else volume
+
+
+def sensor_rises(rows: Iterable[Mapping[str, Any]]) -> list[dict[str, Any]]:
+    """Waterings in the soil sensor's log ({"at", "percent"}, oldest first): a reading SENSOR_WATER_RISE points or more
+    above the lowest reading of the window before it. The readings of the window after a rise belong to that watering,
+    so its drain-down, or a second can poured on top, never count twice. Each: the first high reading's time, the low
+    before it and the highest reading of the watering."""
+    out: list[dict[str, Any]] = []
+    recent: list[tuple[float, float]] = []
+    last: tuple[float, float] | None = None
+    current: dict[str, Any] | None = None
+    for row in rows:
+        at, percent = _num(row.get("at")), _num(row.get("percent"))
+        if at is None or percent is None:
+            continue
+        recent = [(t0, p) for t0, p in recent if at - t0 <= SENSOR_WATER_WINDOW_S]
+        low = min((p for _, p in recent), default=None)
+        if low is None and last is not None and at - last[0] <= SENSOR_WATER_GAP_S:
+            low = last[1]
+        if current is not None:
+            if at - current["at"] > SENSOR_WATER_WINDOW_S:
+                current = None
+            else:
+                current["high"] = max(current["high"], percent)
+        if current is None and low is not None and percent - low >= SENSOR_WATER_RISE:
+            current = {"at": at, "low": low, "high": percent}
+            out.append(current)
+        recent.append((at, percent))
+        last = (at, percent)
+    return out
+
+
+def covers_rise(water: Mapping[str, Any], at: float) -> bool:
+    """Whether a watering of the log stands for the water a sensor rise at `at` saw: within SENSOR_WATER_MATCH_S of its
+    time, or of its run (from until its end) for a pump run."""
+    end = _num(water.get("at"))
+    if end is None:
+        return False
+    start = _num(water.get("from"))
+    start = end if start is None else min(start, end)
+    return start - SENSOR_WATER_MATCH_S <= at <= end + SENSOR_WATER_MATCH_S
 
 
 def fold(pot: Pot | None, events: Iterable[Mapping[str, Any]], series: Series, now: float, model: Model, *,
@@ -1036,6 +1120,11 @@ def fold(pot: Pot | None, events: Iterable[Mapping[str, Any]], series: Series, n
     rows = sorted((dict(e) for e in events if isinstance(e, Mapping) and _num(e.get("at")) is not None),
                   key=lambda e: (float(e["at"]), str(e.get("id") or "")))
     rows = [e for e in rows if pot.set_at <= float(e["at"]) <= now]
+    # A watering the soil sensor saw is the same water as a watering of the log close to it (entered by hand later, a
+    # pump run, a feed): that one counts, with its litres when it has them.
+    given = [e for e in rows if e.get("kind") == "water" and e.get("origin") != "sensor"]
+    rows = [e for e in rows if not (e.get("kind") == "water" and e.get("origin") == "sensor"
+                                    and any(covers_rise(w, float(e["at"])) for w in given))]
     # The arrival answers of pump runs and waterings belong to their event: "Nein" makes its water 0, "Wasser im
     # Untersetzer" is the saucer answer at the time it was given.
     arrived: dict[str, str] = {}
@@ -1074,8 +1163,9 @@ def fold(pot: Pot | None, events: Iterable[Mapping[str, Any]], series: Series, n
         ledger.gap_s = 0.0
         ledger.unverified = None
 
-    def start_hold(at: float) -> None:
-        ledger.hold = {"since": at, "d_l": 0.0, "dry": [], "weighed": False, "wet_at": None}
+    def start_hold(at: float, cause: str = "wet") -> None:
+        # cause: "unknown" (water of unknown amount, the card says so instead of "too wet"), "overshoot" or "wet"
+        ledger.hold = {"since": at, "d_l": 0.0, "dry": [], "weighed": False, "wet_at": None, "cause": cause}
 
     def lift_hold() -> None:
         hold = ledger.hold
@@ -1108,33 +1198,35 @@ def fold(pot: Pot | None, events: Iterable[Mapping[str, Any]], series: Series, n
                 state["n_water"] += 1
                 ledger.saucer_less = False  # the smaller dose after water in the saucer and the half dose after a
                 ledger.hard_drydown = False  # hard dry-down were for this watering; the next one is judged anew
-            if litres is None:  # a pump run of unknown amount: counted as full, the side that never adds water
-                state["d"] = 0.0
+            if litres is None:  # a pump run (or a watering the sensor saw) of unknown amount: counted as full, the
+                state["d"] = 0.0  # side that never adds water
                 anchor("unknown_amount", at, unknown_band)
                 ledger.overshoot = {"unknown": True, "at": at}
                 ledger.unknown_amount = True
+                ledger.unknown_origin = entry["origin"]
                 ledger.measured = None
-                start_hold(at)
+                start_hold(at, "unknown")
             elif litres > 0:
                 if state["d"] is not None:
                     excess = max(0.0, litres - state["d"])
                     state["d"] = max(0.0, state["d"] - litres)
                     if excess > 0.0005:
                         ledger.overshoot = {"ml": excess * 1000, "at": at}
-                        start_hold(at)
+                        start_hold(at, "overshoot")
                 else:
                     # water on a pot without an anchor: counted as full, wide band (review: every event re-anchors)
                     state["d"] = 0.0
                     anchor("water_unanchored", at, unknown_band)
                 ledger.measured = None
                 ledger.unknown_amount = False
+                ledger.unknown_origin = None
                 if ledger.hold is not None and at > ledger.hold["since"]:
                     ledger.hold["d_l"] = max(0.0, ledger.hold["d_l"] - litres)
             ledger.drains_without += 1 if litres is None or litres > 0 else 0
             if answer == "saucer":
                 _saucer(ledger, state, at, model, start_hold, anchor, set_pot)
             shown.append({**entry, "kind": "water", "arrived": answer, "minutes": e.get("minutes"),
-                          "port": e.get("port")})
+                          "port": e.get("port"), "rise": e.get("rise")})
         elif kind == "saucer":
             if e.get("water") is True:
                 _saucer(ledger, state, at, model, start_hold, anchor, set_pot)
@@ -1346,7 +1438,7 @@ def blocks(snap: Mapping[str, Any], ledger: Ledger, *, now: float, model: Model,
         add("stage")
     # the wet-hold, and a wet finger answer
     if ledger.hold is not None:
-        add("wet_hold", since=float(ledger.hold["since"]))
+        add("wet_hold_unknown" if ledger.hold.get("cause") == "unknown" else "wet_hold", since=float(ledger.hold["since"]))
     if ledger.wet_until is not None and now < ledger.wet_until:
         add("wet")
     return out
@@ -1537,6 +1629,13 @@ def trigger(ledger: Ledger, block_list: list[dict[str, Any]], now: float, model:
 
 # ---------- texts of a decision ----------
 
+def measured_text(ledger: Ledger, lang: str | None = None) -> str:
+    """How the pot was measured due: weighed, light to lift, the soil sensor, or the finger."""
+    measured = (ledger.measured or {}).get("kind")
+    return t("thirst.measured.weigh" if measured == "weigh" else "thirst.measured.lift" if measured == "lift"
+             else "thirst.measured.sensor" if measured == "sensor" else "thirst.measured.finger", lang)
+
+
 def decision_text(decision: Decision, ledger: Ledger, now: float, lang: str | None = None,
                   tz: tzinfo | None = None) -> str:
     lang = i18n.normalize(lang) or i18n.current_lang()
@@ -1567,11 +1666,7 @@ def decision_text(decision: Decision, ledger: Ledger, now: float, lang: str | No
         return t("thirst.decision.blocked", lang, ti=ti, reasons=reasons)
     if reason == "hand":
         found = decision.dose or {}
-        measured = (ledger.measured or {}).get("kind")
-        return t("thirst.decision.propose", lang, ti=ti,
-                 measured=t("thirst.measured.weigh" if measured == "weigh" else "thirst.measured.lift"
-                            if measured == "lift" else "thirst.measured.sensor" if measured == "sensor"
-                            else "thirst.measured.finger", lang),
+        return t("thirst.decision.propose", lang, ti=ti, measured=measured_text(ledger, lang),
                  litres=fmt_num(found.get("litres"), lang), n=found.get("portions"), soak=found.get("soak_min"))
     if reason == "round":
         return t("thirst.decision.wait_round", lang, ti=ti, when=when_text(decision.next_look or now, now, lang, tz))
@@ -1581,12 +1676,14 @@ def decision_text(decision: Decision, ledger: Ledger, now: float, lang: str | No
     if reason in ("hold", "hold_check", "hold_dry"):
         since = float((ledger.hold or {}).get("since") or now)
         since_text = f"{day_text(local_day(since, tz), lang)} {clock_text(since, lang, tz)}"
+        # water of unknown amount is not known to be too much: the card says what is known, the hold stays the same
+        unknown = "_unknown" if (ledger.hold or {}).get("cause") == "unknown" else ""
         if reason == "hold_dry":
-            return t("thirst.decision.hold_dry", lang, since=since_text,
+            return t(f"thirst.decision.hold_dry{unknown}", lang, since=since_text,
                      when=when_text(decision.next_look or now, now, lang, tz))
         if reason == "hold_check":
-            return t("thirst.decision.hold_check", lang, since=since_text, ti=ti)
-        return t("thirst.decision.hold", lang, since=since_text)
+            return t(f"thirst.decision.hold_check{unknown}", lang, since=since_text, ti=ti)
+        return t(f"thirst.decision.hold{unknown}", lang, since=since_text)
     if reason == "weigh_or_wait":
         found = ledger.dry_below or {}
         return t("thirst.decision.weigh_or_wait", lang, depth=fmt_num(found.get("depth_cm") or 5, lang),
@@ -1636,7 +1733,8 @@ def why_lines(decision: Decision, ledger: Ledger, now: float, lang: str | None =
         out.append(t("thirst.why.band", lang, band=fmt_num(int(round(ledger.band)), lang),
                      confidence=t(f"thirst.confidence.{ledger.confidence}", lang)))
     if ledger.unknown_amount:
-        out.append(t("thirst.why.unknown_amount", lang))
+        out.append(t("thirst.why.unknown_amount_sensor" if ledger.unknown_origin == "sensor"
+                     else "thirst.why.unknown_amount", lang))
     if ledger.unverified is not None:
         out.append(t("thirst.why.unverified", lang))
     if ledger.pot.wick:
@@ -1662,6 +1760,9 @@ def event_text(event: Mapping[str, Any], lang: str | None = None) -> str:
         if event.get("arrived") == "no":
             return t("thirst.event.arrived_no", lang)
         origin = t(f"thirst.origin.{event.get('origin') or 'hand'}", lang)
+        rise = event.get("rise")
+        if event.get("origin") == "sensor" and isinstance(rise, list | tuple) and len(rise) == 2:
+            return t("thirst.event.water_sensor", lang, low=fmt_num(rise[0], lang), high=fmt_num(rise[1], lang))
         if event.get("litres") is None:
             return t("thirst.event.water_unknown", lang, port=port, minutes=minutes, origin=origin)
         if event.get("port"):
@@ -1819,6 +1920,16 @@ class Thirst:
         self._listening: Any = None
         self._read_cache: dict[str, tuple[Any, list[dict[str, Any]]]] = {}
         self.jug_until: float | None = None  # the pump's next run goes into the owner's measuring jug (jug_run)
+        # hook: the soil sensor's logged readings of the last hours (vgrow/soil.py history), set by the server; with it
+        # sensor_check finds waterings nobody entered
+        self.soil_history: Callable[[float], list[dict[str, Any]]] | None = None
+        self._water_look_at = 0.0
+        # The supervision's evidence (vgrow/supervision.py), each set only when its step ran to its end: check() past
+        # its ledger, the newest check or weighing that ledger holds, and a sensor look past its loop. The index sat
+        # nine days without a measurement in November 2026 and nothing said so.
+        self.checked_at: float | None = None
+        self.measured_at: float | None = None
+        self.look_at: float | None = None
 
     def jug_run(self, seconds: float) -> None:
         """The next pump run goes into a measuring jug (vgrow/grow_plan.py): seen, never counted as water in the pot."""
@@ -2098,21 +2209,52 @@ class Thirst:
             _LOGGER.exception("Thirst: USB report not taken")
 
     async def check(self, snap: Mapping[str, Any]) -> Decision | None:
-        """After every poll: the ET series, the lights, the pump port, the escalation."""
+        """After every poll: the ET series, the lights, the pump port, the escalation. A failing step never stops the
+        others, and the first one is raised once all have run and the state is saved: the poll counts a step that
+        raises (vgrow/supervision.py, supervision_failing). An ET sample failing on every poll, an unreadable model
+        among the causes, was only a log line before, while checked_at kept thirst_engine green (review of
+        15.11.2026). The ledger keeps its own catch: thirst_engine reads checked_at for it."""
         now = self.clock()
+        first: Exception | None = None
         for step in (self._sample, self._lights, self._ports):
             try:
                 step(snap, now)
-            except Exception:  # noqa: BLE001 (one failing step never stops the others)
-                _LOGGER.exception("Thirst: poll step %s failed", step.__name__)
+            except Exception as err:  # noqa: BLE001 (one failing step never stops the others)
+                if first is None:
+                    first = err  # raised below: the poll logs its traceback once and counts it
+                    _LOGGER.error("Thirst: poll step %s failed (%s)", step.__name__, type(err).__name__)
+                else:
+                    _LOGGER.exception("Thirst: poll step %s failed", step.__name__)
         decision: Decision | None = None
         try:
             ledger, decision, _ctx = self.assess(snap, now)
             await self._escalate(ledger, decision, now)
+            # The supervision's evidence: this check ran to its end, and the newest check or weighing it holds. Only
+            # those two: every watering clears "measured", and the gate then answers unmeasured.
+            seen = [ledger.last_weigh, (ledger.last_check or {}).get("at")]
+            self.checked_at = now
+            self.measured_at = max((float(s) for s in seen if _num(s) is not None), default=None)
         except Exception:  # noqa: BLE001 (a broken ledger must not stop the poll)
             _LOGGER.exception("Thirst: the ledger failed")
         self._maybe_save(now)
+        if first is not None:
+            raise first
         return decision
+
+    def supervision(self) -> dict[str, Any]:
+        """Plain data for the supervision (vgrow/supervision.py), read only: when the pot was set up (pot_set_at, None
+        without a pot), the newest check or weighing of the last good check() (measured_at), when check() and a sensor
+        look last ran to their end (checked_at, look_at), how long a measurement counts (valid_s, the model's
+        measured_valid_s; None with a broken model) and whether the watering schedule is on (schedule_on)."""
+        pot = self.pot()
+        try:
+            valid: float | None = float(load_model(self.model_path)("measured_valid_s"))
+        except ModelError:
+            valid = None
+        cfg = self.schedule()
+        return {"pot_set_at": pot.set_at if pot is not None else None, "measured_at": self.measured_at,
+                "checked_at": self.checked_at, "look_at": self.look_at, "valid_s": valid,
+                "schedule_on": bool(cfg and cfg.get("enabled"))}
 
     def _key(self) -> str:
         """What must reach the disk at once: everything but the held inputs and the series head."""
@@ -2296,6 +2438,16 @@ class Thirst:
                 await self._push("thirst.push.title", "thirst.push.high", 4, ti=ti_text(ti))
         elif ti is None or ti < float(model("alert_ti")) - 10:
             alerted.pop("pushed_high", None)  # well below again: the next time it is said again
+        # A measured due pot that nothing waters by itself: said at once, not 12 h later as a block (owner 15.11.2026,
+        # he found the pot dry by hand twice). A scheduled round (WAIT) waters it, so that one stays quiet.
+        if decision.kind in ("PROPOSE", "BLOCKED") and ledger.measured is not None and ti is not None and \
+                ti >= float(model("due_ti")):
+            if not alerted.get("pushed_due"):
+                alerted["pushed_due"] = now
+                await self._push("thirst.push.title", "thirst.push.due", 3, ti=ti_text(ti),
+                                 measured=measured_text(ledger, i18n.server_lang()))
+        elif ledger.measured is None or ti is None or ti < float(model("due_ti")) - 10:
+            alerted.pop("pushed_due", None)  # watered: the next dry pot is said again
         blocked = self.state.get("blocked") if isinstance(self.state.get("blocked"), dict) else None
         due = ledger.measured is not None and ti is not None and ti > float(model("due_ti"))
         if decision.kind in ("BLOCKED", "ALERT") and decision.blocks and due:
@@ -2497,7 +2649,8 @@ class Thirst:
             lines.append(t("thirst.forecast.beyond", lang, days=fmt_num(round(horizon / 86400), lang)))
         elif in_hold:
             out["kind"] = "hold"
-            lines.append(t("thirst.forecast.hold", lang, when=part_text(float(ahead["due"]), now, lang, self.tz)))
+            key = "thirst.forecast.hold_unknown" if (ledger.hold or {}).get("cause") == "unknown" else "thirst.forecast.hold"
+            lines.append(t(key, lang, when=part_text(float(ahead["due"]), now, lang, self.tz)))
         elif ahead["due"] <= now + 1 and ledger.measured is not None:
             out["kind"] = "measured"
             lines.append(t("thirst.forecast.measured", lang, litres=litres_said))
@@ -2731,11 +2884,18 @@ class Thirst:
     def sensor_check(self, view: Mapping[str, Any]) -> None:
         """Hook for the soil sensor (vgrow/soil.py, on_reading): a calibrated reading is a check like the finger, below
         the target dry, in the band moist, above it wet. Written once an answer has held for two readings, and again
-        every SENSOR_EVERY_S. It only logs: what a check does to the index, the holds and the gate stays in the ledger."""
+        every SENSOR_EVERY_S. It only logs: what a check does to the index, the holds and the gate stays in the ledger.
+        Every SENSOR_WATER_LOOK_S, set to the soil or not, it also looks for waterings nobody entered."""
+        now = self.clock()
+        if self.soil_history is not None and now >= self._water_look_at:
+            self._water_look_at = now + SENSOR_WATER_LOOK_S
+            try:
+                self.sensor_waterings()
+            except Exception:  # a failed look costs this look, never the sensor's check
+                _LOGGER.exception("Thirst: sensor waterings failed")
         answer = {"low": "dry", "ok": "moist", "high": "wet"}.get(view.get("state"))
         if answer is None or self.pot() is None:
             return
-        now = self.clock()
         seen = self.state.get("sensor") or {}
         if answer != seen.get("seen"):
             self.state["sensor"] = {**seen, "seen": answer}
@@ -2747,6 +2907,33 @@ class Thirst:
         self.state["sensor"] = {"seen": answer, "answer": answer, "at": now}
         self.state["ask"] = None
         self.save()
+
+    def sensor_waterings(self) -> list[dict[str, Any]]:
+        """Waterings the soil sensor saw that the log does not have: logged as water of unknown amount, origin sensor.
+        Waterings by hand that nobody entered left the index counting from a pump run nine days old (07.11., 12.11. and
+        15.11.2026). The ledger counts such water like a pump run of unknown amount, the pot full and the wet-hold,
+        unless a watering of the log covers the same time; the card asks once whether it was water, and "Nein" makes it
+        0 (a pressed or moved blade is not water). Nothing while a pump run is open: it is logged when it ends."""
+        pot = self.pot()
+        if pot is None or self.soil_history is None or self.state.get("runs"):
+            return []
+        now = self.clock()
+        since = max(pot.set_at, now - SENSOR_WATER_BACK_S)
+        known = [e for e in [*self.entries(), *self.feed_waterings()] if e.get("kind") == "water"]
+        logged = []
+        for found in sensor_rises(self.soil_history(max(0.0, now - since) / 3600)):
+            if not since <= found["at"] <= now - SENSOR_WATER_SETTLE_S:
+                continue
+            if any(covers_rise(w, found["at"]) for w in known):
+                continue
+            entry = self.log({"kind": "water", "litres": None, "origin": "sensor",
+                              "rise": [found["low"], found["high"]]}, at=found["at"])
+            _LOGGER.info("Thirst: the soil sensor saw a watering at %s (%s to %s %%)", found["at"], found["low"],
+                         found["high"])
+            known.append(entry)
+            logged.append(entry)
+        self.look_at = now  # past the loop only: the early return above (no pot, no history, a run open) is no look
+        return logged
 
     def manual(self, body: Mapping[str, Any]) -> dict[str, Any]:
         """thirst_manual: water given by hand, its litres; the time defaults to now. Above manual_confirm_above_l the
@@ -2838,7 +3025,9 @@ class Thirst:
                 later = [e for e in ledger.events if e.get("kind") == "saucer" and float(e["at"]) >= float(w["at"])]
                 if later:
                     return None
-                return {"event": w["id"], "at": w["at"], "pump": bool(w.get("pump"))}
+                # a watering the sensor saw gets the pump's question with its "Nein": it may not have been water
+                return {"event": w["id"], "at": w["at"], "pump": bool(w.get("pump")),
+                        "sensor": w.get("origin") == "sensor"}
             return None
         return None
 
@@ -2941,7 +3130,8 @@ class Thirst:
             "last_check": ledger.last_check,
             "last_weigh": ledger.last_weigh,
             "overshoot": ledger.overshoot,
-            "hold": None if ledger.hold is None else {"since": ledger.hold["since"], "dry": len(ledger.hold["dry"])},
+            "hold": None if ledger.hold is None else {"since": ledger.hold["since"], "dry": len(ledger.hold["dry"]),
+                                                      "cause": ledger.hold.get("cause")},
             "drains_without": ledger.drains_without,
             "rate_l_day": None if ledger.rate_l_day is None else round(ledger.rate_l_day, 3),
             "stage": {"key": (stage or {}).get("key"), "label": (shown_stage or {}).get("label"),
@@ -2960,6 +3150,7 @@ class Thirst:
             # hook: the water dashboard's tile (web/water.js); a watering of unknown amount counts once, without litres
             "given_week_l": round(sum((w.get("litres") or 0) for w in week), 3),
             "given_week_n": len(week),
+            "given_week_unknown": sum(1 for w in week if w.get("litres") is None),
             "forecast": forecast,
             "plan": plan,
             "gate": self._gate_preview(ledger, ctx, now, lang),

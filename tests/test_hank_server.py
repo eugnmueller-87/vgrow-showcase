@@ -86,7 +86,7 @@ def test_make_app_signature_is_backward_compatible() -> None:
     params = list(inspect.signature(make_app).parameters.values())
     assert [p.name for p in params] == ["box", "alerts", "key", "camera", "plant_log", "vision", "automation",
                                         "hank", "measurements", "autopilot", "pump_history", "watering", "extra_cameras", "light_schedule",
-                                        "thirst", "pest", "soil", "fan_stick", "grow_plan"]  # the Durst-Index (26.10.2026), the pest watch (31.10.2026), the soil sensor and the E6, the grow plan's stick (06.11.2026)
+                                        "thirst", "pest", "soil", "fan_stick", "grow_plan", "supervisor"]  # the Durst-Index (26.10.2026), the pest watch (31.10.2026), the soil sensor and the E6, the grow plan's stick (06.11.2026), the supervision (15.11.2026)
     assert params[-1].default is None  # spec 10.1 rule 5: new parameters go last, with a default
 
     async def go() -> None:

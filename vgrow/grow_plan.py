@@ -21,6 +21,9 @@ soil sensor (soil.py). They all read the stage. This module adds what connects t
   to 30, lollipopping from 40. Each one pushes once when the plant reaches it. Switching to flower stays the owner's tap; the
   light then follows the stage card by itself. The strip's flowering field fits the rule of thumb: a plant about doubles when
   it flowers (S43), 92 cm growing height minus 35 cm to the lamp leaves 57 cm, half of that is 28 cm.
+- Topping. The owner says on which day he cut (every cut counts, the last one sets the clock). A week of rest after it: the plan
+  raises no light. A week after the cut one push: count the nodes on the new tops. The flowering mark waits two weeks after the
+  last cut before it pushes or offers the switch. Numbers and sources at TOP_REST_DAYS.
 - Feeding. Plain water until the owner's first day with fertilizer (plant log feed_from, feeding.evaluate), one push on the day.
 - Water watch. The need gate decides; this module sets it up: two slots a day that follow the light plan, a run time from the
   stage's cap and the measured flow (the gate shortens it to the dose). After every pump run it looks at the soil sensor: did
@@ -40,7 +43,7 @@ import math
 import statistics
 import time
 from collections.abc import Callable, Mapping
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
@@ -105,6 +108,18 @@ MARKS = (
     {"id": "lollipop", "from": 40.0, "until": None, "photo": False},
 )
 
+# Topping (owner, 13.11.2026; sources in kartei/methods/topping.json, read 13.11.2026). Rest: "a 7-10 days recovery period after
+# topping is required" (Gaudreau et al. 2020, Plant Science Today 7(4), for rooted cuttings); experience sources give 5 to 14 days
+# and "a stable environment and consistent watering for the first 5 to 7 days" (ILGM), so the plan raises no light in it.
+# Next cut: with 2 to 3 nodes of its own on each new top (Royal Queen Seeds; Zamnesia: three), 1 to 2 weeks between cuts
+# (Royal Queen Seeds, Zamnesia, ILGM): one look after a week, the owner counts. Flowering: two weeks after the last cut (Gaudreau
+# et al. 2020, Fig. 2: "Additionnal vegetative growth (2 weeks)"; ILGM: "at least 2 weeks"). Danziger and Bernstein 2021 cut at
+# the switch itself and still had more yield, so the two weeks are the careful side of an open conflict.
+TOP_REST_DAYS = 7
+TOP_LOOK_DAYS = 7
+TOP_FLOWER_DAYS = 14
+TOP_BACK_DAYS = 7  # how far back the owner may date a cut
+
 DE: dict[str, str] = {
     "gp.title": "Plan für diese Pflanze",
     "gp.sub": "Tag {day} in der Box · Phase {stage}",
@@ -135,6 +150,7 @@ DE: dict[str, str] = {
     "gp.light.hold.lamp": "Bleibt bei {level}: nur noch {gap} bis zur Lampe, mindestens {min} sind nötig.",
     "gp.light.hold.no_height": "Bleibt bei {level}: ohne Höhe kein Blick auf den Lampenabstand.",
     "gp.light.hold.no_data": "Bleibt bei {level}: zu wenig Messwerte aus der letzten Hellphase.",
+    "gp.light.hold.topping": "Bleibt bei {level}: Erholung nach dem Toppen bis {date}.",
     "gp.light.off": "Lichtplan ist aus. Er startet erst, wenn du ihn einschaltest.",
     "gp.light.schedule": "an {on}, aus {off}",
     "gp.soil.sub_raw": "Sensor, noch nicht auf deine Erde eingestellt",
@@ -206,9 +222,18 @@ DE: dict[str, str] = {
     "gp.mark.flowering_text": "Licht auf 12/12. In der Blüte verdoppelt sich die Höhe etwa, manche Pflanzen verdreifachen sie (growweedeasy). Bei 92 cm Wuchshöhe und 35 cm zur Lampe heißt das: bei etwa 28 cm umstellen. Ein Steckling braucht dafür Wurzeln.",
     "gp.mark.flowering_btn": "Auf Blüte umstellen",
     "gp.mark.flowering_again": "Nochmal tippen: Licht geht auf 12/12",
+    "gp.mark.flowering_wait": "ab {date}",
+    "gp.mark.flowering_wait_text": "Erst zwei Wochen nach dem letzten Toppen, also ab {date}. So lange wächst die Pflanze weiter und erholt sich vom Schnitt.",
+    "gp.mark.wait": "wartet",
+    "gp.mark.topped_field": "Getoppt am",
+    "gp.mark.topped_btn": "Getoppt",
+    "gp.mark.topped_again_btn": "Nochmal getoppt",
+    "gp.mark.topped_text": "Getoppt am {dates}. Erholung bis {rest}: Gießen, Licht und Klima bleiben gleichmäßig, der Plan hebt das Licht nicht an. Ab {look} die Knoten an den neuen Spitzen zählen: mit 2 bis 3 eigenen Knoten je Spitze kann nochmal getoppt werden.",
     "gp.mark.lollipop": "Unten ausputzen",
     "gp.mark.lollipop_text": "Der Streifen markiert das Lollipopping ab 40 cm.",
     "gp.log.title": "Was der Plan getan hat",
+    "gp.log.topped": "Getoppt am {date}: Erholung bis {rest}, Blüte frühestens ab {flower}.",
+    "gp.log.held_topping": "Licht bleibt bei {level}: Erholung nach dem Toppen bis {date}.",
     "gp.log.start": "Plan gestartet: Licht {level}, Ziel {goal}.",
     "gp.log.raised": "Licht beim nächsten Einschalten {level}: letzte Hellphase bis {temp}, Grenze {limit}.",
     "gp.log.held_warm": "Licht bleibt bei {level}: letzte Hellphase bis {temp}, Grenze {limit}.",
@@ -236,6 +261,7 @@ DE: dict[str, str] = {
     "gp.push.flowering": "{plant} steht bei {cm}, im Feld Flowering. Im Plan auf Blüte umstellen: das Licht geht dann auf 12/12.",
     "gp.push.flowering_late": "{plant} steht bei {cm} und ist noch nicht auf Blüte. Je später, desto näher kommt sie der Lampe.",
     "gp.push.lollipop": "{plant} steht bei {cm}: unten ausputzen.",
+    "gp.push.retop": "{plant} wurde vor einer Woche getoppt. Zähl die Knoten an den neuen Spitzen: mit 2 bis 3 eigenen Knoten je Spitze kann nochmal getoppt werden. Danach zwei Wochen bis zur Blüte.",
     "gp.push.lamp": "{plant} steht bei {cm}: nur noch {gap} bis zur Lampe. Netz tiefer oder Licht runter.",
     "gp.push.tank": "Befeuchter fast leer (geschätzt noch {ml}): auffüllen und auf der Geräteseite eintragen, sonst fällt die Feuchte.",
     "gp.push.tank_stopped": "Der Befeuchter hat Strom, aber die Feuchte an der Pflanze fällt: Tank leer oder Düse zu? Bitte nachsehen.",
@@ -247,6 +273,7 @@ DE: dict[str, str] = {
     "gp.err.watch_on": "Die Gießwache läuft: erst ausschalten, dann messen.",
     "gp.err.no_ports": "USB 1 meldet sich gerade nicht.",
     "gp.err.unknown_mark": "Diese Markierung gibt es nicht.",
+    "gp.err.topped_day": "Ein Tag von heute bis vor {days} Tagen.",
     "gp.err.no_plan": "Kein Plan für diesen Durchgang.",
     "gp.err.goal": "Das Lichtziel liegt zwischen {low} und 100 %.",
     "gp.settings.title": "Einstellen",
@@ -305,6 +332,7 @@ EN: dict[str, str] = {
     "gp.light.hold.lamp": "Stays at {level}: only {gap} to the lamp, at least {min} are needed.",
     "gp.light.hold.no_height": "Stays at {level}: without a height no check of the lamp distance.",
     "gp.light.hold.no_data": "Stays at {level}: too few readings from the last light period.",
+    "gp.light.hold.topping": "Stays at {level}: rest after topping until {date}.",
     "gp.light.off": "The light plan is off. It starts only when you switch it on.",
     "gp.light.schedule": "on {on}, off {off}",
     "gp.soil.sub_raw": "sensor, not yet set to your soil",
@@ -376,9 +404,18 @@ EN: dict[str, str] = {
     "gp.mark.flowering_text": "Light to 12/12. In flower the height about doubles, some plants triple (growweedeasy). With 92 cm growing height and 35 cm to the lamp that means: switch at about 28 cm. A cutting needs roots for this.",
     "gp.mark.flowering_btn": "Switch to flower",
     "gp.mark.flowering_again": "Tap again: the light goes to 12/12",
+    "gp.mark.flowering_wait": "from {date}",
+    "gp.mark.flowering_wait_text": "Only two weeks after the last topping, so from {date}. Until then the plant keeps growing and recovers from the cut.",
+    "gp.mark.wait": "waiting",
+    "gp.mark.topped_field": "Topped on",
+    "gp.mark.topped_btn": "Topped",
+    "gp.mark.topped_again_btn": "Topped again",
+    "gp.mark.topped_text": "Topped on {dates}. Rest until {rest}: watering, light and climate stay steady, the plan does not raise the light. From {look} count the nodes on the new tops: with 2 to 3 nodes of its own on each top it can be topped again.",
     "gp.mark.lollipop": "Clean up below",
     "gp.mark.lollipop_text": "The strip marks lollipopping from 40 cm.",
     "gp.log.title": "What the plan did",
+    "gp.log.topped": "Topped on {date}: rest until {rest}, flower from {flower} at the earliest.",
+    "gp.log.held_topping": "Light stays at {level}: rest after topping until {date}.",
     "gp.log.start": "Plan started: light {level}, goal {goal}.",
     "gp.log.raised": "Light at the next lights on {level}: last light period up to {temp}, limit {limit}.",
     "gp.log.held_warm": "Light stays at {level}: last light period up to {temp}, limit {limit}.",
@@ -406,6 +443,7 @@ EN: dict[str, str] = {
     "gp.push.flowering": "{plant} stands at {cm}, in the Flowering field. Switch to flower in the plan: the light then goes to 12/12.",
     "gp.push.flowering_late": "{plant} stands at {cm} and is not in flower yet. The later, the closer it gets to the lamp.",
     "gp.push.lollipop": "{plant} stands at {cm}: clean up below.",
+    "gp.push.retop": "{plant} was topped a week ago. Count the nodes on the new tops: with 2 to 3 nodes of its own on each top it can be topped again. After that, two weeks until flower.",
     "gp.push.lamp": "{plant} stands at {cm}: only {gap} to the lamp. Net lower or light down.",
     "gp.push.tank": "Humidifier nearly empty (estimated {ml} left): fill it up and log it on the devices page, or the humidity falls.",
     "gp.push.tank_stopped": "The humidifier has power, but the humidity at the plant is falling: tank empty or nozzle blocked? Please check.",
@@ -417,6 +455,7 @@ EN: dict[str, str] = {
     "gp.err.watch_on": "The water watch is running: switch it off first, then measure.",
     "gp.err.no_ports": "USB 1 is not reporting right now.",
     "gp.err.unknown_mark": "There is no such mark.",
+    "gp.err.topped_day": "A day from today back to {days} days ago.",
     "gp.err.no_plan": "No plan for this run.",
     "gp.err.goal": "The light goal is between {low} and 100%.",
     "gp.settings.title": "Settings",
@@ -612,6 +651,7 @@ class GrowPlan:
         self._owner_light(snap, now)
         await self._light_step(stage, snap, now)
         await self._feed_push(profile, now)
+        await self._topping_push(profile, now)
         await self._tank_push(now)
         await self._watch_pump(now)
         await self._align_watering(stage)
@@ -749,6 +789,12 @@ class GrowPlan:
         if light.get("hold") == "owner" or int(light["level"]) >= int(light["goal"]):
             return
         if light.get("hold") in ("heat", "climate") and now < float(light.get("retry_at") or 0):
+            return
+        rest = self._after_cut(TOP_REST_DAYS)
+        if rest is not None and self._today(now) < rest:
+            if light.get("hold") != "topping":
+                self._note("gp.log.held_topping", level=_pct(int(light["level"])), date=_day(rest))
+            light["hold"] = "topping"
             return
         hours = hours_on(self.timer.cfg) or 0
         stats = await asyncio.to_thread(self._stats, max(off_at - hours * 3600, float(light.get("at") or 0)), off_at)
@@ -958,8 +1004,10 @@ class GrowPlan:
         marks = self.state.setdefault("marks", {})
         for mark in self._marks_of(profile):
             entry = marks.setdefault(mark["id"], {})
-            if cm < mark["from"] or entry.get("pushed"):
-                continue
+            if cm < mark["from"] or entry.get("pushed") or entry.get("done"):
+                continue  # done before the strip got there (a cut the owner logged early): nothing left to say
+            if mark["id"] == "flowering" and self._flower_waits(self.clock()):
+                continue  # two weeks after the last cut: the first reading after that pushes
             entry["pushed"] = self.clock()
             if mark["id"] == "flowering" and stage.get("key") in FLOWERING_STAGES:
                 continue
@@ -981,6 +1029,49 @@ class GrowPlan:
         entry = self.state.setdefault("marks", {}).setdefault(str(ident), {})
         entry["done"] = bool(done)
         self._save()
+
+    # ---------- topping ----------
+
+    def topped(self, body: Mapping[str, Any]) -> None:
+        """grow_plan_topped: the owner cut the tip on this day ("date", YYYY-MM-DD, today if left out). Every cut counts; the
+        rest, the look at the new tops and the wait before flowering run from the last one. A second tap on the same day
+        changes nothing."""
+        self._ensure_run(load_profile())
+        today = self._today(self.clock())
+        day = parse_day(body.get("date")) if body.get("date") else today
+        if day is None or not today - timedelta(days=TOP_BACK_DAYS) <= day <= today:
+            raise CommandRefused(t("gp.err.topped_day", days=TOP_BACK_DAYS))
+        top = self.state.setdefault("topping", {})
+        cuts = list(top.get("cuts") or [])
+        if all(c.get("date") != day.isoformat() for c in cuts):
+            top["cuts"] = sorted([*cuts, {"date": day.isoformat(), "at": self.clock()}], key=lambda c: c["date"])
+            self._note("gp.log.topped", date=_day(day), rest=_day(self._after_cut(TOP_REST_DAYS)),
+                       flower=_day(self._after_cut(TOP_FLOWER_DAYS)))
+        self.state.setdefault("marks", {}).setdefault("topping", {})["done"] = True
+        self._save()
+
+    def _cut_days(self) -> list[date]:
+        return [d for d in (parse_day(c.get("date")) for c in (self.state.get("topping") or {}).get("cuts") or []) if d]
+
+    def _after_cut(self, days: int) -> date | None:
+        """The day this many days after the last cut, None before any cut."""
+        cuts = self._cut_days()
+        return max(cuts) + timedelta(days=days) if cuts else None
+
+    def _flower_waits(self, now: float) -> bool:
+        until = self._after_cut(TOP_FLOWER_DAYS)
+        return until is not None and self._today(now) < until
+
+    async def _topping_push(self, profile: Mapping[str, Any], now: float) -> None:
+        """A week after the last cut, once and from the morning on: count the nodes on the new tops."""
+        look, top = self._after_cut(TOP_LOOK_DAYS), self.state.get("topping") or {}
+        if look is None or top.get("look_pushed") == look.isoformat():
+            return
+        local = datetime.fromtimestamp(now, ZONE)
+        if local.date() < look or (local.date() == look and local.hour < FEED_PUSH_HOUR):
+            return
+        top["look_pushed"] = look.isoformat()
+        await self._push("gp.push.retop", priority=3, plant=(profile.get("plant") or {}).get("strain") or "")
 
     def probe_hung(self) -> None:
         height = self.height_now()
@@ -1282,6 +1373,8 @@ class GrowPlan:
             out["text"] = t("gp.light.hold.lamp", lang, level=pct, gap=fmt_qty(round(gap), "cm", lang), min=fmt_qty(LAMP_MIN_CM, "cm", lang))
         elif hold in ("no_height", "no_data"):
             out["text"] = t(f"gp.light.hold.{hold}", lang, level=pct)
+        elif hold == "topping" and (rest := self._after_cut(TOP_REST_DAYS)) is not None and self._today(now) < rest:
+            out["text"] = t("gp.light.hold.topping", lang, level=pct, date=date_text(rest, lang))
         elif level >= int(light["goal"]):
             out["text"] = t("gp.light.at_goal", lang, level=pct)
         elif (snap.get("light") or {}).get("level") != level:
@@ -1333,6 +1426,8 @@ class GrowPlan:
         entries = self.state.get("marks") or {}
         out = []
         next_found = False
+        today = self._today(self.clock())
+        cuts = self._cut_days()
         for mark in self._marks_of(profile):
             entry = entries.get(mark["id"]) or {}
             done = bool(entry.get("done")) or (mark["id"] == "flowering" and in_flower)
@@ -1340,7 +1435,10 @@ class GrowPlan:
             state = "done" if done else "now" if reached else "next" if not next_found else "later"
             if mark["id"] == "topping" and in_flower and not done:
                 state = "past"
-            next_found = next_found or state == "next"
+            waits = mark["id"] == "flowering" and not done and self._flower_waits(self.clock())
+            if waits:
+                state = "wait"
+            next_found = next_found or state in ("next", "wait")
             until, start = mark["until"], mark["from"]
             if until is None:
                 span = t("gp.mark.range_from", lang, cm=fmt_qty(start, "cm", lang, 0))
@@ -1350,13 +1448,28 @@ class GrowPlan:
                 span = t("gp.mark.range", lang, a=fmt_num(start, lang, 0), b=fmt_qty(until, "cm", lang, 0))
             item: dict[str, Any] = {"id": mark["id"], "title": t(f"gp.mark.{mark['id']}", lang), "text": t(f"gp.mark.{mark['id']}_text", lang),
                                     "state": state, "state_text": t(f"gp.mark.{state}", lang), "span": span, "buttons": []}
-            if state == "now":
+            if mark["id"] == "topping" and state != "past":
+                # the owner's day of the cut: the strip may read lower than the plant was, so it is open before the field too
+                again = bool(cuts)
+                if again:
+                    item.update(text=t("gp.mark.topped_text", lang, dates=", ".join(date_text(d, lang) for d in cuts),
+                                       rest=date_text(self._after_cut(TOP_REST_DAYS), lang),
+                                       look=date_text(self._after_cut(TOP_LOOK_DAYS), lang)), show=True)
+                if again or not done:
+                    item["topped"] = {"label": t("gp.mark.topped_again_btn" if again else "gp.mark.topped_btn", lang),
+                                      "field": t("gp.mark.topped_field", lang), "date": today.isoformat(),
+                                      "min": (today - timedelta(days=TOP_BACK_DAYS)).isoformat()}
+                if state in ("now", "next") and not done:
+                    item["buttons"].append({"label": t("gp.mark.skip_btn", lang), "action": "grow_plan_mark", "id": mark["id"]})
+            elif waits:
+                until = date_text(self._after_cut(TOP_FLOWER_DAYS), lang)
+                item.update(state_text=t("gp.mark.flowering_wait", lang, date=until),
+                            text=t("gp.mark.flowering_wait_text", lang, date=until), show=True)
+            elif state == "now":
                 if mark["id"] == "flowering":
                     item["buttons"].append({"label": t("gp.mark.flowering_btn", lang), "action": "plant_stage", "key": "early_flower", "armed": True})
                 else:
                     item["buttons"].append({"label": t("gp.mark.done_btn", lang), "action": "grow_plan_mark", "id": mark["id"]})
-                    if mark["id"] == "topping":
-                        item["buttons"].append({"label": t("gp.mark.skip_btn", lang), "action": "grow_plan_mark", "id": mark["id"]})
             out.append(item)
         return out
 
@@ -1458,6 +1571,10 @@ def _kpa(value: Any) -> dict[str, Any]:
 
 def _cm(value: Any) -> dict[str, Any]:
     return {"q": [round(float(value)), "cm", 0]}
+
+
+def _day(value: date | None) -> dict[str, str]:
+    return {lang: date_text(value, lang) for lang in ("de", "en")}
 
 
 def _shown(params: Mapping[str, Any], lang: str) -> dict[str, Any]:

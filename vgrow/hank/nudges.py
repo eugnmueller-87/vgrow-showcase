@@ -5,13 +5,18 @@ one function; it never calls ledger.tick on its own as well.
 
 The light (one line above the plant card, addendum N6), first match wins:
   red    readings older than OFFLINE_SECONDS (15 min, the automation's fail-safe age)      hank.nudge.red_offline
-  red    an alarm rule of alerts.json is active                                              hank.nudge.red_alert
+         (skipped while the supervision rule poll_stalled is active: nobody polls the box, the red rung says so)
+  red    an alarm rule of alerts.json is active, any but a yellow one                        hank.nudge.red_alert
   yellow no readings yet                                                                     hank.digest.age_none
   yellow readings older than automation.STALE_SECONDS (10 min, no verdicts from them)        hank.nudge.yellow_age
   yellow a check row off target (low or high)                                                hank.nudge.yellow_check
   yellow the humidifier automation is on and waits for a confirmed stage                     hank.nudge.yellow_stage
   green  otherwise                                                                           hank.nudge.green
 Red uses only the alarm rules, never a verdict alone: the alarm limits are the cockpit's own thresholds.
+A yellow alarm rule (level "yellow" in the alarm view: the quiet supervision rules of vgrow/supervision.py, 15.11.2026)
+is no rung, because the ladder is first-match and a standing one would hide every climate and thirst line below it.
+It is merged into what the ladder found (hank.nudge.yellow_notice): alone it makes the light yellow, beside another
+yellow line it is appended to that line, and at red it is left out, as red hides every yellow line.
 
 Debounce: a worse level shows at once; a better one only after it held DEBOUNCE_SECONDS (start value, spec 0: not
 measured), so a reading swinging around a limit does not make the light blink.
@@ -44,7 +49,7 @@ from __future__ import annotations
 
 import logging
 from collections.abc import Mapping
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import datetime
 from typing import Any
 
@@ -67,6 +72,8 @@ NOTE_COOLDOWN_SECONDS = 6 * 60 * 60  # fallback when the ledger rules cannot be 
 SCENES = ("sleep", "umbrella", "fan", "scarf", "point", "idle")
 HUMID = ("probe_humidity", "humidity")
 WARM = ("probe_temp", "temp")
+SUPERVISION = "supervision"  # kind and metric of the supervision rules in alerts.json (vgrow/supervision.py)
+POLL_STALLED = "poll_stalled"  # the supervision rule of a dead or hung poll: the readings age because nobody asks
 
 
 @dataclass
@@ -129,15 +136,53 @@ def _sentence(line: str) -> str:
     return line if line.endswith((".", "!", "?")) else line + "."
 
 
-def _alert_label(alert: Mapping[str, Any], lang: str) -> str:
-    """An alarm rule's name in this language (alerts.json label and label_en); the view's label as fallback."""
+def _rule(alert: Mapping[str, Any], lang: str) -> dict[str, Any] | None:
+    """An alarm rule as alerts.json has it, in this language; None when the file or the rule cannot be read (the file
+    is not validated, config.alert_rules: a bad entry must not take the light down)."""
     try:
         raw = (config.alert_rules().get("rules") or {}).get(alert.get("name"))
-    except (OSError, ValueError):
+    except (OSError, ValueError, AttributeError, TypeError):
         raw = None
-    if isinstance(raw, dict):
-        return str(localize(raw, lang).get("label") or alert.get("label") or alert.get("name"))
-    return str(alert.get("label") or alert.get("name"))
+    return localize(raw, lang) if isinstance(raw, dict) else None
+
+
+def _unchecked(alert: Mapping[str, Any]) -> bool:
+    """A supervision rule whose reader raised: the alarm view's state of its signal (Alerts.view, "unknown"). Nobody
+    verified the part's fault then, so Hank says what the push says (review of 15.11.2026)."""
+    return alert.get("state") == "unknown"
+
+
+def _alert_label(alert: Mapping[str, Any], lang: str) -> str:
+    """An alarm rule's name in this language (alerts.json label and label_en); the view's label as fallback. An
+    unchecked one is marked as such, never stated as the part's fault."""
+    rule = _rule(alert, lang)
+    if rule is not None:
+        label = str(rule.get("label") or alert.get("label") or alert.get("name"))
+    else:
+        label = str(alert.get("label") or alert.get("name"))
+    return t("hank.nudge.unchecked", lang, label=label) if _unchecked(alert) else label
+
+
+def _alert_hint(alert: Mapping[str, Any], lang: str) -> str:
+    """A supervision rule's consequence and plain next step in this language (alerts.json hint and hint_en), read like
+    the label; "" without one. Hank imports nothing of vgrow/supervision.py: the rule file is all he needs. For an
+    unchecked one the hint says what a silent part costs, which nobody verified: its own step instead."""
+    if _unchecked(alert):
+        return t("hank.nudge.unchecked_hint", lang)
+    rule = _rule(alert, lang) or {}
+    return str(rule.get("hint") or alert.get("hint") or "").strip()
+
+
+def _is_yellow(alert: Mapping[str, Any]) -> bool:
+    """A yellow alarm rule: the level the alarm view gives each row (Alerts.view). A row without one is red, as every
+    rule was before the supervision rules brought the yellow ones."""
+    return alert.get("level") == "yellow"
+
+
+def _is_supervision(alert: Mapping[str, Any]) -> bool:
+    """A supervision rule (vgrow/supervision.py): it watches a part of VGrow, not a reading, so no check row belongs
+    to it and its answer is its own hint. The view's kind, else the metric every such rule carries."""
+    return SUPERVISION in (alert.get("kind"), alert.get("metric"))
 
 
 def _resolver() -> Any:
@@ -153,13 +198,41 @@ def _stage_card() -> str | None:
 
 
 def assess(live: LiveState | Mapping[str, Any]) -> Assessment:
-    """The raw level and its sentence in both languages (no debounce)."""
+    """The raw level and its sentence in both languages (no debounce): the ladder over the red alarm rows, then the
+    yellow ones merged in (module docstring)."""
     state = collect(live)
+    active = [a for a in state.alerts_view if isinstance(a, dict) and a.get("active")]
+    stalled = any(a.get("name") == POLL_STALLED for a in active)
+    found = _assess(state, [a for a in active if not _is_yellow(a)], stalled=stalled)
+    return _with_notice(found, [a for a in active if _is_yellow(a)])
+
+
+def _with_notice(found: Assessment, notices: list[dict[str, Any]]) -> Assessment:
+    """The active yellow alarm rows merged into the ladder's result. Nothing else yellow: a yellow light that names
+    them. Another yellow line: its text with the notice appended, its keys with theirs, its reason with their names,
+    so a notice that comes or goes updates the live note in place. Red: unchanged."""
+    if not notices or found.level == "red":
+        return found
+    ordered = sorted(notices, key=lambda a: str(a.get("name")))
+    names = "+".join(str(a.get("name")) for a in ordered)
+    keys = [f"alert:{a.get('name')}" for a in ordered]
+    labels = {lang: ", ".join(_alert_label(a, lang) for a in notices) for lang in LANGS}  # the view's order, as red
+    text = {lang: _sentence(t("hank.nudge.yellow_notice", lang, detail=labels[lang])) for lang in LANGS}
+    if found.level == "green":
+        return Assessment("yellow", f"notice:{names}", text, problems=keys)
+    return replace(found, reason=f"{found.reason};notice:{names}",
+                   text={lang: f"{found.text.get(lang, '')} {text[lang]}".strip() for lang in LANGS},
+                   problems=[*found.problems, *keys])
+
+
+def _assess(state: LiveState, alerts: list[dict[str, Any]], *, stalled: bool = False) -> Assessment:
+    """The ladder of the module docstring, first match wins. alerts: the active alarm rows that are not yellow.
+    stalled: poll_stalled is among the active rules, so the offline rung is skipped: the readings are old because the
+    poll is dead or hung, and blaming the box would hide that (Aufsicht, 15.11.2026)."""
     age = state.sensors_age
-    if age is not None and age > OFFLINE_SECONDS:
+    if age is not None and age > OFFLINE_SECONDS and not stalled:
         return Assessment("red", "offline", {lang: t("hank.nudge.red_offline", lang, minutes=minutes(age))
                                              for lang in LANGS}, problems=["offline"])
-    alerts = [a for a in state.alerts_view if isinstance(a, dict) and a.get("active")]
     if alerts:
         names = "+".join(sorted(str(a.get("name")) for a in alerts))
         metrics = {a.get("metric") for a in alerts} | {a.get("fallback") for a in alerts}

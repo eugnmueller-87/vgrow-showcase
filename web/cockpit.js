@@ -141,7 +141,9 @@
     if (serverDown) result.push({ kind: "bad", title: t("cockpit.serverUnavailable"), text: t("cockpit.cachedReadings"), href: "#settings", action: t("cockpit.reviewConnection") });
     else if (!s.demo && (!s.online || !s.mqtt)) result.push({ kind: "bad", title: t("status.offline"), text: offlineText(s), href: "#settings", action: t("cockpit.reviewConnection") });
     const rules = (s.alerts || []).filter((r) => r.active);
-    for (const r of rules) result.push({ kind: "bad", title: r.label, text: triggerText(r), href: "#activity/rules", action: t("cockpit.viewRule"), metric: r.metric });
+    // A supervision rule (vgrow/supervision.py) says what is silent and since when; a yellow one is a notice, never the urgent banner
+    for (const r of rules) result.push({ kind: r.level === "yellow" ? "warn" : "bad", title: r.label, text: ruleCardText(r, s),
+      href: "#activity/rules", action: t("cockpit.viewRule"), metric: r.metric });
     if (s.sensors_age == null || s.sensors_age > 300) result.push({ kind: "warn", title: t("cockpit.staleReadings"), text: t("tiles.measured", { ago: ago(s.sensors_age) }), href: "#analytics", action: t("cockpit.reviewReadings") });
     if (!s.climate || [["temp", "probe_temp"], ["humidity", "probe_humidity"], ["vpd", "probe_vpd"]].some((keys) => keys.every((key) => s.climate[key] == null))) {
       result.push({ kind: "warn", title: t("cockpit.partialReadings"), text: t("cockpit.partialReadingsWhy"), href: "#analytics", action: t("cockpit.reviewReadings") });
@@ -169,6 +171,17 @@
       result.push({ kind: "info", title: d.name, text: keepUnits(d.status), href: "#automation", action: t("cockpit.reviewAutomation") });
     }
     return result;
+  }
+
+  // An active rule's card text. A supervision rule says the signal's sentence; while the grace after a start or a silent
+  // parent turns its signal into starting or waiting, the card says that, never the hold time alone ("länger als 10 min"
+  // read like the rule's trigger, review of 15.11.2026). Every other rule, and the demo without a supervision, keeps it.
+  function ruleCardText(r, s) {
+    const states = { starting: "cockpit.supervision.starting", waiting: "cockpit.supervision.waiting" };
+    const sig = s.supervision?.signals?.[r.signal];
+    if (sig?.text) return sig.text;
+    if (sig && states[sig.state]) return t(states[sig.state]);
+    return triggerText(r);
   }
 
   function issueCard(issue) {

@@ -140,10 +140,11 @@
     head.append(make("b", "", item.title), make("span", "plan-mark-span", item.span),
       make("span", `pill sm${pillKind ? ` ${pillKind}` : ""}`, item.state_text));
     li.append(head);
-    if (item.state === "now" || item.state === "next") li.append(make("p", "plan-step-text", item.text));
-    if (item.buttons && item.buttons.length) {
+    if (item.show || item.state === "now" || item.state === "next") li.append(make("p", "plan-step-text", item.text));
+    if (item.topped || (item.buttons && item.buttons.length)) {
       const row = make("div", "plan-controls");
-      for (const b of item.buttons) {
+      if (item.topped) row.append(...topped(item.topped));
+      for (const b of item.buttons || []) {
         row.append(b.armed
           ? armed(b.label, labels["mark.flowering_again"], () => send({ action: b.action, key: b.key }), "btn")
           : button(b.label, () => send({ action: b.action, id: b.id }), "btn sm"));
@@ -151,6 +152,19 @@
       li.append(row);
     }
     return li;
+  }
+
+  // The day of the cut: today unless the owner picks an earlier one, the plan counts its rest and wait from it.
+  function topped(t) {
+    const day = make("input", "plan-ml");
+    day.type = "date";
+    day.value = t.date;
+    day.min = t.min;
+    day.max = t.date;
+    day.setAttribute("aria-label", t.field);
+    const field = make("label", "plan-field", t.field);
+    field.append(day);
+    return [field, button(t.label, () => send({ action: "grow_plan_topped", date: day.value || t.date }), "btn sm")];
   }
 
   function photo(p, labels) {

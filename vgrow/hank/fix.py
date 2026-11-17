@@ -24,6 +24,10 @@ What it says, from the verdicts off target (the same ones the traffic light show
 4. one closing sentence: Hank switches nothing himself, the card waits for the owner's confirmation;
 5. readings too old (or none): that sentence alone, no card (no step from old readings, review 3, M7);
 6. nothing off target: "Alles im Ziel, da gibt es nichts zu beheben."
+7. an active supervision rule (alerts.json kind "supervision", vgrow/supervision.py, 15.11.2026) watches a part of
+   VGrow, not a reading: no check belongs to it, so its answer is "label: hint", the rule's own consequence and next
+   step. Keys that name only such rules get those lines at once, old readings or not; a mixed set puts them before
+   the lead line; and while one is active the answer is never "Alles im Ziel" (until then it fell through to it).
 
 Problem keys (nudges.Assessment.problems): "<metric>:<status>" for a check, "stage", "alert:<name>", "offline",
 "age", "no_readings". With keys, the answer covers exactly those problems that are still off; when none of them is
@@ -73,6 +77,7 @@ DE: dict[str, str] = {
     "hank.fix.close_none": "Im Chat schalte ich nichts ohne deinen Tipp, und dafür habe ich keine Karte zum "
                            "Antippen.",
     "hank.fix.none": "Alles im Ziel, da gibt es nichts zu beheben.",
+    "hank.fix.supervision": "{label}: {hint}",  # an active supervision rule and its own next step (alerts.json)
     # v1.2: a typed "Kannst du das beheben?" about the chat's last topic (asking.fix_scope)
     "hank.fix.about_none": "{label} misst die Box nicht, da kann ich nichts beheben.",
     "hank.fix.about_unknown": "Für {label} liefert die Box gerade keinen Messwert, da kann ich nichts beheben.",
@@ -105,6 +110,7 @@ EN: dict[str, str] = {
     "hank.fix.close_many": "In the chat I switch nothing without you: each card below waits for your confirmation.",
     "hank.fix.close_none": "In the chat I switch nothing without your tap, and I have no card to tap for this.",
     "hank.fix.none": "Everything is on target, nothing to fix.",
+    "hank.fix.supervision": "{label}: {hint}",
     # v1.2: a typed "Can you fix it?" about the chat's last topic (asking.fix_scope)
     "hank.fix.about_none": "The box does not measure {label}, so there is nothing I can fix.",
     "hank.fix.about_unknown": "Right now the box gives no reading for {label}, so there is nothing I can fix.",
@@ -233,6 +239,18 @@ def _labels(cards: Iterable[Proposal]) -> str:
     return "; ".join(c.label for c in cards)
 
 
+def _watched(state: LiveState, wanted: set[str] | None, lang: str) -> tuple[list[str], set[str]]:
+    """The active supervision rules the keys name (None: every active one), red before yellow, as "label: hint" lines,
+    and the keys they answer. Label and hint come from alerts.json like the light's (nudges._alert_label)."""
+    rows = [a for a in state.alerts_view if isinstance(a, dict) and a.get("active") and nudges._is_supervision(a)
+            and (wanted is None or f"alert:{a.get('name')}" in wanted)]
+    lines: list[str] = []
+    for alert in sorted(rows, key=nudges._is_yellow):  # stable: the view's order within red and within yellow
+        label, hint = nudges._alert_label(alert, lang), nudges._alert_hint(alert, lang)
+        lines.append(t("hank.fix.supervision", lang, label=label, hint=hint) if hint else nudges._sentence(label))
+    return lines, {f"alert:{a.get('name')}" for a in rows}
+
+
 def compose(live: LiveState | Mapping[str, Any], lang: str, *, keys: Iterable[str] | None = None,
             now: float | None = None, about: Mapping[str, Any] | None = None) -> Fix:
     """The fix answer's lines and cards for the moment `live`. keys: the problems of the line or note it was tapped
@@ -244,10 +262,15 @@ def compose(live: LiveState | Mapping[str, Any], lang: str, *, keys: Iterable[st
     # an empty list (a note stored before the keys existed, the green line) means every problem, never "resolved"
     keys = list(keys) if keys is not None else None
     wanted = {str(k) for k in keys} if keys else None
+    # A supervision rule has no check to fix: its own next step answers it (item 7). Only such keys: that, at once,
+    # also with old readings (a stalled poll ages them). Otherwise its lines stand before the lead line below.
+    watched, answered = _watched(state, wanted, lang)
+    if watched and wanted is not None and wanted <= answered:
+        return Fix(lines=watched)
     if about is not None and wanted is None:  # a topic without a metric ("PPFD"): nothing of it can be off
         wanted = set()
     if state.stale:
-        return Fix(lines=_stale_lines(state, lang))
+        return Fix(lines=[*watched, *_stale_lines(state, lang)])
     if wanted == {"humidifier_tank"}:
         from . import humidifier_report
         return Fix(lines=humidifier_report.lines(state.automation_view, lang))
@@ -263,16 +286,21 @@ def compose(live: LiveState | Mapping[str, Any], lang: str, *, keys: Iterable[st
         # "can u fix it?" about VPD, and VPD is not off: say why in one sentence, then what else is off
         lead_lines.append(_about_line(state, about, lang))
         if not every and not stage_key:
+            if watched:  # nothing else off target, but a part of VGrow is: never "Sonst ist alles im Ziel"
+                return Fix(lines=[*lead_lines, *watched])
             return Fix(lines=[*lead_lines, t("hank.fix.rest_ok", lang)], nothing=True)
         chosen = every
         stage_wanted = stage_key is not None
         other = True
-    elif wanted is not None and not chosen and not stage_wanted and (every or stage_key):
-        # what the note named is back on target, something else is off now: that is what the answer is about
+    elif wanted is not None and not chosen and not stage_wanted and (every or stage_key) and not watched:
+        # what the note named is back on target, something else is off now: that is what the answer is about (a
+        # supervision rule the note named is still active, then it is not back: its line is the answer)
         lead_lines.append(t("hank.fix.resolved", lang))
         chosen = every
         stage_wanted = stage_key is not None
     if not chosen and not stage_wanted:
+        if watched:
+            return Fix(lines=watched)
         return Fix(lines=[t("hank.fix.none", lang)], nothing=True)
     chosen = ordered(chosen, state)
     alarmed = _alarmed(state)
@@ -304,7 +332,7 @@ def compose(live: LiveState | Mapping[str, Any], lang: str, *, keys: Iterable[st
     problems = len(chosen) + (1 if stage_wanted else 0)
     lead = ("hank.fix.lead_other_many" if problems > 1 else "hank.fix.lead_other_one") if other else (
         "hank.fix.lead_many" if problems > 1 else "hank.fix.lead_one")
-    lines = [*lead_lines, t(lead, lang)]
+    lines = [*lead_lines, *watched, t(lead, lang)]
     light_wait = proposals.light_wait_until(state) is not None
     for verdict in chosen:
         target = verdicts.target_text(verdict.lo, verdict.hi, verdict.unit, verdict.when, lang)

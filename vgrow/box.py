@@ -487,6 +487,9 @@ class Box:
         # Every point-log row of the last poll's 15-minute window ([] after a failed poll): the measurement store
         # keeps them all (vgrow/measurements.py), the cockpit itself uses only the newest.
         self.last_rows: list[dict[str, Any]] = []
+        # When the last poll round ended, a failed one too: the supervision's proof that the poll loop still runs
+        # (vgrow/supervision.py, poll_stalled). A cloud outage ends its rounds as well, so it never looks like a stall.
+        self.polled_at: float | None = None
         self.shadow_at: float | None = None
         self.pending: dict[str, Pending] = {}
         # login | connection | sensors -> reason, shown on the page; a TextError stays one, so it is
@@ -656,11 +659,17 @@ class Box:
         # poll_once, not poll_sensors: a failing point log at boot must not stop the server before it serves.
         # The listeners then see no reading, so the offline rule starts its hold.
         await self.poll_once()
+        self.polled_at = self._clock()
         self._tasks = [
             asyncio.create_task(self._supervise(wait), name="vgrow_supervise"),
             asyncio.create_task(self._poll_loop(), name="vgrow_poll"),
             asyncio.create_task(self._shadow_loop(), name="vgrow_shadow_refresh"),
         ]
+
+    def loops(self) -> dict[str, asyncio.Task[None]]:
+        """The box's own tasks by name (vgrow_supervise, vgrow_poll, vgrow_shadow_refresh), empty before start().
+        Nothing watched the poll loop before 15.11.2026: it has no guard, and a loop that died said nothing."""
+        return {task.get_name(): task for task in self._tasks}
 
     async def stop(self) -> None:
         for task in self._tasks:
@@ -849,6 +858,7 @@ class Box:
         while True:
             await asyncio.sleep(POLL_SECONDS)
             await self.poll_once()
+            self.polled_at = self._clock()
 
     async def poll_once(self) -> None:
         """One poll. A failed one still reaches the listeners: the offline rule must see the data go stale."""

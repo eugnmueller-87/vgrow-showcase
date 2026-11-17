@@ -195,6 +195,38 @@
     if (cur) out.push(cur);
     return out;
   }
+  // As few lines as wrap() needs, but the breaks where a sentence ends, else where a clause ends, and the lines as even as
+  // that allows: a punchline never ends up split with its last word alone on a line. For the robot's bubble.
+  function wrapEven(str, maxW) {
+    const greedy = wrap(str, maxW), words = clean(str).split(" ").filter(Boolean), n = greedy.length;
+    if (n < 2 || words.length > 60) return greedy;
+    const mark = (word) => (/[.!?:]$/.test(word) ? 0 : /[,;]$/.test(word) ? 1 : 2);
+    const even = textWidth(words.join(" ")) / n;
+    // score: [breaks inside a sentence, breaks after a clause, unevenness], the first counts most
+    const less = (a, b) => !b || a[0] < b[0] || (a[0] === b[0] && (a[1] < b[1] || (a[1] === b[1] && a[2] < b[2])));
+    const best = [[{ score: [0, 0, 0], cut: 0 }]];
+    for (let k = 1; k <= n; k++) {
+      best.push([]);
+      for (let i = k; i <= words.length; i++) {
+        for (let j = k - 1; j < i; j++) {
+          const prev = best[k - 1][j];
+          const w = textWidth(words.slice(j, i).join(" "));
+          if (!prev || (w > maxW && i - j > 1)) continue;
+          const at = j ? mark(words[j - 1]) : 0;
+          const score = [prev.score[0] + (at === 2 ? 1 : 0), prev.score[1] + (at === 1 ? 1 : 0), prev.score[2] + (w - even) * (w - even)];
+          if (less(score, best[k][i] && best[k][i].score)) best[k][i] = { score, cut: j };
+        }
+      }
+    }
+    if (!best[n][words.length]) return greedy;
+    const out = [];
+    for (let k = n, i = words.length; k > 0; k--) {
+      const j = best[k][i].cut;
+      out.unshift(words.slice(j, i).join(" "));
+      i = j;
+    }
+    return out;
+  }
 
   // ---------- Hank: head, hat and shirt as pixel rows, limbs per frame ----------
 
@@ -507,6 +539,353 @@
     return { tip: tip ? local(tip) : null, hand: local(p.A[1]), mouth: local([4, -24 + dy]), head: local([1, -40 + dy]) };
   }
 
+  // ---------- his helper: a small watcher built from the grow box's own parts ----------
+  // Legs: two soil-sensor stakes. Body: the little gateway box with its status light. Head: the climate probe, a chamfered
+  // capsule with a vent. On top: a sprout antenna whose beacon bulb shows his state. Drawn the way Hank is drawn: pixel rows
+  // baked once with an ink outline, thin limbs per frame, whole pixels only. The look the owner chose on 15.11.2026, kept as
+  // it was drawn; his own names stay in his own scope, apart from Hank's.
+  // robot(c, x, y, o) draws him with his feet at (x, y). o: mood ("alert", "work", "chill", "sleep", "joke", "charge"), t
+  // seconds, view "F" | "B", flip, walk (null while he stands, else the phase of his steps), bulb ("alert" keeps the beacon
+  // red whatever the mood), battery (null, or {level 0..1, charging} while he stands on his charger: drawn over his head).
+  // Returns {head, hand, tip, mouth, bulb, battery} in the same coordinates as x and y, like hank(); battery is null without one.
+  const robot = (function () {
+    // Cool tones against warm Hank. Three tones per material, light from the upper left like Hank.
+    const PAL = {
+      W: "#dce3ea", m: "#b3bdc7", M: "#6b7682",   // steel
+      l: "#5f93df", c: "#3d74c9", C: "#2c5aa0",   // can blue
+      o: "#ef8a34",                               // orange accent
+      a: "#7ad06f", A: "#1f6e45",                 // sprout
+      w: "#fff8ea",
+    };
+    const EYE = "#1d1418", WHITE = "#fff8ea", GLASS = "#bfe3f2";
+    const BEACON = {
+      calm: { w: "#fff8ea", b: "#f2b632", B: "#d98a1f" },
+      alert: { w: "#fff8ea", b: "#d4503f", B: "#9a332b" },
+      dark: { w: "#d4503f", b: "#9a332b", B: "#9a332b" },
+      sleep: { w: "#c4cad0", b: "#9ba2aa", B: "#6e757d" },
+      charge: { w: "#fff8ea", b: "#7ad06f", B: "#3f8a66" },
+    };
+
+    function sprite(lines, pal) { const cv = rows(lines, pal); outline(cv, INK); return cv; }
+
+    // ---------- head: the climate probe ----------
+    const HEAD_F = sprite([
+      ".............",
+      "...WWWWmmm...",
+      "..WmmmmmmmM..",
+      ".WMmmmmmmmmM.",
+      ".mMmmmmmmmmM.",
+      "..mmmmmmmmM..",
+      "...MMMMMMM...",
+      ".............",
+    ], PAL);
+    const HEAD_B = sprite([
+      ".............",
+      "...WWWWmmm...",
+      "..WmmmmmmmM..",
+      ".WmmMMMMMmmM.",
+      ".mmmmmmmmmmM.",
+      "..mmMMMMMmM..",
+      "...MMMMMMM...",
+      ".............",
+    ], PAL);
+
+    // ---------- body: the gateway box ----------
+    const BODY_F = sprite([
+      ".........",
+      ".llllllC.",
+      ".lcccocC.",
+      ".lccccCC.",
+      ".CCCCCCC.",
+      ".........",
+    ], PAL);
+    const BODY_B = sprite([
+      ".........",
+      ".llllllC.",
+      ".lcCCCcC.",
+      ".lcCCCCC.",
+      ".CCCCCCC.",
+      ".........",
+    ], PAL);
+
+    // ---------- legs: two soil-sensor stakes, front ----------
+    const LEGS_F = sprite([
+      "...........",
+      "..WmM.WmM..",
+      "..mM...mM..",
+      "..mM...mM..",
+      "..mM...mM..",
+      "..mM...mM..",
+      "...M...m...",
+      "...M...m...",
+      "...........",
+    ], PAL);
+
+    // ---------- the sprout antenna with its beacon, baked per shape and state ----------
+    const ANT = {
+      up: [
+        ".........",
+        "...wbb...",
+        "...bBB...",
+        ".aa.A....",
+        ".aaaA....",
+        "..AAA....",
+        ".........",
+      ],
+      stiff: [
+        ".........",
+        "...wbb...",
+        ".a.bBB...",
+        ".aa.A....",
+        "..aaA....",
+        "...AA....",
+        ".........",
+      ],
+      // Asleep the sprout wilts: the stem bows over and the dim bulb hangs.
+      droop: [
+        "...........",
+        "....AAAA...",
+        "....A...A..",
+        "....A..wbb.",
+        ".aa.A..bBB.",
+        "..aaA......",
+        "...........",
+      ],
+      lean: [
+        "..........",
+        ".wbb......",
+        ".bBB......",
+        "...AA.....",
+        ".aaaA.....",
+        "..AAA.....",
+        "..........",
+      ],
+    };
+    // Every shape in every beacon state, baked once at load like Hank's sprites: 4 x 4 small canvases.
+    const ANT_BAKED = {};
+    for (const shape of Object.keys(ANT)) {
+      for (const state of Object.keys(BEACON)) ANT_BAKED[shape + ":" + state] = sprite(ANT[shape], { ...PAL, ...BEACON[state] });
+    }
+    function antenna(shape, state) { return ANT_BAKED[shape + ":" + state]; }
+
+    // ---------- face ----------
+    // (x, y) is the top left of one eye: two pixels wide, like Hank's.
+    function eye(c, x, y, kind, narrow) {
+      const d = (u, v, col) => { if (!narrow || u === 1) dot(c, x + u, y + v, col); };
+      if (kind === "wide") {
+        d(0, 0, WHITE); d(1, 0, WHITE);
+        d(0, 1, WHITE); d(1, 1, EYE);
+        d(0, 2, WHITE); d(1, 2, WHITE);
+        d(0, -1, PAL.M); d(1, -2, PAL.M);
+      } else if (kind === "happy") {
+        d(-1, 2, EYE); d(0, 1, EYE); d(1, 2, EYE);
+      } else if (kind === "closed") {
+        d(-1, 1, EYE); d(0, 2, EYE); d(1, 2, EYE); d(2, 1, EYE);
+      } else if (kind === "squint") {
+        d(0, 1, PAL.M); d(1, 1, PAL.M);
+        d(0, 2, EYE); d(1, 2, EYE);
+      } else if (kind === "aside") {
+        d(0, 0, EYE); d(1, 0, EYE);
+        d(0, 1, EYE); d(1, 1, WHITE);
+        d(0, 2, EYE); d(1, 2, PAL.c);
+      } else {
+        d(0, 0, EYE); d(1, 0, EYE);
+        d(0, 1, WHITE); d(1, 1, EYE);
+        d(0, 2, PAL.c); d(1, 2, EYE);
+      }
+    }
+    function face(c, kind, dx, dy) {
+      eye(c, (kind === "closed" ? -3 : -2) + dx, -19 + dy, kind === "focus" ? "squint" : kind);
+      eye(c, kind === "happy" || kind === "closed" ? 3 + dx : 2 + dx, -19 + dy, kind === "focus" ? "open" : kind);
+      if (kind === "wide") { dot(c, -3 + dx, -20 + dy, PAL.M); dot(c, 4 + dx, -20 + dy, PAL.M); }
+    }
+    function mouth(c, kind, dx, dy) {
+      const d = (u, v) => dot(c, u + dx, v + dy, EYE);
+      if (kind === "laugh") { d(0, -16); d(1, -16); d(2, -16); d(1, -15); }
+      else if (kind === "o") { d(1, -16); d(1, -15); d(0, -16); d(0, -15); }
+    }
+
+    // ---------- limbs ----------
+    function hand(c, x, y) {
+      rect(c, x - 1, y - 2, 2, 4, INK); rect(c, x - 2, y - 1, 4, 2, INK);
+      rect(c, x - 1, y - 1, 2, 2, PAL.o);
+    }
+    // Shoulder, elbow, hand: a thin steel rod in ink.
+    function arm(c, s, e, h, col) {
+      brush(c, s[0], s[1], e[0], e[1], 3, INK);
+      brush(c, e[0], e[1], h[0], h[1], 3, INK);
+      brush(c, s[0], s[1], e[0], e[1], 1, col || PAL.m);
+      brush(c, e[0], e[1], h[0], h[1], 1, col || PAL.m);
+      hand(c, h[0], h[1]);
+    }
+    // One stake drawn per frame, for walking and sitting: hip to a pointed tip.
+    function stake(c, h, t, col, edge) {
+      brush(c, h[0], h[1], t[0], t[1] - 2, 4, INK);
+      dot(c, t[0], t[1], INK);
+      dot(c, t[0] - 1, t[1] - 1, INK);
+      brush(c, h[0], h[1], t[0], t[1] - 2, 2, col);
+      brush(c, h[0], h[1], t[0], t[1] - 2, 1, edge || col);
+    }
+
+    // A small magnifier: at work he inspects the plants with Hank. Returns the lens centre.
+    function magnifier(c, hx, hy) {
+      const x = hx + 3, y = hy - 5;
+      brush(c, hx, hy, x - 2, y + 2, 3, INK);
+      brush(c, hx, hy, x - 2, y + 2, 1, PAL.o);
+      rect(c, x - 2, y - 3, 5, 7, INK); rect(c, x - 3, y - 2, 7, 5, INK);
+      rect(c, x - 1, y - 2, 3, 5, PAL.M); rect(c, x - 2, y - 1, 5, 3, PAL.M);
+      rect(c, x - 1, y - 1, 3, 3, GLASS);
+      dot(c, x - 1, y - 1, WHITE);
+      return [x, y];
+    }
+
+    // Arm points per mood: [shoulder, elbow, hand] for his left (L) and right (R) side on the sheet.
+    const POSE = {
+      chill: { L: [[-4, -12], [-5, -10], [-6, -8]], R: [[4, -12], [5, -10], [6, -8]], eyes: "open", ant: "up", bulb: "calm" },
+      alert: { L: [[-4, -12], [-8, -15], [-8, -22]], R: [[4, -12], [8, -15], [8, -22]], eyes: "wide", mouth: "o", ant: "stiff", bulb: "alert" },
+      joke: { L: [[-4, -12], [-6, -10], [-2, -10]], R: [[4, -12], [8, -15], [8, -21]], eyes: "happy", mouth: "laugh", ant: "up", bulb: "calm" },
+      work: { L: [[-4, -12], [-5, -10], [-6, -8]], R: [[4, -12], [7, -12], [8, -11]], eyes: "focus", ant: "up", bulb: "calm" },
+      // on the charger: arms down, eyes shut, the beacon green
+      charge: { L: [[-4, -12], [-4, -10], [-5, -8]], R: [[4, -12], [4, -10], [5, -8]], eyes: "closed", ant: "up", bulb: "charge" },
+    };
+
+    // ---------- his battery, over his head while he stands on the charger ----------
+    // An ink case, its nub to the right, eight columns of charge: green, amber below half, red below a fifth. While he charges,
+    // the column after the last full one blinks; full, it stands still. Drawn the right way round, never mirrored with him:
+    // (x, y) is the middle of its bottom edge.
+    function battery(c, x, y, b, t) {
+      const left = Math.round(x) - 5, top = Math.round(y) - 5;
+      const level = Math.max(0, Math.min(1, Number(b.level) || 0));
+      const lit = Math.floor(level * 8 + 1e-9), col = level >= 0.5 ? "#7ad06f" : level >= 0.2 ? "#f2b632" : "#d4503f";
+      rect(c, left, top, 10, 5, INK);
+      rect(c, left + 10, top + 1, 1, 3, INK);
+      rect(c, left + 1, top + 1, 8, 3, "#3a424c");
+      if (lit > 0) rect(c, left + 1, top + 1, lit, 3, col);
+      if (b.charging && lit < 8 && Math.floor(t * 2.5) % 2 === 0) rect(c, left + 1 + lit, top + 1, 1, 3, col);
+      if (lit > 1) rect(c, left + 1, top + 1, lit - 1, 1, WHITE);
+    }
+
+    function stand(c, mood, o) {
+      const p = POSE[mood] || POSE.chill;
+      const back = o.view === "B";
+      let bulb = o.bulb || p.bulb;
+      if (bulb === "alert" && mood === "alert" && Math.floor((o.t || 0) * 4) % 2 === 1) bulb = "dark";  // blinks while he reports, steady after
+      if (back) { arm(c, ...p.L); arm(c, ...p.R); }
+      c.drawImage(LEGS_F, -5, -9);
+      c.drawImage(back ? BODY_B : BODY_F, -4, -14);
+      c.drawImage(back ? HEAD_B : HEAD_F, -6, -21);
+      const t = o.t || 0;
+      const perk = mood !== "alert" && t % 5.3 > 5.0;
+      c.drawImage(antenna(perk ? "stiff" : p.ant, bulb), -3, -27);
+      if (!back) {
+        const blink = mood === "chill" && t % 3.7 > 3.55;
+        const glance = mood === "chill" && Math.floor(t / 1.9) % 3 === 2;
+        face(c, blink ? "closed" : glance ? "aside" : p.eyes, 0, 0);
+        if (p.mouth) mouth(c, p.mouth, 0, 0);
+        arm(c, ...p.L);
+        arm(c, ...p.R);
+      }
+      let tip = null;
+      if (mood === "work") tip = magnifier(c, p.R[2][0], p.R[2][1]);
+      if (mood === "alert" && bulb === "alert") {
+        for (const r of [[-3, -26], [-4, -26], [5, -26], [6, -26], [1, -29], [1, -30], [-2, -29], [4, -29]]) dot(c, r[0], r[1], BEACON.alert.b);
+      }
+      return { head: [1, mood === "alert" ? -31 : -28], hand: p.R[2], tip, mouth: [1, -16], bulb: [1, -26], top: [1, -27] };
+    }
+
+    // Lamp off: he sits down, the stakes stretched out in front, hands on them, the sprout wilts, the bulb goes dim.
+    function sleep(c, o) {
+      const back = o.view === "B";
+      const dy = 6, nod = back ? 0 : 1;
+      if (back) { arm(c, [-4, -12 + dy], [-5, -5], [-4, -3]); arm(c, [4, -12 + dy], [5, -5], [4, -3]); }
+      stake(c, [-2, -4], [-6, -1], PAL.m, PAL.M);
+      stake(c, [2, -4], [6, -1], PAL.m, PAL.M);
+      c.drawImage(back ? BODY_B : BODY_F, -4, -14 + dy);
+      c.drawImage(back ? HEAD_B : HEAD_F, -6 + nod, -21 + dy + 1);
+      c.drawImage(antenna("droop", "sleep"), -3 + nod, -27 + dy + 1);
+      if (!back) {
+        face(c, "closed", nod, dy + 1);
+        arm(c, [-4, -12 + dy], [-5, -5], [-4, -3]);
+        arm(c, [4, -12 + dy], [5, -5], [4, -3]);
+      }
+      return { head: [3 + nod, -21 + dy], hand: [4, -3], tip: null, mouth: [1 + nod, -16 + dy + 1], bulb: [5 + nod, -22 + dy], top: [3 + nod, -20] };
+    }
+
+    // Walking to the right: head and box turn three quarters, the stakes and arms swing in profile.
+    function walk(c, mood, o) {
+      const back = o.view === "B";
+      const run = mood === "alert";
+      const ph = o.walk * Math.PI * 2, s = Math.sin(ph), up = Math.cos(ph);
+      const dy = Math.abs(s) > 0.6 ? 0 : -1;
+      const lean = run ? 1 : 0;
+      const reach = run ? 4 : 3;
+      const near = [-1 + Math.round(s * 3), -1 - Math.round(Math.max(0, up) * 2)];
+      const far = [1 - Math.round(s * 3), -1 - Math.round(Math.max(0, -up) * 2)];
+      let bulb = o.bulb || (run ? "alert" : mood === "sleep" ? "sleep" : "calm");
+      if (bulb === "alert" && run && Math.floor((o.t || 0) * 4) % 2 === 1) bulb = "dark";
+      const swing = Math.round(s * reach);
+      arm(c, [4, -12 + dy], [5 - swing, -10 + dy], [5 - swing + lean, -8 + dy], PAL.M);
+      stake(c, [1, -10 + dy], far, PAL.M);
+      stake(c, [-1, -10 + dy], near, PAL.m, PAL.W);
+      c.drawImage(back ? BODY_B : BODY_F, -4, -14 + dy);
+      c.drawImage(back ? HEAD_B : HEAD_F, -6 + lean, -21 + dy);
+      c.drawImage(antenna("lean", bulb), -5 + lean, -27 + dy);
+      if (!back) {
+        const kind = run ? "wide" : mood === "joke" ? "happy" : "open";
+        eye(c, 0 + lean, -19 + dy, kind);
+        eye(c, 3 + lean, -19 + dy, kind, true);
+      }
+      if (run && bulb === "alert") {
+        for (const r of [[-6, -26], [-7, -26], [-4, -29], [-4, -30], [-7, -29]]) dot(c, r[0] + lean, r[1] + dy, BEACON.alert.b);
+      }
+      arm(c, [-4, -12 + dy], [-5 + swing, -10 + dy], [-5 + swing + lean, -8 + dy]);
+      return { head: [-3 + lean, (run ? -31 : -28) + dy], hand: [-5 + swing + lean, -8 + dy], tip: null, mouth: [2 + lean, -16 + dy], bulb: [-3 + lean, -26 + dy] };
+    }
+
+    // His own box, the same size as Hank's, feet at (36, 64); mirrored around the feet like hank().
+    const BOX_W = 72, BOX_H = 72, BOX_X = 36, BOX_Y = 64;
+    const box = mk(BOX_W, BOX_H);
+    function body(c, mood, o) {
+      if (o.walk !== null && o.walk !== undefined) return walk(c, mood, o);
+      if (mood === "sleep") return sleep(c, o);
+      return stand(c, mood, o);
+    }
+    return function draw(c, x, y, o) {
+      const rc = box.getContext("2d");
+      rc.clearRect(0, 0, BOX_W, BOX_H);
+      rc.save();
+      let at;
+      try {
+        rc.translate(BOX_X, BOX_Y);
+        at = body(rc, o.mood || "chill", o);
+      } finally {
+        rc.restore();
+      }
+      const top = Math.round(y) - BOX_Y;
+      if (o.flip) {
+        c.save();
+        try {
+          c.translate(Math.round(x), 0);
+          c.scale(-1, 1);
+          c.drawImage(box, -BOX_X, top);
+        } finally {
+          c.restore();
+        }
+      } else {
+        c.drawImage(box, Math.round(x) - BOX_X, top);
+      }
+      const side = o.flip ? -1 : 1;
+      const local = (pt) => [x + side * pt[0], y + pt[1]];
+      const out = { head: local(at.head), hand: local(at.hand), tip: at.tip ? local(at.tip) : null, mouth: local(at.mouth), bulb: local(at.bulb), battery: null };
+      if (o.battery && at.top) {
+        const p = local(at.top);
+        battery(c, p[0], p[1] - 2, o.battery, o.t || 0);
+        out.battery = [Math.round(p[0]), Math.round(p[1]) - 4];
+      }
+      return out;
+    };
+  }());
+
   // ---------- plants: the real plant's height decides how they are drawn ----------
 
   // One fan leaf, the shape a grower knows at any size: pointed fingers from one point. Baked once per size, angle and tone.
@@ -596,6 +975,68 @@
 
   const HOSE = [[2.72, 5.78], [2.72, 2.98], [2.5, 2.72]];
   const BOARD = [6.4, 5.4];
+  // The robot's charger (owner, 16.11.2026: when nothing is going on and Hank naps, "go to a charging station and charge",
+  // on the free grass at the front). A pad on the ground where he stands, DOCK its middle, and a post behind it to his right.
+  const DOCK = [5.7, 7.15], PAD = 0.38;
+  const DOCK_POST = [6.15, 6.45, 0.32, 0.32];  // gx, gy, width, depth
+  const DOCK_FOOT = [6.1, 6.4, 6.52, 6.82];
+
+  // The pad lies flat in the island picture: a steel plate with an ink edge, three contacts and a bolt at its front.
+  function dockPad(c) {
+    const [gx, gy] = DOCK, r = PAD, q = (u, v, z) => P3(gx + u, gy + v, z);
+    isoBox(c, gx - r, gy - r, 2 * r, 2 * r, 0, 1, "#8a96a3", "#5a6470", "#465059");
+    poly(c, [q(-r + 0.09, -r + 0.09, 1), q(r - 0.09, -r + 0.09, 1), q(r - 0.09, r - 0.09, 1), q(-r + 0.09, r - 0.09, 1)], "#4b5560");
+    const edge = [q(-r, -r, 1), q(r, -r, 1), q(r, r, 1), q(-r, r, 1)];
+    for (let i = 0; i < 4; i++) line(c, edge[i][0], edge[i][1], edge[(i + 1) % 4][0], edge[(i + 1) % 4][1], INK);
+    for (const [a, b] of [[q(r, -r, 0), q(r, r, 0)], [q(r, r, 0), q(-r, r, 0)]]) line(c, a[0], a[1] + 1, b[0], b[1] + 1, INK);
+    for (const [u, v] of [[-0.22, -0.22], [0.22, -0.22], [-0.22, 0.22]]) { const p = q(u, v, 1); dot(c, p[0], p[1], "#b3bdc7"); }
+    const m = q(0.17, 0.17, 1);  // in front of his feet, where his legs do not hide it
+    for (const [u, v] of [[1, -2], [0, -1], [-1, 0], [0, 0], [1, 0], [0, 1], [-1, 2]]) dot(c, m[0] + u, m[1] + v, "#f2b632");
+  }
+
+  // The post: a steel column on a dark foot, a blue cap like his body, on the side facing the pad a screen with a bolt and
+  // low down the socket his cable comes from. Its lamp and the cable are drawn per frame (dockLights).
+  function dockPost(c) {
+    const [gx, gy, w, d] = DOCK_POST;
+    isoBox(c, gx - 0.05, gy - 0.05, w + 0.1, d + 0.1, 0, 2, "#6b7682", "#4b5560", "#3a424c");
+    isoBox(c, gx, gy, w, d, 2, 16, "#dce3ea", "#b3bdc7", "#6b7682");
+    isoBox(c, gx - 0.04, gy - 0.04, w + 0.08, d + 0.08, 18, 3, "#5f93df", "#3d74c9", "#2c5aa0");
+    poly(c, [P3(gx + 0.06, gy + d, 16), P3(gx + w - 0.06, gy + d, 16), P3(gx + w - 0.06, gy + d, 8), P3(gx + 0.06, gy + d, 8)], "#1a1f2b");
+    const s = P3(gx + w / 2, gy + d, 12);
+    for (const [u, v] of [[0, -2], [-1, -1], [0, -1], [-1, 0], [0, 0], [1, 0], [0, 1], [-1, 2]]) dot(c, s[0] + u, s[1] + v, "#ffd54f");
+    const plug = P3(gx + w / 2, gy + d, 5);
+    rect(c, plug[0] - 1, plug[1] - 1, 3, 2, "#2a3038");
+  }
+
+  // Per frame, after the post. state: "idle" (nobody on the pad: the lamp glows dim), "charge" (the lamp blinks green and a
+  // light runs round the pad) or "full" (the lamp stays green). robot: his feet [x, y] while he stands on the pad, for the
+  // cable from the socket to his back. Returns the lamp's spot and whether it is lit, for the glow at night.
+  function dockLights(c, state, t, robot) {
+    const [gx, gy, w, d] = DOCK_POST;
+    const lamp = P3(gx + w / 2, gy + d / 2, 21);
+    const on = state === "full" || (state === "charge" && Math.floor(t * 2) % 2 === 0);
+    rect(c, lamp[0] - 2, lamp[1] - 3, 4, 3, INK);
+    rect(c, lamp[0] - 1, lamp[1] - 2, 2, 2, on ? "#7dff7a" : "#2f6b46");
+    if (state === "charge") {
+      const r = PAD - 0.04, corners = [[-r, -r], [r, -r], [r, r], [-r, r]], ring = [];
+      for (let i = 0; i < 4; i++) {
+        const a = corners[i], b = corners[(i + 1) % 4];
+        for (let k = 0; k < 8; k++) ring.push([a[0] + (b[0] - a[0]) * k / 8, a[1] + (b[1] - a[1]) * k / 8]);
+      }
+      const head = Math.floor(t * 12) % ring.length;
+      for (let k = 0; k < 3; k++) {
+        const g = ring[(head + ring.length - k) % ring.length], p = P3(DOCK[0] + g[0], DOCK[1] + g[1], 1);
+        dot(c, p[0], p[1], k === 0 ? "#c8ffc0" : "#7dff7a");
+      }
+    }
+    if (robot) {
+      const plug = P3(gx + w / 2, gy + d, 5), end = [robot[0] + 3, robot[1] - 11];
+      const mid = [(plug[0] + end[0]) / 2, Math.max(plug[1], end[1]) + 3];
+      brush(c, plug[0], plug[1], mid[0], mid[1], 2, INK);
+      brush(c, mid[0], mid[1], end[0], end[1], 2, INK);
+    }
+    return { at: lamp, on };
+  }
 
   function paintIsland() {
     const cv = mk(330, 230), c = cv.getContext("2d");
@@ -666,6 +1107,7 @@
       brush(c, a[0], a[1], b[0], b[1], 2, "#1d4a35");
       line(c, a[0], a[1] - 1, b[0], b[1] - 1, "#3f8a66");
     }
+    dockPad(c);
     // the deck
     const dx = 6, dy = 0.3, dw = 2.98, dd = 3.3;
     isoBox(c, dx, dy, dw, dd, 0, 2, null, WOOD.left, WOOD.right);
@@ -965,6 +1407,7 @@
     barrelFull.name = "barrel"; objs.push(barrelFull);
     add("board", [X(BOARD[0], BOARD[1]) - 6, Y(BOARD[0], BOARD[1]) - 34, 40, 50], [BOARD[0], BOARD[1], BOARD[0] + 1.3, BOARD[1] + 0.1], (c) => board(c, BOARD[0], BOARD[1]));
     add("lantern", [40, 30, 20, 40], [6.05, 3.35, 6.2, 3.5], lanternPost);
+    add("dock", [-18, 74, 30, 38], DOCK_FOOT, dockPost);
     add("rocks", [-60, 70, 170, 60], [0, 0, 0, 0], rocks);
     world = { island: paintIsland(), objs, beds, fridgeClosed, fridgeOpen, barrelFull, barrelEmpty,
       at: { mill: [millAt[0], millAt[1] - 30], fountain: [fountAt[0], fountAt[1] - 16], thermo: thermoAt, barrel: barrelAt }, hose: HOSE };
@@ -1227,7 +1670,7 @@
   }
 
   window.GardenArt = {
-    buildWorld, hank, plant, rotor, mercury, boardNotes, monitor, bakeSky, sun, MOON, CLOUDS, ISLET, text, textWidth, wrap, windowBox, bubble, ICONS, portrait,
-    PORTRAIT_SIZE, rect, dot, line, ell, brush, X, Y, P3, hash, BULB_LINE, BULB_COLS, LAMPS, INK, SIZE,
+    buildWorld, hank, robot, plant, rotor, mercury, boardNotes, monitor, bakeSky, sun, MOON, CLOUDS, ISLET, text, textWidth, wrap, wrapEven, windowBox, bubble, ICONS, portrait,
+    PORTRAIT_SIZE, rect, dot, line, ell, brush, X, Y, P3, hash, BULB_LINE, BULB_COLS, LAMPS, INK, SIZE, DOCK, dockLights,
   };
 })();

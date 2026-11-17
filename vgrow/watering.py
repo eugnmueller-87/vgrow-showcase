@@ -117,6 +117,11 @@ class WateringController:
         self._off_sent = False
         self._notified = False
         self._stop_since: float | None = None
+        self.ticked_at: float | None = None  # the watchdog's last completed tick: proof the stop still runs (supervision)
+        # When the owner last switched the schedule on (configure, off to on), kept in watering.json: the supervision
+        # judges only the slots after it, so last week's failed slots never alarm about a cause he fixed while it was
+        # off (review of 15.11.2026). None before the first switch-on that recorded it: then every slot counts.
+        self.enabled_at: float | None = None
         # Hook: the need check (vgrow/thirst.py) asked before every automatic slot, need_gate(slot_at, duration_s) ->
         # {"run": bool, "max_s": int | None, "text": {"de", "en"}}. It can only skip a slot or shorten its run time;
         # an error or an unusable answer skips the slot. None (the default) keeps the schedule as it is.
@@ -131,6 +136,7 @@ class WateringController:
                 raise ValueError("events")
             self.cursor = max(self.cursor, data["cursor"])
             self.events = [e for e in data["events"] if isinstance(e, dict)][-100:]
+            self.enabled_at = data.get("enabled_at") if finite(data.get("enabled_at")) else None  # a bad one: unknown
             active = data.get("active")
             if active is not None:
                 if not isinstance(active, dict) or not finite(active.get("started_at")):
@@ -146,7 +152,8 @@ class WateringController:
     def _save(self) -> None:
         try:
             config.atomic_write(self.path, json.dumps({"settings": self.cfg, "active": self.active,
-                                                       "events": self.events[-100:], "cursor": self.cursor}) + "\n")
+                                                       "events": self.events[-100:], "cursor": self.cursor,
+                                                       "enabled_at": self.enabled_at}) + "\n")
         except OSError as err:
             self.error = "storage"
             raise CommandRefused(i18n.t("watering.reason.storage")) from err
@@ -195,10 +202,13 @@ class WateringController:
                 self.cfg = previous
                 raise CommandRefused(i18n.t("watering.reason." + reason))
             self.cursor = max(self.cursor, self.clock())
+            enabled_before = self.enabled_at
+            if candidate["enabled"] and not previous["enabled"]:
+                self.enabled_at = self.clock()  # switched on: the slots before it are no pattern of this plan
             try:
                 self._save()
             except CommandRefused:
-                self.cfg = previous
+                self.cfg, self.enabled_at = previous, enabled_before
                 raise
             self.error = None
             if not candidate["enabled"] and self.active:
@@ -220,6 +230,7 @@ class WateringController:
         while True:
             try:
                 await self.tick()
+                self.ticked_at = self.clock()  # a tick that raises is no beat: that watchdog stops nothing
             except Exception:
                 LOG.exception("Watering watchdog failed; retaining the stop intent")
             await asyncio.sleep(1)
@@ -228,21 +239,24 @@ class WateringController:
         async with self._lock:
             await self._start(automatic)
 
-    def _need(self, slot_at: float) -> tuple[str | None, int | None, dict[str, str] | None]:
-        """The need gate's word on an automatic slot: (skip reason or None, a shorter run time or None, its text)."""
+    def _need(self, slot_at: float) -> tuple[str | None, int | None, dict[str, str] | None, str | None]:
+        """The need gate's word on an automatic slot: (skip reason or None, a shorter run time or None, its text, the
+        gate's own reason code). The code tells a fault (no flow, the model, an error) from a pot that is simply not
+        due: every skip read "thirst" before 15.11.2026, so the supervision could tell neither from the other."""
         if self.need_gate is None:
-            return None, None, None
+            return None, None, None, None
         try:
             verdict = self.need_gate(slot_at, self.cfg["duration_s"])
             text = verdict.get("text")
             detail = {k: str(v) for k, v in text.items() if k in ("de", "en")} if isinstance(text, dict) else None
             limit = verdict.get("max_s")
+            gate = verdict.get("reason") if isinstance(verdict.get("reason"), str) else None
             if verdict.get("run") is not True or (limit is not None and (type(limit) is not int or limit < 1)):
-                return "thirst", None, detail
+                return "thirst", None, detail, gate
         except Exception:
             LOG.exception("Need check failed; the slot is skipped")
-            return "thirst", None, None
-        return None, limit if limit is not None and limit < self.cfg["duration_s"] else None, detail
+            return "thirst", None, None, "error"
+        return None, limit if limit is not None and limit < self.cfg["duration_s"] else None, detail, gate
 
     async def _start(self, automatic: bool, limit_s: int | None = None, detail: dict[str, str] | None = None) -> None:
         reason = self.blocked(self.box.snapshot())
@@ -398,13 +412,15 @@ class WateringController:
                 self.events[-1]["slot"] = slot
                 self._save()
                 reason = "missed" if now - stamp > GRACE_SECONDS else self.blocked(self.box.snapshot())
-                limit, detail = None, None
+                limit, detail, gate = None, None, None
                 if not reason:
-                    reason, limit, detail = self._need(stamp)
+                    reason, limit, detail, gate = self._need(stamp)
                 if reason:
                     self._event("skipped", reason)
                     if detail:
                         self.events[-1]["detail"] = detail
+                    if gate:
+                        self.events[-1]["gate"] = gate
                 else:
                     try:
                         await self._start(True, limit, detail)

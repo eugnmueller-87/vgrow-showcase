@@ -3007,6 +3007,27 @@ function renderPending(pending) {
   }
 }
 
+// A wait in plain words: minutes up to two hours, hours beyond.
+function waitText(seconds) {
+  const minutes = Math.round(seconds / 60);
+  return minutes < 120 ? qty(amount(minutes), "min") : qty(amount(Math.round(seconds / 3600)), "h");
+}
+
+// The line under a rule in the list: its threshold and hold. A supervision rule (vgrow/supervision.py) has no threshold
+// of its own; it alarms once its signal is quiet beyond its limit (/api/state supervision) and the hold has passed, so
+// the line says that sum. Its hold alone read "länger als 10 min" for a rule that needs a day (review of 15.11.2026).
+// A count without a limit (the watering slots), or a page without the supervision, gets no line rather than a wrong one.
+function ruleText(r, s) {
+  const unit = { temp: "°C", humidity: "%", water_level: "%", probe_temp: "°C", probe_humidity: "%" };
+  const minutes = amount(r.for_minutes);
+  if (r.kind === "supervision") {
+    const limit = s.supervision?.signals?.[r.signal]?.limit_s;
+    return typeof limit === "number" ? t("alerts.ruleSupervision", { time: waitText(limit + r.for_minutes * 60) }) : "";
+  }
+  return r.op ? t("alerts.rule", { op: r.op, limit: qty(num(r.limit), unit[r.metric] || ""), minutes })
+    : t("alerts.ruleNoLimit", { minutes });
+}
+
 function renderAlerts(s) {
   const pill = $("ntfy-pill");
   if (s.ntfy === null) {  // preview artifact: it cannot reach ntfy, so it does not pretend to
@@ -3026,11 +3047,9 @@ function renderAlerts(s) {
     what.className = "what";
     what.textContent = r.label;
     const sub = document.createElement("small");
-    const minutes = amount(r.for_minutes);
     // limit is the threshold that applies now; a stage-following one also says which stage it comes from.
-    sub.textContent = r.op ? t("alerts.rule", { op: r.op, limit: qty(num(r.limit), unit[r.metric] || ""), minutes })
-      : t("alerts.ruleNoLimit", { minutes });
-    what.appendChild(sub);
+    sub.textContent = ruleText(r, s);
+    if (sub.textContent) what.appendChild(sub);
     const from = r.stage_limit;
     if (from && r.op) {
       // "target at most 60% plus 10 points = 70%": the margin with its unit, and the stage marked while estimated.

@@ -487,18 +487,20 @@
 
   function arrivalButtons(w) {
     const a = w.arrival;
-    const sig = a ? `${LANG}|${a.event}|${a.pump}` : "";
+    const sig = a ? `${LANG}|${a.event}|${a.pump}|${a.sensor}` : "";
     if (built.arrival.dataset.sig === sig) return;
     built.arrival.dataset.sig = sig;
     if (!a) { built.arrivalBtns.replaceChildren(); return; }
-    const pairs = a.pump
+    // water the soil sensor saw gets the pump's answers: its "No" says it was not water (a pressed or moved sensor)
+    const asked = a.pump || a.sensor;
+    const pairs = asked
       ? [["dry", "thirst.arrivedDry"], ["saucer", "thirst.arrivedSaucer"], ["no", "thirst.arrivedNo"]]
       : [[true, "thirst.saucerWater"], [false, "thirst.saucerDry"]];
-    built.arrivalQ.textContent = t(a.pump ? "thirst.arrivedQ" : "thirst.saucerQ");
+    built.arrivalQ.textContent = t(a.sensor ? "thirst.arrivedSensorQ" : a.pump ? "thirst.arrivedQ" : "thirst.saucerQ");
     built.arrivalBtns.replaceChildren(...pairs.map(([value, key]) => {
       const b = el("button", "", t(key));
       b.type = "button";
-      b.addEventListener("click", () => send(a.pump ? { action: "thirst_arrived", event: a.event, answer: value }
+      b.addEventListener("click", () => send(asked ? { action: "thirst_arrived", event: a.event, answer: value }
         : { action: "thirst_saucer", water: value, event: a.event }));
       return b;
     }));

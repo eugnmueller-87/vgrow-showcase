@@ -8,9 +8,15 @@
 
 Built by [Eugen Mueller](https://www.linkedin.com/in/eugen-mueller), a VGrow owner exploring how to make everyday care easier to understand and automate. Independent of VIVOSUN.
 
-[Run it yourself](#run-it-yourself) · [What's coming](#whats-coming) · [Screenshots](docs/gallery.md) · [Product workflows](docs/workflows.md) · [Local AI](docs/ai-models.md) · [Roadmap](docs/roadmap.md) · [LinkedIn](https://www.linkedin.com/in/eugen-mueller)
+[60-second tour](#see-it-in-60-seconds) · [Run it yourself](#run-it-yourself) · [What's coming](#whats-coming) · [Screenshots](docs/gallery.md) · [Product workflows](docs/workflows.md) · [Local AI](docs/ai-models.md) · [Roadmap](docs/roadmap.md) · [LinkedIn](https://www.linkedin.com/in/eugen-mueller)
 
 **Free to use, change and share.** Since 7 November 2026 this repository carries the application itself under the [MIT licence](LICENSE): the cockpit, the climate autopilot, the grow plan, Hank and his garden, and the setup guides. Each [release](https://github.com/eugnmueller-87/vgrow-showcase/releases) is a snapshot of the version the owner runs on his own VGrow. Between releases the work goes on in a private repository, and new versions arrive here as new releases.
+
+## See it in 60 seconds
+
+https://github.com/user-attachments/assets/c009e621-7802-451b-b519-f3973506a908
+
+*A screen recording from the owner's installation on 17 November 2026, live readings, no sound. Hank's garden first, then Overview, Automation, Devices, Analytics, Water & soil, Alerts, Wiki and Community. The strain encyclopedia in the wiki is not part of this repository.*
 
 ![The running cockpit with environmental readings and both camera views](docs/images/overview.png)
 
@@ -40,6 +46,8 @@ Since 6 November 2026, the cockpit turns into a small pixel world after a minute
 
 *Recorded in the cockpit's demo mode, with made-up values. The cover at the top comes from a screen recording of the owner's installation.*
 
+Since 15 November Hank has a helper: Robbie, a little robot built from parts of the box. His legs are two soil-sensor stakes, his body is the gateway and his head is the climate probe. He reads every active alert, including the self-check below, and he notices when the page loses the server. A new problem sends him running to Hank with a red beacon, and he says it in his own speech bubble. When all is clear again, he says so once. The rest of the time he works and hangs out beside Hank, tells the odd plant joke and charges at his own station while Hank naps. Like Hank, he never switches anything.
+
 ![GrowCam and C920 side by side, with controls below the footage](docs/images/dual-cameras.png)
 
 ## AI on my own hardware
@@ -51,6 +59,10 @@ The application, evidence handling, retrieval, orchestration, validation and con
 ![The local AI models and separate application control path](docs/images/ai-runtime.svg)
 
 Climate rules, schedules, water calculations and pump deadlines run in application code. The language model explains and interprets; it does not issue hardware commands. Device communication still uses the VIVOSUN cloud. [Verified model roles](docs/ai-models.md) · [Cost breakdown](docs/costs.md).
+
+## It watches itself
+
+For nine days the thirst index got no reading, because the soil sensor had never been set to the soil, and nothing said so. Since 15 November the cockpit watches its own parts: 25 signals, from the box connection and the light timer to the soil sensor, the height reader, the push channel and the local AI. Each has one rule and a clear state. When a part goes quiet, the push names it the way the page does, says since when and gives a simple next step. One cause sends one push: while the box is offline, its sensors wait instead of all raising alarms. The self-check and the box polling watch each other. After downtime, a push says when VGrow was not running, because in that time no alarms or automation ran. The server does not restart itself, so the cause stays visible. Hank and Robbie report the same rules. [How it works (German)](docs/operations.md#aufsicht-vgrowsupervisionpy).
 
 ## Run it yourself
 

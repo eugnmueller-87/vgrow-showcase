@@ -102,8 +102,13 @@
   // What was given in the last seven days, from the Durst-Index's own ledger: nothing is counted that it does not count.
   function renderGiven(th) {
     const flow = th && th.pump && th.pump.flow;
-    if (th && th.given_week_n) {
-      $("wd-given").textContent = fmt(th.given_week_l, 2);
+    const unknown = (th && th.given_week_unknown) || 0;
+    if (th && th.given_week_n && unknown === th.given_week_n) {  // only water of unknown amount: how often, no litres
+      $("wd-given").textContent = fmt(th.given_week_n, 0);
+      $("wd-given-u").textContent = "×";
+      $("wd-given-sub").textContent = t("water.givenUnknown", { n: th.given_week_n });
+    } else if (th && th.given_week_n) {
+      $("wd-given").textContent = (unknown ? "≥ " : "") + fmt(th.given_week_l, 2);  // unknown amounts on top
       $("wd-given-u").textContent = "l";
       $("wd-given-sub").textContent = t("water.givenCount", { n: th.given_week_n });
     } else {

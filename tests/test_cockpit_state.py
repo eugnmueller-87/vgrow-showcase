@@ -157,3 +157,110 @@ process.stdout.write(JSON.stringify({auto, autoTodos, hand, handTodos, holding})
     assert out["hand"] == {"TEMP": ["TURN_UP", manual], "VPD": ["TOO_DRY", manual], "LIGHT": ["RAISE", manual], "TANK": ["REFILL", ""]}
     assert {"TURN_UP", "RAISE", "REFILL"} <= set(out["handTodos"])
     assert out["holding"] == [True] * 6  # the automation card: "Holding speed" and the reason under it
+
+
+@pytest.mark.skipif(NODE is None, reason="node is not installed")
+@pytest.mark.parametrize("lang", ["de", "en"])
+def test_a_supervision_rule_card_says_what_is_silent_and_a_yellow_one_is_no_urgent_card(lang: str) -> None:
+    """Aufsicht, 15.11.2026 (vgrow/supervision.py): an active supervision rule's card carries the signal's own sentence
+    from /api/state "supervision" (what is silent and since when), and a yellow rule is a "warn" card, so it never
+    becomes the urgent banner. Without that sentence, as for every other rule, the card keeps the rule's trigger."""
+    cockpit = (WEB / "cockpit.js").read_text(encoding="utf-8")
+    part = cockpit[cockpit.index("  function triggerText("):cockpit.index("  function issueCard(")]
+    texts = json.loads((WEB / "i18n.js").read_text(encoding="utf-8").removeprefix("window.I18N = ").strip().removesuffix(";"))[lang]
+    harness = r"""
+const texts = %s;
+const t = (key, params = {}) => texts[key].replace(/\{(\w+)\}/g, (_, k) => params[k] ?? '');
+const num = String, amount = String, qty = (text, unit) => text + unit;
+const serverDown = false, ago = String, offlineText = String, tankWarning = String;
+%s
+const row = (name, extra) => ({name, label: name.toUpperCase(), metric: 'supervision', fallback: null, op: null,
+  limit: null, for_minutes: 10, active: true, kind: 'supervision', signal: name, ...extra});
+const s = {online:true, mqtt:true, sensors_age:60, climate:{probe_temp:24, probe_humidity:55, probe_vpd:1.1},
+  alerts:[row('soil_uncalibrated', {level:'yellow'}), row('soil_silent', {level:'red', for_minutes:20}),
+    {name:'humidity_high', label:'HUMID', metric:'probe_humidity', op:'>', limit:70, for_minutes:30, active:true},
+    row('news_silent', {level:'yellow', active:false})],
+  supervision:{signals:{soil_uncalibrated:{state:'silent', text:'SINCE_THREE_DAYS'}, soil_silent:{state:'silent'}}}};
+const cards = (list) => list.map((i) => [i.kind, i.title, i.text]);
+const withView = cards(issues(s));
+delete s.supervision;  // before the core sends it, or in the demo
+const withoutView = cards(issues(s));
+process.stdout.write(JSON.stringify({withView, withoutView}));
+""" % (json.dumps(texts), part)
+    result = subprocess.run([NODE or "node", "-"], input=harness, text=True, encoding="utf-8",
+                            capture_output=True, check=True, timeout=15)
+    out = json.loads(result.stdout)
+    plain = texts["alerts.ruleNoLimit"].replace("{minutes}", "20")
+    humid = texts["alerts.rule"].replace("{op}", ">").replace("{limit}", "70%").replace("{minutes}", "30")
+    assert out["withView"] == [["warn", "SOIL_UNCALIBRATED", "SINCE_THREE_DAYS"], ["bad", "SOIL_SILENT", plain],
+                               ["bad", "HUMID", humid]]
+    assert out["withoutView"][0] == ["warn", "SOIL_UNCALIBRATED", texts["alerts.ruleNoLimit"].replace("{minutes}", "10")]
+    assert out["withoutView"][1:] == out["withView"][1:]
+
+
+@pytest.mark.skipif(NODE is None, reason="node is not installed")
+@pytest.mark.parametrize("lang", ["de", "en"])
+def test_a_supervision_card_says_starting_or_waiting_never_the_hold_time(lang: str) -> None:
+    """Review of 15.11.2026: an active rule stays active while the grace after a restart (starting) or a silent parent
+    (waiting) decides nothing, and its card then read only "länger als 10 min". The server sends the reader's own
+    sentence where it found the part silent; where it found nothing yet, the card says what is going on."""
+    cockpit = (WEB / "cockpit.js").read_text(encoding="utf-8")
+    part = cockpit[cockpit.index("  function triggerText("):cockpit.index("  function issueCard(")]
+    texts = json.loads((WEB / "i18n.js").read_text(encoding="utf-8").removeprefix("window.I18N = ").strip().removesuffix(";"))[lang]
+    harness = r"""
+const texts = %s;
+const t = (key, params = {}) => texts[key].replace(/\{(\w+)\}/g, (_, k) => params[k] ?? '');
+const num = String, amount = String, qty = (text, unit) => text + unit;
+const serverDown = false, ago = String, offlineText = String, tankWarning = String;
+%s
+const row = (name) => ({name, label: name, metric: 'supervision', fallback: null, op: null, limit: null,
+  for_minutes: 10, active: true, kind: 'supervision', signal: name, level: 'red'});
+const s = {online:true, mqtt:true, sensors_age:60, climate:{probe_temp:24, probe_humidity:55, probe_vpd:1.1},
+  alerts:[row('soil_uncalibrated'), row('thirst_input'), row('soil_silent'), row('news_silent')],
+  supervision:{signals:{soil_uncalibrated:{state:'starting', text:null}, thirst_input:{state:'waiting', text:null},
+    soil_silent:{state:'starting', text:'FOUND_SILENT'}, news_silent:{state:'ok', text:null}}}};
+process.stdout.write(JSON.stringify(issues(s).map((i) => [i.title, i.text])));
+""" % (json.dumps(texts), part)
+    result = subprocess.run([NODE or "node", "-"], input=harness, text=True, encoding="utf-8",
+                            capture_output=True, check=True, timeout=15)
+    out = json.loads(result.stdout)
+    assert out == [["soil_uncalibrated", texts["cockpit.supervision.starting"]],
+                   ["thirst_input", texts["cockpit.supervision.waiting"]],
+                   ["soil_silent", "FOUND_SILENT"],  # the server's sentence of what the reader found wins
+                   ["news_silent", texts["alerts.ruleNoLimit"].replace("{minutes}", "10")]]  # ok: the next poll ends it
+
+
+@pytest.mark.skipif(NODE is None, reason="node is not installed")
+@pytest.mark.parametrize("lang", ["de", "en"])
+def test_the_rules_list_says_when_a_supervision_rule_alarms(lang: str) -> None:
+    """Review of 15.11.2026: the rules list printed a supervision rule's hold as its trigger, "länger als 10 min" for a
+    rule that needs a day. Its line says the signal's limit plus the hold, and nothing where there is no limit."""
+    app = (WEB / "app.js").read_text(encoding="utf-8")
+    part = app[app.index("function waitText("):app.index("function renderAlerts(")]
+    texts = json.loads((WEB / "i18n.js").read_text(encoding="utf-8").removeprefix("window.I18N = ").strip().removesuffix(";"))[lang]
+    harness = r"""
+const texts = %s;
+const t = (key, params = {}) => texts[key].replace(/\{(\w+)\}/g, (_, k) => params[k] ?? '');
+const amount = String, num = String, unitSuffix = (unit) => (unit ? ' ' + unit : '');
+const qty = (text, unit) => text + unitSuffix(unit);
+%s
+const sup = (name, for_minutes) => ({name, signal: name, kind: 'supervision', metric: 'supervision', op: null,
+  limit: null, for_minutes});
+const s = {supervision: {signals: {soil_uncalibrated: {limit_s: 86400}, soil_silent: {limit_s: 600},
+  tasks_dead: {limit_s: 0}, watering_skips: {limit_s: null}}}};
+process.stdout.write(JSON.stringify([
+  ruleText(sup('soil_uncalibrated', 10), s), ruleText(sup('soil_silent', 20), s), ruleText(sup('tasks_dead', 5), s),
+  ruleText(sup('watering_skips', 2), s), ruleText(sup('soil_uncalibrated', 10), {}),
+  ruleText({name: 'temp_high', metric: 'probe_temp', op: '>', limit: 30, for_minutes: 10}, s),
+  ruleText({name: 'offline', metric: 'offline', op: null, limit: null, for_minutes: 10}, s)]));
+""" % (json.dumps(texts), part)
+    result = subprocess.run([NODE or "node", "-"], input=harness, text=True, encoding="utf-8",
+                            capture_output=True, check=True, timeout=15)
+    out = json.loads(result.stdout)
+    after = texts["alerts.ruleSupervision"]
+    assert out[:3] == [after.replace("{time}", "24 h"),  # a day and its 10 min hold: never "10 min"
+                       after.replace("{time}", "30 min"),  # 600 s of silence plus the 20 min hold
+                       after.replace("{time}", "5 min")]  # a dead task at once, plus the hold
+    assert out[3:5] == ["", ""]  # a count without a limit, a page without the supervision: no line, never a wrong one
+    assert out[5] == texts["alerts.rule"].replace("{op}", ">").replace("{limit}", "30 °C").replace("{minutes}", "10")
+    assert out[6] == texts["alerts.ruleNoLimit"].replace("{minutes}", "10")  # every older rule keeps its line

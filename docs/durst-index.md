@@ -98,6 +98,14 @@ kommt aus `water_model.json`: Bei 0,55 Wasser im abgetropften Substrat (B05), 0,
 es 73 % des Sensorwerts im abgetropften Topf. Dass der Sensor dazwischen linear ist, ist eine Annahme bis zur ersten mit der
 Fingerprobe verglichenen Austrocknung. Sichtbar auf der Seite Wasser & Boden (`#water`).
 
+Gießen, das niemand eingetragen hat, sieht der Sensor auch ohne Einstellen (`sensor_waterings`, seit 15.11.2026): Steigt
+sein Wert um 10 Punkte oder mehr über den tiefsten Wert der zwei Stunden davor, ist das Wasser. Beim Austrocknen fällt er
+weniger als einen Punkt pro Stunde, das Umstecken des Sensors senkte ihn um 8 Punkte. Das Hauptbuch zählt so ein Gießen wie
+einen Pumpenlauf mit unbekannter Menge: Topf voll, Nässesperre, die Karte sagt dann "Menge unbekannt" statt "zu nass".
+Steht in den drei Stunden darum ein eingetragenes Gießen, ein Pumpenlauf oder eine Düngung, zählt nur dieses. Die Karte
+fragt einmal "Der Bodensensor hat Wasser gesehen: hast du gegossen?", ein "Nein" macht es zu 0. Anlass: Die Karte zählte am
+15.11. noch ab dem Pumpenlauf vom 06.11., die Handgüsse vom 07.11., 12.11. und 15.11. standen nur im Log des Sensors.
+
 ### Hank
 
 Hank beantwortet "Muss ich gießen?", "Wann gieße ich?", "Wie viel gieße ich?" und "Der Tank ist voll, soll ich
@@ -215,6 +223,14 @@ else, with two dry answers 12 h apart and from the model's index on. The target 
 water in the drained substrate (B05), 0.3 available and the trigger 0.5 (U1) it is 73 % of the sensor's reading in the
 drained pot. That the sensor is linear in between is an assumption until a first dry-down has been compared with a finger
 check. Shown on the Water & soil page (`#water`).
+
+The sensor also sees waterings nobody entered, set to the soil or not (`sensor_waterings`, since 15.11.2026): a reading 10
+points or more above the lowest reading of the two hours before it is water. Drying lowers it by less than a point an hour,
+moving the sensor dropped it 8 points. The ledger counts such a watering like a pump run of unknown amount: the pot full,
+the wet-hold, and the card says "amount unknown" instead of "too wet". A watering entered, a pump run or a feed within three
+hours of it counts instead. The card asks once "The soil sensor saw water: did you water?", and "No" makes it 0. Why: on
+15.11. the card still counted from the pump run of 06.11.; the waterings by hand of 07.11., 12.11. and 15.11. were only in
+the sensor's log.
 
 ### Hank
 

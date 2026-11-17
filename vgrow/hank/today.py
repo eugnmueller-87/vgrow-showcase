@@ -6,8 +6,11 @@ handed out and that are still open (proposals.Registry.open). It never calls the
 a card is still only a suggestion the owner taps.
 
 At most MAX_LINES short lines, most urgent first:
-1. red: readings older than the fail-safe age (nudges.OFFLINE_SECONDS), an active alarm rule with the one-line advice
-   of its check;
+1. red: readings older than the fail-safe age (nudges.OFFLINE_SECONDS, not while the supervision rule poll_stalled is
+   active, as in the light), an active alarm rule with the one-line advice of its check; a red supervision rule
+   (vgrow/supervision.py, 15.11.2026) has no check, its advice is the rule's own hint in alerts.json;
+1b. "Bitte nachsehen" with its hint for every active yellow alarm rule (the quiet supervision rules), after the
+   humidifier tank's maintenance line: a notice, never a red line;
 2. yellow: no readings yet, readings too old for verdicts, a check off target (low or high) with its one-line advice
    (the first sentence of the card's advice, without source marks);
    While the VPD at the probe is above its band (vpd.py, 23.10.2026), its line says why in plain words (too dry for
@@ -58,6 +61,7 @@ _FIRST_SENTENCE = re.compile(r"(.+?[.!?])(?=\s|$)")
 DE: dict[str, str] = {
     "hank.today.alert": "Jetzt handeln, {label}: {advice}",
     "hank.today.alert_plain": "Jetzt handeln: {label}.",
+    "hank.today.notice": "Bitte nachsehen, {label}: {hint}",  # a yellow supervision rule and its next step
     "hank.today.high": "{label}: {value}, zu hoch ({target}).",
     "hank.today.low": "{label}: {value}, zu niedrig ({target}).",
     "hank.today.stage": "Phase bestätigen: ich schätze {stage}.",
@@ -76,6 +80,7 @@ DE: dict[str, str] = {
 EN: dict[str, str] = {
     "hank.today.alert": "Act now, {label}: {advice}",
     "hank.today.alert_plain": "Act now: {label}.",
+    "hank.today.notice": "Please take a look, {label}: {hint}",
     "hank.today.high": "{label}: {value}, too high ({target}).",
     "hank.today.low": "{label}: {value}, too low ({target}).",
     "hank.today.stage": "Confirm the stage: my estimate is {stage}.",
@@ -137,25 +142,47 @@ def one_line(advice: Any) -> str:
     return _sentence(found.group(1) if found else plain)
 
 
+def _active(state: LiveState) -> list[dict[str, Any]]:
+    return [a for a in state.alerts_view if isinstance(a, dict) and a.get("active")]
+
+
 def _alarms(state: LiveState, negative: list[Any], lang: str) -> tuple[list[str], set[str]]:
-    """Red: stale beyond the fail-safe age, or the active alarm rules with their check's advice."""
+    """Red: stale beyond the fail-safe age, or the active red alarm rules with their check's advice. While poll_stalled
+    is active the old readings are its doing, so its own line stands first instead of the box's (nudges.assess)."""
     age = state.sensors_age
-    if age is not None and age > nudges.OFFLINE_SECONDS:
+    active = _active(state)
+    if age is not None and age > nudges.OFFLINE_SECONDS and not any(a.get("name") == nudges.POLL_STALLED
+                                                                     for a in active):
         return [t("hank.nudge.red_offline", lang, minutes=minutes(age))], set()
     lines: list[str] = []
     said: set[str] = set()
-    for alert in state.alerts_view:
-        if not isinstance(alert, dict) or not alert.get("active"):
-            continue
+    for alert in active:
+        if nudges._is_yellow(alert):
+            continue  # a notice (_notices), never a red line
         name = nudges._alert_label(alert, lang)
         metrics = {alert.get("metric"), alert.get("fallback")}
         advice = next((one_line(v.advice) for v in negative if v.metric in metrics and one_line(v.advice)), "")
         if alert.get("metric") == TANK_METRIC:
             advice = t("hank.today.tank", lang)  # the tank alarm says what to do: refill
+        elif nudges._is_supervision(alert):  # no check belongs to it: the rule's own next step is the advice
+            advice = _sentence(nudges._alert_hint(alert, lang))
         said.update(v.metric for v in negative if v.metric in metrics)
         lines.append(t("hank.today.alert", lang, label=name, advice=advice) if advice
                      else t("hank.today.alert_plain", lang, label=name))
     return lines, said
+
+
+def _notices(state: LiveState, lang: str) -> list[str]:
+    """One line per active yellow alarm rule (a quiet supervision rule): its name and its plain next step from
+    alerts.json, in the light's words ("Bitte nachsehen") when the rule has no hint."""
+    out = []
+    for alert in _active(state):
+        if not nudges._is_yellow(alert):
+            continue
+        label, hint = nudges._alert_label(alert, lang), nudges._alert_hint(alert, lang)
+        out.append(_sentence(t("hank.today.notice", lang, label=label, hint=hint)) if hint
+                   else _sentence(t("hank.nudge.yellow_notice", lang, detail=label)))
+    return out
 
 
 def _checks(state: LiveState, negative: list[Any], said: set[str], lang: str,
@@ -300,7 +327,8 @@ def lines(live: LiveState | Mapping[str, Any], lang: str, *, cards: Iterable[Pro
             extra["light_percent"] = " ".join(found.light)
     from . import humidifier_report
     maintenance = humidifier_report.warning(state.automation_view, lang)
-    todo = [*red, *([maintenance] if maintenance else []), *_checks(state, negative, said, lang, extra)]
+    todo = [*red, *([maintenance] if maintenance else []), *_notices(state, lang),
+            *_checks(state, negative, said, lang, extra)]
     todo += _tank(state, lang)
     todo += thirst_report.today_lines(state, lang)  # the Durst-Index, only when something is to do
     todo += [line for line in (stage, asking.height_due(state, lang), _feed_card(state, lang)) if line]

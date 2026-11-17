@@ -47,6 +47,7 @@ from .plant import view as plant_view
 from .vision import MAX_MANUAL_PER_DAY, PHOTO_HOUR, Vision, stage_suggestion
 from . import pest_watch as pest_watch_mod
 from .pest_watch import PestWatch
+from .supervision import Supervisor
 
 _LOGGER = logging.getLogger(__name__)
 WEB = config.REPO / "web"
@@ -204,14 +205,35 @@ def wants_large(value: Any) -> bool:
     return value is True or str(value).strip().lower() in ("1", "true")
 
 
+# The measured day's read ends after this, and the round goes on without it: it runs in a thread with no limit of its
+# own (light_view.LightDay.read), and it was the one hang the poll chain had (review of 15.11.2026). 20 s is the
+# review's choice, far below the next poll (box.POLL_SECONDS 90).
+LIGHT_DAY_TIMEOUT_S = 20.0
+
+
 def poll_handler(alerts: Alerts, automation: HumidifierAutomation | None, parts: dict[str, Any],
                  plant_log: PlantLog | None = None) -> Any:
     """The listener for every poll. The camera only exists after box.start(), so it is read from parts.
     The alerts get the plant stage in the snapshot: the humidity limit follows it (alerts.stage_limit).
     The autopilot (vgrow/autopilot.py), when serve() put one into parts, is the third step, after the alarms and the
     humidifier rule; a failure of one step never stops the others. The Durst-Index (vgrow/thirst.py), when serve() put
-    one into parts, comes last: it only samples and reads, it switches nothing."""
+    one into parts, comes last: it only samples and reads, it switches nothing.
+    The supervision (vgrow/supervision.py), when serve() put one into parts, reads every signal after the measured day
+    and before the steps, so the alarms judge its states on the same snapshot; it also hears which step runs now and
+    which one failed, which was only logged before. A stuck read of the measured day is left running and awaited again
+    by the next poll, never started twice: each hung thread would hold one of the loop's few workers."""
+    day_read: list[asyncio.Future[Any]] = []
+
+    async def light_day(source: Any) -> dict[str, Any]:
+        if not day_read or day_read[0].done():
+            day_read[:] = [asyncio.ensure_future(source.read())]
+            day_read[0].add_done_callback(_forget_failure)  # a read nobody waited for still has its error retrieved
+        return await asyncio.wait_for(asyncio.shield(day_read[0]), LIGHT_DAY_TIMEOUT_S)
+
     async def on_poll(b: Any) -> None:
+        sup = parts.get("supervision")
+        if sup is not None:
+            sup.poll_started()
         snap = alert_snapshot(b, parts.get("camera"))
         try:
             snap["stage"] = stage_now(plant_log)
@@ -221,10 +243,16 @@ def poll_handler(alerts: Alerts, automation: HumidifierAutomation | None, parts:
             snap["usb_camera"] = {**parts["usb_camera"].status(), "hidden": "usb" in camera_prefs.hidden()}
         if parts.get("light_day") is not None:  # the measured day against the stage's card: dark_period, short_day
             try:
-                day = await parts["light_day"].read()
+                day = await light_day(parts["light_day"])
                 snap["light_day"] = {**day, "hours_planned": stage_hours(load_profile(), snap.get("stage"))}
             except Exception:  # without the day those two rules say nothing; the other alarms run on
                 _LOGGER.exception("Reading the measured light day failed")
+        if sup is not None:
+            try:
+                snap["supervision"] = sup.read(snap)
+            except Exception as err:  # counted: three in a row are the supervision's own alarm, from its task
+                sup.read_failed(err)
+                _LOGGER.exception("Reading the supervision failed")
         steps = [alerts.check] + ([automation.check] if automation is not None else [])
         if parts.get("autopilot") is not None:
             steps.append(parts["autopilot"].check)
@@ -235,10 +263,19 @@ def poll_handler(alerts: Alerts, automation: HumidifierAutomation | None, parts:
         if parts.get("grow_plan") is not None:  # hook: the light of the day, the spectrum of the stage, the water watch
             steps.append(parts["grow_plan"].check)
         for step in steps:
+            if sup is not None:
+                sup.step_started(step.__qualname__)
             try:
                 await step(snap)
-            except Exception:  # a failing alert must not keep the automation from running, nor the other way round
+            except Exception as err:  # a failing alert must not keep the automation from running, nor the other way round
                 _LOGGER.exception("Poll step %s failed", step.__qualname__)
+                if sup is not None:
+                    sup.step_finished(step.__qualname__, err)
+            else:
+                if sup is not None:
+                    sup.step_finished(step.__qualname__)
+        if sup is not None:
+            sup.poll_finished()
     return on_poll
 
 
@@ -381,8 +418,11 @@ def make_app(box: Any, alerts: Alerts, key: str, camera: Any | None = None,
              watering: WateringController | None = None,
              extra_cameras: dict[str, Any] | None = None, light_schedule: LightSchedule | None = None,
              thirst: Thirst | None = None, pest: PestWatch | None = None, soil: Any = None,
-             fan_stick: Any = None, grow_plan: Any = None) -> web.Application:
+             fan_stick: Any = None, grow_plan: Any = None, supervisor: Supervisor | None = None) -> web.Application:
     """The cockpit's app. measurements: the local store (vgrow/measurements.py) or None (the demo).
+    supervisor: the supervision (vgrow/supervision.py) or None (the demo, or one that could not be built): its view goes
+    into /api/state as "supervision" and to GET /api/supervision (the PC's daily check reads it), the owner's mutes are
+    the /api/cmd actions supervision_mute and supervision_unmute.
     soil: the soil sensor (vgrow/soil.py) or None: its view goes into /api/state as "soil", it switches nothing.
     fan_stick: the E6 on the E25 stick (vgrow/fan_stick.py) or None: its view goes into /api/state as "fan_stick", the
     owner's commands are the /api/cmd actions fan_stick_*.
@@ -614,6 +654,11 @@ def make_app(box: Any, alerts: Alerts, key: str, camera: Any | None = None,
                 snap["grow_plan"] = grow_plan.view(snap, lang)
             except Exception:  # a broken plan costs its card, never the page
                 _LOGGER.exception("Grow plan view failed")
+        if supervisor is not None:
+            try:
+                snap["supervision"] = supervisor.view(snap, lang)
+            except Exception:  # a broken supervision costs its block, never the page
+                _LOGGER.exception("Supervision view failed")
         snap["lang"] = lang
         snap["server_lang"] = i18n.server_lang()
         hidden_cameras = camera_prefs.hidden()
@@ -741,6 +786,21 @@ def make_app(box: Any, alerts: Alerts, key: str, camera: Any | None = None,
             return web.json_response({"rows": []})
         rows = await asyncio.to_thread(soil.history, hours)
         return web.json_response({"rows": rows}, headers={"Cache-Control": "no-store"})
+
+    async def supervision_view(_: web.Request) -> web.Response:
+        """Every signal of the supervision with its state (Supervisor.view), read only, behind the key cookie like every
+        route: the PC's daily check reads it over ssh on the Mac. The demo has no supervision and says so; a real run
+        without one answers 503, so the check sees that it is missing."""
+        if supervisor is None:
+            if getattr(box, "demo", False):
+                return web.json_response({"demo": True}, headers={"Cache-Control": "no-store"})
+            return web.json_response({"error": t("sup.none")}, status=503)
+        try:
+            data = supervisor.view(alert_snapshot(box, camera), i18n.current_lang())
+        except Exception:
+            _LOGGER.exception("Supervision view failed")
+            return web.json_response({"error": t("sup.none")}, status=503)
+        return web.json_response(data, headers={"Cache-Control": "no-store"})
 
     async def thirst_view(_: web.Request) -> web.Response:
         """The Durst-Index card's data in the request language, read only (the same as /api/state "thirst")."""
@@ -1067,6 +1127,19 @@ def make_app(box: Any, alerts: Alerts, key: str, camera: Any | None = None,
                     return web.json_response({"error": t("camera.none")}, status=404)
                 return web.json_response({"ok": True,
                                           "hidden": camera_prefs.set_hidden(ident, body.get("hidden", True) is not False)})
+            elif action in ("supervision_mute", "supervision_unmute"):
+                # The owner silences one signal of the supervision (a part he took away on purpose), with his reason
+                # and for 1 to 14 days: the mute ends by itself, so a forgotten one never becomes the next long
+                # silence, and it stays listed meanwhile (vgrow/supervision.py). A wrong signal, days or no reason: 400.
+                if supervisor is None:
+                    return web.json_response({"error": t("sup.none")}, status=409)
+                if action == "supervision_mute":
+                    result: dict[str, Any] = {"muted": supervisor.mute(body.get("signal"), body.get("days"),
+                                                                      body.get("why"))}
+                else:
+                    result = {"unmuted": supervisor.unmute(body.get("signal"))}
+                await supervisor.save()
+                return web.json_response({"ok": True, **result})
             elif action == "test_push":
                 ok = await alerts.push(t("push.test_title"), t("push.test_body"), priority=3)
                 return web.json_response({"ok": ok}, status=200 if ok else 502)
@@ -1085,6 +1158,8 @@ def make_app(box: Any, alerts: Alerts, key: str, camera: Any | None = None,
                     grow_plan.settings(body, box.snapshot())
                 elif action == "grow_plan_mark":
                     grow_plan.mark(body.get("id"), body.get("done", True) is True)
+                elif action == "grow_plan_topped":
+                    grow_plan.topped(body)
                 elif action == "grow_plan_probe":
                     grow_plan.probe_hung()
                 elif action == "grow_plan_light_resume":
@@ -1178,6 +1253,7 @@ def make_app(box: Any, alerts: Alerts, key: str, camera: Any | None = None,
     app.router.add_get("/api/autopilot", autopilot_view)
     app.router.add_get("/api/pump-history", pump_history_view)
     app.router.add_get("/api/thirst", thirst_view)
+    app.router.add_get("/api/supervision", supervision_view)
 
     async def grow_plan_photo(_: web.Request) -> web.StreamResponse:
         """The picture of the last height reading: the page draws the line it read on top."""
@@ -1379,6 +1455,41 @@ def start_thirst(box: Any, **kwargs: Any) -> Thirst | None:
         return None
 
 
+def start_supervision(box: Any, alerts: Alerts, parts: dict[str, Any], **objects: Any) -> Supervisor | None:
+    """The supervision for serve() (vgrow/supervision.py), or None when it cannot be built: logged, and the cockpit runs
+    without it. A function, so it has a test: serve() outside the demo has none (the NameError of 06.11.2026).
+    objects: the parts it watches that poll_handler does not need (the watering, the light timer, Hank, the soil
+    sensor, the store, ...), put into parts under these names, a None too: there None is a part that failed to start.
+    From now on every poll reads it (parts["supervision"])."""
+    try:
+        parts.update(objects)
+        supervisor = Supervisor(box, alerts, parts)
+        parts["supervision"] = supervisor
+        return supervisor
+    except Exception:
+        _LOGGER.exception("The supervision could not be built; the cockpit runs without it")
+        return None
+
+
+async def start_supervisor(supervisor: Supervisor | None) -> None:
+    """Start the supervision's own task (vgrow_supervision). A failure is logged, the cockpit runs on."""
+    if supervisor is None:
+        return
+    try:
+        supervisor.start().add_done_callback(_forget_failure)
+    except Exception:
+        _LOGGER.exception("The supervision's task could not be started; the cockpit runs on")
+
+
+async def stop_supervisor(supervisor: Supervisor | None) -> None:
+    if supervisor is None:
+        return
+    try:
+        await supervisor.stop()
+    except Exception:
+        _LOGGER.exception("Stopping the supervision failed")
+
+
 def _forget_failure(task: asyncio.Task[Any]) -> None:
     """Hank's ticker logs its own failures; reading the exception here keeps asyncio from logging it a second
     time as "never retrieved"."""
@@ -1507,6 +1618,7 @@ async def serve(box: Any, *, port: int, host: str = "0.0.0.0") -> None:
                 soil.stage_of = stage_key
                 if thirst is not None:
                     soil.on_reading = thirst.sensor_check  # a calibrated reading is a check of the Durst-Index
+                    thirst.soil_history = soil.history  # and a sudden rise in its log is water nobody entered
             fan_stick = start_fan_stick(box, demo)
             parts["fan_stick"] = fan_stick
             # The plan last: it reads all of the above and only the owner's taps and the light of the day go through it.
@@ -1514,14 +1626,22 @@ async def serve(box: Any, *, port: int, host: str = "0.0.0.0") -> None:
                                         thirst=thirst, soil=soil, measurements=store, camera_of=lambda: parts.get("camera"),
                                         link=page_link, tank=automation.tank)
             parts["grow_plan"] = grow_plan
+            # The supervision after every part it watches (vgrow/supervision.py): it reads them and switches nothing. Not
+            # in the demo, whose parts are made up. The news watcher joins parts once it runs, below.
+            supervisor = None if demo else start_supervision(
+                box, alerts, parts, watering=watering, light_schedule=light_schedule, thirst=thirst, hank=hank,
+                soil=soil, pest=pest, vision=vision, store=store, collector=collector, pump_history=pump_history)
             runner = web.AppRunner(make_app(box, alerts, key, camera, plant_log, vision, automation, hank,
                                             measurements=store, autopilot=hub, pump_history=pump_history, watering=watering,
                                             extra_cameras=extra_cameras, light_schedule=light_schedule, thirst=thirst,
-                                            pest=pest, soil=soil, fan_stick=fan_stick, grow_plan=grow_plan))
+                                            pest=pest, soil=soil, fan_stick=fan_stick, grow_plan=grow_plan,
+                                            supervisor=supervisor))
             await runner.setup()
             await web.SockSite(runner, sock).start()
             await start_hank(hank)
             news_watcher = start_news(demo)  # a guest too, and never in the demo
+            parts["news"] = news_watcher  # None here is a start that failed (tasks_dead names it)
+            await start_supervisor(supervisor)
             if demo:
                 cam_line = t("console.demo_camera")
             elif camera is None:
@@ -1534,6 +1654,7 @@ async def serve(box: Any, *, port: int, host: str = "0.0.0.0") -> None:
             try:
                 await asyncio.Event().wait()
             finally:
+                await stop_supervisor(supervisor)  # first: the parts stopped below are no dead parts to report
                 await light_schedule.close()
                 await watering.close()
                 if thirst is not None:

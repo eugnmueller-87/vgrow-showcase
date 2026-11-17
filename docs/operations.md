@@ -242,7 +242,9 @@ Mikrofon, und nichtöffentlich Gesprochenes anderer aufzunehmen ist nach § 201 
 
 Vivosun hat keine offene Schnittstelle. Die Seite spricht dieselbe Cloud an wie die App:
 REST für Login und Messwerte, MQTT über AWS IoT für Befehle und Gerätestatus. Das
-Cockpit fragt den Gerätestatus zusätzlich alle **10 Minuten** lesend ab, auch ohne geänderte Einstellungen.
+Cockpit fragt den Gerätestatus zusätzlich alle **4 Minuten** lesend ab, auch ohne geänderte Einstellungen
+(`SHADOW_REFRESH_SECONDS` in `vgrow/box.py`, seit 06.11.2026: Gießplan und Alarme nehmen nur einen Stand unter
+300 Sekunden an, und bei 10 Minuten verweigerte die Pumpe fünf von zehn Minuten den Start).
 Dieser Hintergrundlauf ist unabhängig von den Sensorabfragen alle 90 Sekunden. Der Status-Zeitstempel wird erst
 mit einer empfangenen Gerätestatus-Antwort aktualisiert; bei Verbindungsproblemen bleibt das tatsächliche Alter sichtbar.
 Die Abfrage schaltet keine Geräte, und ein Fehler beendet den nächsten geplanten Versuch nicht. Das
@@ -760,3 +762,151 @@ Entwurf und Kritik: `docs/autopilot-entwurf.md`, `docs/autopilot-kritik.md`.
 - Liter mit Tippfehler-Schutz: 0,1 bis 20 l. Über 5 l (`confirm_above_liters` in `plant.json`, eigene Regel
   des Cockpits) fragt die Seite ein zweites Mal, bevor sie Mengen zeigt, und der Server rechnet erst danach;
   15 statt 1,5 rutscht so nicht durch. Das Feld nimmt 1,5 und 1.5 in beiden Sprachen.
+
+## Aufsicht (`vgrow/supervision.py`)
+
+Anlass (15.11.2026): Der Durst-Index bekam neun Tage lang keine Messung, weil der Bodensensor seit dem Einrichten am
+06.11. nicht eingestellt war, und nichts meldete es. Die Aufsicht macht aus jedem Teil von VGrow ein Signal mit einem
+klaren Zustand: in Ordnung, still, unbekannt (ein Leser bricht ab, das zählt wie still), Anlauf, wartet (ein Teil, von
+dem es abhängt, ist still), aus (bewusst abgeschaltet), nicht eingerichtet und stummgeschaltet. Jedes Signal hat genau
+eine Regel in `alerts.json` (`kind` und `metric` sind `supervision`): Haltezeit, Erinnerung, Entwarnung und Hanks rotes
+Licht kommen aus der Alarm-Maschine, die es schon gibt. Der Push nennt die Regel, was gerade still ist und seit wann, und
+einen einfachen nächsten Schritt (`hint` und `hint_en` in `alerts.json`). Teile heißen dabei mit ihrem Namen auf der
+Seite, nie mit einem Namen aus dem Code. Bricht ein Leser ab (unbekannt), heißt der Push etwa „Fühler meldet nichts
+(nicht prüfbar)“, hat höchstens Priorität 4 und sagt, dass das kein Befund über den Teil selbst ist; Hank sagt dasselbe.
+
+- **Zwei Wege, kein doppelter Push.** Geprüft wird in jeder Abfrage der Box (alle 90 s), mit demselben Stand wie jede
+  andere Regel. Ein eigener Wächter läuft alle 60 s und treibt nur die zwei Regeln, die eine tote oder hängende Abfrage
+  nicht selbst melden kann (`poll_stalled`, `supervision_failing`). Die Abfrage meldet umgekehrt einen stehenden Wächter
+  (`supervision_silent`): die beiden passen aufeinander auf.
+- **Rot** (Priorität 4, der Pumpen-Wächter 5): Push mit Ton, Hank wird rot, auf der Seite eine dringende Karte.
+  **Gelb** (Priorität 3, Nachrichten und Ollama 2 ohne Ton): Push, bei Hank der Zusatz „Bitte nachsehen“, der nie eine
+  Klima- oder Durstzeile verdrängt, auf der Seite eine Hinweiskarte und nie das rote Band oben. In der Heute-Liste steht
+  eine gelbe Regel als „Bitte nachsehen“ mit ihrem nächsten Schritt. „Beheben“ antwortet bei jeder aktiven Regel der
+  Aufsicht mit Name und nächstem Schritt, nie mit „Alles im Ziel“. Solange `poll_stalled` aktiv ist, schiebt Hank alte
+  Messwerte nicht auf die Box: dann fragt sie niemand ab.
+- **Eine Ursache, ein Push.** Ist die Box nicht frisch (offline oder Messwerte älter als 300 s), warten Gerätestatus,
+  Fühler, eingebauter Sensor, Tanksensor, Ventilator-Stick und Messwertspeicher. Ein stiller Gerätestatus lässt den
+  Tanksensor warten (ohne ihn ist dessen Typ unbekannt). Ein stiller oder nicht eingestellter Bodensensor lässt
+  `thirst_input` warten, ein stiller Bodensensor oder ein Durst-Index, der nicht rechnet, `thirst_sensor_look`; ein stilles
+  Ollama lässt die Schädlingswache warten, eine GrowCam, die offline oder weggelegt ist, den Höhenleser. Nennt
+  `tasks_dead` die Schleife eines Teils (Bodensensor, Ventilator-Stick, Höhenleser, Messwertspeicher, Nachrichten,
+  Schädlingswache), wartet dessen eigene Regel: sie würde sonst Netzteil oder Batterie raten, wo ein Neustart hilft.
+- **Anlauf.** In den ersten 5 Minuten nach einem Start ist nichts still, ebenso nach einer Lücke des Wächters über
+  180 s (ein Mac, der geschlafen hat). Grenzen über 1 Stunde lesen gespeicherte Belege (Durst-Protokoll,
+  `calibration.json`, Grow-Plan, Schädlingsprüfungen, Nachrichten, Messwertspeicher): ein Ausliefern stellt keine Uhr
+  zurück.
+- **Ausgefallene Zeit.** Der Wächter schreibt jede Minute, dass er lebt. Liegt beim nächsten Start oder zwischen zwei
+  seiner Takte eine Lücke über 300 s, kommt ein Push wie „VGrow lief von 03:12 bis 03:50 nicht“: in der Zeit liefen weder
+  Alarme noch Automatik, und geplante Gießzeiten sind entfallen (sie werden nie nachgeholt). Der Push wird wiederholt,
+  bis ntfy ihn annimmt. Ein Ausliefern hinterlässt eine Lücke weit unter 300 s und sagt nichts. Starts werden gezählt
+  und angezeigt; ab 20 Starts in 24 Stunden ohne Ausliefern kommt der gelbe Hinweis `restarts`, denn ein Prozess, der
+  alle paar Minuten bis Stunden stirbt, hinterlässt sonst keine Lücke über 300 s. Ausliefern zählt nicht:
+  `install_mac.sh` legt vor dem Stoppen die Marke `~/.vgrow-control/deploy-at` ab, und ein Start bis 10 Minuten danach
+  gehört dazu (`process.deploys_24h` in der Ansicht). Ein Neustart des Mac oder ein Absturz zählt.
+- **Kein Selbstneustart.** Steht die Abfrage, meldet der Server das und startet sich nicht selbst neu, damit die Ursache
+  sichtbar bleibt (so entschieden am 15.11.2026). Für die Pumpe wäre ein Neustart sicher: ein unterbrochener Lauf wird
+  beim Start gestoppt, nie fortgesetzt.
+
+| Signal (bewacht) | Stufe | Grenze | Grundlage | Haltezeit | Erinnerung |
+| --- | --- | --- | --- | --- | --- |
+| `poll_stalled` (Abfrage der Box) | rot, Wächter | 300 s | `box.WATER_STALE_SECONDS`: drei verpasste Abfragen zu `box.POLL_SECONDS` 90 | 1 min | 6 h |
+| `supervision_failing` (ein Prüfschritt bricht ab) | rot, Wächter | 3 Abfragen in Folge (270 s), eine kaputte Regel sofort | dreimal `box.POLL_SECONDS` 90 | 1 min | 6 h |
+| `supervision_silent` (der Wächter selbst) | rot | 180 s | dreimal der Wächtertakt von 60 s | 1 min | 6 h |
+| `tasks_dead` (Hintergrundteile des Servers) | rot | keine: eine beendete Schleife ist tot | jede Schleife läuft ohne Ende; Anlauf 300 s, weil `serve()` die Teile nacheinander startet | 5 min | 6 h |
+| `watering_watchdog` (Pumpen-Wächter) | rot, Priorität 5 | 30 s | `watering.CONFIRM_SECONDS`: dieser Wächter schaltet die Pumpe ab | 1 min | 6 h |
+| `light_timer` (Lichttimer) | rot | 30 s ohne Takt, der letzte Lichtwechsel unbestätigt, oder ein Speicherfehler | `light_schedule.CONFIRM_SECONDS`; unbestätigt ist das eigene Urteil des Timers nach zwei Versuchen, und es endet, sobald die Lampe auf dem Wert des Termins steht (auch in der App geschaltet); nach einem verpassten Termin wartet der nächste, bis der Timer ihn versucht hat | 2 min | 6 h |
+| `device_link` (Gerätestatus und Befehlsverbindung) | rot | 480 s | zweimal `box.SHADOW_REFRESH_SECONDS` 240 | 10 min | 12 h |
+| `probe_silent` (Fühler auf Blatthöhe) | rot | 900 s | `automation.FAILSAFE_SECONDS`; immer erwartet (`expect` `always`) | 5 min | 12 h |
+| `builtin_silent` (eingebauter Sensor) | gelb | 900 s | `automation.FAILSAFE_SECONDS`; immer erwartet | 5 min | 24 h |
+| `tank_sensor_silent` (Wassersensor am Tank) | rot | 900 s | das 900-s-Fenster der Abfrage im Punktprotokoll, dreimal `box.WATER_STALE_SECONDS`; erwartet, sobald er einmal gesehen wurde | 5 min | 12 h |
+| `soil_silent` (Gateway und Bodenfühler) | rot | 600 s | `soil.STALE_S`; der Text trennt Gateway und Fühler | 20 min | 24 h |
+| `thirst_engine` (Durst-Index rechnet) | rot | 300 s | `box.WATER_STALE_SECONDS` | 5 min | 12 h |
+| `thirst_input` (Messung für den Durst-Index) | rot | 24 h ohne Prüfung oder Wägung | `measured_valid_s` in `kartei/water_model.json`: danach entfällt jeder Gießtermin als ungemessen | 10 min | 24 h |
+| `watering_skips` (Gießtermine) | rot | die letzten 2 Termine seit dem letzten Einschalten des Plans mit einem Fehler, oder ein Speicherfehler der Bewässerungsdaten | eigene Wahl: einmal ist ein Neustart, zweimal ein Muster; harmlose Gründe zählen nicht, ebenso wenig Termine von vor dem Einschalten | 2 min | 24 h |
+| `push_broken` (Push aufs Handy) | rot | kein Push-Ziel, oder 900 s lang scheitert jeder Push, solange die Versuche weiter scheitern | eigene Wahl: zehn Abfragen mit Wiederholung; ein einzelner Fehlschlag ohne Wiederholung zählt nach 300 s nicht mehr | 5 min | 24 h |
+| `hank_silent` (Hank) | rot | 300 s | fünfmal Hanks Takt (`TICK_SECONDS` 60) | 5 min | 12 h |
+| `soil_uncalibrated` (Bodensensor eingestellt) | gelb | 24 h | eigene Wahl: ein Tag, um zu gießen, 2 Stunden abtropfen zu lassen und auf der Seite Wasser & Boden „Topf ist gegossen und abgetropft“ zweimal zu tippen; die Uhr läuft ab Topf oder letzter Einstellung | 10 min | 24 h |
+| `thirst_sensor_look` (Handgießen im Bodensensor) | gelb | 1080 s | dreimal (`soil.POLL_S` 60 + `thirst.SENSOR_WATER_LOOK_S` 300) | 10 min | 24 h |
+| `ruler_silent` (Höhenleser) | gelb | 27 h | `grow_plan.UNREADABLE_PUSH_AFTER_S` 24 h + `HEIGHT_EVERY_S` 3 h; nur nach mindestens 3 Stunden Licht in 24 h | 60 min | 24 h |
+| `fan_stick_silent` (Ventilator-Stick) | gelb | 900 s | dreimal `fan_stick.REFRESH_S` 300; nur mit gefundenem Stick und eingeschalteter Tag-Nacht-Regel | 30 min | 24 h |
+| `pest_watch_silent` (Schädlingswache) | gelb | 24 h ohne gelungene Prüfung | eigene Wahl: stündlich bei Licht, im schlechtesten gesunden Fall etwa 13,5 h | 60 min | 24 h |
+| `store_silent` (Messwertspeicher, Lichtbilanz) | gelb | 2700 s, die Lichtbilanz 600 s | dreimal `measurements.COLLECT_SECONDS` 900; `light_view.DAY_REFRESH` | 15 min | 24 h |
+| `news_silent` (Nachrichten-Abruf) | gelb, Priorität 2 | 48 h | zweimal `news.STALE_AFTER` 24 h | 60 min | 24 h |
+| `ollama_silent` (lokales Modell) | gelb, Priorität 2 | 1800 s | eigene Wahl: Ollama startet erst nach der Anmeldung am Mac; nur, wenn Hank nicht aus ist | 10 min | 24 h |
+| `restarts` (VGrow startet oft neu) | gelb, Priorität 2 | 20 Starts in 24 h ohne Ausliefern | eigene Wahl: ein Prozess, der alle 72 Minuten stirbt, erreicht sie; die Starts eines Auslieferns (Marke `deploy-at` von `install_mac.sh`, 10 Minuten) zählen nicht; ohne Anlauf, weil die Zahl beim Start schon steht | 10 min | 24 h |
+
+Haltezeiten und Erinnerungen sind eigene Werte ohne Quelle. Die Aufsicht hält für jedes Signal 14 Tage lang das höchste
+Alter (`peak_age_s`); daran werden die eigenen Werte nach 14 Tagen geprüft.
+
+**Bewusst ohne Signal**, jeweils mit Grund:
+- Community: nur Routen, keine Schleife; dass die Routen antworten, zeigt die Probe.
+- Alter des Geräte-Checks: Handaufzeichnungen ohne festen Takt, jede Grenze wäre erfunden; das Alter steht in der Ansicht.
+- Autopilot wartet: jeder Grund ist eine Wahl, die Hank und „Hank regelt“ schon zeigen; ein täglicher Push für eine noch
+  offene Wahl wäre Lärm.
+- Freier Speicher: kein Grenzwert im Code und kein dokumentierter Takt; die freien Bytes stehen in der Ansicht, nach
+  14 Tagen lässt sich daraus eine Zahl ableiten.
+- Bildinhalt der GrowCam: `camera_offline` prüft nur die Verbindung; ein eingefrorenes Bild zeigt sich nach 27 h als
+  `ruler_silent`.
+- Abgelehnter VIVOSUN-Login: erscheint als „Box offline“.
+- Tailscale und die Uhr des Mac: keine Teile von VGrow.
+- Ein Teil, das schon vor dem ersten Ausliefern tot war: gedeckt, wo `alerts.json` es immer erwartet (Fühler, eingebauter
+  Sensor) oder die Box den Zubehörtyp meldet; ein Tanksensor, der schon davor tot war, bleibt ungesehen.
+- Beide Rechner aus, ein stummes Handy oder ein falsches ntfy-Thema: das sieht keine Schicht. Deshalb nach jedem
+  Ausliefern auf der Seite **Test-Push** drücken; einen wöchentlichen Test-Push gibt es bewusst nicht.
+
+**Lesen.** `GET /api/supervision` (dasselbe Cookie wie das Cockpit, ohne es 403) und `supervision` in `GET /api/state`
+zeigen `poll` und `watcher` (Alter, laufender Schritt), `loops`, `signals` (je Signal Zustand, Alter, Grenze,
+`peak_age_s` und den Satz in der Sprache der Seite), `active` (aktive Regeln mit Beginn), `muted` (mit Grund und Ablauf),
+`unwatched` (Teile ohne Regel, selbst ein Befund; die zwei Schleifen des MQTT-Clients zählen nicht, ihr Tod zeigt sich als
+`device_link` oder `fan_stick_silent`), `process` (Laufzeit, Starts in 24 h, letzte Lücke), `push`, das Alter
+des Geräte-Checks und den freien Speicher. Die Demo antwortet `{"demo": true}`, ein echter Lauf ohne Aufsicht 503. Am
+einfachsten über die Probe, auf dem Mac:
+`cd ~/vgrow-control && .venv/bin/python scripts/supervision_probe.py | python3 -m json.tool`
+
+**Stummschalten**, wenn ein Teil bewusst ausgebaut ist (etwa der Ventilator-Stick): 1 bis 14 Tage und nur mit Grund.
+Danach meldet sich das Signal von selbst zurück, damit eine vergessene Stummschaltung nicht die nächste stille Woche wird.
+Stumme Signale stehen weiter in der Ansicht und im Bericht am PC. Einen Knopf auf der Seite gibt es dafür noch nicht. Auf
+dem Mac (per ssh angemeldet) geht der Schlüssel über die Standardeingabe an curl und steht in keiner Befehlszeile:
+```
+printf 'cookie = "vgrow_key=%s"\n' "$(cat ~/.vgrow-control/access-key)" | curl -sS -K - \
+  -H 'Content-Type: application/json' \
+  -d '{"action":"supervision_mute","signal":"fan_stick_silent","days":7,"why":"Stick ausgebaut"}' \
+  http://127.0.0.1:8742/api/cmd
+```
+Zurücknehmen genauso mit `{"action":"supervision_unmute","signal":"fan_stick_silent"}`. Ohne Grund, mit mehr als 14 Tagen
+oder für ein unbekanntes Signal antwortet der Server 400.
+
+**Probe** (`scripts/supervision_probe.py`): nur Standardbibliothek und kein Import aus `vgrow/`, damit sie auch nach einem
+kaputten Ausliefern läuft. Sie liest den Schlüssel auf dem Mac im eigenen Prozess, fragt nur eine Adresse dieses Rechners
+(`127.0.0.1:8742`), folgt keiner Weiterleitung, nimmt keinen Proxy und schreibt eine Zeile JSON: `ok`, `error`,
+`status`, `reachable`, `detail`, `supervision` (die ganze Ansicht), `launchd` (`loaded`, `pid`, `last_exit` aus
+`launchctl list de.vgrow.control`) und `power` (`source`, `percent`, `line` aus `pmset -g batt`). Die Fehler: `no_key`,
+`not_local`, `refused` (nichts hört auf dem Port: Dienst aus oder nicht neu gestartet), `timeout` (verbunden, aber keine
+Antwort: die Ereignisschleife hängt), `forbidden` (403, falscher Schlüssel), `unavailable` (503, keine Aufsicht im
+Server), `http` (ein anderer Status, auch eine Weiterleitung), `bad_json` und `unreachable`. Sie endet immer mit 0, die
+Bewertung macht der PC, und den Schlüssel gibt sie nie aus. Wie `launchctl` und `pmset` antworten, ist angenommen und
+auf dem Mac noch nicht gesehen (Vermutung bis zum ersten Lauf): was nicht passt, bleibt leer.
+
+**Nach jedem Ausliefern** (`git push mac main`, `install_mac.sh`), auf dem Mac:
+1. `launchctl list | grep vgrow`: eine Zeile mit PID, der Dienst läuft.
+2. `tail -n 50 ~/.vgrow-control/server.log`: kein Traceback beim Start.
+3. `cd ~/vgrow-control && .venv/bin/python scripts/supervision_probe.py`: `"ok":true` und `"error":null`.
+4. Auf der Seite **Test-Push** drücken und den Push auf dem Handy sehen.
+
+Einmal nach dem ersten Ausliefern zusätzlich: in der Probe `launchd` und `power` ansehen; den Server anhalten
+(`kill -STOP <pid>`), die Probe laufen lassen (nach 15 s `timeout`) und ihn mit `kill -CONT <pid>` weiterlaufen lassen;
+den Dienst stoppen (`launchctl bootout gui/$(id -u)/de.vgrow.control`), die Probe laufen lassen (`refused`) und
+`install_mac.sh` erneut aufrufen; am PC einmal `schtasks /run /tn AI-Brain-Watchdog`, damit klar ist, dass ssh in der
+geplanten Aufgabe ohne Passwortfrage geht. Steht der Bodensensor noch auf nicht eingestellt, kommt nach dem Anlauf
+(5 Minuten) und der Haltezeit (10 Minuten) der Push von `soil_uncalibrated`; nach dem Einstellen kommt die Entwarnung.
+
+**Am PC** (das tägliche Lebenszeichen im Brain, um 05:00): zwei Posten lesen den Mac über ssh mit dieser Probe.
+„VGrow Control (Mac-Server)“ lebt nur mit ssh, HTTP 200, einer Abfrage höchstens 300 s alt, einem Wächter höchstens
+180 s alt und ohne fehlende Schleife; sonst nennt er den Grund (Mac nicht erreichbar, Server antwortet nicht oder hängt,
+falscher Schlüssel, keine Aufsicht, Abfrage oder Wächter zu alt). „VGrow Aufsicht (Eingaben)“ listet jede aktive Regel
+mit ihrem Beginn, die stummen Signale mit Grund und Ablauf und die Teile ohne Regel. Ist der Prozess jünger als 300 s,
+fragt der PC nach 60 s noch einmal, damit ein Neustart um 05:00 kein Fehlalarm wird. Eine anhaltende Stille meldet er
+jeden Tag neu, nicht nur einmal. Ein toter Mac, ein toter Prozess oder ein hängender Server fällt so binnen 24 h auf,
+alles im Prozess binnen Minuten, und ein Prozess, der immer wieder neu startet, ab 20 Starts ohne Ausliefern in 24 h
+als `restarts`. Adresse und Benutzer des Mac stehen nur im Brain, nie in diesem Repository.

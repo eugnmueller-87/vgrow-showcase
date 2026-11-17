@@ -14,6 +14,6 @@ The application can use pretrained Gemma and Granite models through Ollama on yo
 
 VIVOSUN, VGrow, Logitech, Ollama, Gemma and Granite identify their owners' products and projects; their names and marks remain their owners' property. This is an independent, unofficial project. No endorsement or partnership is claimed.
 
-The screenshots and the cover come from the project owner's own installation. The garden clip in the README uses the demo mode's made-up values. Public community post titles shown in screenshots remain their authors' content; the source is identified in the gallery.
+The screenshots, the cover and the 60-second tour in the README come from the project owner's own installation. The garden clip in the README uses the demo mode's made-up values. Public community post titles shown in screenshots and in the tour remain their authors' content; the source is identified in the gallery, and the tour shows it on the Community page (r/VIVOSUN).
 
 Left out on purpose: the private strain lexicon and the strain encyclopedia data (third-party rights), the private Git history, credentials and model weights.

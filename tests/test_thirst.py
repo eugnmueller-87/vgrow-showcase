@@ -1271,6 +1271,47 @@ def test_the_blocked_alert_counts_its_hours_from_the_block_not_from_the_measurem
     assert "for 12 h" in th.decision_text(later, ledger, CLOCK["now"], "en")
 
 
+def due_pushes(rig: Rig) -> list[dict[str, Any]]:
+    return [a for a in rig.alerts.sent if "Der Topf ist fällig" in a["message"]]
+
+
+def test_a_measured_due_pot_pushes_at_once_and_only_once(isolated_state) -> None:  # type: ignore[no-untyped-def]
+    """Owner 15.11.2026: twice he found the pot dry by hand. A measured due pot is said at once, not after 12 h."""
+    rig = escalation_rig(101, measured=True)
+    assert asyncio.run(rig.thirst.check(snap())).kind == "PROPOSE"
+    for _ in range(5):
+        CLOCK["now"] += 90
+        asyncio.run(rig.thirst.check(snap()))
+    pushed = due_pushes(rig)
+    assert len(pushed) == 1 and pushed[0]["priority"] == 3 and "Fingerprobe trocken" in pushed[0]["message"]
+
+
+def test_a_blocked_due_pot_pushes_at_once_too(isolated_state) -> None:  # type: ignore[no-untyped-def]
+    rig = escalation_rig(101, measured=True)
+    assert asyncio.run(rig.thirst.check(snap(climate={"water_state": "dry"}))).kind == "BLOCKED"
+    assert len(due_pushes(rig)) == 1 and rig.box.calls == []
+
+
+def test_a_model_index_alone_never_says_due(isolated_state) -> None:  # type: ignore[no-untyped-def]
+    rig = escalation_rig(110)
+    for _ in range(3):
+        asyncio.run(rig.thirst.check(snap()))
+        CLOCK["now"] += 90
+    assert due_pushes(rig) == []
+
+
+def test_once_the_pot_is_moist_again_the_next_dry_check_pushes_again(isolated_state) -> None:  # type: ignore[no-untyped-def]
+    rig = escalation_rig(101, measured=True)
+    asyncio.run(rig.thirst.check(snap()))
+    CLOCK["now"] += 90
+    rig.thirst.log({"kind": "check", "answer": "moist", "depth_cm": 5}, at=CLOCK["now"])
+    asyncio.run(rig.thirst.check(snap()))
+    CLOCK["now"] += 90
+    rig.thirst.log({"kind": "check", "answer": "dry", "depth_cm": 5}, at=CLOCK["now"])
+    asyncio.run(rig.thirst.check(snap()))
+    assert len(due_pushes(rig)) == 2
+
+
 # ---------- the owner's inputs ----------
 
 def test_the_inputs_validate_and_ask_twice_where_due(isolated_state) -> None:  # type: ignore[no-untyped-def]
@@ -1664,3 +1705,77 @@ def test_owner_named_pump_off_overrides_conflicting_readable_lock(tmp_path, monk
 def test_the_real_ports_file_never_has_always_on_with_a_pump() -> None:
     rules = json.loads((REPO / "ports.json").read_text(encoding="utf-8"))
     assert not [k for k, v in rules.items() if isinstance(v, dict) and v.get("always_on") and v.get("device") == "pump"]
+
+
+# ---------- the supervision's evidence (vgrow/supervision.py; the nine days without a measurement, 15.11.2026) ----------
+
+def test_checked_at_and_measured_at_come_from_a_check_that_ran_to_its_end(isolated_state, monkeypatch) -> None:  # type: ignore[no-untyped-def]
+    rig = Rig()
+    assert rig.thirst.checked_at is None and rig.thirst.measured_at is None
+    rig.thirst.log({"kind": "water", "litres": 0.5, "origin": "hand"}, at=CLOCK["now"] - HOUR)
+    asyncio.run(rig.thirst.check(rig.box.snapshot()))
+    assert rig.thirst.checked_at == CLOCK["now"] and rig.thirst.measured_at is None  # water is no measurement
+    rig.thirst.log({"kind": "check", "answer": "dry", "depth_cm": 5}, at=CLOCK["now"] - 2 * HOUR)
+    rig.thirst.log({"kind": "weigh", "kg": 8.4, "full": True}, at=CLOCK["now"] - 30 * 60)
+    asyncio.run(rig.thirst.check(rig.box.snapshot()))
+    assert rig.thirst.measured_at == CLOCK["now"] - 30 * 60  # the newer of the check and the weighing
+    rig.thirst.log({"kind": "water", "litres": 0.3, "origin": "hand"}, at=CLOCK["now"] - 60)
+    asyncio.run(rig.thirst.check(rig.box.snapshot()))
+    assert rig.thirst.measured_at == CLOCK["now"] - 30 * 60  # a later watering moves nothing
+    before = rig.thirst.checked_at
+
+    def broken(*args: Any, **kwargs: Any) -> Any:
+        raise RuntimeError("ledger")
+
+    monkeypatch.setattr(rig.thirst, "assess", broken)
+    CLOCK["now"] += 90
+    asyncio.run(rig.thirst.check(rig.box.snapshot()))
+    assert rig.thirst.checked_at == before  # a failing ledger leaves the evidence stale
+
+
+def test_the_supervision_data_is_plain(isolated_state, tmp_path) -> None:  # type: ignore[no-untyped-def]
+    rig = Rig()
+    data = rig.thirst.supervision()
+    assert set(data) == {"pot_set_at", "measured_at", "checked_at", "look_at", "valid_s", "schedule_on"}
+    assert data["pot_set_at"] == CLOCK["now"] - 30 * DAY and data["valid_s"] == MODEL("measured_valid_s")
+    assert data["schedule_on"] is False and json.dumps(data)
+    rig.watering.cfg["enabled"] = True
+    assert rig.thirst.supervision()["schedule_on"] is True
+    broken = tmp_path / "model.json"
+    broken.write_text("{", encoding="utf-8")
+    rig.thirst.model_path = broken
+    assert rig.thirst.supervision()["valid_s"] is None
+    rig.thirst.pot_path().unlink()
+    assert rig.thirst.supervision()["pot_set_at"] is None
+
+
+def test_look_at_only_after_a_look_that_ran_to_its_end(isolated_state) -> None:  # type: ignore[no-untyped-def]
+    rig = Rig()
+    assert rig.thirst.sensor_waterings() == [] and rig.thirst.look_at is None  # no soil history: no look
+    rig.thirst.soil_history = lambda hours: []
+    rig.thirst.state["runs"] = {"usb1": {"from": CLOCK["now"] - 60}}
+    assert rig.thirst.sensor_waterings() == [] and rig.thirst.look_at is None  # a pump run is open: no look
+    rig.thirst.state["runs"] = {}
+    rig.thirst.sensor_waterings()
+    assert rig.thirst.look_at == CLOCK["now"]
+
+
+@pytest.mark.parametrize(("arrange", "gate"), [("measured_due", "no_flow"), ("not_due", "not_due")])
+def test_the_gate_code_is_kept_on_the_skipped_event(isolated_state, arrange, gate) -> None:  # type: ignore[no-untyped-def]
+    rig = Rig(power=True, now=local(2026, 10, 26, 10, 0, 30))
+    ctl, mono = controller(rig)
+    if arrange == "measured_due":
+        rig.measured_due()  # due and measured, but the flow is not calibrated
+    else:
+        rig.at_ti(61.6)
+
+    async def go() -> None:
+        await scheduled(ctl)
+        CLOCK["now"] += 60
+        mono[0] += 60
+        await ctl.tick()
+        await ctl.close()
+
+    asyncio.run(go())
+    skipped = ctl.events[-1]
+    assert skipped["kind"] == "skipped" and skipped["reason"] == "thirst" and skipped["gate"] == gate

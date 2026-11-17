@@ -9,10 +9,13 @@
 // window.GardenLogic.notices(state) -> active alarms that are no job: a camera, a rule on the light. They go on his notice board.
 // window.GardenLogic.chillPool(state, lightsOn) -> the free-time activities that fit: beer and cigarette are for the owner's own
 // box only, the demo stays without them.
+// window.GardenLogic.buddy(state, now, lastStateAt, offline) -> what his helper robot watches, {status, items}: see buddy() below.
 (function () {
   "use strict";
 
   const LOST_AFTER_S = 900;  // the automation's own fail-safe age (vgrow/hank/nudges.py OFFLINE_SECONDS)
+  const LINK_GRACE_MS = 10 * 1000;  // one failed poll can be a restart for a new version; app.js polls every 5 s
+  const LINK_STALE_MS = 30 * 1000;  // six polls without a state: a request that hangs never says "vgrow:offline"
 
   function num(value) { return typeof value === "number" && isFinite(value) ? value : null; }
 
@@ -161,11 +164,40 @@
     return job("chill", "chill", null, null, { lights: lightsOn(s), hankLevel: hank && hank.light ? hank.light.level : null });
   }
 
+  // Everything Hank's helper robot (web/garden.js Robot) reports, read in this one place:
+  // - every active row of the server's alert list, the supervision rules for silent signals included (kind "supervision",
+  //   level "red" or "yellow"; a row without a level counts as red). The label comes localized from the server.
+  // - the page losing the server: app.js fires "vgrow:offline" when a poll fails (offline), and a state that stops coming
+  //   is the same news. now and lastStateAt are milliseconds; without them the age does not count.
+  // -> {status, items}: status "alert" with at least one item, else "night" while the lamp reports 0, else "calm".
+  //    An item is {id, text, level, key}: key is the text key of his line, text fills its {what}. A missing field is calm.
+  //    level is carried, not yet used: every active row is a problem to him, yellow as much as red (owner, 15.11.2026: "any
+  //    error whatsoever"). Whether a yellow row, a notice in the cockpit, should be quieter for him is the owner's call.
+  function buddy(s, now, at, offline) {
+    const items = [], ids = new Set();
+    const add = (item) => { if (!ids.has(item.id)) { ids.add(item.id); items.push(item); } };
+    const word = (value) => (typeof value === "string" && value.trim() ? value.trim() : null);
+    const age = num(now) !== null && num(at) !== null ? now - at : null;
+    if ((offline === true && (age === null || age >= LINK_GRACE_MS)) || (age !== null && age >= LINK_STALE_MS)) {
+      add({ id: "link", text: null, level: "red", key: "garden.robot.link" });
+    }
+    const rows = s && Array.isArray(s.alerts) ? s.alerts : [];
+    for (const row of rows) {
+      if (!row || typeof row !== "object" || !row.active) continue;
+      const text = word(row.label);
+      add({ id: `alert:${word(row.name) || word(row.signal) || text || "?"}`, text, level: row.level === "yellow" ? "yellow" : "red",
+        key: text ? "garden.robot.tell" : "garden.robot.tellPlain" });
+    }
+    if (items.length) return { status: "alert", items };
+    const level = num(s && s.light && s.light.level);
+    return { status: level !== null && level <= 0 ? "night" : "calm", items };
+  }
+
   function chillPool(s, lights) {
     const own = !s.demo;
     if (!lights) return own ? ["nap", "nap", "game", "beer"] : ["nap", "nap", "game", "juice"];
     return own ? ["beer", "game", "cig", "inspect", "juice"] : ["juice", "game", "inspect"];
   }
 
-  window.GardenLogic = { decide, chillPool, climate, status, pumpOn, tankDry, lightsOn, humidifierOn, soilText, heightCm, openTodos, notices, noteAlarm, regulated };
+  window.GardenLogic = { decide, chillPool, climate, status, pumpOn, tankDry, lightsOn, humidifierOn, soilText, heightCm, openTodos, notices, noteAlarm, regulated, buddy };
 })();

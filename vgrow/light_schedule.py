@@ -165,6 +165,7 @@ class LightSchedule:
         self.reconcile = True
         self.events: list[dict[str, Any]] = []
         self.task: asyncio.Task[Any] | None = None
+        self.ticked_at: float | None = None  # the loop's last completed check: proof the timer still runs (supervision)
         self._lock = asyncio.Lock()
         self.requirements_source: Callable[[], tuple[dict[str, Any] | None, dict[str, Any] | None]] | None = None
         try:
@@ -389,6 +390,7 @@ class LightSchedule:
             while True:
                 try:
                     await self.tick()
+                    self.ticked_at = self.clock()  # a check that raises is no beat
                 except Exception:
                     LOG.exception("Light timer check failed")
                 await asyncio.sleep(1)

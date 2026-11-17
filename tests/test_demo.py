@@ -199,6 +199,7 @@ def test_demo_values_never_raise_an_alarm() -> None:
     """The demo runs the real alert check: its made-up values must stay inside every rule all day."""
     box, camera = DemoBox(), DemoCamera()
     rules = config.alert_rules()["rules"]
+    assert any(rule.get("metric") == "supervision" for rule in rules.values())  # the demo has no supervision block
     start = time.time()
     for hour in range(0, 24 * 4):
         monkey_time = start + hour * 900

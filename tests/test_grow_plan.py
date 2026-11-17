@@ -794,6 +794,96 @@ def test_the_flowering_mark_offers_the_switch_only_when_it_is_time(rig: Any) -> 
     assert button["action"] == "plant_stage" and button["key"] == "early_flower" and button["armed"] is True
 
 
+# ---------- topping ----------
+
+def test_a_cut_counts_from_the_owners_day_and_a_second_tap_changes_nothing(rig: Any) -> None:
+    rig.clock[0] = at("2026-11-13T10:00:00")
+    rig.plan.topped({"date": "2026-11-12"})
+    rig.plan.topped({"date": "2026-11-12"})
+    assert [c["date"] for c in rig.plan.state["topping"]["cuts"]] == ["2026-11-12"]
+    assert [e["key"] for e in rig.plan.state["log"]].count("gp.log.topped") == 1
+    marks = {m["id"]: m for m in rig.plan.view(rig.box.snapshot(), "de")["marks"]}
+    topping, flowering = marks["topping"], marks["flowering"]
+    assert topping["state"] == "done" and topping["show"] is True and topping["buttons"] == []
+    assert "Getoppt am 12.11.2026" in topping["text"] and "Erholung bis 19.11.2026" in topping["text"]
+    assert "Ab 19.11.2026 die Knoten" in topping["text"] and topping["topped"]["label"] == "Nochmal getoppt"
+    assert flowering["state"] == "wait" and flowering["state_text"] == "ab 26.11.2026" and flowering["buttons"] == []
+
+
+def test_before_any_cut_the_day_field_is_there_even_below_the_field(rig: Any) -> None:
+    take(rig, 16.0)
+    topping = {m["id"]: m for m in rig.plan.view(rig.box.snapshot(), "de")["marks"]}["topping"]
+    assert topping["state"] == "next" and topping["topped"]["label"] == "Getoppt"
+    assert topping["topped"]["date"] == "2026-11-06" and topping["topped"]["min"] == "2026-10-30"
+    assert [b["label"] for b in topping["buttons"]] == ["Lasse ich"]
+
+
+@pytest.mark.parametrize("day", ["2026-11-14", "2026-11-05", "gestern"])
+def test_a_cut_in_the_future_or_long_ago_is_refused(rig: Any, day: str) -> None:
+    rig.clock[0] = at("2026-11-13T10:00:00")
+    with pytest.raises(CommandRefused):
+        rig.plan.topped({"date": day})
+    assert not (rig.plan.state.get("topping") or {}).get("cuts")
+
+
+def test_the_flowering_mark_waits_two_weeks_after_the_last_cut(rig: Any) -> None:
+    rig.clock[0] = at("2026-11-12T12:00:00")
+    take(rig, 16.0)
+    rig.plan.topped({})
+    rig.clock[0] = at("2026-11-20T12:00:00")
+    take(rig, 26.0)
+    assert not any("Blüte" in message or "Toppen wäre" in message for message in rig.pushes.sent)
+    flowering = {m["id"]: m for m in rig.plan.view(rig.box.snapshot(), "de")["marks"]}["flowering"]
+    assert flowering["state"] == "wait" and flowering["buttons"] == []
+    rig.clock[0] = at("2026-11-26T12:00:00")
+    take(rig, 26.5)
+    assert "auf Blüte umstellen" in rig.pushes.sent[-1]
+    flowering = {m["id"]: m for m in rig.plan.view(rig.box.snapshot(), "de")["marks"]}["flowering"]
+    assert flowering["state"] == "now" and flowering["buttons"][0]["key"] == "early_flower"
+
+
+def test_a_week_after_each_cut_one_push_to_count_the_nodes(rig: Any) -> None:
+    def said() -> int:
+        return sum("Knoten an den neuen Spitzen" in message for message in rig.pushes.sent)
+
+    async def run() -> None:
+        rig.clock[0] = at("2026-11-12T12:00:00")
+        rig.plan.topped({})
+        rig.clock[0] = at("2026-11-19T08:00:00")
+        await rig.plan.check(rig.box.snapshot())
+        assert said() == 0  # the day, but not yet morning
+        rig.clock[0] = at("2026-11-19T09:30:00")
+        await rig.plan.check(rig.box.snapshot())
+        await rig.plan.check(rig.box.snapshot())
+        assert said() == 1
+        rig.plan.topped({})  # the second cut
+        rig.clock[0] = at("2026-11-26T10:00:00")
+        await rig.plan.check(rig.box.snapshot())
+        assert said() == 2
+
+    go(run())
+
+
+def test_no_light_step_in_the_week_after_a_cut(rig: Any) -> None:
+    rig.log.add_height(16, "2026-11-06", estimated=True, camera="growcam", method="camera_strip")
+
+    async def run() -> None:
+        await rig.start_light()
+        rig.plan.topped({})
+        rig.clock[0] = at("2026-11-06T16:01:00")
+        await rig.timer.tick()
+        await rig.plan.check(rig.box.snapshot())
+        assert rig.plan.state["light"]["level"] == 40 and rig.plan.state["light"]["hold"] == "topping"
+        text = rig.plan.view(rig.box.snapshot(), "de")["light"]["text"]
+        assert text.startswith("Bleibt bei 40 %") and "Erholung nach dem Toppen bis 13.11.2026" in text
+        rig.clock[0] = at("2026-11-13T16:01:00")
+        await rig.timer.tick()
+        await rig.plan.check(rig.box.snapshot())
+        assert rig.plan.state["light"]["level"] == 50
+
+    go(run())
+
+
 def test_an_autoflower_has_no_topping_and_no_flowering_mark() -> None:
     chosen_run("auto")
     assert [m["id"] for m in GrowPlan(Box(), PlantLog()).view(Box().snapshot(), "de")["marks"]] == ["trellis", "lollipop"]

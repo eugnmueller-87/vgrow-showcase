@@ -201,6 +201,9 @@
       this.besideBar = false;
       this.boardNext = 0;
       this.fridgeNext = 0;
+      this.link = null;  // {now, at, offline}: whether the page still reaches the server, set by tick()
+      this.dockLamp = null;  // the charger's lamp, {at, on}, for the glow at night
+      this.robot = options && options.robot === false ? null : new Robot(this);
       this.resize(canvas.width, canvas.height);
     }
 
@@ -421,6 +424,37 @@
       this.rotor += dt * (0.12 + (num(s.dfan && s.dfan.step) || 0) * 0.1);  // the owner: "way too fast". Still shows the exhaust step
       this.stepDaylight(dt);
       if (!this.still) this.stepParts(dt);
+      this.stepRobot(dt);
+    }
+
+    // ---------- his helper robot: whatever goes wrong in him ends him, never the garden ----------
+
+    stepRobot(dt) {
+      if (!this.robot) return;
+      try { this.robot.step(dt); } catch (err) { this.robotFailed(err); }
+    }
+
+    // Hank's day goes on without him until the page loads again; Hank keeps how he stood.
+    robotFailed(err) {
+      const robot = this.robot;
+      this.robot = null;
+      try { if (robot) robot.unturn(); } catch (_) { /* then Hank faces where he faced */ }
+      console.error(err);
+    }
+
+    robotReply() {
+      if (!this.robot) return null;
+      try { return this.robot.replyShown(); } catch (err) { this.robotFailed(err); return null; }
+    }
+
+    // What the robot and Hank's answer to him say, for the screen reader's line.
+    robotLine() {
+      try {
+        const said = this.robot && this.robot.saying, reply = this.robotReply();
+        return [said ? said.text : "", reply ? `Hank: ${reply.text}` : ""].filter(Boolean).join(" ");
+      } catch (_) {
+        return "";
+      }
     }
 
     stepDaylight(dt) {
@@ -641,11 +675,19 @@
         const overlap = box.x < hx + 18 && box.x + box.w > hx - 18 && box.y < hy + 4 && box.y + box.h > hy - 44;
         if (overlap && !(a.gx < o.foot[0] || a.gy < o.foot[1])) insert = i + 1;
       });
-      objs.forEach((o, i) => {
+      // the robot gets his own place in that order; where both stand between the same things, the one further back comes first
+      const rb = this.robotSpot(objs, plantPx, { insert, x: hx, y: hy });
+      const actors = (i) => {
+        const here = rb && rb.insert === i, first = here && i === insert && rb.y < hy;
+        if (first) this.drawRobot(c, rb);
         if (i === insert) this.drawHank(c, hx, hy);
+        if (here && !first) this.drawRobot(c, rb);
+      };
+      objs.forEach((o, i) => {
+        actors(i);
         this.drawObject(c, o, { wet, plantPx, opts, planted });
       });
-      if (insert >= objs.length) this.drawHank(c, hx, hy);
+      actors(objs.length);
       if (!this.still) this.drawParts(c);
       if (this.target && this.time < this.target.until) this.drawTarget(c, this.target);
       c.restore();
@@ -686,6 +728,7 @@
         if (temp !== null) A.mercury(c, w.at.thermo, Math.max(0, Math.min(1, (temp - 10) / 25)));
       }
       if (o.name === "board") A.boardNotes(c, L.openTodos(s).length + L.notices(s).length);
+      if (o.name === "dock") this.dockLights(c);
       if (o.name === "desk") {
         const st = this.a.step;
         A.monitor(c, st && st.screen ? "game" : this.d > 0.05 ? "idle" : "idle", this.time);
@@ -695,6 +738,19 @@
           A.rect(c, p[0], p[1] + 1, 2, 2, A.BULB_COLS[i % A.BULB_COLS.length]);
         });
       }
+    }
+
+    // The charger's lamp, the light round its pad and the cable while the robot charges. What he does is read inside a try:
+    // a fault in him leaves the charger dim, never the garden.
+    dockLights(c) {
+      let state = "idle", at = null;
+      try {
+        const r = this.robot;
+        if (r && r.docked()) { state = r.charge < 1 ? "charge" : "full"; at = [A.X(r.gx, r.gy), A.Y(r.gx, r.gy)]; }
+      } catch (err) {
+        this.robotFailed(err);
+      }
+      this.dockLamp = A.dockLights(c, state, this.time, at);
     }
 
     drawHank(c, x, y) {
@@ -711,6 +767,48 @@
       });
       if (st.mark && this.fx) A.text(c, st.mark, this.fx.head[0] - 2, this.fx.head[1] - 9 + Math.round(Math.sin(this.time * 6)), st.mark === "!" ? "#c0392b" : "#fff8ea");
       if (carrying && this.fx && this.fx.tip) { /* the can swings with the walk through the arm's pose */ }
+    }
+
+    // Where the robot stands among the things, for the drawing order: Hank's overlap with the robot's smaller box; the deck
+    // stands 2 pixels high for him too. In front of a thing he is once he stands beyond one of the two sides we see of it
+    // (its far end in gx or in gy); by its near corner alone he stood "behind" the armchair while in front of it. The plants
+    // stand in the raised bed, so for him they count as the bed (by a plant's own spot, the one further right was drawn
+    // across him beside the thermometer). What lies flat on the grass (fence, flowers, the stones: a foot of nothing) puts
+    // him in front of itself, never in front of a thing he stands behind: the stones come last, and between the side table
+    // and the armchair they had him drawn across the armchair. Where he stands in front of Hank and the two overlap (hank:
+    // Hank's place, insert, x and y), he is drawn after Hank, whatever Hank's own place among the things: beside Hank at
+    // the PC he stood in front of him and was drawn behind him.
+    robotSpot(objs, plantPx, hank) {
+      const r = this.robot;
+      if (!r || r.gx === null) return null;
+      try {
+        const x = A.X(r.gx, r.gy), y = A.Y(r.gx, r.gy, r.gx >= 6 && r.gy >= 0.3 && r.gy <= 3.6 ? 2 : 0);
+        const bed = objs.find((o) => o.name === "bed"), flat = [];
+        let insert = 0, behind = objs.length;
+        objs.forEach((o, i) => {
+          const box = o.plant ? { x: A.X(o.gx, o.gy) - 18, y: A.Y(o.gx, o.gy, 7) - plantPx, w: 36, h: plantPx + 4 } : o;
+          const overlap = box.x < x + 10 && box.x + box.w > x - 10 && box.y < y + 4 && box.y + box.h > y - 32;
+          if (!overlap) return;
+          const foot = o.plant && bed ? bed.foot : o.foot;
+          if (foot.every((v) => v === 0)) flat.push(i);
+          else if (r.gx >= foot[2] || r.gy >= foot[3]) insert = i + 1;
+          else behind = Math.min(behind, i);
+        });
+        for (const i of flat) insert = Math.max(insert, Math.min(i + 1, behind));
+        // in front of Hank, never earlier than him; behind him he keeps his own place: earlier would take him behind what
+        // he stands in front of (Hank's own place lies before the plants when he stands left of them)
+        if (hank && y >= hank.y && Math.abs(x - hank.x) < 20 && y - 32 < hank.y + 4) insert = Math.max(insert, hank.insert);
+        return { insert, x, y };
+      } catch (err) {
+        this.robotFailed(err);
+        return null;
+      }
+    }
+
+    drawRobot(c, spot) {
+      const r = this.robot;
+      if (!r) return;
+      try { r.fx = A.robot(c, spot.x, spot.y, r.look()); } catch (err) { this.robotFailed(err); }
     }
 
     drawParts(c) {
@@ -807,8 +905,96 @@
       if (!this.still) this.flying(c, d);
       this.drawStats(c);
       this.drawDialog(c);
-      this.drawBubble(c);
+      this.drawBubbles(c);
       this.drawHover(c);
+    }
+
+    // Hank's bubble and the robot's. Both where both fit; where they do not, the robot's line has the floor for its few
+    // seconds and Hank's bubble waits (a joke never takes it: Robot.talk lets Hank go first). Hank's answer to him is the
+    // exception: once it shows it stays, and should the two stop fitting (a new pose moves Hank's head), the robot's line
+    // gives way for the rest of the answer instead of coming and going. Never one across the other.
+    drawBubbles(c) {
+      const robot = this.robot, said = robot && robot.saying && robot.fx ? robot.saying : null;
+      if (!said) { this.drawHankBubble(c); return; }
+      let hankDone = false;
+      try {
+        const reply = this.robotReply(), shown = reply || this.saying;
+        const box = shown && this.fx ? this.hankBubbleBox(shown.lines) : null;
+        let at = reply && reply.floor ? null : this.robotBubbleAt(said.lines, box);
+        if (at || !box || reply) { this.drawHankBubble(c); hankDone = true; }
+        if (!at && reply) { reply.floor = true; return; }
+        at = at || this.robotBubbleAt(said.lines, null) || this.robotBubbleAt(said.lines, null, true);
+        const b = A.bubble(c, at.x + at.w / 2, at.y + at.h + 5, said.lines, at.x, at.x + at.w, at.headX);
+        A.rect(c, b.x + 1, b.y + 1, b.w - 2, 1, robot.status === "alert" ? BULB_RED : BULB_AMBER);  // his bulb's colour on top: his words, also stacked over Hank's
+        this.robotTrail(c, at);
+      } catch (err) {
+        this.robotFailed(err);
+        if (!hankDone) this.drawHankBubble(c);
+      }
+    }
+
+    // Hank's own bubble; for the moment of his short answer to the robot it shows that answer, and what he was saying stays
+    // his and is back right after it.
+    drawHankBubble(c) {
+      const own = this.saying, reply = this.robotReply();
+      if (reply) this.saying = reply;
+      try { return this.drawBubble(c); } finally { this.saying = own; }
+    }
+
+    // Where drawBubble() would put these lines, without drawing them and without moving its memory of the buttons.
+    hankBubbleBox(lines) {
+      if (!this.fx || !lines || !lines.length) return null;
+      const keep = this.besideBar;
+      try {
+        const tipX = this.ox + this.fx.head[0], room = this.bubbleRoom(lines, this.oy + this.fx.head[1] - 4);
+        const w = Math.max(...lines.map(A.textWidth)) + 10, h = lines.length * 10 + 7;
+        return { x: Math.max(room.left, Math.min(room.right - w, Math.round(tipX - w / 2))), y: Math.round(room.top - h - 5), w, h };
+      } finally {
+        this.besideBar = keep;
+      }
+    }
+
+    // A place for the robot's bubble: over his head; else right beside Hank at the same height, the tail still over the robot;
+    // else lifted above Hank's hat; else beside Hank's bubble or above it, whichever free one lies nearest above him (by the
+    // middle of a wide bubble of Hank's, the "near" side once put his bubble across the island from him). Never across
+    // Hank, Hank's bubble, the status window or the two buttons; null when there is none (anyhow: the first try).
+    robotBubbleAt(lines, hb, anyhow) {
+      const r = this.robot, fx = this.fx, bar = this.bar, stats = this.stats;
+      const w = Math.max(...lines.map(A.textWidth)) + 10, h = lines.length * 10 + 7;
+      const headX = Math.round(this.ox + r.fx.head[0]), headY = Math.round(this.oy + r.fx.head[1]), top = headY - 4 - h - 5;
+      const low = (y) => (!this.tall && y < stats.y + stats.h ? stats.x + stats.w + 2 : 3);
+      const high = (y) => (bar && y < bar.bottom + BAR_GAP ? bar.left - BAR_GAP : this.W - 3);
+      const slide = (x, y) => Math.max(low(y), Math.min(high(y) - w, x));
+      const keep = [];  // Hank from his hat down, and his bubble with its tail
+      if (fx) keep.push([this.ox + fx.head[0] - 11, this.oy + fx.head[1], 22, 42]);
+      if (hb) keep.push([hb.x, hb.y, hb.w, hb.h + 5]);
+      const free = ([x, y]) => y >= 2 && x >= low(y) && x + w <= high(y) && y + h + 5 < this.dialog.y
+        && keep.every((k) => x >= k[0] + k[2] + 2 || x + w <= k[0] - 2 || y >= k[1] + k[3] + 2 || y + h + 5 <= k[1] - 2);
+      const centred = Math.round(headX - w / 2), tries = [[slide(centred, top), top]];
+      if (fx) {
+        const hank = keep[0], y = Math.round(this.oy + fx.head[1]) - h - 7;
+        tries.push([headX >= hank[0] + hank[2] / 2 ? hank[0] + hank[2] + 2 : hank[0] - w - 2, top], [slide(centred, y), y]);
+      }
+      const aside = [];
+      if (hb) {
+        const right = headX >= hb.x + hb.w / 2, y = hb.y + hb.h - h;
+        aside.push([right ? hb.x + hb.w + 3 : hb.x - w - 3, y], [slide(centred, hb.y - h - 8), hb.y - h - 8], [right ? hb.x - w - 3 : hb.x + hb.w + 3, y]);
+      }
+      const off = (p) => Math.max(0, p[0] - headX, headX - (p[0] + w));  // how far beside him it ends
+      const at = tries.find(free) || aside.filter(free).sort((p, q) => off(p) - off(q))[0] || (anyhow ? tries[0] : null);
+      return at ? { x: at[0], y: at[1], w, h, headX, headY, keep } : null;
+    }
+
+    // A bubble lifted off his head gets a thin line from its tail down to him, so nobody takes it for Hank's. Not across Hank
+    // or Hank's bubble.
+    robotTrail(c, at) {
+      const tx = Math.max(at.x + 4, Math.min(at.x + at.w - 6, at.headX)), y0 = at.y + at.h + 4, y1 = at.headY - 2;
+      if (y1 - y0 < 3) return;
+      for (let i = 0; i <= 8; i++) {
+        const px = tx + (at.headX - tx) * i / 8, py = y0 + (y1 - y0) * i / 8;
+        if (at.keep.some((k) => px > k[0] - 1 && px < k[0] + k[2] + 1 && py > k[1] - 1 && py < k[1] + k[3] + 1)) return;
+      }
+      A.line(c, tx, y0, at.headX, y1, A.INK);
     }
 
     // The name of what the mouse is on, so the owner sees what can be clicked.
@@ -840,6 +1026,14 @@
       this.glow(c, screen[0], screen[1], st && st.screen ? 22 : 6, st && st.screen ? "#5aa2ff" : "#3f8a66", (st && st.screen ? 0.22 : 0.14) * power);
       if (this.time < this.fridgeUntil) { const door = A.P3(6.6, 1.25, 12); this.glow(c, door[0], door[1], 16, "#fff5c0", 0.25 * power); }
       if (this.fx && this.fx.tip && this.a.prop === "cig") this.glow(c, this.fx.tip[0], this.fx.tip[1] + 1, 3, "#ff7a2a", 0.45 * power);
+      if (this.dockLamp && this.dockLamp.on) this.glow(c, this.dockLamp.at[0], this.dockLamp.at[1] - 1, 4, "#7dff7a", 0.35 * power);
+      const r = this.robot;  // the robot's bulb, awake: red while a problem stays, green on the charger; and his battery there
+      try {
+        if (r && r.fx && r.fx.bulb && r.mood !== "sleep") this.glow(c, r.fx.bulb[0], r.fx.bulb[1], 4, r.status === "alert" ? "#ff5a4a" : r.mood === "charge" ? "#7dff7a" : "#ffc24a", 0.35 * power);
+        if (r && r.fx && r.fx.battery) this.glow(c, r.fx.battery[0], r.fx.battery[1], 7, "#7ad06f", 0.22 * power);
+      } catch (err) {
+        this.robotFailed(err);
+      }
       c.restore();
     }
 
@@ -988,10 +1182,358 @@
     }
   }
 
+  // ---------- his helper robot ----------
+
+  // A small watcher at Hank's side. The owner, 15.11.2026: "a robot helper for Hank, who is getting all the signals if any
+  // error whatsoever is happening, to notify him. And then he would basically run towards him ... other than that, he's just
+  // doing stuff with Hank, just working or hanging out or sleeping. Or telling a funny joke."
+  // What he watches is read in one place, GardenLogic.buddy(). A new problem: he runs to Hank, says it in his own bubble, and
+  // Hank turns to him and answers. While it stays his bulb stays red, and he says it again only after a long while; all clear,
+  // he says so once. Otherwise he works beside Hank with his magnifier, hangs out with him, and now and then tells a joke.
+  // The owner, 16.11.2026: "if nothing is going on and at the same time as Hank is taking a nap, [he] can go to a charging
+  // station and charge ... and have a battery above his head". So while all is calm and Hank naps, and while the lamp is off,
+  // he stands on his charger at the front of the island, the battery over his head filling up (asleep by night). He changes
+  // nothing of Hank's day: not his decision, not his queue, not his own words, and he never draws the random numbers Hank's
+  // day is made of. Canvas only, never clickable; Scene catches whatever he throws.
+  const ROBOT_WALK = 1.8, ROBOT_RUN = 2.9;  // grid tiles per second of the world; Hank walks 1.5
+  const TELL_S = 4.6, REPLY_AFTER_S = 1.4, REPLY_S = 3.8, CLEAR_S = 4, JOKE_S = 6.5;  // world seconds a bubble stays
+  const REMIND_S = 480;  // a problem that stays is said again after eight world minutes, about twelve real ones
+  const JOKE_FIRST_S = 40, JOKE_EVERY_S = 170;  // now and then, with a fixed jitter from the art's hash
+  const BULB_RED = "#d4503f", BULB_AMBER = "#f2b632";  // his beacon's two colours (web/garden-art.js), on top of his bubble
+  const INSPECT = [4.35, 1.08], DOCK = A.DOCK;  // his own corner behind the raised bed, and his charger, where he also sleeps
+  // His battery: from empty to full in CHARGE_S world seconds on the charger (Hank's nap lasts 80), down a little while he is
+  // about, more while he walks, most while he runs, never below CHARGE_LOW. Where it starts comes from the art's hash.
+  const CHARGE_S = 90, CHARGE_LOW = 0.15, DRAIN_IDLE = 1 / 1500, DRAIN_WALK = 1 / 700, DRAIN_RUN = 1 / 260;
+  // Spots beside Hank in rings: right beside him, a step in front of him, a little further out, behind him. A nearer ring
+  // wins over his own side: by his side first he squeezed in between the side table and the armchair at the PC, hidden.
+  const BESIDE = [[[0.55, -0.55], [-0.55, 0.55]], [[0.75, 0.15], [0.15, 0.75]], [[0.85, -0.85], [-0.85, 0.85]], [[0.2, -0.8], [-0.8, 0.2]]];
+  // What Hank does decides where the robot is: with the magnifier beside him at his jobs, beside him at juice, the PC, a nap
+  // or a word with the owner. Whatever else Hank does, his beer and smoke breaks first, the robot leaves to him and goes to
+  // the plants: he never joins them and never holds what Hank holds.
+  const WITH_HANK_WORK = ["garden.do.lost", "garden.do.tank", "garden.do.water", "garden.do.thirsty", "garden.do.soggy", "garden.do.poke",
+    "garden.do.hot", "garden.do.cold", "garden.do.dry", "garden.do.humid", "garden.do.mist", "garden.do.todo", "garden.do.inspect", "garden.do.show"];
+  const WITH_HANK_FREE = ["garden.do.juice", "garden.do.game", "garden.do.nap", "garden.do.talk", "garden.do.walk", "garden.do.read"];
+  const SAFE_PROPS = ["can", "spray", "hat", "umbrella", "juice"];  // anything else in Hank's hand (he walks on with his bottle) keeps the robot away
+  const JOKES = ["garden.joke.1", "garden.joke.2", "garden.joke.3", "garden.joke.4", "garden.joke.5", "garden.joke.6", "garden.joke.7",
+    "garden.joke.8", "garden.joke.9", "garden.joke.10", "garden.joke.11", "garden.joke.12", "garden.joke.13", "garden.joke.14"];
+  const SEATED = ["hold", "sip", "nap", "type", "cheer"];  // Hank's poses in the armchair and on the stool: he answers without turning
+
+  const whatOf = (text) => (text === null || text === undefined ? "" : String(text).trim().replace(/[\s.!?:;,]+$/, ""));
+
+  class Robot {
+    constructor(scene) {
+      this.s = scene;
+      this.gx = null;
+      this.gy = null;
+      this.view = "F";
+      this.flip = false;
+      this.phase = 0;
+      this.path = [];
+      this.dest = null;
+      this.planAt = -Infinity;
+      this.mood = "chill";
+      this.status = "calm";
+      this.items = [];
+      this.known = new Set();  // the problems of this episode he knows: told, or waiting on this trip
+      this.spoken = 0;
+      this.lines = [];
+      this.trip = false;
+      this.trips = 0;
+      this.saying = null;  // his bubble: {lines, until, text, kind} with kind "tell", "remind", "clear" or "joke"
+      this.reply = null;  // Hank's answer: {lines, text, from, until}
+      this.turned = null;
+      this.remindAt = Infinity;
+      this.remindNext = 0;
+      this.jokeAt = JOKE_FIRST_S;
+      this.jokeNext = Math.floor(Date.now() / 60000) % JOKES.length;  // a page that reloads does not start with the same joke
+      this.zAt = 0;
+      this.fx = null;
+      this.charge = 0.3 + A.hash(5, 83) * 0.35;
+    }
+
+    // One frame of world time. Scene.stepRobot calls it inside a try.
+    step(dt) {
+      const s = this.s, link = s.link || {};
+      const watch = L.buddy(s.state || {}, link.now, link.at, link.offline);
+      this.status = watch.status;
+      this.items = watch.items;
+      if (this.gx === null) {  // the first frame: he is already where his day starts
+        const goal = this.goal(), at = goal ? goal.at : this.beside();
+        this.gx = at[0];
+        this.gy = at[1];
+      }
+      this.news(watch.items);
+      this.move(dt);
+      this.power(dt);
+      this.talk();
+      this.answer();
+      this.pose(dt);
+    }
+
+    // A problem not told in this episode sends him to Hank: one trip for whatever is new at the time, every one of them said in
+    // turn, also what comes in while he is on his way. One that is over before he said it is no news any more: it leaves his
+    // list, and if it comes back it is new again. All clear ends the episode.
+    news(items) {
+      const active = new Map(items.map((item) => [item.id, item]));
+      for (const item of this.lines) if (!active.has(item.id)) this.known.delete(item.id);
+      this.lines = this.lines.filter((item) => active.has(item.id)).map((item) => active.get(item.id));
+      for (const item of items) {
+        if (this.known.has(item.id)) continue;
+        this.known.add(item.id);
+        this.lines.push(item);
+        if (!this.trip) {
+          this.trip = true;
+          this.trips++;
+          this.dest = null;
+          this.planAt = -Infinity;
+          if (this.saying && this.saying.kind !== "tell") this.saying = null;
+        }
+      }
+      if (items.length) {
+        if (this.trip && !this.lines.length && !(this.saying && this.saying.kind === "tell")) this.endTrip();  // what he ran for is over already
+        return;
+      }
+      if (!this.known.size && !this.trip && !this.spoken) return;
+      this.known.clear();
+      this.lines = [];
+      this.trip = false;
+      this.remindAt = Infinity;
+      if (this.reply && !this.replyShown()) { this.unturn(); this.reply = null; }  // an answer not yet shown is not needed any more
+      if (this.spoken) this.say("garden.robot.clear", null, CLEAR_S, "clear");
+      this.spoken = 0;
+    }
+
+    // Where he wants to be, and how fast. Null: he stays (Hank is on his way somewhere; the robot comes over once he is there).
+    goal() {
+      const a = this.s.a;
+      if (this.trip) return { at: this.beside(), speed: ROBOT_RUN };
+      if (this.resting()) return { at: DOCK, speed: ROBOT_WALK };
+      if (this.company() === "own") return { at: INSPECT, speed: ROBOT_WALK };
+      if (a.step && a.step.go) return null;
+      return { at: this.beside(), speed: ROBOT_WALK };
+    }
+
+    // Nothing going on and Hank asleep: the lamp is off, or all is calm and Hank naps. A problem that stays keeps him by Hank.
+    resting() { return this.status === "night" || (this.status === "calm" && this.s.doing === "garden.do.nap"); }
+
+    // On his charger: standing on the pad, not on a run.
+    docked() { return this.gx !== null && !this.trip && !this.path.length && this.at(DOCK); }
+
+    power(dt) {
+      if (this.docked()) this.charge = Math.min(1, this.charge + dt / CHARGE_S);
+      else this.charge = Math.max(CHARGE_LOW, this.charge - dt * (this.path.length ? (this.trip ? DRAIN_RUN : DRAIN_WALK) : DRAIN_IDLE));
+    }
+
+    company() {
+      const doing = this.s.doing, prop = this.s.a.prop;
+      if (prop && !SAFE_PROPS.includes(prop)) return "own";
+      if (WITH_HANK_WORK.includes(doing)) return "work";
+      if (WITH_HANK_FREE.includes(doing)) return "hang";
+      return "own";
+    }
+
+    // A free spot next to Hank: the nearest ring first, and in each ring the side the robot is on.
+    beside() {
+      const a = this.s.a, side = (o) => Math.sign(o[0] - o[1]);
+      const mine = this.gx === null ? 1 : Math.sign(A.X(this.gx, this.gy) - A.X(a.gx, a.gy)) || 1;
+      for (const ring of BESIDE) {
+        for (const o of [...ring.filter((p) => side(p) === mine), ...ring.filter((p) => side(p) !== mine)]) {
+          const at = [a.gx + o[0], a.gy + o[1]];
+          if (this.free(at)) return at;
+        }
+      }
+      return [a.gx + BESIDE[0][0][0], a.gy + BESIDE[0][0][1]];
+    }
+
+    // On the island and on none of the things standing on it.
+    free(p) {
+      if (p[0] < 0.45 || p[0] > 8.65 || p[1] < 0.45 || p[1] > 8.65) return false;
+      return this.s.world.objs.every((o) => {
+        const f = o.foot;
+        return !f || o.plant || (f[0] === f[2] && f[1] === f[3]) || !(p[0] > f[0] - 0.15 && p[0] < f[2] + 0.15 && p[1] > f[1] - 0.15 && p[1] < f[3] + 0.15);
+      });
+    }
+
+    near() { return Math.hypot(this.gx - this.s.a.gx, this.gy - this.s.a.gy) < 1.3; }
+    at(p) { return Math.hypot(this.gx - p[0], this.gy - p[1]) < 0.1; }
+
+    // Along the paths like Hank, the last piece straight where the way is free. Reduced motion: there at once.
+    plan(to) {
+      const s = this.s, here = [this.gx, this.gy];
+      this.dest = [to[0], to[1]];
+      this.planAt = s.time;
+      if (Math.hypot(to[0] - here[0], to[1] - here[1]) < 0.05) { this.path = []; return; }
+      if (s.clear(here, to)) { this.path = [this.dest.slice()]; return; }
+      const start = nearestNode(here[0], here[1], (p) => s.clear(here, p)) || nearestNode(here[0], here[1]);
+      const end = nearestNode(to[0], to[1], (p) => s.clear(p, to)) || nearestNode(to[0], to[1]);
+      this.path = route(start, end).map((name) => NODES[name].slice());
+      this.path.push(this.dest.slice());
+    }
+
+    move(dt) {
+      const s = this.s, goal = this.goal();
+      const moved = goal && (!this.dest || Math.hypot(goal.at[0] - this.dest[0], goal.at[1] - this.dest[1]) > 0.35);
+      if (moved && s.time - this.planAt >= 0.5) this.plan(goal.at);  // Hank on the move: a new way every half second at most
+      if (s.still && this.path.length) {
+        const last = this.path[this.path.length - 1];
+        this.gx = last[0];
+        this.gy = last[1];
+        this.path = [];
+      }
+      let budget = (goal ? goal.speed : ROBOT_WALK) * dt;
+      while (budget > 0 && this.path.length) {
+        const target = this.path[0], dx = target[0] - this.gx, dy = target[1] - this.gy, dist = Math.hypot(dx, dy);
+        if (dist > 0.02) {
+          if (Math.abs(dx) >= Math.abs(dy)) { this.view = dx > 0 ? "F" : "B"; this.flip = dx <= 0; }
+          else { this.view = dy > 0 ? "F" : "B"; this.flip = dy > 0; }
+        }
+        if (dist <= budget) { this.gx = target[0]; this.gy = target[1]; budget -= dist; this.path.shift(); }
+        else { this.gx += dx / dist * budget; this.gy += dy / dist * budget; budget = 0; }
+      }
+    }
+
+    // His bubble: the lines of a trip one after the other, the reminder, the joke. Hank's own line always goes first.
+    talk() {
+      const s = this.s, time = s.time;
+      if (this.saying && time >= this.saying.until) {
+        const kind = this.saying.kind;
+        this.saying = null;
+        if (kind === "tell" && !this.lines.length) this.endTrip();
+      }
+      if (this.saying && this.saying.kind === "joke" && s.saying) this.saying = null;  // Hank speaks: the joke gives way
+      if (this.saying) return;
+      const standing = !this.path.length;
+      if (this.trip) {
+        if (standing && this.near()) this.tellNext();
+        return;
+      }
+      if (this.status === "alert") {
+        if (standing && time >= this.remindAt && this.items.length) {
+          const item = this.items[this.remindNext++ % this.items.length];
+          this.say(item.key, { what: whatOf(item.text) }, TELL_S, "remind");
+          this.remindAt = time + REMIND_S;
+        }
+        return;
+      }
+      if (this.status === "calm" && standing && time >= this.jokeAt && this.mayJoke()) {
+        this.say(JOKES[this.jokeNext++ % JOKES.length], null, JOKE_S, "joke");
+        this.jokeAt = time + JOKE_EVERY_S + A.hash(this.jokeNext, 77) * 80;
+      }
+    }
+
+    tellNext() {
+      const item = this.lines.shift();
+      if (!item) { this.endTrip(); return; }
+      this.say(item.key, { what: whatOf(item.text) }, TELL_S, "tell");
+      this.spoken++;
+      if (this.lines.length) return;
+      this.unturn();
+      const text = t("garden.robot.thanks"), from = this.s.time + REPLY_AFTER_S;
+      this.reply = { lines: A.wrap(text, this.s.tall ? Math.min(this.s.W - 20, 170) : 168), text, from, until: from + REPLY_S, placed: false };  // Hank's own width
+    }
+
+    endTrip() {
+      this.trip = false;
+      this.remindAt = this.s.time + REMIND_S;
+    }
+
+    // Only when all is calm, Hank's light is not red and nothing is urgent; beside Hank, while he is quiet and his next line is
+    // not due: they take turns.
+    mayJoke() {
+      const s = this.s, d = s.decision, level = s.hank && s.hank.light ? s.hank.light.level : null;
+      if (!d || d.urgent || level === "red" || d.hankLevel === "red" || s.saying || this.reply) return false;
+      if (s.nextSay - s.time < JOKE_S + 1) return false;
+      return this.company() !== "own" && this.near();
+    }
+
+    say(key, params, seconds, kind) {
+      const text = textOf(key, params);
+      this.saying = { lines: A.wrapEven(text, this.width()), until: this.s.time + seconds, text, kind };  // breaks where a sentence ends
+    }
+
+    width() { return Math.min(this.s.W - 20, 140); }  // narrower than Hank's, so it finds room beside him more often
+
+    // Hank's short answer after the last line of a trip. When it is due he first turns to the robot (while he stands; back
+    // after it), and where it goes is judged on the next picture, with his head where the turn put it: judged before, it
+    // was 2 pixels off and his answer did not fit after all. Where the two bubbles do not fit together, he answers once the
+    // robot is done.
+    answer() {
+      const s = this.s, a = s.a, r = this.reply;
+      if (!r) return;
+      if (s.time >= r.until) { this.unturn(); this.reply = null; return; }
+      if (s.time < r.from) return;
+      if (!this.turned) {
+        this.turned = { step: a.step, view: a.view, flip: a.flip, done: false };
+        if (a.step && !a.step.go && !SEATED.includes(a.pose)) {
+          a.view = "F";
+          a.flip = A.X(this.gx, this.gy) < A.X(a.gx, a.gy);
+          this.turned.done = true;
+        }
+        r.picture = this.fx;  // he is drawn anew on every picture: a new fx is a picture with Hank turned
+        return;
+      }
+      if (r.placed || this.fx === r.picture) return;
+      r.placed = true;
+      const box = this.saying && this.fx ? s.hankBubbleBox(r.lines) : null;
+      if (box && !s.robotBubbleAt(this.saying.lines, box)) { r.from = this.saying.until; r.until = r.from + REPLY_S; }
+    }
+
+    unturn() {
+      const was = this.turned, a = this.s.a;
+      if (was && was.done && a.step === was.step) { a.view = was.view; a.flip = was.flip; }
+      this.turned = null;
+    }
+
+    replyShown() {
+      const r = this.reply, time = this.s.time;
+      return r && r.placed && time >= r.from && time < r.until ? r : null;
+    }
+
+    // His mood and where he looks while he stands; his steps while he walks; zzz while he sleeps.
+    pose(dt) {
+      const s = this.s, a = s.a;
+      if (this.path.length) {
+        this.phase += dt * (this.trip ? 4.2 : 2.8);
+        this.mood = this.trip ? "alert" : "chill";
+        return;
+      }
+      const kind = this.saying ? this.saying.kind : null;
+      const mode = this.company(), docked = this.docked();
+      if (kind === "tell" || this.trip) this.mood = "alert";
+      else if (kind === "joke" || kind === "clear") this.mood = "joke";
+      else if (docked) this.mood = this.status === "night" ? "sleep" : this.charge < 1 ? "charge" : "chill";
+      else if (this.resting()) this.mood = "chill";
+      else this.mood = mode === "hang" ? "chill" : "work";
+      const hankLeft = A.X(a.gx, a.gy) < A.X(this.gx, this.gy);
+      if (docked && !kind) { this.view = "F"; this.flip = true; }  // his back to the post, where the cable goes in
+      else if (this.mood === "sleep") { this.view = "F"; this.flip = false; }
+      else if (kind || this.trip || this.reply) { this.view = "F"; this.flip = hankLeft; }
+      else if (mode === "own" && this.at(INSPECT)) { this.view = "F"; this.flip = true; }
+      else if (mode === "work" && a.step && !a.step.go) { this.view = a.view; this.flip = a.flip; }
+      else { this.view = "F"; this.flip = hankLeft; }
+      if (this.mood === "sleep" && !s.still && this.fx && s.time >= this.zAt) {
+        const from = this.fx.battery ? [this.fx.battery[0] + 7, this.fx.battery[1] + 3] : [this.fx.head[0] + 3, this.fx.head[1] + 1];  // past the battery's nub
+        s.spawn("z", from[0], from[1], 3, -6, 3.2);
+        this.zAt = s.time + 2.4;
+      }
+    }
+
+    // What the art draws: his mood, his steps while he walks, the red bulb while a problem stays, the battery on the charger.
+    look() {
+      return { mood: this.mood, t: this.s.time, view: this.view, flip: this.flip, walk: this.path.length ? this.phase : null,
+        bulb: this.status === "alert" ? "alert" : null, battery: this.docked() ? { level: this.charge, charging: this.charge < 1 } : null };
+    }
+  }
+
   // ---------- on top of the page ----------
 
   let latest = null, hankState = null, root = null, canvas = null, live = null, scene = null, bar = null, pinButton = null, exitButton = null;
   let isOpen = false, frame = 0, lastFrame = 0, lastInput = Date.now(), hankTimer = 0, opener = null, pixel = 1, pinChecked = false;
+  let lastStateAt = 0, visibleAt = 0, offline = false;  // for the robot: when the last state came, and whether a poll failed since
+  const RESUME_MS = 5000;  // no frame for this long: the page was frozen or the computer slept, and the polls only start again
+
+  // Whether the page still reaches the server. A tab in the background polls nothing, so its age counts from its return.
+  function linkNow() { return { now: Date.now(), at: lastStateAt ? Math.max(lastStateAt, visibleAt) : null, offline }; }
   const reduced = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : { matches: false };
 
   function fit() {
@@ -1078,12 +1620,14 @@
     frame = requestAnimationFrame(tick);
     const fps = reduced.matches ? 1 : FPS;
     if (now - lastFrame < 1000 / fps - 2) return;
+    if (now - lastFrame > RESUME_MS) visibleAt = Date.now();  // a computer that slept says no "visibilitychange": the age of the last state counts from now
     const dt = Math.min(0.25, (now - lastFrame) / 1000);
     lastFrame = now;
     try {
+      scene.link = linkNow();
       scene.step(reduced.matches ? 1 : dt);
       scene.draw();
-      const line = [scene.doing ? t(scene.doing) : "", scene.saying ? scene.saying.text : ""].filter(Boolean).join(". ");
+      const line = [scene.doing ? t(scene.doing) : "", scene.saying ? scene.saying.text : "", scene.robotLine()].filter(Boolean).join(". ").replace(/([.!?])\. /g, "$1 ");
       if (live.textContent !== line) live.textContent = line;
     } catch (err) { console.error(err); close(); }
   }
@@ -1149,13 +1693,17 @@
   }, { capture: true });
   // The mouse counts as use of the page, and never closes the garden: the owner plays in it.
   document.addEventListener("pointermove", (event) => { if (event.pointerType !== "touch") input(); }, { capture: true, passive: true });
-  document.addEventListener("visibilitychange", () => { if (!document.hidden) input(); });
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) { input(); visibleAt = Date.now(); } });
 
   document.addEventListener("vgrow:state", (event) => {
     latest = event.detail;
+    lastStateAt = Date.now();
+    offline = false;
     if (isOpen && scene) scene.feed(latest);
     if (!pinChecked) { pinChecked = true; if (pinned()) open(); }
   });
+  // app.js lost the server on a poll: the robot hears it (GardenLogic.buddy), Hank's own day stays on the last state
+  document.addEventListener("vgrow:offline", () => { offline = true; });
 
   setInterval(() => {
     if (!isOpen && latest && Date.now() - lastInput >= IDLE_MS && !inTheWay()) open();
@@ -1167,5 +1715,5 @@
 
   for (const button of document.querySelectorAll("[data-garden-open]")) button.hidden = false;
 
-  window.HankGarden = { open, close, isOpen: () => isOpen, Scene, THINGS };
+  window.HankGarden = { open, close, isOpen: () => isOpen, Scene, THINGS, NODES, link: linkNow };
 })();

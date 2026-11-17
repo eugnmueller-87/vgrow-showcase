@@ -38,6 +38,10 @@ EOF
 
 # bootstrap + kickstart: a plain "launchctl load" over SSH registers the job but never starts it
 DOMAIN="gui/$(id -u)"
+# The deploy's mark, just before the stop: the supervision does not count the start that follows it as a restart loop
+# (vgrow/supervision.py, DEPLOY_FILE). bootout ends the server by SIGTERM, so it cannot leave a mark of its own. A mark
+# that cannot be written only counts this start, it never stops the deploy.
+date +%s > "$HOME/.vgrow-control/deploy-at" || true
 launchctl bootout "$DOMAIN/$LABEL" 2>/dev/null || true
 sleep 1
 

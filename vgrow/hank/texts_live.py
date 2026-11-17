@@ -221,6 +221,13 @@ DE: dict[str, str] = {
     "hank.nudge.yellow_stage": "Die Phase ist nur geschätzt. Ohne bestätigte Phase schaltet die Befeuchter-Automatik "
                                "nicht ein.",
     "hank.nudge.red_alert": "Jetzt handeln: {detail}",
+    # a yellow supervision rule of alerts.json (vgrow/supervision.py): merged into the light, never a rung of its own
+    "hank.nudge.yellow_notice": "Bitte nachsehen: {detail}",
+    # a supervision rule whose reader raised (state unknown in the alarm view): the push's words, no fault claimed
+    "hank.nudge.unchecked": "{label} (nicht prüfbar)",
+    "hank.nudge.unchecked_hint": "Die Aufsicht kann diesen Teil gerade nicht prüfen; das ist kein Befund über den Teil "
+                                 "selbst. Bitte VGrow auf dem Mac neu starten; kommt es wieder vor, das Protokoll "
+                                 "lesen.",
     "hank.nudge.red_offline": "Seit {minutes} Minuten kommen keine frischen Messwerte.",
     "hank.nudge.worse": "Es ist schlimmer geworden: {detail}",
     # ---------- scenes (alt texts; the drawings are M5b) ----------
@@ -410,6 +417,10 @@ EN: dict[str, str] = {
     "hank.nudge.yellow_stage": "The stage is only estimated. Without a confirmed stage the humidifier automation does "
                                "not switch on.",
     "hank.nudge.red_alert": "Act now: {detail}",
+    "hank.nudge.yellow_notice": "Please take a look: {detail}",
+    "hank.nudge.unchecked": "{label} (cannot be checked)",
+    "hank.nudge.unchecked_hint": "The supervision cannot check this part right now; this is no finding about the part "
+                                 "itself. Please restart VGrow on the Mac; if it happens again, read the log.",
     "hank.nudge.red_offline": "No fresh readings for {minutes} minutes.",
     "hank.nudge.worse": "It got worse: {detail}",
     "hank.scene.sleep": "Hank is asleep, the light is off.",

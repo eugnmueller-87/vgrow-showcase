@@ -258,6 +258,9 @@ class Hank:
         self.jobs: dict[str, Job] = {}
         self.nudge: nudges.NudgeState | None = None
         self.task: asyncio.Task[None] | None = None  # the ticker (spec WP9: serve() keeps the handle)
+        # The ticker's last completed tick, in mode off too: the cockpit's supervision reads it (vgrow/supervision.py),
+        # because Hank cannot report his own silence.
+        self.ticked_at: float | None = None
         self._side: set[asyncio.Task[Any]] = set()
         self._answers: OrderedDict[str, dict[str, Any]] = OrderedDict()
         self._grow_count = 0
@@ -325,6 +328,7 @@ class Hank:
         while True:
             try:
                 await self.tick()
+                self.ticked_at = self.clock()  # mode off returns early from tick() and still counts
             except asyncio.CancelledError:
                 raise
             except Exception as err:  # noqa: BLE001
